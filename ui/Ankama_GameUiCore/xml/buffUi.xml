@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		
+		<Constant name="texture_arrow_big" value="[local.assets]buff_btn_cacherBuffs" />
+		<Constant name="texture_arrow_small" value="[local.assets]buff_btn_afficherBuffs" />
+        <Constant name="texture" value="[config.ui.skin]texture/" />
+        <Constant name="common" value="[config.ui.skin]common/" />
+
+        <Constant name="backgroundHeight" value="65"/>
+        <Constant name="backgroundWidthModifier" value="30"/>
+        <Constant name="backgroundOffset" value="8"/>
+	</Constants>
+	
+	
+	<Container name="buffCtr">		
+		<Anchors>
+			<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+				<AbsDimension x="-230" y="0" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="100" y="93" />
+		</Size>
+		
+		<Container name="ctr_hook">
+			<Anchors>
+				<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1" y="1" />
+			</Size>
+		</Container>
+
+        <!-- Texture tx_background-->
+
+        <TextureBitmap name="tx_background">
+            <Anchors>
+                <Anchor relativeTo="ctr_hook"/>
+            </Anchors>
+            <themeDataId>bg_floating_window_horizontal</themeDataId>
+        </TextureBitmap>
+		
+		<!--<iconButton name="btn_minimArrow">-->
+			<!--<Anchors>-->
+				<!--<Anchor relativeTo="ctr_hook"/>-->
+			<!--</Anchors>-->
+			<!--<Size>-->
+				<!--<AbsDimension x="17" y="66" />-->
+			<!--</Size>-->
+			<!--<checkBox>true</checkBox>-->
+			<!--<uri>[local.assets]buff_btn_cacherBuffs</uri>-->
+		<!--</iconButton>-->
+
+        <Texture name="tx_button_minimize_bgLeft">
+            <Anchors>
+                <Anchor relativeTo="btn_minimArrow">
+                    <AbsDimension x="20" y="1" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="62" y="22" />
+            </Size>
+            <uri>[local.texture]hud/left_floating_menu.png</uri>
+            <autoGrid>true</autoGrid>
+            <rotation>90</rotation>
+            <dragController>true</dragController>
+            <dragTarget>buffCtr</dragTarget>
+            <dragBoundsContainer>buffCtr</dragBoundsContainer>
+            <useDragMagnetism>true</useDragMagnetism>
+        </Texture>
+
+        <TextureBitmap>
+            <Anchors>
+                <Anchor relativeTo="btn_minimArrow">
+                    <AbsDimension x="-2" y="20" />
+                </Anchor>
+            </Anchors>
+            <uri>[local.texture]hud/icon_green_bonus.png</uri>
+            <smooth>true</smooth>
+        </TextureBitmap>
+
+        <Button name="btn_minimArrow">
+            <Anchors>
+                <AbsDimension x="0" y="0" />
+            </Anchors>
+            <Common>
+                <Anchors>
+                    <Anchor relativeTo="ctr_hook"/>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="66" y="17" />
+                </Size>
+                <radioGroup>minMaxRadio</radioGroup>
+                <radioMode>true</radioMode>
+
+                <Texture name="tx_button_minimize">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="1" y="4" />
+                        </Anchor>
+                    </Anchors>
+                    <uri>[local.texture]hud/icon_minus_floating_menu.png</uri>
+                    <autoGrid>true</autoGrid>
+                </Texture>
+                <Hooks>
+                    <onRelease />
+                </Hooks>
+            </Common>
+        </Button>
+
+		<!--<iconButton name="btn_minimArrow_small">-->
+			<!--<Anchors>-->
+				<!--<Anchor relativeTo="ctr_hook"/>-->
+			<!--</Anchors>-->
+			<!--<Size>-->
+				<!--<AbsDimension x="17" y="23" />-->
+			<!--</Size>-->
+			<!--<checkBox>true</checkBox>-->
+			<!--<uri>[local.assets]buff_btn_afficherBuffs</uri>-->
+		<!--</iconButton>-->
+		
+		<!-- Container buffFrames -->
+		
+		<Container name="buffFrames">
+			<Anchors>
+				<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+					<AbsDimension x="-5" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="52" y="432" />
+			</Size>            <!-- Texture buff_slot_1 -->
+			<Texture name="buff_slot_1">
+				<Anchors>
+					<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+						<AbsDimension x="-5" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="44" y="44" />
+				</Size>
+			</Texture>
+			
+			<!-- Texture buff_slot_2 -->
+			<Texture name="buff_slot_2">
+				<Anchors>
+					<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+						<AbsDimension x="-55" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="44" y="44" />
+				</Size>
+			</Texture>
+			
+			<!-- Texture buff_slot_3 -->
+			<Texture name="buff_slot_3">
+				<Anchors>
+					<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+						<AbsDimension x="-105" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="44" y="44" />
+				</Size>
+			</Texture>
+			
+			<!-- Texture buff_slot_4 -->
+			<Texture name="buff_slot_4">
+				<Anchors>
+					<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+						<AbsDimension x="-155" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="44" y="44" />
+				</Size>
+			</Texture>
+			
+			<!-- Texture buff_slot_5 -->
+			<Texture name="buff_slot_5">
+				<Anchors>
+					<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+						<AbsDimension x="-205" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="44" y="44" />
+				</Size>
+			</Texture>
+			
+			<!-- Texture buff_slot_6 -->
+			<Texture name="buff_slot_6">
+				<Anchors>
+					<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+						<AbsDimension x="-255" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="44" y="44" />
+				</Size>
+			</Texture>
+			
+			<!-- Texture buff_slot_7 -->
+			<Texture name="buff_slot_7">
+				<Anchors>
+					<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+						<AbsDimension x="-305" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="44" y="44" />
+				</Size>
+			</Texture>
+			
+			<!-- Texture buff_slot_8 -->
+			<Texture name="buff_slot_8">
+				<Anchors>
+					<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+						<AbsDimension x="-355" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="44" y="44" />
+				</Size>
+			</Texture>
+			
+		</Container>
+		
+		
+	</Container>
+	
+					
+</Definition>

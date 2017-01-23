@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition fullscreen="true" usePropertiesCache="false" debug="false">
+
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template]button/themeIconButton.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		
+		<Constant name="char_ctr_offset" value="-8" type="int" />
+		
+		<Constant name="bg_margin_right" value="67" type="int" />
+		<Constant name="bg_margin_left" value="10" type="int" />
+		<Constant name="bg_margin_left_to_arrow" value="16" type="int" />
+		
+		<!-- Constantes pour Fighter -->
+			
+		<Constant name="frame_offset_horizontal" value="3" type="int" />
+		<Constant name="frame_offset_vertical" value="14" type="int" />			
+		<Constant name="frame_glow_width" value="6" type="int" />
+		
+		<Constant name="frame_char_width" value="59" type="int" />
+		<Constant name="frame_char_height" value="60" type="int" />
+		<Constant name="frame_summon_width" value="47" type="int" />
+		<Constant name="frame_summon_height" value="50" type="int" />
+		
+		<Constant name="mask_width" value="57" type="int" />
+		<Constant name="mask_height" value="59" type="int" />
+		<Constant name="mask_x" value="1" type="int" />
+		<Constant name="mask_y" value="1" type="int" />
+		<Constant name="mask_corner" value="3" type="int" />
+		
+		<Constant name="pdv_width" value="59" type="int" />
+		<Constant name="pdv_height" value="7" type="int" />
+		<Constant name="pdv_summon_width" value="47" type="int" />
+		<Constant name="pdv_summon_height" value="7" type="int" />
+		<Constant name="pdv_x" value="0" type="int" />
+		<Constant name="pdv_y" value="60" type="int" />		
+		<Constant name="pdv_summon_x" value="0" type="int" />
+		<Constant name="pdv_summon_y" value="49" type="int" />	
+		<Constant name="shield_x" value="0" type="int" />
+		<Constant name="shield_y" value="53" type="int" />		
+		<Constant name="shield_summon_x" value="0" type="int" />
+		<Constant name="shield_summon_y" value="41" type="int" />
+		
+		<Constant name="texture_bg_defender" value="[local.texture]hud/background_timeline_blue_normal.png" />
+		<Constant name="texture_bg_challenger" value="[local.texture]hud/background_timeline_red_normal.png" />
+		<Constant name="texture_bg_dark_defender" value="[local.texture]hud/background_timeline_blue_dark.png" />
+		<Constant name="texture_bg_dark_challenger" value="[local.texture]hud/background_timeline_red_dark.png" />
+		<Constant name="texture_bg_highlight_defender" value="[local.texture]hud/background_timeline_blue_over.png" />
+		<Constant name="texture_bg_highlight_challenger" value="[local.texture]hud/background_timeline_red_over.png" />
+		<Constant name="texture_selection" value="[local.texture]slot/slotGreen.png" />
+		
+		<Constant name="texture_time" value="[local.assets]TimeLine_jauge_time" />
+		<Constant name="texture_frame" value="[local.assets]Effets_tx_SlotTimeLineBleu" />
+
+	</Constants>
+
+
+	<Container name="timelineCtr">
+		<Anchors>
+			<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+				<AbsDimension x="0" y="-140" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="120" y="144" />
+		</Size> 
+		<mouseEnabled>true</mouseEnabled>
+
+
+		
+		<Container name="ctr_timeline">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="50" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="120" y="94" />
+			</Size>
+	
+			<Container name="ctr_background">
+				<Anchors>
+					<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+						<AbsDimension x="0" y="-10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="92" y="72" />
+				</Size>
+				<mouseEnabled>false</mouseEnabled>
+	 			<bgColor>[colors.ui.shadow.dark]</bgColor>
+	 			<bgAlpha>0.6</bgAlpha>
+			</Container>
+	
+			<Container name="ctr_inviBounds">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="-60" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="125" y="150" />
+				</Size>
+				<visible>false</visible>				
+	 			<bgColor>0x000033</bgColor>
+			</Container>
+	
+			<Button name="btn_minimArrow">
+				<Common>
+					<Anchors>
+						<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+							<AbsDimension x="30" y="-8" />
+						</Anchor>
+					</Anchors>
+					<checkBox>true</checkBox>
+
+	                <TextureBitmap>
+	                    <Anchors>
+	                        <Anchor>
+	                            <AbsDimension x="0" y="0" />
+	                        </Anchor>
+	                    </Anchors>
+						<Size>
+							<AbsDimension x="76" y="28" />
+						</Size>
+	                    <themeDataId>floating_window_bar</themeDataId>
+	                    <rotation>90</rotation>
+	                </TextureBitmap>
+	
+					<Texture name="btn_minimArrow_tx">
+	                    <Anchors>
+	                        <Anchor>
+								<AbsDimension x="-23" y="3" />
+	                        </Anchor>
+	                    </Anchors>
+	            		<uri>[local.texture]hud/icon_minus_floating_menu.png</uri>
+					</Texture>
+
+                    <TextureBitmap>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="-22" y="20" />
+                            </Anchor>
+                        </Anchors>
+                        <uri>[local.texture]hud/icon_timeline.png</uri>
+                        <smooth>true</smooth>
+                    </TextureBitmap>
+
+					<Hooks>
+						<onRelease />
+					</Hooks>
+				</Common>
+				<State type="OVER">
+					<SetProperties target="btn_minimArrow_tx">
+	            		<uri>[local.texture]hud/icon_minus_floating_menu.png</uri>
+					</SetProperties>
+				</State>
+				<State type="PRESSED">
+					<SetProperties target="btn_minimArrow_tx">
+	            		<uri>[local.texture]hud/icon_minus_floating_menu.png</uri>
+					</SetProperties>
+				</State>
+				<State type="SELECTED">
+					<SetProperties target="btn_minimArrow_tx">
+	            		<uri>[local.texture]hud/icon_plus_floating_menu.png</uri>
+					</SetProperties>
+				</State>
+				<State type="SELECTED_OVER">
+					<SetProperties target="btn_minimArrow_tx">
+	            		<uri>[local.texture]hud/icon_plus_floating_menu.png</uri>
+					</SetProperties>
+				</State>
+				<State type="SELECTED_PRESSED">
+					<SetProperties target="btn_minimArrow_tx">
+	            		<uri>[local.texture]hud/icon_plus_floating_menu.png</uri>
+					</SetProperties>
+				</State>
+			</Button>
+			
+			<Container>
+				<Anchors>
+					<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+						<AbsDimension x="2" y="-8" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="23" y="55" />
+				</Size>
+	 			<bgColor>0x000033</bgColor>
+	 			<bgAlpha>0</bgAlpha>
+	            <dragController>true</dragController>
+				<dragTarget>timelineCtr</dragTarget>
+				<useDragMagnetism>true</useDragMagnetism> 
+				<dragBoundsContainer>ctr_inviBounds</dragBoundsContainer>
+			</Container>
+				
+			<iconButton name="btn_up">
+				<Anchors>
+					<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+						<AbsDimension x="0" y="-55" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="20" y="16" />
+				</Size>
+				<uri>[local.assets]btn_triangleUp</uri>
+				<visible>false</visible>
+			</iconButton>
+			
+			<iconButton name="btn_down">
+				<Anchors>
+					<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+						<AbsDimension x="0" y="-10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="20" y="16" />
+				</Size>
+				<uri>[local.assets]btn_triangleDown</uri>
+				<visible>false</visible>
+			</iconButton>
+				
+			
+			
+			<Label name="lbl_turnCount">
+				<Anchors>
+					<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+						<AbsDimension x="-20" y="-45" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="33" y="16" />
+				</Size>
+				<cssClass>shadowedcenter</cssClass>
+				<css>[local.css]small2.css</css>
+			</Label>
+			
+			<Texture name="tx_wave">
+				<Anchors>
+					<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+						<AbsDimension x="-30" y="-15" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="17" y="17" />
+				</Size>
+				<uri>[local.texture]icon_waveMonster.png</uri>
+				<visible>false</visible>
+			</Texture>
+			
+			
+			<!-- Container charFrames -->
+			
+			<Container name="charFrames">
+				<Anchors>
+					<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+						<AbsDimension x="-65" y="-14" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="56" y="78" />
+				</Size>
+				
+				<Container name="charCtr">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="-8" y="0" />
+						</Anchor>
+					</Anchors>
+				</Container>
+	
+				<!-- Texture currentArrow-->
+	
+				<Texture name="tx_currentArrow">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="90" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="20" y="30" />
+					</Size>
+					<uri>[local.common]btn_greenBigArrow_normal.png</uri>
+					<rotation>-90</rotation>
+				</Texture>
+			</Container>
+			
+	
+						
+			<themeIconButton name="btn_rightArrow">
+				<Anchors>
+					<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+						<AbsDimension x="-48" y="-37" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="11" y="16" />
+				</Size>
+				<bgThemeDataId>btn_arrow_pagination</bgThemeDataId>
+				<smooth>true</smooth>
+			</themeIconButton>
+			<themeIconButton name="btn_leftArrow">
+				<Anchors>
+					<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+						<AbsDimension x="-127" y="-37" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="11" y="16" />
+				</Size>
+				<bgScaleX>-1</bgScaleX>
+				<bgThemeDataId>btn_arrow_pagination</bgThemeDataId>
+				<smooth>true</smooth>
+			</themeIconButton>
+		</Container>
+		
+		<Container name="ctr_buffs">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="120" y="0" />
+				</Anchor>
+			</Anchors>
+		</Container>
+		
+	</Container>
+</Definition>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition labelDebug="false">
+
+    <Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/sortButton.xml" />
+    
+   	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       	<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+   	</Constants>
+
+	<Container>
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="10" y="151" />
+			</Anchor>
+		</Anchors>
+		
+		<Texture>
+			<Size>
+				<AbsDimension x="1105" y="36" />
+			</Size>
+			<uri>[local.common]bg_dark.png</uri>
+		</Texture>
+
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="62" y="5" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="250" y="16" />
+			</Size>
+			<text>[ui.common.name] / [ui.common.localisation]</text>
+			<css>[local.css]small2.css</css>
+		</Label>
+
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="420" y="5" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="290" y="16" />
+			</Size>
+			<text>[ui.fight.timeBeforeFightStart]</text>
+			<cssClass>center</cssClass>
+			<css>[local.css]small2.css</css>
+		</Label>
+
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="730" y="5" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="358" y="16" />
+			</Size>
+			<text>[ui.common.defenders] / [ui.common.attackers]</text>
+			<css>[local.css]small2.css</css>
+		</Label>
+
+		<!--sortButton name="btn_tabState">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="4" y="4" />
+				</Anchor>
+			</Anchors>				
+			<Size>
+				<AbsDimension x="45" y="24" />
+			</Size>
+		</sortButton-->
+
+		<!--sortButton name="btn_tabName">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="50" y="4" />
+				</Anchor>
+			</Anchors>				
+			<Size>
+				<AbsDimension x="360" y="24" />
+			</Size>
+		</sortButton-->
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="36" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1105" y="392" />
+			</Size>
+			<uri>[local.common]bg_light.png</uri>
+		</Texture>
+
+		<Grid name="gd_pony">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="2" y="36" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1100" y="392" />
+			</Size>
+			<rendererName>com.ankamagames.berilia.components.gridRenderer::XmlUiGridRenderer</rendererName>
+			<rendererArgs>Ankama_Social::ponyXmlItem,[colors.grid.line]</rendererArgs>
+			<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+			<slotWidth>1090</slotWidth>
+			<slotHeight>98</slotHeight>
+		</Grid>
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="488" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1104" y="60" />
+			</Size>
+			<scaleY>-1</scaleY>
+			<uri>[local.common]bg_dark.png</uri>
+		</Texture>
+
+		<Label name="lbl_ponyCount">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="790" y="436" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="305" y="16" />
+			</Size>
+			<cssClass>right</cssClass>
+			<css>[local.css]small2.css</css>				
+		</Label>
+
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="10" y="459" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1085" y="16" />
+			</Size>
+			<cssClass>right</cssClass>
+			<css>[local.css]small2.css</css>
+			<text>[ui.social.guildHowDefendTax]</text>
+		</Label>
+	</Container>
+</Definition>

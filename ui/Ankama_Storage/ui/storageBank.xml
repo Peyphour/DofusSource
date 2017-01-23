@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition usePropertiesCache="false">
+ 
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template]specific/storageBlock.xml" />
+	<Import url="[config.mod.template]window.xml" />
+    
+    <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="illus" value="[config.content.path]gfx/illusUi/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />	
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+    
+	<Container name="mainCtr">
+        <Size>
+        	<AbsDimension x="373" y="804" />
+        </Size>
+        
+		<shadowColor>[colors.ui.shadow]</shadowColor>
+		<mouseEnabled>true</mouseEnabled>
+		
+		
+		<Container name="ctr_common">
+			
+			<window name="ctr_window">
+				<Size>
+		            <AbsDimension x="373" y="820" />
+		        </Size>
+	            <title>[ui.common.inventory]</title>
+			</window>
+
+
+			<storageBlock>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="19" y="44" />
+					</Anchor>
+				</Anchors>	
+			</storageBlock>	        
+
+		</Container>
+        
+        <EntityDisplayer name="entityDisplayer">
+        	<Anchors>
+        		<Anchor>
+        			<AbsDimension x="20" y="-94" />
+        		</Anchor>
+        	</Anchors>
+			<Size>
+				<AbsDimension x="100" y="100" />
+			</Size>
+			<visible>false</visible>
+		</EntityDisplayer>
+        
+	</Container>
+</Definition>
+

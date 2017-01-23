@@ -1,0 +1,185 @@
+<Definition>
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="mod://Ankama_Config/ui/template/configCheckbox.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+	</Constants>
+
+	<Container name="configUiCtr">
+		<Grid name="gd_modules">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="30" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="768" y="384" />
+			</Size>
+			<rendererName>InlineXmlGridRenderer</rendererName>
+			<rendererArgs>updateModuleLine,[colors.grid.line],[colors.grid.bg]
+			</rendererArgs>
+			<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+			<slotWidth>744</slotWidth>
+			<slotHeight>64</slotHeight>
+
+			<Container>
+				<Size>
+					<AbsDimension x="744" y="64" />
+				</Size>
+				<Button name="btn_module">
+					<Common>
+						<Size>
+							<AbsDimension x="744" y="64" />
+						</Size>
+						<radioMode>true</radioMode>
+
+						<Texture>
+							<Size>
+								<AbsDimension x="744" y="64" />
+							</Size>
+							<bgColor>0</bgColor>
+							<bgAlpha>0</bgAlpha>
+						</Texture>
+
+						<Texture name="tx_icon">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="40" y="8" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="48" y="48" />
+							</Size>
+							<uri>[local.assets]Sound_btn_pictoMusique</uri>
+						</Texture>
+
+						<Label name="lbl_name">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="98" y="4" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="330" y="20" />
+							</Size>
+							<css>[local.css]normal.css</css>
+							<cssClass>bold</cssClass>
+						</Label>
+
+						<Label name="lbl_author">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="420" y="4" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="260" y="20" />
+							</Size>
+							<css>[local.css]normal.css</css>
+							<cssClass>right</cssClass>
+						</Label>
+
+						<Label name="lbl_shortDesc">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="98" y="28" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="610" y="20" />
+							</Size>
+							<css>[local.css]normal.css</css>
+						</Label>
+					</Common>
+
+					<State type="OVER">
+						<SetProperties target="btn_module">
+							<bgColor>[colors.grid.over]</bgColor>
+						</SetProperties>
+					</State>
+
+					<State type="SELECTED">
+						<SetProperties target="btn_module">
+							<bgColor>[colors.grid.selected]</bgColor>
+						</SetProperties>
+					</State>
+
+					<State type="SELECTED_OVER">
+						<SetProperties target="btn_module">
+							<bgColor>[colors.grid.selected]</bgColor>
+						</SetProperties>
+					</State>
+				</Button>
+
+				<iconButton name="btn_activate">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="16" y="23" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="16" y="16" />
+					</Size>
+					<uri>[local.assets]tx_light_checkbox</uri>
+					<Hooks>
+						<onRelease />
+						<onRollOver />
+						<onRollOut />
+					</Hooks>
+				</iconButton>
+
+				<iconButton name="btn_delete">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="697" y="16" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="30" y="30" />
+					</Size>
+					<uri>[local.assets]btn_fermer</uri>
+				</iconButton>
+			</Container>
+		</Grid>
+		
+		<Texture>
+			<Size>
+				<AbsDimension x="780" y="443" />
+			</Size>
+			<uri>[local.assets]tx_commonGridScrollbar</uri>
+			<autoGrid>true</autoGrid>
+		</Texture>
+		
+		<!-- Container useless mais un peu qd mm, sert ? placer les checkbox -->
+		<Container>
+			<Anchors>
+				<Anchor relativePoint="BOTTOMLEFT" relativeTo="gd_modules">
+					<AbsDimension x="20" y="20" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="20" y="10" />
+			</Size>
+		</Container>
+
+		<configCheckbox name="btn_hideAnkamaModules" text="[ui.option.hideAnkamaModules]" />
+
+		<simpleButton name="btn_marketplace" label="[ui.module.marketplace]">
+			<css>[local.css]button.css</css>
+			<uri>[local.assets]btn_orange</uri>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="540" y="448" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="220" y="30" />
+			</Size>
+			<cssClass>small</cssClass>
+		</simpleButton>
+	</Container>
+</Definition>

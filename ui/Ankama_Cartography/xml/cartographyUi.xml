@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition fullscreen="true" labelDebug="false">
+	<Constants>
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		
+		<Constant name="hintIconsWithShadow" value="[config.gfx.path]icons/hintsShadow/" />
+		<Constant name="hintIcons" value="[config.gfx.path]icons/hints/" />
+
+		<Constant name="map_ctr_x" value="0" type="int" />
+		<Constant name="map_ctr_full_x" value="0" type="int" />
+		<Constant name="map_ctr_width" value="1280" type="int" />
+		<Constant name="map_ctr_full_width" value="1280" type="int" />
+		<Constant name="map_viewer_border" value="0" type="int" />
+		<Constant name="gdSearchAll_max_height" value="300" type="int" />
+		<Constant name="gdSearchAll_slot_height" value="46" type="int" />
+
+		<Constant name="filter_menu_opened_width" value="230" type="int" />
+		<Constant name="filter_menu_closed_width" value="60" type="int" />
+
+		<Constant name="all_areas_color" value="[colors.area.all]" />
+		<Constant name="normal_areas_color" value="[colors.area.normal]" />
+		<Constant name="weakened_areas_color" value="[colors.area.weakened]" />
+		<Constant name="sabotaged_areas_color" value="[colors.area.sabotaged]" />
+		<Constant name="vulnerable_areas_color" value="[colors.area.vulnerable]" />
+		<Constant name="capturable_areas_color" value="[colors.area.capturable]" />
+
+		<Constant name="all_areas_color_dark" value="[colors.area.all.dark]" />
+		<Constant name="normal_areas_color_dark" value="[colors.area.normal.dark]" />
+		<Constant name="weakened_areas_color_dark" value="[colors.area.weakened.dark]" />
+		<Constant name="sabotaged_areas_color_dark" value="[colors.area.sabotaged.dark]" />
+		<Constant name="vulnerable_areas_color_dark" value="[colors.area.vulnerable.dark]" />
+		<Constant name="capturable_areas_color_dark" value="[colors.area.capturable.dark]" />
+
+		<Constant name="icon_multi_prism_uri"
+			value="[config.ui.skin]texture/map/iconMultiPrism.png" />
+		<Constant name="icon_multi_prism_width" value="27" />
+		<Constant name="icon_simple_prism_uri" value="[config.ui.skin]texture/map/iconPrism.png" />
+		<Constant name="icon_simple_prism_width" value="18" />
+	</Constants>
+
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template.button]labelCheckBox.xml" />
+	<Import url="[config.mod.template.button]horizontalTab.xml" />
+	<Import url="[config.mod.template.button]comboBoxWithBackground.xml" />
+	<Import url="[config.mod.template]specific/filterButtonInCartography.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+
+
+	<Container name="mainCtr">
+		<!-- PARTIE DE DROITE -->
+
+		<Size>
+			<RelDimension x="1" y="1" />
+		</Size>
+		<visible>false</visible>
+
+
+		<!-- MapViewer mapViewer -->
+
+		<MapViewer name="mapViewer">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension y="1024" />
+				<RelDimension x="1" />
+			</Size>
+			<mouseEnabled>true</mouseEnabled>
+			<needMask>false</needMask>
+		</MapViewer>
+
+		<Container name="ctr_quantity">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="1085" y="585" />
+				</Anchor>
+			</Anchors>
+			<Hooks>
+				<onRollOver />
+				<onRollOut />
+			</Hooks>
+			<TextureBitmap>
+				<Size>
+					<AbsDimension x="132" y="250" />
+				</Size>
+				<themeDataId>floating_window_background_full</themeDataId>
+				<dragController>true</dragController>
+				<dragTarget>ctr_quantity</dragTarget>
+			</TextureBitmap>
+			
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="50" y="5" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="80" y="25" />
+				</Size>
+				<css>[local.css]normal2.css</css>
+				<text>0-5</text>
+			</Label>
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="50" y="35" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="80" y="25" />
+				</Size>
+				<css>[local.css]normal2.css</css>
+				<text>5-10</text>
+			</Label>
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="50" y="65" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="80" y="25" />
+				</Size>
+				<css>[local.css]normal2.css</css>
+				<text>10-25</text>
+			</Label>
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="50" y="95" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="80" y="25" />
+				</Size>
+				<css>[local.css]normal2.css</css>
+				<text>25-50</text>
+			</Label>
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="50" y="125" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="80" y="25" />
+				</Size>
+				<css>[local.css]normal2.css</css>
+				<text>50-100</text>
+			</Label>
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="50" y="155" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="80" y="25" />
+				</Size>
+				<css>[local.css]normal2.css</css>
+				<text>100-250</text>
+			</Label>
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="50" y="185" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="80" y="25" />
+				</Size>
+				<css>[local.css]normal2.css</css>
+				<text>250-500</text>
+			</Label>
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="50" y="215" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="80" y="25" />
+				</Size>
+				<css>[local.css]normal2.css</css>
+				<text>500+</text>
+			</Label>
+		</Container>
+
+		<!-- Input tiSearch with result -->
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="60" y="10" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="400" />
+			</Size>
+
+			<!-- Result -->
+			<Container name="ctr_search_bg">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="6" y="50" />
+					</Anchor>
+				</Anchors>
+				<Hooks>
+					<onRollOver />
+				</Hooks>
+				<bgColor>[colors.contextmenu.bg]</bgColor>
+				<bgAlpha>0.95</bgAlpha>
+				<mouseEnabled>true</mouseEnabled>
+
+				<Size>
+					<AbsDimension x="396" />
+				</Size>
+				
+				<TextureBitmap name="tx_bg_results">
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
+							<AbsDimension x="0" y="45"/>
+						</Anchor>
+					</Anchors> 
+					<Size>
+						<RelDimension x="1"/>
+						<AbsDimension y="45"/>
+					</Size>
+					<scaleY>-1</scaleY>
+					<themeDataId>list_menu_background</themeDataId>
+				</TextureBitmap>
+
+				<Label name="lbl_results">
+					<Size>
+						<RelDimension x="0.95" />
+					</Size>
+					<cssClass>right</cssClass>
+					<css>[local.css]small2.css</css>
+				</Label>
+
+				<Grid name="gdSearchAll">
+					<Size>
+						<AbsDimension x="396" />
+					</Size>
+					<rendererName>InlineXmlGridRenderer</rendererName>
+					<rendererArgs>updateSearchEntryLine</rendererArgs>
+					<Hooks>
+						<onSelectItem />
+						<onRollOver />
+					</Hooks>
+					<verticalScrollbarCss>[local.css]scrollBar.css
+					</verticalScrollbarCss>
+					<slotWidth>396</slotWidth>
+					<slotHeight>46</slotHeight>
+					<Container>
+						<buttonMode>true</buttonMode>
+						<mouseEnabled>true</mouseEnabled>
+						<Button name="btn_line">
+							<Common>
+								<Texture>
+									<Size>
+										<AbsDimension x="396" y="45" />
+									</Size>
+									<bgColor>0</bgColor>
+									<bgAlpha>0</bgAlpha>
+								</Texture>
+							</Common>
+							<State type="OVER">
+								<SetProperties target="btn_line">
+									<bgColor>[colors.grid.over]</bgColor>
+								</SetProperties>
+							</State>
+							<State type="SELECTED">
+								<SetProperties target="btn_line">
+									<bgColor>[colors.grid.selected]</bgColor>
+								</SetProperties>
+							</State>
+							<State type="SELECTED_OVER">
+								<SetProperties target="btn_line">
+									<bgColor>[colors.grid.selected]</bgColor>
+								</SetProperties>
+							</State>
+						</Button>
+						<Texture name="tx_result_icon">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="5" y="5" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="36" y="36" />
+							</Size>
+						</Texture>
+						<Label name="lbl_result_name">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="60" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="315" y="46" />
+							</Size>
+							<css>[local.css]small2.css</css>
+							<cssClass>dark</cssClass>
+							<wordWrap>true</wordWrap>
+							<multiline>true</multiline>
+							<fixedHeightForMultiline>true</fixedHeightForMultiline>
+							<verticalAlign>center</verticalAlign>
+						</Label>
+						<Texture name="tx_itemType">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="344" y="5" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="36" y="36" />
+							</Size>
+							<Hooks>
+								<onRollOver />
+								<onRollOut />
+							</Hooks>
+						</Texture>
+					</Container>
+				</Grid>
+			</Container>
+
+			<!-- search container -->
+			<Container>
+				<Size>
+					<RelDimension x="1" />
+					<AbsDimension y="60" />
+				</Size>
+
+				<TextureBitmap>
+					<Anchors>
+						<Anchor relativePoint="TOPLEFT">
+							<AbsDimension x="0" y="0" />
+						</Anchor>
+						<Anchor relativePoint="BOTTOMRIGHT">
+							<AbsDimension x="8" y="0" />
+						</Anchor>
+					</Anchors>
+					<mouseEnabled>true</mouseEnabled>
+					<themeDataId>map_search_box</themeDataId>
+				</TextureBitmap>
+
+				<Input name="tiSearch">
+					<Anchors>
+						<Anchor relativePoint="TOPLEFT">
+							<AbsDimension x="60" y="-5" />
+						</Anchor>
+						<Anchor relativePoint="BOTTOMRIGHT">
+							<AbsDimension x="0" y="0" />
+						</Anchor>
+					</Anchors>
+					<verticalAlign>CENTER</verticalAlign>
+					<text>[ui.common.search.input]</text>
+					<css>[local.css]normal2.css</css>
+					<cssClass>dark</cssClass>
+				</Input>
+
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="16" y="14"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="28" y="28" />
+					</Size>
+					<uri>[local.texture]icon_magnifier_search_map.png</uri>
+				</Texture>
+
+				<themeIconButton name="btn_closeSearch">
+					<Anchors>
+						<Anchor relativePoint="TOPRIGHT">
+							<AbsDimension x="-27" y="15" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="25" y="25" />
+					</Size>
+					<bgThemeDataId>btn_cross_in_grey_circle</bgThemeDataId>
+					<smooth>true</smooth>
+				</themeIconButton>
+			</Container>
+		</Container>
+
+		<!-- window -->
+		<window name="ctr_locTree" closeButtonName="territory_filter_close" movable="true">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="90" y="60" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="370" y="700" />
+			</Size>
+
+
+			<Content>
+				<mouseEnabled>true</mouseEnabled>
+				<block>
+					<Anchors>
+						<Anchor relativePoint="TOPLEFT">
+							<AbsDimension x="0" y="45" />
+						</Anchor>
+						<Anchor relativePoint="BOTTOMRIGHT">
+							<AbsDimension x="0" y="0" />
+						</Anchor>
+					</Anchors>
+
+					<Content>
+						<Grid name="gdZone">
+
+							<Size>
+								<RelDimension x="0.99" y="1" />
+							</Size>
+
+							<rendererName>InlineXmlGridRenderer</rendererName>
+							<rendererArgs>updateGridLine</rendererArgs>
+							<verticalScrollbarCss>[local.css]scrollBar.css
+							</verticalScrollbarCss>
+							<slotWidth>300</slotWidth>
+							<slotHeight>33</slotHeight>
+							<Container>
+								<Button name="btn_filter">
+									<Common>
+										<Size>
+											<AbsDimension x="300" y="30" />
+										</Size>
+
+										<Texture name="tx_area_filter">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="10" y="4" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="16" y="18" />
+											</Size>
+										</Texture>
+
+
+										<Label name="lbl_area_filter">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="40" y="3" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="260" y="20" />
+											</Size>
+											<css>[local.css]small2.css</css>
+											<verticalAlign>center</verticalAlign>
+										</Label>
+									</Common>
+
+									<State type="OVER">
+										<SetProperties target="btn_filter">
+											<bgColor>[colors.map.search.grid.over]</bgColor>
+											<bgAlpha>[colors.map.search.grid.over.alpha]</bgAlpha>
+										</SetProperties>
+									</State>
+
+									<State type="SELECTED">
+										<SetProperties target="btn_filter">
+											<bgColor>[colors.grid.selected]</bgColor>
+										</SetProperties>
+									</State>
+
+									<State type="SELECTED_OVER">
+										<SetProperties target="btn_filter">
+											<bgColor>[colors.grid.selected]</bgColor>
+										</SetProperties>
+									</State>
+								</Button>
+
+							</Container>
+						</Grid>
+
+					</Content>
+
+				</block>
+				
+				<comboBoxWithBackground name="cbx_territory_type" width="294" height="40">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="1" y="0" />
+						</Anchor>
+					</Anchors>
+
+					<rendererName>InlineXmlGridRenderer</rendererName>
+					<rendererArgs>updateFilterLine</rendererArgs>
+					<Content>
+						<Button name="btn_filter">
+							<Size>
+								<AbsDimension x="274" y="38" />
+							</Size>
+							<Common>
+
+								<Texture name="tx_area_filter">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="15" y="1" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="16" y="18" />
+									</Size>
+								</Texture>
+
+
+								<Label name="lbl_area_filter">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="45" y="0" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="210" y="20" />
+									</Size>
+									<css>[local.css]normal2.css</css>
+									<verticalAlign>center</verticalAlign>
+								</Label>
+							</Common>
+
+							<State type="OVER">
+								<SetProperties target="btn_filter">
+									<bgColor>[colors.map.search.grid.over]</bgColor>
+									<bgAlpha>[colors.map.search.grid.over.alpha]</bgAlpha>
+								</SetProperties>
+							</State>
+
+							<State type="SELECTED">
+								<SetProperties target="btn_filter">
+									<bgColor>[colors.grid.selected]</bgColor>
+								</SetProperties>
+							</State>
+
+							<State type="SELECTED_OVER">
+								<SetProperties target="btn_filter">
+									<bgColor>[colors.grid.selected]</bgColor>
+								</SetProperties>
+							</State>
+						</Button>
+					</Content>
+				</comboBoxWithBackground>
+				
+				<themeIconButton name="btn_sortConquests">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="296" y="5"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="30" y="30" />
+					</Size>
+					<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_filter.png</iconUri>
+				</themeIconButton>
+			</Content>
+			
+			<OverFrameContent>
+				<Texture name="tx_help">
+					<Anchors>
+						<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+							<AbsDimension x="-35" y="-33" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="25" y="25" />
+					</Size>
+					<uri>[local.texture]btnIcon/btnIcon_Info.png</uri>
+				</Texture>
+			</OverFrameContent>
+		</window>
+
+
+		<!-- Tooltip of territories -->
+		<Container name="ctn_tooltip_territories">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="460" y="70" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="500" y="350" />
+			</Size>
+			<bgColor>[colors.tooltip.bg]</bgColor>
+			<bgAlpha>[colors.tooltip.bg.alpha]</bgAlpha>
+
+			<Container>
+				<Anchors>
+					<Anchor>
+						<RelDimension x="0.05" y="0.05" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<RelDimension x="0.9" y="0.9" />
+				</Size>
+
+
+				<Label name="lbl_tooltip_title">
+					<Anchors>
+						<Anchor>
+							<AbsDimension y="5" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<RelDimension x="1" />
+					</Size>
+					<verticalAlign>true</verticalAlign>
+					<cssClass>mediumcenter</cssClass>
+					<css>[local.css]normal2.css</css>
+					<text>[ui.map.conquest.hint.title]  </text>
+				</Label>
+				<Label name="lbl_tooltip_subtitle">
+					<Anchors>
+						<Anchor>
+							<AbsDimension y="45" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<RelDimension x="1" />
+					</Size>
+					<verticalAlign>center</verticalAlign>
+					<cssClass>center</cssClass>
+					<css>[local.css]small2.css</css>
+					<text>[ui.map.conquest.hint.subtitle]  </text>
+				</Label>
+				<TextArea name="lbl_tooltip_content">
+					<Anchors>
+						<Anchor>
+							<AbsDimension y="85" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<RelDimension x="1" />
+					</Size>
+					<cssClass>left</cssClass>
+					<css>[local.css]small2.css</css>
+					<text>[ui.map.conquest.hint.content]</text>
+					<useCustomFormat>true</useCustomFormat>
+				</TextArea>
+
+
+				<Grid name="gd_tooltip">
+					<Anchors>
+						<Anchor relativeTo="lbl_tooltip_content" relativePoint="BOTTOM" point="TOP">
+							<AbsDimension x="50" y="0" />
+						</Anchor>
+					</Anchors>
+
+					<Size>
+						<AbsDimension x="320" y="200" />
+					</Size>
+					<rendererName>InlineXmlGridRenderer</rendererName>
+					<rendererArgs>updateTooltipLine</rendererArgs>
+					<slotWidth>320</slotWidth>
+					<slotHeight>20</slotHeight>
+					<Container>
+						<Texture name="tx_prism">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="2" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="17" y="20" />
+							</Size>
+						</Texture>
+						<Label name="lbl_prism">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="40" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="300" y="20" />
+							</Size>
+							<css>[local.css]small2.css</css>
+							<cssClass>left</cssClass>
+							<verticalAlign>center</verticalAlign>
+						</Label>
+					</Container>
+				</Grid>
+			</Container>
+		</Container>
+
+		<!-- filtres -->
+		<Container name="ctn_filter">
+			<mouseEnabled>true</mouseEnabled>
+			<Anchors>
+				<Anchor relativePoint="BOTTOMLEFT" point="BOTTOMLEFT">
+					<AbsDimension x="0" y="-180" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="60" y="470" />
+			</Size>
+
+			<TextureBitmap name="tx_filter_bg">
+				<Size>
+					<AbsDimension x="60" y="430" />
+				</Size>
+				<themeDataId>floating_window_background_full</themeDataId>
+			</TextureBitmap>
+
+			<Container>
+
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="15" y="20" />
+					</Anchor>
+				</Anchors>
+
+				<filterButtonInCartography name="btnFilterFlags">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="0" />
+						</Anchor>
+					</Anchors>
+					<iconThemeDataId>filter_pin</iconThemeDataId>
+					<checkBox>true</checkBox>
+					<selected>true</selected>
+				</filterButtonInCartography>
+
+				<filterButtonInCartography name="btnFilterTransport">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="40" />
+						</Anchor>
+					</Anchors>
+					<iconThemeDataId>filter_transport</iconThemeDataId>
+					<checkBox>true</checkBox>
+					<selected>true</selected>
+				</filterButtonInCartography>
+
+				<filterButtonInCartography name="btnFilterDungeon">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="80" />
+						</Anchor>
+					</Anchors>
+					<iconThemeDataId>filter_dungeon</iconThemeDataId>
+					<checkBox>true</checkBox>
+					<selected>true</selected>
+				</filterButtonInCartography>
+
+				<filterButtonInCartography name="btnFilterBidHouse">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="120" />
+						</Anchor>
+					</Anchors>
+					<iconThemeDataId>filter_bid</iconThemeDataId>
+					<checkBox>true</checkBox>
+					<selected>true</selected>
+				</filterButtonInCartography>
+
+				<filterButtonInCartography name="btnFilterCraftHouse">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="160" />
+						</Anchor>
+					</Anchors>
+					<iconThemeDataId>filter_crafthouse</iconThemeDataId>
+					<checkBox>true</checkBox>
+					<selected>true</selected>
+				</filterButtonInCartography>
+
+				<filterButtonInCartography name="btnFilterTemple">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="200" />
+						</Anchor>
+					</Anchors>
+					<iconThemeDataId>filter_temple</iconThemeDataId>
+					<checkBox>true</checkBox>
+					<selected>true</selected>
+				</filterButtonInCartography>
+
+				<filterButtonInCartography name="btnFilterMisc">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="240" />
+						</Anchor>
+					</Anchors>
+					<iconThemeDataId>filter_misc</iconThemeDataId>
+					<checkBox>true</checkBox>
+					<selected>true</selected>
+				</filterButtonInCartography>
+
+
+				<filterButtonInCartography name="btnFilterPrivate">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="280" />
+						</Anchor>
+					</Anchors>
+					<iconThemeDataId>filter_private</iconThemeDataId>
+					<checkBox>true</checkBox>
+					<selected>true</selected>
+				</filterButtonInCartography>
+
+				<filterButtonInCartography name="btnFilterConquest">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="320" />
+						</Anchor>
+					</Anchors>
+					<iconThemeDataId>filter_conquest</iconThemeDataId>
+					<checkBox>true</checkBox>
+					<selected>true</selected>
+				</filterButtonInCartography>
+
+				<filterButtonInCartography name="btnFilterAll">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="360" />
+						</Anchor>
+					</Anchors>
+					<iconThemeDataId>filter_all</iconThemeDataId>
+					<checkBox>true</checkBox>
+					<selected>true</selected>
+				</filterButtonInCartography>
+			</Container>
+
+			<!-- <Texture name="tx_filter_separator"> <Anchors> <Anchor> <AbsDimension 
+				x="0" y="410" /> </Anchor> </Anchors> <Size> <AbsDimension y="3" /> <RelDimension 
+				x="1" /> </Size> <uri>[local.common]window_separator_black_horizontal.png</uri> 
+				</Texture> <simpleButton name="btnSwitch" visible="false"> <Anchors> <Anchor> 
+				<AbsDimension x="15" y="420" /> </Anchor> </Anchors> <Size> <AbsDimension 
+				x="180" y="30" /> </Size> </simpleButton> <themeIconButton name="btnSwitch_closed" 
+				visible="true"> <Anchors> <Anchor> <AbsDimension x="15" y="420" /> </Anchor> 
+				</Anchors> <Size> <AbsDimension x="30" y="30" /> </Size> <iconThemeDataId>icon_sword_black</iconThemeDataId> 
+				</themeIconButton> -->
+
+
+		</Container>
+
+		<!-- conquest & bestiere -->
+		<Container>
+			<Anchors>
+				<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+					<AbsDimension x="0" y="-400" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="62" y="160" />
+			</Size>
+			<mouseEnabled>true</mouseEnabled>
+
+			<TextureBitmap>
+				<Size>
+					<AbsDimension x="62" y="114" />
+				</Size>
+				<themeDataId>floating_window_background_full</themeDataId>
+			</TextureBitmap>
+
+			<themeIconButton name="btnSwitch">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="16" y="25" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="32" y="32" />
+				</Size>
+				<bgThemeDataId>btn_transparent</bgThemeDataId>
+				<iconThemeDataId>icon_sword_colored</iconThemeDataId>
+			</themeIconButton>
+
+
+			<themeIconButton name="btnBestiary">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="16" y="57" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="32" y="32" />
+				</Size>
+				<bgThemeDataId>btn_transparent</bgThemeDataId>
+				<iconUri>[local.texture]windowIcon/icon__0020_Bestiaire.png
+				</iconUri>
+				<iconAnchors>
+					<Anchor relativePoint="TOPLEFT">
+						<AbsDimension x="3" y="3" />
+					</Anchor>
+					<Anchor relativePoint="BOTTOMRIGHT">
+						<AbsDimension x="-1" y="-1" />
+					</Anchor>
+				</iconAnchors>
+				<!-- <iconThemeDataId>icon_bestiary</iconThemeDataId> -->
+			</themeIconButton>
+
+		</Container>
+
+		<!-- zoom & option block -->
+		<Container>
+			<Anchors>
+				<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+					<AbsDimension x="0" y="-220" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="62" y="160" />
+			</Size>
+			<mouseEnabled>true</mouseEnabled>
+
+			<TextureBitmap>
+				<Size>
+					<AbsDimension x="62" y="205" />
+				</Size>
+				<themeDataId>floating_window_background_full</themeDataId>
+			</TextureBitmap>
+
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="15" y="25" />
+					</Anchor>
+				</Anchors>
+
+				<themeIconButton name="btn_player">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="32" y="32" />
+					</Size>
+					<iconThemeDataId>icon_player</iconThemeDataId>
+				</themeIconButton>
+
+				<themeIconButton name="btn_grid">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="32" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="32" y="32" />
+					</Size>
+					<iconThemeDataId>icon_grid</iconThemeDataId>
+				</themeIconButton>
+			</Container>
+
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension y="102" />
+						<RelDimension x="0.15" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension y="3" />
+					<RelDimension x="0.7" />
+				</Size>
+				<uri>[local.common]window_separator_black_horizontal.png</uri>
+			</Texture>
+
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="15" y="116" />
+					</Anchor>
+				</Anchors>
+
+				<themeIconButton name="btn_zoomIn">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="32" y="32" />
+					</Size>
+					<iconThemeDataId>icon_plus_without_white_space</iconThemeDataId>
+				</themeIconButton>
+
+				<themeIconButton name="btn_zoomOut">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="32" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="32" y="32" />
+					</Size>
+					<iconThemeDataId>icon_minus_without_white_space</iconThemeDataId>
+				</themeIconButton>
+			</Container>
+		</Container>
+
+
+		<!-- close button -->
+		<Texture>
+			<Anchors>
+				<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="151" y="225" />
+			</Size>
+			<uri>[local.texture]map/close_btn_bg.png</uri>
+		</Texture>
+
+		<themeIconButton name="btn_close">
+			<Anchors>
+				<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+					<AbsDimension x="0" y="5" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="40" y="32" />
+			</Size>
+			<bgThemeDataId>button_close</bgThemeDataId>
+			<smooth>true</smooth>
+		</themeIconButton>
+	</Container>
+</Definition>

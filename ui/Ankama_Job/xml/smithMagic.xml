@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition labelDebug="false">
+   	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       	<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="slot" value="[config.ui.skin]texture/slot/" />
+				
+		<Constant name="over_uri" value="[config.ui.skin]bitmap/over.png" />
+		<Constant name="selected_uri" value="[config.ui.skin]bitmap/selected.png" />
+		<Constant name="acceptDrop_uri" value="[config.ui.skin]bitmap/acceptDrop.png" />
+		<Constant name="refuseDrop_uri" value="[config.ui.skin]bitmap/refuseDrop.png" />			
+		<Constant name="bagSlot_uri" value="[config.ui.skin]bitmap/rareSlot.png" />
+		<Constant name="locked_slot_uri" value="[config.ui.skin]texture/slot/icon_slot_padlock_forgemagie.png" />
+		<Constant name="signature_slot_uri" value="[config.ui.skin]texture/slot/icon_slot_feather_forgemagie.png" />
+		<Constant name="rune_slot_uri" value="[config.ui.skin]texture/slot/icon_slot_rune_forgemagie.png" />
+		<Constant name="amulet_slot_uri" value="[config.ui.skin]texture/slot/icon_slot_collar_inventory.png" />
+		<Constant name="ring_slot_uri" value="[config.ui.skin]texture/slot/icon_slot_ring_inventory.png" />
+		<Constant name="belt_slot_uri" value="[config.ui.skin]texture/slot/icon_slot_belt_inventory.png" />
+		<Constant name="boots_slot_uri" value="[config.ui.skin]texture/slot/icon_slot_shoe_inventory.png" />
+		<Constant name="helmet_slot_uri" value="[config.ui.skin]texture/slot/icon_slot_helmet_inventory.png" />
+		<Constant name="cloak_slot_uri" value="[config.ui.skin]texture/slot/icon_slot_cape_inventory.png" />
+		<Constant name="weapon_slot_uri" value="[config.ui.skin]texture/slot/icon_slot_weapon_inventory.png" />
+   	</Constants>
+
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template.button]simpleCheckBox.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	<Import url="[config.mod.template]specific/equipmentSlot.xml" />
+	
+	<window name="mainCtr" dark="true">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="-7" y="39" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="932" y="850" />
+		</Size>
+		<mouseEnabled>true</mouseEnabled>
+		
+		<Content>
+			
+			<!-- PARTIE DE GAUCHE : HISTORIQUE -->
+			
+			<block>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="5" y="8" />
+					</Anchor>
+				</Anchors>	
+				<Size>
+					<AbsDimension x="276" y="763" />
+				</Size>
+				<Content>
+					<Texture>
+						<Size>
+							<AbsDimension x="268" y="20" />
+						</Size>
+						<uri>[local.common]bg_dark.png</uri>
+					</Texture>
+					
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="5" y="-2" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="230" y="20" />
+						</Size>
+						<text>[ui.common.history]</text>
+						<cssClass>whitebold</cssClass>
+						<css>[local.css]normal2.css</css>
+					</Label>
+								
+					<TextArea name="texta_log">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="5" y="20" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="260" y="733" />
+						</Size>
+						<cssClass>normal</cssClass>
+						<css>[local.css]smithMagic.css</css>
+						<scrollCss>[local.css]scrollBar.css</scrollCss>
+						<selectable>true</selectable>
+					</TextArea>
+				</Content>
+			</block>
+			
+			<!-- PARTIE CENTRALE -->
+			
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="287" y="4" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="607" y="180" />
+				</Size>
+				<uri>[config.ui.skin]illus/tx_parchment_forgemagie.png</uri>
+				<autoGrid>true</autoGrid>
+			</Texture>
+			
+			<Label name="lbl_job">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="394" y="21" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="410" y="23" />
+				</Size>
+				<cssClass>mediumparchmentright</cssClass>
+				<css>[local.css]small2.css</css>
+			</Label>
+			
+			
+			<Container name="ctr_ingredients">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="295" y="24" />
+					</Anchor>
+				</Anchors>
+				
+				<EntityDisplayer name="ed_rightCharacter">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="503" y="11" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="90" y="143" />
+					</Size>
+					<entityScale>1.5</entityScale>
+					<yOffset>47</yOffset>
+				</EntityDisplayer>
+							
+				<!-- Slots de la fenêtre des ingrédients -->
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="200" y="26" />
+						</Anchor>
+					</Anchors>
+
+					<equipmentSlot name="slot_item" width="62" height="62">
+						<backgroundTexture>[config.ui.skin]texture/slot/slot_dark_background_empty.png</backgroundTexture>
+					</equipmentSlot>
+					<equipmentSlot name="slot_rune" width="62" height="62">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="70" y="0" />
+							</Anchor>
+						</Anchors>
+						<backgroundTexture>[config.ui.skin]texture/slot/slot_dark_background_empty.png</backgroundTexture>
+					</equipmentSlot>
+					<equipmentSlot name="slot_sign" width="62" height="62">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="140" y="0" />
+							</Anchor>
+						</Anchors>
+						<backgroundTexture>[config.ui.skin]texture/slot/slot_dark_background_empty.png</backgroundTexture>
+					</equipmentSlot>
+				</Container>
+				
+				<!-- Fenêtre des boutons -->
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="88" y="101" />
+						</Anchor>
+					</Anchors>
+			
+					<simpleButton name="btn_mergeAll">
+						<Size>
+							<AbsDimension x="200" y="32" />
+						</Size>
+						<label>[ui.common.mergeAll]</label>
+					</simpleButton>
+		
+					<simpleButton name="btn_mergeOnce">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="206" y="0" />
+							</Anchor>
+						</Anchors>					
+						<Size>
+							<AbsDimension x="200" y="32" />
+						</Size>
+						<label>[ui.common.merge]</label>
+					</simpleButton>
+				</Container>
+			</Container>	
+			
+			
+			<!--                ZONE D'AFFICHAGE DES EFFETS                 -->
+			
+			<block name="ctr_itemEffects">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="287" y="193" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="604" y="579" />
+				</Size>
+				
+				<Content>
+					<Texture>
+						<Size>
+							<AbsDimension x="595" y="20" />
+						</Size>
+						<uri>[local.common]bg_dark.png</uri>
+					</Texture>
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="15" y="-2" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="53" y="30" />
+						</Size>
+						<cssClass>whitecenter</cssClass>
+						<css>[local.css]small2.css</css>
+						<text>[ui.common.minWord]</text>
+					</Label>			
+					<Label>
+						<Anchors> 
+							<Anchor>
+								<AbsDimension x="68" y="-2" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="53" y="30" />
+						</Size>
+						<cssClass>whitecenter</cssClass>
+						<css>[local.css]small2.css</css>
+						<text>[ui.common.maxWord]</text>
+					</Label>			
+					<Label>
+						<Anchors> 
+							<Anchor>
+								<AbsDimension x="127" y="-2" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="200" y="30" />
+						</Size>
+						<cssClass>whiteleft</cssClass>
+						<css>[local.css]small2.css</css>
+						<text>[ui.effects]</text>
+					</Label>
+					<Label>
+						<Anchors> 
+							<Anchor>
+								<AbsDimension x="327" y="-2" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="124" y="30" />
+						</Size>
+						<cssClass>whitecenter</cssClass>
+						<css>[local.css]small2.css</css>
+						<text>[ui.craft.changesShort]</text>
+					</Label>
+					<Label>
+						<Anchors> 
+							<Anchor>
+								<AbsDimension x="473" y="-2" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="53" y="30" />
+						</Size>
+						<cssClass>whitecenter</cssClass>
+						<css>[local.css]small2.css</css>
+						<text>[ui.craft.pa]</text>
+					</Label>
+					<Label>
+						<Anchors> 
+							<Anchor>
+								<AbsDimension x="526" y="-2" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="53" y="30" />
+						</Size>
+						<cssClass>whitecenter</cssClass>
+						<css>[local.css]small2.css</css>
+						<text>[ui.craft.ra]</text>
+					</Label>
+					
+					<Grid name="gd_itemEffects">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="22" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="593" y="545" />
+						</Size>
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updateEffectLine,[colors.grid.line]</rendererArgs>
+						<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+						<scrollDisplay>always</scrollDisplay>
+						<slotWidth>593</slotWidth>
+						<slotHeight>37</slotHeight>
+			
+						<Container>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="15" y="5" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="593" y="37" />
+							</Size>
+							
+							<Container name="ctr_effectLine">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="-13" y="-5" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="581" y="37" />
+								</Size>
+								<bgColor>[colors.grid.over]</bgColor>
+								<bgAlpha>0</bgAlpha>
+							</Container>
+			
+							<Label name="lbl_cheat">
+								<Size>
+									<AbsDimension x="56" y="20" />
+								</Size>
+								<visible>false</visible>
+							</Label>
+							
+							<Label name="lbl_min">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="3" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="53" y="20" />
+								</Size>
+								<cssClass>center</cssClass>
+								<css>[local.css]normal2.css</css>
+							</Label>
+			
+							<Label name="lbl_max">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="53" y="3" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="53" y="20" />
+								</Size>
+								<cssClass>center</cssClass>
+								<css>[local.css]normal2.css</css>
+							</Label>
+							
+							<Label name="lbl_effect">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="112" y="3" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="230" y="20" />
+								</Size>
+								<css>[local.css]normal2.css</css>
+							</Label>
+							
+							<Label name="lbl_change">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="345" y="3" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="64" y="20" />
+								</Size>
+								<cssClass>center</cssClass>
+								<css>[local.css]normal2.css</css>
+							</Label>
+							
+							
+							<Slot name="slot_rune0">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="414" y="-1" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="29" y="29" />
+								</Size>
+								<emptyTexture>[local.slot]slot_dark_background_empty.png</emptyTexture>
+								<css>[local.css]normal2.css</css>
+								<highlightTexture>[local.slot]over.png</highlightTexture>
+								<selectedTexture>[local.slot]selected.png</selectedTexture>
+								<acceptDragTexture>[local.slot]acceptDrop.png</acceptDragTexture>
+								<refuseDragTexture>[local.slot]refuseDrop.png</refuseDragTexture>
+							</Slot>
+							<Slot name="slot_rune1">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="472" y="-1" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="29" y="29" />
+								</Size>
+								<emptyTexture>[local.slot]slot_dark_background_empty.png</emptyTexture>
+								<css>[local.css]normal2.css</css>
+								<highlightTexture>[local.slot]over.png</highlightTexture>
+								<selectedTexture>[local.slot]selected.png</selectedTexture>
+								<acceptDragTexture>[local.slot]acceptDrop.png</acceptDragTexture>
+								<refuseDragTexture>[local.slot]refuseDrop.png</refuseDragTexture>
+							</Slot>
+							<Slot name="slot_rune2">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="525" y="-1" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="29" y="29" />
+								</Size>
+								<emptyTexture>[local.slot]slot_dark_background_empty.png</emptyTexture>
+								<css>[local.css]normal2.css</css>
+								<highlightTexture>[local.slot]over.png</highlightTexture>
+								<selectedTexture>[local.slot]selected.png</selectedTexture>
+								<acceptDragTexture>[local.slot]acceptDrop.png</acceptDragTexture>
+								<refuseDragTexture>[local.slot]refuseDrop.png</refuseDragTexture>
+							</Slot>
+						</Container>
+			
+					</Grid>
+					
+				</Content>
+			</block>
+			
+		</Content>
+	</window>
+</Definition>
+

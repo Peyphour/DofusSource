@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition modal="true">
+    <Constants>
+        <Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+        <Constant name="css" value="[config.ui.skin]css/"/>
+    </Constants>
+
+    <Import url="[config.mod.template.button]simpleButton.xml"/>
+    <Import url="[config.mod.template.button]themeIconButton.xml" />
+    <Import url="[config.mod.template.button]iconButton.xml"/>
+    <Import url="[config.mod.template]window.xml"/>
+    <Import url="[config.mod.template]block.xml"/>
+
+    <Container name="mainCtr">
+
+        <Anchors>
+            <Anchor point="CENTER" relativePoint="CENTER"/>
+        </Anchors>
+
+        <window closeButtonName="btnClose" name="wd_main">
+            <Size>
+                <AbsDimension x="500" y="380"/>
+            </Size>
+            <title>[ui.common.personalizedShorcut]</title>
+            <Content>
+
+                <block name="bl_editor">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="10" y="100"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="440" y="120"/>
+                    </Size>
+                    <Content>
+                        <TextureBitmap>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="75" y="5"/>
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="300" y="45"/>
+                            </Size>
+                            <themeDataId>bg_small_border_light</themeDataId>
+                        </TextureBitmap>
+
+                        <!-- Label lblShortcut-->
+                        <Label name="lblShortcut">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="90" y="16"/>
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="245" y="40"/>
+                            </Size>
+                            <text>...</text>
+                            <cssClass>boldcenter</cssClass>
+                            <css>[local.css]normal2.css</css>
+                        </Label>
+
+                        <!-- iconButton btnDelete-->
+                        <themeIconButton name="btnDelete">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="340" y="15"/>
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="26" y="26" />
+                            </Size>
+                            <iconUri>[config.ui.skin]texture/btnIcon/btnIcon_cross.png</iconUri>
+                            <Hooks>
+                                <onRelease />
+                            </Hooks>
+                        </themeIconButton>
+
+                        <!-- simpleButton btnOk-->
+                        <simpleButton name="btnOk">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="150" y="60"/>
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="134" y="30"/>
+                            </Size>
+                            <label>[ui.common.validation]</label>
+                        </simpleButton>
+
+                    </Content>
+                </block>
+
+                <Container>
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativePoint="BOTTOM">
+                            <AbsDimension x="0" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="445" y="80"/>
+                    </Size>
+                    <Texture>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="0" y="0"/>
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension y="70"/>
+                        </Size>
+                        <uri>[config.ui.skin]common/corner_decoration.png</uri>
+                    </Texture>
+                    <Texture>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="445" y="0"/>
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension y="70"/>
+                        </Size>
+                        <uri>[config.ui.skin]common/corner_decoration.png</uri>
+                        <scaleX>-1</scaleX>
+                    </Texture>
+
+                    <simpleButton label="[ui.common.cancel]" name="btnCancel">
+                        <Size>
+                            <AbsDimension x="150" y="31"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="125" y="20"/>
+                            </Anchor>
+                        </Anchors>
+                        <css>[local.css]normal2.css</css>
+                        <cssClass>greenunderline</cssClass>
+                        <noBackground>true</noBackground>
+                    </simpleButton>
+
+                    <simpleButton label="[ui.common.default]" name="btnDefault">
+                        <Size>
+                            <AbsDimension x="120" y="31"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="230" y="20"/>
+                            </Anchor>
+                        </Anchors>
+
+                    </simpleButton>
+
+                </Container>
+
+                <!-- Label lblDescription-->
+
+                <Label name="lblDescription">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="41" y="30"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="367" y="41"/>
+                    </Size>
+                    <text>[ui.common.shortcutsCustomHelp]</text>
+                    <cssClass>whitecenter</cssClass>
+                    <css>[local.css]title.css</css>
+                </Label>
+
+                <!-- Label lblError-->
+                <Label name="lblError">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="41" y="60"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="367" y="41"/>
+                    </Size>
+                    <text>[ui.common.shortcutsCustomError]</text>
+                    <css>[local.css]normal2.css</css>
+                    <cssClass>redcenter</cssClass>
+                    <visible>false</visible>
+                </Label>
+
+            </Content>
+        </window>
+    </Container>
+</Definition>

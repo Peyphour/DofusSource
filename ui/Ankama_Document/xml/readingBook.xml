@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+
+    <Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template.button]iconButton.xml" />
+    
+    <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+       	<Constant name="bitmap" value="[config.gfx.path]illusUi/documents.swf|" />
+       	<Constant name="illus" value="[config.gfx.path]documents/" />
+	</Constants>
+
+	<Container name="mainCtr" strata="TOP">
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="0" y="-80" />
+			</Anchor>
+		</Anchors> 
+		<mouseEnabled>true</mouseEnabled>
+
+		<Texture name="tx_background">
+			<uri>[local.bitmap]tx_book</uri>
+		</Texture>
+		
+		<!--Texture name="tx_bitmapLeft">
+			<visible>false</visible>
+		</Texture-->
+		
+		<!--Texture name="tx_bitmapRight">
+			<visible>false</visible>
+		</Texture-->
+
+		<Container name="page_title">
+			<Label name="lbl_title">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="615" y="220" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="480" y="30" />
+				</Size>
+				<fixedHeight>false</fixedHeight>
+				<css>[local.css]title.css</css>
+				<cssClass>darkcenterbig</cssClass>
+			</Label>
+
+			<Label name="lbl_subtitle">
+				<Size>
+					<AbsDimension x="480" y="25" />
+				</Size>
+				<fixedHeight>false</fixedHeight>
+				<cssClass>darkcenterbig</cssClass>
+				<css>[local.css]titleSmall.css</css>
+			</Label>
+
+			<Texture name="tx_deco">
+				<Size>
+					<AbsDimension x="152" y="20" />
+				</Size>
+				<uri>[local.assets]Parchemin_tx_deco</uri>
+			</Texture>
+
+			<Label name="lbl_author">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="615" y="600" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="480" y="25" />
+				</Size>
+				<text>Jean-Denis le Iop</text>
+				<css>[local.css]titleSmall.css</css>
+				<cssClass>darkcenterbig</cssClass>
+			</Label>
+		</Container>
+
+		<Container name="page_left">
+			<!-- Ce text n'est pas affiché, il ne sert qu'a aider pour la récuperation du bitmap qui sera affiché dans la texture du dessus -->
+			<TextArea name="lbl_content_left">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="75" y="90" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<!--<AbsDimension x="465" y="600" />-->
+                    <AbsDimension x="465" y="670" />
+				</Size>
+				<css>[local.css]normal.css</css>
+				<cssClass>dark</cssClass>
+				<visible>false</visible>
+			</TextArea>
+			<Texture name="tx_pageLeft">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="75" y="90" />
+					</Anchor>
+				</Anchors>
+				<Size>
+                    <!--<AbsDimension x="465" y="600" />-->
+					<AbsDimension x="465" y="670" />
+				</Size>
+			</Texture>
+		</Container>
+
+		<Container name="page_right">
+			<!-- Ce text n'est pas affiché, il ne sert qu'a aider pour la récuperation du bitmap qui sera affiché dans la texture du dessus -->
+			<TextArea name="lbl_content_right">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="630" y="90" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<!--<AbsDimension x="465" y="600" />-->
+                    <AbsDimension x="465" y="670" />
+				</Size>
+				<css>[local.css]normal.css</css>
+				<cssClass>dark</cssClass>
+				<visible>false</visible>
+			</TextArea>
+			<Texture name="tx_pageRight">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="630" y="90" />
+					</Anchor>
+				</Anchors>
+				<Size>
+                    <!--<AbsDimension x="465" y="600" />-->
+					<AbsDimension x="465" y="670" />
+				</Size>
+			</Texture>
+		</Container>
+
+		<Label name="lbl_page_number_left">
+			<Anchors>
+				<Anchor>
+					<!--<AbsDimension x="292" y="690" />-->
+                    <AbsDimension x="292" y="760" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="30" y="25" />
+			</Size>
+			<cssClass>center</cssClass>
+			<css>[local.css]normal.css</css>
+			<cssClass>darkcenter</cssClass>
+			<useHandCursor>true</useHandCursor>
+			<Hooks>
+				<onRelease />
+				<onRollOver />
+				<onRollOut />
+			</Hooks>
+		</Label>
+
+		<Label name="lbl_page_number_right">
+			<Anchors>
+				<Anchor>
+					<!--<AbsDimension x="847" y="690" />-->
+                    <AbsDimension x="847" y="760" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="30" y="25" />
+			</Size>
+			<cssClass>center</cssClass>
+			<css>[local.css]normal.css</css>
+			<cssClass>darkcenter</cssClass>
+			<useHandCursor>true</useHandCursor>
+			<Hooks>
+				<onRelease />
+				<onRollOver />
+				<onRollOut />
+			</Hooks>
+		</Label>
+
+		<iconButton name="btn_close">
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+					<AbsDimension x="-80" y="50" />
+				</Anchor>
+			</Anchors>
+            <Size>
+                <AbsDimension x="27" y="27" />
+            </Size>
+			<radioGroup>none</radioGroup>
+			<checkBox>true</checkBox>
+			<uri>[local.assets]livre_btn_close</uri>
+			<Hooks>
+				<onRelease />
+				<onRollOver />
+				<onRollOut />
+			</Hooks>
+		</iconButton>
+
+		<iconButton name="btn_home">
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+					<AbsDimension x="-120" y="50" />
+				</Anchor>
+			</Anchors>
+            <Size>
+                <AbsDimension x="27" y="27" />
+            </Size>
+			<radioGroup>none</radioGroup>
+			<checkBox>true</checkBox>
+			<uri>[local.assets]livre_btn_home</uri>
+			<Hooks>
+				<onRelease />
+				<onRollOver />
+				<onRollOut />
+			</Hooks>
+		</iconButton>
+
+		<iconButton name="btn_previous">
+			<Anchors>
+				<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT">
+					<AbsDimension x="59" y="-30" />
+				</Anchor>
+			</Anchors>
+            <Size>
+                <AbsDimension x="59" y="79" />
+            </Size>
+			<radioGroup>none</radioGroup>
+			<checkBox>true</checkBox>
+			<uri>[local.assets]livre_btn_pageGauche</uri>
+			<Hooks>
+				<onRelease />
+				<onRollOver />
+				<onRollOut />
+			</Hooks>
+		</iconButton>
+
+		<iconButton name="btn_next">
+			<Anchors>
+				<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="-60" y="-30" />
+				</Anchor>
+			</Anchors>
+            <Size>
+                <AbsDimension x="59" y="79" />
+            </Size>
+			<radioGroup>none</radioGroup>
+			<checkBox>true</checkBox>
+			<uri>[local.assets]livre_btn_pageDroite</uri>
+			<Hooks>
+				<onRelease />
+				<onRollOver />
+				<onRollOut />
+			</Hooks>
+		</iconButton>
+
+	</Container>
+
+</Definition>

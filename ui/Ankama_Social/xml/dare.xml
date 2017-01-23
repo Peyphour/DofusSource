@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition labelDebug="false">
+
+    <Import url="[config.mod.template]button/themeHorizontalTab.xml" />
+    <Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	<Import url="[config.mod.template]blockDoubleBorder.xml" />
+    
+    <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+    
+	<Container>
+	
+		<blockDoubleBorder>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="45" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1124" y="607" />
+			</Size>
+		</blockDoubleBorder>
+
+		<themeHorizontalTab name="btn_totalList" bgId="htab_dark_background">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="41" y="5" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="150" y="45" />
+			</Size>
+			<text>[ui.common.all]</text>
+		</themeHorizontalTab>		
+		<themeHorizontalTab name="btn_mineList" bgId="htab_dark_background">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="191" y="5" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="150" y="45" />
+			</Size>
+			<text>[ui.dare.myDares]</text>
+		</themeHorizontalTab>		
+		<themeHorizontalTab name="btn_successList" bgId="htab_dark_background">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="342" y="5" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="150" y="45" />
+			</Size>
+			<text>[ui.dare.subscribedDares]</text>
+		</themeHorizontalTab>
+		<themeHorizontalTab name="btn_creation" bgId="htab_dark_background">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="493" y="5" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="150" y="45" />
+			</Size>
+			<text>[ui.dare.creation]</text>
+		</themeHorizontalTab>
+		
+		
+		
+		<Container name="mainCtr">	
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="60" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1013" y="588" />
+			</Size>
+		</Container>
+
+	</Container>
+	
+</Definition>
+

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition modal="true">
+    <Constants>
+        <Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+        <Constant name="css" value="[config.ui.skin]css/"/>
+    </Constants>
+
+    <Import url="[config.mod.template.button]simpleButton.xml"/>
+    <Import url="[config.mod.template.button]iconButton.xml"/>
+    <Import url="[config.mod.template]window.xml" />
+
+    <Container name="mainCtr">
+
+        <Anchors>
+            <Anchor point="CENTER" relativePoint="CENTER"/>
+        </Anchors>
+
+        <window>
+            <Size>
+                <AbsDimension x="500" y="200"/>
+            </Size>
+            <Anchors>
+                <Anchor point="CENTER" relativePoint="CENTER">
+                    <AbsDimension x="-50" y="-100"/>
+                </Anchor>
+            </Anchors>
+            <title>[ui.popup.information]</title>
+            <Content>
+
+                <!-- simpleButton btnOk-->
+
+                <simpleButton name="btn_ok">
+                    <Anchors>
+                        <Anchor relativePoint="BOTTOM" point="BOTTOM">
+                            <AbsDimension x="0" y="-20"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="122" y="30"/>
+                    </Size>
+                    <label>[ui.common.ok]</label>
+                </simpleButton>
+
+                <!-- Label lblDescription-->
+
+                <Label name="lbl_description">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="10" y="40"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="440" y="10"/>
+                    </Size>
+                    <wordWrap>true</wordWrap>
+                    <cssClass>boldcenter</cssClass>
+                    <css>[local.css]normal2.css</css>
+                    <verticalAlign>center</verticalAlign>
+                </Label>
+            </Content>
+        </window>
+
+    </Container>
+</Definition>

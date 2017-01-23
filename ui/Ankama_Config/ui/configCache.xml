@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	
+  	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       <Constant name="css" value="[config.ui.skin]css/" />
+   	</Constants>
+
+	<Container name="configCacheCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="0" y="30" />
+			</Anchor>
+		</Anchors>
+	
+	
+	
+		
+		<!-- Titre pour le vidage selectif -->
+		
+		<Label name="lbl_TitleSelective">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="730" y="20" />
+			</Size>
+			<text>[ui.option.selectiveClearCacheSubtitle]</text>
+			<cssClass>whitebold</cssClass>
+			<css>[local.css]normal2.css</css>
+		</Label>
+		
+		<!-- Fond gris 1 -->
+
+		<TextureBitmap name="tx_bgForeground1">
+			<Anchors>
+				<Anchor relativeTo="lbl_TitleSelective">
+					<AbsDimension x="0" y="40" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="780" y="130" />
+			</Size>
+			<themeDataId>bg_small_border_light</themeDataId>
+		</TextureBitmap>
+	
+		<!-- Texte expliquant le concept de "vidage de cache selectif" -->
+		
+		<Label name="lbl_SelectiveClearCacheExplicativeText">
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground1">
+					<AbsDimension x="20" y="15" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="740" y="80" />
+			</Size>
+			<multiline>true</multiline>
+			<wordWrap>true</wordWrap>
+			<text>[ui.option.selectiveClearCacheExplication]</text>
+			<css>[local.css]normal2.css</css>
+		</Label>
+		
+		<!-- Bouton de vidage de cache sélectif -->
+
+		<simpleButton name="btnSelectiveClearCache">
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground1" relativePoint="BOTTOM" point="BOTTOM">
+					<AbsDimension x="0" y="-20" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="255" y="30" />
+			</Size>
+			<label>[ui.option.clearCache]</label>
+		</simpleButton>
+		
+		
+		
+		
+		
+		<!-- Titre pour le vidage complet -->
+		
+		<Label name="lbl_TitleComplete">
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground1">
+					<AbsDimension x="0" y="140" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="730" y="20" />
+			</Size>
+			<text>[ui.option.completeClearCacheSubtitle]</text>
+			<cssClass>whitebold</cssClass>
+			<css>[local.css]normal2.css</css>
+		</Label>
+		
+		<!-- Fond gris 2 -->
+
+		<TextureBitmap name="tx_bgForeground2">
+			<Anchors>
+				<Anchor relativeTo="lbl_TitleComplete">
+					<AbsDimension x="0" y="40" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="780" y="150" />
+			</Size>
+			<themeDataId>bg_small_border_light</themeDataId>
+		</TextureBitmap>	
+		
+		<!-- Texte expliquant le concept de "vidage de cache complet" -->
+		
+		<Label name="lbl_CompleteClearCacheExplicativeText">
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground2">
+					<AbsDimension x="20" y="15" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="740" y="120" />
+			</Size>
+			<multiline>true</multiline>
+			<wordWrap>true</wordWrap>
+			<text>[ui.option.completeClearCacheExplication]</text>
+			<css>[local.css]normal2.css</css>
+		</Label>
+		
+		<!-- Bouton de vidage de cache complet -->
+
+		<simpleButton name="btnCompleteClearCache">
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground2" relativePoint="BOTTOM" point="BOTTOM">
+					<AbsDimension x="0" y="-20" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="255" y="30" />
+			</Size>
+			<label>[ui.option.clearCache]</label>
+		</simpleButton>
+		
+	</Container>
+</Definition>
+

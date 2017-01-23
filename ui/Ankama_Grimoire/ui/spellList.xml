@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	 
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+	
+	<Container>
+		<Size>
+			<AbsDimension x="780" y="700" />
+		</Size>
+		
+		<Texture name="tx_help">
+			<Anchors> 
+				<Anchor>
+					<AbsDimension x="740" y="28" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="22" y="22" />
+			</Size>
+			<uri>[local.texture]help_icon_normal.png</uri>
+		</Texture>
+
+		<Grid name="gd_spell">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="4" y="50" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="771" y="650" />
+			</Size>
+			<rendererName>InlineXmlGridRenderer</rendererName>
+			<rendererArgs>updateSpellLine</rendererArgs>
+			<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+			<slotWidth>761</slotWidth>
+			<slotHeight>65</slotHeight>
+
+			<Container>
+				<Size>
+					<AbsDimension x="761" y="65" />
+				</Size>
+				
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="4" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="761" y="57" />
+					</Size>
+					<uri>[local.texture]spell/spell_line.png</uri>
+				</Texture>
+				
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="4" />
+						</Anchor>
+					</Anchors>
+					
+					<Grid name="gd_spellButtons">
+						<Size>
+							<AbsDimension x="330" y="57" />
+						</Size>
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updateSpellButtonsLine</rendererArgs>
+						<slotWidth>330</slotWidth>
+						<slotHeight>57</slotHeight>
+			
+						<Container>
+							<Size>
+								<AbsDimension x="330" y="57" />
+							</Size>
+							
+							<Button name="btn_spell">
+								<Common>
+									<Size>
+										<AbsDimension x="330" y="57" />
+									</Size>
+									<radioMode>true</radioMode>
+									<linkedTo>slot_icon</linkedTo>
+									
+									<Texture name="tx_bgSpell">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="20" y="0" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="305" y="57" />
+										</Size>
+										<uri>[local.texture]spell/btn_spell_normal.png</uri>
+									</Texture>		
+									
+									<Texture>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="37" y="7" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="43" y="43" />
+										</Size>
+										<uri>[local.texture]spell/bg_spell_icon.png</uri>
+									</Texture>		
+			
+									<Slot name="slot_icon">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="39" y="9" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="39" y="39" />
+										</Size>
+										<css>[local.css]normal2.css</css>
+									</Slot>
+			
+									<Label name="lbl_spellName">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="84" y="17" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="235" y="16" />
+										</Size>
+										<css>[local.css]small2.css</css>
+									</Label>
+								</Common>
+								
+								<State type="OVER">
+									<SetProperties target="tx_bgSpell">
+										<uri>[local.texture]spell/btn_spell_over.png</uri>
+									</SetProperties>
+								</State>
+								
+								<State type="PRESSED">
+									<SetProperties target="tx_bgSpell">
+										<uri>[local.texture]spell/btn_spell_pressed.png</uri>
+									</SetProperties>
+								</State>
+			
+								<State type="SELECTED">
+									<SetProperties target="tx_bgSpell">
+										<uri>[local.texture]spell/btn_spell_selected.png</uri>
+									</SetProperties>
+								</State>
+			
+								<State type="SELECTED_OVER">
+									<SetProperties target="tx_bgSpell">
+										<uri>[local.texture]spell/btn_spell_selected_over.png</uri>
+									</SetProperties>
+								</State>
+			
+								<State type="SELECTED_PRESSED">
+									<SetProperties target="tx_bgSpell">
+										<uri>[local.texture]spell/btn_spell_selected_pressed.png</uri>
+									</SetProperties>
+								</State>
+							</Button>
+							
+									
+							<Container name="ctr_level">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="15" />
+									</Anchor>
+								</Anchors>
+								
+								<Texture>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="5" y="0" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="32" y="32" />
+									</Size>
+									<uri>[local.texture]spell/bg_lvl_spell.png</uri>
+								</Texture>
+								
+								<Label name="lbl_obtentionLevel">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="5" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="40" y="16" />
+									</Size>
+									<cssClass>center</cssClass>
+									<css>[local.css]small2.css</css>
+								</Label>									
+							</Container>
+							
+							<Container name="ctr_prestige">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="15" />
+									</Anchor>
+								</Anchors>
+								
+								<Texture>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="5" y="0" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="32" y="32" />
+									</Size>
+									<uri>[local.texture]spell/bg_lvl_fatal.png</uri>
+								</Texture>
+								
+								<Label name="lbl_obtentionPrestige">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="5" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="40" y="16" />
+									</Size>
+									<cssClass>orangecenter</cssClass>
+									<css>[local.css]small2.css</css>
+								</Label>									
+							</Container>
+						</Container>
+					</Grid>
+				</Container>
+			</Container>
+		</Grid>
+				
+	</Container>
+</Definition>
+

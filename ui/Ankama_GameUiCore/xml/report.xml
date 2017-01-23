@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+
+<Definition>
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]button/labelCheckBox.xml" />
+	<Import url="mod://Ankama_Config/ui/template/configCheckbox.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="340" y="300" />
+			</Anchor>
+		</Anchors>
+		
+		<mouseEnabled>true</mouseEnabled>
+			
+		<Texture name="tx_background">
+			<Size>
+				<AbsDimension x="600" y="320" />
+			</Size>
+			<uri>[local.assets]tx_generalBackgroundWithTitle</uri>
+			<autoGrid>true</autoGrid>
+		</Texture>
+			
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="20" y="65" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="560" y="180" />
+			</Size>
+			<uri>[local.assets]tx_blockBackground</uri>
+			<autoGrid>true</autoGrid>
+		</Texture>
+
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="20" y="15" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="540" y="35" />
+			</Size>
+			<css>[local.css]title.css</css>
+			<text>[ui.social.reportTitle]</text>
+		</Label>
+		
+		<iconButton name="btn_close">
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" />
+			</Anchors>
+			<Size>
+				<AbsDimension x="57" y="36" />
+			</Size>
+			<uri>[local.assets]btn_cornerCross</uri>
+        </iconButton>
+
+		 
+		<TextArea name="lbl_text">
+			<Anchors>
+				<Anchor point="TOP" relativePoint="TOP" relativeTo="tx_background">
+					<AbsDimension x="0" y="75" />
+				</Anchor>
+			</Anchors>			
+			<Size>
+				<AbsDimension x="560" y="75" />
+			</Size>
+			<css>[local.css]normal.css</css>
+			<cssClass>center</cssClass>
+			<scrollCss>[local.css]scrollBar.css</scrollCss>
+			<hideScroll>true</hideScroll>
+		</TextArea>
+		
+		
+				
+		<ComboBox name="cb_reason" strata="TOP">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="25" y="150" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="525" y="25" />
+			</Size>
+			<autoSelectMode>0</autoSelectMode>
+			<buttonTexture>[local.assets]btn_combobox</buttonTexture>
+			<listTexture>[local.assets]tx_combobox</listTexture>
+			<rendererArgs>[local.css]normal.css,,,[colors.grid.over],[colors.grid.selected]</rendererArgs>
+			<scrollBarCss>[local.css]scrollBar.css</scrollBarCss>
+		</ComboBox>
+
+
+		<iconButton name="btn_help">
+			<Anchors>
+				<Anchor relativePoint="TOPRIGHT" relativeTo="cb_reason" >
+					<AbsDimension x="4" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="25" y="25" />
+			</Size>
+			<visible>false</visible>
+			<uri>[local.assets]btn_Interrogation_square</uri>
+        </iconButton>
+         
+		
+		
+		<!--labelCheckBox name="cb_ignore">
+			<Anchors>
+				<Anchor relativePoint="BOTTOMLEFT" relativeTo="cb_reason" >
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<autoGrid>false</autoGrid>
+			<text>[ui.social.reportIgnore]</text>
+		</labelCheckBox-->
+		
+		
+		
+		<simpleButton name="btn_send">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="200" y="190" />
+				</Anchor>
+			</Anchors>		
+			<Size>
+				<AbsDimension x="200" y="30" />
+			</Size>
+			<autoGrid>false</autoGrid>
+			<label>[ui.social.reportSend]</label>
+			<css>[local.css]button.css</css>
+		</simpleButton>
+
+
+		<!-- Label lbl_passForgotten-->
+
+		<Button name="btn_howTo">
+			<Common>
+				<Anchors>
+					<Anchor point="TOP" relativePoint="TOP">
+						<AbsDimension x="0" y="220" />
+					</Anchor>
+				</Anchors>
+				<Label name="lbl_howTo">
+					<Size>
+						<AbsDimension x="500" y="20" />
+					</Size>
+					<text>[ui.report.help]</text>
+					<css>[local.css]normal.css</css>
+					<cssClass>center</cssClass>
+				</Label>
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</Common>
+			<State type="OVER">
+				<SetProperties target="lbl_howTo">
+					<cssClass>centerover</cssClass>
+				</SetProperties>
+			</State>	
+		</Button>
+		
+		<Label name="lbl_nb">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="15" y="254" />
+				</Anchor>
+			</Anchors>			
+			<Size>
+				<AbsDimension x="570" y="50" />
+			</Size>
+			<css>[local.css]normal.css</css>
+			<text>[ui.social.reportWarning]</text>
+			<cssClass>center</cssClass>
+			<verticalAlign>bottom</verticalAlign>
+			<wordWrap>true</wordWrap>
+			<multiline>true</multiline>
+		</Label>
+		
+	</Container>
+</Definition>

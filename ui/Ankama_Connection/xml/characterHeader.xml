@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition useCache="true">
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="illus" value="[config.gfx.path]illusUi/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+	
+	<Container>
+		<Size>
+			<RelDimension x="1" y="1" />
+		</Size>
+
+        <!--VideoPlayer strata="LOW" name="videoPlayer">
+			<Size>
+				<AbsDimension x="1280" y="1024" />
+			</Size>
+            <autoPlay>true</autoPlay>
+            <autoLoop>true</autoLoop>
+            <smoothing>true</smoothing>
+		</VideoPlayer-->
+
+		<Texture strata="LOW" name="tx_bg"> 
+			<Anchors>
+				<Anchor point="CENTER" relativePoint="CENTER" />
+			</Anchors>
+			<uri>[local.illus]login_background.jpg</uri>
+		</Texture>
+	
+		<Container name="ctr_main">
+			<Anchors>
+				<Anchor point="TOP" relativePoint="TOP" >
+					<AbsDimension x="0" y="-20" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1139" y="267" />
+			</Size>		
+
+			<Texture name="tx_background">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="220" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="1139" y="67" />
+				</Size>
+				<uri>[local.texture]onboarding/bg_ServerHeader_Info.png</uri>
+			</Texture>
+				
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="452" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="310" y="310" />
+				</Size>
+				<uri>[local.illus]logo_dofus.swf|tx_logo_FR</uri>
+			</Texture>
+			
+			
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="20" y="232" />
+					</Anchor>
+				</Anchors>
+					
+				<TextureBitmap>
+					<Size>
+						<AbsDimension x="280" y="39" />
+					</Size>
+					<themeDataId>bg_small_border_dark</themeDataId>
+					<smooth>true</smooth>
+				</TextureBitmap>				
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="11" y="11" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="17" y="17" />
+					</Size>
+					<uri>[local.texture]icon_man.png</uri>
+				</Texture>				
+				<Label name="lbl_pseudo">
+					<Anchors> 
+						<Anchor>
+							<AbsDimension x="32" y="9" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="250" y="15" />
+					</Size>
+					<text>[ui.header.dofusPseudo][ui.common.colon]</text>
+					<css>[local.css]small2.css</css>
+				</Label>
+					
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="280" y="0" />
+						</Anchor>
+					</Anchors>
+					
+					<TextureBitmap>
+						<Size>
+							<AbsDimension x="280" y="39" />
+						</Size>
+						<themeDataId>bg_small_border_dark</themeDataId>
+						<smooth>true</smooth>
+					</TextureBitmap>				
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="10" y="10" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="19" y="19" />
+						</Size>
+						<uri>[local.texture]onboarding/tx_world_map.png</uri>
+					</Texture>				
+					<Label name="lbl_server">
+						<Anchors> 
+							<Anchor>
+								<AbsDimension x="32" y="9" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="250" y="15" />
+						</Size>
+						<text>[ui.header.server][ui.common.colon]</text>
+						<css>[local.css]small2.css</css>
+					</Label>
+				</Container>
+					
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="700" y="0" />
+						</Anchor>
+					</Anchors>
+					
+					<TextureBitmap>
+						<Size>
+							<AbsDimension x="350" y="39" />
+						</Size>
+						<themeDataId>bg_small_border_dark</themeDataId>
+						<smooth>true</smooth>
+					</TextureBitmap>				
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="13" y="11" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="14" y="17" />
+						</Size>
+						<uri>[local.texture]onboarding/icon_Hourglass_Subscription.png</uri>
+					</Texture>				
+					<Label name="lbl_abo">
+						<Anchors> 
+							<Anchor>
+								<AbsDimension x="32" y="9" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="220" y="15" />
+						</Size>
+						<text>[ui.header.subscribeLeftTime][ui.common.colon]</text>
+						<css>[local.css]small2.css</css>
+					</Label>
+				</Container>
+
+				<simpleButton label="[ui.header.subscribe]" name="btn_subscribe"   >
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="970" y="3" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="120" y="32" />
+					</Size>
+				</simpleButton>
+			
+			</Container>
+
+		</Container>
+	</Container>
+</Definition>

@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]button/sortButton.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	<Import url="[config.mod.template.button]comboBoxWithBackground.xml" />
+	
+   	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+   	</Constants>
+
+	<window name="windowCtr" title="[ui.estate.agency]">
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="0" y="-40" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="839" y="773" />
+		</Size>
+
+		<Content>
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="-2" y="-4" />
+					</Anchor>
+				</Anchors>
+				<uri>[config.ui.skin]common/corner_decoration.png</uri>
+			</Texture>
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="801" y="-4" />
+					</Anchor>
+				</Anchors>
+				<uri>[config.ui.skin]common/corner_decoration.png</uri>
+				<scaleX>-1</scaleX>
+			</Texture>
+
+			<Container name="typeCtr" strata="TOP">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="60" y="13" />
+					</Anchor>
+				</Anchors>
+				<!-- Label lbl_estateType-->
+				<Label name="lbl_type">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="-2" />
+						</Anchor>
+					</Anchors>
+					<fixedWidth>false</fixedWidth>
+					<text>[ui.estate.typeChoice]</text>
+					<cssClass>right</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+				<!-- ComboBox cb_estateType-->
+				<comboBoxWithBackground name="cb_estateType" width="280" height="38" autoSelectMode="0">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="-9" />
+						</Anchor>
+					</Anchors>
+				</comboBoxWithBackground>
+			</Container>
+			
+			<Container name="listCtr">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="250" />
+					</Anchor>
+				</Anchors>
+				
+				<TextureBitmap bgAlpha="0.6">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="-5" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="805" y="404" />
+					</Size>
+					<themeDataId>block_background</themeDataId>
+				</TextureBitmap>
+				
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="-5" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="805" y="43" />
+					</Size>
+					<uri>[local.common]bg_dark.png</uri>
+				</Texture>
+
+				<!-- Label lbl_name-->
+
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="20" y="10" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="340" y="20" />
+					</Size>
+					<text>[ui.common.name]</text>
+					<cssClass>whitebold</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+
+				<!-- Label lbl_loc-->
+
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="401" y="10" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="200" y="20" />
+					</Size>
+					<text>[ui.map.subarea]</text>
+					<cssClass>whitebold</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+
+				<!-- Label lbl_cost-->
+
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="641" y="10" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="120" y="20" />
+					</Size>
+					<text>[ui.common.price]</text>
+					<cssClass>whitebold</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="-5" y="44" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="805" y="360" />
+					</Size>
+					<uri>[local.common]bg_light.png</uri>
+				</Texture>
+
+				<!-- Grid gd_estates-->
+
+				<Grid name="gd_estates">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="-5" y="44" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="805" y="360"/>
+					</Size>
+					<rendererName>InlineXmlGridRenderer</rendererName>
+					<rendererArgs>updateEstateLine,[colors.grid.line]</rendererArgs>
+					<slotWidth>805</slotWidth>
+					<slotHeight>36</slotHeight>
+
+					<Container name="estateCtr">
+						<Size>
+							<AbsDimension x="805" y="36" />
+						</Size>
+
+
+						<!-- Label lbl_name-->
+
+						<Label name="lbl_name">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="25" y="7" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="350" y="20" />
+							</Size>
+							<css>[local.css]small2.css</css>
+							<useStyleSheet>true</useStyleSheet>
+							<hyperlinkEnabled>true</hyperlinkEnabled>
+							<useCustomFormat>true</useCustomFormat>
+						</Label>
+
+						<!-- Label lbl_loc-->
+
+						<Label name="lbl_loc">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="406" y="7" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="220" y="20" />
+							</Size>
+							<css>[local.css]small2.css</css>
+						</Label>
+
+						<!-- Label lbl_cost-->
+
+						<Label name="lbl_cost">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="646" y="6" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="130" y="20" />
+							</Size>
+							<cssClass>bold</cssClass>
+							<css>[local.css]estate.css</css>
+						</Label>
+					</Container>
+				</Grid>
+
+				<Texture>
+					<Anchors>
+						<Anchor point="TOP" relativePoint="BOTTOM" relativeTo="gd_estates">
+							<AbsDimension x="0" y="44" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="805" y="43" />
+					</Size>
+					<scaleY>-1</scaleY>
+					<uri>[local.common]bg_dark.png</uri>
+				</Texture>
+				
+				<sortButton name="btn_tabName">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="20" y="10" />
+						</Anchor>
+					</Anchors>				
+					<Size>
+						<AbsDimension x="340" y="24" />
+					</Size>
+				</sortButton>
+
+				<sortButton name="btn_tabLoc">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="401" y="10" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="200" y="24" />
+					</Size>
+				</sortButton>
+
+				<sortButton name="btn_tabCost">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="641" y="10" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="120" y="24" />
+					</Size>
+				</sortButton>
+
+
+
+				<!-- iconButton btn_prevPage-->
+
+				<themeIconButton name="btn_prevPage" bgThemeDataId="btn_arrow_pagination" smooth="true">
+					<Anchors>
+						<Anchor point="TOP" relativePoint="BOTTOM" relativeTo="gd_estates">
+							<AbsDimension x="-50" y="8" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="20" y="29" />
+					</Size>
+					<Hooks>
+						<onRelease />
+					</Hooks>
+					<bgScaleX>-1</bgScaleX>
+				</themeIconButton>
+				
+				<!-- iconButton btn_nextPage-->
+
+				<themeIconButton name="btn_nextPage" bgThemeDataId="btn_arrow_pagination" smooth="true">
+					<Anchors>
+						<Anchor point="TOP" relativePoint="BOTTOM" relativeTo="gd_estates">
+							<AbsDimension x="50" y="8" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="20" y="29" />
+					</Size>
+					<Hooks>
+						<onRelease />
+					</Hooks>
+				</themeIconButton>
+
+				<!-- Label lbl_page-->
+
+				<Label name="lbl_page">
+					<Anchors>
+						<Anchor point="TOP" relativePoint="BOTTOM" relativeTo="gd_estates">
+							<AbsDimension x="0" y="11" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="80" y="20" />
+					</Size>
+					<css>[local.css]normal2.css</css>
+					<cssClass>center</cssClass>
+				</Label>
+
+
+			</Container>
+			
+			<block name="filterCtr" bgAlpha="0.6">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="3" y="50" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="794" y="190" />
+				</Size>
+				<contentStrata>TOP</contentStrata>
+				
+				<Content>
+					<!-- Label lbl_filterTitle-->
+
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="20" y="10" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="738" y="25" />
+						</Size>
+						<text>[ui.search.criteria]</text>
+						<cssClass>title</cssClass>
+						<css>[local.css]estate.css</css>
+					</Label>
+					
+					<!-- Label lbl_filterMaxPrice-->
+
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="60" y="53" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="135" y="20" />
+						</Size>
+						<text>[ui.estate.filter.maxPrice]</text>
+						<cssClass>kamaslabel</cssClass>
+						<css>[local.css]estate.css</css>
+					</Label>
+					
+					<!-- Texture tx_input-->
+					<TextureBitmap>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="195" y="44" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="175" y="40" />
+						</Size>
+						<themeDataId>bg_small_border_dark</themeDataId>
+					</TextureBitmap>
+					
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="337" y="56" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="18" y="16" />
+						</Size>
+						<uri>[local.texture]icon_kama.png</uri>
+					</Texture>
+					
+					<!-- Label inp_filterMaxPrice-->
+
+					<Input name="inp_filterMaxPrice">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="205" y="53" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="125" y="23" />
+						</Size>
+						<maxChars>9</maxChars>
+						<cssClass>kamasinput</cssClass>
+						<css>[local.css]estate.css</css>
+						<numberAutoFormat>true</numberAutoFormat>
+					</Input>
+
+
+					<!-- ComboBox cb_filterSubarea-->
+
+					<comboBoxWithBackground name="cb_filterSubarea" strata="TOP" width="314" height="38" autoSelectMode="0">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="413" y="80" />
+							</Anchor>
+						</Anchors>
+					</comboBoxWithBackground>
+
+					<!-- ComboBox cb_filterSkill-->
+
+					<comboBoxWithBackground name="cb_filterSkill" strata="TOP" width="314" height="38" autoSelectMode="0">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="55" y="115" />
+							</Anchor>
+						</Anchors>
+					</comboBoxWithBackground>
+
+
+					<!-- ComboBox cb_filterRoomMount-->
+
+					<comboBoxWithBackground name="cb_filterRoomMount" strata="TOP" width="314" height="38" autoSelectMode="0">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="55" y="80" />
+							</Anchor>
+						</Anchors>
+					</comboBoxWithBackground>
+					
+					<!-- ComboBox cb_filterChestMachine-->
+
+					<comboBoxWithBackground name="cb_filterChestMachine" strata="TOP" width="314" height="38" autoSelectMode="0">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="413" y="45" />
+							</Anchor>
+						</Anchors>
+					</comboBoxWithBackground>
+
+
+
+					<!-- simpleButton btn_filter-->
+
+					<simpleButton name="btn_filter" label="[ui.common.search]"   >
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="419" y="119" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="120" y="35" />
+						</Size>
+						<css>[local.css]button.css</css>
+					</simpleButton>
+				</Content>
+			</block>
+		</Content>
+	</window>
+</Definition>

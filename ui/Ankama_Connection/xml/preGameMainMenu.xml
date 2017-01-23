@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition modal="true">
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	
+   <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       <Constant name="css" value="[config.ui.skin]css/" />
+   </Constants>
+
+	<window name="mainCtr">
+		
+		<title>[ui.common.mainMenu]</title>
+		
+		<closeButtonName>btnClose</closeButtonName>
+		
+		<Size>
+			<AbsDimension x="380" y="304" />
+		</Size>
+			
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER" />
+		</Anchors>
+		
+		<Content>
+		
+			<Container>
+				
+				<Anchors>
+					<Anchor point="CENTER" relativePoint="CENTER" />
+				</Anchors>
+			
+				<!-- simpleButton btnOptions-->
+		
+				<simpleButton name="btnOptions">
+					<uri>[local.assets]btn_orange</uri>
+					
+					<Size>
+						<AbsDimension x="251" y="30" />
+					</Size>
+					<label>[ui.common.options]</label>
+					<css>[local.css]button.css</css>
+				</simpleButton>
+		
+				<!-- simpleButton btnDisconnect-->
+		
+				<simpleButton name="btnDisconnect">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="44" />
+						</Anchor>
+					</Anchors>
+					<uri>[local.assets]btn_orange</uri>
+					
+					<Size>
+						<AbsDimension x="251" y="30" />
+					</Size>
+					<label>[ui.common.disconnect]</label>
+					<css>[local.css]button.css</css>
+				</simpleButton>
+		
+				<!-- simpleButton btnQuitGame-->
+		
+				<simpleButton name="btnQuitGame">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="88" />
+						</Anchor>
+					</Anchors>
+					<uri>[local.assets]btn_orange</uri>
+					
+					<Size>
+						<AbsDimension x="251" y="30" />
+					</Size>
+					<label>[ui.common.quitGame]</label>
+					<css>[local.css]button.css</css>
+				</simpleButton>
+		
+				<!-- simpleButton btnCancel-->
+		
+				<simpleButton name="btnCancel">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="158" />
+						</Anchor>
+					</Anchors>
+					<uri>[local.assets]btn_orange</uri>
+					
+					<Size>
+						<AbsDimension x="251" y="30" />
+					</Size>
+					<label>[ui.common.cancel]</label>
+					<css>[local.css]button.css</css>
+				</simpleButton>
+			</Container>
+		</Content>
+	</window>
+</Definition>
+

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition labelDebug="false">
+
+    <Import url="[config.mod.template]button/simpleButton.xml" />
+    <Import url="[config.mod.template]window.xml" />
+    <Import url="[config.mod.template]button/iconButton.xml" />
+    <Import url="[config.mod.template]button/horizontalTabGreenLine.xml" />
+    <Import url="mod://Ankama_Social/xml/template/socialTab.xml" />
+    
+    <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />	
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+    
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="0" y="-40" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="1165" y="781" />
+		</Size>
+		<mouseEnabled>true</mouseEnabled>		
+		
+		<window title="[ui.option.social]" dark="true">
+			<Size>
+				<AbsDimension x="1165" y="781" />
+			</Size>
+			
+		 	<Content> 		
+			
+				<Texture>
+					<Size>
+						<AbsDimension x="1128" y="390" />
+					</Size>
+					<uri>[local.common]bg_green_line.png</uri>
+				</Texture>
+				
+			
+				<Container>
+		            <Anchors>
+		                <Anchor>
+		                    <AbsDimension x="94" y="18" />
+		                </Anchor>
+		            </Anchors>
+					<Size>
+						<AbsDimension x="940" y="35" />
+					</Size>    
+			
+					<horizontalTabGreenLine name="btn_tabFriend">
+					</horizontalTabGreenLine>
+			
+					<horizontalTabGreenLine name="btn_tabGuild">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="190" y="0" />
+							</Anchor>
+						</Anchors>
+					</horizontalTabGreenLine>
+			
+					<horizontalTabGreenLine name="btn_tabAlliance">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="380" y="0" />
+							</Anchor>
+						</Anchors>
+					</horizontalTabGreenLine>
+			
+					<horizontalTabGreenLine name="btn_tabDirectory">
+			            <Anchors>
+			                <Anchor>
+			                    <AbsDimension x="570" y="0" />
+			                </Anchor>
+			            </Anchors>
+					</horizontalTabGreenLine>
+			
+					<horizontalTabGreenLine name="btn_tabDare">
+			            <Anchors>
+			                <Anchor>
+			                    <AbsDimension x="760" y="0" />
+			                </Anchor>
+			            </Anchors>
+					</horizontalTabGreenLine>
+				
+				</Container>
+				
+				<Container name="uiCtr">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="3" y="61" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="1125" y="646" />
+					</Size>
+				</Container>
+			</Content>
+		</window>
+	</Container>
+</Definition>
+

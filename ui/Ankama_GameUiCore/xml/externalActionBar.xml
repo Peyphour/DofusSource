@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+	<Import url="[config.mod.template]specific/actionBar.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+	
+	<Container name="mainCtr">
+		<Size>
+			<AbsDimension x="425" y="82" />
+		</Size>
+		<visible>false</visible>
+		
+		<Container name="backgroundCtr">
+			<Anchors>
+				<Anchor relativePoint="TOPLEFT">
+					<AbsDimension x="-4" y="-4" />
+				</Anchor>
+				<Anchor relativeTo="tx_rightBg" relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="4" y="4" />
+				</Anchor>
+			</Anchors>
+			<bgColor>0</bgColor>
+			<bgAlpha>0.7</bgAlpha>
+			
+			<Container name="titleBar">
+				<Anchors>
+					<Anchor relativeTo="tx_rightBg" relativePoint="TOPRIGHT">
+						<AbsDimension x="8" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="20" />
+					<RelDimension y="1" />
+				</Size>
+				<bgColor>[colors.grid.bg]</bgColor>
+				<dragController>true</dragController>
+				<dragTarget>mainCtr</dragTarget>
+			</Container>
+			
+			<themeIconButton name="btn_minimize">
+					<Anchors>
+						<Anchor relativeTo="titleBar" relativePoint="TOP" point="TOP">
+							<AbsDimension x="0" y="0" />
+						</Anchor>
+					</Anchors>
+				<Size>
+					<AbsDimension x="20" y="20" />
+				</Size>
+				
+				<bgScaleX>0</bgScaleX>
+				<iconUri>[local.texture]hud/icon_minus_floating_menu.png</iconUri>
+			</themeIconButton>
+			
+			<themeIconButton name="btn_options">
+					<Anchors>
+						<Anchor relativeTo="titleBar" relativePoint="BOTTOM" point="BOTTOM">
+							<AbsDimension x="0" y="0" />
+						</Anchor>
+					</Anchors>
+				<Size>
+					<AbsDimension x="20" y="20" />
+				</Size>
+				<bgScaleX>0</bgScaleX>
+				<iconUri>[local.texture]hud/icon_arrow_floating_menu.png</iconUri>
+			</themeIconButton>
+		</Container>
+		
+		<actionBar name="actionBarCtr">
+			<Size>
+				<RelDimension x="1" y="1" />
+			</Size>
+			<ignoreAddButton>true</ignoreAddButton>
+		</actionBar>
+	</Container>
+</Definition>

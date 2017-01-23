@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+	
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="0" y="0" />
+			</Anchor>
+		</Anchors>
+		
+		<!-- Container pour la partie haute (bannière) de l'interface -->
+
+		<Container name="Container_Top">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="26" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1096" y="70" />
+			</Size>
+			
+			<!-- La texture de fond de la bannière -->
+
+			<Texture name="tx_titleBackground">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<RelDimension x="1" y="1" />
+				</Size>
+				<uri>[local.assets]tx_titleBackground</uri>
+				<autoGrid>false</autoGrid>
+			</Texture>
+			
+			<!-- Le titre de la fenêtre -->
+
+			<Label name="lbl_grimoire_tab">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="48" y="12" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="199" y="37" />
+				</Size>
+				<text>[ui.common.emotes]</text>
+				<css>[local.css]title.css</css>
+			</Label>
+			
+			
+			<!-- La décoration de droite -->
+
+			<Texture name="tx_decoration">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="813" y="12" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="228" y="38" />
+				</Size>
+				<uri>[local.assets]SPELL_Texture_tx_emote</uri>
+				<autoGrid>false</autoGrid>
+			</Texture>
+			
+		</Container>
+		
+	</Container>
+</Definition>
+

@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition labelDebug="false">
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]button/sortButton.xml" />
+    <Import url="[config.mod.template]window.xml" />
+    <Import url="[config.mod.template]block.xml" />
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       	<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="illusUi" value="[config.content.path]gfx/illusUi/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+	
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor relativePoint="BOTTOM" point="BOTTOM" >
+				<AbsDimension x="0" y="-180" />
+			</Anchor>
+		</Anchors>
+
+		<window title="[ui.social.taxCollectorCollected]">
+			<Size>
+				<AbsDimension x="690" y="790" />
+			</Size>
+		</window>
+		
+		<EntityDisplayer name="ed_pony">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="40" y="20" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="170" y="260" />
+			</Size>
+			<direction>1</direction>
+			<look>{714}</look>
+		</EntityDisplayer>
+		
+		<block>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="221" y="64" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="440" y="211" />
+			</Size>
+		</block>
+		
+		<Label name="lbl_taxCollector_name">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="240" y="77" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="400" y="25"/>
+			</Size>
+			<cssClass>whitebold</cssClass>
+			<css>[local.css]title.css</css>
+		</Label>
+		
+		<Label name="lbl_taxCollector_localisation">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="240" y="107" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="400" y="25"/>
+			</Size>
+			<css>[local.css]normal2.css</css>
+			<cssClass>left</cssClass>
+			<hyperlinkEnabled>true</hyperlinkEnabled>
+			<useStyleSheet>true</useStyleSheet> 
+		</Label>
+		
+		<Label name="lbl_taxCollector_xp_text">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="240" y="152" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="200" y="25"/>
+			</Size>
+			<css>[local.css]normal2.css</css>
+			<cssClass>left</cssClass>
+		</Label>
+		
+		<Label name="lbl_taxCollector_xp_value">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="445" y="152" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="195" y="25"/>
+			</Size>
+			<css>[local.css]normal2.css</css>
+			<cssClass>right</cssClass>
+		</Label>
+		
+		<Label name="lbl_totalEstimatedKamas_text">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="240" y="177" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="200" y="25"/>
+			</Size>
+			<css>[local.css]normal2.css</css>
+			<cssClass>left</cssClass>
+		</Label>
+		
+		<Label name="lbl_totalEstimatedKamas_value">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="445" y="177" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="195" y="25"/>
+			</Size>
+			<css>[local.css]normal2.css</css>
+			<cssClass>right</cssClass>
+		</Label>
+		
+		<Label name="lbl_totalPods_text">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="240" y="202" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="200" y="25"/>
+			</Size>
+			<css>[local.css]normal2.css</css>
+			<cssClass>left</cssClass>
+			<text>[ui.common.weight][ui.common.colon]</text>
+		</Label>
+		
+		<Label name="lbl_totalPods_value">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="445" y="202" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="195" y="25"/>
+			</Size>
+			<css>[local.css]normal2.css</css>
+			<cssClass>right</cssClass>
+		</Label>
+		
+		<Label name="lbl_taxCollectorOwner_text">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="240" y="227" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="200" y="25"/>
+			</Size>
+			<css>[local.css]normal2.css</css>
+			<cssClass>left</cssClass>
+			<text>[ui.common.ownerWord][ui.common.colon]</text>
+		</Label>
+		
+		<Label name="lbl_taxCollectorOwner_value">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="445" y="227" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="195" y="25"/>
+			</Size>
+			<css>[local.css]normal2.css</css>
+			<cssClass>right</cssClass>
+			<hyperlinkEnabled>true</hyperlinkEnabled>
+			<useStyleSheet>true</useStyleSheet> 
+		</Label>
+		
+		
+		
+		
+		
+		<Container>
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="24" y="285" />
+                </Anchor>
+            </Anchors>
+            
+			<block>
+				<Size>
+					<AbsDimension x="638" y="468" />
+				</Size>
+			</block>	
+			
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="5" y="5" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="629" y="36" />
+				</Size>
+				<uri>[local.common]bg_dark.png</uri>
+			</Texture>
+			
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="60" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="275" y="16" />
+				</Size>
+				<text>[ui.sell.offlineSales.itemName]</text>
+				<css>[local.css]small2.css</css>
+			</Label>
+			<sortButton name="btn_sortItemName">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="5" y="5" />
+					</Anchor>
+				</Anchors>				
+				<Size>
+					<AbsDimension x="375" y="30" />
+				</Size>
+			</sortButton>
+	
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="380" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="90" y="16" />
+				</Size>
+				<text>[ui.common.quantity]</text>
+				<cssClass>center</cssClass>
+				<css>[local.css]small2.css</css>
+			</Label>	
+			<sortButton name="btn_sortItemQuantity">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="380" y="5" />
+					</Anchor>
+				</Anchors>				
+				<Size>
+					<AbsDimension x="90" y="30" />
+				</Size>
+			</sortButton>
+		
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="470" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="135" y="16"/>
+				</Size>
+				<cssClass>right</cssClass>
+				<css>[local.css]small2.css</css>
+				<text>[ui.exchange.estimatedValue]</text>
+			</Label>
+			<sortButton name="btn_sortEstimatedKamas">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="470" y="5" />
+					</Anchor>
+				</Anchors>				
+				<Size>
+					<AbsDimension x="170" y="30" />
+				</Size>
+			</sortButton>
+			
+			<Grid name="gd_items">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="5" y="41" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="629" y="420" />
+				</Size>
+				<rendererName>InlineXmlGridRenderer</rendererName>
+				<rendererArgs>updateItemLine,[colors.grid.line]</rendererArgs>
+				<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+				<slotWidth>629</slotWidth>
+				<slotHeight>35</slotHeight>
+					
+				<Container>
+					<Size>
+						<AbsDimension x="629" y="35" />
+					</Size>
+		
+					<Slot name="slot_item">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="6" y="1" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="33" y="33" />
+						</Size>
+						<css>[local.css]normal.css</css>
+					</Slot>		
+								
+					<Label name="lbl_item_name">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="55" y="7" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="325" y="16" />
+						</Size>
+						<hyperlinkEnabled>true</hyperlinkEnabled>
+						<useStyleSheet>true</useStyleSheet>
+						<css>[local.css]normal2.css</css>
+					</Label>
+					<Label name="lbl_item_quantity">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="380" y="7" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="80" y="16" />
+						</Size>
+						<useStyleSheet>true</useStyleSheet>
+						<css>[local.css]normal2.css</css>
+						<cssClass>center</cssClass>
+					</Label>
+					<Label name="lbl_estimated_kamas">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="460" y="7" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="140" y="16" />
+						</Size>
+						<useStyleSheet>true</useStyleSheet>
+						<cssClass>right</cssClass>
+						<css>[local.css]normal2.css</css>
+					</Label>
+				</Container>
+			</Grid>
+		</Container>
+	</Container>
+</Definition>

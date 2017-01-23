@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	<Constants>
+       	<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="notifications" value="[config.ui.skin]texture/notifications/" />
+   </Constants>
+
+    <Import url="[config.mod.template.button]iconButton.xml" />	
+
+	<Container name="ctr_extNotif">
+		<!-- background -->
+		<Texture name="bg">
+			<Size>
+                <AbsDimension x="350" y="95" />
+            </Size>
+            <uri>[local.notifications]bg_notification_grey_large.png</uri>
+		</Texture>
+		<!-- bouton pour fermer la notification -->
+		<iconButton name="btn_close">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="333" y="3"/>
+				</Anchor>
+			</Anchors>
+            <Size>
+                <AbsDimension x="10" y="11" />
+            </Size>
+            <uri>[local.notifications]grey_close.png</uri>
+        </iconButton>
+		<!-- icone de l'evenement -->
+		<Texture name="tx_slot">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="8" y="20"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="68" y="68"/>
+			</Size>
+			<uri>[config.ui.skin]texture/slot/slot_dark_background_full.png</uri>
+		</Texture>
+		<Texture name="tx_iconBg">
+			<Anchors>
+				<Anchor relativeTo="tx_slot">
+					<AbsDimension x="0" y="0"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="68" y="68"/>
+			</Size>
+		</Texture>
+		<Texture name="tx_icon">
+			<Anchors>
+				<Anchor relativeTo="tx_slot">
+					<AbsDimension x="10" y="10" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="48" y="48"/>
+			</Size>
+		</Texture>
+		<!-- apparence d'un joueur -->
+		<EntityDisplayer name="ed_player">
+			<Anchors>
+				<Anchor relativeTo="tx_slot">
+					<AbsDimension x="3" y="7" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="58" y="58" />
+			</Size>
+			<clearSubEntities>true</clearSubEntities>
+		</EntityDisplayer>
+		<!-- titre de la fenetre -->
+		<Label name="lbl_title">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="20" y="0"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="300" y="20"/>
+			</Size>
+			<autoResize>false</autoResize>
+			<fixedWidth>true</fixedWidth>
+			<fixedHeight>true</fixedHeight>
+			<selectable>false</selectable>
+			<css>[local.css]normal2.css</css>
+			<cssClass>white</cssClass>
+		</Label>
+		<!-- icon decoration -->
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="8" y="20"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="68" y="68"/>
+			</Size>
+			<uri>[local.notifications]notification_border.png</uri>
+		</Texture>
+		<!-- message de l'evenement -->
+		<Label name="lbl_notif">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="83" y="26"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="260" y="56"/>
+			</Size>
+			<multiline>true</multiline>
+			<wordWrap>true</wordWrap>
+			<css>[local.css]normal2.css</css>
+			<cssClass>left</cssClass>
+		</Label>
+	</Container>
+</Definition>

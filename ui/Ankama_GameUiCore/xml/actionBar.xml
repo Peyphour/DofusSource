@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+	<Import url="[config.mod.template]specific/actionBar.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+	
+	<actionBar>
+		<ignoreAddButton>false</ignoreAddButton>
+	</actionBar>
+</Definition>

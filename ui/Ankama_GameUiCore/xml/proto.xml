@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+	<Container name="ctr_ui">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="0" y="0" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="1280" y="1024" />
+		</Size>
+		
+		
+		<!--Container>
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" />
+			</Anchors>
+			<Size>
+				<AbsDimension x="200" y="200" />
+			</Size>
+ 			<bgColor>0x0000ff</bgColor>
+ 			<bgAlpha>0.3</bgAlpha>          
+		</Container-->
+		
+		
+		<!--Texture>
+			<Anchors>
+				<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT" />
+			</Anchors>
+			<Size>
+				<AbsDimension x="400" y="400" />
+			</Size>
+			<uri>[local.assets]tx_generalBackgroundWithTitle</uri>
+			<autoGrid>true</autoGrid>
+		</Texture-->
+		
+	</Container>
+</Definition>

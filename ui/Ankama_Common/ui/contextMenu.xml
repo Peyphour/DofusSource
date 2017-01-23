@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition usePropertiesCache="false">
+	<Constants>
+		<!-- Generic path -->
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+       	<Constant name="texture" value="[config.ui.skin]texture/" />
+		
+		<!-- Label's Styles -->
+		<Constant name="item.cssClass" value="p" />
+		<Constant name="title.cssClass" value="title" />
+		<Constant name="disabled.cssClass" value="disabled" />
+		
+		<!-- Dimensions -->
+		<Constant name="minWidth" value="100" />
+		<Constant name="separatorHeight" value="3" />
+		<Constant name="titleHeight" value="20" />
+		<Constant name="itemHeight" value="20" />
+		
+		<!-- Timer (in millisecond) -->
+		<Constant name="timer.close" value="450" />
+		<Constant name="timer.open" value="500" />
+		
+		<!-- Files path -->
+		<Constant name="css.uri" value="[local.css]normal2.css" />
+		<Constant name="rightArrow.uri" value="[local.bitmap]ContextMenuRightArrow.png" />
+		<Constant name="radio.uri" value="[local.bitmap]tx_puce_radio.png" />
+		<Constant name="selected.uri" value="[local.bitmap]tx_puce_selected.png" />
+	</Constants>
+	
+	<Container name="mainCtr">
+		<mouseEnabled>true</mouseEnabled>
+		
+		<Container name="bgCtr">
+			<borderColor>[colors.contextmenu.border]</borderColor>
+			<bgCornerRadius>8</bgCornerRadius>
+			<bgAlpha>[colors.contextmenu.bg.alpha]</bgAlpha>
+			<bgColor>[colors.contextmenu.bg]</bgColor>
+			<shadowColor>[colors.contextmenu.shadow]</shadowColor>
+		</Container>
+	</Container>
+</Definition>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+
+	<Container>
+		<!-- Container pour la partie haute (bannière) de l'interface -->
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="26" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1096" y="70" />
+			</Size>
+
+			<Texture>
+				<Size>
+					<RelDimension x="1" y="1" />
+				</Size>
+				<uri>[local.assets]tx_titleBackground</uri>
+			</Texture>
+
+			<Label name="lbl_title">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="48" y="12" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="760" y="37" />
+				</Size>
+				<css>[local.css]title.css</css>
+				<text>Bibliothèque #TED</text>
+			</Label>
+
+			<Texture name="tx_deco">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="813" y="12" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="228" y="38" />
+				</Size>
+				<uri>null</uri>
+			</Texture>
+		</Container>
+		
+		<Texture>
+			<autoGrid>true</autoGrid>
+			<uri>[local.assets]tx_blockBackground</uri>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="14" y="108" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1068" y="718" />
+			</Size>
+		</Texture>
+
+		<Grid name="gd_books">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="50" y="140" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1015" y="700" />
+			</Size>
+			<rendererName>InlineXmlGridRenderer</rendererName>
+			<rendererArgs>updateBook</rendererArgs>
+			<slotWidth>144</slotWidth>
+			<slotHeight>200</slotHeight>
+			
+			<Container name="ctr_article">
+				<Size>
+					<AbsDimension x="144" y="200" />
+				</Size>
+
+				<Button name="btn_article">
+					<Common>
+						<radioMode>true</radioMode>
+						
+						<Texture name="tx_cover">
+							<Size>
+								<AbsDimension x="130" y="184" />
+							</Size>
+							<bgColor>0xFF00FF</bgColor>
+							<useCache>false</useCache>
+						</Texture>
+						
+						<Hooks>
+							<onItemRollOver />
+							<onItemRollOut />
+						</Hooks>
+					</Common>
+					<State type="OVER">
+						<SetProperties target="tx_bg">
+							<luminosity>1.5</luminosity>
+						</SetProperties>
+					</State>
+					<State type="SELECTED_OVER">
+						<SetProperties target="tx_bg">
+							<luminosity>1.5</luminosity>
+						</SetProperties>
+					</State>
+				</Button>
+			</Container>
+		</Grid>
+		
+	</Container>
+</Definition>

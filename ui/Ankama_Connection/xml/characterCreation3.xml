@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition debug="false">
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/greyButton.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />		
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />		
+		
+		<Constant name="breed_uri" value="[config.content.path]gfx/classes/" />
+		<Constant name="artwork_uri" value="[config.content.path]gfx/illusUi/illus_classe.swf|artwork_" />
+		<Constant name="illus" value="[config.content.path]gfx/illusUi/" />
+		<Constant name="heads_uri" value="[config.content.path]gfx/cosmetics/" />
+		
+		<Constant name="colors_y_up" value="336" type="int" />
+		<Constant name="colors_y_down" value="493" type="int" />
+		<Constant name="progressbar_role_width" value="308" type="int" />
+	</Constants>
+
+	<Container name="creaCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="0" y="0" />
+			</Anchor>
+		</Anchors>
+		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1280" y="1024" />
+			</Size>
+			<bgColor>0x111111</bgColor>
+		</Container>
+		
+		<VideoPlayer name="videoPlayer">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+             <autoPlay>true</autoPlay>
+             <Size>
+                 <AbsDimension x="1280" y="720" />
+             </Size>
+         </VideoPlayer>
+		 
+		<Container name="ctrBreedInfo">
+			
+			<visible>false</visible>
+		
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="280" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="400" y="440" />
+			</Size>
+			
+			<Label name="lbl_breed">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="10" y="30" />
+					</Anchor>
+				</Anchors>
+				<text>Cra</text>
+				<Size>
+					<AbsDimension x="200" y="20" />
+				</Size>
+				<cssClass>p</cssClass>
+				<css>[local.css]title.css</css>
+			</Label>
+			
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="10" y="65" />
+					</Anchor>
+				</Anchors>
+				<text>Difficulté :</text>
+				<Size>
+					<AbsDimension x="200" y="20" />
+				</Size>
+				<cssClass>p</cssClass>
+				<css>[local.css]normal.css</css>
+			</Label>
+			
+			<Texture name="tx_progressBarBg">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="120" y="70" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="240" y="18" />
+				</Size>
+				<uri>[local.assets]tx_progressBarBackground</uri>
+				<autoGrid>true</autoGrid>
+			</Texture>
+			
+			<Texture name="tx_progressBar">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="122" y="72" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="236" y="14" />
+				</Size>
+				<uri>[local.assets]tx_progressBar</uri>
+				<autoGrid>true</autoGrid>
+			</Texture>
+			
+			<Grid name="gd_roles">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="10" y="100" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="150" y="340" />
+				</Size>
+				<rendererName>InlineXmlGridRenderer</rendererName>
+				<rendererArgs>updateRole</rendererArgs>
+				<slotWidth>200</slotWidth>
+				<slotHeight>100</slotHeight>
+	
+				<Container name="ctr_roleItem">
+					<Size>
+						<AbsDimension x="200" y="100" />
+					</Size>
+					<Texture name="tx_role">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="10" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="65" y="65" />
+						</Size>
+					</Texture>
+					<TextArea name="lbl_role">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="70" y="5" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="300" y="100" />
+						</Size>
+						<cssClass>p</cssClass>
+						<css>[local.css]normal.css</css>
+					</TextArea>
+				</Container>
+			</Grid>
+			
+			<bgColor>0x111111</bgColor>
+			<bgAlpha>0.7</bgAlpha>
+		</Container>
+		
+		<!--                                        CHOIX DU SEXE                                    -->
+		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="30" y="700" />
+				</Anchor>
+			</Anchors>
+			<iconButton name="btn_sex0">
+				<Size>
+					<AbsDimension x="35" y="35" />
+				</Size>				
+				<radioGroup>genderGroup</radioGroup>
+				<radioMode>true</radioMode>
+				<uri>[local.assets]CreaPerso_btn_garcon</uri>
+			</iconButton>
+			<iconButton name="btn_sex1">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="40" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="35" y="35" />
+				</Size>				
+				<radioGroup>genderGroup</radioGroup>
+				<radioMode>true</radioMode>
+				<uri>[local.assets]CreaPerso_btn_fille</uri>
+			</iconButton>
+		
+		</Container>
+		
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="20" y="750" />
+				</Anchor>
+			</Anchors>
+			<text>Rôles</text>
+			<Size>
+				<AbsDimension x="220" y="20" />
+			</Size>
+			<cssClass>p</cssClass>
+			<css>[local.css]titleSmall.css</css>
+		</Label>
+		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="20" y="780" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="220" y="1" />
+			</Size>
+			<bgColor>0x444444</bgColor>
+		</Container>
+		
+		<Grid name="gd_rolesFilter">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="20" y="780" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="220" y="220" />
+			</Size>
+			<rendererName>InlineXmlGridRenderer</rendererName>
+			<rendererArgs>updateRoleFilter</rendererArgs>
+			<slotWidth>65</slotWidth>
+			<slotHeight>65</slotHeight>
+
+			<Container name="ctr_roleItem">
+				<Size>
+					<AbsDimension x="65" y="65" />
+				</Size>
+				<Texture name="tx_role">
+					<Size>
+						<AbsDimension x="65" y="65" />
+					</Size>
+				</Texture>
+			</Container>
+		</Grid>	
+		
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="300" y="750" />
+				</Anchor>
+			</Anchors>
+			<text>Classes</text>
+			<Size>
+				<AbsDimension x="210" y="20" />
+			</Size>
+			<cssClass>p</cssClass>
+			<css>[local.css]titleSmall.css</css>
+		</Label>
+		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="300" y="780" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="700" y="1" />
+			</Size>
+			<bgColor>0x444444</bgColor>
+		</Container>
+		
+		<Grid name="gd_breed">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="300" y="800" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="750" y="160" />
+			</Size>
+			<rendererName>InlineXmlGridRenderer</rendererName>
+			<rendererArgs>updateBreed</rendererArgs>
+			<slotWidth>80</slotWidth>
+			<slotHeight>80</slotHeight>
+
+			<Container name="ctr_breed">
+				<Size>
+					<AbsDimension x="80" y="80" />
+				</Size>
+				<Button name="btn_icon">
+					<Common>
+						
+						<Texture name="tx_breed">
+							<Size>
+								<AbsDimension x="72" y="72" />
+							</Size>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="5" y="5" />
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="tx_selected">
+							<Size>
+								<AbsDimension x="75" y="75" />
+							</Size>
+							<uri>[local.bitmap]selected.png</uri>
+							<alpha>0</alpha>
+							<visible>false</visible>
+						</Texture>
+					</Common>
+				</Button>	
+			</Container>
+		</Grid>
+		
+		<EntityDisplayer name="edChara">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="1150" y="950" />
+				</Anchor>
+			</Anchors>
+			<scale>4</scale>
+		</EntityDisplayer>
+		
+	</Container>
+	
+	<Shortcuts>
+		<validUi />
+	</Shortcuts>
+</Definition>
+

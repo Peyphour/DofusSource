@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+ <Definition>
+ 	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+ 	<Import url="[config.mod.template]button/simpleButton.xml" />
+    <Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]button/themeLabelCheckBox.xml" />
+ 	
+ 	<Constants>
+ 		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+ 		<Constant name="css" value="[config.ui.skin]css/" />
+ 		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+ 		<Constant name="item_path" value="[config.gfx.path.item.vector]/" />
+ 		<Constant name="illus" value="[config.gfx.path]/illusUi/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+ 	</Constants>
+ 	
+ 	<window name="mainCtr" title="[ui.treasureHunt.huntType2]" dark="true">	
+ 		<Anchors>
+ 			<Anchor relativePoint="CENTER" point="CENTER" />
+ 		</Anchors>
+		<Size>
+			<AbsDimension x="919" y="525" />
+		</Size>
+		
+		<Content>
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="10" y="5" />
+					</Anchor>
+				</Anchors>
+				
+				<block>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="4" y="30" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="362" y="360" />
+					</Size>
+					<Content>
+						<Texture>
+							<Size>
+								<AbsDimension x="352" y="350" />
+							</Size>
+							<uri>[local.common]bg_light.png</uri>
+						</Texture>
+						<Grid name="gd_hunts">
+							<Size>
+								<AbsDimension x="352" y="350" />
+							</Size>
+							<rendererName>InlineXmlGridRenderer</rendererName>
+							<rendererArgs>updateLine,[colors.grid.line]</rendererArgs>
+							<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+							<!--autoSelectMode>0</autoSelectMode-->
+							<slotWidth>352</slotWidth>
+							<slotHeight>35</slotHeight>
+							
+							<Container>
+								<Size>
+									<AbsDimension x="352" y="35" />
+								</Size>
+							
+								<Button name="btn_hunt">
+									<Common>
+										<Size>
+											<AbsDimension x="352" y="35" />
+										</Size>
+										<radioMode>true</radioMode>
+										
+										<Container>
+											<Size>
+												<AbsDimension x="352" y="35" />
+											</Size>
+											<bgColor>0</bgColor>
+											<bgAlpha>0</bgAlpha>
+										</Container>
+							
+										<Label name="lbl_name">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="10" y="8" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="300" y="21" />
+											</Size>
+											<cssClass>medium</cssClass>
+											<css>[local.css]small2.css</css>
+										</Label>
+										
+									</Common>
+				
+									<State type="OVER">
+										<SetProperties target="btn_hunt">
+											<bgColor>[colors.grid.over]</bgColor>
+										</SetProperties>
+									</State>
+				
+									<State type="SELECTED">
+										<SetProperties target="btn_hunt">
+											<bgColor>[colors.grid.selected]</bgColor>
+										</SetProperties>
+									</State>
+				
+									<State type="SELECTED_OVER">
+										<SetProperties target="btn_hunt">
+											<bgColor>[colors.grid.selected]</bgColor>
+										</SetProperties>
+									</State>
+								</Button>
+								
+							</Container>
+						</Grid>
+					</Content>
+				</block>
+				
+				<themeLabelCheckBox name="btn_showAll">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="5" y="405" />
+						</Anchor>
+					</Anchors>
+					<labelWidth>330</labelWidth>
+					<text>[ui.treasureHunt.showUnlaunchableHunts]</text>
+				</themeLabelCheckBox>
+			</Container>
+	 
+	 
+			<!--          Partie de droite           -->
+			
+			
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="383" y="5" />
+					</Anchor>
+				</Anchors>
+				
+				<Label name="lbl_name">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="15" y="10" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="360" y="21" />
+					</Size>
+					<cssClass>white</cssClass>
+					<css>[local.css]title.css</css>
+				</Label>
+				
+				<Label name="lbl_level">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="385" y="10" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="80" y="21" />
+					</Size>
+					<cssClass>right</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+				
+				<Label name="lbl_monsterName">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="12" y="55" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="238" y="20" />
+					</Size>
+					<css>[local.css]normal2.css</css>
+					<hyperlinkEnabled>true</hyperlinkEnabled>
+					<useStyleSheet>true</useStyleSheet>
+				</Label>
+				
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="10" y="55" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="469" y="217" />
+					</Size>
+					<uri>[local.illus]tx_legendaryBg.png</uri>
+				</Texture>
+				
+				<EntityDisplayer name="ed_monster">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="15" y="89" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="360" y="180" />
+					</Size>
+				</EntityDisplayer>
+				
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="10" y="55" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="469" y="217" />
+					</Size>
+					<uri>[local.assets]tx_legendaryBorder</uri>
+				</Texture>
+				
+				<!-- RECOMPENSES -->
+				
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="250" y="70" />
+						</Anchor>
+					</Anchors>
+					
+					<Texture name="tx_rewardChest">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="43" y="15" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="140" y="140" />
+						</Size>
+					</Texture>
+					
+					<Label name="lbl_rewardXp">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="55" y="178" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="140" y="20" />
+						</Size>
+						<cssClass>right</cssClass>
+						<css>[local.css]normal2.css</css>
+					</Label>			
+					<Texture name="tx_rewardXp">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="204" y="178" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="25" y="23" />
+						</Size>
+						<uri>[local.assets]tx_XP</uri>
+					</Texture>
+				</Container>
+			
+				<!-- INGREDIENTS ET CARTE -->
+				
+				<block>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="8" y="285" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="476" y="105" />
+					</Size>
+					<Content>
+						<Label name="lbl_mapRecap">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="5" y="4" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="440" y="20" />
+							</Size>
+							<css>[local.css]normal2.css</css>
+						</Label>
+						
+						<Grid name="gd_mapPieces">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="7" y="38" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="370" y="45" />
+							</Size>
+							<rendererName>SlotGridRenderer</rendererName>
+							<rendererArgs>[local.texture]slot/slot_dark_background_empty.png,[local.texture]slot/over.png,[local.texture]slot/selected.png,[local.texture]slot/acceptDrop.png,[local.texture]slot/refuseDrop.png,,[local.css]normal2.css, false</rendererArgs>
+							<slotWidth>44</slotWidth>
+							<slotHeight>44</slotHeight>
+							<scrollDisplay>none</scrollDisplay>
+							<autoSelectMode>0</autoSelectMode>
+							<Hooks>
+								<onItemRightClick/>
+							</Hooks>
+						</Grid>
+						
+						<Container name="ctr_map">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="380" y="38" />
+								</Anchor>
+							</Anchors>
+							
+							<Texture name="tx_craftMap">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="15" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="30" y="14" />
+								</Size>
+								<uri>[local.assets]tx_darkArrow</uri>
+							</Texture>
+							<Slot name="slot_map">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="35" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="44" y="44" />
+								</Size>
+								<forcedBackGroundIconUri>[local.texture]slot/emptySlot.png</forcedBackGroundIconUri>
+								<allowDrag>false</allowDrag>
+								<css>[local.css]normal2.css</css>
+								<Hooks>
+									<onRightClick/>
+								</Hooks>
+							</Slot>
+						</Container>
+					</Content>
+				</block>
+				
+				
+				<simpleButton label="[ui.smithmagic.begin]" name="btn_start"   >
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="136" y="397" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="220" y="35" />
+					</Size>
+				</simpleButton>
+			</Container>
+		</Content>
+ 	</window>
+ </Definition>

@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition usePropertiesCache="false">
+
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+	<Import url="[config.mod.template.button]simpleSlot.xml" />
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template]block.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+
+		<Constant name="illus" value="[config.content.path]gfx/illusUi/" />
+		<Constant name="iconsUri" value="[config.content.path]gfx/presets/icons.swf|" />
+	</Constants>
+
+	<block bgAlpha="1" name="ctr_main">
+		<Size>
+			<AbsDimension x="330" y="715" />
+		</Size>
+		<mouseEnabled>true</mouseEnabled>
+
+		<Content>
+			<!-- Texture tx_bg1 -->
+
+			<!-- <Texture> <Size> <AbsDimension x="500" y="637" /> </Size> <uri>[local.assets]map_tx_bgList</uri> 
+				<autoGrid>true</autoGrid> </Texture> -->
+
+
+			<!-- gd_presets -->
+			<Grid name="gd_presets">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="8" y="5" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="310" y="110" />
+				</Size>
+				<slotWidth>52</slotWidth>
+				<slotHeight>52</slotHeight>
+				<autoSelectMode>0</autoSelectMode>
+				<rendererName>SlotGridRenderer</rendererName>
+				<rendererArgs>[local.texture]slot/emptySlot.png,[local.texture]slot/over.png,[local.texture]slot/selected.png,[local.texture]slot/acceptDrop.png,[local.texture]slot/refuseDrop.png,,[local.css]normal2.css
+				</rendererArgs>
+				<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+				<scrollDisplay>always</scrollDisplay>
+				<Hooks>
+					<onSelectItem />
+					<onItemRollOver />
+					<onItemRollOut />
+					<onItemRollOut />
+				</Hooks>
+			</Grid>
+
+
+			<Label name="lbl_explanation">
+				<Anchors>
+					<Anchor point="TOP" relativePoint="TOP">
+						<AbsDimension x="0" y="140" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="242" y="400" />
+				</Size>
+				<css>[local.css]normal2.css</css>
+				<cssClass>center</cssClass>
+				<multiline>true</multiline>
+				<wordWrap>true</wordWrap>
+				<verticalAlign>center</verticalAlign>
+				<text>[ui.preset.howToUse]</text>
+			</Label>
+
+			<Container name="ctr_bottom">
+				<Size>
+					<RelDimension x="1" />
+				</Size>
+				<block name="bl_items">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="120" />
+						</Anchor>
+					</Anchors>
+
+					<Size>
+						<RelDimension x="1" />
+						<AbsDimension y="360" />
+					</Size>
+
+					<Content>
+						<Label name="lbl_title">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="45" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="320" y="20" />
+							</Size>
+							<cssClass>center</cssClass>
+							<css>[local.css]normal2.css</css>
+						</Label>
+						
+						<Grid name="gd_items">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="30" y="80" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="260" y="260" />
+							</Size>
+							<slotWidth>58</slotWidth>
+							<slotHeight>58</slotHeight>
+							<autoSelectMode>0</autoSelectMode>
+							<rendererName>InlineXmlGridRenderer</rendererName>
+							<rendererArgs>updateItems</rendererArgs>
+							<Container>
+								<Size>
+									<AbsDimension x="58" y="58" />
+								</Size>
+								<Button name="btn_item">
+									<Common>
+										<TextureBitmap name="tx_bg">
+											<Size>
+												<AbsDimension x="58" y="58" />
+											</Size>
+											<uri>[local.texture]slot/slot_big_dark_background_full.png
+											</uri>
+											<smooth>true</smooth>
+										</TextureBitmap>
+
+										<Texture name="tx_item">
+											<Size>
+												<AbsDimension x="58" y="58" />
+											</Size>
+										</Texture>
+
+										<Texture name="tx_over">
+											<Size>
+												<AbsDimension x="58" y="58" />
+											</Size>
+											<uri>[local.texture]slot/over.png</uri>
+											<visible>false</visible>
+										</Texture>
+
+										<Texture name="tx_selected">
+											<Size>
+												<AbsDimension x="58" y="58" />
+											</Size>
+											<uri>[local.texture]slot/selected.png</uri>
+											<visible>false</visible>
+										</Texture>
+										
+									</Common>
+ 									<State type="OVER">
+										<SetProperties target="tx_over">
+											<visible>true</visible>
+										</SetProperties>
+									</State>
+ 									<State type="SELECTED">
+										<SetProperties target="tx_over">
+											<visible>false</visible>
+										</SetProperties>
+									</State>
+								</Button>
+										
+								<themeIconButton name="btn_deleteItem">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="38" y="0" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="20" y="20" />
+									</Size>
+									<iconUri>[local.texture]btnIcon/btnIcon_cross.png</iconUri>
+									<visible>false</visible>
+								</themeIconButton>
+							</Container>
+
+							<Hooks>
+								<onSelectItem />
+								<onItemRollOver />
+								<onItemRollOut />
+							</Hooks>
+						</Grid>
+
+					</Content>
+				</block>
+
+
+				<block name="bl_menu">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="480" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<RelDimension x="1" />
+						<AbsDimension y="225" />
+					</Size>
+					-->
+
+					<Content>
+
+						<Label>
+							<Anchors>
+								<Anchor point="TOP">
+									<AbsDimension x="160" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="245" y="20" />
+							</Size>
+							<cssClass>center</cssClass>
+							<css>[local.css]small2.css</css>
+							<text>[ui.option.tabPic]</text>
+						</Label>
+
+						<!-- Grid gd_icons -->
+
+						<Grid name="gd_icons">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="20" y="25" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="280" y="140" />
+							</Size>
+							<verticalScrollbarCss>[local.css]scrollBar.css
+							</verticalScrollbarCss>
+							<scrollDisplay>always</scrollDisplay>
+							<rendererName>InlineXmlGridRenderer</rendererName>
+							<rendererArgs>updateIcon</rendererArgs>
+							<slotWidth>40</slotWidth>
+							<slotHeight>40</slotHeight>
+							<hPadding>5</hPadding>
+
+							<Container>
+								<Size>
+									<AbsDimension x="40" y="40" />
+								</Size>
+								<Button name="btn_icon">
+									<radioMode>true</radioMode>
+									<radioGroup>presetIconGroup</radioGroup>
+									<Common>
+										<TextureBitmap name="tx_bg">
+											<Size>
+												<AbsDimension x="40" y="40" />
+											</Size>
+											<themeDataId>button_small_normal</themeDataId>
+											<visible>false</visible>
+										</TextureBitmap>
+										<Texture name="tx_icon">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="4" y="4" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="32" y="32" />
+											</Size>
+											<luminosity>1</luminosity>
+										</Texture>
+										<Hooks>
+											<onSelectItem />
+										</Hooks>
+										<cacheAsBitmap>true</cacheAsBitmap>
+									</Common>
+									<State type="OVER">
+										<SetProperties target="tx_icon">
+											<luminosity>1.5</luminosity>
+										</SetProperties>
+										<SetProperties target="tx_bg">
+											<themeDataId>button_small_over</themeDataId>
+										</SetProperties>
+									</State>
+									<State type="SELECTED">
+										<SetProperties target="tx_bg">
+											<themeDataId>button_small_selected</themeDataId>
+										</SetProperties>
+									</State>
+								</Button>
+
+							</Container>
+
+							<Hooks>
+								<onSelectItem />
+							</Hooks>
+						</Grid>
+
+						<!-- Button btn_update -->
+						<themeIconButton name="btn_update">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="42" y="172" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="28" y="28" />
+							</Size>
+							<iconUri>[local.texture]btnIcon/btnIcon_update.png</iconUri>
+						</themeIconButton>
+
+
+						<!-- Button btn_delete -->
+						<themeIconButton name="btn_delete">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="250" y="172" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="28" y="28" />
+							</Size>
+							<iconUri>[local.texture]btnIcon/btnIcon_trash.png</iconUri>
+						</themeIconButton>
+
+						<!-- Button btn_save -->
+						<simpleButton label="[ui.common.save]" name="btn_save">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="85" y="170" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="150" y="32" />
+							</Size>
+						</simpleButton>
+					</Content>
+
+				</block>
+
+			</Container>
+
+			<simpleButton label="[ui.common.new]" name="btn_new"
+				strata="TOP">
+				<Anchors>
+					<Anchor point="TOP" relativePoint="TOP">
+						<AbsDimension x="0" y="130" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="150" y="32" />
+				</Size>
+			</simpleButton>
+		</Content>
+	</block>
+</Definition>
+

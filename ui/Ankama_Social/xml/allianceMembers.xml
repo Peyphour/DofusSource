@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition labelDebug="false">
+
+	<Import url="[config.mod.template]button/sortButton.xml" />
+    <Import url="[config.mod.template]button/iconButton.xml" />
+    <Import url="[config.mod.template]button/themeLabelCheckBox.xml" />
+    <Import url="[config.mod.template]button/themeIconButton.xml" />
+    
+    <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+        
+       	<Constant name="emblems_uri" value="[config.content.path]gfx/emblems/" /> 
+	</Constants>
+    
+	<Container>
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="12" y="152" />
+			</Anchor>
+		</Anchors>		
+		<Texture>
+			<Size>
+				<AbsDimension x="1102" y="33" />
+			</Size>
+			<uri>[local.common]bg_dark.png</uri>
+		</Texture>		
+			
+		<sortButton name="btn_tabName">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="130" y="0" />
+				</Anchor>
+			</Anchors>				
+			<Size>
+				<AbsDimension x="370" y="30" />
+			</Size>
+		</sortButton>			
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="140" y="5" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="300" y="16" />
+			</Size>
+			<text>[ui.common.name]</text>
+			<css>[local.css]small2.css</css>
+		</Label>
+		
+		<sortButton name="btn_tabLevel">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="500" y="0" />
+				</Anchor>
+			</Anchors>				
+			<Size>
+				<AbsDimension x="130" y="30" />
+			</Size>  
+		</sortButton>		
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="510" y="5" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="110" y="16" />
+			</Size>
+			<text>[ui.common.level]</text>
+			<cssClass>center</cssClass>
+			<css>[local.css]small2.css</css>
+		</Label>
+		
+		<sortButton name="btn_tabMembers">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="650" y="0" />
+				</Anchor>
+			</Anchors>				
+			<Size>
+				<AbsDimension x="400" y="30" />
+			</Size>  
+		</sortButton>
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="700" y="5" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="310" y="16" />
+			</Size>
+			<text>[ui.social.guildMembers]</text>
+			<css>[local.css]small2.css</css>
+		</Label>
+		
+		
+			
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="34" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1102" y="420" />
+			</Size>
+			<uri>[local.common]bg_light.png</uri>
+		</Texture>
+
+		<Grid name="gd_guilds">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="34" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1102" y="420" />
+			</Size>
+			<rendererName>InlineXmlGridRenderer</rendererName>
+			<rendererArgs>updateGuildLine,[colors.grid.line]</rendererArgs>
+			<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+			<slotWidth>1092</slotWidth>
+			<slotHeight>84</slotHeight>
+			
+			<Container>
+				<Size>
+					<AbsDimension x="1092" y="84" />
+				</Size>
+
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="36" y="12" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="56" y="56" />
+					</Size>
+					<Texture name="tx_emblemBack">
+						<Size>
+							<AbsDimension x="56" y="56" />
+						</Size>
+					</Texture>
+					<Texture name="tx_emblemUp">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="11" y="11" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="34" y="34" />
+						</Size>
+					</Texture>
+				</Container>
+		
+				<Texture name="tx_leader">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="26" y="10" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="23" y="23" />
+					</Size>
+					<uri>[local.assets]tx_crown</uri>
+					<visible>false</visible>
+				</Texture>
+				
+				<Label name="lbl_guildName">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="140" y="15" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="370" y="16" />
+					</Size>
+					<hyperlinkEnabled>true</hyperlinkEnabled>
+					<useStyleSheet>true</useStyleSheet>
+					<css>[local.css]normal2.css</css>
+				</Label>
+		
+				<Label name="lbl_leaderName">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="140" y="45" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="370" y="16" />
+					</Size>
+					<hyperlinkEnabled>true</hyperlinkEnabled>
+					<useStyleSheet>true</useStyleSheet>
+					<css>[local.css]small2.css</css>
+				</Label>
+		
+				<Label name="lbl_lvl">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="530" y="30" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="70" y="16" />
+					</Size>
+					<cssClass>center</cssClass>
+					<css>[local.css]small2.css</css>
+				</Label>
+		
+				<Label name="lbl_members">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="700" y="18" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="300" y="16" />
+					</Size>
+					<css>[local.css]small2.css</css>
+				</Label>
+		
+				<Label name="lbl_perco">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="700" y="42" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="300" y="16" />
+					</Size>
+					<css>[local.css]small2.css</css>
+				</Label>
+		
+				<themeIconButton name="btn_giveLeadership">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="1020" y="30" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="22" y="21" />
+					</Size>
+					<iconUri>[local.texture]btnIcon/tx_crown.png</iconUri>
+				</themeIconButton>
+		
+				<themeIconButton name ="btn_kick"> 
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="1046" y="30" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="22" y="21" />
+					</Size>
+					<iconUri>[local.texture]btnIcon/btnIcon_cross.png</iconUri>
+					<smooth>true</smooth>
+				</themeIconButton>
+				
+			</Container>
+		</Grid>
+		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="454" />
+				</Anchor>
+			</Anchors>
+		
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="34" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="1102" y="34" />
+				</Size>
+				<scaleY>-1</scaleY>
+				<uri>[local.common]bg_dark.png</uri>
+			</Texture>
+	
+			<Label name="lbl_members">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="700" y="5" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="385" y="16" />
+				</Size>
+				<css>[local.css]small2.css</css>
+				<cssClass>right</cssClass>
+			</Label>
+			
+			<!-- CHECKBOX D'OPTIONS -->
+			
+			<themeLabelCheckBox name="btn_ava">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="10" y="6" />
+					</Anchor>
+				</Anchors>	
+				<labelWidth>600</labelWidth>
+			<text>[ui.alliance.enableAvA]</text>
+			</themeLabelCheckBox>
+			
+		</Container>
+
+	</Container>
+</Definition>
+

@@ -1,0 +1,1397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition debug="false" labelDebug="false" fullscreen="false">
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/greyButton.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]windowWithoutTitleBar.xml" />
+	<Import url="[config.mod.template]specific/characterCreationColorSlot.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+
+		<Constant name="breed_uri" value="[config.content.path]gfx/classes/" />
+		<Constant name="illus" value="[config.content.path]gfx/classes/" />
+		<Constant name="heads_uri" value="[config.content.path]gfx/cosmetics/" />
+
+		<Constant name="colors_y_up" value="336" type="int" />
+		<Constant name="colors_y_down" value="493" type="int" />
+		<Constant name="progressbar_role_width" value="308" type="int" />
+
+		<Constant name="star_green_uri" value="[config.ui.skin]texture/star1.png" />
+		<Constant name="star_black_uri" value="[config.ui.skin]texture/star0.png" />
+
+		<Constant name="choose_race_tx_size" value="54" type="int" />
+
+	</Constants>
+
+	<Container name="creaCtr">
+
+		<mouseEnabled>true</mouseEnabled>
+
+		<Texture name="tx_illuBg">
+			<Anchors>
+				<Anchor point="CENTER">
+					<AbsDimension x="640" y="512" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1978" y="1024" />
+			</Size>
+			<bgColor>0</bgColor>
+		</Texture>
+
+		<Label name="lbl_screen_title">
+			<Anchors>
+				<Anchor point="TOP">
+					<AbsDimension x="640" y="15" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="600" y="26" />
+			</Size>
+			<cssClass>whitehugeboldcenter</cssClass>
+			<css>[local.css]title.css</css>
+			<text>[ui.charcrea.choseClass]</text>
+			<forceUppercase>true</forceUppercase>
+		</Label>
+
+		<!-- Affichage des infos de classe à gauche -->
+		<windowWithoutTitleBar name="ctn_left" noCloseButton="true">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="80" y="100" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="490" y="780" />
+			</Size>
+			<bgAlpha>1</bgAlpha>
+			<visible>false</visible>
+
+			<OverFrameContent>
+				<Texture name="tx_breedSymbol">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="-15" y="-35" />
+						</Anchor>
+					</Anchors>
+					<scaleX>0.7</scaleX>
+					<scaleY>0.7</scaleY>
+				</Texture>
+
+				<TextureBitmap>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="25" y="736" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="170" y="38" />
+					</Size>
+					<themeDataId>bg_simple_button</themeDataId>
+					<smooth>true</smooth>
+				</TextureBitmap>
+
+				<simpleButton name="btn_previous">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="47" y="736" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="126" y="32" />
+					</Size>
+					<uri>[local.assets]btn_arrowGreyR</uri>
+					<label>[ui.common.back]</label>
+				</simpleButton>
+			</OverFrameContent>
+
+			<Content>
+				<Container>
+					<Anchors>
+						<Anchor relativePoint="TOPLEFT">
+							<AbsDimension x="5" y="3" />
+						</Anchor>
+						<Anchor relativePoint="BOTTOMRIGHT">
+							<AbsDimension x="-5" y="-5" />
+						</Anchor>
+					</Anchors>
+					<!-- breed Title -->
+					<block withBottomBlockSparator="true">
+						<Size>
+							<RelDimension x="1" />
+							<AbsDimension y="127" />
+						</Size>
+						<Content>
+							<Label name="lbl_breed">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="150" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="480" y="26" />
+								</Size>
+								<cssClass>whitehugeboldshadow</cssClass>
+								<css>[local.css]special.css</css>
+								<useDefaultFont>true</useDefaultFont>
+							</Label>
+
+
+							<Label name="lbl_breedSubtitle">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="150" y="50" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="350" y="30" />
+								</Size>
+								<cssClass>greenbold</cssClass>
+								<css>[local.css]title.css</css>
+								<forceUppercase>true</forceUppercase>
+								<!--fixedWidth>false</fixedWidth -->
+								<useDefaultFont>true</useDefaultFont>
+							</Label>
+
+
+							<!-- Difficulté de la classe -->
+							<Container name="ctr_breedComplexity">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="150" y="75" />
+									</Anchor>
+								</Anchors>
+
+								<Label name="lbl_breedComplexity">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="11" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="200" y="20" />
+									</Size>
+									<cssClass>mediumleft</cssClass>
+									<css>[local.css]small2.css</css>
+									<text>[ui.common.difficulty][ui.common.colon]</text>
+								</Label>
+
+								<Container name="ctr_stars">
+									<Texture name="tx_breedComplexity_0">
+										<Size>
+											<AbsDimension x="36" y="39" />
+										</Size>
+										<uri>[local.texture]star1.png</uri>
+									</Texture>
+									<Texture name="tx_breedComplexity_1">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="40" y="0" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="36" y="39" />
+										</Size>
+										<uri>[local.texture]star1.png</uri>
+									</Texture>
+									<Texture name="tx_breedComplexity_2">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="80" y="0" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="36" y="39" />
+										</Size>
+										<uri>[local.texture]star0.png</uri>
+									</Texture>
+
+								</Container>
+							</Container>
+						</Content>
+					</block>
+
+					<Container name="ctr_breedPresentation">
+						<Size>
+							<RelDimension x="1" y="1" />
+						</Size>
+
+						<!-- Roles -->
+						<block withBottomBlockSparator="true">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="128" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<RelDimension x="1" />
+								<AbsDimension y="335" />
+							</Size>
+
+							<Content>
+
+								<!-- Roles de la classe -->
+								<Container>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="10" y="0" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="410" y="370" />
+									</Size>
+
+									<Container name="ctr_roleItem0">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="0" y="8" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="410" y="60" />
+										</Size>
+										<Texture name="tx_role0">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="0" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="64" y="64" />
+											</Size>
+										</Texture>
+										<Label name="lbl_roleTitle0">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="75" y="0" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="335" y="100" />
+											</Size>
+											<!--cssClass>light</cssClass> <css>[local.css]normal.css</css -->
+											<cssClass>extrawhitebold</cssClass>
+											<css>[local.css]normal2.css</css>
+										</Label>
+
+										<Label name="lbl_role0">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="75" y="20" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="335" y="100" />
+											</Size>
+											<cssClass>mediumleft</cssClass>
+											<css>[local.css]small2.css</css>
+											<fixedWidth>false</fixedWidth>
+											<wordWrap>true</wordWrap>
+											<multiline>true</multiline>
+										</Label>
+									</Container>
+
+									<TextureBitmap>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="0" y="90" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="400" y="3" />
+										</Size>
+										<uri>[local.common]window_separator_black_horizontal.png</uri>
+									</TextureBitmap>
+
+									<Container name="ctr_roleItem1">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="0" y="99" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="410" y="60" />
+										</Size>
+										<Texture name="tx_role1">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="0" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="64" y="64" />
+											</Size>
+										</Texture>
+
+										<Label name="lbl_roleTitle1">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="75" y="0" />
+												</Anchor>
+											</Anchors>
+											<Size>
+
+												<AbsDimension x="335" y="100" />
+											</Size>
+											<!--cssClass>light</cssClass> <css>[local.css]normal.css</css -->
+											<cssClass>extrawhitebold</cssClass>
+											<css>[local.css]normal2.css</css>
+										</Label>
+
+										<Label name="lbl_role1">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="75" y="20" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="335" y="100" />
+											</Size>
+											<cssClass>mediumleft</cssClass>
+											<css>[local.css]small2.css</css>
+											<fixedWidth>false</fixedWidth>
+											<wordWrap>true</wordWrap>
+											<multiline>true</multiline>
+										</Label>
+									</Container>
+
+									<TextureBitmap>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="0" y="184" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="400" y="3" />
+										</Size>
+										<uri>[local.common]window_separator_black_horizontal.png</uri>
+									</TextureBitmap>
+
+									<Container name="ctr_roleItem2">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="0" y="193" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="410" y="70" />
+										</Size>
+										<Texture name="tx_role2">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="0" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="64" y="64" />
+											</Size>
+										</Texture>
+
+										<Label name="lbl_roleTitle2">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="75" y="0" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="335" y="100" />
+											</Size>
+											<!--cssClass>light</cssClass> <css>[local.css]normal.css</css -->
+											<cssClass>extrawhitebold</cssClass>
+											<css>[local.css]normal2.css</css>
+										</Label>
+
+										<Label name="lbl_role2">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="75" y="20" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="335" y="100" />
+											</Size>
+											<cssClass>mediumleft</cssClass>
+											<css>[local.css]small2.css</css>
+											<fixedWidth>false</fixedWidth>
+											<wordWrap>true</wordWrap>
+											<multiline>true</multiline>
+										</Label>
+									</Container>
+								</Container>
+
+								<simpleButton label="[ui.common.moreInfos]" name="btn_breedInfo">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="290" y="282" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="120" y="32" />
+									</Size>
+									<cssClass>small</cssClass>
+								</simpleButton>
+							</Content>
+						</block>
+
+						<!-- Video -->
+						<block>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="465" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<RelDimension x="1" />
+								<AbsDimension y="255" />
+							</Size>
+							<Content>
+								<Container name="ctr_videoPlayerSmall">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="20" y="13" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="352" y="198" />
+									</Size>
+
+									<VideoPlayer name="videoPlayerSmall">
+										<Size>
+											<AbsDimension x="387" y="218" />
+										</Size>
+										<autoPlay>false</autoPlay>
+										<autoLoop>true</autoLoop>
+									</VideoPlayer>
+
+									<Texture name="tx_videoPlayerSmallPlay">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="140" y="51" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="105" y="105" />
+										</Size>
+										<uri>[local.texture]onboarding/icon_play_yt_video.png</uri>
+										<autoGrid>true</autoGrid>
+									</Texture>
+								</Container>
+							</Content>
+						</block>
+					</Container>
+
+					<!-- Personnalisation du personnage -->
+					<Container name="ctr_breedCustomization">
+						<Size>
+							<RelDimension x="1" y="1" />
+						</Size>
+						<!-- sexe & head -->
+						<block withBottomBlockSparator="true">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="128" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<RelDimension x="1" />
+								<AbsDimension y="260" />
+							</Size>
+							<Content>
+								<!-- Choix du sexe -->
+								<Container>
+									<Anchors>
+										<Anchor point="TOP" relativePoint="TOP">
+											<AbsDimension x="0" y="9" />
+										</Anchor>
+									</Anchors>
+
+									<TextureBitmap>
+										<uri>[local.texture]onboarding/bgGenderChoice.png</uri>
+									</TextureBitmap>
+
+									<themeIconButton name="btn_customSex0" smooth="true">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="11" y="9" />
+
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="28" y="33" />
+										</Size>
+										<radioGroup>genderGroupCustom</radioGroup>
+										<radioMode>true</radioMode>
+										<bgThemeDataId>btn_gender_male</bgThemeDataId>
+										<smooth>true</smooth>
+									</themeIconButton>
+
+									<themeIconButton name="btn_customSex1" smooth="true">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="57" y="6" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="28" y="33" />
+										</Size>
+										<radioGroup>genderGroupCustom</radioGroup>
+										<radioMode>true</radioMode>
+										<bgThemeDataId>btn_gender_female</bgThemeDataId>
+										<smooth>true</smooth>
+									</themeIconButton>
+								</Container>
+
+								<!-- Choix du visage -->
+								<Container>
+									<Anchors>
+										<Anchor point="TOP" relativePoint="TOP">
+											<AbsDimension x="7" y="63" />
+										</Anchor>
+									</Anchors>
+
+									<Grid name="gd_heads">
+										<Size>
+											<AbsDimension x="380" y="190" />
+										</Size>
+										<rendererName>InlineXmlGridRenderer</rendererName>
+										<rendererArgs>updateHead</rendererArgs>
+										<slotWidth>82</slotWidth>
+										<slotHeight>82</slotHeight>
+
+										<Container name="ctr_head">
+											<Size>
+												<AbsDimension x="82" y="82" />
+											</Size>
+											<Button name="btn_head">
+												<Common>
+													<Texture>
+														<Size>
+															<AbsDimension x="82" y="82" />
+														</Size>
+														<uri>[local.texture]onboarding/bgHeadChoiceNormal.png</uri>
+													</Texture>
+													<Texture name="tx_hselected">
+														<Size>
+															<AbsDimension x="82" y="82" />
+														</Size>
+														<uri>[local.texture]onboarding/bgHeadChoiceSelected.png</uri>
+														<visible>false</visible>
+													</Texture>
+													<Texture name="tx_head">
+														<Anchors>
+															<Anchor>
+																<AbsDimension x="2" y="2" />
+															</Anchor>
+														</Anchors>
+														<Size>
+															<AbsDimension x="78" y="78" />
+														</Size>
+													</Texture>
+												</Common>
+												<State type="SELECTED">
+													<SetProperties target="tx_hselected">
+														<visible>true</visible>
+													</SetProperties>
+												</State>
+											</Button>
+										</Container>
+										<Hooks>
+											<onSelectItem />
+										</Hooks>
+									</Grid>
+								</Container>
+							</Content>
+						</block>
+
+						<!-- name & color -->
+						<block>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="388" />
+								</Anchor>
+							</Anchors>
+
+							<Size>
+								<AbsDimension y="330" />
+								<RelDimension x="1" />
+							</Size>
+							<Content>
+
+								<!-- Choix des couleurs -->
+								<Container>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="10" />
+										</Anchor>
+									</Anchors>
+									<Container>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="90" y="0" />
+											</Anchor>
+										</Anchors>
+
+										<!-- Texture de fond des slots à couleur -->
+										<characterCreationColorSlot name="0">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="0" />
+												</Anchor>
+											</Anchors>
+
+										</characterCreationColorSlot>
+
+										<characterCreationColorSlot name="1">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="50" y="0" />
+												</Anchor>
+											</Anchors>
+
+										</characterCreationColorSlot>
+
+										<characterCreationColorSlot name="2">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="100" y="0" />
+												</Anchor>
+											</Anchors>
+
+										</characterCreationColorSlot>
+
+										<characterCreationColorSlot name="3">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="150" y="0" />
+												</Anchor>
+											</Anchors>
+
+										</characterCreationColorSlot>
+										<characterCreationColorSlot name="4">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="200" y="0" />
+												</Anchor>
+											</Anchors>
+
+										</characterCreationColorSlot>
+									</Container>
+
+									<ColorPicker name="cp_colorPk">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="25" y="55" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="380" y="140" />
+										</Size>
+										<sliderTexture>[local.bitmap]cursorSlider.png</sliderTexture>
+										<gradientTexture>[local.bitmap]cursorGradient.png</gradientTexture>
+										<Hooks>
+											<onColorChange />
+										</Hooks>
+									</ColorPicker>
+
+
+									<themeIconButton name="btn_generateColor">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="215" y="208" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="32" y="32" />
+										</Size>
+										<iconUri>[local.texture]btnIcon/btnIcon_refresh.png</iconUri>
+									</themeIconButton>
+
+									<simpleButton label="[ui.common.reset]" name="btn_reinitColor">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="255" y="208" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="150" y="32" />
+										</Size>
+										<css>[local.css]button.css</css>
+										<cssClass>small</cssClass>
+									</simpleButton>
+								</Container>
+
+								<TextureBitmap>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="260" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension y="3" />
+										<RelDimension x="1" />
+									</Size>
+									<uri>[local.common]window_separator_black_horizontal.png</uri>
+								</TextureBitmap>
+
+								<!-- Choix du nom -->
+								<Container>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="270" />
+										</Anchor>
+									</Anchors>
+
+									<TextureBitmap name="tx_name">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="18" y="-5" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="350" y="50" />
+										</Size>
+										<themeDataId>bg_small_border_light</themeDataId>
+										<smooth>true</smooth>
+									</TextureBitmap>
+
+									<Input name="input_name">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="20" y="8" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="325" y="24" />
+										</Size>
+										<cssClass>boldcenter</cssClass>
+										<css>[local.css]normal2.css</css>
+									</Input>
+
+									<Texture name="tx_nameRules">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="379" y="6" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="28" y="28" />
+										</Size>
+										<uri>[local.texture]help_icon_normal.png</uri>
+									</Texture>
+
+									<themeIconButton name="btn_generateName">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="328" y="8" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="26" y="26" />
+										</Size>
+										<iconUri>[local.texture]btnIcon/btnIcon_refresh.png</iconUri>
+									</themeIconButton>
+								</Container>
+							</Content>
+						</block>
+					</Container>
+				</Container>
+			</Content>
+		</windowWithoutTitleBar>
+
+		<!-- Affichage du personnage au centre -->
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="795" y="650" />
+				</Anchor>
+			</Anchors>
+
+			<EntityDisplayer name="ed_chara">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="87" y="-12" />
+					</Anchor>
+				</Anchors>
+				<scale>2.5</scale>
+			</EntityDisplayer>
+
+
+			<themeIconButton name="btn_rightArrow">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="-20" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="36" y="33" />
+				</Size>
+				<bgThemeDataId>btn_arrow_turn</bgThemeDataId>
+				<bgScaleX>-1</bgScaleX>
+				<Hooks>
+					<onRelease />
+					<onDoubleClick />
+				</Hooks>
+				<smooth>true</smooth>
+			</themeIconButton>
+
+			<themeIconButton name="btn_showEquipment">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="71" y="55" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="30" y="30" />
+				</Size>
+				<checkBox>true</checkBox>
+				<iconUri>[local.texture]btnIcon/btn_weapon.png</iconUri>
+				<bgThemeDataId>button_grey_thin_border</bgThemeDataId>
+				<iconAnchors>	
+					<Anchor relativePoint="TOPLEFT">
+						<AbsDimension x="3" y="3"/>
+					</Anchor>
+					<Anchor relativePoint="BOTTOMRIGHT">
+						<AbsDimension x="-3" y="-3"/>
+					</Anchor>
+				</iconAnchors>
+			</themeIconButton>
+
+			<themeIconButton name="btn_leftArrow">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="150" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="36" y="33" />
+				</Size>
+				<bgThemeDataId>btn_arrow_turn</bgThemeDataId>
+				<smooth>true</smooth>
+				<Hooks>
+					<onRelease />
+					<onDoubleClick />
+				</Hooks>
+			</themeIconButton>
+		</Container>
+
+
+
+		<!-- Choix de la classe -->
+		<Container name="ctr_arrowsBreedChoice">
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="40" y="450" />
+					</Anchor>
+				</Anchors>
+				<scaleX>-1</scaleX>
+
+				<TextureBitmap>
+					<uri>[local.texture]onboarding/bgGreenArrow.png</uri>
+				</TextureBitmap>
+				<themeIconButton name="btn_left">
+					<bgThemeDataId>btn_big_arrow</bgThemeDataId>
+					<smooth>true</smooth>
+				</themeIconButton>
+			</Container>
+
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="1240" y="450" />
+					</Anchor>
+				</Anchors>
+				<TextureBitmap>
+					<uri>[local.texture]onboarding/bgGreenArrow.png</uri>
+				</TextureBitmap>
+				<themeIconButton name="btn_right">
+					<bgThemeDataId>btn_big_arrow</bgThemeDataId>
+					<smooth>true</smooth>
+				</themeIconButton>
+			</Container>
+		</Container>
+
+		<windowWithoutTitleBar noCloseButton="true"	name="ctr_breedChoice">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="25" y="930" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1230" y="200" />
+			</Size>
+			<bgAlpha>1</bgAlpha>
+			<Content>
+
+				<!-- Sexe -->
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="0" />
+						</Anchor>
+					</Anchors>
+
+					<themeIconButton name="btn_breedSex0" smooth="true">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="13" y="5" />
+
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="23" y="26" />
+						</Size>
+						<radioGroup>genderGroupBreed</radioGroup>
+						<radioMode>true</radioMode>
+						<bgThemeDataId>btn_gender_male</bgThemeDataId>
+						<smooth>true</smooth>
+					</themeIconButton>
+
+					<TextureBitmap>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="33" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="45" y="3" />
+						</Size>
+						<uri>[local.common]window_separator_black_horizontal.png</uri>
+					</TextureBitmap>
+
+					<themeIconButton name="btn_breedSex1" smooth="true">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="10" y="40" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="23" y="26" />
+						</Size>
+						<radioGroup>genderGroupBreed</radioGroup>
+						<radioMode>true</radioMode>
+						<bgThemeDataId>btn_gender_female</bgThemeDataId>
+						<smooth>true</smooth>
+					</themeIconButton>
+				</Container>
+
+
+
+
+			</Content>
+
+			<OverFrameContent>
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="40" y="0" />
+						</Anchor>
+					</Anchors>
+
+					<Grid name="gd_breed">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="8" y="8" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="1130" y="56" />
+						</Size>
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updateBreed</rendererArgs>
+						<slotWidth>56</slotWidth>
+						<slotHeight>56</slotHeight>
+						<hPadding>7</hPadding>
+						<allowLastToFirst>true</allowLastToFirst>
+						
+						<Container name="ctr_breed">
+							<Size>
+								<AbsDimension x="56" y="56" />
+							</Size>
+							<Button name="btn_icon">
+								<Common>
+									<Texture>
+										<Size>
+											<AbsDimension x="56" y="56" />
+										</Size>
+										<uri>[local.texture]onboarding/bgVignettingCharacterChoice.png</uri>
+										<alpha>0.35</alpha>
+									</Texture>
+									<Texture name="tx_breed">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="1" y="1" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="54" y="54" />
+										</Size>
+									</Texture>
+									<Texture name="tx_grey">
+										<Size>
+											<AbsDimension x="56" y="56" />
+										</Size>
+										<visible>false</visible>
+										<bgColor>[colors.ui.shadow]</bgColor>
+										<bgAlpha>0.6</bgAlpha>
+									</Texture>
+									<Texture name="tx_veil">
+										<Size>
+											<AbsDimension x="56" y="56" />
+										</Size>
+										<bgColor>[colors.ui.shadow.dark]</bgColor>
+										<bgAlpha>0.37</bgAlpha>
+										<visible>true</visible>
+									</Texture>
+									<Texture name="tx_selected">
+										<Size>
+											<AbsDimension x="56" y="56" />
+										</Size>
+										<uri>[local.texture]slot/selected.png</uri>
+										<visible>false</visible>
+									</Texture>
+									<Texture name="tx_selected_arrow">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="6" y="-15" />
+											</Anchor>
+										</Anchors>
+										<visible>false</visible>
+										<Size>
+											<AbsDimension x="43" y="34" />
+										</Size>
+
+										<uri>[local.texture]onboarding/cursorCharacterChoice.png</uri>
+									</Texture>
+
+								</Common>
+								<State type="SELECTED">
+									<SetProperties target="tx_selected">
+										<visible>true</visible>
+									</SetProperties>
+									<SetProperties target="tx_selected_arrow">
+										<visible>true</visible>
+									</SetProperties>
+									<SetProperties target="tx_veil">
+										<visible>false</visible>
+									</SetProperties>
+									<SetProperties target="tx_breed">
+										<luminosity>2</luminosity>
+									</SetProperties>
+									
+								</State>
+							</Button>
+						</Container>
+						<Hooks>
+							<onSelectItem />
+						</Hooks>
+					</Grid>
+				</Container>
+
+			</OverFrameContent>
+		</windowWithoutTitleBar>
+
+		<!-- CHOIX COULEUR HEXADECIMALE -->
+
+		<windowWithoutTitleBar name="ctr_hexaColor"	noCloseButton="true">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="476" y="576" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="200" y="87" />
+			</Size>
+			<mouseEnabled>true</mouseEnabled>
+
+			<Content>
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="8" y="7" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="30" y="16" />
+					</Size>
+					<cssClass>darkright</cssClass>
+					<css>[local.css]normal2.css</css>
+					<text>0x</text>
+				</Label>
+
+				<TextureBitmap>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="8" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="110" y="37" />
+					</Size>
+					<themeDataId>bg_small_border_dark</themeDataId>
+				</TextureBitmap>
+
+				<Input name="inp_hexaValue">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="40" y="7" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="80" y="18" />
+					</Size>
+					<css>[local.css]normal2.css</css>
+					<maxChars>6</maxChars>
+					<restrict>0-9a-zA-Z</restrict>
+				</Input>
+
+				<themeIconButton name="btn_hexaOk">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="120" y="5" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="26" y="26" />
+					</Size>
+					<iconUri>[local.texture]btnIcon/btnIcon_check.png</iconUri>
+				</themeIconButton>
+			</Content>
+		</windowWithoutTitleBar>
+
+		<!-- ROLES, HISTOIRE ET SORTS DE LA CLASSE -->
+		<windowWithoutTitleBar name="ctr_breedInfos">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="600" y="100" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="600" y="635" />
+			</Size>
+			<bgAlpha>1</bgAlpha>
+			<titleYOffset>10</titleYOffset>
+			<Content>
+
+				<block>
+					<Anchors>
+						<Anchor relativePoint="TOPLEFT">
+							<AbsDimension x="5" y="3" />
+						</Anchor>
+						<Anchor relativePoint="BOTTOMRIGHT">
+							<AbsDimension x="-5" y="-5" />
+						</Anchor>
+					</Anchors>
+				</block>
+
+				<TextArea name="texta_breedInfo">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="25" y="60" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="520" y="120" />
+					</Size>
+					<cssClass>medium</cssClass>
+					<css>[local.css]small2.css</css>
+					<scrollCss>[local.css]scrollBar.css</scrollCss>
+				</TextArea>
+
+				<TextureBitmap>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="175" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension y="3" />
+						<RelDimension x="1" />
+					</Size>
+					<uri>[local.common]window_separator_black_horizontal.png</uri>
+				</TextureBitmap>
+
+				<Grid name="gd_breedAllRoles">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="25" y="190" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="530" y="220" />
+					</Size>
+					<rendererName>InlineXmlGridRenderer</rendererName>
+					<rendererArgs>updateInfoRole</rendererArgs>
+					<slotWidth>520</slotWidth>
+					<slotHeight>25</slotHeight>
+
+					<Container>
+						<Size>
+							<AbsDimension x="520" y="25" />
+						</Size>
+
+						<Texture name="tx_roleSmall">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="-5" y="-6" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="31" y="31" />
+							</Size>
+							<uri>[local.assets]tx_progressBarBackground</uri>
+							<autoGrid>true</autoGrid>
+						</Texture>
+
+						<Label name="lbl_role">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="30" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="170" y="20" />
+							</Size>
+							<cssClass>mediumleft</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+
+						<ProgressBar name="pb_progressBar">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="180" y="6" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="[local.progressbar_role_width]" y="14" />
+							</Size>
+							<barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+						</ProgressBar>
+					</Container>
+				</Grid>
+
+				<TextureBitmap>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="425" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension y="3" />
+						<RelDimension x="1" />
+					</Size>
+					<uri>[local.common]window_separator_black_horizontal.png</uri>
+				</TextureBitmap>
+
+
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="425" />
+						</Anchor>
+					</Anchors>
+
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="25" y="9" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="550" y="25" />
+						</Size>
+						<cssClass>smalllightleft</cssClass>
+						<css>[local.css]normal.css</css>
+						<text>[ui.charcrea.spells]</text>
+					</Label>
+					<Grid name="gd_spells">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="25" y="43" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="510" y="100" />
+						</Size>
+						<rendererName>SlotGridRenderer</rendererName>
+						<rendererArgs>,[local.texture]slot/selected.png,[local.texture]slot/selected.png,,,,[local.css]normal.css,false</rendererArgs>
+						<slotWidth>44</slotWidth>
+						<slotHeight>44</slotHeight>
+						<scrollDisplay>none</scrollDisplay>
+						<autoSelectMode>0</autoSelectMode>
+						<Hooks>
+							<onItemRollOver />
+							<onItemRollOut />
+						</Hooks>
+					</Grid>
+
+				</Container>
+			</Content>
+		</windowWithoutTitleBar>
+
+		<!-- BOUTONS -->
+		<simpleButton name="btn_next">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="730" y="750" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="302" y="93" />
+			</Size>
+			<bgThemeDataId>button_largeBorder</bgThemeDataId>
+			<smooth>true</smooth>
+			<cssClass>darkcenter</cssClass>
+			<css>[local.css]title.css</css>
+			<forceUppercase>true</forceUppercase>
+			<useDefaultFont>true</useDefaultFont>
+		</simpleButton>
+
+		<!-- VIDEO FULL -->
+		<Container name="ctr_videoPlayerFull">
+			<visible>false</visible>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="10" y="90" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1260" y="709" />
+			</Size>
+			<VideoPlayer name="videoPlayerFull">
+				<shadowColor>[colors.ui.shadow]</shadowColor>
+				<Size>
+					<AbsDimension x="1260" y="709" />
+				</Size>
+				<autoPlay>false</autoPlay>
+				<autoLoop>true</autoLoop>
+			</VideoPlayer>
+
+			<themeIconButton name="btn_closeVideo">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+						<AbsDimension x="-20" y="20" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="30" y="30" />
+				</Size>
+				<bgThemeDataId>button_close</bgThemeDataId>
+				<smooth>true</smooth>
+			</themeIconButton>
+
+		</Container>
+
+	</Container>
+
+	<Shortcuts>
+		<validUi />
+	</Shortcuts>
+</Definition>
+

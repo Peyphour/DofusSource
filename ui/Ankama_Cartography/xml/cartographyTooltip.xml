@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition usePropertiesCache="false">
+	<Constants>
+       	<Constant name="css" value="[config.ui.skin]css/"/>
+       	<Constant name="mapFlagElementHeight" value="40"/>
+		<Constant name="mapElementHeight" value="40"/>
+		<Constant name="labelTextX" value="45"/>
+   	</Constants>
+
+	<Container>
+		<Container name="ctr_flags">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			
+			<Container name="ctr_flags_bg">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="0" />
+					</Anchor>
+					<Anchor relativePoint="BOTTOMRIGHT">
+						<AbsDimension x="25" y="10" />
+					</Anchor>
+				</Anchors>
+				<bgColor>[colors.tooltip.bg]</bgColor>
+				<bgAlpha>[colors.tooltip.bg.alpha]</bgAlpha>
+			</Container>
+			
+			<Grid name="gd_flags">
+				<Size>
+					<AbsDimension x="129" y="[local.mapFlagElementHeight]" />
+				</Size>
+				<rendererName>InlineXmlGridRenderer</rendererName>
+				<rendererArgs>updateFlag</rendererArgs>
+				<slotWidth>100</slotWidth>
+				<slotHeight>[local.mapFlagElementHeight]</slotHeight>
+				<Container name="ctr_flag">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="15" y="5" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="129" y="[local.mapFlagElementHeight]" />
+					</Size>
+					<Texture name="tx_icon">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="0"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="[local.mapFlagElementHeight]" y="[local.mapFlagElementHeight]"/>
+						</Size>
+					</Texture>
+					<Label name="lbl_text">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="[local.labelTextX]" y="10"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="100" y="[local.mapFlagElementHeight]"/>
+						</Size>
+						<fixedWidth>false</fixedWidth>
+						<css>[local.css]small2.css</css>
+					</Label>
+				</Container>
+			</Grid>
+		</Container>
+		
+		<Container name="ctr_mapElements">
+			<Anchors>
+				<Anchor relativeTo="gd_flags" point="TOPLEFT" relativePoint="BOTTOMLEFT">
+					<AbsDimension x="0" y="15" />
+				</Anchor>
+			</Anchors>
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="90" y="35" />
+				</Size>
+				<bgColor>[colors.tooltip.bg]</bgColor>
+				<bgAlpha>[colors.tooltip.bg.alpha]</bgAlpha>
+				
+				<Label name="lbl_coords">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="5" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="90" y="25" />
+					</Size>
+					<fixedWidth>true</fixedWidth>
+					<css>[local.css]normal2.css</css>
+					<cssClass>boldcenter</cssClass>
+				</Label>
+			</Container>
+
+			
+			<Container name="ctr_mapElements_bg">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="40" />
+					</Anchor>
+					<Anchor relativePoint="BOTTOMRIGHT">
+						<AbsDimension x="25" y="5" />
+					</Anchor>
+				</Anchors>
+				<bgColor>[colors.tooltip.bg]</bgColor>
+				<bgAlpha>[colors.tooltip.bg.alpha]</bgAlpha>
+			</Container>
+			
+			<Grid name="gd_mapElements">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="40" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="129" y="[local.mapElementHeight]" />
+				</Size>
+				<rendererName>InlineXmlGridRenderer</rendererName>
+				<rendererArgs>updateMapElement</rendererArgs>
+				<slotWidth>100</slotWidth>
+				<slotHeight>[local.mapElementHeight]</slotHeight>
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="15" y="5" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="114" y="[local.mapElementHeight]" />
+					</Size>
+					<Texture name="tx_icon">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="0"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="[local.mapElementHeight]" y="[local.mapElementHeight]"/>
+						</Size>
+					</Texture>
+					<Label name="lbl_text">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="[local.labelTextX]" y="10"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="100" y="[local.mapElementHeight]"/>
+						</Size>
+						<fixedWidth>false</fixedWidth>
+						<css>[local.css]small2.css</css>
+					</Label>
+				</Container>
+			</Grid>
+		</Container>
+	</Container>
+</Definition>

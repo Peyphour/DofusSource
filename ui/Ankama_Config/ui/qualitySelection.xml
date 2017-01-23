@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition modal="true">
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	
+  	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       	<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="illus" value="[config.content.path]gfx/illusUi/quality/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="bg_quality0" value="[local.illus]bg_quality1.png" />
+		<Constant name="bg_quality1" value="[local.illus]bg_quality2.png" />
+		<Constant name="bg_quality2" value="[local.illus]bg_quality3.png" />
+   	</Constants>
+
+	<window name="settingsCtr" title="[ui.option.quality.titleSelection]" noCloseButton="true">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="196" y="240" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="854" y="493" />
+		</Size>
+		<mouseEnabled>true</mouseEnabled>
+		
+		<Content>
+			<!-- Grid grid_quality-->
+			
+			<Container name="ctr_quality">
+				<Grid name="grid_quality">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="12" y="-15" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="798" y="443" />
+					</Size>
+					<rendererName>InlineXmlGridRenderer</rendererName>
+					<rendererArgs>updateQualitySlot</rendererArgs>
+					<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+					<slotWidth>266</slotWidth>
+					<slotHeight>443</slotHeight>
+					<Hooks>
+						<onSelectItem />
+					</Hooks>
+					
+					<Container>
+						<Size>
+							<AbsDimension x="266" y="443" />
+						</Size>
+						<Button name="btn_quality">
+							<Common>
+								<radioGroup>qualityGroup</radioGroup>
+								<radioMode>true</radioMode>
+								<!-- Fonds -->
+								
+								<Texture name="tx_decoQuality">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="28" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="265" y="317" />
+									</Size>
+								</Texture>
+								
+								<Label name="lbl_title">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="20" y="35" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="217" y="20" />
+									</Size>
+									<cssClass>whiteboldcenter</cssClass>
+									<css>[local.css]small2.css</css>
+								</Label>
+								
+								<Label>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="24" y="243" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="211" y="20" />
+									</Size>
+									<css>[local.css]small2.css</css>
+									<cssClass>boldcenter</cssClass>
+									<text>[ui.option.quality.configRequired]</text>
+								</Label>
+
+								<Texture>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="46" y="277" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="25" y="25" />
+									</Size>
+									<uri>[local.texture]tx_processor.png</uri>
+								</Texture>
+								<Label name="lbl_processor">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="76" y="279" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="171" y="20" />
+									</Size>
+									<css>[local.css]small2.css</css>
+									<cssClass>grey</cssClass>
+								</Label>
+
+								<Texture>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="46" y="303" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="25" y="25" />
+									</Size>
+									<uri>[local.texture]tx_ram.png</uri>
+								</Texture>
+								<Label name="lbl_ram">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="76" y="305" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="171" y="20" />
+									</Size>
+									<css>[local.css]small2.css</css>
+									<cssClass>grey</cssClass>
+								</Label>
+								
+								<TextureBitmap name="tx_selected">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="27" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="260" y="312" />
+									</Size>
+									<themeDataId>green_square_line</themeDataId>
+									<visible>false</visible>
+									<smooth>true</smooth>
+								</TextureBitmap>
+								
+							</Common>
+							<State type="OVER">
+								<SetProperties target="tx_selected">
+									<visible>true</visible>
+								</SetProperties>
+							</State>
+							<State type="SELECTED">
+								<SetProperties target="tx_selected">
+									<visible>true</visible>
+								</SetProperties>
+							</State>
+							<State type="SELECTED_OVER">
+								<SetProperties target="tx_selected">
+									<visible>true</visible>
+								</SetProperties>
+							</State>
+						</Button>
+					</Container>
+				</Grid>
+				
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="336" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="821" y="30" />
+					</Size>
+					<cssClass>configqualityinfo</cssClass>
+					<css>[local.css]special.css</css>
+					<text>[ui.option.quality.info]</text>
+				</Label>
+				
+				<simpleButton label="[ui.common.select]" name="btn_quality" >
+					<Size>
+						<AbsDimension x="210" y="32" />
+					</Size>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="305" y="370" />
+						</Anchor>
+					</Anchors>
+				</simpleButton>
+			</Container>
+			<Container name="ctr_typo">
+				<visible>false</visible>
+				<Button name="btn_small">
+					<Common>
+						<radioGroup>typoGroup</radioGroup>
+						<radioMode>true</radioMode>
+						<Hooks>
+							<onRelease/>
+						</Hooks>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="5" y="5" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="404" y="328" />
+							</Size>
+							<uri>[local.illus]screen_mini.png</uri>
+						</Texture>
+
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="14" y="22" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="383" y="30" />
+							</Size>
+							<cssClass>whiteboldcenter</cssClass>
+							<css>[local.css]small2.css</css>
+							<text>[ui.option.typo.small]</text>
+							<forceUppercase>true</forceUppercase>
+						</Label>
+						<TextureBitmap name="tx_selected_small">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="12" y="12" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="390" y="316" />
+							</Size>
+							<themeDataId>green_square_line</themeDataId>
+							<visible>false</visible>
+							<smooth>true</smooth>
+						</TextureBitmap>
+					</Common>
+					<State type="OVER">
+						<SetProperties target="tx_selected_small">
+							<visible>true</visible>
+						</SetProperties>
+					</State>
+					<State type="SELECTED">
+						<SetProperties target="tx_selected_small">
+							<visible>true</visible>
+						</SetProperties>
+					</State>
+					<State type="SELECTED_OVER">
+						<SetProperties target="tx_selected_small">
+							<visible>true</visible>
+						</SetProperties>
+					</State>
+				</Button>
+				<TextArea name="lbl_small_example">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="23" y="229" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="378" y="95" />
+					</Size>
+					<cssClass>smallscreenleft</cssClass>
+					<css>[local.css]special.css</css>
+					<multiline>true</multiline>
+					<wordWrap>true</wordWrap>
+					<scrollCss>[local.css]scrollBar.css</scrollCss>
+					<hideScroll>true</hideScroll>
+					<Hooks>
+						<onRollOut/>
+						<onRollOver/>
+						<onRelease/>
+					</Hooks>
+				</TextArea>
+				
+				<Button name="btn_big">
+					<Common>
+						<radioGroup>typoGroup</radioGroup>
+						<radioMode>true</radioMode>
+						<Hooks>
+							<onRelease/>
+						</Hooks>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="409" y="5" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="404" y="328" />
+							</Size>
+							<uri>[local.illus]screen_large.png</uri>
+						</Texture>
+					
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="418" y="22" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="383" y="30" />
+							</Size>
+							<cssClass>whiteboldcenter</cssClass>
+							<css>[local.css]small2.css</css>
+							<text>[ui.option.typo.big]</text>
+							<forceUppercase>true</forceUppercase>
+						</Label>
+						<TextureBitmap name="tx_selected_big">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="416" y="12" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="390" y="316" />
+							</Size>
+							<themeDataId>green_square_line</themeDataId>
+							<visible>false</visible>
+							<smooth>true</smooth>
+						</TextureBitmap>
+					</Common>
+					<State type="OVER">
+						<SetProperties target="tx_selected_big">
+							<visible>true</visible>
+						</SetProperties>
+					</State>
+					<State type="SELECTED">
+						<SetProperties target="tx_selected_big">
+							<visible>true</visible>
+						</SetProperties>
+					</State>
+					<State type="SELECTED_OVER">
+						<SetProperties target="tx_selected_big">
+							<visible>true</visible>
+						</SetProperties>
+					</State>
+				</Button>
+				<TextArea name="lbl_big_example">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="426" y="229" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="378" y="95" />
+					</Size>
+					<cssClass>left</cssClass>
+					<css>[local.css]small2.css</css>
+					<multiline>true</multiline>
+					<wordWrap>true</wordWrap>
+					<scrollCss>[local.css]scrollBar.css</scrollCss>
+					<hideScroll>true</hideScroll>
+					<Hooks>
+						<onRollOut/>
+						<onRollOver/>
+						<onRelease/>
+					</Hooks>
+				</TextArea>
+				
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="336" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="821" y="30" />
+					</Size>
+					<cssClass>configqualityinfo</cssClass>
+					<css>[local.css]special.css</css>
+					<text>[ui.option.typo.info]</text>
+				</Label>
+				
+				<simpleButton label="[ui.common.select]" name="btn_typo">
+					<Size>
+						<AbsDimension x="210" y="32" />
+					</Size>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="305" y="370" />
+						</Anchor>
+					</Anchors>
+				</simpleButton>
+			</Container>
+		</Content>
+		
+	</window>
+</Definition>
+

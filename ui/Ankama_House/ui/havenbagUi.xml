@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition fullscreen="true">
+	<Import url="[config.mod.template.button]themeIconTextButton.xml" />
+	<Constants>
+		<Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+	<Container>
+		<themeIconTextButton name="btn_havenbag">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="18" y="100" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="150" y="32" />
+			</Size>
+			<iconWidth>22</iconWidth>
+			<iconTextSpace>5</iconTextSpace>
+			<label>[ui.havenbag.customise]</label>
+			<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_gear.png</iconUri>
+		</themeIconTextButton>
+		<themeIconTextButton name="btn_leave">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="18" y="137" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="150" y="32" />
+			</Size>
+			<iconWidth>22</iconWidth>
+			<iconTextSpace>5</iconTextSpace>
+			<label>[ui.havenbag.leave]</label>
+			<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_leave.png</iconUri>
+			<cssClass>darkbold</cssClass>
+			<css>[local.css]normal2.css</css>
+		</themeIconTextButton>
+	</Container>
+</Definition>

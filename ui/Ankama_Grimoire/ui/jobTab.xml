@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="jobIconPath" value="[config.gfx.path]jobs/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+
+	</Constants>
+
+	<Import url="[config.mod.template.button]themeSimpleCheckBox.xml" />
+	<Import url="[config.mod.template.button]themeLabelCheckBox.xml" />
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template]button/themeHorizontalTab.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+
+	<window name="ctr_main" title="[ui.common.myJobs]"
+		iconUri="[local.texture]windowIcon/icon__0013_Metiers.png" dark="false">
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="0" y="-40"/>
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="1096" y="800" />
+		</Size>
+		
+		<Content>
+			<!-- PARTIE DE GAUCHE -->
+			<block headerHeight="30" footerHeight="48">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="10" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="585" y="708" />
+				</Size>
+				<Content>
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="72" y="3" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="285" y="20" />
+						</Size>
+						<cssClass>bold</cssClass>
+						<css>[local.css]normal2.css</css>
+						<text>[ui.common.name]</text>
+					</Label>
+					<iconButton name="btn_tabName">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="71" y="2" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="287" y="25" />
+						</Size>
+						<uri>[local.assets]tx_invisible</uri>
+					</iconButton>
+
+
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="367" y="3" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="133" y="20" />
+						</Size>
+						<cssClass>boldright</cssClass>
+						<css>[local.css]normal2.css</css>
+						<text>[ui.common.level]</text>
+					</Label>
+					<iconButton name="btn_tabLevel">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="366" y="2" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="150" y="25" />
+						</Size>
+						<uri>[local.assets]tx_invisible</uri>
+					</iconButton>
+
+					<themeSimpleCheckBox name="chk_subscribeAll">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="521" y="1" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="28" y="25" />
+						</Size>
+						<selected>false</selected>
+					</themeSimpleCheckBox>
+
+					<Grid name="gd_jobs">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="2" y="29" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="570" y="620" />
+						</Size>
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updateJobLine,[colors.grid.line]</rendererArgs>
+						<verticalScrollbarCss>[local.css]scrollBar.css
+						</verticalScrollbarCss>
+						<autoSelectMode>0</autoSelectMode>
+						<slotWidth>557</slotWidth>
+						<slotHeight>55</slotHeight>
+
+						<Container>
+							<Size>
+								<AbsDimension x="557" y="55" />
+							</Size>
+
+							<Button name="btn_job">
+								<Common>
+									<Size>
+										<AbsDimension x="557" y="55" />
+									</Size>
+									<radioMode>true</radioMode>
+
+									<Container>
+										<Size>
+											<AbsDimension x="557" y="55" />
+										</Size>
+										<bgColor>0</bgColor>
+										<bgAlpha>0</bgAlpha>
+									</Container>
+
+									<Texture name="tx_icon">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="10" y="2" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="50" y="50" />
+										</Size>
+									</Texture>
+
+									<Label name="lbl_name">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="70" y="15" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="260" y="20" />
+										</Size>
+										<css>[local.css]normal2.css</css>
+									</Label>
+
+									<Label name="lbl_level">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="340" y="15" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="158" y="20" />
+										</Size>
+										<cssClass>right</cssClass>
+										<css>[local.css]normal2.css</css>
+									</Label>
+								</Common>
+
+								<State type="OVER">
+									<SetProperties target="btn_job">
+										<bgColor>[colors.grid.over]</bgColor>
+									</SetProperties>
+								</State>
+
+								<State type="SELECTED">
+									<SetProperties target="btn_job">
+										<bgColor>[colors.grid.selected]</bgColor>
+									</SetProperties>
+								</State>
+
+								<State type="SELECTED_OVER">
+									<SetProperties target="btn_job">
+										<bgColor>[colors.grid.selected]</bgColor>
+									</SetProperties>
+								</State>
+							</Button>
+							
+
+							<ProgressBar name="tx_progressBar">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="260" y="24" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="170" y="8" />
+								</Size>
+								<barColor>[colors.progressbar.blue]</barColor>
+								<barForegroundThemeData>progress_bar_foreground
+								</barForegroundThemeData>
+								<separators>7</separators>
+							</ProgressBar>
+
+							<themeSimpleCheckBox name="chk_subscribe">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="518" y="14" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="28" y="25" />
+								</Size>
+								<selected>false</selected>
+							</themeSimpleCheckBox>
+						</Container>
+					</Grid>
+
+					<!-- OPTIONS DU METIER -->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="650" />
+							</Anchor>
+						</Anchors>
+
+						<Label name="lbl_jobNameOption">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="12" y="10" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="500" y="20" />
+							</Size>
+							<cssClass>bold</cssClass>
+							<css>[local.css]normal2.css</css>
+						</Label>
+
+						<themeLabelCheckBox name="chk_freeOption">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="192" y="10" />
+								</Anchor>
+							</Anchors>
+							<labelWidth>120</labelWidth>
+							<labelHeight>20</labelHeight>
+							<text>[ui.craft.free]</text>
+						</themeLabelCheckBox>
+
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="340" y="10" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="160" y="20" />
+							</Size>
+							<cssClass>right</cssClass>
+							<css>[local.css]normal2.css</css>
+							<text>[ui.craft.minLevel]</text>
+						</Label>
+						<!-- <Texture> <Anchors> <Anchor> <AbsDimension x="510" y="10" /> </Anchor> 
+							</Anchors> <Size> <AbsDimension x="70" y="25" /> </Size> <uri>[local.assets]tx_inputBackgroundDark</uri> 
+							<autoGrid>true</autoGrid> </Texture> -->
+
+						<TextureBitmap>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="500" y="3" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="70" y="35" />
+							</Size>
+							<themeDataId>bg_small_border_light</themeDataId>
+							<smooth>true</smooth>
+						</TextureBitmap>
+						<Input name="inp_minLevelOption">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="512" y="10" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="66" y="20" />
+							</Size>
+							<css>[local.css]normal2.css</css>
+							<maxChars>3</maxChars>
+						</Input>
+					</Container>
+
+				</Content>
+			</block>
+
+
+
+
+			<!-- PARTIE DE DROITE -->
+
+			<block>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="600" y="43" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="452" y="675" />
+				</Size>
+
+				<Content>
+					<Container name="ctr_recipes">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="7" y="7" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="425" y="630" />
+						</Size>
+					</Container>
+
+
+					<Container name="ctr_resources">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="0" />
+							</Anchor>
+						</Anchors>
+
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="15" y="12" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="410" y="20" />
+							</Size>
+							<text>[ui.jobs.collectableAtJobLevel]</text>
+							<css>[local.css]normal2.css</css>
+						</Label>
+
+						<Grid name="gd_skills">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="50" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="432" y="570" />
+							</Size>
+							<slotWidth>420</slotWidth>
+							<slotHeight>57</slotHeight>
+							<rendererName>InlineXmlGridRenderer</rendererName>
+							<rendererArgs>updateSkillLine,[colors.grid.line]</rendererArgs>
+							<scrollDisplay>always</scrollDisplay>
+							<verticalScrollbarCss>[local.css]scrollBar.css
+							</verticalScrollbarCss>
+
+							<Container name="ctr_main">
+								<Size>
+									<AbsDimension x="407" y="60" />
+								</Size>
+
+								<Label name="lbl_interactive">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="15" y="6" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="240" y="21" />
+									</Size>
+									<cssClass>bold</cssClass>
+									<css>[local.css]normal2.css</css>
+								</Label>
+
+								<Label name="lbl_xp">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="25" y="28" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="200" y="21" />
+									</Size>
+									<cssClass>left</cssClass>
+									<css>[local.css]normal2.css</css>
+								</Label>
+
+								<Label name="lbl_info">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="225" y="28" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="117" y="21" />
+									</Size>
+									<cssClass>right</cssClass>
+									<css>[local.css]normal2.css</css>
+								</Label>
+
+								<Slot name="slot_resource">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="357" y="6" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="44" y="44" />
+									</Size>
+								</Slot>
+							</Container>
+						</Grid>
+
+					</Container>
+				</Content>
+			</block>
+
+			<!-- TABS -->
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="610" y="10" />
+					</Anchor>
+				</Anchors>
+				<themeHorizontalTab name="btn_recipes">
+					<text>[ui.common.recipes]</text>
+				</themeHorizontalTab>
+				<themeHorizontalTab name="btn_resources">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="180" y="0" />
+						</Anchor>
+					</Anchors>
+					<text>[ui.common.ressources]</text>
+				</themeHorizontalTab>
+			</Container>
+
+		</Content>
+
+	</window>
+</Definition>

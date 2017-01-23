@@ -1,0 +1,630 @@
+<Definition labelDebug="false">
+	<Import url="[config.mod.template]button/simpleButton.xml"/>
+	<Import url="[config.mod.template]button/iconButton.xml"/>
+	<Import url="[config.mod.template]block.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/"/>
+		<Constant name="css" value="[config.ui.skin]css/"/>
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+	
+	<Container>
+		
+		
+		<!-- Container du contenu principal -->
+		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="14" y="20"/>
+				</Anchor>
+			</Anchors>
+			
+			<!-- Partie gauche de l'UI, contenant les infos sur le compte du joueur -->
+			
+			<!-- PRESENTATION DES VETERAN REWARDS -->
+			
+			<Container>
+				<block>
+					<Size>
+						<AbsDimension x="510" y="152" />
+					</Size>
+					
+					<Content>
+						<Container>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="55"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="500" y="70"/>
+							</Size>
+				 			<bgColor>[colors.grid.over]</bgColor>
+				 			<bgAlpha>1</bgAlpha>
+						</Container>
+					</Content>						
+				</block>
+				
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="20" y="15"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="474" y="20"/>
+					</Size>
+					<cssClass>whitebold</cssClass>
+					<css>[local.css]title.css</css>
+					<text>[ui.veteran.totalSubscriptionDuration]</text>
+				</Label>
+								
+				<TextureBitmap>
+		            <Anchors>
+		                <Anchor>
+		                    <AbsDimension x="5" y="60"/>
+		                </Anchor>
+		            </Anchors>
+		            <Size>
+		                <AbsDimension x="500" y="3" />
+		            </Size>
+		            <uri>[local.common]window_separator_black_horizontal.png</uri>
+		        </TextureBitmap>				
+				<TextureBitmap>
+		            <Anchors>
+		                <Anchor>
+		                    <AbsDimension x="5" y="130"/>
+		                </Anchor>
+		            </Anchors>
+		            <Size>
+		                <AbsDimension x="500" y="3" />
+		            </Size>
+		            <uri>[local.common]window_separator_black_horizontal.png</uri>
+		        </TextureBitmap>
+				
+				<Label name="lbl_subscriptionDuration">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="20" y="79"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="474" y="100"/>
+					</Size>
+					<cssClass>center</cssClass>
+					<css>[local.css]title.css</css>
+					<multiline>true</multiline>
+					<wordWrap>true</wordWrap>
+				</Label>
+			</Container>
+			
+			<!-- DERNIERE RECOMPENSE -->
+			
+			<Container>		
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="150"/>
+					</Anchor>
+				</Anchors>			
+				
+				<block>
+					<Size>
+						<AbsDimension x="510" y="230" />
+					</Size>
+				</block>
+				
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="20" y="15" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="304" y="28" />
+					</Size>
+					<cssClass>whitebold</cssClass>
+					<css>[local.css]normal2.css</css>
+					<text>[ui.veteran.lastReward]</text>
+				</Label>
+				
+				<TextArea name="lbl_lastRwd">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="20" y="55" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="304" y="140" />
+					</Size>
+					<cssClass>left</cssClass>
+					<css>[local.css]normal2.css</css>
+					<scrollCss>[local.css]scrollBar.css</scrollCss>
+					<hideScroll>true</hideScroll>
+					<useCustomFormat>true</useCustomFormat>
+				</TextArea>
+				
+				<TextureBitmap name="tx_lastRwdSlot">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="335" y="19"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="160" y="160"/>
+					</Size>
+					<themeDataId>slot_background_dark_full</themeDataId>
+				</TextureBitmap>
+				
+				<Texture name="tx_lastRwd">
+					<Anchors>
+						<Anchor relativeTo="tx_lastRwdSlot" relativePoint="TOPLEFT" point="TOPLEFT">
+							<AbsDimension x="10" y="10"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="140" y="140"/>
+					</Size>
+				</Texture>
+				
+
+				<Label name="lbl_moreInfo">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="20" y="191"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="442" y="20"/>
+					</Size>
+					<cssClass>greenright</cssClass>
+					<css>[local.css]small2.css</css>
+					<text>[ui.veteran.moreInfos]</text>
+					<handCursor>true</handCursor>
+				</Label>
+				<Texture name="tx_moreInfo">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="472" y="190"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="22" y="22"/>
+					</Size>
+					<uri>[local.texture]external_link_green.png</uri>
+				</Texture>
+			</Container>
+			
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="383" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="510" y="3" />
+				</Size>
+				<uri>[local.common]window_separator_green_horizontal.png</uri>
+			</Texture>
+						
+			<!-- ABONNEMENT ACTUEL -->
+			
+			<Container>	
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="390"/>
+					</Anchor>
+				</Anchors>
+				
+				<block>
+					<Size>
+						<AbsDimension x="510" y="300" />
+					</Size>
+				</block>
+				
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="20" y="20" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="470" y="16" />
+					</Size>
+					<cssClass>whitebold</cssClass>
+					<css>[local.css]normal2.css</css>
+					<text>[ui.payzone.btn]</text>
+				</Label>
+						
+				<TextureBitmap>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="15" y="65" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="480" y="220" />
+					</Size>
+					<themeDataId>slot_background_dark_empty</themeDataId>
+				</TextureBitmap>
+				
+				<Label name="lbl_remainingSub">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="35" y="100"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="440" y="20"/>
+					</Size>
+					<cssClass>boldcenter</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+				
+				
+				<Container name="ctr_noEnoughSub">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="30" y="150"/>
+						</Anchor>
+					</Anchors>
+					<visible>true</visible>
+					
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="5"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="40" y="40"/>
+						</Size>
+						<uri>[local.texture]pin_mark_yellow.png</uri>
+					</Texture>
+					
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="50" y="0"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="392" y="70"/>
+						</Size>
+						<cssClass>left</cssClass>
+						<css>[local.css]normal2.css</css>
+						<multiline>true</multiline>
+						<text>[ui.veteran.notEnoughSub]</text>
+						<wordWrap>true</wordWrap>
+					</Label>
+					
+					<simpleButton label="[ui.header.subscribe]" name="btn_addSub">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="111" y="75"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="214" y="32"/>
+						</Size>
+					</simpleButton>
+				</Container>
+					
+				<Label name="lbl_enoughSub">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="35" y="170"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="440" y="70"/>
+					</Size>
+					<cssClass>center</cssClass>
+					<css>[local.css]normal2.css</css>
+					<multiline>true</multiline>
+					<wordWrap>true</wordWrap>
+					<text>[ui.veteran.enoughSub]</text>
+				</Label>
+			</Container>
+			
+		
+			<!-- Partie droite de l'UI avec la prochaine récompense et le lien vers la liste de toutes les récompenses -->
+			
+			
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="530" y="0"/>
+					</Anchor>
+				</Anchors>	
+			
+				<!-- PROCHAINE RECOMPENSE -->
+				
+				<Container>		
+					<block>
+						<Size>
+							<AbsDimension x="626" y="195" />
+						</Size>
+					</block>				
+
+					<TextureBitmap>
+						<Size>
+							<AbsDimension x="626" y="195" />
+						</Size>
+			            <themeDataId>selection_green</themeDataId>
+			        </TextureBitmap>						
+			        
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="20" y="15" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="420" y="28" />
+						</Size>
+						<cssClass>whitebold</cssClass>
+						<css>[local.css]title.css</css>
+						<text>[ui.veteran.nextReward]</text>
+					</Label>
+					
+					<TextArea name="lbl_remainingTime">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="20" y="55" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="420" y="100" />
+						</Size>
+						<cssClass>left</cssClass>
+						<css>[local.css]normal2.css</css>
+						<scrollCss>[local.css]scrollBar.css</scrollCss>
+						<hideScroll>true</hideScroll>
+						<useCustomFormat>true</useCustomFormat>
+					</TextArea>
+							
+					<TextureBitmap name="tx_nextRwdSlot">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="451" y="15"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="160" y="160"/>
+						</Size>
+						<themeDataId>slot_background_dark_full</themeDataId>
+					</TextureBitmap>
+					
+					<Texture name="tx_nextRwd">
+						<Anchors>
+							<Anchor relativeTo="tx_nextRwdSlot" relativePoint="TOPLEFT" point="TOPLEFT">
+								<AbsDimension x="10" y="10"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="140" y="140"/>
+						</Size>
+					</Texture>
+					
+				</Container>
+							
+			
+				<!-- LISTE DE TOUTES LES RECOMPENSES -->
+				
+				<Container>	
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="210"/>
+						</Anchor>
+					</Anchors>
+							
+					<block>
+						<Size>
+							<AbsDimension x="626" y="480" />
+						</Size>
+					</block>		
+					
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="20" y="15" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="590" y="28" />
+						</Size>
+						<cssClass>whitebold</cssClass>
+						<css>[local.css]normal2.css</css>
+						<text>[ui.veteran.allRewards]</text>
+					</Label>
+					
+		  			<Texture>
+		  				<Anchors>
+		  					<Anchor>
+		  						<AbsDimension x="5" y="50" />
+		  					</Anchor>
+		  				</Anchors>
+		  				<Size>
+		  					<AbsDimension x="616" y="39" />
+		  				</Size>
+		  				<uri>[local.common]bg_dark.png</uri>
+		  			</Texture>  			
+					
+		  			<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="250" y="56" />
+							</Anchor>
+						</Anchors>
+		  				
+			  			<Label name="lbl_month1">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="85" y="16"/>
+							</Size>
+							<cssClass>center</cssClass>
+	  						<css>[local.css]small2.css</css>
+						</Label>
+						<Label name="lbl_month3">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="85" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="85" y="16"/>
+							</Size>
+							<cssClass>center</cssClass>
+	  						<css>[local.css]small2.css</css>
+						</Label>
+						<Label name="lbl_month6">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="170" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="85" y="16"/>
+							</Size>
+							<cssClass>center</cssClass>
+	  						<css>[local.css]small2.css</css>
+						</Label>
+						<Label name="lbl_month9">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="255" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="85" y="16"/>
+							</Size>
+							<cssClass>center</cssClass>
+	  						<css>[local.css]small2.css</css>
+						</Label>		
+		  			</Container>
+								
+
+					<Grid name="gd_rewards">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="5" y="90"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="616" y="384"/>
+						</Size>
+						
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updateRwdLine,[colors.grid.line]</rendererArgs>
+						<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+						<slotWidth>606</slotWidth>
+						<slotHeight>64</slotHeight>
+									
+						<Container name="ctr_vetRwd">
+							<Size>
+								<AbsDimension x="606" y="64" />
+							</Size>
+								
+							<Label name="lbl_year">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="15" y="19" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="150" y="20"/>
+								</Size>
+								<css>[local.css]normal2.css</css>
+							</Label>
+						
+							<!-- Container pour tous les slots des récompenses sur une année -->
+							<Container>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="180" y="4" />
+									</Anchor>
+								</Anchors>
+								
+								<Slot name="slot0">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="0" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="56" y="56" />
+									</Size>
+									<allowDrag>false</allowDrag>
+									<css>[local.css]normal2.css</css>
+									<forcedBackGroundIconUri>[local.texture]slot/slot_dark_background_full.png</forcedBackGroundIconUri>
+								</Slot>
+								<Slot name="slot1">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="85" y="0" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="56" y="56" />
+									</Size>
+									<allowDrag>false</allowDrag>
+									<css>[local.css]normal2.css</css>
+									<forcedBackGroundIconUri>[local.texture]slot/slot_dark_background_full.png</forcedBackGroundIconUri>
+								</Slot>
+								<Slot name="slot2">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="170" y="0" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="56" y="56" />
+									</Size>
+									<allowDrag>false</allowDrag>
+									<css>[local.css]normal2.css</css>
+									<forcedBackGroundIconUri>[local.texture]slot/slot_dark_background_full.png</forcedBackGroundIconUri>
+								</Slot>
+								<Slot name="slot3">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="255" y="0" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="56" y="56" />
+									</Size>
+									<allowDrag>false</allowDrag>
+									<css>[local.css]normal2.css</css>
+									<forcedBackGroundIconUri>[local.texture]slot/slot_dark_background_full.png</forcedBackGroundIconUri>
+								</Slot>
+								<Slot name="slot4">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="340" y="0" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="56" y="56" />
+									</Size>
+									<allowDrag>false</allowDrag>
+									<css>[local.css]normal2.css</css>
+									<forcedBackGroundIconUri>[local.texture]slot/slot_dark_background_full.png</forcedBackGroundIconUri>
+								</Slot>
+							</Container>		
+						</Container>
+					</Grid>
+					
+				</Container>
+				
+			</Container>
+		</Container>
+	</Container>
+</Definition>

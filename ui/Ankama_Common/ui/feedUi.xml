@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition modal="true">
+
+	<Import url="[config.mod.template.button]iconButton.xml"/>
+	<Import url="[config.mod.template.button]simpleButton.xml"/>
+	<Import url="[config.mod.template]window.xml"/>
+	<Import url="[config.mod.template]block.xml"/>
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/"/>
+		<Constant name="css" value="[config.ui.skin]css/"/>
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+	</Constants>
+
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER">
+				<AbsDimension x="0" y="-70"/>
+			</Anchor>
+		</Anchors>
+
+		<mouseEnabled>true</mouseEnabled>
+		<shadowColor>[colors.ui.shadow]</shadowColor>
+
+		<window name="ctr_window">
+			<Size>
+				<AbsDimension x="490" y="443"/>
+			</Size>
+			<title>[ui.item.feed]</title>
+			<noSeparator>true</noSeparator>
+			<closeButtonName>btn_closeFeed</closeButtonName>
+			<iconUri>[local.texture]windowIcon/icon_menu_inventory.png</iconUri>
+			<dark>true</dark>
+			<Content>
+
+				<!-- Grid grid_food -->
+
+				<Grid name="grid_food">
+					<Anchors>
+						<Anchor relativePoint="TOP" point="TOP">
+							<AbsDimension y="5"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="438" y="244"/>
+					</Size>
+					<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+					<scrollbarOffset>6</scrollbarOffset>
+					<slotWidth>60</slotWidth>
+					<slotHeight>60</slotHeight>
+					<scrollDisplay>always</scrollDisplay>
+					<rendererName>SlotGridRenderer</rendererName>
+					<rendererArgs>,[local.texture]slot/over.png,[local.texture]slot/selected.png,[local.texture]slot/acceptDrop.png,[local.texture]slot/refuseDrop.png,,[local.css]normal2.css,false,,,,[local.texture]slot/inventoryEmptySlot.png</rendererArgs>
+					<Hooks>
+						<onItemRollOver/>
+						<onItemRollOut/>
+						<onSelectItem/>
+					</Hooks>
+				</Grid>
+
+				<Container name="ctr_block">
+					<Anchors>
+						<Anchor relativePoint="TOP" point="TOP">
+							<AbsDimension y="260"/>
+						</Anchor>
+					</Anchors>
+
+					<block name="block_quantity">
+						<Size>
+							<AbsDimension x="441" y="60"/>
+						</Size>
+					</block>
+
+					<!--Label "Select a quantity"-->
+
+					<Label name="lbl_selectItem">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="16" y="16"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="300" y="20"/>
+						</Size>
+						<cssClass>left</cssClass>
+						<css>[local.css]normal2.css</css>
+						<text>[ui.common.selectItem]</text>
+					</Label>
+
+					<!--Separator-->
+
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="-6"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension y="3"/>
+							<RelDimension x="1"/>
+						</Size>
+						<uri>[local.common]window_separator_green_horizontal.png</uri>
+					</Texture>
+
+
+					<!-- Container appearing when an item is selected -->
+
+					<Container name="ctr_quantity">
+
+						<!--Label "Quantity"-->
+
+						<Label name="lbl_quantity">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="16" y="16"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension y="20"/>
+							</Size>
+							<css>[local.css]normal2.css</css>
+							<cssClass>left</cssClass>
+							<text>[ui.common.quantity]</text>
+							<fixedWidth>false</fixedWidth>
+						</Label>
+
+						<!--Food icon-->
+
+						<Texture name="icon_quantity">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="82" y="16"/> <!--Moved with script-->
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="24" y="24"/>
+							</Size>
+						</Texture>
+
+						<!--":" label-->
+
+						<Label>
+							<Anchors>
+								<Anchor relativeTo="icon_quantity" relativePoint="TOPRIGHT" point="TOPLEFT">
+									<AbsDimension x="-6" y="-1" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension y="20"/>
+							</Size>
+							<css>[local.css]normal2.css</css>
+							<cssClass>left</cssClass>
+							<text>[ui.common.colon]</text>
+							<fixedWidth>false</fixedWidth>
+						</Label>
+
+
+						<!-- Min Max Input -->
+
+						<Container name="min_max_input">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="140" y="14"/>
+								</Anchor>
+							</Anchors>
+
+							<!--Min button-->
+
+							<simpleButton name="btn_min">
+								<Size>
+									<AbsDimension x="40" y="30"/>
+								</Size>
+								<label>[ui.common.minWord]</label>
+								<cssClass>small</cssClass>
+								<css>[local.css]button.css</css>
+								<bgThemeDataId>button_small</bgThemeDataId>
+							</simpleButton>
+
+							<!-- Quantity input texture -->
+
+							<TextureBitmap name="tx_input">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="50" y="-6"/>
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="110" y="42"/>
+								</Size>
+								<themeDataId>bg_small_border_light</themeDataId>
+							</TextureBitmap>
+
+							<!-- Quantity input -->
+
+							<Input name="inp_quantity">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="60" y="5"/>
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="90"/>
+								</Size>
+								<css>[local.css]normal2.css</css>
+								<cssClass>center</cssClass>
+								<restrict>0-9.</restrict>
+								<maxChars>7</maxChars>
+								<numberAutoFormat>true</numberAutoFormat>
+							</Input>
+
+							<!--Max button-->
+
+							<simpleButton name="btn_max">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="170"/>
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="40" y="30"/>
+								</Size>
+								<label>[ui.common.maxWord]</label>
+								<cssClass>small</cssClass>
+								<css>[local.css]button.css</css>
+								<bgThemeDataId>button_small</bgThemeDataId>
+							</simpleButton>
+						</Container>
+					</Container>
+				</Container>
+
+				<!--Corner decoration LEFT-->
+
+				<Texture>
+					<Anchors>
+						<Anchor relativePoint="BOTTOMLEFT" point="BOTTOMLEFT" />
+					</Anchors>
+					<uri>[config.ui.skin]common/corner_decoration.png</uri>
+				</Texture>
+
+				<!--Corner decoration RIGHT-->
+
+				<Texture>
+					<Anchors>
+						<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMLEFT" />
+					</Anchors>
+					<uri>[config.ui.skin]common/corner_decoration.png</uri>
+					<scaleX>-1</scaleX>
+				</Texture>
+
+				<!-- simpleButton btn_ok-->
+
+				<simpleButton label="[ui.common.validation]" name="btn_feedOk">
+					<Anchors>
+						<Anchor point="BOTTOM" relativePoint="BOTTOM">
+							<AbsDimension y="-9"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="90" y="35"/>
+					</Size>
+				</simpleButton>
+
+			</Content>
+		</window>
+
+	</Container>
+</Definition>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template]windowWithoutTitleBar.xml" />
+	
+   <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="illus" value="[config.content.path]gfx/illusUi/" />
+   </Constants>
+
+	<Container name="mainCtr">
+		
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER" />
+		</Anchors>
+		<mouseEnabled>true</mouseEnabled>
+		
+		
+ 		<windowWithoutTitleBar name="popup">
+			<Size>
+				<AbsDimension x="730" y="428"/>
+			</Size>
+			<Anchors>
+				<Anchor point="CENTER" relativePoint="CENTER" />
+			</Anchors>
+			<bgColor>0</bgColor>
+			<Content>
+			
+				<!-- ILLUSTRATION -->
+				<Texture name="tx_illu">
+					<Size>
+						<RelDimension x="1" y="0.8" />
+					</Size>
+				</Texture>
+				
+				<Label name="ta_content">
+					<Anchors>
+						<Anchor point="CENTER" relativePoint="TOP">
+							<RelDimension x="0" y="0.9" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<RelDimension x="0.9" />
+						<AbsDimension y="0" />
+					</Size>
+					<css>[local.css]title.css</css>
+					<cssClass>center</cssClass>
+					<multiline>true</multiline>
+					<wordWrap>true</wordWrap>
+					<verticalAlign>center</verticalAlign>
+				</Label>
+						
+			</Content>
+		</windowWithoutTitleBar>
+		
+		<!-- TEXTE -->
+
+
+	</Container>
+</Definition>

@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition labelDebug="false">
+	
+    <Import url="[config.mod.template]button/themeIconButton.xml" />
+    <Import url="[config.mod.template]block.xml" />
+    
+  	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       	<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />		
+		<Constant name="illus" value="[config.ui.skin]illus/" />
+   	</Constants>
+
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="10" y="151" />
+			</Anchor>
+		</Anchors>
+		
+		<Container>
+			<block>
+				<Size>
+					<AbsDimension x="370" y="489" />
+				</Size>
+			</block>	
+			
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="5" y="5" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="360" y="36" />
+				</Size>
+				<uri>[local.common]bg_dark.png</uri>
+			</Texture>
+	
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="5" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="360" y="16" />
+				</Size>
+				<text>[ui.social.guildTaxCharacteristics]</text>
+				<cssClass>center</cssClass>
+				<css>[local.css]small2.css</css>
+			</Label>
+	
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="5" y="41" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="360" y="120" />
+				</Size>
+				<uri>[local.illus]tx_taxcollector.png</uri>
+			</Texture>
+			
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="5" y="200" />
+					</Anchor>
+				</Anchors>
+				
+				<Grid name="gd_stat">
+					<Size>
+						<AbsDimension x="360" y="168" />
+					</Size>
+					<rendererName>InlineXmlGridRenderer</rendererName>
+					<rendererArgs>updateStatLine</rendererArgs>
+					<slotWidth>360</slotWidth>
+					<slotHeight>28</slotHeight>
+	
+					<Container name="statItemCtr">
+						<Size>
+							<AbsDimension x="360" y="28" />
+						</Size>
+		
+						<Label name="lbl_title">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="9" y="6" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="240" y="16" />
+							</Size>
+							<css>[local.css]small2.css</css>
+						</Label>
+		
+						<Label name="lbl_value">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="250" y="6" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="60" y="16" />
+							</Size>
+							<css>[local.css]small2.css</css>
+							<cssClass>boldright</cssClass>
+						</Label>
+					</Container>
+	
+				</Grid>		
+			
+		
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="322" y="62" />
+						</Anchor>
+					</Anchors>
+						
+					<themeIconButton name="btn_taxCollectorProspecting">
+						<Size>
+							<AbsDimension x="22" y="21" />
+						</Size>
+						<iconUri>[local.texture]btnIcon/btnIcon_plus.png</iconUri>
+						<visible>false</visible>
+					</themeIconButton>
+			
+					<themeIconButton name="btn_taxCollectorWisdom">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="28" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="22" y="21" />
+						</Size>
+						<iconUri>[local.texture]btnIcon/btnIcon_plus.png</iconUri>
+						<visible>false</visible>
+					</themeIconButton>
+			
+					<themeIconButton name="btn_taxCollectorPods">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="56" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="22" y="21" />
+						</Size>
+						<iconUri>[local.texture]btnIcon/btnIcon_plus.png</iconUri>
+						<visible>false</visible>
+					</themeIconButton>
+			
+					<themeIconButton name="btn_maxTaxCollectorsCount">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="84" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="22" y="21" />
+						</Size>
+						<iconUri>[local.texture]btnIcon/btnIcon_plus.png</iconUri>
+						<visible>false</visible>
+					</themeIconButton>
+				</Container>
+			</Container>
+			
+			
+			<Container>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="55" y="420" />
+                    </Anchor>
+                </Anchors>
+                
+                <TextureBitmap>
+                    <Size>
+                        <AbsDimension x="260" y="40" />
+                    </Size>
+                    <themeDataId>bg_small_border_dark</themeDataId>
+                </TextureBitmap>
+                
+                <Label>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="15" y="10" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="170" y="0" />
+                    </Size>
+                    <text>[ui.charaSheet.pointsToDivide][ui.common.colon]</text>
+                    <css>[local.css]small2.css</css>
+                </Label>
+                
+                <Label name="lbl_boostPoints">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="180" y="8" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="60" y="0" />
+                    </Size>
+                    <cssClass>whiteboldright</cssClass>
+                    <css>[local.css]small2.css</css>
+                </Label>
+			</Container>
+		</Container>
+		
+		
+	
+		<Container>
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="372" y="0" />
+                </Anchor>
+            </Anchors>
+            
+			<block>
+				<Size>
+					<AbsDimension x="370" y="489" />
+				</Size>
+			</block>	
+			
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="5" y="5" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="360" y="36" />
+				</Size>
+				<uri>[local.common]bg_dark.png</uri>
+			</Texture>
+			
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="55" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="160" y="16" />
+				</Size>
+				<text>[ui.common.name]</text>
+				<css>[local.css]small2.css</css>
+			</Label>
+	
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="235" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="110" y="16" />
+				</Size>
+				<text>[ui.common.level]</text>
+				<cssClass>center</cssClass>
+				<css>[local.css]small2.css</css>
+			</Label>
+			
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="5" y="41" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="360" y="440" />
+				</Size>
+				<uri>[local.common]bg_light.png</uri>
+			</Texture>
+			
+			<Grid name="gd_spell">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="5" y="41" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="360" y="440" />
+				</Size>
+				<slotWidth>350</slotWidth>
+				<slotHeight>44</slotHeight>
+				<rendererName>InlineXmlGridRenderer</rendererName>
+				<rendererArgs>updateSpellLine,[colors.grid.line]</rendererArgs>
+				<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+					
+				<Container name="spellCtr">
+					<Size>
+						<AbsDimension x="350" y="44" />
+					</Size>
+				
+					<Slot name="slot_icon">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="10" y="5" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="33" y="33" />
+						</Size>
+						<allowDrag>false</allowDrag>
+					</Slot>
+			
+					<Label name="lbl_spellName">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="55" y="11" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="220" y="16" />
+						</Size>
+						<css>[local.css]small2.css</css>
+					</Label>
+			
+					<Label name="lbl_spellLevel">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="275" y="11" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="30" y="16" />
+						</Size>
+						<cssClass>center</cssClass>
+						<css>[local.css]small2.css</css>
+					</Label>
+			
+					<themeIconButton name="btn_spellUpgrade">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="318" y="10" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="22" y="21" />
+						</Size>
+						<iconUri>[local.texture]btnIcon/btnIcon_plus.png</iconUri>
+					</themeIconButton>
+					
+				</Container>
+			</Grid>
+		</Container>
+		
+		<EntityDisplayer name="ed_pony">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="830" y="30" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="210" y="400" />
+			</Size>
+			<direction>3</direction>
+		</EntityDisplayer>
+		
+	</Container>
+</Definition>

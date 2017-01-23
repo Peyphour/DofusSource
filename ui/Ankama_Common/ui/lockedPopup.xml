@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition modal="true" usePropertiesCache="false">
+    <Import url="[config.mod.template]button/iconButton.xml" />
+    <Import url="[config.mod.template]button/simpleButton.xml" />
+    <Import url="[config.mod.template]windowWithoutTitleBar.xml"/>
+    
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="btn.css" value="[config.ui.skin]css/button.css" />
+		<Constant name="btn.file" value="[local.assets]btn_orange" />
+		<Constant name="bgDeco" value="[local.assets]tx_decoBackground" />
+	</Constants>
+	
+	<Container name="popCtr">
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER" />
+		</Anchors>
+		
+		<Size>
+			<AbsDimension x="550"/>
+		</Size>
+		
+		<mouseEnabled>true</mouseEnabled>
+		<shadowColor>[colors.ui.shadow]</shadowColor>	
+		
+		<windowWithoutTitleBar noCloseButton="true" name="popup">		
+			<Size>
+			
+				<RelDimension x="1" y="1"/>
+			</Size>
+			<Anchors>
+				<Anchor relativePoint="CENTER" point="CENTER" />
+			</Anchors>
+		
+		</windowWithoutTitleBar>
+		
+		<Label name="lbl_content">
+			<Anchors>
+				<Anchor relativePoint="TOPLEFT">
+					<AbsDimension x="25" y="67" />
+				</Anchor>
+				
+				<Anchor relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="-25" y="-50" />
+				</Anchor>
+			</Anchors>
+			<css>[local.css]normal2.css</css>
+			<cssClass>center</cssClass>
+			<multiline>true</multiline>
+			<wordWrap>true</wordWrap>
+		</Label>
+		
+		<simpleButton name="btn_ok" label="[ui.common.ok]"   >
+			<Anchors>
+				<Anchor relativePoint="BOTTOM" point="BOTTOM">
+					<AbsDimension y="-38" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="200" y="32" />
+			</Size>
+		</simpleButton>
+	</Container>
+</Definition>
+

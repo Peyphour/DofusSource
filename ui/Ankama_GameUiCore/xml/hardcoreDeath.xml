@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition modal="true">
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template]window.xml"/>
+    <Import url="[config.mod.template]block.xml"/>
+	
+   <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       	<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="illus" value="[config.content.path]gfx/illusUi/" />
+   </Constants>
+
+	<Container name="mainCtr">
+		
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER" />
+		</Anchors>
+		
+		<window closeButtonName="btn_close" title="[ui.common.gameover]" dark="true">
+			<Size>
+				<AbsDimension x="700" y="350"/>
+			</Size>
+			
+			<Content>
+				<block>
+					<Anchors>
+                        <Anchor relativePoint="TOP" point="TOP">
+                            <AbsDimension y="5"/>
+                        </Anchor>
+                    </Anchors>
+				
+					<Size>
+						<RelDimension x="0.98"/>
+						<AbsDimension y="224" />
+					</Size>
+				
+					<Content>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="565" y="215" />
+							</Size>
+							<uri>[local.illus]tx_illudeath.png</uri>
+						</Texture>
+						
+						<TextArea>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="272" y="15" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="370" y="180" />
+							</Size>
+							<text>[ui.gameuicore.hardcoreDeath]</text>
+							<css>[local.css]normal2.css</css>
+							<cssClass>left</cssClass>
+							<scrollCss>[local.css]scrollBar.css</scrollCss>
+							<hideScroll>true</hideScroll>
+							
+						</TextArea>
+					</Content>
+				</block>
+			
+				<!--Corner decoration LEFT-->
+				<Texture>
+				   <Anchors>
+				      <Anchor relativePoint="BOTTOMLEFT" point="BOTTOMLEFT" />
+				   </Anchors>
+				   <uri>[config.ui.skin]common/corner_decoration.png</uri>
+				</Texture>
+				
+				<!--Corner decoration RIGHT-->
+				
+				<Texture>
+				   <Anchors>
+				      <Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMLEFT" />
+				   </Anchors>
+				   <uri>[config.ui.skin]common/corner_decoration.png</uri>
+				   <scaleX>-1</scaleX>
+				</Texture>
+					
+				<simpleButton label="[ui.common.yes]" name="btn_yes"   >
+					<Size>
+						<AbsDimension x="193" y="35" />
+					</Size>
+		            <Anchors>
+						<Anchor relativePoint="BOTTOM" point="BOTTOM">
+							<AbsDimension x="0" y="-10" />
+						</Anchor>
+		            </Anchors>
+		            <css>[local.css]button.css</css>
+		            <Hooks>
+		                <onRelease />
+		            </Hooks>
+		        </simpleButton>
+		        			
+			</Content>
+		</window>
+	</Container>
+</Definition>
+

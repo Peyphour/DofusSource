@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition fullscreen="true">
+	<Import url="[config.mod.template]windowWithoutTitleBar.xml" />
+
+   <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       <Constant name="css" value="[config.ui.skin]css/" />
+       <!-- Constant used in the calculation of windowCtr size -->
+       <Constant name="windowMargin" value="50"/>
+   </Constants>
+
+	<Container name="mainCtr">
+	
+		<Anchors>
+			<Anchor relativePoint="TOPLEFT" point="TOPLEFT">
+				<AbsDimension x="0" y="0" /> -->
+			</Anchor>
+		</Anchors>
+	
+		<EntityDisplayer name="entityDisplayer">
+			<Size>
+				<AbsDimension x="300" y="150" />
+			</Size>
+			<useCache>true</useCache>
+		</EntityDisplayer>
+		
+		<windowWithoutTitleBar name="windowCtr">
+			<Size>
+				<AbsDimension x="200" y="106"/>
+			</Size>
+			
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="134" />
+				</Anchor>
+			</Anchors>
+			
+			<noCloseButton>true</noCloseButton>
+			
+			<Content>
+				<!-- Label lb_name-->
+				<Label name="lb_name">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="10" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="413" y="30" />
+					</Size>
+					<css>[local.css]title.css</css>
+				</Label>
+
+				<Label name="lb_level">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="10" y="25" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="413" y="20" />
+					</Size>
+					<css>[local.css]normal2.css</css>
+				</Label>
+			</Content>
+		</windowWithoutTitleBar>
+	</Container>
+</Definition>

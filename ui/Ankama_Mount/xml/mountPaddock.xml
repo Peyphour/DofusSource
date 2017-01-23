@@ -1,0 +1,1609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]button/sortButton.xml" />
+    <Import url="[config.mod.template]window.xml" />
+    <Import url="[config.mod.template]windowWithoutTitleBar.xml" />
+    <Import url="[config.mod.template]block.xml" />
+    <Import url="[config.mod.template.button]themeIconButton.xml" />
+    <Import url="[config.mod.template.button]comboBoxWithBackground.xml" />
+    <Import url="[config.mod.template.button]searchInput.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="mounts" value="[config.content.path]gfx/mounts/" />
+        <Constant name="common" value="[config.ui.skin]common/"/>
+        <Constant name="texture" value="[config.ui.skin]texture/"/>
+
+        <Constant name="ctr_barn1FilterY" value="45"/>
+        <Constant name="ctr_barn2FilterY" value="80"/>
+        <Constant name="ctr_barn3FilterY" value="114"/>
+        <Constant name="ctr_barn1FilterHeight" value="380"/>
+        <Constant name="ctr_barn2FilterHeight" value="345"/>
+        <Constant name="ctr_barn3FilterHeight" value="311"/>
+	</Constants>
+
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="20" y="40" />
+			</Anchor>
+		</Anchors>
+		<mouseEnabled>true</mouseEnabled>
+
+
+
+
+		<!-- PARTIE DE GAUCHE      ETABLE + ENCLOS  -->
+
+
+
+
+		<Window>
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="15" y="0" />
+                </Anchor>
+            </Anchors>
+			<Size>
+				<AbsDimension x="440" y="501" />
+			</Size>
+            <noCloseButton>true</noCloseButton>
+            <title>[ui.mount.barn]</title>
+            <iconUri>[local.texture]windowIcon/icon__0034_Etable.png</iconUri>
+            <Content>
+
+                <!-- iconButton btn_search etable-->
+
+                <themeIconButton name="btn_addFilter">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="7" y="14" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="22" y="21" />
+                    </Size>
+                    <iconUri>[local.texture]btnIcon/btnIcon_plus.png</iconUri>
+                </themeIconButton>
+                <themeIconButton name="btn_removeFilter1">
+                    <visible>false</visible>
+                    <Anchors>
+                        <Anchor relativeTo="cb_barn" relativePoint="TOPLEFT" point="TOPRIGHT">
+                            <AbsDimension x="-4" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="22" y="21" />
+                    </Size>
+                    <iconUri>[local.texture]btnIcon/btnIcon_minus.png</iconUri>
+                    <visible>false</visible>
+                </themeIconButton>
+                <themeIconButton name="btn_removeFilter2">
+                    <Anchors>
+                        <Anchor relativeTo="cb_barn2" relativePoint="TOPLEFT" point="TOPRIGHT">
+                            <AbsDimension x="-4" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="22" y="21" />
+                    </Size>
+                    <iconUri>[local.texture]btnIcon/btnIcon_minus.png</iconUri>
+                    <visible>false</visible>
+                </themeIconButton>
+                <themeIconButton name="btn_removeFilter3">
+                    <Anchors>
+                        <Anchor relativeTo="cb_barn3" relativePoint="TOPLEFT" point="TOPRIGHT">
+                            <AbsDimension x="-4" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="22" y="21" />
+                    </Size>
+                    <iconUri>[local.texture]btnIcon/btnIcon_minus.png</iconUri>
+                    <visible>false</visible>
+                </themeIconButton>
+
+                <!-- ComboBox cb_1-->
+                <comboBoxWithBackground name="cb_barn3" width="280" height="40" strata="TOP">
+                    <Anchors>
+                        <Anchor relativeTo="cb_barn2" relativePoint="BOTTOMLEFT" point="TOPLEFT">
+                            <AbsDimension x="-7" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <autoSelectMode>1</autoSelectMode>
+                    <rendererName>InlineXmlGridRenderer</rendererName>
+                    <rendererArgs>updateFilterLine</rendererArgs>
+                    <scrollBarCss>[local.css]scrollBar.css</scrollBarCss>
+                    <slotWidth>274</slotWidth>
+                    <slotHeight>21</slotHeight>
+                    <visible>false</visible>
+                    <Content>
+                        <Button name="btn_filter">
+                            <Size>
+                                <AbsDimension x="255" y="21" />
+                            </Size>
+                            <Common>
+                                <Texture>
+                                    <Size>
+                                        <AbsDimension x="255" y="21" />
+                                    </Size>
+                                    <bgColor>0</bgColor>
+                                    <bgAlpha>0</bgAlpha>
+                                </Texture>
+
+                                <Label name="lbl_filterName">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="5" y="-2" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="235" y="19" />
+                                    </Size>
+                                    <css>[local.css]normal2.css</css>
+                                    <verticalAlign>fixedHeight</verticalAlign>
+                                </Label>
+                            </Common>
+
+                            <State type="OVER">
+                                <SetProperties target="btn_filter">
+                                    <bgColor>[colors.grid.over]</bgColor>
+                                </SetProperties>
+                            </State>
+
+                            <State type="SELECTED">
+                                <SetProperties target="btn_filter">
+                                    <bgColor>[colors.grid.selected]</bgColor>
+                                </SetProperties>
+                            </State>
+
+                            <State type="SELECTED_OVER">
+                                <SetProperties target="btn_filter">
+                                    <bgColor>[colors.grid.selected]</bgColor>
+                                </SetProperties>
+                            </State>
+                        </Button>
+                    </Content>
+                </comboBoxWithBackground>
+
+                <comboBoxWithBackground name="cb_barn2" width="280" height="40" strata="TOP">
+                    <Anchors>
+                        <Anchor relativeTo="cb_barn" relativePoint="BOTTOMLEFT" point="TOPLEFT">
+                            <AbsDimension x="-7" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <autoSelectMode>1</autoSelectMode>
+                    <rendererName>InlineXmlGridRenderer</rendererName>
+                    <rendererArgs>updateFilterLine</rendererArgs>
+                    <scrollBarCss>[local.css]scrollBar.css</scrollBarCss>
+                    <slotWidth>274</slotWidth>
+                    <slotHeight>21</slotHeight>
+                    <visible>false</visible>
+                    <Content>
+                        <Button name="btn_filter">
+                            <Size>
+                                <AbsDimension x="255" y="21" />
+                            </Size>
+                            <Common>
+                                <Texture>
+                                    <Size>
+                                        <AbsDimension x="255" y="21" />
+                                    </Size>
+                                    <bgColor>0</bgColor>
+                                    <bgAlpha>0</bgAlpha>
+                                </Texture>
+
+                                <Label name="lbl_filterName">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="5" y="-2" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="235" y="19" />
+                                    </Size>
+                                    <css>[local.css]normal2.css</css>
+                                    <verticalAlign>fixedHeight</verticalAlign>
+                                </Label>
+                            </Common>
+
+                            <State type="OVER">
+                                <SetProperties target="btn_filter">
+                                    <bgColor>[colors.grid.over]</bgColor>
+                                </SetProperties>
+                            </State>
+
+                            <State type="SELECTED">
+                                <SetProperties target="btn_filter">
+                                    <bgColor>[colors.grid.selected]</bgColor>
+                                </SetProperties>
+                            </State>
+
+                            <State type="SELECTED_OVER">
+                                <SetProperties target="btn_filter">
+                                    <bgColor>[colors.grid.selected]</bgColor>
+                                </SetProperties>
+                            </State>
+                        </Button>
+                    </Content>
+                </comboBoxWithBackground>
+
+                <comboBoxWithBackground name="cb_barn" width="280" height="40" strata="TOP">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="59" y="5" />
+                        </Anchor>
+                    </Anchors>
+                    <autoSelectMode>1</autoSelectMode>
+                    <rendererName>InlineXmlGridRenderer</rendererName>
+                    <rendererArgs>updateFilterLine</rendererArgs>
+                    <scrollBarCss>[local.css]scrollBar.css</scrollBarCss>
+
+                    <slotWidth>274</slotWidth>
+                    <slotHeight>21</slotHeight>
+                    <Content>
+                        <Button name="btn_filter">
+                            <Size>
+                                <AbsDimension x="255" y="21" />
+                            </Size>
+                            <Common>
+                                <Texture>
+                                    <Size>
+                                        <AbsDimension x="255" y="21" />
+                                    </Size>
+                                    <bgColor>0</bgColor>
+                                    <bgAlpha>0</bgAlpha>
+                                </Texture>
+
+                                <Label name="lbl_filterName">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="5" y="-2" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="235" y="19" />
+                                    </Size>
+                                    <css>[local.css]normal2.css</css>
+                                    <verticalAlign>fixedHeight</verticalAlign>
+                                </Label>
+                            </Common>
+
+                            <State type="OVER">
+                                <SetProperties target="btn_filter">
+                                    <bgColor>[colors.grid.over]</bgColor>
+                                </SetProperties>
+                            </State>
+
+                            <State type="SELECTED">
+                                <SetProperties target="btn_filter">
+                                    <bgColor>[colors.grid.selected]</bgColor>
+                                </SetProperties>
+                            </State>
+
+                            <State type="SELECTED_OVER">
+                                <SetProperties target="btn_filter">
+                                    <bgColor>[colors.grid.selected]</bgColor>
+                                </SetProperties>
+                            </State>
+                        </Button>
+                    </Content>
+                </comboBoxWithBackground>
+
+                <searchInput name="ctr_searchBarn">
+                    <Anchors>
+                        <Anchor relativeTo="cb_barn" relativePoint="TOPLEFT" point="TOPLEFT">
+                            <AbsDimension x="-5" y="-8" />
+                        </Anchor>
+                    </Anchors>
+                    <btnCloseName>btn_barnCloseSearch</btnCloseName>
+                    <inputName>lbl_searchBarn</inputName>
+                    <width>275</width>
+                    <visible>false</visible>
+                </searchInput>
+
+                <!-- iconButton btn_search etable-->
+
+                <themeIconButton name="btn_searchBarn">
+                    <Anchors>
+                        <Anchor relativeTo="cb_barn" point="LEFT" relativePoint="RIGHT">
+                            <AbsDimension x="5" y="1" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="22" y="21" />
+                    </Size>
+                    <iconUri>[local.texture]btnIcon/btnIcon_magnifierSearch.png</iconUri>
+                </themeIconButton>
+
+                <block name="ctr_barn">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="3" y="45" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="396" y="380"/>
+                    </Size>
+                    <Content>
+                        <Texture>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="385" y="30" />
+                            </Size>
+                            <uri>[local.common]bg_dark.png</uri>
+                        </Texture>
+                        <Label>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="10" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="50" y="20" />
+                            </Size>
+                            <text>[ui.sersel.type]</text>
+                            <css>[local.css]normal2.css</css>
+                            <cssClass>center</cssClass>
+                        </Label>
+
+                        <sortButton name="btn_barnType">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="10" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="50" y="25" />
+                            </Size>
+                        </sortButton>
+
+                        <Label>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="70" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="54" y="20" />
+                            </Size>
+                            <text>[ui.common.sex]</text>
+                            <css>[local.css]normal2.css</css>
+                            <cssClass>center</cssClass>
+                        </Label>
+
+                        <sortButton name="btn_barnGender">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="70" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="54" y="25" />
+                            </Size>
+                        </sortButton>
+
+                        <Label>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="135" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="166" y="20" />
+                            </Size>
+                            <text>[ui.common.name]</text>
+                            <css>[local.css]normal2.css</css>
+                        </Label>
+
+                        <sortButton name="btn_barnName">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="135" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="166" y="25" />
+                            </Size>
+                        </sortButton>
+
+                        <Label>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="305" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="60" y="20" />
+                            </Size>
+                            <text>[ui.common.level]</text>
+                            <cssClass>center</cssClass>
+                            <css>[local.css]normal2.css</css>
+                        </Label>
+
+                        <sortButton name="btn_barnLevel">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="310" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="60" y="25" />
+                            </Size>
+                        </sortButton>
+
+                        <!-- Grid gd_1-->
+
+                        <Grid name="gd_barn">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="30" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="385" y="311" />
+                            </Size>
+                            <autoSelectMode>0</autoSelectMode>
+                            <rendererName>InlineXmlGridRenderer</rendererName>
+                            <rendererArgs>updateMountLine,[colors.grid.line]</rendererArgs>
+                            <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+                            <slotWidth>385</slotWidth>
+                            <slotHeight>32</slotHeight>
+
+                            <Container>
+                                <Size>
+                                    <AbsDimension x="388" y="32" />
+                                </Size>
+
+                                <Button name="btn_mountItem">
+                                    <Common>
+                                        <Size>
+                                            <AbsDimension x="388" y="32" />
+                                        </Size>
+                                        <checkBox>true</checkBox>
+                                        <mouseChildren>false</mouseChildren>
+
+                                        <Container>
+                                            <Size>
+                                                <AbsDimension x="335" y="32" />
+                                            </Size>
+                                            <bgColor>0</bgColor>
+                                            <bgAlpha>0</bgAlpha>
+                                        </Container>
+
+                                        <Texture name="tx_icon_back">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="20" y="1" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <uri>[local.assets]tx_pictoDinde_color1</uri>
+                                            <cacheAsBitmap>true</cacheAsBitmap>
+                                        </Texture>
+
+                                        <Texture name="tx_icon_up">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="20" y="1" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <uri>[local.assets]tx_pictoDinde_color2</uri>
+                                            <cacheAsBitmap>true</cacheAsBitmap>
+                                        </Texture>
+
+                                        <Texture name="tx_icon">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="20" y="1" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <uri>[local.assets]tx_pictoDinde_trait</uri>
+                                            <cacheAsBitmap>true</cacheAsBitmap>
+                                        </Texture>
+
+                                        <Texture name="tx_iconSpecialMount">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="20" y="1" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <uri>[local.assets]tx_pictoDinde_trait</uri>
+                                            <visible>false</visible>
+                                        </Texture>
+
+                                        <TextureBitmap name="tx_sex">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="82" y="7" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="20" y="20" />
+                                            </Size>
+                                            <smooth>true</smooth>
+                                        </TextureBitmap>
+
+                                        <Label name="lbl_name">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="135" y="5" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="183" y="21" />
+                                            </Size>
+                                            <css>[local.css]normal2.css</css>
+                                        </Label>
+
+                                        <Label name="lbl_level">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="305" y="5" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="60" y="21" />
+                                            </Size>
+                                            <cssClass>right</cssClass>
+                                            <css>[local.css]normal2.css</css>
+                                        </Label>
+
+                                    </Common>
+
+                                    <State type="OVER">
+                                        <SetProperties target="btn_mountItem">
+                                            <bgColor>[colors.grid.over]</bgColor>
+                                        </SetProperties>
+                                    </State>
+                                    <State type="DISABLED">
+                                    </State>
+                                    <State type="SELECTED">
+                                        <SetProperties target="btn_mountItem">
+                                            <bgColor>[colors.grid.selected]</bgColor>
+                                        </SetProperties>
+                                    </State>
+                                    <State type="SELECTED_OVER">
+                                        <SetProperties target="btn_mountItem">
+                                            <bgColor>[colors.grid.selected]</bgColor>
+                                        </SetProperties>
+                                    </State>
+
+                                </Button>
+
+                            </Container>
+                        </Grid>
+                    </Content>
+                </block>
+                <Container>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="9" y="390" />
+                        </Anchor>
+                    </Anchors>
+                    <Texture>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="0" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="385" y="30" />
+                        </Size>
+                        <uri>[local.common]bg_dark.png</uri>
+                    </Texture>
+                    <Label name="lbl_stock">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="50" y="3" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="326" y="20" />
+                        </Size>
+                        <cssClass>right</cssClass>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+                </Container>
+
+                <themeIconButton name="btn_moveAllFromBarn">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="364" y="9" />
+                        </Anchor>
+                    </Anchors>
+                    <iconAnchors>
+                        <Anchor relativePoint="TOPLEFT">
+                            <AbsDimension x="0" y="20" />
+                        </Anchor>
+                        <Anchor relativePoint="BOTTOMRIGHT">
+                            <AbsDimension x="-10" y="10" />
+                        </Anchor>
+                    </iconAnchors>
+                    <Size>
+                        <AbsDimension x="32" y="32" />
+                    </Size>
+                    <iconRotation>-53</iconRotation>
+                    <iconUri>[local.texture]btnIcon/btnIcon_arrowClaim.png</iconUri>
+                </themeIconButton>
+
+                </Content>
+        </Window>
+
+        <window>
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="15" y="485" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="440" y="355" />
+            </Size>
+            <noCloseButton>true</noCloseButton>
+            <titleLabelName>lbl_parkTitle</titleLabelName>
+            <iconUri>[local.texture]windowIcon/icon__0033_Enclos.png</iconUri>
+            <title>[ui.common.mountPark]</title>
+            <Content>
+                <!-- ComboBox cb_2-->
+
+                <comboBoxWithBackground name="cb_paddock"  width="280" height="40">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="59" y="5" />
+                        </Anchor>
+                    </Anchors>
+                    <autoSelectMode>1</autoSelectMode>
+                    <rendererName>InlineXmlGridRenderer</rendererName>
+                    <rendererArgs>updateFilterLine</rendererArgs>
+                    <scrollBarCss>[local.css]scrollBar.css</scrollBarCss>
+
+                    <slotWidth>274</slotWidth>
+                    <slotHeight>21</slotHeight>
+                    <maxHeight>245</maxHeight>
+                    <Content>
+                        <Button name="btn_filter">
+                            <Size>
+                                <AbsDimension x="255" y="21" />
+                            </Size>
+                            <Common>
+                                <Texture>
+                                    <Size>
+                                        <AbsDimension x="255" y="21" />
+                                    </Size>
+                                    <bgColor>0</bgColor>
+                                    <bgAlpha>0</bgAlpha>
+                                </Texture>
+
+                                <Label name="lbl_filterName">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="5" y="-2" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="235" y="19" />
+                                    </Size>
+                                    <css>[local.css]normal2.css</css>
+                                    <verticalAlign>fixedHeight</verticalAlign>
+                                </Label>
+                            </Common>
+
+                            <State type="OVER">
+                                <SetProperties target="btn_filter">
+                                    <bgColor>[colors.grid.over]</bgColor>
+                                </SetProperties>
+                            </State>
+
+                            <State type="SELECTED">
+                                <SetProperties target="btn_filter">
+                                    <bgColor>[colors.grid.selected]</bgColor>
+                                </SetProperties>
+                            </State>
+
+                            <State type="SELECTED_OVER">
+                                <SetProperties target="btn_filter">
+                                    <bgColor>[colors.grid.selected]</bgColor>
+                                </SetProperties>
+                            </State>
+                        </Button>
+                    </Content>
+                </comboBoxWithBackground>
+
+                <searchInput name="ctr_searchPaddock">
+                    <Anchors>
+                        <Anchor relativeTo="cb_paddock" relativePoint="TOPLEFT" point="TOPLEFT">
+                            <AbsDimension x="-5" y="-8" />
+                        </Anchor>
+                    </Anchors>
+                    <btnCloseName>btn_paddockCloseSearch</btnCloseName>
+                    <inputName>lbl_searchPaddock</inputName>
+                    <visible>false</visible>
+                    <width>275</width>
+                    <visible>false</visible>
+                </searchInput>
+
+
+                <!-- iconButton btn_search Enclos -->
+
+                <themeIconButton name="btn_searchPaddock">
+                    <Anchors>
+                        <Anchor relativeTo="cb_paddock" point="LEFT" relativePoint="RIGHT">
+                            <AbsDimension x="5" y="1" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="22" y="21" />
+                    </Size>
+                    <iconUri>[local.texture]btnIcon/btnIcon_magnifierSearch.png</iconUri>
+                </themeIconButton>
+
+
+
+                <block>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="3" y="45" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="396" y="235"/>
+                    </Size>
+                    <Content>
+                        <Texture>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="385" y="30" />
+                            </Size>
+                            <uri>[local.common]bg_dark.png</uri>
+                        </Texture>
+
+                        <Label>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="10" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="50" y="20" />
+                            </Size>
+                            <text>[ui.sersel.type]</text>
+                            <css>[local.css]normal2.css</css>
+                            <cssClass>center</cssClass>
+                        </Label>
+                        <sortButton name="btn_paddockType">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="10" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="50" y="25" />
+                            </Size>
+                        </sortButton>
+
+
+                        <Label>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="70" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="54" y="20" />
+                            </Size>
+                            <text>[ui.common.sex]</text>
+                            <css>[local.css]normal2.css</css>
+                            <cssClass>center</cssClass>
+                            <mouseEnabled>true</mouseEnabled>
+                            <useHandCursor>true</useHandCursor>
+                        </Label>
+                        <sortButton name="btn_paddockGender">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="70" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="54" y="25" />
+                            </Size>
+                        </sortButton>
+
+                        <Label>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="135" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="166" y="20" />
+                            </Size>
+                            <text>[ui.common.name]</text>
+                            <css>[local.css]normal2.css</css>
+                        </Label>
+                        <sortButton name="btn_paddockName">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="135" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="166" y="25" />
+                            </Size>
+                        </sortButton>
+
+                        <Label>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="305" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="60" y="20" />
+                            </Size>
+                            <text>[ui.common.level]</text>
+                            <css>[local.css]normal2.css</css>
+                        </Label>
+                        <sortButton name="btn_paddockLevel">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="305" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="60" y="25" />
+                            </Size>
+                        </sortButton>
+
+
+
+                        <!-- Grid gd_2-->
+
+                        <Grid name="gd_paddock">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="30" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="385" y="165" />
+                            </Size>
+                            <autoSelectMode>0</autoSelectMode>
+                            <rendererName>InlineXmlGridRenderer</rendererName>
+                            <rendererArgs>updateMountLine,[colors.grid.line]</rendererArgs>
+                            <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+                            <slotWidth>385</slotWidth>
+                            <slotHeight>32</slotHeight>
+
+                            <Container>
+                                <Size>
+                                    <AbsDimension x="385" y="32" />
+                                </Size>
+
+                                <Button name="btn_mountItem">
+                                    <Common>
+                                        <Size>
+                                            <AbsDimension x="385" y="32" />
+                                        </Size>
+                                        <checkBox>true</checkBox>
+                                        <mouseChildren>false</mouseChildren>
+
+                                        <Container>
+                                            <Size>
+                                                <AbsDimension x="335" y="32" />
+                                            </Size>
+                                            <bgColor>0</bgColor>
+                                            <bgAlpha>0</bgAlpha>
+                                        </Container>
+
+                                        <Texture name="tx_icon_back">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="20" y="1" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <uri>[local.assets]tx_pictoDinde_color1</uri>
+                                            <cacheAsBitmap>true</cacheAsBitmap>
+                                        </Texture>
+
+                                        <Texture name="tx_icon_up">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="20" y="1" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <uri>[local.assets]tx_pictoDinde_color2</uri>
+                                            <cacheAsBitmap>true</cacheAsBitmap>
+                                        </Texture>
+
+                                        <Texture name="tx_icon">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="20" y="1" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <uri>[local.assets]tx_pictoDinde_trait</uri>
+                                            <cacheAsBitmap>true</cacheAsBitmap>
+                                        </Texture>
+
+                                        <Texture name="tx_iconSpecialMount">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="20" y="1" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <uri>[local.assets]tx_pictoDinde_trait</uri>
+                                            <visible>false</visible>
+                                        </Texture>
+
+                                        <TextureBitmap name="tx_sex">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="82" y="6" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="20" y="20" />
+                                            </Size>
+                                            <smooth>true</smooth>
+                                        </TextureBitmap>
+
+                                        <Label name="lbl_name">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="135" y="5" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="183" y="21" />
+                                            </Size>
+                                            <css>[local.css]normal2.css</css>
+                                        </Label>
+
+                                        <Label name="lbl_level">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="305" y="5" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="60" y="21" />
+                                            </Size>
+                                            <cssClass>right</cssClass>
+                                            <css>[local.css]normal2.css</css>
+                                        </Label>
+
+
+                                    </Common>
+
+                                    <State type="OVER">
+                                        <SetProperties target="btn_mountItem">
+                                            <bgColor>[colors.grid.over]</bgColor>
+                                        </SetProperties>
+                                    </State>
+                                    <State type="DISABLED">
+                                    </State>
+                                    <State type="SELECTED">
+                                        <SetProperties target="btn_mountItem">
+                                            <bgColor>[colors.grid.selected]</bgColor>
+                                        </SetProperties>
+                                    </State>
+                                    <State type="SELECTED_OVER">
+                                        <SetProperties target="btn_mountItem">
+                                            <bgColor>[colors.grid.selected]</bgColor>
+                                        </SetProperties>
+                                    </State>
+
+                                </Button>
+
+                            </Container>
+                        </Grid>
+                        <!-- Label lbl_park-->
+                    </Content>
+                </block>
+                <Container>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="9" y="245" />
+                        </Anchor>
+                    </Anchors>
+                    <Texture>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="0" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="385" y="30" />
+                        </Size>
+                        <uri>[local.common]bg_dark.png</uri>
+                    </Texture>
+                    <Label name="lbl_park">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="50" y="3" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="326" y="20" />
+                        </Size>
+                        <cssClass>right</cssClass>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+                </Container>
+                <themeIconButton name="btn_moveAllFromPark">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="364" y="8" />
+                        </Anchor>
+                    </Anchors>
+                    <iconAnchors>
+                        <Anchor relativePoint="TOPLEFT">
+                            <AbsDimension x="0" y="20" />
+                        </Anchor>
+                        <Anchor relativePoint="BOTTOMRIGHT">
+                            <AbsDimension x="-10" y="10" />
+                        </Anchor>
+                    </iconAnchors>
+                    <Size>
+                        <AbsDimension x="32" y="32" />
+                    </Size>
+                    <iconUri>[local.texture]btnIcon/btnIcon_arrowClaim.png</iconUri>
+                    <iconRotation>-53</iconRotation>
+                </themeIconButton>
+            </Content>
+        </window>
+
+
+
+
+		<!-- PARTIE CENTRALE        BOUTONS  -->
+
+        <windowWithoutTitleBar name="ctr_bgbtnbottom">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="428" y="753" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="400" y="90" />
+            </Size>
+            <bgAlpha>1</bgAlpha>
+            <noCloseButton>true</noCloseButton>
+        </windowWithoutTitleBar>
+        <Container name="ctr_btnPark">
+            <simpleButton label="[ui.mount.parkAction]" name="btn_park">
+                <Anchors>
+                    <Anchor relativeTo="ctr_bgbtnbottom">
+                        <AbsDimension x="30" y="22" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="170" y="40" />
+                </Size>
+                <bgThemeDataId>btn_transparent</bgThemeDataId>
+                <cssClass>condensedboldcentert</cssClass>
+                <css>[local.css]normal2.css</css>
+            </simpleButton>
+            <TextureBitmap>
+                <Anchors>
+                    <Anchor relativeTo="btn_park">
+                        <AbsDimension x="30" y="30" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="20" y="20"/>
+                </Size>
+                <uri>[local.texture]hud/icon_arrow_floating_menu.png</uri>
+                <rotation>180</rotation>
+                <smooth>true</smooth>
+            </TextureBitmap>
+        </Container>
+		<!-- simpleButton btn_stock-->
+        <Container name="ctr_mountInfo">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="440" y="54" />
+                </Anchor>
+            </Anchors>
+        </Container>
+        <Container name="ctr_btnExchange">
+            <simpleButton label="[ui.common.exchange]" name="btn_exchange">
+                <Anchors>
+                    <Anchor relativeTo="ctr_bgbtnbottom" point="TOPRIGHT" relativePoint="TOPRIGHT">
+                        <AbsDimension x="-30" y="22" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="170" y="40" />
+                </Size>
+                <bgThemeDataId>btn_transparent</bgThemeDataId>
+                <cssClass>condensedboldcentert</cssClass>
+                <css>[local.css]normal2.css</css>
+            </simpleButton>
+            <TextureBitmap>
+                <Anchors>
+                    <Anchor relativeTo="btn_exchange" point="RIGHT" relativePoint="RIGHT">
+                        <AbsDimension x="-10" y="1" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="20" y="20"/>
+                </Size>
+                <uri>[local.texture]hud/icon_arrow_floating_menu.png</uri>
+                <smooth>true</smooth>
+            </TextureBitmap>
+        </Container>
+        <!-- simpleButton btn_park-->
+        <windowWithoutTitleBar name="ctr_bgbtntop">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="428" y="-8" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="400" y="90" />
+            </Size>
+            <bgAlpha>1</bgAlpha>
+            <noCloseButton>true</noCloseButton>
+        </windowWithoutTitleBar>
+        <Container name="ctr_btnStock">
+            <simpleButton name="btn_stock">
+                <Anchors>
+                    <Anchor relativeTo="ctr_bgbtntop">
+                        <AbsDimension x="30" y="22" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="170" y="40" />
+                </Size>
+                <label>[ui.common.stock]</label>
+                <bgThemeDataId>btn_transparent</bgThemeDataId>
+                <cssClass>condensedboldcentert</cssClass>
+                <css>[local.css]normal2.css</css>
+            </simpleButton>
+
+            <TextureBitmap>
+                <Anchors>
+                    <Anchor relativeTo="btn_stock">
+                        <AbsDimension x="30" y="30" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="20" y="20"/>
+                </Size>
+                <uri>[local.texture]hud/icon_arrow_floating_menu.png</uri>
+                <rotation>180</rotation>
+                <smooth>true</smooth>
+            </TextureBitmap>
+        </Container>
+        <!-- simpleButton btn_equip-->
+        <Container name="ctr_btnEquip">
+            <simpleButton name="btn_equip">
+                <Anchors>
+                    <Anchor relativeTo="ctr_bgbtntop" point="TOPRIGHT" relativePoint="TOPRIGHT">
+                        <AbsDimension x="-30" y="22" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="170" y="40" />
+                </Size>
+                <label>[ui.common.equip]</label>
+                <bgThemeDataId>btn_transparent</bgThemeDataId>
+                <cssClass>condensedboldcentert</cssClass>
+                <css>[local.css]normal2.css</css>
+            </simpleButton>
+            <TextureBitmap>
+                <Anchors>
+                    <Anchor relativeTo="btn_equip" point="RIGHT" relativePoint="RIGHT">
+                        <AbsDimension x="-10" y="1" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="20" y="20"/>
+                </Size>
+                <uri>[local.texture]hud/icon_arrow_floating_menu.png</uri>
+                <smooth>true</smooth>
+            </TextureBitmap>
+        </Container>
+
+		<!-- PARTIE DE DROITE      MONTURE + CERTIFICATS  -->
+
+
+
+
+		<!-- FENETRE MONTURE EQUIPEE -->
+
+		<window name="ctr_mountEquiped">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="805" y="0" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="440" y="195" />
+            </Size>
+            <titleLabelName>lbl_mountEquiped</titleLabelName>
+            <iconUri>[local.texture]windowIcon/icon__0012_Montures.png</iconUri>
+            <Content>
+
+                <!-- Label lbl_mountName-->
+
+                <Label name="lbl_mountName">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="140" y="10" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="220" y="26" />
+                    </Size>
+                    <cssClass>extrawhitebigcondensedbold</cssClass>
+                    <css>[local.css]normal2.css</css>
+                </Label>
+
+                <!-- Label lbl_mountLevel-->
+
+                <Label name="lbl_mountLevel">
+                    <Anchors>
+                        <Anchor relativeTo="lbl_mountName" relativePoint="BOTTOM" point="TOP">
+                            <AbsDimension x="0" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="220" y="26" />
+                    </Size>
+                    <css>[local.css]normal2.css</css>
+                </Label>
+
+                <TextureBitmap name="tx_equipedMountSeparator">
+                    <Anchors>
+                        <Anchor relativeTo="lbl_mountLevel" relativePoint="BOTTOMLEFT" point="TOPLEFT">
+                            <AbsDimension x="-10" y="3" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="150" />
+                    </Size>
+                    <uri>[local.common]window_separator_black_horizontal.png</uri>
+                </TextureBitmap>
+
+                <!-- Label lbl_mountDescription-->
+
+                <Label name="lbl_mountDescription">
+                    <Anchors>
+                        <Anchor relativeTo="lbl_mountLevel" relativePoint="BOTTOM" point="TOP">
+                            <AbsDimension x="0" y="10" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="220" y="26" />
+                    </Size>
+                    <cssClass>white</cssClass>
+                    <css>[local.css]normal2.css</css>
+                    <multiline>true</multiline>
+                    <wordWrap>true</wordWrap>
+                </Label>
+                <Label name="lbl_noMountEquipped">
+                    <Anchors>
+                        <Anchor relativePoint="CENTER" point="CENTER">
+                            <AbsDimension x="0" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="220" y="26" />
+                    </Size>
+                    <text>[ui.mount.noPlayerMountEquipped]</text>
+                    <cssClass>condensedboldcentert</cssClass>
+                    <css>[local.css]normal2.css</css>
+                </Label>
+                <EntityDisplayer name="ed_mount">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="10" y="8" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="121" y="108" />
+                    </Size>
+                    <mouseEnabled>false</mouseEnabled>
+                    <mouseChildren>false</mouseChildren>
+                </EntityDisplayer>
+            </Content>
+		</window>
+
+
+
+
+
+		<window>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="805" y="190" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="440" y="650" />
+			</Size>
+            <titleLabelName>lbl_mountCertificate</titleLabelName>
+            <title>[ui.banner.inventory]</title>
+            <noCloseButton>true</noCloseButton>
+            <iconUri>[local.texture]windowIcon/icon__0027_Inventaire.png</iconUri>
+            <Content>
+                <comboBoxWithBackground name="cb_inventory" width="280" height="40" strata="TOP">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="50" y="5" />
+                        </Anchor>
+                    </Anchors>
+                    <slotWidth>274</slotWidth>
+                    <slotHeight>21</slotHeight>
+                    <autoSelectMode>1</autoSelectMode>
+                    <rendererName>InlineXmlGridRenderer</rendererName>
+                    <rendererArgs>updateFilterLine</rendererArgs>
+                    <scrollBarCss>[local.css]scrollBar.css</scrollBarCss>
+                    <Content>
+                        <Button name="btn_filter">
+                            <Size>
+                                <AbsDimension x="255" y="21" />
+                            </Size>
+                            <Common>
+                                <Texture>
+                                    <Size>
+                                        <AbsDimension x="255" y="21" />
+                                    </Size>
+                                    <bgColor>0</bgColor>
+                                    <bgAlpha>0</bgAlpha>
+                                </Texture>
+
+                                <Label name="lbl_filterName">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="5" y="-2" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="235" y="19" />
+                                    </Size>
+                                    <css>[local.css]normal2.css</css>
+                                    <verticalAlign>fixedHeight</verticalAlign>
+                                </Label>
+                            </Common>
+
+                            <State type="OVER">
+                                <SetProperties target="btn_filter">
+                                    <bgColor>[colors.grid.over]</bgColor>
+                                </SetProperties>
+                            </State>
+
+                            <State type="SELECTED">
+                                <SetProperties target="btn_filter">
+                                    <bgColor>[colors.grid.selected]</bgColor>
+                                </SetProperties>
+                            </State>
+
+                            <State type="SELECTED_OVER">
+                                <SetProperties target="btn_filter">
+                                    <bgColor>[colors.grid.selected]</bgColor>
+                                </SetProperties>
+                            </State>
+                        </Button>
+                    </Content>
+                </comboBoxWithBackground>
+
+                <searchInput name="ctr_searchInventory">
+                    <Anchors>
+                        <Anchor relativeTo="cb_inventory" relativePoint="TOPLEFT" point="TOPLEFT">
+                            <AbsDimension x="-5" y="-8" />
+                        </Anchor>
+                    </Anchors>
+                    <btnCloseName>btn_inventoryCloseSearch</btnCloseName>
+                    <inputName>lbl_searchInventory</inputName>
+                    <width>275</width>
+                    <visible>false</visible>
+                </searchInput>
+
+
+
+                <!-- iconButton btn_search certificats -->
+
+                <themeIconButton name="btn_searchInventory">
+                    <Anchors>
+                        <Anchor relativeTo="cb_inventory" point="LEFT" relativePoint="RIGHT">
+                            <AbsDimension x="5" y="1" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="22" y="21" />
+                    </Size>
+                    <iconUri>[local.texture]btnIcon/btnIcon_magnifierSearch.png</iconUri>
+                </themeIconButton>
+
+
+                <block>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="3" y="45" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="396" y="530" />
+                    </Size>
+                    <Content>
+                        <Texture>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="385" y="30" />
+                            </Size>
+                            <uri>[local.common]bg_dark.png</uri>
+                        </Texture>
+                        <Label>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="10" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="50" y="20" />
+                            </Size>
+                            <text>[ui.sersel.type]</text>
+                            <css>[local.css]normal2.css</css>
+                            <cssClass>left</cssClass>
+                        </Label>
+
+                        <!-- Grid gd_3-->
+
+                        <Grid name="gd_inventory">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="30" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="385" y="460" />
+                            </Size>
+                            <autoSelectMode>0</autoSelectMode>
+                            <rendererName>InlineXmlGridRenderer</rendererName>
+                            <rendererArgs>updateInventoryMountLine,[colors.grid.line]</rendererArgs>
+                            <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+                            <slotWidth>385</slotWidth>
+                            <slotHeight>32</slotHeight>
+
+                            <Container>
+                                <Button name="btn_certificateMountItem">
+                                    <Common>
+                                        <Size>
+                                            <AbsDimension x="385" y="32" />
+                                        </Size>
+                                        <checkBox>true</checkBox>
+                                        <mouseChildren>false</mouseChildren>
+
+                                        <Container>
+                                            <Size>
+                                                <AbsDimension x="352" y="32" />
+                                            </Size>
+                                            <bgColor>0</bgColor>
+                                            <bgAlpha>0</bgAlpha>
+                                        </Container>
+
+                                        <Label name="lbl_name">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="50" y="5" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="290" y="21" />
+                                            </Size>
+                                            <css>[local.css]normal2.css</css>
+                                        </Label>
+
+                                    </Common>
+
+                                    <State type="OVER">
+                                        <SetProperties target="btn_certificateMountItem">
+                                            <bgColor>[colors.grid.over]</bgColor>
+                                        </SetProperties>
+                                    </State>
+                                    <State type="DISABLED">
+                                    </State>
+                                    <State type="SELECTED">
+                                        <SetProperties target="btn_certificateMountItem">
+                                            <bgColor>[colors.grid.selected]</bgColor>
+                                        </SetProperties>
+                                    </State>
+                                    <State type="SELECTED_OVER">
+                                        <SetProperties target="btn_certificateMountItem">
+                                            <bgColor>[colors.grid.selected]</bgColor>
+                                        </SetProperties>
+                                    </State>
+
+                                </Button>
+
+                                <Slot name="slot_icon">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="12" y="2" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="28" y="28" />
+                                    </Size>
+                                </Slot>
+                            </Container>
+                        </Grid>
+
+                        <!-- Label lbl_certificates-->
+                        <Container>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="490" />
+                                </Anchor>
+                            </Anchors>
+                            <Texture>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="0" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="385" y="30" />
+                                </Size>
+                                <uri>[local.common]bg_dark.png</uri>
+                            </Texture>
+                            <Label name="lbl_certificates">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="25" y="3" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="355" y="20" />
+                                </Size>
+                                <cssClass>right</cssClass>
+                                <css>[local.css]normal2.css</css>
+                            </Label>
+                        </Container>
+                    </Content>
+                </block>
+                <themeIconButton name="btn_moveAllFromInventory">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="5" y="10" />
+                        </Anchor>
+                    </Anchors>
+                    <iconAnchors>
+                        <Anchor relativePoint="TOPLEFT">
+                            <AbsDimension x="20" y="2" />
+                        </Anchor>
+                        <Anchor relativePoint="BOTTOMRIGHT">
+                            <AbsDimension x="10" y="-8" />
+                        </Anchor>
+                    </iconAnchors>
+                    <Size>
+                        <AbsDimension x="32" y="32" />
+                    </Size>
+                    <iconUri>[local.texture]btnIcon/btnIcon_arrowClaim.png</iconUri>
+                    <iconRotation>53</iconRotation>
+                    <smooth>true</smooth>
+                    <scaleX>-1</scaleX>
+                </themeIconButton>
+
+            </Content>
+        </window>
+	</Container>
+</Definition>

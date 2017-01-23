@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+
+	<Import url="[config.mod.template.button]iconButton.xml"/>
+	<Import url="[config.mod.template.button]simpleButton.xml"/>
+	<Import url="[config.mod.template]window.xml"/>
+	<Import url="[config.mod.template]block.xml"/>
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+		<Constant name="css" value="[config.ui.skin]css/"/>
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/"/>
+		<Constant name="texture" value="[config.ui.skin]texture/"/>
+		<Constant name="common" value="[config.ui.skin]common/"/>
+	</Constants>
+
+	<Container name="mainCtr">
+
+		<!-- INTERFACE PRINCIPALE -->
+
+		<Window name="ctr_menu">
+			<Anchors>
+				<Anchor point="CENTER" relativePoint="CENTER"/>
+			</Anchors>
+			<Size>
+				<AbsDimension x="350" y="330"/>
+			</Size>
+			<title>[ui.item.manageItem]</title>
+			<dark>true</dark>
+
+			<Content>
+				<block>
+					<Anchors>
+						<Anchor relativePoint="CENTER" point="CENTER"/>
+					</Anchors>
+					<Size>
+						<RelDimension x="0.98" y="0.98"/>
+					</Size>
+
+					<Content>
+
+						<!-- Slot slot_icon-->
+
+						<Slot name="slot_icon">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="5" y="5"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="110" y="110"/>
+							</Size>
+						</Slot>
+
+						<!-- simpleButton btn_feed-->
+
+						<simpleButton name="btn_feed">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="124" y="5"/>
+								</Anchor>
+							</Anchors>
+
+							<uri>[local.assets]btn_orange</uri>
+
+							<Size>
+								<AbsDimension x="166" y="31"/>
+							</Size>
+							<label>[ui.common.feed]</label>
+							<css>[local.css]button.css</css>
+						</simpleButton>
+
+						<!-- simpleButton btn_destroy-->
+
+						<simpleButton name="btn_destroy">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="124" y="45"/>
+								</Anchor>
+							</Anchors>
+
+							<uri>[local.assets]btn_orange</uri>
+
+							<Size>
+								<AbsDimension x="166" y="31"/>
+							</Size>
+							<label>[ui.item.dissociate]</label>
+							<css>[local.css]button.css</css>
+						</simpleButton>
+
+						<!-- simpleButton btn_look-->
+
+						<simpleButton name="btn_look">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="124" y="85"/>
+								</Anchor>
+							</Anchors>
+
+							<uri>[local.assets]btn_orange</uri>
+
+							<Size>
+								<AbsDimension x="166" y="31"/>
+							</Size>
+							<label>[ui.item.skin]</label>
+							<css>[local.css]button.css</css>
+						</simpleButton>
+
+						<ProgressBar name="pb_xp">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="175" y="219"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="112" y="12" />
+							</Size>
+							<barColor>[colors.progressbar.blue]</barColor>
+							<barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+							<separators>4</separators>
+							<value>0.75</value>
+						</ProgressBar>
+
+						<!--Label "Etat:"-->
+
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="2" y="129"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="143" y="20"/>
+							</Size>
+							<text>[ui.sersel.state][ui.common.colon]</text>
+							<css>[local.css]normal2.css</css>
+						</Label>
+
+						<!-- Label lbl_weight-->
+
+						<Label name="lbl_mood">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="136" y="129"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="154" y="20"/>
+							</Size>
+							<cssClass>right</cssClass>
+							<css>[local.css]normal2.css</css>
+						</Label>
+
+						<!-- Label lbl_date-->
+
+						<Label name="lbl_date">
+							<Anchors>
+								<Anchor>
+									<AbsDimension y="158"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="300" y="20"/>
+							</Size>
+							<cssClass>center</cssClass>
+							<css>[local.css]normal2.css</css>
+						</Label>
+
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="2" y="187"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="143" y="20"/>
+							</Size>
+							<text>[ui.common.level][ui.common.colon]</text>
+							<css>[local.css]normal2.css</css>
+						</Label>
+
+						<!-- Label lbl_level_2-->
+
+						<Label name="lbl_level">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="184" y="187"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="104" y="20"/>
+							</Size>
+							<cssClass>right</cssClass>
+							<css>[local.css]normal2.css</css>
+						</Label>
+
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="2" y="213"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="158" y="20"/>
+							</Size>
+							<text>[ui.common.experiment][ui.common.colon]</text>
+							<css>[local.css]normal2.css</css>
+						</Label>
+					</Content>
+				</block>
+			</Content>
+		</Window>
+
+
+		<!-- INTERFACE DE CHANGEMENT D'APPARENCE DE L'OBJET -->
+
+		<Container name="ctr_look">
+
+			<Size>
+				<AbsDimension x="1280" y="1024"/>
+			</Size>
+			<bgColor>0x000000</bgColor>
+			<bgAlpha>0</bgAlpha>
+			<visible>false</visible>
+			<mouseEnabled>true</mouseEnabled>
+
+			<Window>
+				<Anchors>
+					<Anchor point="CENTER" relativePoint="CENTER"/>
+				</Anchors>
+				<Size>
+					<AbsDimension x="510" y="230"/>
+				</Size>
+				<title>[ui.item.chooseSkin]</title>
+				<titleLabelName>lbl_title_look</titleLabelName>
+				<closeButtonName>btn_closeLook</closeButtonName>
+				<dark>true</dark>
+
+				<Content>
+					<block>
+						<Size>
+							<RelDimension x="0.98"/>
+							<AbsDimension y="110"/>
+						</Size>
+						<Anchors>
+							<Anchor relativePoint="TOP" point="TOP"/>
+						</Anchors>
+
+						<Content>
+							<!-- Grid grid_look-->
+
+							<Grid name="grid_look">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="7" y="5"/>
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="440" y="89"/>
+								</Size>
+								<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+								<slotWidth>44</slotWidth>
+								<slotHeight>44</slotHeight>
+								<scrollDisplay>never</scrollDisplay>
+								<rendererName>SlotGridRenderer</rendererName>
+								<rendererArgs>[local.texture]slot/emptySlot.png,[local.texture]slot/over.png,[local.texture]slot/selected.png,[local.texture]slot/acceptDrop.png,[local.texture]slot/refuseDrop.png,,[local.css]normal.css, false</rendererArgs>
+							</Grid>
+
+						</Content>
+					</block>
+
+					<!-- simpleButton btn_lookOk-->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension y="110"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="470" y="50"/>
+						</Size>
+
+						<simpleButton name="btn_lookOk">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="155" y="5" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="191" y="35"/>
+							</Size>
+							<label>[ui.common.validation]</label>
+						</simpleButton>
+
+						<!--Corner decoration LEFT-->
+
+						<Texture>
+							<Anchors>
+								<Anchor relativePoint="BOTTOMLEFT" point="BOTTOMLEFT"/>
+							</Anchors>
+							<uri>[local.common]corner_decoration.png</uri>
+						</Texture>
+
+						<!--Corner decoration RIGHT-->
+
+						<Texture>
+							<Anchors>
+								<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMLEFT"/>
+							</Anchors>
+							<uri>[local.common]corner_decoration.png</uri>
+							<scaleX>-1</scaleX>
+						</Texture>
+					</Container>
+				</Content>
+			</Window>
+		</Container>
+
+	</Container>
+</Definition>

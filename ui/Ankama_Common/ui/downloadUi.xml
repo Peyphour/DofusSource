@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition modal="false">
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+	
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="0" y="0" />
+			</Anchor>
+		</Anchors>
+		
+		<mouseEnabled>true</mouseEnabled>
+		
+		<Button name="btn_loadingBG">
+			<Common>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativePoint="TOPLEFT">
+						<AbsDimension x="0" y="0" />
+					</Anchor>
+				</Anchors>
+				
+				<checkBox>true</checkBox>
+				
+				<Texture name="tx_loadingBG">
+					<uri>[local.assets]btn_loadingBG</uri>
+				</Texture>
+				
+				<Texture name="tx_loadingAnim">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="5" y="4" />
+						</Anchor>
+					</Anchors>
+					<uri>[local.assets]tx_loadingAnim</uri>
+				</Texture>
+				
+				<Container name="ctr_tiny">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="40" y="0" />
+						</Anchor>
+					</Anchors>
+					
+					<visible>false</visible>
+				
+					<!-- Progress bar label -->
+					<Label name="lbl_tinyProgressValue">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="10" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="54" y="23" />
+						</Size>
+						<css>[local.css]normal.css</css>
+						<cssClass>dark</cssClass>
+						<text>100%</text>
+					</Label>
+				</Container>
+				
+		 		<Container name="ctr_large">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="50" y="0" />
+						</Anchor>
+					</Anchors>
+					
+					<Container name="ctr_progress">
+						<!-- "download in progress" label -->
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="220" y="23" />
+							</Size>
+							<css>[local.css]normal.css</css>
+							<cssClass>dark</cssClass>
+							<text>[ui.streaming.downloadInProgress]</text>
+						</Label>
+			
+						<!-- Progress bar label -->
+						<Label name="lbl_largeProgressValue">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="190" y="18" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="54" y="23" />
+							</Size>
+							<css>[local.css]normal.css</css>
+							<cssClass>dark</cssClass>
+							<text>100%</text>
+						</Label>
+						
+						<!--  Progress bar background -->
+						<Texture name="tx_progressBarBackground">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="26" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="176" y="14" />
+							</Size>
+							<uri>[local.assets]tx_progressBarBackground</uri>
+						</Texture>
+						
+						<Texture name="tx_progressBar">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="26" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="176" y="14" />
+							</Size>
+							<uri>[local.assets]tx_progressBar</uri>
+						</Texture>
+					</Container>
+					
+					<Label name="lbl_message">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="10" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="225" y="23" />
+						</Size>
+						<css>[local.css]normal.css</css>
+						<cssClass>dark</cssClass>
+					</Label>
+				</Container>
+				
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</Common>
+
+			<State type="OVER">
+				<SetProperties target="tx_loadingBG">
+					<gotoAndStop>over</gotoAndStop>
+				</SetProperties>
+			</State>
+
+<!--			<State type="PRESSED">-->
+<!--				<SetProperties target="tx_loadingBG">-->
+<!--					<gotoAndStop>pressed</gotoAndStop>-->
+<!--				</SetProperties>-->
+<!--			</State>-->
+
+			<State type="SELECTED">
+				<SetProperties target="tx_loadingBG">
+					<gotoAndStop>selected</gotoAndStop>
+				</SetProperties>
+			</State>
+			
+			<State type="SELECTED_OVER">
+				<SetProperties target="tx_loadingBG">
+					<gotoAndStop>selected_over</gotoAndStop>
+				</SetProperties>
+
+			</State>
+		</Button>
+	</Container>
+</Definition>

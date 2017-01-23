@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+	
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+
+		<Constant name="artworks_uri" value="[config.content.path]gfx/artworks/" />		
+				
+		<Constant name="frame0" value="[local.assets]banner_tx_XPFrame" />
+		<Constant name="frame1" value="[local.assets]banner_tx_guildXPFrame" />
+		<Constant name="frame2" value="[local.assets]banner_tx_mountXPFrame" />
+		<Constant name="frame3" value="[local.assets]banner_tx_honourFrame" />
+		<Constant name="frame4" value="[local.assets]banner_tx_podsFrame" />
+		<Constant name="frame5" value="[local.assets]banner_tx_jobXPFrame" />
+		
+		<Constant name="rpBackgroundWidth" value="600" type="uint" />
+		<Constant name="fightBackgroundWidth" value="760" type="uint" />
+		<Constant name="spectatorTabsBgWidth" value="132" type="uint" />
+		<Constant name="partyTabsBgWidth" value="105" type="uint" />
+		<Constant name="noPartyTabsBgWidth" value="77" type="uint" />
+	</Constants>
+	
+	<Container name="tooltipRoleplayPlacer">
+		<Anchors>
+			<Anchor relativeTo="mainCtr" relativePoint="TOPRIGHT">
+				<AbsDimension x="-8" y="-13" />
+			</Anchor>
+		</Anchors>
+	</Container>
+	
+	<Container name="tooltipFightPlacer">
+		<Anchors>
+			<Anchor relativeTo="mainCtr" relativePoint="TOPRIGHT">
+				<AbsDimension x="-8" y="-118" />
+			</Anchor>
+		</Anchors>
+	</Container>
+	
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="400" y="909" />
+			</Anchor>
+		</Anchors>
+		
+		<TextureBitmap name="tx_background">
+			<Size>
+				<AbsDimension x="[local.rpBackgroundWidth]" y="115" />
+			</Size>
+			<themeDataId>hud_window_background</themeDataId>
+			<mouseEnabled>true</mouseEnabled>
+			<isMagnetic>true</isMagnetic>
+		</TextureBitmap>
+		
+		<TextureBitmap name="tx_separator">
+			<Anchors>
+				<Anchor relativeTo="tx_background" relativePoint="TOPRIGHT">
+					<AbsDimension x="-7" y="0" />
+				</Anchor>
+				<Anchor relativeTo="tx_background" relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<themeDataId>separator_green_column</themeDataId>
+			<dragController>true</dragController>
+			<dragTarget>mainCtr</dragTarget>
+			<dragBoundsContainer>tx_background</dragBoundsContainer>
+			<useDragMagnetism>true</useDragMagnetism>
+		</TextureBitmap>
+		
+		<TextureBitmap>
+			<Anchors>
+				<Anchor relativeTo="tx_separator" relativePoint="TOPLEFT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+				<Anchor relativeTo="tx_separator" relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<themeDataId>separator_green_column_shadow</themeDataId>
+		</TextureBitmap>
+		
+		<TextureBitmap>
+			<Anchors>
+				<Anchor relativeTo="tx_background" relativePoint="TOPLEFT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+				<Anchor relativeTo="tx_background" relativePoint="TOPRIGHT">
+					<AbsDimension x="0" y="8" />
+				</Anchor>
+			</Anchors>
+			<uri>[config.ui.skin]texture/hud/background_hud_shadow.png</uri>
+		</TextureBitmap>
+		
+		<TextureBitmap>
+			<Anchors>
+				<Anchor relativeTo="tx_background" relativePoint="BOTTOMLEFT">
+					<AbsDimension x="0" y="-8" />
+				</Anchor>
+				<Anchor relativeTo="tx_background" relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<uri>[config.ui.skin]texture/hud/background_hud_shadow.png</uri>
+			<scaleY>-1</scaleY>
+		</TextureBitmap>
+
+		<!--Label name="lbl_time">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="602" y="50" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="74" y="62" />
+			</Size>
+			<css>[local.css]special.css</css>
+			<cssClass>countdown</cssClass>
+		</Label-->
+		
+		<Container name="fightCtr">
+			<Anchors>
+				<Anchor relativeTo="actionBarCtr" relativePoint="TOPRIGHT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			
+ 			<Texture name="pb_time2">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="103" y="-2" />
+					</Anchor>
+				</Anchors> 
+				<Size>
+					<AbsDimension x="156" y="92" />
+				</Size>
+				<uri>[local.assets]banner_timer</uri>
+				<visible>false</visible>
+			</Texture>
+			
+			<simpleButton name="btn_readyOrSkip">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="25" y="5" />
+					</Anchor>
+				</Anchors> 
+				<Size>
+					<AbsDimension x="160" y="60" />
+				</Size>
+				<labelAnchors>
+					<Anchor>
+						<AbsDimension x="26" y="0" />
+					</Anchor>			
+				</labelAnchors>				
+				<labelSize>
+					<AbsDimension x="108" y="60" />
+				</labelSize>
+				<bgThemeDataId>button_largeBorder_green</bgThemeDataId>
+				<smooth>true</smooth>
+				<cssClass>condensed</cssClass>
+				<css>[local.css]button.css</css>
+				<forceUppercase>true</forceUppercase>
+				<label>[ui.banner.ready]</label>
+				<multiline>true</multiline>
+			</simpleButton>	
+			
+			<themeIconButton name="btn_tacticMode">
+				<Anchors>
+					<Anchor relativeTo="btn_readyOrSkip" relativePoint="BOTTOMLEFT">
+						<AbsDimension x="2" y="7" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="30" y="26" />
+				</Size>
+				<smooth>true</smooth>
+				<bgThemeDataId>btn_transparent</bgThemeDataId>
+				<iconAnchors>	
+					<Anchor relativePoint="TOPLEFT">
+						<AbsDimension x="3" y="0"/>
+					</Anchor>
+					<Anchor relativePoint="BOTTOMRIGHT">
+						<AbsDimension x="-3" y="0"/>
+					</Anchor>
+				</iconAnchors>
+				<checkBox>true</checkBox>
+				<iconUri>[config.ui.skin]texture/hud/icon_hud_tactical_mode_grey.png</iconUri>	
+				<selectedIconUri>[config.ui.skin]texture/hud/icon_hud_tactical_mode.png</selectedIconUri>
+			</themeIconButton>
+			
+
+			<themeIconButton name="btn_creatureMode"> 
+				<Anchors>
+					<Anchor relativeTo="btn_tacticMode" relativePoint="TOPRIGHT">
+						<AbsDimension x="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="30" y="26" />
+				</Size>
+				<smooth>true</smooth>
+				<iconAnchors>	
+					<Anchor relativePoint="TOPLEFT">
+						<AbsDimension x="2" y="0"/>
+					</Anchor>
+					<Anchor relativePoint="BOTTOMRIGHT">
+						<AbsDimension x="-2" y="0"/>
+					</Anchor>
+				</iconAnchors>
+				<checkBox>true</checkBox>
+				<bgThemeDataId>btn_transparent</bgThemeDataId>	
+				<iconUri>[config.ui.skin]texture/hud/icon_hud_creature_mode_grey.png</iconUri>
+				<selectedIconUri>[config.ui.skin]texture/hud/icon_hud_creature_mode.png</selectedIconUri>
+			</themeIconButton>
+			
+			<themeIconButton name="btn_noSpectator">
+				<Anchors>
+					<Anchor relativeTo="btn_creatureMode" relativePoint="TOPRIGHT">
+						<AbsDimension x="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="30" y="26" />
+				</Size>
+				<smooth>true</smooth>
+				<iconAnchors>	
+					<Anchor relativePoint="TOPLEFT">
+						<AbsDimension x="2" y="0"/>
+					</Anchor>
+					<Anchor relativePoint="BOTTOMRIGHT">
+						<AbsDimension x="-2" y="0"/>
+					</Anchor>
+				</iconAnchors>
+				
+				<bgThemeDataId>btn_transparent</bgThemeDataId>
+				<checkBox>true</checkBox>
+				<iconUri>[config.ui.skin]texture/hud/icon_hud_spectator.png</iconUri>
+				<selectedIconUri>[config.ui.skin]texture/hud/icon_hud_spectator_grey.png</selectedIconUri>
+			</themeIconButton>
+			
+			<themeIconButton name="btn_pointCell">
+				<Anchors>
+					<Anchor relativeTo="btn_noSpectator" relativePoint="TOPRIGHT">
+						<AbsDimension x="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="30" y="26" />
+				</Size>
+				<smooth>true</smooth>
+				<bgThemeDataId>btn_transparent</bgThemeDataId>
+				<iconAnchors>	
+					<Anchor relativePoint="TOPLEFT">
+						<AbsDimension x="2" y="0"/>
+					</Anchor>
+					<Anchor relativePoint="BOTTOMRIGHT">
+						<AbsDimension x="-2" y="0"/>
+					</Anchor>
+				</iconAnchors>				
+				<iconUri>[config.ui.skin]texture/hud/icon_hud_ping_grey.png</iconUri>
+				<selectedIconUri>[config.ui.skin]texture/hud/icon_hud_ping.png</selectedIconUri>
+			</themeIconButton>
+			
+			<themeIconButton name="btn_leave">
+				<Anchors>
+					<Anchor relativeTo="btn_pointCell" relativePoint="RIGHT" point="LEFT">
+						<AbsDimension x="3" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="32" y="32" />
+				</Size>
+				<smooth>true</smooth>
+				<bgThemeDataId>btn_transparent</bgThemeDataId>
+				<iconUri>[config.ui.skin]texture/hud/icon_hud_red_close.png</iconUri>
+			</themeIconButton>
+			
+			<TextureBitmap name="tx_tabsBg">
+				<Anchors>
+					<Anchor relativeTo="btn_readyOrSkip" relativePoint="TOP" point="BOTTOM">
+						<AbsDimension x="0" y="-10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+				  <AbsDimension x="[local.partyTabsBgWidth]" y="26"/>
+				</Size>
+				<themeDataId>hud_tab_background</themeDataId>
+			</TextureBitmap>
+			
+			<themeIconButton name="btn_lockFight">
+				<Anchors>
+					<Anchor relativeTo="tx_tabsBg" relativePoint="BOTTOMLEFT">
+						<AbsDimension x="10" y="-25"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="28" y="20" />
+				</Size>
+				<smooth>true</smooth>
+				<bgThemeDataId>button_grey_thin_border</bgThemeDataId>
+								<iconAnchors>	
+					<Anchor relativePoint="TOPLEFT">
+						<AbsDimension x="4" y="0"/>
+					</Anchor>
+					<Anchor relativePoint="BOTTOMRIGHT">
+						<AbsDimension x="-4" y="0"/>
+					</Anchor>
+				</iconAnchors>				
+				<iconUri>[config.ui.skin]texture/hud/icon_hud_lock_all.png</iconUri>
+			</themeIconButton>
+			
+			<themeIconButton name="btn_requestHelp">
+				<Anchors>
+					<Anchor relativeTo="btn_lockFight" relativePoint="TOPRIGHT">
+						<AbsDimension x="1" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="28" y="20" />
+				</Size>
+				<smooth>true</smooth>
+				<bgThemeDataId>button_grey_thin_border</bgThemeDataId>
+				<iconAnchors>	
+					<Anchor relativePoint="TOPLEFT">
+						<AbsDimension x="4" y="0"/>
+					</Anchor>
+					<Anchor relativePoint="BOTTOMRIGHT">
+						<AbsDimension x="-4" y="0"/>
+					</Anchor>
+				</iconAnchors>				
+				<iconUri>[config.ui.skin]texture/hud/icon_hud_ask_help.png</iconUri>
+			</themeIconButton>
+			
+			<themeIconButton name="btn_lockParty">
+				<Anchors>
+					<Anchor relativeTo="btn_requestHelp" relativePoint="TOPRIGHT">
+						<AbsDimension x="1" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="28" y="20" />
+				</Size>
+				<smooth>true</smooth> 
+				<bgThemeDataId>button_grey_thin_border</bgThemeDataId>
+				<iconAnchors>	
+					<Anchor relativePoint="TOPLEFT">
+						<AbsDimension x="4" y="0"/>
+					</Anchor>
+					<Anchor relativePoint="BOTTOMRIGHT">
+						<AbsDimension x="-4" y="0"/>
+					</Anchor>
+				</iconAnchors>	
+				<iconUri>[config.ui.skin]texture/hud/icon_hud_lock_team.png</iconUri>				
+			</themeIconButton>
+
+ 			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="-457" y="85" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="466" y="11"/>
+				</Size>
+				<uri>[local.texture]hud/gauge_background.png</uri>
+				<visible>false</visible>
+			</Texture> 
+
+			<ProgressBar name="pb_time">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="-454" y="86" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="475" y="11" />
+				</Size>
+				<barColor>[local.timeDefaultColor]</barColor>
+				<barBackgroundThemeData>progress_bar_background</barBackgroundThemeData>
+				<barPadding>2</barPadding>
+				<separators>9</separators>
+			</ProgressBar>
+
+ 			<Texture name="tx_timeFx">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="-465" y="81" />
+					</Anchor>
+				</Anchors>
+				<uri>[config.ui.skin]texture/hud/gauge_timer_fx.png</uri>
+				<visible>false</visible>
+			</Texture>
+		</Container>
+		
+		
+		
+		<Container>
+			<Anchors>
+				<Anchor relativeTo="actionBarCtr" relativePoint="TOPRIGHT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+		</Container>
+
+
+		<!-- HP START -->
+		<Texture name="tx_hpBorder">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="3" y="-14" />
+				</Anchor>
+			</Anchors>
+			<uri>[local.texture]hud/icon_hp_border.png</uri>
+		</Texture>
+		
+		<Texture name="tx_shield">
+			<Anchors>
+				<Anchor relativeTo="tx_hpBg">
+					<AbsDimension x="-9" y="-11" />
+				</Anchor>
+			</Anchors>
+			<uri>[local.texture]hud/icon_armor.png</uri>
+		</Texture>
+		
+		<Texture name="tx_hpBg">
+			<Anchors>
+				<Anchor relativeTo="tx_hpBorder">
+					<AbsDimension x="4" y="4" />
+				</Anchor>
+			</Anchors>
+			<uri>[local.texture]hud/icon_hp_empty.png</uri>
+		</Texture>
+		
+		<Texture name="tx_hp">
+			<Anchors>
+				<Anchor relativeTo="tx_hpBg">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<uri>[local.texture]hud/icon_hp_full.png</uri>
+		</Texture>
+		
+		<Container name="mask_hp">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="3" y="-14" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="101" y="84" />
+			</Size>
+			<bgColor>0</bgColor>
+		</Container>
+		
+		<!--<Container name="mask_shield">
+			<Anchors>
+				<Anchor relativeTo="tx_hpBg">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<bgColor>0</bgColor>
+			<visible>false</visible>
+		</Container>-->
+		
+		<Texture name="tx_decoration">
+			<Anchors>
+				<Anchor relativeTo="tx_hpBg" point="TOP" relativePoint="BOTTOM">
+					<AbsDimension x="1" y="-35" />
+				</Anchor>
+			</Anchors>
+			<uri>[local.texture]hud/hud_decoration.png</uri>
+		</Texture>
+
+		<Label name="lbl_pdv">
+			<Anchors>
+				<Anchor relativeTo="tx_hpBg" point="CENTER" relativePoint="CENTER">
+					<AbsDimension x="0" y="-7" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="100" y="30" />
+			</Size>
+			<css>[local.css]special.css</css>
+			<cssClass>hp</cssClass>
+			<useDefaultFont>true</useDefaultFont>
+			<Hooks>
+				<onRelease/>
+				<onRollOver/>
+				<onRollOut/>
+			</Hooks>
+		</Label>
+
+		<Label name="lbl_pdvTop">
+			<Anchors>
+				<Anchor relativeTo="tx_hpBg" point="CENTER" relativePoint="CENTER">
+					<AbsDimension x="-1" y="-21" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="100" y="30" />
+			</Size>
+			<css>[local.css]special.css</css>
+			<cssClass>hp</cssClass>
+			<useDefaultFont>true</useDefaultFont>
+			<Hooks>
+				<onRelease/>
+				<onRollOver/>
+				<onRollOut/>
+			</Hooks>
+		</Label>
+		
+		<TextureBitmap name="tx_hp_separator">
+			<Anchors>
+				<Anchor>
+					<AbsDimension y="27" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension y="4" />
+			</Size>
+			<themeDataId>separator_white_line</themeDataId>
+		</TextureBitmap>
+		
+		<Label name="lbl_pdvBottom">
+			<Anchors>
+				<Anchor relativeTo="lbl_pdvTop" point="TOP" relativePoint="BOTTOM">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="70" y="30" />
+			</Size>
+			<css>[local.css]special.css</css>
+			<useDefaultFont>true</useDefaultFont>
+			<Hooks>
+				<onRelease/>
+				<onRollOver/>
+				<onRollOut/>
+			</Hooks>
+		</Label>
+		<!-- HP END -->
+
+		
+		<!-- AP START -->
+		<Texture name="tx_apBg">
+			<Anchors>
+				<Anchor relativeTo="tx_hpBg" point="TOPRIGHT" relativePoint="BOTTOM">
+					<AbsDimension x="0" y="-8" />
+				</Anchor>
+			</Anchors>
+			<uri>[local.texture]hud/icon_ap_empty.png</uri>
+		</Texture>
+		
+		<Texture name="tx_ap">
+			<Anchors>
+				<Anchor relativeTo="tx_apBg">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<uri>[local.texture]hud/icon_ap_full.png</uri>
+			<smooth>false</smooth>
+		</Texture>
+		
+		<Label name="lbl_pa">
+			<Anchors>
+				<Anchor relativeTo="tx_apBg">
+					<AbsDimension x="0" y="9" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="50" y="20" />
+			</Size>
+			<css>[local.css]special.css</css>
+			<cssClass>apmp</cssClass>
+			<useDefaultFont>true</useDefaultFont>
+		</Label>
+		<!-- AP END -->
+		
+		
+		<!-- MP START -->
+		<Texture name="tx_mpBg">
+			<Anchors>
+				<Anchor relativeTo="tx_hpBg" point="TOPLEFT" relativePoint="BOTTOM">
+					<AbsDimension x="0" y="-7" />
+				</Anchor>
+			</Anchors>
+			<uri>[local.texture]hud/icon_mp_empty.png</uri>
+		</Texture>
+		
+		<Texture name="tx_mp">
+			<Anchors>
+				<Anchor relativeTo="tx_mpBg">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<uri>[local.texture]hud/icon_mp_full.png</uri>
+		</Texture>
+		
+		<Label name="lbl_pm">
+			<Anchors>
+				<Anchor relativeTo="tx_mpBg">
+					<AbsDimension x="0" y="7" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="46" y="20" />
+			</Size>
+			<css>[local.css]special.css</css>
+			<cssClass>apmp</cssClass>
+			<useDefaultFont>true</useDefaultFont>
+		</Label>
+		<!-- MP END -->
+		
+
+		
+		
+				
+		<!-- Texture tx_show-->
+
+		<!--Texture name="tx_show">
+			<Anchors>
+				<Anchor relativeTo="btn_skipTurn">
+					<AbsDimension x="-60" y="-95" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="107" y="106" />
+			</Size>
+			<uri>[local.assets]tx_showArrow</uri>
+		</Texture-->
+		
+		
+		<ProgressBar name="pb_xp">
+			<Anchors>
+				<Anchor relativeTo="tx_hpBg" point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="3" y="36" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="478" y="10" />
+			</Size>
+			<barColor>[colors.progressbar.blue]</barColor>
+			<separators>9</separators>
+			<barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+		</ProgressBar>
+		
+		
+		<Container name="actionBarCtr">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="115" y="8" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="455" />
+			</Size>
+		</Container>
+
+		<Container name="spectatorUiCtr">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="113" y="2"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="482" y="100"/>
+			</Size>
+		</Container>
+
+		<Container name="subUiCtr">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="113" y="2"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="482" y="100"/>
+			</Size>
+		</Container>
+	</Container>			
+</Definition>

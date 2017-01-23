@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+	<Import url="[config.mod.template]windowWithoutTitleBar.xml"/>
+
+	<Constants>
+		<Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+
+	<Container name="popCtr">
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER" />
+		</Anchors>
+
+		<Size>
+			<AbsDimension x="550" />
+		</Size>
+
+		<mouseEnabled>true</mouseEnabled>
+		<shadowColor>[colors.ui.shadow]</shadowColor>
+		
+ 		<windowWithoutTitleBar>
+			<Size>
+				<RelDimension x="1" y="1"/>
+			</Size>
+			
+			<Content>
+				<Label name="lbl_content">
+					<Anchors>
+						<Anchor relativePoint="CENTER" point="CENTER" />
+					</Anchors>
+					<Size>
+						<AbsDimension x="550" />
+					</Size>
+					<css>[local.css]special.css</css>
+					<cssClass>zone</cssClass>
+				</Label>
+			</Content>
+		</windowWithoutTitleBar>
+	</Container>
+</Definition>

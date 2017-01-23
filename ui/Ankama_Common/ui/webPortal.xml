@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+
+    <Import url="[config.mod.template]button/iconButton.xml"/>
+    <Import url="[config.mod.template]button/simpleButton.xml"/>
+    <Import url="[config.mod.template]window.xml" />
+
+    <Constants>
+        <Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+        <Constant name="css" value="[config.ui.skin]css/"/>
+    </Constants>
+
+    <Container name="mainCtr">
+        <Anchors>
+            <Anchor point="CENTER" relativePoint="CENTER">
+                <AbsDimension x="-20" y="-55"/>
+            </Anchor>
+        </Anchors>
+        <Size>
+            <AbsDimension x="1220" y="799"/>
+        </Size>
+        <mouseEnabled>true</mouseEnabled>
+
+        <window closeButtonName="btnClose" name="wd_main">
+            <Size>
+                <AbsDimension x="1265" y="799"/>
+            </Size>
+            <title>[ui.common.mailBox]</title>
+            <Content>
+
+                <WebBrowser name="browser">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="2" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="1240" y="730"/>
+                    </Size>
+                    <cacheId>ankamaWebPortal</cacheId>
+                    <cacheLife>15</cacheLife>
+                    <scrollCss>[local.css]scrollBar.css</scrollCss>
+                    <scrollTopOffset>26</scrollTopOffset>
+                </WebBrowser>
+            </Content>
+        </window>
+
+    </Container>
+</Definition>
+

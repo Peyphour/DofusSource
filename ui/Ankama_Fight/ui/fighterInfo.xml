@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+	<Import url="[config.mod.template.button]iconButton.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="texture" value="[config.ui.skin]texture/"/>
+		<Constant name="carac" value="[config.ui.skin]texture/Characteristics/"/>
+		<Constant name="common" value="[config.ui.skin]common/"/>
+		<Constant name="picto_uri" value="[config.content.path]gfx/characteristics/characteristics.swf|tx_"/>
+	</Constants>
+
+	<Container>
+		<Size>
+			<AbsDimension x="640" y="110"/>
+		</Size>
+
+		<Container name="mainCtr">
+			<Size>
+				<RelDimension x="1" y="1"/>
+			</Size>
+			<!-- La texture de fond -->
+
+			<TextureBitmap name="tx_background">
+				<Anchors>
+					<Anchor relativePoint="TOPLEFT" point="TOPLEFT">
+						<AbsDimension x="0" y="4"/>
+					</Anchor>
+					<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+						<AbsDimension x="0" y="0"/>
+					</Anchor>
+				</Anchors>
+				<themeDataId>hud_window_background</themeDataId>
+				<mouseEnabled>true</mouseEnabled>
+			</TextureBitmap>
+
+			<Texture>
+				<Anchors>
+					<Anchor relativePoint="TOPLEFT" point="TOPLEFT">
+						<AbsDimension x="-3" y="-25"/>
+					</Anchor>
+					<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+						<AbsDimension x="3" y="3"/>
+					</Anchor>
+				</Anchors>
+				<uri>[local.texture]hud/background_info_enemy.png</uri>
+			</Texture>
+
+			<Container name="ctr_entity">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="10" y="10"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="75" y="90"/>
+				</Size>
+				<EntityDisplayer name="entityDisplayer">
+					<Anchors>
+						<Anchor relativePoint="TOP" point="TOP"/>
+					</Anchors>
+					<Size>
+						<AbsDimension x="75" y="90"/>
+					</Size>
+					<useCache>true</useCache>
+				</EntityDisplayer>
+			</Container>
+
+			<!-- Le nom et lvl du combattant -->
+
+			<Label name="lbl_name">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="5" y="-23"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="335" y="24"/>
+				</Size>
+				<cssClass>greybold</cssClass>
+				<css>[local.css]small2.css</css>
+			</Label>
+
+
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="92" y="4"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<RelDimension y="1"/>
+				</Size>
+
+				<!-- SANTE ARMURE PA/PM -->
+
+				<Container>
+					<Size>
+						<AbsDimension x="115"/>
+						<RelDimension y="1"/>
+					</Size>
+
+
+					<!--Health Point-->
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension y="2"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="22" y="22"/>
+						</Size>
+						<uri>[local.texture]icon_pv.png</uri>
+					</Texture>
+					<Label name="lbl_lifePoints">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="25" y="0"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="110" y="20"/>
+						</Size>
+						<cssClass>fighterinfolifepoints</cssClass>
+						<css>[local.css]special.css</css>
+					</Label>
+
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="25" y="24"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="80" y="1"/>
+						</Size>
+						<uri>[local.common]window_separator_black_horizontal.png</uri>
+					</Texture>
+
+
+					<!--Shield point-->
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension y="27"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="22" y="22"/>
+						</Size>
+						<uri>[local.texture]icon_armor.png</uri>
+					</Texture>
+					<Label name="lbl_shieldPoints">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="25" y="25"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="110" y="20"/>
+						</Size>
+						<cssClass>fighterinfo</cssClass>
+						<css>[local.css]special.css</css>
+					</Label>
+
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="25" y="49"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="80" y="1"/>
+						</Size>
+						<uri>[local.common]window_separator_black_horizontal.png</uri>
+					</Texture>
+
+					<!--PA-->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension y="51"/>
+							</Anchor>
+						</Anchors>
+
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension y="1"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="22" y="22"/>
+							</Size>
+							<uri>[local.texture]icon_pa.png</uri>
+						</Texture>
+						<Label name="lbl_actionPoints">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="25"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="40" y="30"/>
+							</Size>
+							<cssClass>fighterinfo</cssClass>
+							<css>[local.css]special.css</css>
+						</Label>
+					</Container>
+
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="25" y="75"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="80" y="1"/>
+						</Size>
+						<uri>[local.common]window_separator_black_horizontal.png</uri>
+					</Texture>
+
+					<!--PM-->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension y="77"/>
+							</Anchor>
+						</Anchors>
+
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension y="0"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="22" y="22"/>
+							</Size>
+							<uri>[local.texture]icon_pm.png</uri>
+						</Texture>
+						<Label name="lbl_movementPoints">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="25"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="40" y="20"/>
+							</Size>
+							<cssClass>fighterinfo</cssClass>
+							<css>[local.css]special.css</css>
+						</Label>
+					</Container>
+				</Container>
+
+				<!-- DEFENSE: PREMIERE  COLONNE -->
+
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="163"/>
+						</Anchor>
+					</Anchors>
+
+					<Size>
+						<AbsDimension x="150"/>
+						<RelDimension y="1"/>
+					</Size>
+
+					<!--Tackle-->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="3"/>
+							</Anchor>
+						</Anchors>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension y="2"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="22" y="22"/>
+							</Size>
+							<uri>[local.texture]icon_tackle.png</uri>
+						</Texture>
+						<Label name="lbl_tackle">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24" y="0"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="55" y="20"/>
+							</Size>
+							<cssClass>fighterinfo</cssClass>
+							<css>[local.css]special.css</css>
+						</Label>
+					</Container>
+
+					<!--Neutral-->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="40"/>
+							</Anchor>
+						</Anchors>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="-2" y="-3"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="28" y="28"/>
+							</Size>
+							<uri>[local.carac]tx_res_neutral.png</uri>
+						</Texture>
+						<Label name="lbl_neutral">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="55" y="20"/>
+							</Size>
+							<cssClass>fighterinfo</cssClass>
+							<css>[local.css]special.css</css>
+						</Label>
+					</Container>
+
+					<!--Neutral percent-->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="75"/>
+							</Anchor>
+						</Anchors>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="-2" y="-3"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="28" y="28"/>
+							</Size>
+							<uri>[local.carac]tx_res_neutral.png</uri>
+						</Texture>
+						<Label name="lbl_neutralPercent">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="55" y="20"/>
+							</Size>
+							<cssClass>fighterinfo</cssClass>
+							<css>[local.css]special.css</css>
+						</Label>
+					</Container>
+
+
+				</Container>
+
+				<!-- DEFENSE: DEUXIEME COLONNE -->
+
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="238"/>
+						</Anchor>
+					</Anchors>
+
+					<Size>
+						<AbsDimension x="150"/>
+						<RelDimension y="1"/>
+					</Size>
+
+					<!--Dodge AP-->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension y="3"/>
+							</Anchor>
+						</Anchors>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="-5" y="-3"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="32" y="32"/>
+							</Size>
+							<uri>[local.carac]tx_dodgeAP.png</uri>
+						</Texture>
+						<Label name="lbl_action">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="55" y="20"/>
+							</Size>
+							<cssClass>fighterinfo</cssClass>
+							<css>[local.css]special.css</css>
+						</Label>
+					</Container>
+
+					<!--Earth-->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="40"/>
+							</Anchor>
+						</Anchors>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="-5" y="-4"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="32" y="32"/>
+							</Size>
+							<uri>[local.carac]tx_res_earth.png</uri>
+						</Texture>
+						<Label name="lbl_strength">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="55" y="20"/>
+							</Size>
+							<cssClass>fighterinfo</cssClass>
+							<css>[local.css]special.css</css>
+						</Label>
+					</Container>
+
+					<!--Earth percent-->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="75"/>
+							</Anchor>
+						</Anchors>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="-5" y="-4"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="32" y="32"/>
+							</Size>
+							<uri>[local.carac]tx_res_earth.png</uri>
+						</Texture>
+						<Label name="lbl_strengthPercent">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="55" y="20"/>
+							</Size>
+							<cssClass>fighterinfo</cssClass>
+							<css>[local.css]special.css</css>
+						</Label>
+					</Container>
+				</Container>
+
+				<!-- DEFENSE: TROISIEME COLONNE -->
+
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="314" y="0"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="150"/>
+						<RelDimension y="1"/>
+					</Size>
+
+					<!--Dodge MP-->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension y="3"/>
+							</Anchor>
+						</Anchors>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="-5" y="-3"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="32" y="32"/>
+							</Size>
+							<uri>[local.carac]tx_dodgeMP.png</uri>
+						</Texture>
+						<Label name="lbl_movement">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="55" y="20"/>
+							</Size>
+							<cssClass>fighterinfo</cssClass>
+							<css>[local.css]special.css</css>
+						</Label>
+					</Container>
+
+					<!--Fire-->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension y="40"/>
+							</Anchor>
+						</Anchors>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="-5" y="-4"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="32" y="32"/>
+							</Size>
+							<uri>[local.carac]tx_res_fire.png</uri>
+						</Texture>
+						<Label name="lbl_intelligence">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="55"/>
+							</Size>
+							<cssClass>fighterinfo</cssClass>
+							<css>[local.css]special.css</css>
+						</Label>
+					</Container>
+
+					<!--Fire percent-->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension y="75"/>
+							</Anchor>
+						</Anchors>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="-5" y="-4"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="32" y="32"/>
+							</Size>
+							<uri>[local.carac]tx_res_fire.png</uri>
+						</Texture>
+						<Label name="lbl_intelligencePercent">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="55" y="20"/>
+							</Size>
+							<cssClass>fighterinfo</cssClass>
+							<css>[local.css]special.css</css>
+						</Label>
+					</Container>
+
+
+				</Container>
+
+				<!--DEFENSE: QUATRIEME COLONNE-->
+
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="388"/>
+						</Anchor>
+					</Anchors>
+
+					<Size>
+						<AbsDimension x="150"/>
+						<RelDimension y="1"/>
+					</Size>
+
+					<!-- critical Reduction -->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="3"/>
+							</Anchor>
+						</Anchors>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="-5" y="-3"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="32" y="32"/>
+							</Size>
+							<uri>[local.carac]tx_criticalReduction.png</uri>
+						</Texture>
+						<Label name="lbl_criticalDmgReduction">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="55" y="20"/>
+							</Size>
+							<cssClass>fighterinfo</cssClass>
+							<css>[local.css]special.css</css>
+						</Label>
+					</Container>
+
+					<!--Water-->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="40"/>
+							</Anchor>
+						</Anchors>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="-5" y="-3"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="32" y="32"/>
+							</Size>
+							<uri>[local.carac]tx_res_water.png</uri>
+						</Texture>
+						<Label name="lbl_chance">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="55" y="20"/>
+							</Size>
+							<cssClass>fighterinfo</cssClass>
+							<css>[local.css]special.css</css>
+						</Label>
+					</Container>
+
+
+					<!--Water percent-->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="75"/>
+							</Anchor>
+						</Anchors>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="-5" y="-3"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="32" y="32"/>
+							</Size>
+							<uri>[local.carac]tx_res_water.png</uri>
+						</Texture>
+						<Label name="lbl_chancePercent">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="55" y="20"/>
+							</Size>
+							<cssClass>fighterinfo</cssClass>
+							<css>[local.css]special.css</css>
+						</Label>
+					</Container>
+
+				</Container>
+
+				<!--DEFENSE: CINQUIEME COLONNE-->
+
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="466"/>
+						</Anchor>
+					</Anchors>
+
+					<Size>
+						<AbsDimension x="150"/>
+						<RelDimension y="1"/>
+					</Size>
+
+					<!--push reduction-->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension y="3"/>
+							</Anchor>
+						</Anchors>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="-5" y="-3"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="32" y="32"/>
+							</Size>
+							<uri>[local.carac]tx_pushReduction.png</uri>
+						</Texture>
+						<Label name="lbl_pushDmgReduction">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24" y="0"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="55" y="20"/>
+							</Size>
+							<cssClass>fighterinfo</cssClass>
+							<css>[local.css]special.css</css>
+						</Label>
+					</Container>
+
+					<!--Air-->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="40"/>
+							</Anchor>
+						</Anchors>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="-5" y="-3"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="32" y="32"/>
+							</Size>
+							<uri>[local.carac]tx_res_air.png</uri>
+						</Texture>
+						<Label name="lbl_agility">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="55" y="20"/>
+							</Size>
+							<cssClass>fighterinfo</cssClass>
+							<css>[local.css]special.css</css>
+						</Label>
+					</Container>
+
+					<!--Air percent-->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="75"/>
+							</Anchor>
+						</Anchors>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="-5" y="-3"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="32" y="32"/>
+							</Size>
+							<uri>[local.carac]tx_res_air.png</uri>
+						</Texture>
+						<Label name="lbl_agilityPercent">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="55" y="20"/>
+							</Size>
+							<cssClass>fighterinfo</cssClass>
+							<css>[local.css]special.css</css>
+						</Label>
+					</Container>
+				</Container>
+
+			</Container>
+		</Container>
+
+
+		<!-- bouton pour afficher ou non l'ui de spectateur en combat -->
+		<iconButton name="btn_spectatorPanel">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="55" y="-15"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="25" y="25"/>
+			</Size>
+			<uri>[local.assets]banner_btn_spectatorPanel</uri>
+			<visible>false</visible>
+		</iconButton>
+	</Container>
+</Definition>
+

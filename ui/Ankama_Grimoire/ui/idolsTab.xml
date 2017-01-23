@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition labelDebug="false">
+    <Import url="[config.mod.template]button/themeHorizontalTab.xml" />
+	<Import url="[config.mod.template]button/themeLabelCheckBox.xml" />
+	<Import url="[config.mod.template]button/sortButton.xml" />
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+    <Import url="[config.mod.template]window.xml" />
+    <Import url="[config.mod.template]block.xml" />
+    <Import url="[config.mod.template]blockDoubleBorder.xml" />
+	<Import url="[config.mod.template.button]searchInput.xml" />	
+	<Import url="[config.mod.template.button]comboBoxWithBackground.xml" />	
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+		<Constant name="css" value="[config.ui.skin]css/"/>
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/"/>
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="iconsUri" value="[config.content.path]gfx/presets/idols.swf|"/>
+	</Constants>
+	
+	<Container>
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="0" y="-40" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="1120" y="800" />
+		</Size>
+		
+		<window name="mainCtr" title="[ui.idol.idols]">
+			<Size>
+				<AbsDimension x="1120" y="800" />
+			</Size>
+	
+			<Content>
+	
+				<block>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="10" y="50" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="1060" y="670" />
+					</Size>
+				</block>
+	
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="20" y="17" />
+						</Anchor>
+					</Anchors>
+					
+					<themeHorizontalTab name="btn_solo">
+						<text>[ui.idol.soloTab]</text>
+						<tooltipContent>[ui.idol.soloTab.tooltip]</tooltipContent>
+					</themeHorizontalTab>
+					<themeHorizontalTab name="btn_group">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="180" y="0" />
+							</Anchor>
+						</Anchors>
+						<text>[ui.common.party]</text>
+						<tooltipContent>[ui.idol.party.tooltip]</tooltipContent>
+					</themeHorizontalTab>
+					<themeHorizontalTab name="btn_presets">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="360" y="0" />
+							</Anchor>
+						</Anchors>
+						<text>[ui.idol.presets]</text>
+						<tooltipContent>[ui.idol.presets.tooltip]</tooltipContent>
+					</themeHorizontalTab>
+	
+				</Container>
+			</Content>
+		</window>
+			
+		<!-- Conteneur pour la liste d'idoles (solo ou groupe) -->
+		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="50" y="112" />
+				</Anchor>
+			</Anchors>
+		
+			<!-- En-tete : liste + score -->
+		
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="10" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="1000" y="100" />
+				</Size>
+				
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="10" />
+						</Anchor>
+					</Anchors>
+						
+					<!-- grille des idoles actives -->
+					<Texture name="tx_allIncompatibleMonsters">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="18" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="18" y="18" />
+						</Size>
+						<uri>[local.assets]tx_idol_incompatibleMonsters</uri>
+					</Texture>
+					<Grid name="gd_activeIdols">
+						<Anchors> 
+			                <Anchor>
+			                    <AbsDimension x="34" y="0" />
+			                </Anchor>
+			            </Anchors>
+			            <Size>
+			                <AbsDimension x="360" y="54" />
+			            </Size>
+						<slotWidth>54</slotWidth>
+						<slotHeight>54</slotHeight>
+			            <rendererName>SlotGridRenderer</rendererName>
+			            <rendererArgs>[local.texture]slot/slot_dark_background_empty.png,[local.texture]slot/over.png,[local.texture]slot/selected.png,[local.texture]slot/acceptDrop.png,[local.texture]slot/refuseDrop.png,,[local.css]normal2.css,false,false,false,,[local.texture]slot/slot_dark_background_empty.png</rendererArgs>
+					</Grid>
+					
+					<Texture name="tx_synergy">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="405" y="11" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="32" y="32" />
+						</Size>
+						<uri>[local.assets]tx_synergy</uri>
+					</Texture>
+				</Container>
+					
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="455" y="7" />
+						</Anchor>
+					</Anchors>
+					
+					<TextureBitmap>
+						<Size>
+							<AbsDimension x="180" y="60" />
+						</Size>
+						<themeDataId>button_yellow_square_normal</themeDataId>
+					</TextureBitmap>
+					
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="5" y="6" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="170" y="18" />
+						</Size>
+						<cssClass>darkboldcenter</cssClass>
+						<css>[local.css]small2.css</css>
+						<text>[ui.idol.totalScore][ui.common.colon]</text>
+					</Label>
+					
+					<Label name="lbl_score">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="5" y="24" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="170" y="40" />
+						</Size>
+						<cssClass>darkcenter</cssClass>
+						<css>[local.css]title.css</css>
+					</Label>
+				</Container>
+				
+										
+				<!-- labels totaux -->
+				
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="645" y="14" />
+						</Anchor>
+					</Anchors>
+					
+					<Label name="lbl_exp">
+						<Size>
+							<AbsDimension x="290" y="16" />
+						</Size>
+						<css>[local.css]small2.css</css>
+					</Label>
+					<Label name="lbl_loot">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="23" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="290" y="16" />
+						</Size>
+						<css>[local.css]small2.css</css>
+					</Label>
+				</Container>
+			</Container>
+			
+			
+			<!-- Grille de contenu -->
+			
+			<Container name="ctr_idols">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="-3" y="83" />
+					</Anchor>
+				</Anchors>
+				
+				<blockDoubleBorder>
+					<Size>
+						<AbsDimension x="1020" y="560" />
+					</Size>
+				</blockDoubleBorder>
+				
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="215" y="21" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="300" y="16" />
+					</Size>
+					<text>[ui.search.criteria][ui.common.colon]</text>
+					<cssClass>right</cssClass>
+					<css>[local.css]small2.css</css>
+				</Label>
+						
+					
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="10" y="55" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="1000" y="40" />
+					</Size>
+					<uri>[local.common]bg_dark.png</uri>
+				</Texture>			
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="10" y="95" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="1000" y="413" />
+					</Size>
+					<uri>[local.common]bg_light.png</uri>
+				</Texture>
+				
+				
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="11" y="55" />
+						</Anchor>
+					</Anchors>
+					
+					<sortButton name="btn_sortIdolByName">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="60" y="0" />
+							</Anchor>
+						</Anchors>			
+						<Size>
+							<AbsDimension x="280" y="40" />
+						</Size>   
+					</sortButton>	
+					<sortButton name="btn_sortIdolByScore">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="850" y="0" />
+							</Anchor>
+						</Anchors>				
+						<Size>
+							<AbsDimension x="150" y="40" />
+						</Size>  
+					</sortButton>
+					
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="100" y="8" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="200" y="16" />
+						</Size>
+						<text>[ui.common.name]</text>
+						<css>[local.css]small2.css</css>
+					</Label>
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="310" y="8" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="590" y="16" />
+						</Size>
+						<text>[ui.common.description]</text>
+						<css>[local.css]small2.css</css>
+					</Label>
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="880" y="8" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="90" y="16" />
+						</Size>
+						<text>[ui.common.score]</text>
+						<cssClass>right</cssClass>
+						<css>[local.css]small2.css</css>
+					</Label>
+		
+					<Grid name="gd_idols">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="40" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="1000" y="413" />
+						</Size>
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updateIdolLine,[colors.grid.line]</rendererArgs>
+						<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+						<slotWidth>990</slotWidth>
+						<slotHeight>59</slotHeight>
+						
+						<Container>
+							<Size>
+								<AbsDimension x="990" y="59" />
+							</Size>
+							<buttonMode>true</buttonMode>
+							<mouseEnabled>true</mouseEnabled>
+							
+							<Button name="btn_line">
+								<Common>
+									<Texture>
+										<Size>
+											<AbsDimension x="990" y="59" />
+										</Size>
+										<bgColor>0</bgColor>
+										<bgAlpha>0</bgAlpha>
+									</Texture>
+								</Common>
+								<State type="OVER">
+									<SetProperties target="btn_line">
+										<bgColor>[colors.grid.over]</bgColor>
+									</SetProperties>
+								</State>
+								<State type="SELECTED">
+									<SetProperties target="btn_line">
+										<bgColor>[colors.grid.selected]</bgColor>
+									</SetProperties>
+								</State>
+								<State type="SELECTED_OVER">
+									<SetProperties target="btn_line">
+										<bgColor>[colors.grid.selected]</bgColor>
+									</SetProperties>
+								</State>
+							</Button>
+							
+							<Texture name="tx_incompatibleMonsters">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="7" y="7" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="15" y="15" />
+								</Size>
+								<Hooks>
+									<onRollOver/>
+									<onRollOut/>
+								</Hooks>
+								<uri>[local.assets]tx_idol_incompatibleMonsters</uri>
+							</Texture>
+							<Texture name="tx_partyOnly">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="7" y="7" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="15" y="15" />
+								</Size>
+								<Hooks>
+									<onRollOver/>
+									<onRollOut/>
+								</Hooks>
+								<uri>[local.assets]tx_idol_partyOnly</uri>
+							</Texture>
+							<Texture name="tx_memberIdol">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="7" y="7" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="15" y="15" />
+								</Size>
+								<Hooks>
+									<onRollOver/>
+									<onRollOut/>
+								</Hooks>
+								<uri>[local.assets]tx_idol_member</uri>
+							</Texture>
+							
+							<Slot name="slot_idol">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="32" y="4" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="50" y="50" />
+								</Size>
+								<Hooks>
+									<onRollOver/>
+									<onRollOut/>
+									<onRightClick/>
+								</Hooks>
+								<allowDrag>false</allowDrag>
+								<emptyTexture>[local.texture]slot/slot_dark_background_empty.png</emptyTexture>
+								<forcedBackGroundIconUri>[local.texture]slot/slot_dark_background_full.png</forcedBackGroundIconUri>
+							</Slot>
+							
+							<Label name="lbl_idol_name">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="100" y="19" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="200" y="16" />
+								</Size>
+								<useStyleSheet>true</useStyleSheet>
+								<cssClass>bold</cssClass>
+								<css>[local.css]small2.css</css>
+							</Label>
+							
+							<Label name="lbl_idol_desc">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="310" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="590" y="59"/>
+								</Size>
+								<css>[local.css]small2.css</css>
+								<wordWrap>true</wordWrap>
+								<multiline>true</multiline>
+								<fixedHeightForMultiline>true</fixedHeightForMultiline>
+								<verticalAlign>center</verticalAlign>
+							</Label>
+							
+							<Label name="lbl_idol_score">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="920" y="18" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="50" y="18" />
+								</Size>
+								<Hooks>
+									<onRollOver/>
+									<onRollOut/>
+								</Hooks>
+								<cssClass>boldright</cssClass>
+								<css>[local.css]normal2.css</css>
+							</Label>
+						</Container>
+					</Grid>
+						
+				</Container>
+				
+				
+				<comboBoxWithBackground name="cb_filter" width="240" height="39">
+					<Anchors> 
+						<Anchor>
+							<AbsDimension x="526" y="12" />
+						</Anchor>
+					</Anchors>
+				</comboBoxWithBackground>
+	
+				<searchInput width="240">
+					<Anchors> 
+						<Anchor>
+							<AbsDimension x="763" y="12" />
+						</Anchor>
+					</Anchors>
+				</searchInput>
+	
+		
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="10" y="508" />
+						</Anchor>
+					</Anchors>
+				
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="40" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="1000" y="40" />
+						</Size>
+						<scaleY>-1</scaleY>
+						<uri>[local.common]bg_dark.png</uri>
+					</Texture>
+					
+					<themeLabelCheckBox name="btn_showAll">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="22" y="9" />
+							</Anchor>
+						</Anchors>
+						<labelWidth>400</labelWidth>
+						<text>[ui.idol.showAll]</text>
+					</themeLabelCheckBox>
+					
+					<themeLabelCheckBox name="btn_showSynergyScore">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="22" y="9" />
+							</Anchor>
+						</Anchors>
+						<labelWidth>400</labelWidth>
+						<text>[ui.idol.showSynergyScore]</text>
+					</themeLabelCheckBox>
+					
+				</Container>
+				
+			</Container>
+			
+		</Container>
+		
+		
+		
+		
+		<!-- onglet presets -->
+		
+		<Container name="ctr_presets">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="50" y="112" />
+				</Anchor>
+			</Anchors>
+			
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="44" y="80" />
+					</Anchor>
+				</Anchors>
+				
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="-44" y="-5" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="1013" y="80" />
+					</Size>
+					<uri>[local.common]bg_light.png</uri>
+				</Texture>	
+				
+				<Label>
+					<Size>
+						<AbsDimension x="600" y="16" />
+					</Size>
+					<css>[local.css]small2.css</css>
+					<text>[ui.idol.choseIcon]</text>
+				</Label>
+				
+				<Grid name="gd_icons">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="28" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="543" y="32" />
+					</Size>
+					<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+					<scrollDisplay>auto</scrollDisplay>
+					<rendererName>InlineXmlGridRenderer</rendererName>
+					<rendererArgs>updateIcon</rendererArgs>
+					<slotWidth>32</slotWidth>
+					<slotHeight>32</slotHeight>
+					
+					<Container>
+						<Size>
+							<AbsDimension x="32" y="32" />
+						</Size>
+						<Button name="btn_icon">
+							<Common>
+								<Texture>
+									<Size>
+										<AbsDimension x="32" y="32" />
+									</Size>
+									<uri>[local.texture]slot/emptySlot.png</uri>
+								</Texture>
+								<Texture name="tx_icon">
+									<Size>
+										<AbsDimension x="32" y="32" />
+									</Size>
+									<luminosity>1</luminosity>
+								</Texture>
+								<Texture name="tx_selected">
+									<Size>
+										<AbsDimension x="32" y="32" />
+									</Size>
+									<uri>[local.texture]slot/selected.png</uri>
+									<visible>false</visible>
+								</Texture>
+								<cacheAsBitmap>true</cacheAsBitmap>
+							</Common>
+							<State type="OVER">
+								<SetProperties target="tx_icon">
+									<luminosity>1.5</luminosity>
+								</SetProperties>
+							</State>
+							<State type="SELECTED">
+								<SetProperties target="tx_selected">
+									<visible>true</visible>
+								</SetProperties>
+							</State>
+						</Button>	
+					</Container>
+				</Grid>
+				
+				<simpleButton label="[ui.common.save]" name="btn_savePreset">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="770" y="28" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="160" y="32" />
+					</Size>
+				</simpleButton>
+				
+			</Container>
+			
+			<!-- Grille de contenu -->
+			
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="-3" y="164" />
+					</Anchor>
+				</Anchors>
+				
+				<blockDoubleBorder>
+					<Size>
+						<AbsDimension x="1020" y="478" />
+					</Size>
+				</blockDoubleBorder>
+						
+					
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="10" y="10" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="1000" y="40" />
+					</Size>
+					<uri>[local.common]bg_dark.png</uri>
+				</Texture>			
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="10" y="50" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="1000" y="413" />
+					</Size>
+					<uri>[local.common]bg_light.png</uri>
+				</Texture>
+				
+				
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="11" y="10" />
+						</Anchor>
+					</Anchors>
+					
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="200" y="8" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="300" y="16" />
+						</Size>
+						<text>[ui.idol.idols]</text>
+						<css>[local.css]small2.css</css>
+					</Label>
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="800" y="8" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="80" y="16" />
+						</Size>
+						<text>[ui.common.score]</text>
+						<cssClass>right</cssClass>
+						<css>[local.css]small2.css</css>
+					</Label>
+					
+					<sortButton name="btn_sortPresetsByScore">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="700" y="0" />
+							</Anchor>
+						</Anchors>			
+						<Size>
+							<AbsDimension x="280" y="40" />
+						</Size>   
+					</sortButton>
+		
+					<Grid name="gd_presets">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="40" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="1000" y="413" />
+						</Size>
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updatePresetLine,[colors.grid.line]</rendererArgs>
+						<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+						<slotWidth>990</slotWidth>
+						<slotHeight>59</slotHeight>
+						
+						<Container>
+							<Slot name="slot_icon">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="50" y="4" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="50" y="50" />
+								</Size>
+								<Hooks>
+									<onDoubleClick/>
+									<onRollOver/>
+									<onRollOut/>
+								</Hooks>
+							</Slot>
+							
+							<Texture name="tx_preset_incompatibleMonsters">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="170" y="20" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="18" y="18" />
+								</Size>
+								<Hooks>
+									<onRollOver/>
+									<onRollOut/>
+								</Hooks>
+								<uri>[local.assets]tx_idol_incompatibleMonsters</uri>
+							</Texture>
+							
+							<Grid name="gd_presets_idols">
+								<Anchors> 
+									<Anchor>
+										<AbsDimension x="200" y="4" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="349" y="50" />
+								</Size>
+								<slotWidth>50</slotWidth>
+								<slotHeight>50</slotHeight>
+								<rendererName>SlotGridRenderer</rendererName>
+								<rendererArgs>[local.texture]slot/slot_dark_background_empty.png,[local.texture]slot/over.png,,,,,[local.css]normal2.css,false,false,false,,[local.texture]slot/slot_dark_background_empty.png</rendererArgs>
+								<Hooks>
+									<onItemRollOver/>
+									<onItemRollOut/>
+									<onItemRightClick/>
+								</Hooks>
+							</Grid>
+							
+							<Label name="lbl_preset_score">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="820" y="18" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="60" y="18" />
+								</Size>
+								<cssClass>boldright</cssClass>
+								<css>[local.css]normal2.css</css>
+							</Label>
+							
+							<themeIconButton name="btn_delete">
+								<Anchors> 
+									<Anchor>
+										<AbsDimension x="940" y="17" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="24" y="24" />
+								</Size>
+								<iconUri>[local.texture]btnIcon/btnIcon_cross.png</iconUri>
+							</themeIconButton>
+						</Container>
+					</Grid>
+						
+				</Container>
+			</Container>
+			
+		</Container>
+	</Container>
+</Definition>

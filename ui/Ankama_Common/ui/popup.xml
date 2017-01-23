@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition modal="true" usePropertiesCache="false">
+    <Import url="[config.mod.template]button/iconButton.xml" />
+    <Import url="[config.mod.template]windowWithoutTitleBar.xml"/>
+    
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="btn.css" value="[config.ui.skin]css/button.css" />
+		<Constant name="btn.file" value="[local.assets]btn_orange" />
+		<Constant name="popWidth" value="550" />
+		
+		<Constant name="txBtnBg_normal" value="button_normal" />
+		<Constant name="txBtnBg_over" value="button_over" />
+		<Constant name="txBtnBg_pressed" value="button_pressed" />
+		<Constant name="btnOkIcon.file" value="[config.ui.skin]texture/icon_true.png" />
+		<Constant name="btnCancelIcon.file" value="[config.ui.skin]texture/icon_false.png" />
+		
+	</Constants>
+	
+	<Container name="popCtr">
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER" />
+		</Anchors>
+		
+		<Size>
+			<AbsDimension x="[local.popWidth]" />
+		</Size>
+		
+		<mouseEnabled>true</mouseEnabled>
+		<shadowColor>[colors.ui.shadow]</shadowColor>	
+		
+		<Container>
+			<Size>
+				<RelDimension x="1" y="1"/>
+			</Size>
+			<Anchors>
+				<Anchor relativePoint="CENTER" point="CENTER" />
+			</Anchors>
+			 
+	 		<windowWithoutTitleBar name="popup">
+				<Size>
+					<RelDimension x="1" y="1"/>
+				</Size>
+			</windowWithoutTitleBar>
+			
+			
+			<Label name="lbl_content">
+				<Anchors>
+					<Anchor relativeTo="lbl_title_popup">
+						<AbsDimension x="32" y="40" />
+					</Anchor>
+					<Anchor relativePoint="BOTTOMRIGHT">
+						<AbsDimension x="-32" y="-55" />
+
+					</Anchor>
+				</Anchors>
+				<css>[local.css]normal2.css</css>
+				<cssClass>center</cssClass>
+				<fixedHeight>false</fixedHeight>
+			</Label>
+			
+			
+			
+			<Container name="ctr_buttons">
+				<Size>
+					<AbsDimension y="27"/>
+				</Size>
+				<Anchors>
+					<Anchor point="BOTTOM" relativePoint="BOTTOM">
+						<AbsDimension x="0" y="-40" />
+					</Anchor>
+				</Anchors>
+			</Container>
+		</Container>
+	</Container>
+</Definition>

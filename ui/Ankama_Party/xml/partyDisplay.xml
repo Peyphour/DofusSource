@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition fullscreen="true">
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+	   	<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	   	
+		<Constant name="bonus_height" value="60" type="int" />
+		<Constant name="vertical_offset_between_members" value="2" type="int" />
+	</Constants>
+	
+	<Container name="ctr_main" strata="TOP">
+		<Anchors>
+			<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+				<AbsDimension x="10" y="175" />
+			</Anchor>
+		</Anchors>
+		
+		<TextureBitmap name="tx_background_grid" strata="LOW">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="20" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="76" y="605" />
+			</Size>
+			<themeDataId>floating_window_background</themeDataId>
+		</TextureBitmap>
+
+        <Texture>
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="80" y="3" />
+                </Anchor>
+            </Anchors>
+	        <Size>
+	            <AbsDimension x="80" y="28" />
+	        </Size>
+            <uri>[local.texture]hud/left_floating_menu.png</uri>
+			<scaleX>-1</scaleX>
+            <dragController>true</dragController>
+			<dragTarget>ctr_main</dragTarget>
+			<useDragMagnetism>true</useDragMagnetism> 
+        </Texture>
+
+        <Button name="btn_minimize">
+            <Common>
+                <Anchors>
+                    <Anchor>
+                    	<AbsDimension x="0" y="1" />
+                    </Anchor>
+                </Anchors>
+                
+                <Texture name="tx_button_minimize">
+		            <Anchors>
+		                <Anchor>
+		                    <AbsDimension x="7" y="6" />
+		                </Anchor>
+		            </Anchors>
+	                <Size>
+	                    <AbsDimension x="18" y="18" />
+	                </Size>
+		            <uri>[local.texture]hud/icon_minus_floating_menu.png</uri>
+		        </Texture>
+
+                <Hooks>
+                    <onRelease />
+                </Hooks>
+            </Common>
+        </Button>
+				
+		<Texture name="tx_partyType">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="38" y="6" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="21" y="21" />
+			</Size>
+			<uri>[local.assets]Groupe_tx_types</uri>
+			<autoGrid>true</autoGrid>
+		</Texture>
+		
+		<themeIconButton name="btn_info">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="12" y="33" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="24" y="24" />
+			</Size>
+			<iconUri>[local.texture]btnIcon/btnIcon_gear.png</iconUri>
+		</themeIconButton>
+		
+		<themeIconButton name="btn_switchParty">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="40" y="33" />
+                </Anchor>
+            </Anchors>
+			<Size>
+				<AbsDimension x="24" y="24" />
+			</Size>
+			<iconUri>[local.texture]btnIcon/btnIcon_refresh.png</iconUri>
+		</themeIconButton>
+		
+		<Grid name="gd_party">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="7" y="62" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="60" y="497" />
+			</Size>
+			<slotWidth>60</slotWidth>
+			<slotHeight>61</slotHeight>
+			<rendererName>XmlUiGridRenderer</rendererName>
+			<rendererArgs>partyMemberItem</rendererArgs>
+			<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+			<Hooks>
+				<onSelectItem />
+				<onRollOut />
+			</Hooks>
+		</Grid>
+		
+	</Container>
+</Definition>

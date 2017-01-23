@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition labelDebug="false">
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/themeIconButton.xml" />
+	<Import url="[config.mod.template]button/sortButton.xml" />
+    <Import url="[config.mod.template]button/themeLabelCheckBox.xml" />
+	<Import url="[config.mod.template.button]searchInput.xml" />	
+    <Import url="[config.mod.template]window.xml" />
+    <Import url="[config.mod.template]block.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+
+		<Constant name="illus_uri" value="[config.content.path]gfx/illus/illu_Server/large/" />
+		<Constant name="flag_uri" value="[config.content.path]gfx/flags/" />
+		
+		<Constant name="status_0" value="[ui.server.state.unknown]" />
+		<Constant name="status_1" value="[ui.server.state.offline]" />
+		<Constant name="status_2" value="[ui.server.state.starting]" />
+		<Constant name="status_3" value="[ui.server.state.online]" />
+		<Constant name="status_4" value="[ui.server.state.nojoin]" />
+		<Constant name="status_5" value="[ui.server.state.saving]" />
+		<Constant name="status_6" value="[ui.server.state.stoping]" />
+		<Constant name="status_7" value="[ui.server.state.full]" />	
+        <Constant name="statusIcon_0" value="[local.texture]icon_state_grey.png" />
+        <Constant name="statusIcon_1" value="[local.texture]icon_state_red.png" />
+        <Constant name="statusIcon_2" value="[local.texture]icon_state_yellow.png" />
+        <Constant name="statusIcon_3" value="[local.texture]icon_state_green.png" />
+        <Constant name="statusIcon_4" value="[local.texture]icon_state_red.png" />
+        <Constant name="statusIcon_5" value="[local.texture]icon_state_yellow.png" />
+        <Constant name="statusIcon_6" value="[local.texture]icon_state_red.png" />
+        <Constant name="statusIcon_7" value="[local.texture]icon_state_blue.png" />
+	</Constants>
+	
+	<Container name="serverCtr">
+		<Anchors>
+			<Anchor point="TOP" relativePoint="TOP" >
+				<AbsDimension x="0" y="260" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="1152" y="572" />
+		</Size>
+		
+		<window>
+			<Size>
+				<AbsDimension x="1152" y="572" />
+			</Size>
+			<title>[ui.sersel.choseServer]</title>
+			<noCloseButton>true</noCloseButton>
+			<cssClass>whiteboldcenter</cssClass>
+			
+			<Content>	
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="-8" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="1130" y="508" />
+					</Size>
+					<uri>[local.texture]onboarding/bgIlluServeur.jpg</uri>
+				</Texture>	
+					
+				<Texture name="tx_serverPic">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="685" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="435" y="508" />
+					</Size>
+				</Texture>		
+			</Content>
+		</window>
+
+		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="28" y="65" />
+				</Anchor>
+			</Anchors>
+				
+			<block>
+				<Size>
+					<AbsDimension x="710" y="350" />
+				</Size>
+				<dark>true</dark>
+			</block>
+  			
+			<Container>
+  				<Anchors>
+  					<Anchor>
+  						<AbsDimension x="5" y="5" />
+  					</Anchor>
+  				</Anchors>
+	  				
+	  			<Texture>
+	  				<Size>
+	  					<AbsDimension x="700" y="36" />
+	  				</Size>
+	  				<uri>[local.common]bg_dark.png</uri>
+	  			</Texture>
+		
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="5" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="60" y="16" />
+					</Size>
+					<text>[ui.sersel.state]</text>
+					<cssClass>center</cssClass>
+					<css>[local.css]small2.css</css>
+				</Label>		
+				<sortButton name="btn_tabState">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="0" />
+						</Anchor>
+					</Anchors>				
+					<Size>
+						<AbsDimension x="60" y="36" />
+					</Size>
+				</sortButton>
+		
+				<sortButton name="btn_tabCountry">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="60" y="0" />
+						</Anchor>
+					</Anchors>				
+					<Size>
+						<AbsDimension x="40" y="36" />
+					</Size>
+				</sortButton>
+				
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="100" y="5" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="180" y="16" />
+					</Size>
+					<text>[ui.common.name]</text>
+					<css>[local.css]small2.css</css>
+				</Label>		
+				<sortButton name="btn_tabName">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="100" y="0" />
+						</Anchor>
+					</Anchors>				
+					<Size>
+						<AbsDimension x="180" y="36" />
+					</Size> 
+				</sortButton>
+		
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="340" y="5" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="190" y="16" />
+					</Size>
+					<text>[ui.sersel.gameMode]</text>
+					<css>[local.css]small2.css</css>
+				</Label>
+				<sortButton name="btn_tabType">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="280" y="0" />
+						</Anchor>
+					</Anchors>				
+					<Size>
+						<AbsDimension x="250" y="36" />
+					</Size>    
+				</sortButton>
+		
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="530" y="5" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="170" y="16" />
+					</Size>
+					<text>[ui.sersel.population]</text>
+					<css>[local.css]small2.css</css>
+				</Label>
+				<sortButton name="btn_tabPopulation">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="530" y="0" />
+						</Anchor>
+					</Anchors>				
+					<Size>
+						<AbsDimension x="170" y="36" />
+					</Size> 
+				</sortButton>
+			</Container>
+			
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="5" y="41" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="700" y="300" />
+				</Size>
+				<uri>[local.common]bg_light.png</uri>
+			</Texture>
+			
+			<Grid name="gd_listServer">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="5" y="41" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="700" y="300" />
+				</Size>
+				<rendererName>InlineXmlGridRenderer</rendererName>
+				<rendererArgs>updateServerLine,[colors.grid.line]</rendererArgs>
+				<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+				<scrollDisplay>always</scrollDisplay>
+				<slotWidth>690</slotWidth>
+				<slotHeight>30</slotHeight>
+				
+				<!-- Container décrivant une ligne de la grille -->
+				
+				<Container name="serverItemCtr">
+					
+					<Button name="btn_server">
+						<Common>
+							<Size>
+								<AbsDimension x="690" y="30" />
+							</Size>
+							<radioMode>true</radioMode>
+			
+							<Label name="lbl_infoPopulation">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="530" y="4" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="150" y="15" />
+								</Size>
+								<css>[local.css]small2.css</css>
+							</Label>
+						</Common>
+						<State type="OVER">
+							<SetProperties target="btn_server">
+								<bgColor>[colors.grid.over]</bgColor>
+							</SetProperties>
+						</State>
+						<State type="DISABLED">
+						</State>
+						<State type="SELECTED">
+							<SetProperties target="btn_server">
+								<bgColor>[colors.grid.selected]</bgColor>
+							</SetProperties>
+						</State>
+						<State type="SELECTED_OVER">
+							<SetProperties target="btn_server">
+								<bgColor>[colors.grid.selected]</bgColor>
+							</SetProperties>
+						</State>
+					</Button>
+								
+					<Texture name="tx_infoState">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="20" y="9" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="12" y="12" />
+						</Size>
+					</Texture>
+								
+					<Texture name="tx_flag">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="65" y="6" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="27" y="20" />
+						</Size>
+					</Texture>
+			
+					<Label name="lbl_infoName">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="100" y="4" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="180" y="20" />
+						</Size>
+						<css>[local.css]small2.css</css>
+					</Label>
+					
+					<Texture name="tx_infoType">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="305" y="2" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="28" y="28" />
+						</Size>
+					</Texture>
+					
+					<Label name="lbl_infoType">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="340" y="4" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="190" y="20" />
+						</Size>
+						<css>[local.css]small2.css</css>
+					</Label>
+				</Container>
+			</Grid>
+		</Container>
+
+		<!-- Zone de recherche d'amis -->
+
+		<Container>	
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="423" y="415" />
+				</Anchor>
+			</Anchors>
+			
+			<searchInput width="294">
+				<themeDataId>bg_small_border_dark</themeDataId>
+			</searchInput>
+				
+			<themeIconButton name="btn_friendSearch">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="293" y="9" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="22" y="21" />
+				</Size>
+				<iconUri>[local.texture]btnIcon/btnIcon_check.png</iconUri>
+			</themeIconButton>
+		</Container>
+			
+		<themeLabelCheckBox name="btn_ckboxCommu">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="28" y="453" />
+				</Anchor>
+			</Anchors>
+			<labelWidth>800</labelWidth>
+			<text>[ui.sersel.showCommunity]</text>
+			<selected>false</selected>
+		</themeLabelCheckBox>
+		<themeLabelCheckBox name="btn_ckboxMy">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="28" y="478" />
+				</Anchor>
+			</Anchors>
+			<labelWidth>800</labelWidth>
+			<text>[ui.sersel.showMyServer]</text>
+			<selected>false</selected>
+		</themeLabelCheckBox>
+
+				
+                        
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="511" />
+				</Anchor>
+			</Anchors>
+				
+			<simpleButton label="[ui.common.validation]" name="btn_validate">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="440" y="-3" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="272" y="84" />
+				</Size>
+				<bgThemeDataId>button_largeBorder</bgThemeDataId>
+				<smooth>true</smooth>
+				<cssClass>darkcenter</cssClass>
+				<css>[local.css]title.css</css>
+				<forceUppercase>true</forceUppercase>
+			</simpleButton>
+			
+	
+			<Container>		
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="800" y="39" />
+					</Anchor>
+				</Anchors>
+				
+		        <TextureBitmap>
+		            <Anchors>
+		                <Anchor>
+							<AbsDimension x="0" y="0" />
+		                </Anchor>
+		            </Anchors>
+		            <Size>
+		                <AbsDimension x="222" y="38" />
+		            </Size>
+					<themeDataId>bg_simple_button</themeDataId>
+		            <smooth>true</smooth>
+		        </TextureBitmap>
+		        
+				<simpleButton label="[ui.sersel.autochoice]" name="btn_autochoice">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="21" y="0" />
+						</Anchor>
+					</Anchors>
+		            <Size>
+		                <AbsDimension x="180" y="32" />
+		            </Size>
+				</simpleButton>	
+			</Container>
+			
+			<Container>		
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="130" y="39" />
+					</Anchor>
+				</Anchors>
+				
+		        <TextureBitmap>
+		            <Anchors>
+		                <Anchor>
+							<AbsDimension x="0" y="0" />
+		                </Anchor>
+		            </Anchors>
+		            <Size>
+		                <AbsDimension x="222" y="38" />
+		            </Size>
+					<themeDataId>bg_simple_button</themeDataId>
+		            <smooth>true</smooth>
+		        </TextureBitmap>
+		        
+				<simpleButton label="[ui.common.back]" name="btn_cancel">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="21" y="0" />
+						</Anchor>
+					</Anchors>
+		            <Size>
+		                <AbsDimension x="180" y="32" />
+		            </Size>
+				</simpleButton>	
+			</Container>
+		</Container>
+		
+	</Container>
+	
+	<Shortcuts>
+		<validUi />
+	</Shortcuts>
+</Definition>

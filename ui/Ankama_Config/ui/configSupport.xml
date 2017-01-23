@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/themeLabelCheckBox.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+
+	<Container name="configSupportCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="0" y="30" />
+			</Anchor>
+		</Anchors>
+	
+		<!-- Titre pour les liens vers le support -->
+		
+		<Label name="lbl_TitleSelective">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="750" y="20" />
+			</Size>
+			<text>[ui.common.links]</text>
+			<cssClass>whitebold</cssClass>
+			<css>[local.css]normal2.css</css>
+		</Label>
+		
+		<!-- Fond gris 1 -->
+
+		<TextureBitmap name="tx_bgForeground1">
+			<Anchors>
+				<Anchor relativeTo="lbl_TitleSelective">
+					<AbsDimension x="0" y="40" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="780" y="90" />
+			</Size>
+			<themeDataId>bg_small_border_light</themeDataId>
+		</TextureBitmap>	
+		
+		<!-- Bouton de vidage de cache sélectif -->
+
+		<simpleButton name="btnGotoSupport">
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground1" relativePoint="BOTTOM" point="BOTTOM">
+					<AbsDimension x="0" y="-50" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="255" y="30" />
+			</Size>
+			<label>[ui.config.goto.support]</label>
+		</simpleButton>
+		
+		<!-- Bouton de vidage de cache complet -->
+
+		<simpleButton name="btnBugReport">
+			<Anchors>
+				<Anchor relativeTo="btnGotoSupport" relativePoint="BOTTOM" point="TOP">
+					<AbsDimension x="0" y="10" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="255" y="30" />
+			</Size>
+			<label>[ui.config.report.bug]</label>
+		</simpleButton>
+		
+		
+		<!-- Titre les options de logs -->
+		
+		<Label name="lbl_titleLog">
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground1" relativePoint="BOTTOMLEFT">
+					<AbsDimension x="0" y="10" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="750" y="20" />
+			</Size>
+			<text>[ui.option.logSystem]</text>
+			<cssClass>whitebold</cssClass>
+			<css>[local.css]normal2.css</css>
+		</Label>
+		
+		<!-- Fond gris 2 -->
+
+		<TextureBitmap name="tx_bgForeground2">
+			<Anchors>
+				<Anchor relativeTo="lbl_titleLog" relativePoint="BOTTOMLEFT">
+					<AbsDimension x="0" y="15" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="780" y="150" />
+			</Size>
+			<themeDataId>bg_small_border_light</themeDataId>
+		</TextureBitmap>	
+		
+		<!-- Texte expliquant le concept de "vidage de cache complet" -->
+		
+		<Label>
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground2">
+					<AbsDimension x="20" y="20" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="740" y="90" />
+			</Size>
+			<multiline>true</multiline>
+			<wordWrap>true</wordWrap>
+			<text>[ui.configs.logReplay.info]</text>
+			<css>[local.css]normal2.css</css>
+		</Label>
+		
+		<!-- Bouton de vidage de cache complet -->
+		<themeLabelCheckBox name="btn_allowLog">
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground2">
+					<AbsDimension y="80" x="20"/>
+				</Anchor>
+			</Anchors>
+			<labelWidth>600</labelWidth>
+			<text>[ui.option.allowLog]</text>
+		</themeLabelCheckBox>
+		
+		<Label name="lbl_titleDebug">
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground2" relativePoint="BOTTOMLEFT">
+					<AbsDimension x="0" y="10"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="750" y="20"/>
+			</Size>
+			<cssClass>whitebold</cssClass>
+			<css>[local.css]normal2.css</css>
+			<text>[ui.option.debugMode]</text>
+		</Label>
+		<TextureBitmap name="tx_bgForeground3">
+			<Anchors>
+				<Anchor relativeTo="lbl_titleDebug" relativePoint="BOTTOMLEFT">
+					<AbsDimension x="0" y="15"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="780" y="150"/>
+			</Size>
+			<themeDataId>bg_small_border_light</themeDataId>
+		</TextureBitmap>
+		<Label name="lbl_infoDebug">
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground3">
+					<AbsDimension x="20" y="20"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="740" y="90"/>
+			</Size>
+			<css>[local.css]normal2.css</css>
+			<multiline>true</multiline>
+			<wordWrap>true</wordWrap>
+			<text>[ui.option.debugMode.info]</text>
+		</Label>
+		<themeLabelCheckBox name="btn_allowDebug">
+			<Anchors relativeTo="tx_bgForeground3">
+				<Anchor>
+					<AbsDimension y="470" x="20"/>
+				</Anchor>
+			</Anchors>
+			<labelWidth>600</labelWidth>
+			<text>[ui.option.allowDebug]</text>
+		</themeLabelCheckBox>
+
+		<!-- Hack afin que l'on puisse scroll jusqu'en bas -->
+		<Texture name="tx_separator">
+			 <Anchors>
+				<Anchor relativeTo="tx_bgForeground3" relativePoint="BOTTOM">
+					<AbsDimension x="0" y="0"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="30" y="30"/>
+			</Size>
+			<bgColor>0x000000</bgColor>
+			<alpha>0</alpha>
+		</Texture>
+	</Container>
+</Definition>
+

@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]button/labelCheckBox.xml" />
+	
+   	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       <Constant name="css" value="[config.ui.skin]css/" />       
+       
+		<Constant name="alignment_uri" value="[config.content.path]gfx/alignments/wings.swf|Artisan_tx_bg" />
+   	</Constants>
+
+	<Container name="crafterFormCtr">	
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER" />
+		</Anchors>
+
+		<Texture>
+			<Size>
+				<AbsDimension x="729" y="429" />
+			</Size>
+			<autoGrid>true</autoGrid>
+			<uri>[local.assets]tx_generalBackgroundWithTitle</uri>
+		</Texture>
+
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="33" y="15" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="496" y="35" />
+			</Size>
+			<text>[ui.craft.crafter]</text>
+			<css>[local.css]title.css</css>
+		</Label>
+
+		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="22" y="71" />
+				</Anchor>
+			</Anchors>
+				
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="1" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="285" y="336" />
+				</Size>
+				<autoGrid>true</autoGrid>
+				<uri>[local.assets]tx_blockBackground</uri>
+			</Texture>
+			
+			<Texture name="tx_bgDeco">
+				<Size>
+					<AbsDimension x="285" y="336" />
+				</Size>
+				<uri>[local.alignment_uri]0</uri>
+			</Texture>
+	
+			<EntityDisplayer name="entdis_character">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="78" y="40" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="120" y="276" />
+				</Size>
+			</EntityDisplayer>
+		</Container>
+		
+		
+
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="320" y="70" />
+				</Anchor>
+			</Anchors>
+				
+			<Texture>
+				<Size>
+					<AbsDimension x="386" y="103" />
+				</Size>
+				<autoGrid>true</autoGrid>
+				<uri>[local.assets]tx_blockBackground</uri>
+			</Texture>
+			
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="14" y="7" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="354" y="22" />
+				</Size>
+				<text>[ui.login.news]</text>
+	            <css>[local.css]titleSmall.css</css>
+			</Label>
+	
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="14" y="34" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="155" y="20" />
+				</Size>
+				<text>[ui.common.name]</text>
+				<css>[local.css]normal.css</css>
+			</Label>	
+			<Label name="lbl_nameContent">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="185" y="34" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="185" y="20" />
+				</Size>
+	            <cssClass>right</cssClass>
+				<css>[local.css]normal.css</css>
+	  			<hyperlinkEnabled>true</hyperlinkEnabled>
+				<useStyleSheet>true</useStyleSheet>
+			</Label>
+	
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="14" y="54" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="155" y="20" />
+				</Size>
+				<text>[ui.craft.job]</text>
+				<css>[local.css]normal.css</css>
+			</Label>	
+			<Label name="lbl_jobContent">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="185" y="54" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="185" y="20" />
+				</Size>
+	            <cssClass>right</cssClass>
+				<css>[local.css]normal.css</css>
+			</Label>
+	
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="14" y="74" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="235" y="20" />
+				</Size>
+				<text>[ui.craft.jobLevel]</text>
+				<css>[local.css]normal.css</css>
+			</Label>	
+			<Label name="lbl_levelContent">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="248" y="74" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="122" y="20" />
+				</Size>
+	            <cssClass>right</cssClass>
+				<css>[local.css]normal.css</css>
+			</Label>
+		</Container>
+		
+		
+		
+
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="320" y="180" />
+				</Anchor>
+			</Anchors>
+
+			<Texture>
+				<Size>
+					<AbsDimension x="386" y="103" />
+				</Size>
+				<autoGrid>true</autoGrid>
+				<uri>[local.assets]tx_blockBackground</uri>
+			</Texture>
+			
+			<Label name="lbl_titleLoc">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="14" y="4" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="353" y="22" />
+				</Size>
+				<text>[ui.common.localisation]</text>
+	            <css>[local.css]titleSmall.css</css>
+			</Label>			
+	
+			<Label name="lbl_subareaContent">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="38" y="34" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="332" y="20" />
+				</Size>
+	            <cssClass>right</cssClass>
+				<css>[local.css]normal.css</css>
+			</Label>	
+	
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="14" y="54" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="235" y="20" />
+				</Size>
+				<text>[ui.craft.nearCraftTable]</text>
+				<css>[local.css]normal.css</css>
+			</Label>
+			<Label name="lbl_craftingContent">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="248" y="54" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="122" y="20" />
+				</Size>
+	            <cssClass>right</cssClass>
+				<css>[local.css]normal.css</css>
+			</Label>
+	
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="14" y="74" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="235" y="20" />
+				</Size>
+				<text>[ui.common.coordinates]</text>
+				<css>[local.css]normal.css</css>
+			</Label>	
+			<Label name="lbl_coordContent">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="248" y="74" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="122" y="20" />
+				</Size>
+	            <cssClass>right</cssClass>
+				<css>[local.css]normal.css</css>
+			</Label>
+		</Container>
+		
+		
+		
+		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="320" y="290" />
+				</Anchor>
+			</Anchors>
+
+			<Texture>
+				<Size>
+					<AbsDimension x="386" y="70" />
+				</Size>
+				<autoGrid>true</autoGrid>
+				<uri>[local.assets]tx_blockBackground</uri>
+			</Texture>
+			<Label name="lbl_titleOptions">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="14" y="3" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="358" y="21" />
+				</Size>
+				<text>[ui.craft.jobOptions]</text>
+	            <css>[local.css]titleSmall.css</css>
+			</Label>
+	
+			<labelCheckBox name="btn_free">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="14" y="35" />
+					</Anchor>
+				</Anchors>
+				<labelWidth>100</labelWidth>
+				<labelHeight>20</labelHeight>
+				<uri>[local.assets]tx_light_checkbox</uri>
+				<text>[ui.craft.free]</text>
+				<css>[local.css]normal.css</css>
+			</labelCheckBox>
+		
+			<Label name="lbl_minLevelContent">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="140" y="35" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="230" y="19" />
+				</Size>
+	            <cssClass>right</cssClass>
+				<css>[local.css]normal.css</css>
+			</Label>
+		</Container>
+
+
+
+
+
+		<simpleButton name="btn_mp" label="[ui.common.wMessage]"   >
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="320" y="375" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="386" y="30" />
+			</Size>
+			<css>[local.css]button.css</css>
+			<Hooks>
+				<onRelease />
+			</Hooks>
+		</simpleButton>
+
+
+		<iconButton name="btn_close">
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" />
+			</Anchors>
+			<Size>
+				<AbsDimension x="57" y="36" />
+			</Size>
+			<uri>[local.assets]btn_cornerCross</uri>
+        </iconButton>
+		
+	</Container>
+</Definition>
+

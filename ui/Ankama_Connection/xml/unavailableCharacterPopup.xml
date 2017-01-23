@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+	
+	<Container>
+		<mouseEnabled>true</mouseEnabled>
+
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="331" y="312" />
+			</Anchor>
+		</Anchors>
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			
+			<Size>
+				<AbsDimension x="635" y="333" />
+			</Size>
+			
+			<uri>[local.assets]tx_generalBackgroundWithTitle</uri>
+			<autoGrid>true</autoGrid>
+		</Texture>
+		
+		<Label name="lbl_title">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="13" y="17" />
+				</Anchor>
+			</Anchors>
+			
+			<Size>
+				<AbsDimension x="609" y="31" />
+			</Size>
+			
+			<css>[local.css]title.css</css>
+			<cssClass>center</cssClass>
+		</Label>
+		
+		<Label name="lbl_text">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="22" y="63" />
+				</Anchor>
+			</Anchors>
+			
+			<Size>
+				<AbsDimension x="589" y="121" />
+			</Size>
+			
+			<css>[local.css]normal.css</css>
+			<multiline>true</multiline>
+			<wordWrap>true</wordWrap>
+		</Label>
+		
+		<!--  Barre de progression -->
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="41" y="203" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="552" y="51" />
+			</Size>
+			
+			<!-- Texture de fond de la zone de la barre de progression -->
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="552" y="51" />
+				</Size>
+				<uri>[local.assets]tx_blockBackground</uri>
+				<autoGrid>true</autoGrid>
+			</Texture>
+	
+			<!-- Texture de fond de la barre de progression -->
+			<Texture name="tx_progressBarBackground">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="11" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="529" y="16" />
+				</Size>
+				<uri>[local.assets]tx_progressBarBackground</uri>
+				<autoGrid>true</autoGrid>
+			</Texture>
+			
+			<!--  Texture de la barre de progression -->
+			<Texture name="tx_progressBar">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="11" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="529" y="16" />
+				</Size>
+				<uri>[local.assets]tx_progressBar</uri>
+				<autoGrid>true</autoGrid>
+			</Texture>
+			
+			<Label name="lbl_progress">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="11" y="23" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="529" y="21" />
+				</Size>
+				
+				<css>[local.css]normal.css</css>
+				<cssClass>center</cssClass>
+			</Label>
+		</Container>
+		
+		<simpleButton name="btn_back" label="[ui.common.back]">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="214" y="272" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="206" y="39" />
+			</Size>
+			<css>[local.css]button.css</css>
+			<Hooks>
+				<onRelease />
+			</Hooks>
+		</simpleButton>
+		
+		<iconButton name="btn_close">
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="57" y="36" />
+			</Size>
+			<uri>[local.assets]btn_cornerCross</uri>
+        </iconButton>
+	</Container>
+</Definition>

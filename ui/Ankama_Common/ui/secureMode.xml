@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition modal="true">
+	<Import url="[config.mod.template]button/simpleButton.xml"/>
+	<Import url="[config.mod.template]window.xml"/>
+	<Import url="[config.mod.template]block.xml"/>
+	<Import url="[config.mod.template.button]comboBoxWithBackground.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+		<Constant name="css" value="[config.ui.skin]css/"/>
+		<Constant name="btn.css" value="[config.ui.skin]css/button.css"/>
+		<Constant name="btn.file" value="[local.assets]btn_orange"/>
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/"/>
+		<Constant name="texture" value="[config.ui.skin]texture/"/>
+	</Constants>
+
+	<Container name="popCtr">
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER"/>
+		</Anchors>
+
+		<mouseEnabled>true</mouseEnabled>
+		<shadowColor>[colors.ui.shadow]</shadowColor>
+
+
+		<window name="main_window">
+			<Anchors>
+				<Anchor relativePoint="CENTER" point="CENTER"/>
+			</Anchors>
+			<Size>
+				<AbsDimension x="580" y="535"/>
+			</Size>
+			<title>[ui.item.feed]</title>
+			<noSeparator>true</noSeparator>
+
+			<Content>
+				<block name="top_block" dark="true">
+					<Anchors>
+						<Anchor relativePoint="TOP" point="TOP">
+							<AbsDimension y="5"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="530" y="290"/>
+					</Size>
+					<Content>
+						<Container name="top_block_deco">
+							<Anchors>
+								<Anchor relativePoint="TOP" point="BOTTOM">
+									<AbsDimension y="290" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension y="70" />
+								<RelDimension x="1" />
+							</Size>
+
+							<!--Corner decoration LEFT-->
+							<Texture>
+								<Anchors>
+									<Anchor relativePoint="TOPLEFT" point="TOPLEFT"/>
+								</Anchors>
+								<uri>[config.ui.skin]common/corner_decoration.png</uri>
+							</Texture>
+
+							<!--Corner decoration RIGHT-->
+							<Texture>
+								<Anchors>
+									<Anchor relativePoint="TOPRIGHT" point="TOPLEFT"/>
+								</Anchors>
+								<uri>[config.ui.skin]common/corner_decoration.png</uri>
+								<scaleX>-1</scaleX>
+							</Texture>
+						</Container>
+					</Content>
+				</block>
+
+				<block name="bot_block" dark="true">
+					<Anchors>
+						<Anchor relativePoint="TOP" point="TOP">
+							<AbsDimension y="300"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="530" y="120"/>
+					</Size>
+					<Content>
+						<Container name="bot_block_deco">
+							<Anchors>
+								<Anchor relativePoint="TOP" point="BOTTOM">
+									<AbsDimension y="120" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension y="70" />
+								<RelDimension x="1" />
+							</Size>
+							<!--Corner decoration LEFT-->
+							<Texture>
+								<Anchors>
+									<Anchor relativePoint="TOPLEFT" point="TOPLEFT"/>
+								</Anchors>
+								<uri>[config.ui.skin]common/corner_decoration.png</uri>
+							</Texture>
+
+							<!--Corner decoration RIGHT-->
+							<Texture>
+								<Anchors>
+									<Anchor relativePoint="TOPRIGHT" point="TOPLEFT"/>
+								</Anchors>
+								<uri>[config.ui.skin]common/corner_decoration.png</uri>
+								<scaleX>-1</scaleX>
+							</Texture>
+						</Container>
+					</Content>
+				</block>
+
+				<TextArea name="lbl_intro">
+					<Anchors>
+						<Anchor relativePoint="TOP" point="TOP">
+							<AbsDimension x="10" y="20"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="490" y="230"/>
+					</Size>
+					<multiline>true</multiline>
+					<html>true</html>
+					<cssClass>boldcenter</cssClass>
+					<css>[local.css]normal2.css</css>
+				</TextArea>
+
+				<TextArea name="lbl_content">
+					<Anchors>
+						<Anchor relativePoint="TOP" point="TOP">
+							<AbsDimension x="10" y="70"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="490" y="230"/>
+					</Size>
+					<multiline>true</multiline>
+					<html>true</html>
+					<cssClass>center</cssClass>
+					<css>[local.css]small2.css</css>
+				</TextArea>
+
+				<TextArea name="lbl_content2">
+					<Anchors>
+						<Anchor relativePoint="TOP" point="TOP">
+							<AbsDimension y="310"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="490" y="400"/>
+					</Size>
+					<multiline>true</multiline>
+					<html>true</html>
+					<cssClass>center</cssClass>
+					<css>[local.css]small2.css</css>
+				</TextArea>
+
+				<Container name="inputCtr">
+					<Anchors>
+						<Anchor point="TOP" relativePoint="TOP">
+							<AbsDimension y="70"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="460" y="160"/>
+					</Size>
+
+					<TextureBitmap>
+						<Anchors>
+							<Anchor relativePoint="TOP" point="TOP">
+								<AbsDimension x="0" y="0"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<RelDimension x="1" y="1"/>
+						</Size>
+						<themeDataId>bg_small_border_dark</themeDataId>
+					</TextureBitmap>
+
+					<Input name="input">
+						<Anchors>
+							<Anchor relativePoint="TOP" point="TOP">
+								<AbsDimension y="60"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="270" y="30"/>
+						</Size>
+						<cssClass>left</cssClass>
+						<css>[local.css]normal2.css</css>
+					</Input>
+
+					<TextureBitmap name="tx_input">
+						<Anchors>
+							<Anchor relativeTo="input" relativePoint="TOPLEFT">
+								<AbsDimension x="-7" y="-10" />
+							</Anchor>
+							<Anchor relativeTo="input" relativePoint="BOTTOMRIGHT">
+								<AbsDimension x="7" y="0" />
+							</Anchor>
+						</Anchors>
+						<themeDataId>bg_small_border_light</themeDataId>
+					</TextureBitmap>
+
+					<!--3 Nom de l'ordinateur-->
+					<!--5 Code de sécurité-->
+					<Label name="lbl_input">
+						<Anchors>
+							<Anchor relativePoint="TOP" point="TOP">
+								<AbsDimension y="20"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="290" y="25"/>
+						</Size>
+						<cssClass>boldcenter</cssClass>
+						<css>[local.css]normal2.css</css>
+						<mouseEnabled>true</mouseEnabled>
+						<mouseChildren>true</mouseChildren>
+					</Label>
+
+				</Container>
+
+				<Texture name="tx_loading">
+					<Anchors>
+						<Anchor relativePoint="TOP" point="TOP">
+							<AbsDimension y="80"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="50" y="50"/>
+					</Size>
+					<uri>[local.assets]tx_loadingAnim</uri>
+				</Texture>
+
+				<!--4,5 Veuillez patienter-->
+				<!--5 Si apres ... cliquez ici-->
+				<TextArea name="lbl_inputInfo">
+					<Size>
+						<AbsDimension x="490" y="60"/>
+					</Size>
+					<Anchors>
+						<Anchor relativePoint="TOP" point="TOP">
+							<AbsDimension y="20"/>
+						</Anchor>
+					</Anchors>
+					<multiline>true</multiline>
+					<wordWrap>true</wordWrap>
+					<cssClass>center</cssClass>
+					<css>[local.css]small2.css</css>
+				</TextArea>
+
+
+				<!--1 Continuer en mode restreint-->
+				<!--2 annuler-->
+				<!--3 annuler-->
+				<!--4 annuler-->
+				<!--5 annuler-->
+				<simpleButton name="btn1">
+					<Size>
+						<AbsDimension x="220" y="35"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOP" relativePoint="TOP">
+							<AbsDimension y="370"/>
+						</Anchor>
+					</Anchors>
+				</simpleButton>
+
+				<!--1 Debloquer le mode restreint-->
+				<!--2 Debloquer pour la session-->
+				<!--3 Continuer-->
+				<!--4 Envoyer l'email-->
+				<!--5 Valider-->
+				<simpleButton name="btn2">
+					<Size>
+						<AbsDimension x="220" y="35"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOP" relativePoint="TOP">
+							<AbsDimension y="245"/>
+						</Anchor>
+					</Anchors>
+				</simpleButton>
+
+				<!--2 Ajouter cet ordinateur-->
+				<simpleButton name="btn3">
+					<Size>
+						<AbsDimension x="220" y="35"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOP" relativePoint="TOP">
+							<AbsDimension y="110"/>
+						</Anchor>
+					</Anchors>
+				</simpleButton>
+
+				<!--En savoir plus-->
+				<Container name="ctr_more_info">
+					<Anchors>
+						<Anchor point="TOP" relativePoint="TOP">
+							<AbsDimension y="425"/>
+						</Anchor>
+					</Anchors>
+					<TextureBitmap name="tx_more">
+						<uri>[config.ui.skin]common/btn_resize_up.png</uri>
+					</TextureBitmap>
+					<Label name="lbl_moreInfo">
+						<Anchors>
+							<Anchor relativeTo="tx_more" point="TOPLEFT" relativePoint="TOPRIGHT">
+								<AbsDimension y="7"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="400" y="25"/>
+						</Size>
+						<cssClass>greenunderlineleft</cssClass>
+						<css>[local.css]special.css</css>
+						<text>[ui.secureMode.moreInfo]</text>
+						<handCursor>true</handCursor>
+						<fixedWidth>false</fixedWidth>
+					</Label>
+				</Container>
+
+				<comboBoxWithBackground name="combo">
+					<Anchors>
+						<Anchor relativeTo="inputCtr" relativePoint="TOP" point="TOP">
+							<AbsDimension y="90"/>
+						</Anchor>
+					</Anchors>
+					<width>285</width>
+					<autoSelectMode>0</autoSelectMode>
+				</comboBoxWithBackground>
+
+			</Content>
+		</window>
+	</Container>
+</Definition>

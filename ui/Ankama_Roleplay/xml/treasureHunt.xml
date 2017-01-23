@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+    <Import url="[config.mod.template]windowWithoutTitleBar.xml" />
+    <Import url="[config.mod.template.button]themeIconButton.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+	   <Constant name="css" value="[config.ui.skin]css/" />
+        <Constant name="texture" value="[config.ui.skin]texture/" />
+        <Constant name="common" value="[config.ui.skin]common/" />
+
+        <Constant name="arrow_uri" value="[local.texture]treasure_hunt/icon_hunt_arrow"/>
+        <Constant name="flag_uri" value="[local.texture]treasure_hunt/tx_treasureHuntFlag"/>
+        <Constant name="direction" value="0"/>
+
+    </Constants>
+
+	<Container strata="TOP">
+		<mouseEnabled>true</mouseEnabled>
+		<Container name="ctr_hunt">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="180" />
+				</Anchor>
+			</Anchors>
+
+			<TextureBitmap>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="-5" y="2" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="336" y="35" />
+                </Size>
+                <themeDataId>floating_window_bar</themeDataId>
+                <dragController>true</dragController>
+                <dragTarget>ctr_hunt</dragTarget>
+                <dragBoundsContainer>ctr_hunt</dragBoundsContainer>
+                <useDragMagnetism>true</useDragMagnetism>
+			</TextureBitmap>
+
+            <TextureBitmap name="tx_chestIcon">
+                <Anchors>
+                    <Anchor relativeTo="btn_arrowMinimize" point="RIGHT" relativePoint="LEFT">
+                        <AbsDimension x="-130" y="1" />
+                    </Anchor>
+                </Anchors>
+                <uri>[local.texture]hud/icon_treasure.png</uri>
+                <smooth>true</smooth>
+                <visible>false</visible>
+            </TextureBitmap>
+
+
+            <TextureBitmap name="tx_help">
+                <Anchors>
+                    <Anchor relativeTo="btn_arrowMinimize" point="RIGHT" relativePoint="LEFT">
+                        <AbsDimension x="-5" y="-1" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="20" y="20" />
+                </Size>
+                <smooth>true</smooth>
+                <uri>[local.texture]help_icon_normal.png</uri>
+            </TextureBitmap>
+
+            <Button name="btn_arrowMinimize">
+                <Common>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="305" y="8" />
+                        </Anchor>
+                    </Anchors>
+                    <Container>
+                        <Size>
+                            <AbsDimension x="20" y="20" />
+                        </Size>
+                        <bgColor>0xff00ff</bgColor>
+                        <bgAlpha>0</bgAlpha>
+                    </Container>
+                    <TextureBitmap name="tx_minMax">
+                        <uri>[local.texture]treasure_hunt/btnIcon_hunt_minus.png</uri>
+                    </TextureBitmap>
+                </Common>
+            </Button>
+
+			<Label name="lbl_huntType">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="25" y="5" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="240" y="30" />
+				</Size>
+				<cssClass>smallcenter</cssClass>
+				<css>[local.css]title.css</css>
+			</Label>
+
+            <Button name="btn_huntType">
+                <Common>
+                    <Size>
+                        <AbsDimension x="17" y="12" />
+                    </Size>
+                    <Texture>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="15" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="17" y="12" />
+                        </Size>
+                        <uri>[local.texture]hud/icon_arrow_floating_menu.png</uri>
+                        <autoGrid>true</autoGrid>
+                        <rotation>90</rotation>
+                    </Texture>
+
+                    <Hooks>
+                        <onRelease />
+                    </Hooks>
+                </Common>
+            </Button>
+
+			<Container name="ctr_instructions">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="-5" y="10"/>
+                    </Anchor>
+                </Anchors>
+
+                <TextureBitmap name="tx_bg">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="0" y="24" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="340" y="330" />
+                    </Size>
+                    <themeDataId>floating_window_background</themeDataId>
+                </TextureBitmap>
+
+
+                <Texture>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="12" y="24" />
+                        </Anchor>
+                    </Anchors>
+                    <uri>[local.texture]treasure_hunt/tx_hunt_parchment2.png</uri>
+                </Texture>
+                <Label name="lbl_steps">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="30" y="28" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="276" y="20" />
+                    </Size>
+                    <cssClass>goodybookletterleft</cssClass>
+                    <css>[local.css]parchment.css</css>
+                </Label>
+
+                <themeIconButton name="btn_giveUp">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="295" y="32" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="26" y="26" />
+                    </Size>
+                    <iconThemeDataId>btnIcon_cross</iconThemeDataId>
+                </themeIconButton>
+
+                <Texture name="tx_stepBg">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="12" y="67" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="320" y="235"/>
+                    </Size>
+                    <uri>[local.texture]treasure_hunt/tx_hunt_parchment01.png</uri>
+                </Texture>
+
+                <Grid name="gd_steps">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="25" y="70" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="304" y="261" />
+                    </Size>
+                    <rendererName>InlineXmlGridRenderer</rendererName>
+                    <rendererArgs>updateStepLine,[colors.grid.line]</rendererArgs>
+                    <slotWidth>304</slotWidth>
+                    <slotHeight>29</slotHeight>
+                    <scrollDisplay>never</scrollDisplay>
+
+                    <Container name="ctr_step">
+                        <Size>
+                            <AbsDimension x="304" y="29" />
+                        </Size>
+
+                        <Texture name="tx_direction">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="1" y="1" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="27" y="27" />
+                            </Size>
+                        </Texture>
+
+                        <themeIconButton name="btn_loc">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="-3" y="-5" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="35" y="35" />
+                            </Size>
+                            <bgThemeDataId>btn_pin</bgThemeDataId>
+                            <smooth>true</smooth>
+                        </themeIconButton>
+
+                        <Label name="lbl_text">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="30" y="1" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="254" y="20" />
+                            </Size>
+                            <css>[local.css]parchment.css</css>
+                        </Label>
+
+                        <themeIconButton name="btn_dig">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="250" y="8" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="40" y="31" />
+                            </Size>
+                            <iconAnchors>
+                                <Anchor relativePoint="TOPLEFT">
+                                    <AbsDimension x="10" y="5"/>
+                                </Anchor>
+                                <Anchor relativePoint="BOTTOMRIGHT">
+                                    <AbsDimension x="-10" y="-5"/>
+                                </Anchor>
+                            </iconAnchors>
+                            <iconUri>[local.texture]btnIcon/btnIcon_magnifierSearch.png</iconUri>
+                        </themeIconButton>
+
+                        <simpleButton label="[ui.common.tofight]" name="btn_digFight" >
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="50" y="2" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="190" y="25" />
+                            </Size>
+                            <visible>false</visible>
+                        </simpleButton>
+
+                        <themeIconButton name="btn_pictos">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="250" y="5" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="20" y="20" />
+                            </Size>
+                            <iconUri>[local.texture]btnIcon/btnIcon_gear.png</iconUri>
+                            <visible>false</visible>
+                        </themeIconButton>
+
+                        <Texture name="tx_flag">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="275" y="4" />
+                                </Anchor>
+                            </Anchors>
+                            <uri>[local.assets]tx_treasureHuntFlag</uri>
+                            <handCursor>true</handCursor>
+                        </Texture>
+                    </Container>
+                </Grid>
+
+                <Container name="ctr_bottom">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="20" y="305" />
+                        </Anchor>
+                    </Anchors>
+
+                    <Label name="lbl_try">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="3" y="8" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="210" y="20" />
+                        </Size>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+                    <themeIconButton name="btn_mask">
+                        <Size>
+                            <AbsDimension x="40" y="31" />
+                        </Size>
+                        <iconAnchors>
+                            <Anchor relativePoint="TOPLEFT">
+                                <AbsDimension x="2" y="2"/>
+                            </Anchor>
+                            <Anchor relativePoint="BOTTOMRIGHT">
+                                <AbsDimension x="-2" y="-2"/>
+                            </Anchor>
+                        </iconAnchors>
+                        <iconUri>[local.texture]btnIcon/btnIcon_computer.png</iconUri>
+                        <autoGrid>true</autoGrid>
+                        <smooth>true</smooth>
+                    </themeIconButton>
+                </Container>
+            </Container>
+		</Container>
+	</Container>
+</Definition>

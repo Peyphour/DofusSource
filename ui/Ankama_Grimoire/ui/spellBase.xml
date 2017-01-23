@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition labelDebug="false">
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]button/horizontalTabGreenLine.xml" />
+	<Import url="mod://Ankama_Social/xml/template/socialTab.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+
+	<window name="mainCtr" title="[ui.grimoire.spellsAndFinishMoves]" iconUri="[config.ui.skin]texture/windowIcon/icon__0028_Sorts.png">
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="0" y="-50" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="820" y="820" />
+		</Size>
+		<movable>true</movable>
+		<mouseEnabled>true</mouseEnabled>
+
+		<Content>					
+			<Texture>
+				<Size>
+					<AbsDimension x="780" y="390" />
+				</Size>
+				<uri>[local.common]bg_green_line.png</uri>
+			</Texture>
+
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="94" y="18" />
+					</Anchor>
+				</Anchors>
+
+				<horizontalTabGreenLine name="btn_tabSpell">
+					<Size>
+						<AbsDimension x="200" y="35" />
+					</Size>
+					<text>[ui.common.breedSpell]</text>
+				</horizontalTabGreenLine>
+
+				<horizontalTabGreenLine name="btn_tabElementarySpell">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="201" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="200" y="35" />
+					</Size>
+					<text>[ui.spell.sharedSpells]</text>
+				</horizontalTabGreenLine>
+
+				<horizontalTabGreenLine name="btn_tabFinishMove">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="402" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="200" y="35" />
+					</Size>
+					<text>[ui.grimoire.finishMoves]</text>
+				</horizontalTabGreenLine>
+			</Container>
+
+			<Container name="uiCtr">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="3" y="30" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="780" y="700" />
+				</Size>
+			</Container>
+		</Content>
+	</window>
+</Definition>

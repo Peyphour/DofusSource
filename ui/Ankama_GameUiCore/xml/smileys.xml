@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition usePropertiesCache="false">
+	
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]button/themeIconButton.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       	<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="smilies_uri" value="[config.content.path]gfx/smilies/" />
+		<Constant name="icon" value="[config.ui.skin]texture/CHAT/"/>
+	</Constants>
+	
+	<Container name="mainCtr" strata="TOP">
+		<Size>
+			<AbsDimension x="387" y="190" />
+		</Size>
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER">
+				<AbsDimension y="150"/>
+			</Anchor>
+		</Anchors>
+		
+		<TextureBitmap>
+			<Size>
+				<AbsDimension x="381" y="35" />
+			</Size>
+			<themeDataId>floating_window_bar</themeDataId>
+			<dragController>true</dragController>
+			<dragTarget>mainCtr</dragTarget>
+			<dragBoundsContainer>mainCtr</dragBoundsContainer>
+		</TextureBitmap>
+		
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="24" y="8" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="329"/>
+			</Size>
+			<verticalAlign>center</verticalAlign>
+			<cssClass>shadowedcenter</cssClass>
+			<css>[local.css]title.css</css>
+			<forceUppercase>true</forceUppercase>
+			<text>[ui.smiley.title]</text>
+			<useDefaultFont>true</useDefaultFont>
+		</Label>
+		
+		<iconButton name="btn_close">
+			<Anchors>
+				<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+					<AbsDimension x="-12" y="8" />
+				</Anchor>
+			</Anchors>
+			<uri>[config.ui.skin]common/btn_close_green_disabled.png</uri>
+			<Size>
+				<AbsDimension x="15" y="15"/>
+			</Size>
+			<Hooks>
+				<onRelease/>
+			</Hooks>
+		</iconButton>
+		
+		<Container>
+			<Size>
+				<AbsDimension x="381" y="192"/>
+			</Size>
+			<Anchors>
+				<Anchor>
+					<AbsDimension y="33"/>
+				</Anchor>
+			</Anchors>
+			<bgColor>[colors.contextmenu.bg]</bgColor>
+			<bgAlpha>0.8</bgAlpha>
+		</Container>
+		
+		<Container>
+			<Size>
+				<AbsDimension x="39"/>
+				<RelDimension y="1"/>
+			</Size>
+			<Anchors>
+				<Anchor>
+					<AbsDimension y="35"/>
+				</Anchor>
+			</Anchors>
+
+			<TextureBitmap>
+				<Size>
+					<AbsDimension x="39"/>
+					<RelDimension y="1"/>
+				</Size>
+				<themeDataId>window_background</themeDataId>
+			</TextureBitmap>
+
+			<Grid name="gd_smileyCategories">
+				<Anchors>
+					<Anchor point="TOP" relativePoint="TOP">
+						<AbsDimension y="4"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="30" y="190" />
+				</Size>
+				<rendererName>InlineXmlGridRenderer</rendererName>
+				<rendererArgs>updateSmileyCategory</rendererArgs>
+				<slotWidth>28</slotWidth>
+				<slotHeight>28</slotHeight>
+
+				<Container>
+					<Size>
+						<AbsDimension x="30" y="28" />
+					</Size>
+
+					<themeIconButton name="btn_cat">
+						<Size>
+							<AbsDimension x="30" y="30" />
+						</Size>
+						<bgThemeDataId>button_grey</bgThemeDataId>
+						<iconAnchors>
+							<Anchor relativePoint="TOPLEFT">
+								<AbsDimension x="2" y="2"/>
+							</Anchor>
+							<Anchor relativePoint="BOTTOMRIGHT">
+								<AbsDimension x="-1" y="-1"/>
+							</Anchor>
+						</iconAnchors>
+					</themeIconButton>
+				</Container>
+			</Grid>
+		</Container>
+
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="39" y="35"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="341"/>
+				<RelDimension y="1"/>
+			</Size>
+			<Grid name="gd_smileys">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="5" y="5" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="335" y="180"/>
+				</Size>
+				<rendererName>InlineXmlGridRenderer</rendererName>
+				<rendererArgs>updateSmiley</rendererArgs>
+				<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+				<scrollDisplay>always</scrollDisplay>
+				<scrollbarOffset>6</scrollbarOffset>
+				<slotWidth>29</slotWidth>
+				<slotHeight>29</slotHeight>
+
+				<Container name="smileyCtr">
+					<Size>
+						<AbsDimension x="28" y="28" />
+					</Size>
+					<Button name="btn_smiley">
+						<Common>
+							<radioMode>true</radioMode>
+							<linkedTo>slot_smiley</linkedTo>
+							<Texture name="tx_bgSmiley">
+								<Size>
+									<AbsDimension x="28" y="28" />
+								</Size>
+								<bgColor>[colors.grid.selected]</bgColor>
+								<bgAlpha>0.7</bgAlpha>
+								<visible>false</visible>
+							</Texture>
+							<Slot name="slot_smiley">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="-1" y="-1" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="30" y="30" />
+								</Size>
+								<luminosity>1</luminosity>
+							</Slot>
+							<Hooks>
+								<onItemRollOver />
+								<onItemRollOut />
+							</Hooks>
+						</Common>
+						<State type="OVER">
+							<SetProperties target="slot_smiley">
+								<luminosity>1.5</luminosity>
+							</SetProperties>
+						</State>
+						<State type="SELECTED_OVER">
+							<SetProperties target="slot_smiley">
+								<luminosity>1.5</luminosity>
+							</SetProperties>
+						</State>
+					</Button>
+				</Container>
+
+				<Hooks>
+					<onSelectItem />
+					<onItemRightClick />
+					<onItemRollOver />
+					<onItemRollOut />
+				</Hooks>
+			</Grid>
+
+			<Grid name="gd_emotes">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="5" y="5" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="335" y="180"/>
+				</Size>
+				<rendererName>InlineXmlGridRenderer</rendererName>
+				<rendererArgs>updateEmote</rendererArgs>
+				<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+				<scrollDisplay>always</scrollDisplay>
+				<scrollbarOffset>6</scrollbarOffset>
+				<slotWidth>29</slotWidth>
+				<slotHeight>29</slotHeight>
+
+				<Container name="emoteCtr">
+					<Size>
+						<AbsDimension x="28" y="28" />
+					</Size>
+					<Button name="btn_emote">
+						<Common>
+							<radioMode>true</radioMode>
+							<linkedTo>slot_emote</linkedTo>
+							<Slot name="slot_emote">
+								<Size>
+									<AbsDimension x="28" y="28" />
+								</Size>
+								<luminosity>1</luminosity>
+								<timerTexture>[local.assets]timerSlot</timerTexture>
+							</Slot>
+							<Hooks>
+								<onSelectItem />
+							</Hooks>
+							<cacheAsBitmap>true</cacheAsBitmap>
+						</Common>
+					</Button>
+				</Container>
+
+				<Hooks>
+					<onSelectItem />
+					<onItemRollOver />
+					<onItemRollOut />
+				</Hooks>
+			</Grid>
+		</Container>
+	</Container>
+</Definition>

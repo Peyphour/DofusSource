@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition fullscreen="true">
+
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]button/themeIconButton.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="btn.css" value="[config.ui.skin]css/button.css" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="btn.file" value="[local.assets]btn_orange" />
+		<Constant name="buttonPadding" value="10" />
+		<Constant name="buttonMarginTop" value="10" />
+		<Constant name="buttonSideMargin" value="5" />
+	</Constants>
+
+	<Container name="ctr_main">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="0" y="555" />
+			</Anchor>
+		</Anchors>
+		<visible>true</visible>
+
+		<Container name="ctr_nocheat">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="340" y="5" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="60" y="60" />
+			</Size>
+			<bgColor>0xFF00FF</bgColor>
+			<alpha>0</alpha>
+			<visible>false</visible>
+		</Container>
+
+		<Container name="ctr_visible">
+			<visible>false</visible>
+
+			<Container name="ctr_down">
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="3" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="62" y="20" />
+					</Size>
+					<mouseEnabled>true</mouseEnabled>
+					<bgColor>[colors.ui.shadow.dark]</bgColor>
+					<alpha>0.8</alpha>
+				</Texture>
+
+				<Label name="lbl_down">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="3" y="-2" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="60" />
+					</Size>
+					<cssClass>center</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+			</Container>
+
+			<Container name="ctr_tx_background">
+				<Anchors>
+					<Anchor relativeTo="ctr_visible" point="TOPLEFT"
+						relativePoint="TOPLEFT">
+						<AbsDimension x="3" y="0" />
+					</Anchor>
+					<Anchor relativeTo="ctr_down" point="BOTTOMRIGHT"
+						relativePoint="TOPRIGHT">
+						<AbsDimension x="3" />
+					</Anchor>
+				</Anchors>
+				<bgColor>[colors.ui.shadow.dark]</bgColor>
+				<alpha>0.5</alpha>
+			</Container>
+
+			<Container name="ctr_text">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="65" y="0" />
+					</Anchor>
+				</Anchors>
+				<visible>false</visible>
+				<mouseEnabled>true</mouseEnabled>
+
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="-62" y="15" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="62" y="60" />
+					</Size>
+					<bgColor>[colors.ui.shadow.dark]</bgColor>
+					<alpha>0.8</alpha>
+				</Texture>
+
+				<Container name="ctr_background_message">
+					<Size>
+						<AbsDimension x="320" y="20" />
+					</Size>
+					<bgColor>[colors.ui.shadow.dark]</bgColor>
+					<alpha>0.85</alpha>
+				</Container>
+
+				<Label name="lbl_title_message">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="20" y="10" />
+						</Anchor>
+					</Anchors>
+					<css>[local.css]title.css</css>
+				</Label>
+
+				<Label name="lbl_message">
+					<Anchors>
+						<Anchor>
+
+							<AbsDimension x="20" y="45" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="300" />
+					</Size>
+					<multiline>true</multiline>
+					<wordWrap>true</wordWrap>
+					<cssClass>left</cssClass>
+					<css>[local.css]normal2.css</css>
+					<useStyleSheet>true</useStyleSheet>
+					<hyperlinkEnabled>true</hyperlinkEnabled>
+					<fixedWidth>false</fixedWidth>
+					<useCustomFormat>true</useCustomFormat>
+				</Label>
+
+				<themeIconButton name="btn_close">
+					<Size>
+						<AbsDimension x="27" y="27" />
+					</Size>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="289" y="5" />
+						</Anchor>
+					</Anchors>
+					<iconUri>[local.texture]btnIcon/btnIcon_cross.png</iconUri>
+					<Hooks>
+						<onRelease />
+					</Hooks>
+				</themeIconButton>
+			</Container>
+
+			<Container name="ctr_tips">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="10" y="22" />
+					</Anchor>
+				</Anchors>
+			</Container>
+
+			<Container name="mask_tips">
+				<Size>
+					<AbsDimension x="60" y="17" />
+				</Size>
+				<bgColor>0xFF00FF</bgColor>
+			</Container>
+		</Container>
+
+		<Container name="ctr_effect">
+			<visible>false</visible>
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="20" y="-10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="45" />
+				</Size>
+				<uri>[local.texture]hud/left_floating_menu.png</uri>
+				<dragController>true</dragController>
+				<dragTarget>ctr_main</dragTarget>
+				<dragBoundsContainer>ctr_main</dragBoundsContainer>
+				<useDragMagnetism>true</useDragMagnetism> 
+			</Texture>
+			<iconButton name="btn_hide">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="-10" />
+					</Anchor>
+				</Anchors>
+				<visible>false</visible>
+				<uri>[local.texture]hud/right_floating_menu.png</uri>
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</iconButton>
+			<Texture name="tx_minMax">
+				<Anchors>
+					<Anchor relativeTo="btn_hide" point="CENTER" relativePoint="CENTER">
+						<AbsDimension x="0" y="-1" />
+					</Anchor>
+				</Anchors>
+				<uri>[local.texture]hud/icon_minus_floating_menu.png</uri>
+			</Texture>
+			<Texture name="tx_effect1">
+				<gotoAndStop>1</gotoAndStop>
+				<visible>false</visible>
+				<uri>[local.assets]anim_boucle</uri>
+			</Texture>
+
+			<Texture name="tx_effect2">
+				<gotoAndStop>41</gotoAndStop>
+				<uri>[local.assets]anim_paillette</uri>
+			</Texture>
+			
+		</Container>
+	</Container>
+</Definition>

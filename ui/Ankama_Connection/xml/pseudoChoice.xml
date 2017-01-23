@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition modal="true">
+
+	<Import url="[config.mod.template]button/simpleButton.xml"/>
+	<Import url="[config.mod.template]button/iconButton.xml"/>
+	<Import url="[config.mod.template]window.xml"/>
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+		<Constant name="css" value="[config.ui.skin]css/"/>
+		<Constant name="minChars" value="3"/>
+		<Constant name="maxChars" value="29"/>
+	</Constants>
+
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER"/>
+		</Anchors>
+
+		<Size>
+			<AbsDimension x="675" y="330"/>
+		</Size>
+
+		<!-- Window ctr_window -->
+
+		<window name="ctr_window" bgThemeDataId="block_background_dark">
+			<Size>
+				<AbsDimension x="675" y="330"/>
+			</Size>
+			<title>[ui.pseudoChoice.title]</title>
+		</window>
+
+		<!-- Label lbl_text-->
+
+		<Label name="lbl_text">
+			<Anchors>
+				<Anchor relativePoint="TOP" point="TOP">
+					<AbsDimension x="0" y="60"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="610" y="70"/>
+			</Size>
+			<wordWrap>true</wordWrap>
+			<text>[ui.pseudoChoice.help]</text>
+			<css>[local.css]normal2.css</css>
+			<cssClass>center</cssClass>
+			<hyperlinkEnabled>true</hyperlinkEnabled>
+			<useStyleSheet>true</useStyleSheet>
+			<multiline>true</multiline>
+		</Label>
+
+		<!-- Texture tx_input-->
+
+		<TextureBitmap name="tx_input">
+			<Anchors>
+				<Anchor relativeTo="ctr_window" relativePoint="TOP" point="CENTER">
+					<AbsDimension x="0" y="178"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="270" y="44"/>
+			</Size>
+			<themeDataId>bg_small_border_light</themeDataId>
+		</TextureBitmap>
+
+		<!-- Input input_pseudo-->
+
+		<Input name="input_pseudo">
+			<Anchors>
+				<Anchor relativeTo="ctr_window" relativePoint="TOP" point="CENTER">
+					<AbsDimension x="0" y="187"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="250" y="38"/>
+			</Size>
+			<css>[local.css]small2.css</css>
+			<maxChars>[local.maxChars]</maxChars>
+			<restrictChars>a-z A-Z \-</restrictChars>
+		</Input>
+		
+		<Texture name="tx_info">
+			<Anchors>
+				<Anchor relativeTo="input_pseudo" relativePoint="RIGHT" point="LEFT">
+					<AbsDimension x="10" y="-9"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="20" y="20"/>
+			</Size>
+			<uri>[config.ui.skin]texture/help_icon_normal.png</uri>
+			<Hooks>
+				<onRollOver/>
+				<onRollOut/>
+			</Hooks>
+		</Texture>
+
+		<!-- Label lbl_result-->
+
+		<Label name="lbl_result">
+			<Anchors>
+				<Anchor relativeTo="ctr_window" relativePoint="TOP" point="TOP">
+					<AbsDimension x="0" y="195"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="410" y="25"/>
+			</Size>
+			<css>[local.css]small2.css</css>
+			<cssClass>redcenter</cssClass>
+		</Label>
+
+		<Label name="lbl_warning">
+			<Anchors>
+				<Anchor relativeTo="ctr_window" relativePoint="TOP" point="CENTER">
+					<AbsDimension x="0" y="233"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="610" y="25"/>
+			</Size>
+			<text>[ui.pseudoChoice.warning]</text>
+			<css>[local.css]normal2.css</css>
+			<cssClass>center</cssClass>
+		</Label>
+		
+		<Texture name="tx_warning">
+			<Anchors>
+				<Anchor relativeTo="ctr_window" relativePoint="TOP" point="CENTER">
+					<AbsDimension x="0" y="233"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="25" y="25"/>
+			</Size>
+			<dispatchMessages>true</dispatchMessages>
+			<uri>[config.ui.skin]texture/pin_mark_yellow.png</uri>
+		</Texture>
+		
+		<Texture>
+			<Anchors>
+				<Anchor relativeTo="ctr_window" relativePoint="BOTTOMLEFT" point="BOTTOMLEFT">
+					<AbsDimension x="17" y="-27"/>
+				</Anchor>
+			</Anchors>
+			<uri>[config.ui.skin]common/corner_decoration.png</uri>
+		</Texture>
+		
+		<Texture>
+			<Anchors>
+				<Anchor relativeTo="ctr_window" relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+					<AbsDimension x="65" y="-27"/>
+				</Anchor>
+			</Anchors>
+			<uri>[config.ui.skin]common/corner_decoration.png</uri>
+			<scaleX>-1</scaleX>
+		</Texture>
+		
+		<!-- Button btn_validate-->
+
+		<simpleButton label="[ui.common.validation]" name="btn_validate">
+			<Size>
+				<AbsDimension x="110" y="35"/>
+			</Size>
+			<Anchors>
+				<Anchor relativeTo="ctr_window" relativePoint="BOTTOM" point="BOTTOM">
+					<AbsDimension x="0" y="-34"/>
+				</Anchor>
+			</Anchors>
+			<css>[local.css]button.css</css>
+			<cssClass>small</cssClass>
+			<Hooks>
+				<onRelease/>
+			</Hooks>
+		</simpleButton>
+
+	</Container>
+
+	<Shortcuts>
+		<validUi/>
+	</Shortcuts>
+</Definition>
+

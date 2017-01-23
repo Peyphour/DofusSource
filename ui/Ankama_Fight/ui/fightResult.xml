@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition usePropertiesCache="false">
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]windowWithoutTitleBar.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	<Import url="[config.mod.template]blockDoubleBorder.xml" />
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+		<Constant name="illus_uri" value="[config.ui.skin]illus/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+
+		<Constant name="star_uri0" value="[local.texture]star0.png" />
+		<Constant name="star_uri1" value="[local.texture]star1.png" />
+		<Constant name="star_uri2" value="[local.texture]star2.png" />
+		<Constant name="winner_uri" value="[local.texture]icon_cup.png" />
+		<Constant name="loser_uri" value="[local.texture]icon_cup_broken.png" />
+		<Constant name="pony_uri" value="[local.texture]icon_potion.png" />
+		<Constant name="bgLevel_uri" value="[local.texture]tx_lvl.png" />
+		<Constant name="bgPrestige_uri" value="[local.texture]tx_prestige.png" />
+		<Constant name="heads" value="[config.content.path]gfx/heads/SmallHead_" />
+        <Constant name="lbl_xpTitle_noHonor" value="530"/>
+        <Constant name="lbl_xpTitle_withHonor" value="495"/>
+		<Constant name="bg_height" value="795" type="int" />
+		<Constant name="grid_height" value="620" type="int" />
+		<Constant name="gridBg_height" value="675" type="int" />
+		<Constant name="line_height" value="40" type="int" />
+
+		<Constant name="name_width" value="218" type="int" />
+
+		<Constant name="lbl_xp_short_x" value="545" type="int" />
+		<Constant name="lbl_xp_short_width" value="135" type="int" />
+		<Constant name="lbl_xp_shortHonour_x" value="470" type="int" />
+		<Constant name="lbl_xp_shortHonour_width" value="120" type="int" />
+		<Constant name="lbl_xp_long_x" value="545" type="int" />
+		<Constant name="lbl_xp_long_width" value="120" type="int" />
+	</Constants>
+
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER">
+				<AbsDimension x="0" y="-50" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="1230" y="[local.bg_height]" />
+		</Size>
+		<mouseEnabled>true</mouseEnabled>
+
+		<windowWithoutTitleBar name="fightResultWindow">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1230" y="[local.bg_height]" />
+			</Size>
+			<Content>
+
+				<Texture>
+					<Size>
+						<AbsDimension x="1185" y="60" />
+					</Size>
+					<Anchors>
+						<Anchor relativeTo="ctr_gridResult" relativePoint="BOTTOMLEFT"
+							point="TOPLEFT">
+							<AbsDimension x="0" y="0" />
+						</Anchor>
+					</Anchors>
+					<uri>[local.common]small_dark_background.png</uri>
+				</Texture>
+
+				<Texture>
+					<Anchors>
+						<Anchor relativeTo="ctr_gridResult" relativePoint="BOTTOMLEFT"
+							point="TOPLEFT">
+							<AbsDimension x="-3" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension y="60" />
+					</Size>
+					<uri>[local.common]/corner_decoration.png</uri>
+				</Texture>
+				<Texture>
+					<Anchors>
+						<Anchor relativeTo="ctr_gridResult" relativePoint="BOTTOMRIGHT"
+							point="TOPRIGHT">
+							<AbsDimension x="87" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension y="60" />
+					</Size>
+					<uri>[local.common]/corner_decoration.png</uri>
+					<scaleX>-1</scaleX>
+				</Texture>
+
+				<simpleButton label="[ui.common.close]" name="btn_close2">
+					<Size>
+						<AbsDimension x="168" y="35" />
+					</Size>
+					<Anchors>
+						<Anchor relativeTo="ctr_gridResult" relativePoint="BOTTOM"
+							point="TOP">
+							<AbsDimension x="-43" y="10" />
+						</Anchor>
+					</Anchors>
+				</simpleButton>
+
+				<themeIconButton name="btn_share">
+					<Anchors>
+						<Anchor relativeTo="btn_close2" relativePoint="RIGHT"
+							point="LEFT">
+							<AbsDimension x="8" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="35" y="35" />
+					</Size>
+					<iconUri>[local.texture]/btnIcon/btnIcon_share.png</iconUri>
+				</themeIconButton>
+
+				<!--<Container name="ctr_loading"> -->
+				<!--<Anchors> -->
+				<!--<Anchor relativeTo="btn_close2" relativePoint="RIGHT" point="LEFT"> -->
+				<!--<AbsDimension x="8" y="0"/> -->
+				<!--</Anchor> -->
+				<!--</Anchors> -->
+				<!--<iconButton> -->
+				<!--<uri>[local.assets]btn_orange</uri> -->
+				<!--<Size> -->
+				<!--<AbsDimension x="35" y="35"/> -->
+				<!--</Size> -->
+				<!--</iconButton> -->
+				<!--<Texture> -->
+				<!--<Size> -->
+				<!--<AbsDimension x="35" y="35" /> -->
+				<!--</Size> -->
+				<!--<uri>[local.assets]tx_wait</uri> -->
+				<!--</Texture> -->
+				<!--</Container> -->
+
+				<block name="ctr_fightResult">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="2" y="2" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="1185" y="70" />
+					</Size>
+					<bgAlpha>1</bgAlpha>
+					<Content>
+
+						<TextureBitmap name="tx_result">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="-20" y="-5" />
+								</Anchor>
+							</Anchors>
+							<uri>[local.illus_uri]tx_flag_victory.png</uri>
+						</TextureBitmap>
+
+						<Label name="lbl_result">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="20" y="12" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="265" y="30" />
+							</Size>
+							<cssClass>bold</cssClass>
+							<css>[local.css]titleSmall.css</css>
+						</Label>
+
+						<Label name="lbl_time">
+							<Anchors>
+								<Anchor relativeTo="ctr_stars" point="BOTTOMLEFT"
+									relativePoint="TOPLEFT">
+									<AbsDimension x="0" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="150" y="20" />
+							</Size>
+							<cssClass>boldcenter</cssClass>
+							<css>[local.css]normal2.css</css>
+
+						</Label>
+
+						<Container name="ctr_stars">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="240" y="21" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="95" y="16" />
+							</Size>
+							<bgAlpha>0</bgAlpha>
+
+							<Texture name="tx_star0">
+								<Size>
+									<AbsDimension x="30" y="34" />
+								</Size>
+								<uri>[local.star_uri0]</uri>
+							</Texture>
+
+							<Texture name="tx_star1">
+								<Anchors>
+									<Anchor relativeTo="tx_star0" point="TOPLEFT"
+										relativePoint="TOPRIGHT">
+										<AbsDimension x="0" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="30" y="34" />
+								</Size>
+								<uri>[local.star_uri0]</uri>
+							</Texture>
+
+							<Texture name="tx_star2">
+								<Anchors>
+									<Anchor relativeTo="tx_star1" point="TOPLEFT"
+										relativePoint="TOPRIGHT">
+										<AbsDimension x="0" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="30" y="34" />
+								</Size>
+								<uri>[local.star_uri0]</uri>
+							</Texture>
+
+							<Texture name="tx_star3">
+								<Anchors>
+									<Anchor relativeTo="tx_star2" point="TOPLEFT"
+										relativePoint="TOPRIGHT">
+										<AbsDimension x="0" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="30" y="34" />
+								</Size>
+								<uri>[local.star_uri0]</uri>
+							</Texture>
+
+							<Texture name="tx_star4">
+								<Anchors>
+									<Anchor relativeTo="tx_star3" point="TOPLEFT"
+										relativePoint="TOPRIGHT">
+										<AbsDimension x="0" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="30" y="34" />
+								</Size>
+								<uri>[local.star_uri0]</uri>
+							</Texture>
+
+						</Container>
+
+						<Label name="lbl_sizeMalus">
+							<Anchors>
+								<Anchor relativeTo="ctr_stars" point="TOPLEFT"
+									relativePoint="TOPLEFT">
+									<AbsDimension x="0" y="5" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="150" y="27" />
+							</Size>
+							<visible>false</visible>
+							<css>[local.css]normal.css</css>
+							<cssClass>right</cssClass>
+						</Label>
+
+						<TextureBitmap>
+							<Anchors>
+								<Anchor relativeTo="lbl_sizeMalus" relativePoint="RIGHT"
+									point="LEFT">
+									<AbsDimension x="94" y="18" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="109" y="51" />
+							</Size>
+							<uri>[local.common]bg_dark_radius_slot.png</uri>
+						</TextureBitmap>
+
+						<TextureBitmap name="tx_challenge1Slot">
+							<Anchors>
+								<Anchor relativeTo="lbl_sizeMalus" relativePoint="RIGHT"
+									point="LEFT">
+									<AbsDimension x="100" y="-11" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="48" y="48" />
+							</Size>
+							<uri>[local.texture]slot/slot_dark_background_empty.png</uri>
+						</TextureBitmap>
+						<Texture name="tx_challenge1">
+							<Anchors>
+								<Anchor relativeTo="tx_challenge1Slot" relativePoint="TOPLEFT"
+									point="TOPLEFT">
+									<AbsDimension x="2" y="2" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="44" y="44" />
+							</Size>
+						</Texture>
+						<Texture name="tx_challenge_result1">
+							<Anchors>
+								<Anchor relativeTo="tx_challenge1Slot" relativePoint="TOPLEFT"
+									point="TOPLEFT">
+									<AbsDimension x="0" y="0" />
+								</Anchor>
+							</Anchors>
+                            <Size>
+                                <AbsDimension x="48" y="48" />
+                            </Size>
+							<bgAlpha>0.5</bgAlpha>
+						</Texture>
+
+						<TextureBitmap name="tx_challenge2Slot">
+							<Anchors>
+								<Anchor relativeTo="tx_challenge1Slot" relativePoint="TOPRIGHT"
+									point="TOPLEFT">
+									<AbsDimension x="5" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="48" y="48" />
+							</Size>
+							<uri>[local.texture]slot/slot_dark_background_empty.png</uri>
+						</TextureBitmap>
+						<Texture name="tx_challenge2">
+							<Anchors>
+								<Anchor relativeTo="tx_challenge2Slot" relativePoint="TOPLEFT"
+									point="TOPLEFT">
+									<AbsDimension x="2" y="2" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="44" y="44" />
+							</Size>
+						</Texture>
+						<Texture name="tx_challenge_result2">
+							<Anchors>
+								<Anchor relativeTo="tx_challenge2Slot" relativePoint="TOPLEFT"
+									point="TOPLEFT">
+									<AbsDimension x="2" y="2" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="44" y="44" />
+							</Size>
+							<bgAlpha>0.5</bgAlpha>
+						</Texture>
+
+						<TextureBitmap>
+							<Anchors>
+								<Anchor relativeTo="tx_challenge2Slot" relativePoint="TOPRIGHT"
+									point="TOPLEFT">
+									<AbsDimension x="94" y="-2" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="320" y="52" />
+							</Size>
+							<uri>[local.common]bg_dark_radius_slot.png</uri>
+						</TextureBitmap>
+
+
+						<Grid name="gd_idols">
+							<Anchors>
+								<Anchor relativeTo="tx_challenge2Slot" relativePoint="TOPRIGHT"
+									point="TOPLEFT">
+									<AbsDimension x="100" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="313" y="48" />
+							</Size>
+							<slotWidth>48</slotWidth>
+							<slotHeight>48</slotHeight>
+							<rendererName>SlotGridRenderer</rendererName>
+							<rendererArgs>[local.texture]slot/slot_dark_background_empty.png,,,,,,[local.css]normal2.css,false</rendererArgs>
+							<Hooks>
+								<onSelectItem />
+								<onItemRollOver />
+								<onItemRollOut />
+							</Hooks>
+						</Grid>
+
+
+
+						<Button name="btn_idols">
+							<Common>
+								<Anchors>
+									<Anchor relativeTo="gd_idols" relativePoint="RIGHT"
+										point="LEFT">
+										<AbsDimension x="10" y="0" />
+									</Anchor>
+								</Anchors>
+
+								<TextureBitmap name="tx_idolsBg">
+									<Size>
+										<AbsDimension x="50" y="50" />
+									</Size>
+									<themeDataId>button_yellow_square_normal</themeDataId>
+								</TextureBitmap>
+
+								<Texture>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="13" y="23" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="24" y="19" />
+									</Size>
+									<uri>[local.texture]icon_idol.png</uri>
+								</Texture>
+
+								<Label name="lbl_score">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="4" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="50" y="16" />
+									</Size>
+									<cssClass>darkboldcenter</cssClass>
+									<css>[local.css]normal2.css</css>
+									<verticalAlign>center</verticalAlign>
+									<text>3822</text>
+								</Label>
+							</Common>
+							<State type="OVER">
+								<SetProperties target="tx_idolsBg">
+									<themeDataId>button_yellow_square_over</themeDataId>
+								</SetProperties>
+							</State>
+
+							<State type="PRESSED">
+								<SetProperties target="tx_idolsBg">
+									<themeDataId>button_yellow_square_pressed</themeDataId>
+								</SetProperties>
+							</State>
+						</Button>
+
+
+						<!-- Label name="lbl_titleChallenge"> <Anchors> <Anchor> <AbsDimension 
+							x="906" y="21" /> </Anchor> </Anchors> <Size> <AbsDimension x="140" y="20" 
+							/> </Size> <text>[ui.fightend.challenge][ui.common.colon]</text> <css>[local.css]normal.css</css> 
+							</Label -->
+					</Content>
+				</block>
+
+				<Texture name="tx_gdFighterBg">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="15" y="120" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="1161" y="[local.grid_height]" />
+					</Size>
+					<uri>[local.common]window_green_background.jpg</uri>
+				</Texture>
+
+				<blockDoubleBorder name="ctr_gridResult">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="2" y="72" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="1185" y="[local.gridBg_height]" />
+					</Size>
+					<bgAlpha>0.75</bgAlpha>
+					<Content>
+
+						<Texture name="tx_gridHeader">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="1170" y="30" />
+							</Size>
+							<uri>[local.common]bg_dark.png</uri>
+						</Texture>
+
+
+						<Label name="lbl_level">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="365" y="3" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="50" y="20" />
+							</Size>
+							<text>[ui.common.short.level]</text>
+							<cssClass>medium</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+
+						<Label name="lbl_xp">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="495" y="3" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="180" y="20" />
+							</Size>
+							<text>[ui.fightend.xp]</text>
+							<cssClass>medium</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+
+						<Label name="lbl_honour">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="620" y="3" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="100" y="20" />
+							</Size>
+							<text>[ui.common.honour]</text>
+							<cssClass>medium</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+
+						<Label name="lbl_kamas">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="715" y="3" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="102" y="20" />
+							</Size>
+							<text>[ui.common.kamas]</text>
+							<cssClass>medium</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+
+						<Label name="lbl_objects">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="805" y="3" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="226" y="20" />
+							</Size>
+							<text>[ui.fightend.objects]</text>
+							<cssClass>medium</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+
+						<Grid name="gd_fighters">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="2" y="26" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="1173" y="[local.grid_height]" />
+							</Size>
+							<rendererName>MultiGridRenderer</rendererName>
+							<rendererArgs>updateLine,getLineType,getDataLength,[colors.grid.line]</rendererArgs>
+							<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+							<slotWidth>1170</slotWidth>
+							<slotHeight>[local.line_height]</slotHeight>
+
+							<Container name="ctr_title">
+								<Size>
+									<AbsDimension x="1133" y="[local.line_height]" />
+								</Size>
+
+								<Texture>
+									<Size>
+										<AbsDimension x="1170" y="[local.line_height]" />
+									</Size>
+									<autoGrid>true</autoGrid>
+									<uri>[local.common]bg_dark.png</uri>
+								</Texture>
+
+								<Texture name="tx_titleIcon">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="7" y="5" />
+										</Anchor>
+									</Anchors>
+								</Texture>
+
+								<Label name="lbl_titleName">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="45" y="8" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="215" y="20" />
+									</Size>
+									<cssClass>medium</cssClass>
+									<css>[local.css]small2.css</css>
+								</Label>
+
+								<Texture name="tx_honourVLine">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="601" y="0" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="1" y="31" />
+									</Size>
+									<uri>[local.assets]fightResult_tx_verticalLine</uri>
+									<visible>false</visible>
+								</Texture>
+							</Container>
+
+							<Container name="ctr_fighter">
+								<Size>
+									<AbsDimension x="1173" y="[local.line_height]" />
+								</Size>
+
+								<Texture name="tx_deathPicto">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="10" y="5" />
+										</Anchor>
+									</Anchors>
+									<uri>[local.texture]icon_skull.png</uri>
+									<visible>false</visible>
+								</Texture>
+
+								<TextureBitmap name="tx_fighterHeadSlot">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="50" y="0" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="40" y="40" />
+									</Size>
+									<uri>[local.texture]slot/slot_dark_background_empty.png</uri>
+								</TextureBitmap>
+
+								<Texture name="tx_head">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="50" y="3" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="35" y="35" />
+									</Size>
+								</Texture>
+
+								<Label name="lbl_name">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="96" y="10" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="[local.name_width]" y="20" />
+									</Size>
+									<css>[local.css]small2.css</css>
+									<hyperlinkEnabled>true</hyperlinkEnabled>
+									<useStyleSheet>true</useStyleSheet>
+								</Label>
+
+								<Texture name="tx_arrow">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="265" y="8" />
+										</Anchor>
+									</Anchors>
+									<uri>[local.texture]icon_man.png</uri>
+									<visible>false</visible>
+								</Texture>
+
+								<ProgressBar name="pb_xpGauge">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="358" y="16" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="77" y="10" />
+									</Size>
+									<barColor>[colors.progressbar.green]</barColor>
+									<barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+								</ProgressBar>
+
+				  				<Texture name="tx_level">
+				  					<Anchors>
+				  						<Anchor>
+				  							<AbsDimension x="310" y="6" />
+				  						</Anchor>
+				  					</Anchors>
+				  					<Size>
+				  						<AbsDimension x="62" y="27" />
+				  					</Size>
+				  				</Texture>		
+								<Label name="lbl_level">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="315" y="8" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="45" y="16" />
+									</Size>
+				  					<cssClass>boldcenter</cssClass>
+				  					<css>[local.css]small2.css</css>
+								</Label>
+
+								<Label name="lbl_xpPerso">
+									<Size>
+										<AbsDimension x="135" y="20" />
+									</Size>
+									<cssClass>right</cssClass>
+									<css>[local.css]normal2.css</css>
+								</Label>
+
+								<Texture name="tx_xpBonusPicto">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="450" y="11" />
+										</Anchor>
+									</Anchors>
+									<uri>[local.assets]tx_XPBonus</uri>
+								</Texture>
+
+								<Texture name="tx_honourVLine">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="601" y="0" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="1" y="31" />
+									</Size>
+									<uri>[local.assets]fightResult_tx_verticalLine</uri>
+									<visible>false</visible>
+								</Texture>
+
+								<Label name="lbl_honour">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="615" y="8" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="70" y="20" />
+									</Size>
+									<cssClass>boldright</cssClass>
+									<css>[local.css]normal2.css</css>
+								</Label>
+
+								<Label name="lbl_kamas">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="695" y="8" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="85" y="20" />
+									</Size>
+									<cssClass>boldright</cssClass>
+									<css>[local.css]normal2.css</css>
+								</Label>
+
+								<Grid name="gd_objects" strata="HIGH">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="797" y="3" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="299" y="29" />
+									</Size>
+									<rendererName>SlotGridRenderer</rendererName>
+									<hPadding>3</hPadding>
+									<rendererArgs>,[local.texture]slot/over.png,,,[local.texture]slot/refuseDrop.png,,[local.css]normal2.css,
+										false</rendererArgs>
+									<scrollDisplay>none</scrollDisplay>
+									<vertical>false</vertical>
+									<slotWidth>33</slotWidth>
+									<slotHeight>33</slotHeight>
+									<autoSelectMode>0</autoSelectMode>
+								</Grid>
+
+								<themeIconButton name="btn_seeMore">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="1106" y="5" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="25" y="25" />
+									</Size>
+									<iconUri>[local.texture]btnIcon/btnIcon_plus.png</iconUri>
+								</themeIconButton>
+							</Container>
+						</Grid>
+                        <TextureBitmap>
+                            <Anchors>
+                                <Anchor relativeTo="gd_fighters" point="TOP" relativePoint="TOPLEFT">
+                                    <AbsDimension x="315" y="-25"/>
+                                </Anchor>
+                                <Anchor relativeTo="gd_fighters" point="BOTTOM" relativePoint="BOTTOMLEFT">
+                                    <AbsDimension x="316" y="0"/>
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension y="[local.gridBg_height]"/>
+                            </Size>
+                            <uri>[local.common]list_vertical_line.png</uri>
+                        </TextureBitmap>
+                        <TextureBitmap>
+                            <Anchors>
+                                <Anchor relativeTo="gd_fighters" point="TOP" relativePoint="TOPLEFT">
+                                    <AbsDimension x="440" y="-25"/>
+                                </Anchor>
+                                 <Anchor relativeTo="gd_fighters" point="BOTTOM" relativePoint="BOTTOMLEFT">
+                                     <AbsDimension x="441" y="0"/>
+                                </Anchor>
+                            </Anchors>
+                            <uri>[local.common]list_vertical_line.png</uri>
+                        </TextureBitmap>
+                        <TextureBitmap name="tx_honor_separator">
+                            <Anchors>
+                                <Anchor relativeTo="gd_fighters" point="TOP" relativePoint="TOPLEFT">
+                                    <AbsDimension x="610" y="-25"/>
+                                </Anchor>
+                                <Anchor relativeTo="gd_fighters" point="BOTTOM" relativePoint="BOTTOMLEFT">
+                                    <AbsDimension x="611" y="0"/>
+                                </Anchor>
+                            </Anchors>
+                            <uri>[local.common]list_vertical_line.png</uri>
+                        </TextureBitmap>
+                        <TextureBitmap>
+                            <Anchors>
+                                <Anchor relativeTo="gd_fighters" point="TOP" relativePoint="TOPLEFT">
+                                    <AbsDimension x="690" y="-25"/>
+                                </Anchor>
+                                <Anchor relativeTo="gd_fighters" point="BOTTOM" relativePoint="BOTTOMLEFT">
+                                    <AbsDimension x="691" y="0"/>
+                                </Anchor>
+                            </Anchors>
+                            <uri>[local.common]list_vertical_line.png</uri>
+                        </TextureBitmap>
+                        <TextureBitmap>
+                            <Anchors>
+                                <Anchor relativeTo="gd_fighters" point="TOP" relativePoint="TOPLEFT">
+                                    <AbsDimension x="785" y="-25"/>
+                                </Anchor>
+                                <Anchor relativeTo="gd_fighters" point="BOTTOM" relativePoint="BOTTOMLEFT">
+                                    <AbsDimension x="786" y="0"/>
+                                </Anchor>
+                            </Anchors>
+                            <uri>[local.common]list_vertical_line.png</uri>
+                        </TextureBitmap>
+					</Content>
+				</blockDoubleBorder>
+			</Content>
+			<OverFrameContent>
+				<Window name="ctr_drop">
+					<closeButtonName>btn_closeDrop</closeButtonName>
+					<titleLabelName>lbl_drop</titleLabelName>
+					<Size>
+						<AbsDimension x="440" y="320"/>
+					</Size>
+					<Anchors>
+						<Anchor point="CENTER" relativePoint="CENTER"/>
+					</Anchors>
+					<Content>
+
+						<Block>
+							<Anchors>
+								<Anchor relativePoint="CENTER" point="CENTER"/>
+							</Anchors>
+							<Size>
+								<RelDimension x="0.98" y="0.98"/>
+							</Size>
+						</Block>
+
+						<Grid name="gd_drop">
+							<Anchors>
+								<Anchor relativePoint="CENTER" point="CENTER"/>
+							</Anchors>
+							<Size>
+								<AbsDimension x="373" y="224" />
+							</Size>
+							<autoSelectMode>0</autoSelectMode>
+							<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+							<slotWidth>44</slotWidth>
+							<slotHeight>44</slotHeight>
+							<rendererName>SlotGridRenderer</rendererName>
+							<rendererArgs>[local.texture]slot/emptySlot.png,[local.texture]slot/over.png,[local.texture]slot/selected.png,[local.texture]slot/acceptDrop.png,[local.texture]slot/refuseDrop.png,,[local.css]normal2.css,false</rendererArgs>
+							<scrollDisplay>always</scrollDisplay>
+							<scrollbarOffset>4</scrollbarOffset>
+						</Grid>
+					</Content>
+				</Window>
+			</OverFrameContent>
+		</windowWithoutTitleBar>
+	</Container>
+</Definition>
+

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+
+	<!--Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+	
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="0" y="0" />
+			</Anchor>
+		</Anchors>
+
+		<Container name="Container_Top">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="26" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1096" y="70" />
+			</Size>
+
+			<Texture name="tx_titleBackground">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<RelDimension x="1" y="1" />
+				</Size>
+				<uri>[local.assets]tx_titleBackground</uri>
+				<autoGrid>false</autoGrid>
+			</Texture>
+
+			<Label name="lbl_grimoire_tab">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="48" y="12" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="199" y="37" />
+				</Size>
+				<text>[ui.common.objects]</text>
+				<css>[local.css]title.css</css>
+			</Label>
+
+			<Texture name="tx_decoration">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="813" y="12" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="228" y="38" />
+				</Size>
+				<uri>[local.assets]SPELL_Texture_tx_objects</uri>
+				<autoGrid>false</autoGrid>
+			</Texture>
+			
+		</Container>
+		
+	</Container -->
+</Definition>
+

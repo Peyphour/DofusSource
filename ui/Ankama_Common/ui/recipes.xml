@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition labelDebug="false">
+	<Constants>
+		<Constant name="jobIconPath" value="[config.gfx.path]jobs/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="slot" value="[config.ui.skin]texture/slot/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+
+	<Import url="[config.mod.template.button]themeSimpleCheckBox.xml" />
+	<Import url="[config.mod.template.button]themeLabelCheckBox.xml" />
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+	<Import url="[config.mod.template.button]comboBoxWithBackground.xml" />
+	<Import url="[config.mod.template]block.xml" />
+
+	<Container name="mainCtr">
+		
+		<TextureBitmap>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="-10" y="-12" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="442" y="70" />
+			</Size>
+			<uri>[local.common]list_menu_background.png</uri>
+			<scaleY>-1</scaleY>
+			<visible>false</visible>
+		</TextureBitmap>
+		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="-4" y="-5" />
+				</Anchor>
+			</Anchors>
+				
+			<TextureBitmap>
+				<Size>
+					<AbsDimension x="194" y="39" />
+				</Size>
+				<themeDataId>bg_small_border_dark</themeDataId>
+				<smooth>true</smooth>
+			</TextureBitmap>
+			<Input name="inp_search">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="10" y="7" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="175" y="16" />
+				</Size>
+				<text>[ui.common.search.input]</text>
+				<css>[local.css]normal2.css</css>
+				<maxChars>13</maxChars>
+			</Input>
+	
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="200" y="7" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="90" y="16" />
+				</Size>
+				<cssClass>right</cssClass>
+				<css>[local.css]normal2.css</css>
+				<text>[ui.common.level]</text>
+			</Label>
+	
+			<TextureBitmap>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="290" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="60" y="39" />
+				</Size>
+				<themeDataId>bg_small_border_dark</themeDataId>
+				<smooth>true</smooth>
+			</TextureBitmap>
+			<Input name="inp_minLevelSearch">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="300" y="7" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="40" y="16" />
+				</Size>
+				<cssClass>right</cssClass>
+				<css>[local.css]normal2.css</css>
+				<maxChars>3</maxChars>
+			</Input>
+	
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="345" y="7" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="30" y="16" />
+				</Size>
+				<cssClass>center</cssClass>
+				<css>[local.css]normal2.css</css>
+				<text>[ui.chat.to]</text>
+			</Label>
+	
+			<TextureBitmap>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="368" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="60" y="39" />
+				</Size>
+				<themeDataId>bg_small_border_dark</themeDataId>
+				<smooth>true</smooth>
+			</TextureBitmap>
+			<Input name="inp_maxLevelSearch">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="378" y="7" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="40" y="20" />
+				</Size>
+				<cssClass>right</cssClass>
+				<css>[local.css]normal2.css</css>
+				<maxChars>3</maxChars>
+			</Input>
+		</Container>
+
+		<comboBoxWithBackground name="cb_type" width="430" height="39" strata="TOP">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="-5" y="26" />
+				</Anchor>
+			</Anchors>
+			<backgroundTexture>bg_small_border_dark</backgroundTexture>
+		</comboBoxWithBackground>
+		
+		<block>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="-5" y="70" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="437" y="552" />
+			</Size>
+		</block>
+		
+		<Grid name="gd_recipes">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="76" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="427" y="540" />
+			</Size>
+			<rendererName>InlineXmlGridRenderer</rendererName>
+			<rendererArgs>updateRecipeLine,[colors.grid.line]</rendererArgs>
+			<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+			<scrollDisplay>always</scrollDisplay>
+			<slotWidth>412</slotWidth>
+			<slotHeight>108</slotHeight>
+
+			<Container name="ctr_main">
+				<Button name="btn_recipe">					
+					<Common>			
+						<Size>
+							<AbsDimension x="416" y="108" />
+						</Size>
+					
+						<Texture name="tx_background">
+							<Size>
+								<AbsDimension x="409" y="108" />
+							</Size>
+							<uri>[local.assets]tx_invisible</uri>
+							<buttonMode>true</buttonMode>
+						</Texture>
+		
+						<Texture name="tx_slot_background">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="2" y="9" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="46" y="90" />
+							</Size>
+							<uri>[local.slot]slot_dark_background_empty.png</uri>
+						</Texture>
+						
+					</Common>
+					
+					<State type="OVER">
+						<SetProperties target="btn_recipe">
+							<bgColor>[colors.grid.over]</bgColor>
+						</SetProperties>
+					</State>
+				</Button>
+				
+				<Slot name="slot_craftedItem">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="5" y="34" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<forcedBackGroundIconUri>[local.assets]tx_invisible</forcedBackGroundIconUri>
+					<emptyTexture>[local.assets]tx_invisible</emptyTexture>
+					<allowDrag>false</allowDrag>
+				</Slot>
+
+				<Label name="lbl_maxCraftQuantity">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="77" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="50" y="16" />
+					</Size>
+					<cssClass>center</cssClass>
+					<css>[local.css]small2.css</css>
+				</Label>
+
+				<Label name="lbl_name">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="52" y="7" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="345" y="16" />
+					</Size>
+					<cssClass>bold</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+
+				<Label name="lbl_job">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="52" y="28" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="200" y="16" />
+					</Size>
+					<css>[local.css]small2.css</css>
+				</Label>
+
+				<Label name="lbl_xp">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="252" y="28" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="145" y="16" />
+					</Size>
+					<cssClass>right</cssClass>
+					<css>[local.css]small2.css</css>
+				</Label>
+
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="50" y="54" />
+						</Anchor>
+					</Anchors>
+
+					<Container>
+						<Slot name="slot1">
+							<Size>
+								<AbsDimension x="44" y="44" />
+							</Size>
+							<allowDrag>false</allowDrag>
+							<css>[local.css]normal2.css</css>
+							<forcedBackGroundIconUri>[local.slot]slot_dark_background_empty.png</forcedBackGroundIconUri>
+							<emptyTexture>[local.assets]tx_invisible</emptyTexture>
+						</Slot>
+						<Texture name="tx_ingredientStateIcon1">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24" y="24" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="18" y="17" />
+							</Size>
+						</Texture>
+					</Container>
+
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="46" y="0" />
+							</Anchor>
+						</Anchors>
+						<Slot name="slot2">
+							<Size>
+								<AbsDimension x="44" y="44" />
+							</Size>
+							<allowDrag>false</allowDrag>
+							<css>[local.css]normal2.css</css>
+							<forcedBackGroundIconUri>[local.slot]slot_dark_background_empty.png</forcedBackGroundIconUri>
+							<emptyTexture>[local.assets]tx_invisible</emptyTexture>
+						</Slot>
+						<Texture name="tx_ingredientStateIcon2">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24" y="24" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="18" y="17" />
+							</Size>
+						</Texture>
+					</Container>
+
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="92" y="0" />
+							</Anchor>
+						</Anchors>
+						<Slot name="slot3">
+							<Size>
+								<AbsDimension x="44" y="44" />
+							</Size>
+							<allowDrag>false</allowDrag>
+							<css>[local.css]normal2.css</css>
+							<forcedBackGroundIconUri>[local.slot]slot_dark_background_empty.png</forcedBackGroundIconUri>
+							<emptyTexture>[local.assets]tx_invisible</emptyTexture>
+						</Slot>
+						<Texture name="tx_ingredientStateIcon3">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24" y="24" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="18" y="17" />
+							</Size>
+						</Texture>
+					</Container>
+
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="138" y="0" />
+							</Anchor>
+						</Anchors>
+						<Slot name="slot4">
+							<Size>
+								<AbsDimension x="44" y="44" />
+							</Size>
+							<allowDrag>false</allowDrag>
+							<css>[local.css]normal2.css</css>
+							<forcedBackGroundIconUri>[local.slot]slot_dark_background_empty.png</forcedBackGroundIconUri>
+							<emptyTexture>[local.assets]tx_invisible</emptyTexture>
+						</Slot>
+						<Texture name="tx_ingredientStateIcon4">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24" y="24" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="18" y="17" />
+							</Size>
+						</Texture>
+					</Container>
+
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="184" y="0" />
+							</Anchor>
+						</Anchors>
+						<Slot name="slot5">
+							<Size>
+								<AbsDimension x="44" y="44" />
+							</Size>
+							<allowDrag>false</allowDrag>
+							<css>[local.css]normal2.css</css>
+							<forcedBackGroundIconUri>[local.slot]slot_dark_background_empty.png</forcedBackGroundIconUri>
+							<emptyTexture>[local.assets]tx_invisible</emptyTexture>
+						</Slot>
+						<Texture name="tx_ingredientStateIcon5">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24" y="24" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="18" y="17" />
+							</Size>
+						</Texture>
+					</Container>
+
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="230" y="0" />
+							</Anchor>
+						</Anchors>
+						<Slot name="slot6">
+							<Size>
+								<AbsDimension x="44" y="44" />
+							</Size>
+							<allowDrag>false</allowDrag>
+							<css>[local.css]normal2.css</css>
+							<forcedBackGroundIconUri>[local.slot]slot_dark_background_empty.png</forcedBackGroundIconUri>
+							<emptyTexture>[local.assets]tx_invisible</emptyTexture>
+						</Slot>
+						<Texture name="tx_ingredientStateIcon6">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24" y="24" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="18" y="17" />
+							</Size>
+						</Texture>
+					</Container>
+
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="276" y="0" />
+							</Anchor>
+						</Anchors>
+						<Slot name="slot7">
+							<Size>
+								<AbsDimension x="44" y="44" />
+							</Size>
+							<allowDrag>false</allowDrag>
+							<css>[local.css]normal2.css</css>
+							<forcedBackGroundIconUri>[local.slot]slot_dark_background_empty.png</forcedBackGroundIconUri>
+							<emptyTexture>[local.assets]tx_invisible</emptyTexture>
+						</Slot>
+						<Texture name="tx_ingredientStateIcon7">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24" y="24" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="18" y="17" />
+							</Size>
+						</Texture>
+					</Container>
+
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="322" y="0" />
+							</Anchor>
+						</Anchors>
+						<Slot name="slot8">
+							<Size>
+								<AbsDimension x="44" y="44" />
+							</Size>
+							<allowDrag>false</allowDrag>
+							<css>[local.css]normal2.css</css>
+							<forcedBackGroundIconUri>[local.slot]slot_dark_background_empty.png</forcedBackGroundIconUri>
+							<emptyTexture>[local.assets]tx_invisible</emptyTexture>
+						</Slot>
+						<Texture name="tx_ingredientStateIcon8">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24" y="24" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="18" y="17" />
+							</Size>
+						</Texture>
+					</Container>
+
+				</Container>
+
+		        <themeIconButton name="btn_getItems">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="380" y="4" />
+						</Anchor>
+					</Anchors>
+		            <Size>
+		                <AbsDimension x="21" y="21" />
+		            </Size>
+		            <iconUri>[local.texture]btnIcon/btnIcon_arrowClaim.png</iconUri>
+					<visible>false</visible>
+		        </themeIconButton>
+
+			</Container>
+		</Grid>
+
+		<Label name="lbl_noRecipe">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="10" y="323" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="390" y="20" />
+			</Size>
+			<cssClass>center</cssClass>
+			<css>[local.css]normal2.css</css>
+			<text>[ui.craft.noRecipeFound]</text>
+		</Label>
+
+		<themeLabelCheckBox name="chk_possibleRecipes">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="3" y="629"/>
+				</Anchor>
+			</Anchors>
+			<labelWidth>390</labelWidth>
+			<text>[ui.craft.possibleRecipes]</text>
+		</themeLabelCheckBox>
+
+	</Container>
+</Definition>

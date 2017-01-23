@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+	
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+	   	<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="illus" value="[config.content.path]gfx/illusUi/" />
+	</Constants>
+	
+	<Container name="mainCtr">
+		<Size>
+            <AbsDimension x="442" y="717" />
+        </Size>
+		<Anchors>
+			<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT">
+				<AbsDimension x="16" y="-155" />
+			</Anchor>
+		</Anchors>
+		<mouseEnabled>true</mouseEnabled>
+		
+		<!-- background -->
+        <Texture>
+            <Size>
+                <AbsDimension x="442" y="717" />
+            </Size>
+            <autoGrid>true</autoGrid>
+            <uri>[local.assets]tx_generalBackgroundWithTitle</uri>
+        </Texture>
+        
+				
+		<Texture name="tx_icon">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="20" y="-94" />
+				</Anchor>
+			</Anchors>
+        </Texture>
+		
+		<EntityDisplayer name="merchantLook" strata="LOW">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="-105" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="165" y="200" />
+			</Size>
+		</EntityDisplayer>
+        
+		<!-- Titre -->
+        <Label name="lbl_title">
+            <Anchors> 
+                <Anchor>
+                    <AbsDimension x="22" y="15" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="379" y="35" />
+            </Size>
+            <css>[local.css]title.css</css>
+        </Label>
+        
+        
+		<!-- Categorie -->
+        <Label>
+            <Anchors> 
+                <Anchor>
+                    <AbsDimension x="24" y="60" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="130" y="21" />
+            </Size>
+            <css>[local.css]normal.css</css>
+            <text>[ui.common.category]</text>
+        </Label>
+        
+		<!-- Filter and search button -->
+         
+        <ComboBox name="cb_category" strata="TOP">
+        	<Anchors> 
+                <Anchor>
+                    <AbsDimension x="160" y="60" />
+                </Anchor>
+            </Anchors>
+        	<Size>
+				<AbsDimension x="231" y="25" />
+			</Size>
+			<autoSelectMode>0</autoSelectMode>
+			<buttonTexture>[local.assets]btn_combobox</buttonTexture>
+			<listTexture>[local.assets]tx_combobox</listTexture>
+			<rendererArgs>[local.css]normal.css,,,[colors.grid.over],[colors.grid.selected]</rendererArgs>
+			<scrollBarCss>[local.css]scrollBar.css</scrollBarCss>
+			<Hooks>
+				<onSelectItem />
+			</Hooks>
+		</ComboBox>
+         
+        <Container name="searchCtr">
+        	<visible>false</visible>
+        	<Anchors> 
+                <Anchor>
+                    <AbsDimension x="20" y="60" />
+                </Anchor>
+            </Anchors>
+            <Texture>
+				<Size>
+					<AbsDimension x="371" y="25" />
+				</Size>
+				<autoGrid>true</autoGrid>
+				<uri>[local.assets]tx_inputBackground</uri>
+			</Texture>
+            
+            <Input name="searchInput">
+				<Anchors> 
+					<Anchor>
+						<AbsDimension x="3" y="0" />
+					</Anchor>
+				</Anchors>
+            	<Size>
+					<AbsDimension x="365" y="21" />
+				</Size>
+            	<css>[local.css]normal.css</css>
+            </Input>
+        </Container>
+         
+         <iconButton name="btnSearch">
+        	<Anchors> 
+                <Anchor>
+                    <AbsDimension x="394" y="60" />
+                </Anchor>
+            </Anchors>
+            <Size>
+            	<AbsDimension x="25" y="25" />
+            </Size>
+            <checkBox>true</checkBox>
+        	<uri>[local.assets]btn_recherche</uri>
+			<checkBox>true</checkBox>
+        </iconButton>
+        
+        <Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="22" y="92" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="400" y="579" />
+			</Size>
+			<autoGrid>true</autoGrid>
+			<uri>[local.assets]tx_blockBackground</uri>
+		</Texture>
+		 
+		 <!-- Filter's buttons >
+		 
+		<Container name="ctr_filtersBtn">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="437" y="38" />
+				</Anchor>
+			</Anchors>
+
+			<iconButton strata="LOW" name="btnAll">
+				<Size>
+					<AbsDimension x="37" y="30" />
+				</Size>
+				<radioGroup>filterStock</radioGroup>
+				<radioMode>true</radioMode>
+				<uri>[local.assets]inventaire_tx_EtoileDroite</uri>
+				<Hooks>
+					<onRelease />
+					<onRollOver />
+					<onRollOut />
+				</Hooks>
+			</iconButton>
+			
+			<iconButton strata="LOW" name="btnEquipable">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="37" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="37" y="30" />
+				</Size>
+				<radioGroup>filterStock</radioGroup>
+				<radioMode>true</radioMode>
+				<selected>false</selected>
+				<uri>[local.assets]inventaire_tx_EquipementDroite</uri>
+				<Hooks>
+					<onRelease />
+					<onRollOver />
+					<onRollOut />
+				</Hooks>
+			</iconButton>
+
+			<iconButton strata="LOW" name="btnConsumables">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="74" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="37" y="30" />
+				</Size>
+				<radioGroup>filterStock</radioGroup>
+				<radioMode>true</radioMode>
+				<uri>[local.assets]inventaire_tx_consommableDroite</uri>
+				<Hooks>
+					<onRelease />
+					<onRollOver />
+					<onRollOut />
+				</Hooks>
+			</iconButton>
+
+			<iconButton strata="LOW" name="btnRessources">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="111" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="37" y="30" />
+				</Size>
+				<radioGroup>filterStock</radioGroup>
+				<radioMode>true</radioMode>
+				<uri>[local.assets]inventaire_tx_RessourceDroite</uri>
+				<Hooks>
+					<onRelease />
+					<onRollOver />
+					<onRollOut />
+				</Hooks>
+			</iconButton>
+		</Container-->
+        
+        <!-- Le bouton X -->
+        
+        <iconButton name="btnClose">
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" />
+			</Anchors>
+			<Size>
+				<AbsDimension x="57" y="36" />
+			</Size>
+			<uri>[local.assets]btn_cornerCross</uri>
+        </iconButton>
+		
+		<!-- La grille du mode marchand du personnage (celle de gauche) -->
+		
+		<Grid name="gd_shop">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="23" y="109" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="391" y="545" />
+			</Size>
+			<autoSelectMode>0</autoSelectMode>
+			<slotWidth>367</slotWidth>
+			<slotHeight>49</slotHeight>
+			<rendererName>InlineXmlGridRenderer</rendererName>
+			<rendererArgs>updateItemLine,[colors.grid.line]</rendererArgs>
+			<scrollDisplay>always</scrollDisplay>
+			<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+			<Hooks>
+				<onSelectItem />
+			</Hooks>
+			
+
+			<Button name="btn_item">
+				<Common>
+					<Size>
+						<AbsDimension x="367" y="49" />
+					</Size>
+					<mouseEnabled>true</mouseEnabled>
+					<mouseChildren>true</mouseChildren>
+							
+					<Texture>
+						<Size>
+							<AbsDimension x="367" y="49" />
+						</Size>
+						<bgColor>0</bgColor>
+						<bgAlpha>0</bgAlpha>
+					</Texture>
+
+					<!-- Label lbl_ItemName-->
+
+					<Label name="lbl_ItemName">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="51" y="10" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="193" y="20" />
+						</Size>
+						<css>[local.css]normal.css</css>
+					</Label>
+
+					<!-- Label lbl_ItemPrice-->
+
+					<Label name="lbl_ItemPrice">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="242" y="10" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="120" y="20" />
+						</Size>
+						<css>[local.css]normal.css</css>
+						<cssClass>right</cssClass>
+					</Label>
+
+					<!-- Texture tx_backgroundItem-->
+
+					<Texture name="tx_backgroundItem">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="6" y="3" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="44" y="44" />
+						</Size>
+						<uri>[local.assets]tx_slot</uri>
+						<autoGrid>true</autoGrid>
+					</Texture>
+
+					 <!-- Slot slot_icon-->
+
+					<Slot name="slot_item">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="6" y="3" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="44" y="44" />
+						</Size>
+						<css>[local.css]normal.css</css>
+					</Slot>					
+				</Common>
+
+				<State type="OVER">
+					<SetProperties target="btn_item">
+						<bgColor>[colors.grid.over]</bgColor>
+					</SetProperties>
+				</State>
+
+				<State type="SELECTED">
+					<SetProperties target="btn_item">
+						<bgColor>[colors.grid.selected]</bgColor>
+					</SetProperties>
+				</State>
+
+				<State type="SELECTED_OVER">
+					<SetProperties target="btn_item">
+						<bgColor>[colors.grid.selected]</bgColor>
+					</SetProperties>
+				</State>
+			</Button>
+		</Grid>
+		
+		
+		        
+		<!-- Nombre d'objet vendu / Quantité max vendable pour un même compte -->
+		<Label name="lbl_quantityObject">
+			<Anchors> 
+				<Anchor>
+					<AbsDimension x="26" y="677" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="355" y="20" />
+			</Size>
+			<css>[local.css]normal.css</css>
+			<cssClass>right</cssClass>
+			<Hooks>
+				<onRollOver />
+				<onRollOut />
+			</Hooks>
+        </Label>
+        
+        <iconButton name="btn_info">
+        	<Anchors> 
+                <Anchor>
+                    <AbsDimension x="394" y="677" />
+                </Anchor>
+            </Anchors>
+            <Size>
+            	<AbsDimension x="25" y="25" />
+            </Size>
+        	<uri>[local.assets]btn_Interrogation_square</uri>
+        	<Hooks>
+        		<onRollOver />
+        	</Hooks>
+        </iconButton>
+		
+		
+	</Container>
+	
+	<Container name="centerCtr">
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="72" y="315" />
+			</Anchor>
+		</Anchors>
+		<mouseEnabled>true</mouseEnabled>
+	
+		<Size>
+			<AbsDimension x="505" y="80" />
+		</Size>
+		
+		<shadowColor>[colors.ui.shadow]</shadowColor>
+		
+
+		<Texture>
+			<Size>
+				<AbsDimension x="505" y="80" />
+			</Size>
+			<uri>[local.assets]tx_generalBackground</uri>
+			<autoGrid>true</autoGrid>
+		</Texture>
+		
+
+		<simpleButton label="-" name="btn_center"   >
+			<Anchors>
+				<Anchor point="CENTER" relativePoint="CENTER" />
+			</Anchors>
+			<Size>
+				<AbsDimension x="287" y="30" />
+			</Size>
+			<css>[local.css]button.css</css>
+			<Hooks>
+				<onRelease />
+			</Hooks>
+		</simpleButton>
+		
+	</Container>
+	
+</Definition>

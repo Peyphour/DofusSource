@@ -1,0 +1,102 @@
+package com.ankamagames.dofus.datacenter.world
+{
+   public class WorldMap
+   {
+       
+      
+      public function WorldMap()
+      {
+         super();
+      }
+      
+      public function get id() : int
+      {
+         return new int();
+      }
+      
+      public function get nameId() : uint
+      {
+         return new uint();
+      }
+      
+      public function get origineX() : int
+      {
+         return new int();
+      }
+      
+      public function get origineY() : int
+      {
+         return new int();
+      }
+      
+      public function get mapWidth() : Number
+      {
+         return new Number();
+      }
+      
+      public function get mapHeight() : Number
+      {
+         return new Number();
+      }
+      
+      public function get horizontalChunck() : uint
+      {
+         return new uint();
+      }
+      
+      public function get verticalChunck() : uint
+      {
+         return new uint();
+      }
+      
+      public function get viewableEverywhere() : Boolean
+      {
+         return new Boolean();
+      }
+      
+      public function get minScale() : Number
+      {
+         return new Number();
+      }
+      
+      public function get maxScale() : Number
+      {
+         return new Number();
+      }
+      
+      public function get startScale() : Number
+      {
+         return new Number();
+      }
+      
+      public function get centerX() : int
+      {
+         return new int();
+      }
+      
+      public function get centerY() : int
+      {
+         return new int();
+      }
+      
+      public function get totalWidth() : int
+      {
+         return new int();
+      }
+      
+      public function get totalHeight() : int
+      {
+         return new int();
+      }
+      
+      public function get zoom() : Vector.<String>
+      {
+         return new Vector.<String>();
+      }
+      
+      public function get name() : String
+      {
+         return null;
+      }
+   }
+}

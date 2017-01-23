@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition modal="true" usePropertiesCache="false">
+    <Import url="[config.mod.template.button]iconButton.xml" />
+    <Import url="[config.mod.template]windowWithoutTitleBar.xml" />
+    
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="btn.css" value="[local.css]button.css" />
+		<Constant name="btn.file" value="[local.assets]btn_orange" />
+		<Constant name="lbl.css" value="[local.css]normal.css" />
+		
+		<Constant name="txBtnBg_normal" value="button_normal" />
+		<Constant name="txBtnBg_over" value="button_over" />
+		<Constant name="txBtnBg_pressed" value="button_pressed" />
+	</Constants>
+
+	<Container name="imgPopCtr">
+		<Anchors>		
+			<Anchor relativePoint="CENTER" point="CENTER" />
+		</Anchors>
+		
+		<Size>
+			<AbsDimension x="550"/>
+		</Size>
+		
+		<shadowColor>[colors.ui.shadow]</shadowColor>
+		<mouseEnabled>true</mouseEnabled>
+		
+		<windowWithoutTitleBar name="popup">
+			<Size>
+				<RelDimension x="1" y="1"/>
+			</Size>
+			<Anchors>
+				<Anchor point="CENTER" relativePoint="CENTER" />
+			</Anchors>
+			
+			<Content>	
+				<Texture name="tx_image">
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<AbsDimension x="7" y="73" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="135" y="125"/>
+					</Size>
+					<autoGrid>false</autoGrid>
+				</Texture>				
+								
+				<Label name="lbl_content">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="150" y="63" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="345" y="125"/>
+					</Size>
+					<css>[local.css]normal2.css</css>
+					<cssClass>center</cssClass>
+					<border>true</border>
+				</Label>
+	
+				<Container name="ctr_buttons">
+					<Anchors>
+						<Anchor relativeTo="tx_background_popup" relativePoint="BOTTOM" point="BOTTOM">
+							<AbsDimension x="0" y="-45" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension y="27"/>
+					</Size>
+				</Container>
+
+			</Content>
+		</windowWithoutTitleBar>
+	</Container>
+</Definition>

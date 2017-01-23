@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+    <Constants>
+        <Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+        <Constant name="css" value="[config.ui.skin]css/"/>
+        <Constant name="common" value="[config.ui.skin]common/"/>
+    </Constants>
+
+    <Import url="[config.mod.template.button]simpleButton.xml"/>
+    <Import url="[config.mod.template.button]iconButton.xml"/>
+    <Import url="[config.mod.template.button]labelCheckBox.xml"/>
+    <Import url="[config.mod.template.button]themeLabelCheckBox.xml"/>
+    <Import url="[config.mod.template.button]comboBoxWithBackground.xml"/>
+    <Import url="[config.mod.template]block.xml"/>
+
+    <Container name="mainCtr">
+        <TextureBitmap name="tx_bgForeground">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="11" y="65"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="780" y="370"/>
+            </Size>
+            <themeDataId>bg_small_border_light</themeDataId>
+        </TextureBitmap>
+
+        <Grid name="grid">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="20" y="75"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="765" y="350"/>
+            </Size>
+            <slotWidth>755</slotWidth>
+            <slotHeight>35</slotHeight>
+            <scrollDisplay>always</scrollDisplay>
+            <rendererName>InlineXmlGridRenderer</rendererName>
+            <rendererArgs>updateConfigLine,[colors.grid.line],[colors.grid.bg]</rendererArgs>
+            <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+            <Hooks>
+                <onSelectItem/>
+            </Hooks>
+
+            <Container name="shortcutLine">
+                <Size>
+                    <AbsDimension x="755" y="35"/>
+                </Size>
+
+                <Label name="lblDescription">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="10" y="6"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="450" y="16"/>
+                    </Size>
+                    <css>[local.css]normal2.css</css>
+                </Label>
+
+                <themeLabelCheckBox name="btn_deactivateShortcuts">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="480" y="4"/>
+                        </Anchor>
+                    </Anchors>
+                    <text>[ui.option.activeShortcuts]</text>
+                </themeLabelCheckBox>
+
+                <!-- simpleButton btnAssoc-->
+
+                <simpleButton name="btnAssoc">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="480" y="2"/>
+                        </Anchor>
+                    </Anchors>
+
+                    <Size>
+                        <AbsDimension x="260" y="31"/>
+                    </Size>
+                </simpleButton>
+            </Container>
+        </Grid>
+
+        <block>
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="18" y="0"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="765" y="60"/>
+            </Size>
+            <Content>
+                <Label name="lbl_keyboard">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="20" y="12"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="320" y="20"/>
+                    </Size>
+                    <text>[ui.option.keyboard]</text>
+                    <cssClass>whitebold</cssClass>
+                    <css>[local.css]normal2.css</css>
+                </Label>
+
+                <comboBoxWithBackground name="cbKeyboard" width="400" height="38">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="345" y="5"/>
+                        </Anchor>
+                    </Anchors>
+                    <Hooks>
+                        <onSelectItem/>
+                    </Hooks>
+                </comboBoxWithBackground>
+            </Content>
+            <contentStrata>TOP</contentStrata>
+        </block>
+
+        <simpleButton label="[ui.option.clearShortcuts]" name="btn_clearShortcuts">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="20" y="430"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="765" y="23"/>
+            </Size>
+            <css>[local.css]normal2.css</css>
+            <cssClass>greenunderlinecenter</cssClass>
+            <noBackground>true</noBackground>
+        </simpleButton>
+
+    </Container>
+</Definition>
+

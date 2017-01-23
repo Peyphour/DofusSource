@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+
+  	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       	<Constant name="css" value="[config.ui.skin]css/" />
+   	</Constants>
+   	
+	<Container name="mainCtr">
+		<Button name="btn_item">
+			<Common>
+				<Size>
+					<AbsDimension x="342" y="49" />
+				</Size>
+				<selected>false</selected>
+				<radioGroup>btnItemGrid</radioGroup>
+				<radioMode>true</radioMode>
+				<linkedTo>slot_item</linkedTo>
+				
+				<!-- Label lbl_ItemName-->
+		
+				<Label name="lbl_ItemName">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="56" y="11" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="283" y="20" />
+					</Size>
+					<css>[local.css]normal.css</css>
+				</Label>
+		
+				<!-- Texture tx_backgroundItem-->
+		
+				<Texture name="tx_backgroundItem">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="5" y="3" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="44" y="44" />
+					</Size>
+					<uri>[local.assets]tx_slot</uri>
+					<autoGrid>true</autoGrid>
+				</Texture>
+		
+				 <!-- Slot slot_icon-->
+		
+				<Slot name="slot_item">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="5" y="3" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="44" y="44" />
+					</Size>
+					<css>[local.css]normal.css</css>
+					<Hooks>
+						<onRollOver />
+						<onRollOut />
+						<onRightClick />
+					</Hooks>
+				</Slot>
+				
+			</Common>	
+			
+			<Hooks>
+				<onRollOver />
+				<onRollOut />
+			</Hooks>
+			
+		</Button>
+		
+	</Container>
+	
+</Definition>

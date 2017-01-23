@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition modal="true" labelDebug="false">
+   <Constants>
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       <Constant name="css" value="[config.ui.skin]css/" />
+   </Constants>
+
+    <Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template]button/themeIconButton.xml" />
+    <Import url="[config.mod.template]windowWithoutTitleBar.xml"/>
+
+	<Container name="mainCtr">
+		
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER" />
+		</Anchors>
+		
+		<windowWithoutTitleBar name="popup">
+			<Size>
+				<AbsDimension x="550" y="205" />
+			</Size>
+		</windowWithoutTitleBar>
+
+		<Label name="lbl_description">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="25" y="70" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="500" y="50" />
+			</Size>
+			<wordWrap>true</wordWrap>
+			<cssClass>center</cssClass>
+			<css>[local.css]normal2.css</css>
+		</Label>
+		
+		<TextureBitmap>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="65" y="120" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="380" y="40" />
+			</Size>
+			<themeDataId>bg_small_border_light</themeDataId>
+		</TextureBitmap>
+
+		<InputComboBox name="lbl_input">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="75" y="128" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="360" y="25" />
+			</Size>
+            <css>[local.css]normal2.css</css>
+			<buttonTexture>arrow_small_bottom</buttonTexture>
+            <listTexture>[local.common]bg_listbox.png</listTexture>
+            <rendererArgs>[local.css]normal2.css,,,[colors.grid.over],[colors.grid.selected]</rendererArgs>
+            <scrollBarCss>[local.css]scrollBar.css</scrollBarCss>
+		</InputComboBox>
+
+		<themeIconButton name="btn_emptyOptionHistory">
+			<Anchors> 
+				<Anchor>
+					<AbsDimension x="35" y="127" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="28" y="28" />
+			</Size>
+			<iconUri>[local.texture]btnIcon/btnIcon_cross.png</iconUri>
+		</themeIconButton>
+
+		<simpleButton name="btn_ok">
+			<Anchors>
+				<Anchor>
+                    <AbsDimension x="455" y="126" />
+				</Anchor>
+			</Anchors>			
+			<Size>
+				<AbsDimension x="60" y="30" />
+			</Size>
+			<label>[ui.common.ok]</label>
+		</simpleButton>
+		
+	</Container>
+</Definition>

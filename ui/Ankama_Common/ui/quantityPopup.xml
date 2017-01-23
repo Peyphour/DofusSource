@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition usePropertiesCache="false" labelDebug="false">
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+	
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template]windowWithoutTitleBar.xml"/>
+	
+	<Container>
+		<Size>
+			<AbsDimension x="400" y="87" />
+		</Size>
+		
+		<mouseEnabled>true</mouseEnabled>
+		<shadowColor>[colors.ui.shadow]</shadowColor>
+		
+		<windowWithoutTitleBar noCloseButton="true" name="popup">
+			<Size>
+				<RelDimension x="1" y="1"/>
+			</Size>
+			<Content>
+						
+				<TextureBitmap>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="130" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="130" y="36" />
+					</Size>	
+					<themeDataId>bg_small_border_dark</themeDataId>
+				</TextureBitmap>
+				
+				<Input name="inputQty">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="142" y="7" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="106" y="16" />
+					</Size>
+					<css>[local.css]normal2.css</css>
+					<cssClass>right</cssClass>
+					<restrict>0-9.</restrict>
+					<maxChars>12</maxChars>
+					<numberAutoFormat>true</numberAutoFormat>
+				</Input>
+				
+				<simpleButton name="btnMin">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="7" y="5" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="60" y="26" />
+					</Size>
+					<label>[ui.common.minWord]</label>
+					<cssClass>small</cssClass>
+				</simpleButton>
+				
+				<simpleButton name="btnMax">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="70" y="5" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="60" y="26" />
+					</Size>
+					<label>[ui.common.maxWord]</label>
+					<cssClass>small</cssClass>
+				</simpleButton>
+				
+				<simpleButton name="btnOk">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="260" y="5" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="90" y="26" />
+					</Size>
+					<label>[ui.common.ok]</label>
+					<cssClass>small</cssClass>
+				</simpleButton>
+			
+			</Content>
+		</windowWithoutTitleBar>
+		
+		
+		
+	</Container>
+</Definition>

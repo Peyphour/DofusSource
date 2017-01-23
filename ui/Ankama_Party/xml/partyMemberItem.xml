@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	
+   <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       <Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+				
+		<Constant name="guest_uri" value="[local.texture]groupIcon/grey_right_interrogation.png" />
+		<Constant name="guest_companion_uri" value="[local.texture]groupIcon/blue_right_interrogation.png" />
+		<Constant name="guest_leader_uri" value="[local.texture]groupIcon/yellow_right_interrogation.png" />
+		<Constant name="follow_uri" value="[local.texture]groupIcon/grey_left_arrow.png" />
+		<Constant name="follow_companion_uri" value="[local.texture]groupIcon/blue_left_arrow.png" />
+		<Constant name="follow_leader_uri" value="[local.texture]groupIcon/yellow_left_arrow.png" />
+   </Constants>
+
+	<Container>
+		<Container name="ctr_main">
+			<Button name="member_item">
+				
+				<Common>
+					<Size>
+						<AbsDimension x="60" y="61" />
+					</Size>
+					
+					<Texture name="tx_bg">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="1" y="1" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="58" y="60" />
+						</Size>
+						<uri>[local.texture]slot/lightSlot.jpg</uri>
+					</Texture>
+					
+					<EntityDisplayer name="ed_player">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="16" y="3" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="50" y="56" />
+						</Size>
+						<useFade>false</useFade>
+					</EntityDisplayer>
+					
+					<ProgressBar name="pb_lifePoints">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="2" y="54" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="56" y="6" />
+						</Size>
+						<barColor>[colors.progressbar.lifePoints]</barColor>
+					</ProgressBar>
+					
+					<Texture name="tx_guest">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="40" y="2" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="18" y="17" />
+						</Size>
+						<uri>[local.texture]groupIcon/grey_right_interrogation.png</uri>
+					</Texture>
+					
+					<!-- La couronne du leader (invisible par défaut) -->
+			
+					<Texture name="tx_leaderCrown" strata="TOP">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="39" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="19" y="16" />
+						</Size>
+						<uri>[local.texture]groupIcon/icon_crown.png</uri>
+					</Texture>
+					
+				</Common>
+			</Button>
+			<Hooks>
+				<onRollOver />
+				<onRollOut />
+			</Hooks>
+			
+		</Container>
+				
+		<!-- La flèche indiquant qu'on suit un joueur -->
+		<!-- Elle sera différente selon que l'on suit le chef du groupe ou un simple membre -->
+
+		<Texture name="tx_followArrow" strata="TOP">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="2" y="2" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="18" y="17" />
+			</Size>
+			<uri>[local.texture]groupIcon/grey_left_arrow.png</uri>
+		</Texture>
+	</Container>
+</Definition>

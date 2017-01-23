@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition labelDebug="false">
+
+    <Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]block.xml" />
+    
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	   	<Constant name="illus" value="[config.ui.skin]illus/" />
+	</Constants>
+
+	<Container name="mainCtr">	
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="10" y="151" />
+			</Anchor>
+		</Anchors>
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="1105" y="0" />
+				</Anchor>
+			</Anchors>
+			<uri>[config.ui.skin]common/corner_decoration_small.png</uri>
+			<scaleX>-1</scaleX>
+		</Texture>
+		
+		<block>
+			<Size>
+				<AbsDimension x="610" y="489" />
+			</Size>
+		</block>	
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="5" y="5" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="600" y="36" />
+			</Size>
+			<uri>[local.common]bg_dark.png</uri>
+		</Texture>
+		
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="15" y="10" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="380" y="16" />
+			</Size>
+			<text>[ui.common.localisation]</text>
+			<css>[local.css]small2.css</css>
+		</Label>
+		
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="395" y="10" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="80" y="16" />
+			</Size>
+			<text>[ui.common.mountParkItem]</text>
+			<cssClass>center</cssClass>
+			<css>[local.css]small2.css</css>
+		</Label>
+
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="475" y="10" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="80" y="16" />
+			</Size>
+			<text>[ui.common.mounts]</text>
+			<cssClass>center</cssClass>
+			<css>[local.css]small2.css</css>
+		</Label>
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="5" y="41" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="600" y="440" />
+			</Size>
+			<uri>[local.common]bg_light.png</uri>
+		</Texture>
+
+		<Grid name="grid_paddock">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="5" y="41" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="600" y="440" />
+			</Size>
+			<rendererName>InlineXmlGridRenderer</rendererName>
+			<rendererArgs>updatePaddockLine,[colors.grid.line]</rendererArgs>
+			<slotWidth>590</slotWidth>
+			<slotHeight>44</slotHeight>
+			<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+			
+			<Container>
+				<Size>
+					<AbsDimension x="590" y="44" />
+				</Size>
+				
+				<Button name="btn_paddock">
+					<Common>
+						<radioMode>true</radioMode>
+
+						<Texture>
+							<Size>
+								<AbsDimension x="590" y="44" />
+							</Size>
+							<bgColor>0</bgColor>
+							<bgAlpha>0</bgAlpha>
+						</Texture>
+				
+						<Label name="lbl_name">	
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="10" y="11" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="380" y="16" />
+							</Size>
+							<css>[local.css]small2.css</css>
+						</Label>
+				
+						<Label name="lbl_items">	
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="390" y="11" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="80" y="16" />
+							</Size>
+							<cssClass>center</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+				
+						<Label name="lbl_mounts">	
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="470" y="11" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="80" y="16" />
+							</Size>
+							<cssClass>center</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+				
+					</Common>
+
+					<State type="OVER">
+						<SetProperties target="btn_paddock">
+							<bgColor>[colors.grid.over]</bgColor>
+						</SetProperties>
+					</State>
+
+					<State type="SELECTED">
+						<SetProperties target="btn_paddock">
+							<bgColor>[colors.grid.selected]</bgColor>
+						</SetProperties>
+					</State>
+
+					<State type="SELECTED_OVER">
+						<SetProperties target="btn_paddock">
+							<bgColor>[colors.grid.selected]</bgColor>
+						</SetProperties>
+					</State>
+				</Button>
+
+				<Texture name="tx_abandonned">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="552" y="6" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="32" y="32" />
+					</Size>
+					<visible>false</visible>
+					<uri>[local.texture]pin_mark_yellow.png</uri>
+				</Texture>
+			</Container>
+		</Grid>
+
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="624" y="225" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="21" y="38" />
+			</Size>
+			<uri>[local.texture]icon_arrow_right.png</uri>
+		</Texture>
+		
+
+
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="655" y="10" />
+				</Anchor>
+			</Anchors>  
+
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="11" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="90" y="90" />
+				</Size>
+				<uri>[local.illus]tx_mountHead.png</uri>
+			</Texture>
+
+			<Label name="lbl_subarea">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="100" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="170" y="112" />
+				</Size>
+				<cssClass>left</cssClass>
+				<css>[local.css]normal2.css</css>
+				<multiline>true</multiline>
+				<wordWrap>true</wordWrap>
+				<verticalAlign>center</verticalAlign>
+			</Label>
+
+			<simpleButton name="btn_join">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="290" y="40" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="140" y="32" />
+				</Size>
+				<label>[ui.common.join]</label>
+			</simpleButton>
+
+		</Container>
+
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="655" y="132" />
+				</Anchor>
+			</Anchors>
+  				
+  			<block>
+  				<Size>
+  					<AbsDimension x="450" y="357" />
+  				</Size>
+  			</block>	
+  			
+  			<Texture>
+  				<Anchors>
+  					<Anchor>
+  						<AbsDimension x="5" y="5" />
+  					</Anchor>
+  				</Anchors>
+  				<Size>
+  					<AbsDimension x="440" y="36" />
+  				</Size>
+  				<uri>[local.common]bg_dark.png</uri>
+  			</Texture>
+  			
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="13" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="265" y="16" />
+				</Size>
+				<text>[ui.common.mountType]</text>
+				<css>[local.css]small2.css</css>
+			</Label>
+	
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="300" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="130" y="16" />
+				</Size>
+				<text>[ui.common.ownerWord]</text>
+				<css>[local.css]small2.css</css>
+			</Label>			
+			
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="5" y="41" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="440" y="308" />
+				</Size>
+				<uri>[local.common]bg_light.png</uri>
+			</Texture>
+	
+			<Grid name="grid_mount">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="5" y="41" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="440" y="308" />
+				</Size>
+				<rendererName>InlineXmlGridRenderer</rendererName>
+				<rendererArgs>updateMountLine,[colors.grid.line]</rendererArgs>
+				<slotWidth>430</slotWidth>
+				<slotHeight>44</slotHeight>
+				<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+				
+				<Container>
+					<Size>
+						<AbsDimension x="430" y="44" />
+					</Size>
+					
+					<Button name="btn_mount">
+						<Common>
+							<Texture>
+								<Size>
+									<AbsDimension x="430" y="44" />
+								</Size>
+								<bgColor>0</bgColor>
+								<bgAlpha>0</bgAlpha>
+							</Texture>
+	
+							<Label name="lbl_mountType">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="8" y="10" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="285" y="16" />
+								</Size>
+								<css>[local.css]small2.css</css>
+							</Label>
+	
+							<Label name="lbl_owner">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="295" y="10" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="130" y="16" />
+								</Size>
+								<css>[local.css]small2.css</css>
+							</Label>
+						</Common>
+					</Button>
+				</Container>
+			</Grid>
+		</Container>
+
+	</Container>
+</Definition>

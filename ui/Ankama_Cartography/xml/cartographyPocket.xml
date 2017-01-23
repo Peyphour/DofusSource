@@ -1,0 +1,205 @@
+<Definition>
+	<Import url="[config.mod.template]button/iconButton.xml"/>
+	<Constants>
+		<Constant name="icons_uri" value="[config.content.path]gfx/icons"/>
+		<Constant name="maps_uri" value="[config.gfx.path.maps]"/>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/"/>
+		<Constant name="css" value="[config.ui.skin]css/"/>
+	</Constants>
+	<Container name="popCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="390" y="312"/>
+			</Anchor>
+		</Anchors>
+		<Texture name="tx_resizeShape">
+			<Size>
+				<AbsDimension x="500" y="440"/>
+			</Size>
+			<bgAlpha>0</bgAlpha>
+			<bgColor>[colors.ui.modalbg]</bgColor>
+			<bgCornerRadius>20</bgCornerRadius>
+			<visible>false</visible>
+		</Texture>
+		<Container name="subCtr">
+			<shadowColor>[colors.ui.shadow]</shadowColor>
+			<mouseEnabled>true</mouseEnabled>
+			<MapViewer name="mapViewer">
+				<roundCornerRadius>15</roundCornerRadius>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0.5" y="33"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="498" y="405"/>
+				</Size>
+				<mouseEnabled>true</mouseEnabled>
+			</MapViewer>
+			<Texture name="tx_bg">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="33"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="498" y="406"/>
+				</Size>
+				<bgAlpha>0</bgAlpha>
+				<bgColor>[colors.ui.modalbg]</bgColor>
+				<bgCornerRadius>20</bgCornerRadius>
+				<borderColor>[colors.ui.wnd.border]</borderColor>
+			</Texture>
+			<Texture name="tx_title">
+				<autoGrid>true</autoGrid>
+				<uri>[local.assets]tx_title_curved</uri>
+				<Size>
+					<AbsDimension x="500" y="48"/>
+				</Size>
+			</Texture>
+			<iconButton name="btn_flag">
+				<uri>[local.assets]map_btn_drapeau</uri>
+				<checkBox>true</checkBox>
+				<Size>
+					<AbsDimension x="24" y="24"/>
+				</Size>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="12" y="5"/>
+					</Anchor>
+				</Anchors>
+			</iconButton>
+			<iconButton name="btn_grid">
+				<uri>[local.assets]map_btn_grille</uri>
+				<checkBox>true</checkBox>
+				<Size>
+					<AbsDimension x="24" y="24"/>
+				</Size>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="42" y="5"/>
+					</Anchor>
+				</Anchors>
+			</iconButton>
+			<iconButton name="btn_player">
+				<uri>[local.assets]map_btn_centrer</uri>
+				<Size>
+					<AbsDimension x="24" y="24"/>
+				</Size>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="72" y="5"/>
+					</Anchor>
+				</Anchors>
+			</iconButton>
+			<iconButton name="btn_hints">
+				<uri>[local.assets]map_btn_info</uri>
+				<Size>
+					<AbsDimension x="24" y="24"/>
+				</Size>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="102" y="5"/>
+					</Anchor>
+				</Anchors>
+			</iconButton>
+			<iconButton name="btn_options">
+				<uri>[local.assets]btn_option_square</uri>
+				<Size>
+					<AbsDimension x="24" y="24"/>
+				</Size>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="132" y="5"/>
+					</Anchor>
+				</Anchors>
+			</iconButton>
+			<iconButton name="btn_close">
+				<uri>[local.assets]btn_cross_square</uri>
+				<Size>
+					<AbsDimension x="24" y="24"/>
+				</Size>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="464" y="5"/>
+					</Anchor>
+				</Anchors>
+			</iconButton>
+			<iconButton name="btn_mainMap">
+				<uri>[local.assets]Effets_btn_PlusMoins</uri>
+				<Size>
+					<AbsDimension x="24" y="24"/>
+				</Size>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="435" y="5"/>
+					</Anchor>
+				</Anchors>
+			</iconButton>
+			<Container name="zoomCtr">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="450" y="46"/>
+					</Anchor>
+				</Anchors>
+				<iconButton name="btn_zoomIn">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="25" y="25" />
+					</Size>
+					<uri>[local.assets]btn_plus_square</uri>
+				</iconButton>
+				<Slider strata="TOP" name="slider" bgColor="0xFFFFFF">
+					<Size>
+						<AbsDimension x="10" y="120" />
+					</Size>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="7" y="27"/>
+						</Anchor>
+					</Anchors>
+					<minValue>0.2</minValue>
+					<maxValue>1</maxValue>
+					<cursorUri>[local.assets]sb_ascenseur</cursorUri>
+					<backgroundUri>[local.assets]slider_verticalBackground_light</backgroundUri>
+				</Slider>
+				<iconButton name="btn_zoomOut">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="149" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="25" y="25" />
+					</Size>
+					<uri>[local.assets]btn_minus_square</uri>
+				</iconButton>
+			</Container>
+			<Texture name="tx_resizeHandle">
+				<uri>[local.assets]CreaPerso_tx_unused</uri>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="469" y="439"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="30" y="30"/>
+				</Size>
+				<alpha>0.75</alpha>
+				<rotation>-90</rotation>
+			</Texture>
+		</Container>
+		<Texture name="tx_bitmap">
+			<Size>
+				<AbsDimension x="500" y="440"/>
+			</Size>
+			<shadowColor>[colors.ui.shadow]</shadowColor>
+			<visible>false</visible>
+		</Texture>
+	</Container>
+</Definition>

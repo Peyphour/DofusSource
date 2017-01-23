@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition modal="false" fullscreen="true">
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+   <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+       <Constant name="common" value="[config.ui.skin]common/"/>
+   </Constants>
+
+
+	<Container name="mainCtr">
+		<mouseEnabled>true</mouseEnabled>
+        <Size>
+            <RelDimension x="1" y="1" />
+        </Size>
+        <bgColor>[colors.ui.modalbg]</bgColor>
+
+        <Container>
+            <Anchors>
+                <Anchor relativePoint="CENTER" point="CENTER">
+                    <AbsDimension x="0" y="0" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="1280" y="1024" />
+            </Size>
+            <bgColor>0</bgColor>
+<!--Texture>
+    <Size>
+        <AbsDimension x="1280" y="1024" />
+    </Size>
+    <uri>[local.assets]tx_generalBackgroundWithTitle</uri>
+    <autoGrid>true</autoGrid>
+</Texture-->
+		
+		<VideoPlayer name="vplayer">
+			<!--Anchors>
+				<Anchor>
+					<AbsDimension x="10" y="10" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1260" y="1004" />
+			</Size-->
+			<Size>
+				<AbsDimension x="1280" y="1024" />
+			</Size>
+		</VideoPlayer>
+		
+
+		<Texture name="tx_loading_bg">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="565" y="496" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="150" y="150" />
+			</Size>
+			<uri>[local.assets]Video_tx_carre</uri>
+			<autoGrid>false</autoGrid>
+		</Texture>
+		<Texture name="tx_loading">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="610" y="521" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="158" y="158" />
+			</Size>
+			<uri>[local.assets]Video_tx_loading</uri>
+			<autoGrid>false</autoGrid>
+		</Texture>
+		
+		<Label name="lb_loading" >
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="590" y="606" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="190" y="19" />
+			</Size>
+			<text>[ui.loadbar.loading]</text>
+			<css>[local.css]normal2.css</css>
+		</Label>
+		
+		<simpleButton name="btn_skip">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="1079" y="995" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="190" y="24" />
+			</Size>
+			<label>[ui.connection.skipVideo]</label>
+			<Hooks>
+				<onRelease />
+			</Hooks>
+		</simpleButton>
+        </Container>
+	</Container>
+</Definition>

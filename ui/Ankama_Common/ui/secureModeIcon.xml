@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+	<Import url="[config.mod.template]button/iconButton.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+	</Constants>
+
+	<Container>
+
+		<iconButton name="btn_open">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="13" y="108" />
+				</Anchor>
+			</Anchors>
+			<autoGrid>true</autoGrid>
+			<uri>[local.assets]btn_secureMode</uri>
+		</iconButton>
+
+	</Container>
+</Definition>

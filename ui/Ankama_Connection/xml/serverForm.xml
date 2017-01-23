@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition labelDebug="false">
+    <Import url="[config.mod.template]button/themeHorizontalTab.xml" />
+    <Import url="[config.mod.template]block.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+
+		<Constant name="illus_uri" value="[config.content.path]gfx/illus/" />
+		
+		<Constant name="status_0" value="[ui.server.state.unknown]" />
+		<Constant name="status_1" value="[ui.server.state.offline]" />
+		<Constant name="status_2" value="[ui.server.state.starting]" />
+		<Constant name="status_3" value="[ui.server.state.online]" />
+		<Constant name="status_4" value="[ui.server.state.nojoin]" />
+		<Constant name="status_5" value="[ui.server.state.saving]" />
+		<Constant name="status_6" value="[ui.server.state.stoping]" />
+		<Constant name="status_7" value="[ui.server.state.full]" />		
+	</Constants>
+	
+	<Container>
+		<Size>
+			<AbsDimension x="430" y="170" />
+		</Size>
+
+		<block>
+			<Size>
+				<AbsDimension x="430" y="216" />
+			</Size>
+		</block>
+
+		<Texture name="tx_serverPic">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="12" y="12" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="115" y="160" />
+			</Size>
+			<uri>[local.illus_uri]assets.swf|illu_0</uri>
+		</Texture>
+
+
+
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="130" y="13" />
+				</Anchor>
+			</Anchors>
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="8" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="150" y="16" />
+				</Size>
+				<text>[ui.common.name][ui.common.colon]</text>
+				<css>[local.css]small2.css</css>
+			</Label>
+
+			<Label name="lbl_nameText">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="115" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="170" y="16" />
+				</Size>
+				<cssClass>boldright</cssClass>
+				<css>[local.css]small2.css</css>
+				<forceUppercase>true</forceUppercase>
+			</Label>
+
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="8" y="23" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="150" y="16" />
+				</Size>
+				<text>[ui.sersel.community][ui.common.colon]</text>
+				<css>[local.css]small2.css</css>
+			</Label>
+
+			<Label name="lbl_communityText">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="115" y="23" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="170" y="16" />
+				</Size>
+				<cssClass>boldright</cssClass>
+				<css>[local.css]small2.css</css>
+			</Label>
+
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="8" y="46" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="150" y="16" />
+				</Size>
+				<text>[ui.sersel.population][ui.common.colon]</text>
+				<css>[local.css]small2.css</css>
+			</Label>
+
+			<Label name="lbl_populationText">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="115" y="46" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="170" y="16" />
+				</Size>
+				<cssClass>boldright</cssClass>
+				<css>[local.css]small2.css</css>
+			</Label>
+
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="8" y="69" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="150" y="16" />
+				</Size>
+				<text>[ui.sersel.type][ui.common.colon]</text>
+				<css>[local.css]small2.css</css>
+			</Label>
+
+			<Label name="lbl_typeText">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="115" y="69" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="170" y="16" />
+				</Size>
+				<cssClass>boldright</cssClass>
+				<css>[local.css]small2.css</css>
+			</Label>
+
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="8" y="92" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="150" y="16" />
+				</Size>
+				<text>[ui.sersel.state][ui.common.colon]</text>
+				<css>[local.css]small2.css</css>
+			</Label>
+
+			<Label name="lbl_stateText">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="115" y="92" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="170" y="16" />
+				</Size>
+				<cssClass>boldright</cssClass>
+				<css>[local.css]small2.css</css>
+			</Label>
+
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="8" y="115" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="150" y="16" />
+				</Size>
+				<text>[ui.sersel.date][ui.common.colon]</text>
+				<css>[local.css]small2.css</css>
+			</Label>
+
+			<Label name="lbl_dateText">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="115" y="115" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="170" y="16" />
+				</Size>
+				<cssClass>boldright</cssClass>
+				<css>[local.css]small2.css</css>
+			</Label>
+
+		</Container>
+
+
+		
+		<block>
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="0" y="210" />
+                </Anchor>
+            </Anchors>
+			<Size>
+				<AbsDimension x="430" y="150" />
+			</Size>
+		</block>
+		
+        <themeHorizontalTab name="btn_story">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="15" y="177" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="130" y="38" />
+            </Size>
+			<text>[ui.common.description]</text>
+            <css>[local.css]normal2.css</css>
+        </themeHorizontalTab>
+        <themeHorizontalTab name="btn_rules">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="145" y="177" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="130" y="38" />
+            </Size>
+			<text>[ui.sersel.rules]</text>
+            <css>[local.css]normal2.css</css>
+        </themeHorizontalTab>
+
+
+		<TextArea name="texta_info">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="20" y="224" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="410" y="120" />
+			</Size>			
+			<scrollCss>[local.css]scrollBar.css</scrollCss>
+			<hideScroll>true</hideScroll>
+			<cssClass>left</cssClass>
+			<css>[local.css]small2.css</css>
+		</TextArea>
+		
+	</Container>
+</Definition>

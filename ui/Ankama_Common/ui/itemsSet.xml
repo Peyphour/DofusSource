@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+
+	<Import url="[config.mod.template.button]iconButton.xml"/>
+	<Import url="[config.mod.template.button]labelCheckBox.xml"/>
+	<Import url="[config.mod.template]window.xml"/>
+	<Import url="[config.mod.template]block.xml"/>
+	<Import url="[config.mod.template.button]comboBoxWithBackground.xml" />
+	<Import url="[config.mod.template]button/themeLabelCheckBox.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/"/>
+		<Constant name="css" value="[config.ui.skin]css/"/>
+		<Constant name="texture" value="[config.ui.skin]texture/"/>
+		<Constant name="common" value="[config.ui.skin]common/" />
+	</Constants>
+
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER">
+				<AbsDimension x="0" y="-70"/>
+			</Anchor>
+		</Anchors>
+		<window name="ctr_window">
+			<Size>
+				<AbsDimension x="459" y="560"/>
+			</Size>
+			<title>[ui.item.feed]</title>
+			<noSeparator>true</noSeparator>
+			<closeButtonName>btn_close</closeButtonName>
+			<Content>
+
+				<block>
+					<Size>
+						<RelDimension x="1" y="1"/>
+					</Size>
+				</block>
+
+				<!--Container for item set slots-->
+
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="15" y="20" />
+						</Anchor>
+					</Anchors>
+
+					<!-- Slot slot_0-->
+
+					<Slot name="slot_0">
+						<Size>
+							<AbsDimension x="44" y="44"/>
+						</Size>
+						<allowDrag>false</allowDrag>
+						<emptyTexture>[local.texture]slot/slot_dark_background_empty.png</emptyTexture>
+						<selectedTexture>[local.texture]slot/selected.png</selectedTexture>
+						<highlightTexture>[local.texture]slot/over.png</highlightTexture>
+						<css>[local.css]normal.css</css>
+					</Slot>
+
+					<!-- Slot slot_1-->
+
+					<Slot name="slot_1">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="49" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="44" y="44"/>
+						</Size>
+						<allowDrag>false</allowDrag>
+						<emptyTexture>[local.texture]slot/slot_dark_background_empty.png</emptyTexture>
+						<selectedTexture>[local.texture]slot/selected.png</selectedTexture>
+						<highlightTexture>[local.texture]slot/over.png</highlightTexture>
+						<css>[local.css]normal.css</css>
+					</Slot>
+
+					<!-- Slot slot_2-->
+
+					<Slot name="slot_2">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="98" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="44" y="44"/>
+						</Size>
+						<allowDrag>false</allowDrag>
+						<emptyTexture>[local.texture]slot/slot_dark_background_empty.png</emptyTexture>
+						<selectedTexture>[local.texture]slot/selected.png</selectedTexture>
+						<highlightTexture>[local.texture]slot/over.png</highlightTexture>
+						<css>[local.css]normal.css</css>
+					</Slot>
+
+					<!-- Slot slot_3-->
+
+					<Slot name="slot_3">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="147" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="44" y="44"/>
+						</Size>
+						<allowDrag>false</allowDrag>
+						<emptyTexture>[local.texture]slot/slot_dark_background_empty.png</emptyTexture>
+						<selectedTexture>[local.texture]slot/selected.png</selectedTexture>
+						<highlightTexture>[local.texture]slot/over.png</highlightTexture>
+						<css>[local.css]normal.css</css>
+					</Slot>
+
+					<!-- Slot slot_4-->
+
+					<Slot name="slot_4">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="196" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="44" y="44"/>
+						</Size>
+						<allowDrag>false</allowDrag>
+						<emptyTexture>[local.texture]slot/slot_dark_background_empty.png</emptyTexture>
+						<selectedTexture>[local.texture]slot/selected.png</selectedTexture>
+						<highlightTexture>[local.texture]slot/over.png</highlightTexture>
+						<css>[local.css]normal.css</css>
+					</Slot>
+
+					<!-- Slot slot_5-->
+
+					<Slot name="slot_5">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="245" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="44" y="44"/>
+						</Size>
+						<allowDrag>false</allowDrag>
+						<emptyTexture>[local.texture]slot/slot_dark_background_empty.png</emptyTexture>
+						<selectedTexture>[local.texture]slot/selected.png</selectedTexture>
+						<highlightTexture>[local.texture]slot/over.png</highlightTexture>
+						<css>[local.css]normal.css</css>
+					</Slot>
+
+					<!-- Slot slot_6-->
+
+					<Slot name="slot_6">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="294" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="44" y="44"/>
+						</Size>
+						<allowDrag>false</allowDrag>
+						<emptyTexture>[local.texture]slot/slot_dark_background_empty.png</emptyTexture>
+						<selectedTexture>[local.texture]slot/selected.png</selectedTexture>
+						<highlightTexture>[local.texture]slot/over.png</highlightTexture>
+						<css>[local.css]normal.css</css>
+					</Slot>
+
+					<!-- Slot slot_7-->
+
+					<Slot name="slot_7">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="343" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="44" y="44"/>
+						</Size>
+						<allowDrag>false</allowDrag>
+						<emptyTexture>[local.texture]slot/slot_dark_background_empty.png</emptyTexture>
+						<selectedTexture>[local.texture]slot/selected.png</selectedTexture>
+						<highlightTexture>[local.texture]slot/over.png</highlightTexture>
+						<css>[local.css]normal.css</css>
+					</Slot>
+
+
+					<Texture name="tx_itemEquipped_0">
+						<Anchors>
+							<Anchor relativeTo="slot_0" relativePoint="BOTTOM" point="TOP">
+								<AbsDimension x="0" y="-11"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="20" y="20"/>
+						</Size>
+						<uri>[local.texture]icon_panoply.png</uri>
+						<visible>false</visible>
+					</Texture>
+
+					<Texture name="tx_itemEquipped_1">
+						<Anchors>
+							<Anchor relativeTo="slot_1" relativePoint="BOTTOM" point="TOP">
+								<AbsDimension x="0" y="-11"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="20" y="20"/>
+						</Size>
+						<uri>[local.texture]icon_panoply.png</uri>
+						<visible>false</visible>
+					</Texture>
+
+					<Texture name="tx_itemEquipped_2">
+						<Anchors>
+							<Anchor relativeTo="slot_2" relativePoint="BOTTOM" point="TOP">
+								<AbsDimension x="0" y="-11"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="20" y="20"/>
+						</Size>
+						<uri>[local.texture]icon_panoply.png</uri>
+						<visible>false</visible>
+					</Texture>
+
+					<Texture name="tx_itemEquipped_3">
+						<Anchors>
+							<Anchor relativeTo="slot_3" relativePoint="BOTTOM" point="TOP">
+								<AbsDimension x="0" y="-11"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="20" y="20"/>
+						</Size>
+						<uri>[local.texture]icon_panoply.png</uri>
+						<visible>false</visible>
+					</Texture>
+
+					<Texture name="tx_itemEquipped_4">
+						<Anchors>
+							<Anchor relativeTo="slot_4" relativePoint="BOTTOM" point="TOP">
+								<AbsDimension x="0" y="-11"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="20" y="20"/>
+						</Size>
+						<uri>[local.texture]icon_panoply.png</uri>
+						<visible>false</visible>
+					</Texture>
+
+					<Texture name="tx_itemEquipped_5">
+						<Anchors>
+							<Anchor relativeTo="slot_5" relativePoint="BOTTOM" point="TOP">
+								<AbsDimension x="0" y="-11"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="20" y="20"/>
+						</Size>
+						<uri>[local.texture]icon_panoply.png</uri>
+						<visible>false</visible>
+					</Texture>
+
+					<Texture name="tx_itemEquipped_6">
+						<Anchors>
+							<Anchor relativeTo="slot_6" relativePoint="BOTTOM" point="TOP">
+								<AbsDimension x="0" y="-11"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="20" y="20"/>
+						</Size>
+						<uri>[local.texture]icon_panoply.png</uri>
+						<visible>false</visible>
+					</Texture>
+
+					<Texture name="tx_itemEquipped_7">
+						<Anchors>
+							<Anchor relativeTo="slot_7" relativePoint="BOTTOM" point="TOP">
+								<AbsDimension x="0" y="-11"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="20" y="20"/>
+						</Size>
+						<uri>[local.texture]icon_panoply.png</uri>
+						<visible>false</visible>
+					</Texture>
+				</Container>
+
+
+
+
+
+				<!--Container for bonus grid-->
+
+				<Container>
+					<Anchors>
+						<Anchor relativePoint="TOP" point="TOP">
+							<AbsDimension y="80" />
+						</Anchor>
+					</Anchors>
+
+					<Size>
+						<AbsDimension x="300" />
+					</Size>
+
+					<!-- Label "Set Bonus" -->
+
+					<Label>
+						<Size>
+							<AbsDimension x="300" y="20"/>
+						</Size>
+						<text>[ui.set.bonus]</text>
+						<cssClass>mediumleft</cssClass>
+						<css>[local.css]small2.css</css>
+					</Label>
+
+					<!--Bonus combobox-->
+
+					<comboBoxWithBackground name="cb_filter">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="-6" y="25"/>
+							</Anchor>
+						</Anchors>
+						<width>310</width>
+						<autoSelectMode>1</autoSelectMode>
+					</comboBoxWithBackground>
+
+					<TextureBitmap>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="-6" y="58"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="310" y="294" />
+						</Size>
+						<themeDataId>bg_small_border_light</themeDataId>
+					</TextureBitmap>
+
+					<!-- Grid grid_bonus-->
+
+					<Grid name="gd_bonus">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="1" y="65"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="298" y="280" />
+						</Size>
+						<slotWidth>295</slotWidth>
+						<slotHeight>28</slotHeight>
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updateEffectLine,[colors.grid.line]</rendererArgs>
+						<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+
+						<Container name="bonusCtr">
+							<Size>
+								<AbsDimension x="310" y="35"/>
+							</Size>
+
+							<Label name="lbl_effect">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="4" y="5"/>
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="280" y="22"/>
+								</Size>
+								<cssClass>boldleft</cssClass>
+								<css>[local.css]small2.css</css>
+							</Label>
+						</Container>
+					</Grid>
+
+					<!-- Bonus avec objets -->
+
+					<themeLabelCheckBox name="btn_bonusObjects">
+						<Anchors>
+							<Anchor>
+								<AbsDimension y="355"/>
+							</Anchor>
+						</Anchors>
+						<labelWidth>415</labelWidth>
+						<text>[ui.set.addObjectBonus]</text>
+						<selected>false</selected>
+					</themeLabelCheckBox>
+
+				</Container>
+			</Content>
+		</window>
+
+	</Container>
+</Definition>

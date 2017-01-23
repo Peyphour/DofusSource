@@ -1,0 +1,1004 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition debug="false">
+
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]button/horizontalTab.xml" />
+    <Import url="[config.mod.template]button/themeHorizontalTab.xml" />
+    <Import url="[config.mod.template]window.xml" />
+    <Import url="[config.mod.template]block.xml" />
+    <Import url="[config.mod.template.button]themeIconButton.xml" />
+
+   	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       	<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="mount" value="[config.content.path]gfx/characteristics/mount.swf|" />
+        <Constant name="common" value="[config.ui.skin]common/"/>
+        <Constant name="texture" value="[config.ui.skin]texture/"/>
+
+        <Constant name="progressBarGreen" value="[colors.progressbar.green]"/>
+        <Constant name="progressBarOrange" value="[colors.progressbar.damage]"/>
+        <Constant name="btnFeedBarnPos" value="-85"/>
+        <Constant name="btnAncestorsBarnPos" value="-34"/>
+   	</Constants>
+    <Container  name="mainCtr">
+        <window>
+            <Size>
+                <AbsDimension x="380" y="732" />
+            </Size>
+            <titleLabelName>lbl_name</titleLabelName>
+            <noCloseButton>false</noCloseButton>
+            <Content>
+                <Container name="ctr_genInfos">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="5" y="5" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="333" y="242" />
+                    </Size>
+                        <Texture>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="-8" y="-12" />
+                                </Anchor>
+                            </Anchors>
+                            <uri>[local.texture]breeding/tx_parchment_breeding.png</uri>
+                        </Texture>
+                        <Label name="lbl_type">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="30" y="15" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="275" y="20" />
+                            </Size>
+                            <cssClass>darkboldcenter</cssClass>
+                            <css>[local.css]normal2.css</css>
+                        </Label>
+                        <EntityDisplayer name="tx_mount">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="15" y="55" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="108" y="128" />
+                            </Size>
+                        </EntityDisplayer>
+
+                        <TextureBitmap name="tx_sex">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="145" y="52" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="20" y="20" />
+                            </Size>
+                            <smooth>true</smooth>
+                        </TextureBitmap>
+
+                        <Label name="lbl_level">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="195" y="50" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="100" y="20" />
+                            </Size>
+                            <cssClass>darkboldright</cssClass>
+                            <css>[local.css]normal2.css</css>
+                        </Label>
+                        <!--<Label name="lbl_name">-->
+                            <!--<Anchors>-->
+                                <!--<Anchor>-->
+                                    <!--<AbsDimension x="140" y="56" />-->
+                                <!--</Anchor>-->
+                            <!--</Anchors>-->
+                            <!--<Size>-->
+                                <!--<AbsDimension x="191" y="20" />-->
+                            <!--</Size>-->
+                            <!--<css>[local.css]normal.css</css>-->
+                        <!--</Label>		-->
+                        <!--<Label>-->
+                            <!--<Anchors>-->
+                                <!--<Anchor>-->
+                                    <!--<AbsDimension x="140" y="144" />-->
+                                <!--</Anchor>-->
+                            <!--</Anchors>-->
+                            <!--<Size>-->
+                                <!--<AbsDimension x="109" y="20" />-->
+                            <!--</Size>-->
+                            <!--<css>[local.css]normal.css</css>-->
+                            <!--<text>[ui.common.sex]</text>-->
+                        <!--</Label>-->
+
+                        <!--<Label name="lbl_sex">-->
+                            <!--<Anchors>-->
+                                <!--<Anchor>-->
+                                    <!--<AbsDimension x="247" y="144" />-->
+                                <!--</Anchor>-->
+                            <!--</Anchors>-->
+                            <!--<Size>-->
+                                <!--<AbsDimension x="108" y="20" />-->
+                            <!--</Size>-->
+                            <!--<css>[local.css]normal.css</css>-->
+                            <!--<cssClass>right</cssClass>-->
+                        <!--</Label>-->
+
+                        <Label>
+                            <Anchors>
+                                <Anchor relativeTo="lbl_level" relativePoint="BOTTOM" point="TOP">
+                                    <AbsDimension x="-55" y="15" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="125" y="20" />
+                            </Size>
+                            <css>[local.css]parchment.css</css>
+                            <text>[ui.common.mountable]</text>
+                        </Label>
+
+                        <Label name="lbl_mountable">
+                            <Anchors>
+                                <Anchor relativeTo="lbl_level" relativePoint="BOTTOM" point="TOP">
+                                    <AbsDimension x="30" y="15" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="40" y="20" />
+                            </Size>
+                            <cssClass>right</cssClass>
+                            <css>[local.css]parchment.css</css>
+                        </Label>
+
+                        <Label>
+                            <Anchors>
+                                <Anchor relativeTo="lbl_mountable" relativePoint="BOTTOM" point="TOP">
+                                    <AbsDimension x="-85" y="5" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="125" y="20" />
+                            </Size>
+                            <css>[local.css]parchment.css</css>
+                            <text>[ui.common.wild]</text>
+                        </Label>
+
+                        <Label name="lbl_wild">
+                            <Anchors>
+                                <Anchor relativeTo="lbl_mountable" relativePoint="BOTTOM" point="TOP">
+                                    <AbsDimension x="0" y="5" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="40" y="20" />
+                            </Size>
+                            <cssClass>right</cssClass>
+                            <css>[local.css]parchment.css</css>
+                        </Label>
+
+                        <Label name="lbl_xpTitle">
+                            <Anchors>
+                                <Anchor relativeTo="lbl_wild" relativePoint="BOTTOM" point="TOP">
+                                    <AbsDimension x="-92" y="5" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="110" y="20" />
+                            </Size>
+                            <css>[local.css]parchment.css</css>
+                            <text>[ui.common.giveXP]</text>
+                        </Label>
+
+                        <Label name="lbl_xp">
+                            <Anchors>
+                                <Anchor relativeTo="lbl_wild" relativePoint="BOTTOM" point="TOP">
+                                    <AbsDimension x="-5" y="5" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="52" y="20" />
+                            </Size>
+                            <cssClass>right</cssClass>
+                            <css>[local.css]parchment.css</css>
+                            <cssClass>right</cssClass>
+                        </Label>
+
+                        <!-- iconButton btn_xp-->
+
+                        <themeIconButton name="btn_xp">
+                            <Anchors>
+                                <Anchor relativeTo="lbl_xp" relativePoint="RIGHT" point="LEFT">
+                                    <AbsDimension x="5" y="2" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="20" y="20" />
+                            </Size>
+                            <iconUri>[local.texture]btnIcon/btnIcon_pen.png</iconUri>
+                            <smooth>true</smooth>
+                        </themeIconButton>
+
+                        <Label name="lbl_capacity">
+                            <Anchors>
+                                <Anchor relativeTo="lbl_xp" relativePoint="BOTTOM" point="TOP">
+                                    <AbsDimension x="-79" y="5" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="125" y="20" />
+                            </Size>
+                            <css>[local.css]parchment.css</css>
+                            <text>[ui.common.capacity]</text>
+                        </Label>
+                        <Container name="ctr_capacity">
+                            <Anchors>
+                                <Anchor relativeTo="lbl_capacity" relativePoint="BOTTOM" point="TOP">
+                                    <AbsDimension x="30" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="150" y="106" />
+                            </Size>
+
+                            <Label name="lbl_cap0">
+                                <Size>
+                                    <AbsDimension x="150" y="20" />
+                                </Size>
+                                <cssClass>darkbold</cssClass>
+                                <css>[local.css]normal2.css</css>
+                            </Label>
+                            <Label name="lbl_cap1">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="22" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="150" y="20" />
+                                </Size>
+                                <cssClass>darkbold</cssClass>
+                                <css>[local.css]normal2.css</css>
+                            </Label>
+                            <Label name="lbl_cap2">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="44" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="150" y="20" />
+                                </Size>
+                                <cssClass>darkbold</cssClass>
+                                <css>[local.css]normal2.css</css>
+                            </Label>
+                            <Label name="lbl_cap3">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="66" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="150" y="20" />
+                                </Size>
+                                <cssClass>darkbold</cssClass>
+                                <css>[local.css]normal2.css</css>
+                            </Label>
+                        </Container>
+                </Container>
+
+                <block>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="5" y="240" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="333" y="145" />
+                    </Size>
+                 <Content>
+
+                    <Label>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="10" y="5" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="90" y="20" />
+                        </Size>
+                        <css>[local.css]normal2.css</css>
+                        <text>[ui.common.energy][ui.common.colon]</text>
+                    </Label>
+
+                     <ProgressBar name="pb_Energy">
+                         <Anchors>
+                             <Anchor>
+                                 <AbsDimension x="150" y="12" />
+                             </Anchor>
+                         </Anchors>
+                         <Size>
+                             <AbsDimension x="160" y="11" />
+                         </Size>
+                         <bgAlpha>0.4</bgAlpha>
+                         <barColor>[colors.progressbar.green]</barColor>
+                         <barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+                     </ProgressBar>
+
+                    <Label>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="10" y="30" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="145" y="20" />
+                        </Size>
+                        <css>[local.css]normal2.css</css>
+                        <text>[ui.common.experiment][ui.common.colon]</text>
+                    </Label>
+
+                     <ProgressBar name="pb_xp">
+                         <Anchors>
+                             <Anchor>
+                                 <AbsDimension x="150" y="37" />
+                             </Anchor>
+                         </Anchors>
+                         <Size>
+                             <AbsDimension x="160" y="11" />
+                         </Size>
+                         <bgAlpha>0.4</bgAlpha>
+                         <barColor>[colors.progressbar.blue]</barColor>
+                         <barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+                     </ProgressBar>
+
+                    <Label>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="10" y="55" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="145" y="20" />
+                        </Size>
+                        <css>[local.css]normal2.css</css>
+                        <text>[ui.common.tire][ui.common.colon]</text>
+                    </Label>
+
+                     <ProgressBar name="pb_tired">
+                         <Anchors>
+                             <Anchor>
+                                 <AbsDimension x="150" y="62" />
+                             </Anchor>
+                         </Anchors>
+                         <Size>
+                             <AbsDimension x="160" y="11" />
+                         </Size>
+                         <bgAlpha>0.4</bgAlpha>
+                         <barColor>[colors.progressbar.yellow]</barColor>
+                         <barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+                     </ProgressBar>
+
+                    <Label>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="10" y="80" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="145" y="20" />
+                        </Size>
+                        <css>[local.css]normal2.css</css>
+                        <text>[ui.common.reproductions][ui.common.colon]</text>
+                    </Label>
+
+
+                    <Label name="lbl_reproduction">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="150" y="80" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="149" y="20" />
+                        </Size>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+
+                    <Label name="lbl_fecondation">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="10" y="105" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="149" y="20" />
+                        </Size>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+                 </Content>
+                </block>
+
+                <!-- ONGLET DES STATS, CAPACIT2S, EFFETS -->
+
+
+                <block>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="5" y="420" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="333" y="195" />
+                    </Size>
+                    <Content>
+
+                        <Container name="ctr_stat">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="10" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="324" y="131" />
+                            </Size>
+
+                            <!-- pictos de caracs -->
+                            <TextureBitmap name="tx_love">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="-5" y="5" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="30" y="30" />
+                                </Size>
+                                <smooth>true</smooth>
+                                <uri>[local.texture]Characteristics/tx_health.png</uri>
+                            </TextureBitmap>
+                            <TextureBitmap name="tx_maturity">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="-5" y="31" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="30" y="30" />
+                                </Size>
+                                <smooth>true</smooth>
+                                <uri>[local.texture]Characteristics/tx_res_water.png</uri>
+                            </TextureBitmap>
+                            <TextureBitmap name="tx_stamina">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="-5" y="57" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="30" y="30" />
+                                </Size>
+                                <smooth>true</smooth>
+                                <uri>[local.texture]Characteristics/tx_stamina.png</uri>
+                            </TextureBitmap>
+
+
+                            <Label name="lbl_love">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="24" y="10" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="122" y="20" />
+                                </Size>
+                                <css>[local.css]normal2.css</css>
+                                <text>[ui.common.love][ui.common.colon]</text>
+                            </Label>
+                            <Label name="lbl_maturity">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="24" y="34" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="122" y="20" />
+                                </Size>
+                                <css>[local.css]normal2.css</css>
+                                <text>[ui.common.maturity][ui.common.colon]</text>
+                            </Label>
+                            <Label name="lbl_stamina">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="24" y="59" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="122" y="20" />
+                                </Size>
+                                <css>[local.css]normal2.css</css>
+                                <text>[ui.common.stamina][ui.common.colon]</text>
+                            </Label>
+
+
+                            <!-- JAUGES -->
+
+                            <ProgressBar name="pb_love">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="140" y="16" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="160" y="11" />
+                                </Size>
+                                <bgAlpha>0.4</bgAlpha>
+                                <barColor>[colors.progressbar.green]</barColor>
+                                <barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+                            </ProgressBar>
+                            <Container>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="260" y="16" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="1" y="11" />
+                                </Size>
+                                <bgColor>[colors.progressbar.mount.separator]</bgColor>
+                            </Container>
+
+                            <ProgressBar name="pb_maturity">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="140" y="41" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="160" y="11" />
+                                </Size>
+                                <bgAlpha>0.4</bgAlpha>
+                                <barColor>[colors.progressbar.green]</barColor>
+                                <barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+                            </ProgressBar>
+
+                            <ProgressBar name="pb_stamina">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="140" y="66" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="160" y="11" />
+                                </Size>
+                                <bgAlpha>0.4</bgAlpha>
+                                <barColor>[colors.progressbar.green]</barColor>
+                                <barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+                            </ProgressBar>
+                            <Container>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="260" y="66" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="1" y="11" />
+                                </Size>
+                                <bgColor>[colors.progressbar.mount.separator]</bgColor>
+                            </Container>
+
+                            <TextureBitmap>
+                                <Anchors>
+                                    <Anchor relativeTo="tx_stamina" relativePoint="BOTTOM" point="TOPLEFT">
+                                        <AbsDimension x="-20" y="15" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="333" />
+                                </Size>
+                                <uri>[local.common]window_separator_black_horizontal.png</uri>
+                                <smooth>true</smooth>
+                            </TextureBitmap>
+
+                            <Texture>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="-5" y="133" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="30" y="30" />
+                                </Size>
+                                <uri>[local.mount]Dragodinde_tooltip_tx_pictoAgressivite</uri>
+                            </Texture>
+
+                            <Label name="lbl_serenity">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="105" y="155" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="100" y="20" />
+                                </Size>
+                                <css>[local.css]normal2.css</css>
+                                <cssClass>center</cssClass>
+                            </Label>
+
+                            <ProgressBar name="pb_serenity">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="30" y="140" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="243" y="16" />
+                                </Size>
+                                <bgAlpha>0.4</bgAlpha>
+                                <barColor>[colors.progressbar.green]</barColor>
+                                <barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+                            </ProgressBar>
+                            <Container>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="127" y="141" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="1" y="14" />
+                                </Size>
+                                <bgColor>[colors.progressbar.mount.separator]</bgColor>
+                            </Container>
+                            <Container>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="175" y="141" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="1" y="14" />
+                                </Size>
+                            	<bgColor>[colors.progressbar.mount.separator]</bgColor>
+                            </Container>
+
+                            <Texture>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="280" y="133" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="30" y="30" />
+                                </Size>
+                                <uri>[local.mount]Dragodinde_tooltip_tx_pictoSerenite</uri>
+                            </Texture>
+
+
+                            <TextureBitmap>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="57" y="108" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="30" y="30" />
+                                </Size>
+                                <smooth>true</smooth>
+                                <uri>[local.texture]Characteristics/tx_stamina.png</uri>
+                            </TextureBitmap>
+
+                            <TextureBitmap>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="135" y="110" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="30" y="30" />
+                                </Size>
+                                <smooth>true</smooth>
+                                <uri>[local.texture]Characteristics/tx_res_water.png</uri>
+                            </TextureBitmap>
+
+                            <TextureBitmap>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="213" y="108" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="30" y="30" />
+                                </Size>
+                                <smooth>true</smooth>
+                                <uri>[local.texture]Characteristics/tx_health.png</uri>
+                            </TextureBitmap>
+
+
+
+                        </Container>
+
+                        <Container name="ctr_effect">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="5" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="328" y="180" />
+                            </Size>
+
+                            <Grid name="gd_effects">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="-5" y="2" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="320" y="180" />
+                                </Size>
+                                <autoSelectMode>0</autoSelectMode>
+                                <rendererName>InlineXmlGridRenderer</rendererName>
+                                <rendererArgs>updateEffectLine,[colors.grid.line]</rendererArgs>
+                                <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+                                <slotWidth>320</slotWidth>
+                                <slotHeight>25</slotHeight>
+
+                                <Container>
+                                    <Size>
+                                        <AbsDimension x="320" y="20" />
+                                    </Size>
+
+                                    <Button name="btn_effect">
+                                        <Common>
+                                            <Size>
+                                                <AbsDimension x="310" y="20" />
+                                            </Size>
+                                            <checkBox>true</checkBox>
+                                            <mouseChildren>false</mouseChildren>
+
+                                            <Label name="lbl_effect">
+                                                <Size>
+                                                    <AbsDimension x="310" y="20" />
+                                                </Size>
+                                                <css>[local.css]normal2.css</css>
+                                            </Label>
+
+                                        </Common>
+
+                                        <State type="OVER">
+                                            <SetProperties target="btn_mountItem">
+                                                <bgColor>[colors.grid.over]</bgColor>
+                                            </SetProperties>
+                                        </State>
+                                    </Button>
+
+                                </Container>
+                            </Grid>
+                        </Container>
+                    </Content>
+                </block>
+
+                <themeHorizontalTab name="btn_stat">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="22" y="388" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="125" y="38" />
+                    </Size>
+                    <text>[ui.common.statistics]</text>
+                </themeHorizontalTab>
+                <themeHorizontalTab name="btn_effect">
+                    <Anchors>
+                        <Anchor relativeTo="btn_stat" point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT">
+                            <AbsDimension x="5" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="125" y="38" />
+                    </Size>
+                    <text>[ui.common.effects]</text>
+                </themeHorizontalTab>
+
+
+
+
+
+
+                <!-- LES BOUTONS DU BAS (Tm)-->
+
+                <Container>
+
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="5" y="620" />
+                        </Anchor>
+                    </Anchors>
+
+                    <!-- iconButton btn_mount-->
+
+                    <!--<Button name="btn_mount">-->
+                        <!--<Anchors>-->
+                            <!--<Anchor>-->
+                                <!--<AbsDimension x="5"/>-->
+                            <!--</Anchor>-->
+                        <!--</Anchors>-->
+                        <!--<Size>-->
+                            <!--<AbsDimension x="80" y="34" />-->
+                        <!--</Size>-->
+                        <!--<iconAnchors>-->
+                            <!--<Anchor relativePoint="TOP" point="TOP">-->
+                                <!--<AbsDimension x="-5" y="3"/>-->
+                            <!--</Anchor>-->
+                            <!--<Anchor relativePoint="BOTTOM" point="BOTTOM">-->
+                                <!--<AbsDimension x="35" y="-3" />-->
+                            <!--</Anchor>-->
+                        <!--</iconAnchors>-->
+                        <!--<Uri>[local.texture]breeding/tx_mount.png</Uri>-->
+                        <!--<checkBox>true</checkBox>-->
+                        <!--<Param name="autoGrid">true</Param>-->
+                    <!--</Button>-->
+
+                    <Button name="btn_mount">
+                        <Common>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="5"/>
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="80" y="34" />
+                            </Size>
+                            <TextureBitmap name="tx_btn_mount">
+                                <Size>
+                                    <AbsDimension x="80" y="34" />
+                                </Size>
+                                <themeDataId>button_small_normal</themeDataId>
+                            </TextureBitmap>
+                            <TextureBitmap name="tx_btn_Mount_icon">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="12" y="5"/>
+                                    </Anchor>
+                                </Anchors>
+                                <uri>[local.texture]breeding/tx_mount.png</uri>
+                                <smooth>true</smooth>
+                            </TextureBitmap>
+                            <Hooks>
+                                <onRelease />
+                                <onRollOver />
+                                <onRollOut />
+                            </Hooks>
+                        </Common>
+                        <State type="OVER">
+                            <SetProperties target="tx_btn_mount">
+                                <themeDataId>button_small_over</themeDataId>
+                            </SetProperties>
+                        </State>
+                        <State type="PRESSED">
+                            <SetProperties target="tx_btn_mount">
+                                <themeDataId>button_small_pressed</themeDataId>
+                            </SetProperties>
+                        </State>
+                        <State type="SELECTED">
+                            <SetProperties target="tx_btn_mount">
+                                <themeDataId>button_small_selected</themeDataId>
+                            </SetProperties>
+                            <SetProperties target="tx_btn_Mount_icon">
+                                <uri>[local.texture]breeding/tx_mount_down.png</uri>
+                            </SetProperties>
+                        </State>
+                        <State type="SELECTED_OVER">
+                            <SetProperties target="tx_btn_mount">
+                                <themeDataId>button_small_selected_over</themeDataId>
+                            </SetProperties>
+                            <SetProperties target="tx_btn_Mount_icon">
+                                <uri>[local.texture]breeding/tx_mount_down.png</uri>
+                            </SetProperties>
+                        </State>
+                        <State type="SELECTED_PRESSED">
+                            <SetProperties target="tx_btn_mount">
+                                <themeDataId>button_small_selected_pressed</themeDataId>
+                            </SetProperties>
+                            <SetProperties target="tx_btn_Mount_icon">
+                                <uri>[local.texture]breeding/tx_mount_down.png</uri>
+                            </SetProperties>
+                        </State>
+                    </Button>
+
+
+                    <!-- iconButton btn_feed-->
+
+                    <themeIconButton name="btn_feed">
+                        <Anchors>
+                            <Anchor relativeTo="btn_mount" point="LEFT" relativePoint="RIGHT">
+                                <AbsDimension x="5" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="34" y="34" />
+                        </Size>
+                        <iconUri>[local.texture]breeding/tx_carrot.png</iconUri>
+                    </themeIconButton>
+
+                    <!-- iconButton btn_storage-->
+
+                    <themeIconButton name="btn_storage">
+                        <Anchors>
+                            <Anchor relativeTo="btn_feed" point="LEFT" relativePoint="RIGHT">
+                                <AbsDimension x="5" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="34" y="34" />
+                        </Size>
+                        <iconUri>[local.texture]breeding/tx_inventory.png</iconUri>
+                    </themeIconButton>
+
+                    <!-- iconButton btn_ancestor-->
+
+                    <themeIconButton name="btn_ancestors">
+                        <Anchors>
+                            <Anchor relativeTo="btn_storage" point="LEFT" relativePoint="RIGHT">
+                                <AbsDimension x="5" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="34" y="34" />
+                        </Size>
+                        <iconUri>[local.texture]breeding/tx_tree.png</iconUri>
+                    </themeIconButton>
+
+                    <!-- iconButton btn_sterilize-->
+
+                    <themeIconButton name="btn_sterilize">
+                        <Anchors>
+                            <Anchor relativeTo="btn_ancestors" point="LEFT" relativePoint="RIGHT">
+                                <AbsDimension x="5" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="34" y="34" />
+                        </Size>
+                        <iconUri>[local.texture]breeding/tx_cisor.png</iconUri>
+                    </themeIconButton>
+
+                    <!-- iconButton btn_release-->
+
+                    <themeIconButton name="btn_release">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="290" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="34" y="34" />
+                        </Size>
+                        <bgThemeDataId>button_small_red</bgThemeDataId>
+                        <iconUri>[local.texture]breeding/tx_laisse.png</iconUri>
+                    </themeIconButton>
+            </Container>
+            </Content>
+        </window>
+        <Button name="btn_changeName">
+            <Common>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension y="5" />
+                    </Anchor>
+                </Anchors>
+                    <TextureBitmap>
+                        <Size>
+                            <AbsDimension x="40" y="40" />
+                        </Size>
+                        <uri>[local.texture]breeding/tx_grey_pen.png</uri>
+                        <smooth>true</smooth>
+                    </TextureBitmap>
+            </Common>
+        </Button>
+    </Container>
+</Definition>

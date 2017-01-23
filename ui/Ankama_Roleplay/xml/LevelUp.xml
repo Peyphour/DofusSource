@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition labelDebug="false">
+
+	<Import url="[config.mod.template]button/simpleButton.xml"/>
+	<Import url="[config.mod.template.button]iconButton.xml"/>
+	<Import url="[config.mod.template]windowWithoutTitleBar.xml" />
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+		<Constant name="css" value="[config.ui.skin]css/"/>
+		<Constant name="texture" value="[config.ui.skin]texture/"/>
+		<Constant name="common" value="[config.ui.skin]common/"/>
+	</Constants>
+
+	<windowWithoutTitleBar name="levelupWindow">
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension y="160" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="480" y="270"/>
+		</Size>
+		<bgAlpha>1</bgAlpha>
+		<noCloseButton>true</noCloseButton>
+		<mouseEnabled>true</mouseEnabled>
+
+		<Content>
+			<Container name="mainCtr" strata="TOP">
+				<Anchors>
+					<Anchor relativePoint="TOPLEFT" point="TOPLEFT">
+						<AbsDimension x="30" y="35"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="360" y="160"/>
+				</Size>
+				
+				<Container name="ctr_stats">
+
+					<Container>
+						<Texture>
+							<Size>
+								<AbsDimension x="22" y="22"/>
+							</Size>
+							<uri>[local.texture]icon_pv.png</uri>
+						</Texture>
+						<Label name="lbl_lifeStat">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="30" y="0"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="250" y="20"/>
+							</Size>
+							<cssClass>extrawhitebigleft</cssClass>
+							<css>[local.css]normal2.css</css>
+							<text>[ui.levelUp.lifePoints]</text>
+						</Label>
+						<Label name="lbl_lifeStatPoints">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="270" y="0"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="100" y="20"/>
+							</Size>
+							<cssClass>extrawhitebigcondensedboldright</cssClass>
+							<css>[local.css]normal2.css</css>
+						</Label>
+					</Container>
+					
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="30"/>
+							</Anchor>
+						</Anchors>
+						<Texture>
+							<Size>
+								<AbsDimension x="22" y="22"/>
+							</Size>
+							<uri>[local.texture]icon_spell.png</uri>
+						</Texture>
+						<Label name="lbl_spellStat">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="30" y="0"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="250" y="20"/>
+							</Size>
+							<cssClass>extrawhitebigleft</cssClass>
+							<css>[local.css]normal2.css</css>
+							<text>[ui.levelUp.spellPoints]</text>
+						</Label>
+						<Label name="lbl_spellStatPoints">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="270" y="0"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="100" y="20"/>
+							</Size>
+							<cssClass>extrawhitebigcondensedboldright</cssClass>
+							<css>[local.css]normal2.css</css>
+						</Label>
+					</Container>
+				
+					
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="60"/>
+							</Anchor>
+						</Anchors>
+						<Texture>
+							<Size>
+								<AbsDimension x="22" y="22"/>
+							</Size>
+							<uri>[local.texture]icon_caracteristic.png</uri>
+						</Texture>
+						<Label name="lbl_caracStat">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="30" y="0"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="250" y="20"/>
+							</Size>
+							<cssClass>extrawhitebigleft</cssClass>
+							<css>[local.css]normal2.css</css>
+							<text>[ui.levelUp.caracPoints]</text>
+						</Label>
+						<Label name="lbl_caracStatPoints">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="270" y="0"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="100" y="20"/>
+							</Size>
+							<cssClass>extrawhitebigcondensedboldright</cssClass>
+							<css>[local.css]normal2.css</css>
+						</Label>
+					</Container>
+				</Container>
+
+				<Container name="ctr_spell">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="-25" y="95"/>
+						</Anchor>
+					</Anchors>
+					
+					<block>
+						<Size>
+							<AbsDimension x="427" y="70"/>
+						</Size>						
+					</block>
+					
+					<!-- Label "Nouveau sort" ou "Prochain sort au niveau xx" selon les cas -->
+					<Label name="lbl_spell">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="30" y="12"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="300" y="40"/>
+						</Size>
+						<cssClass>extrawhitebigleft</cssClass>
+						<css>[local.css]normal2.css</css>
+						<verticalAlign>center</verticalAlign>
+						<multiline>true</multiline>
+						<wordWrap>true</wordWrap>
+					</Label>
+	
+					<Slot name="spellSlot" strata="TOP">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="350" y="12"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="44" y="44"/>
+						</Size>
+						<css>[local.css]normal2.css</css>
+						<emptyTexture>[local.assets]tx_slot</emptyTexture>
+					</Slot>
+	
+	
+					<!-- Petit effect de lumière sur le nouveau sort (si nouveau sort il y a) -->
+					<Texture name="tx_spellSlotEffect" strata="TOP">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="350" y="22"/>
+							</Anchor>
+						</Anchors>
+					</Texture>
+				</Container>
+
+			</Container>
+
+
+		</Content>
+		<OverFrameContent>
+
+			<!--Le socle du personnage-->
+			<Texture>
+				<Anchors>
+					<Anchor relativePoint="TOP" point="BOTTOM">
+						<AbsDimension x="0" y="6"/>
+					</Anchor>
+				</Anchors>
+				<uri>[local.texture]background/background_levelup_character.png</uri>
+			</Texture>
+
+
+			<!-- Le personnage en haut -->
+			<EntityDisplayer name="ed_player">
+				<Anchors>
+					<Anchor relativePoint="TOP" point="BOTTOM">
+						<AbsDimension x="0" y="-40"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="160" y="350"/>
+				</Size>
+			</EntityDisplayer>
+
+			<!--La bannière-->
+			<TextureBitmap name="tx_banner">
+				<Anchors>
+					<Anchor relativePoint="TOP" point="BOTTOM">
+						<AbsDimension x="0" y="28"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="350" y="95" />
+				</Size>
+				<themeDataId>levelup_banner</themeDataId>
+			</TextureBitmap>
+
+			<!-- Label "Niveau X !" -->
+			<Label name="lbl_newLevel">
+				<Anchors>
+					<Anchor relativePoint="TOP" point="TOP">
+						<AbsDimension x="0" y="-39"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="200"/>
+				</Size>
+				<cssClass>levelup</cssClass>
+				<css>[local.css]title.css</css>
+				<forceUppercase>true</forceUppercase>
+			</Label>
+			<Label name="lbl_levelup">
+				<Anchors>
+					<Anchor relativePoint="TOP" point="TOP">
+						<AbsDimension x="0" y="-64"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="460"/>
+				</Size>
+				<cssClass>levelup</cssClass>
+				<css>[local.css]special.css</css>
+				<text>[ui.levelUp.banner]</text>
+				<forceUppercase>true</forceUppercase>
+			</Label>
+
+			<Container name="ctr_button">
+				<Anchors>
+					<Anchor relativePoint="TOP" point="TOP">
+						<AbsDimension x="0" y="205"/>
+					</Anchor>
+				</Anchors>
+					
+				<TextureBitmap name="tx_bg_button">
+					<Size>
+						<AbsDimension x="185" />
+					</Size>
+					<themeDataId>background_border_button</themeDataId>
+				</TextureBitmap>
+	
+				<simpleButton name="btn_close_main">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="25" y="7" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="135" y="32" />
+					</Size>
+					<label>[ui.common.ok]</label>
+				</simpleButton>
+			</Container>
+
+		</OverFrameContent>
+	</windowWithoutTitleBar>
+</Definition>

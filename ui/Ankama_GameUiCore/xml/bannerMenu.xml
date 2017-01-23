@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+	<Import url="[config.mod.template.button]iconButton.xml" />
+
+	<Constants>
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="ui_btn_height" value="36" type="int" />
+		<Constant name="ui_btn_offset" value="3" type="int" />
+		<Constant name="acceptDrop_uri" value="[config.ui.skin]bitmap/acceptDrop.png" />
+		<Constant name="refuseDrop_uri" value="[config.ui.skin]bitmap/refuseDrop.png" />
+		<Constant name="defaultRpX" value="1000" />
+		<Constant name="defaultFightX" value="1160" />
+	</Constants>
+	
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="1000" y="909" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="120" y="115" />
+		</Size>
+		<MinimalSize>
+			<AbsDimension x="46" y="42" />
+		</MinimalSize>
+
+		<TextureBitmap name="tx_background">
+			<Size>
+				<RelDimension x="1" y="1" />
+			</Size>
+			<themeDataId>hud_window_background</themeDataId>
+			<resizeController>true</resizeController>
+			<resizeTarget>mainCtr</resizeTarget>
+			<isMagnetic>true</isMagnetic>
+		</TextureBitmap>
+
+		<TextureBitmap name="tx_separator">
+			<Anchors>
+				<Anchor relativeTo="tx_background" relativePoint="TOPRIGHT">
+					<AbsDimension x="-7" y="0" />
+				</Anchor>
+				<Anchor relativeTo="tx_background" relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<themeDataId>separator_green_column</themeDataId>
+		</TextureBitmap>
+		
+		<Container>
+			<Anchors>
+				<Anchor relativeTo="tx_separator" relativePoint="TOPLEFT">
+					<AbsDimension y="4" />
+				</Anchor>
+				<Anchor relativeTo="tx_separator" relativePoint="BOTTOMRIGHT">
+					<AbsDimension y="-4" />
+				</Anchor>
+			</Anchors>
+			<bgColor>0xFF0000</bgColor>
+			<bgAlpha>0</bgAlpha>
+			<dragController>true</dragController>
+			<dragTarget>mainCtr</dragTarget>
+			<dragBoundsContainer>tx_background</dragBoundsContainer>
+			<useDragMagnetism>true</useDragMagnetism>
+		</Container>
+		
+		<TextureBitmap>
+			<Anchors>
+				<Anchor relativeTo="tx_separator" relativePoint="TOPLEFT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+				<Anchor relativeTo="tx_separator" relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<uri>[config.ui.skin]texture/hud/cache_separator_green.png</uri>
+		</TextureBitmap>
+		
+		<TextureBitmap>
+			<Anchors>
+				<Anchor relativeTo="tx_background" relativePoint="TOPLEFT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+				<Anchor relativeTo="tx_background" relativePoint="TOPRIGHT">
+					<AbsDimension x="0" y="8" />
+				</Anchor>
+			</Anchors>
+			<uri>[config.ui.skin]texture/hud/background_hud_shadow.png</uri>
+		</TextureBitmap>
+		
+
+		<Grid name="gd_btnUis">
+			<Anchors>
+				<Anchor relativeTo="tx_background" relativePoint="TOPLEFT">
+					<AbsDimension x="3" y="3" />
+				</Anchor>
+				<Anchor relativeTo="tx_background" relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="-6" y="-3" />
+				</Anchor>
+			</Anchors>
+			<rendererName>SlotGridRenderer</rendererName>
+			<rendererArgs>,,,,,,[local.css]normal.css,,true</rendererArgs>
+			<slotWidth>[local.ui_btn_height]</slotWidth>
+			<slotHeight>[local.ui_btn_height]</slotHeight>
+			<scrollDisplay>none</scrollDisplay>
+			<autoSelectMode>0</autoSelectMode>
+		</Grid>
+
+		<Container name="ctr_moreBtn" strata="TOP">
+			<Anchors>
+				<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT"
+					relativeTo="gd_btnUis">
+					<AbsDimension x="0" y="-6" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="41" y="219" />
+			</Size>
+
+			<borderColor>[colors.contextmenu.border]</borderColor>
+			<bgCornerRadius>8</bgCornerRadius>
+			<bgAlpha>[colors.contextmenu.bg.alpha]</bgAlpha>
+			<bgColor>[colors.contextmenu.bg]</bgColor>
+			<shadowColor>[colors.contextmenu.shadow]</shadowColor>
+			<visible>false</visible>
+
+			<Grid name="gd_additionalBtns">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="2" y="2" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="[local.ui_btn_height]" y="215" />
+				</Size>
+				<rendererName>SlotGridRenderer</rendererName>
+				<rendererArgs>,,,,,,[local.css]normal.css,,true</rendererArgs>
+				<slotWidth>[local.ui_btn_height]</slotWidth>
+				<slotHeight>[local.ui_btn_height]</slotHeight>
+				<scrollDisplay>none</scrollDisplay>
+				<autoSelectMode>0</autoSelectMode>
+			</Grid>
+		</Container>
+		
+		<TextureBitmap>
+			<Anchors>
+				<Anchor relativeTo="tx_background" relativePoint="TOPLEFT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+				<Anchor relativeTo="tx_background" relativePoint="TOPRIGHT">
+					<AbsDimension x="0" y="8" />
+				</Anchor>
+			</Anchors>
+			<uri>[config.ui.skin]texture/hud/background_hud_shadow.png</uri>
+		</TextureBitmap>
+	</Container>
+
+	<!--<Container name="ctr_moreBtn" strata="TOP">
+		<Anchors>
+			<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT"
+				relativeTo="gd_btnUis">
+				<AbsDimension x="0" y="-6" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="55" y="219" />
+		</Size>
+		<borderColor>[colors.contextmenu.border]</borderColor>
+		<bgCornerRadius>8</bgCornerRadius>
+		<bgAlpha>[colors.contextmenu.bg.alpha]</bgAlpha>
+		<bgColor>[colors.contextmenu.bg]</bgColor>
+		<shadowColor>[colors.contextmenu.shadow]</shadowColor>
+		<visible>false</visible>
+
+		<TextureBitmap name="tx_separator2">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="48" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="7" />
+				<RelDimension y="1" />
+			</Size>
+			<themeDataId>separator_green_column</themeDataId>
+			<dragTarget>ctr_moreBtn</dragTarget>
+			<dragBoundsContainer>ctr_moreBtn</dragBoundsContainer>
+			<useDragMagnetism>true</useDragMagnetism>
+		</TextureBitmap>
+		
+		<Grid name="gd_additionalBtns">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="2" y="2" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="[local.ui_btn_height]" y="215" />
+			</Size>
+			<rendererName>SlotGridRenderer</rendererName>
+			<rendererArgs>,,,,,,[local.css]normal.css,,true</rendererArgs>
+			<slotWidth>[local.ui_btn_height]</slotWidth>
+			<slotHeight>[local.ui_btn_height]</slotHeight>
+			<scrollDisplay>none</scrollDisplay>
+			<autoSelectMode>0</autoSelectMode>
+
+		</Grid>
+	</Container>-->
+</Definition>

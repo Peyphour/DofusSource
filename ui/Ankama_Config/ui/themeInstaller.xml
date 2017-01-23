@@ -1,0 +1,327 @@
+<Definition labelDebug="false">
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]button/searchInput.xml" />
+	<Import url="[config.mod.template]button/themeLabelCheckBox.xml" />
+	<Import url="[config.mod.template]button/searchInput.xml" />
+	<Import url="[config.mod.template]button/comboBoxWithBackground.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+	</Constants>
+
+
+	<window name="mainCtr" title="[ui.theme.Install]">
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER">
+				<AbsDimension x="0" y="-80" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="950" y="760" />
+		</Size>
+
+
+		<Content>
+			<Label name="lbl_putAdress">
+				<Anchors>
+					<Anchor relativePoint="TOP" point="TOP">
+						<AbsDimension x="0" y="20" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="742" y="25" />
+				</Size>
+				<cssClass>center</cssClass>
+				<css>[local.css]normal2.css</css>
+				<text>[ui.theme.Installer.infos]</text>
+			</Label>
+			
+			<Container name="ctr_more_info">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="400" y="40"/>
+					</Anchor>
+				</Anchors>
+				<buttonMode>true</buttonMode>
+				<handCursor>true</handCursor>
+				<TextureBitmap name="tx_more">
+					<uri>[config.ui.skin]common/btn_resize_up.png</uri>
+				</TextureBitmap>
+				<Label name="lbl_moreInfo">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="25" y="7"/>
+						</Anchor>
+					</Anchors>
+					<cssClass>greenunderlineleft</cssClass>
+					<css>[local.css]special.css</css>
+					<text>[ui.common.moreInfos]</text>
+					<fixedWidth>false</fixedWidth>
+				</Label>
+			</Container>
+			
+			<TextureBitmap name="tx_help">
+				<Anchors>
+					<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+						<AbsDimension x="-50" y="20" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="25" y="25" />
+				</Size>
+				<uri>[local.texture]help_icon_pressed.png</uri>
+				<smooth>true</smooth>
+			</TextureBitmap>
+
+			<simpleButton name="btn_fetch">
+				<Anchors>
+					<Anchor relativePoint="TOP" point="TOP">
+						<AbsDimension x="355" y="75" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="100" y="30" />
+				</Size>
+				<label>[ui.common.validation]</label>
+			</simpleButton>
+
+			<block headerHeight="60">
+				<Anchors>
+					<Anchor relativePoint="CENTER" point="CENTER">
+						<AbsDimension x="0" y="40" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="860" y="550" />
+				</Size>
+				<Content>
+
+
+
+					<Grid name="gdModules">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="60" />
+							</Anchor>
+						</Anchors>
+						<Size>
+
+							<AbsDimension x="850" y="480" />
+						</Size>
+						<autoSelectMode>0</autoSelectMode>
+						<rendererArgs>themeItem, [colors.grid.line], [colors.grid.bg]
+						</rendererArgs>
+						<rendererName>XmlUiGridRenderer</rendererName>
+						<scrollDisplay>auto</scrollDisplay>
+						<slotHeight>120</slotHeight>
+						<slotWidth>850</slotWidth>
+						<verticalScrollbarCss>[local.css]scrollBar.css
+						</verticalScrollbarCss>
+
+					</Grid>
+
+					<Label name="lbl_infos">
+						<Anchors>
+							<Anchor relativePoint="CENTER" point="CENTER">
+								<AbsDimension x="0" y="0" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="742" y="25" />
+						</Size>
+						<cssClass>center</cssClass>
+						<css>[local.css]normal2.css</css>
+						<text>[ui.theme.marketplace.infos]</text>
+					</Label>
+
+
+					<Container>
+						<Label name="lbl_filter">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="200" y="25" />
+							</Size>
+							<cssClass>left</cssClass>
+							<css>[local.css]normal2.css</css>
+							<text>[ui.map.mapFilters]</text>
+						</Label>
+
+						<themeLabelCheckBox name="cb_version">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="650" y="25" />
+								</Anchor>
+							</Anchors>
+						</themeLabelCheckBox>
+
+						<searchInput inputName="inp_filter">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="20" />
+								</Anchor>
+							</Anchors>
+						</searchInput>
+						
+						<comboBoxWithBackground name="cbx_categories">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="290" y="20" />
+								</Anchor>
+							</Anchors>
+						</comboBoxWithBackground>
+
+					</Container>
+
+
+				</Content>
+			</block>
+
+<Container>
+				<Anchors>
+					<Anchor relativePoint="TOP" point="TOP">
+						<AbsDimension x="0" y="70" />
+					</Anchor>
+				</Anchors>
+				
+				<TextureBitmap>
+					<Size>
+						<AbsDimension x="560" y="40" />
+					</Size>
+					<themeDataId>bg_small_border_light</themeDataId>
+					<smooth>true</smooth>
+				</TextureBitmap>
+
+				<InputComboBox name="icbx_url">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="12" y="9" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="540" y="25" />
+					</Size>
+					<css>[local.css]small2.css</css>
+				
+					<buttonTexture>arrow_small_bottom</buttonTexture>
+					<listTexture>[local.common]bg_listbox.png</listTexture>
+					<rendererName>InlineXmlGridRenderer</rendererName>
+					<rendererArgs>updateUrlLine,[local.css]combobox.css,,,,[colors.combobox.over],[colors.combobox.selected]</rendererArgs>
+					<scrollBarCss>[local.css]scrollBar.css</scrollBarCss>
+
+					<slotWidth>540</slotWidth>
+					<slotHeight>25</slotHeight>
+
+					<Container>
+						<Button name="btn_url">
+							<Common>
+								<Texture>
+									<Size>
+									<AbsDimension x="540" y="25" />
+									</Size>
+									<bgColor>0</bgColor>
+									<bgAlpha>0</bgAlpha>
+									<mouseEnabled>true</mouseEnabled>
+								</Texture>
+
+								<Label name="lbl_url">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="8" y="0" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="502" y="20" />
+									</Size>
+									<cssClass>medium</cssClass>
+									<css>[local.css]small2.css</css>
+								</Label>
+							</Common>
+
+							<State type="OVER">
+								<SetProperties target="btn_url">
+									<bgColor>[colors.combobox.over]</bgColor>
+								</SetProperties>
+							</State>
+
+							<State type="SELECTED">
+								<SetProperties target="btn_url">
+									<bgColor>[colors.combobox.selected]</bgColor>
+								</SetProperties>
+							</State>
+
+							<State type="SELECTED_OVER">
+								<SetProperties target="btn_url">
+									<bgColor>[colors.combobox.selected]</bgColor>
+								</SetProperties>
+							</State>
+						</Button>
+						
+						<themeIconButton name="btn_removeUrl">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="510" y="3" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="19" y="19" />
+							</Size>
+							<bgThemeDataId>btn_cross_in_grey_circle</bgThemeDataId>
+							<smooth>true</smooth>
+						</themeIconButton>
+					</Container>
+				</InputComboBox>
+				
+				<!--Label name="lbl_currentUrl">
+					<Anchors>
+						<Anchor relativePoint="TOP" point="TOP">
+							<AbsDimension x="0" y="10" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="530" y="46" />
+					</Size>
+					<cssClass>medium</cssClass>
+					<css>[local.css]small2.css</css>
+				</Label-->
+			</Container>
+
+		</Content>
+	</window>
+
+	<Container name="ctn_help_tooltip">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="750" y="150" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="550" y="275" />
+		</Size>
+		<bgColor>[colors.tooltip.bg]</bgColor>
+		<bgAlpha>[colors.tooltip.bg.alpha]</bgAlpha>
+		<TextArea>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="10" y="10" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="530" y="255" />
+			</Size>
+				<cssClass>left</cssClass>
+				<css>[local.css]small2.css</css>
+				<text>[ui.theme.help]</text>
+				<useCustomFormat>true</useCustomFormat>
+			</TextArea>
+	</Container>
+</Definition>

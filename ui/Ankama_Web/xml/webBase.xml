@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition modal="true">
+    <Import url="[config.mod.template]window.xml" />
+    <Import url="[config.mod.template]button/horizontalTabGreenLine.xml" />
+    <Import url="mod://Ankama_Social/xml/template/socialTab.xml" />
+    
+    <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+        <Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+	
+	<window name="mainCtr" title="[ui.banner.shopGifts]" iconUri="[config.ui.skin]texture/windowIcon/icon__0030_Shop.png" dark="true">
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="0" y="-50" />
+			</Anchor>
+		</Anchors>
+		<mouseEnabled>true</mouseEnabled>
+		<Size>
+			<AbsDimension x="1230" y="860" />
+		</Size>
+
+		<Content>
+			<Texture name="tx_line">
+				<Size>
+					<AbsDimension x="1193" y="390" />
+				</Size>
+				<uri>[local.common]bg_green_line.png</uri>
+			</Texture>
+			
+			<Container name="ctr_linemask">
+				<Size>
+					<AbsDimension x="1193" y="56" />
+				</Size>
+				<bgColor>0x000000</bgColor>
+				<bgAlpha>0</bgAlpha>
+			</Container>
+			
+			<Container>
+				<Anchors>
+					<Anchor relativePoint="TOP" point="TOP">
+						<AbsDimension x="0" y="18" />
+					</Anchor>
+				</Anchors>
+
+				<horizontalTabGreenLine name="btn_tabOgrines">
+					<text>[ui.shop.BAK]</text>
+					<Size>
+						<AbsDimension x="240" y="35" />
+					</Size>
+				</horizontalTabGreenLine>
+
+				<horizontalTabGreenLine name="btn_tabShop">
+					<Anchors>
+						<Anchor relativeTo="btn_tabOgrines" relativePoint="TOPRIGHT" point="TOPLEFT"/>
+					</Anchors>
+					<text>[ui.shop.shop]</text>
+				</horizontalTabGreenLine>
+
+				<horizontalTabGreenLine name="btn_tabVeteranRewards">
+					<Anchors>
+						<Anchor relativeTo="btn_tabShop" relativePoint="TOPRIGHT" point="TOPLEFT"/>
+					</Anchors>
+					<text>[ui.veteran.veteranRewards]</text>
+				</horizontalTabGreenLine>
+			</Container>
+
+			<Container name="uiCtr">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="3" y="61" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="1125" y="646" />
+				</Size>
+			</Container>
+		</Content>
+	</window>
+    
+	<!--Container name="mainCtr">
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="-20" y="-65" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="1184" y="870" />
+		</Size>
+		<mouseEnabled>true</mouseEnabled>
+
+		<iconButton name="btn_tabOgrines">
+            <Anchors>
+                <Anchor>
+                	<AbsDimension x="0" y="47" />
+                </Anchor>
+            </Anchors>
+            <uri>[local.assets]shop_btn_ongletOgrine</uri>
+	        <radioGroup>tabGroup</radioGroup>
+	        <radioMode>true</radioMode>
+		</iconButton>
+		
+		<iconButton name="btn_tabVeteranRewards">
+            <Anchors>
+                <Anchor>
+                	<AbsDimension x="0" y="104" />
+                </Anchor>
+            </Anchors>
+            <uri>[local.assets]shop_btn_ongletVeteranReward</uri>
+	        <radioGroup>tabGroup</radioGroup>
+	        <radioMode>true</radioMode>
+	        <visible>false</visible>
+		</iconButton>
+		
+		<iconButton name="btn_tabShop">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="161" />
+				</Anchor>
+			</Anchors>
+			<uri>[local.assets]shop_btn_ongletShop</uri>
+	        <radioGroup>tabGroup</radioGroup>
+	        <radioMode>true</radioMode>
+	        <visible>false</visible>
+		</iconButton>
+		
+		<iconButton name="btn_tabLibrary">
+            <Anchors>
+                <Anchor>
+                	<AbsDimension x="0" y="218" />
+                </Anchor>
+            </Anchors>
+            <uri>[local.assets]social_btn_tabDirectory</uri>
+	        <radioGroup>tabGroup</radioGroup>
+	        <radioMode>true</radioMode>
+	        <visible>false</visible>
+		</iconButton>
+		
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="62" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1122" y="870" />
+			</Size>
+			<autoGrid>true</autoGrid>
+			<uri>[local.assets]tx_generalBackground</uri>
+			<shadowColor>[colors.ui.shadow]</shadowColor>
+		</Texture>
+
+		<iconButton name="btn_close">
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" />
+			</Anchors>
+			<Size>
+				<AbsDimension x="57" y="36" />
+			</Size>
+			<uri>[local.assets]btn_cornerCross</uri>
+        </iconButton>       
+        
+        <Container name="uiCtr">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="75" y="10" />
+				</Anchor>
+			</Anchors>
+		</Container>
+        
+	</Container-->
+</Definition>
+

@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition labelDebug="false">
+
+    <Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/sortButton.xml" />
+    <Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template.button]themeLabelCheckBox.xml" />
+	<Import url="[config.mod.template]button/themeIconButton.xml" />
+	<Import url="[config.mod.template.button]searchInput.xml" />	
+    
+    <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+        
+       	<Constant name="emblems_uri" value="[config.content.path]gfx/emblems/" /> 
+       	<Constant name="criteriaType_uri" value="[local.texture]dare/dare_criteria_type" /> 
+		<Constant name="monsterSprite_uri" value="[config.gfx.path.monsters]" />
+		<Constant name="heads_uri" value="[config.content.path]gfx/heads/SmallHead_" />
+       		
+		<Constant name="criteriaCtrY" value="70" type="int" />
+		<Constant name="detailsRightCtrY" value="35" type="int" />
+		<Constant name="criteriaListLineX" value="92" type="int" />
+	</Constants>
+    
+	<Container>
+		
+		<!-- Recherche -->
+		
+		<Container>
+			<Anchors> 
+				<Anchor>
+					<AbsDimension x="785" y="0" />
+				</Anchor>
+			</Anchors>
+		
+			<searchInput width="300" btnCloseName="btn_resetSearch">
+				<themeDataId>bg_small_border_dark</themeDataId>
+			</searchInput>
+						
+			<themeIconButton name="btn_searchFilter">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="300" y="9" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="22" y="21" />
+				</Size>
+				<iconUri>[local.texture]btnIcon/btnIcon_filter.png</iconUri>
+			</themeIconButton>
+		</Container>
+		
+		<!-- Liste des défis -->
+		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="11" y="40" />
+				</Anchor>
+			</Anchors>
+			
+  			<Texture>
+  				<Anchors>
+  					<Anchor>
+  						<AbsDimension x="0" y="5" />
+  					</Anchor>
+  				</Anchors>
+  				<Size>
+  					<AbsDimension x="1104" y="36" />
+  				</Size>
+  				<uri>[local.common]bg_dark.png</uri>
+  			</Texture>
+				
+			<!-- Boutons de tri et noms de colonnes -->
+			<Container>
+				<sortButton name="btn_tabMonster">
+					<Size>
+						<AbsDimension x="300" y="36" />
+					</Size> 
+				</sortButton>		
+				<sortButton name="btn_tabDuration">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="300" y="0" />
+						</Anchor>
+					</Anchors>				
+					<Size>
+						<AbsDimension x="220" y="36" />
+					</Size>   
+				</sortButton>	
+				<sortButton name="btn_tabWinners">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="520" y="0" />
+						</Anchor>
+					</Anchors>				
+					<Size>
+						<AbsDimension x="150" y="36" />
+					</Size>
+				</sortButton>		
+				<sortButton name="btn_tabJackpot">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="670" y="0" />
+						</Anchor>
+					</Anchors>				
+					<Size>
+						<AbsDimension x="170" y="36" />
+					</Size>   
+				</sortButton>		
+				<sortButton name="btn_tabFee">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="840" y="0" />
+						</Anchor>
+					</Anchors>				
+					<Size>
+						<AbsDimension x="170" y="36" />
+					</Size>
+				</sortButton>	
+				
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="40" y="10" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="250" y="16" />
+					</Size>
+					<text>[ui.dare.monster]</text>
+					<css>[local.css]small2.css</css>
+				</Label>	
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="290" y="10" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="220" y="16" />
+					</Size>
+					<text>[ui.dare.remainingTime]</text>
+					<cssClass>center</cssClass>
+					<css>[local.css]small2.css</css>
+				</Label>	
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="520" y="10" />
+						</Anchor>
+					</Anchors>				
+					<Size>
+						<AbsDimension x="140" y="16" />
+					</Size>
+					<text>[ui.dare.countWinners]</text>
+					<cssClass>center</cssClass>
+					<css>[local.css]small2.css</css>
+				</Label>	
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="680" y="10" />
+						</Anchor>
+					</Anchors>				
+					<Size>
+						<AbsDimension x="130" y="16" />
+					</Size>
+					<text>[ui.dare.jackpot]</text>
+					<cssClass>right</cssClass>
+					<css>[local.css]small2.css</css>
+				</Label>	
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="860" y="10" />
+						</Anchor>
+					</Anchors>				
+					<Size>
+						<AbsDimension x="130" y="16" />
+					</Size>
+					<text>[ui.dare.fees.short]</text>
+					<cssClass>right</cssClass>
+					<css>[local.css]small2.css</css>
+				</Label>
+			</Container>	
+			
+			
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="41" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="1104" y="446" />
+				</Size>
+				<uri>[local.common]bg_light.png</uri>
+			</Texture>
+			
+			
+			<Label name="lbl_noResult">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="250" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="1104" y="25" />
+				</Size>
+				<cssClass>center</cssClass>
+				<css>[local.css]normal2.css</css>
+				<text>[ui.search.noResult]</text>
+				<visible>false</visible>
+			</Label>	
+	
+			<Grid name="gd_list">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="41" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="1104" y="450" />
+				</Size>
+				<rendererName>MultiGridRenderer</rendererName>
+				<rendererArgs>updateDareLine,getDareLineType,getDareDataLength</rendererArgs>
+				<scrollDisplay>always</scrollDisplay>
+				<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+				<autoSelectMode>1</autoSelectMode>
+				<slotWidth>1094</slotWidth>
+				<slotHeight>30</slotHeight>
+				<hiddenRow>2</hiddenRow>
+				
+				<Container name="ctr_dare">
+					<Size>
+						<AbsDimension x="1094" y="90" />
+					</Size>
+										
+					<Container name="ctr_dareLine">	
+						<Size>
+							<AbsDimension x="1094" y="90" />
+						</Size>
+						
+						<Container name="ctr_bg">	
+							<Size>
+								<AbsDimension x="1094" y="89" />
+							</Size>
+							<bgColor>[colors.multigrid.line]</bgColor>	
+							<bgAlpha>0.5</bgAlpha>
+						</Container>
+						
+						<Texture name="tx_sprite">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="2" y="2" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="86" y="86" />
+							</Size>
+						</Texture>		
+						
+						<Label name="lbl_monster">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="92" y="12" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="400" y="16" />
+							</Size>
+							<hyperlinkEnabled>true</hyperlinkEnabled>
+							<useStyleSheet>true</useStyleSheet>
+							<css>[local.css]normal2.css</css>
+						</Label>
+				
+						<Label name="lbl_duration">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="300" y="34" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="200" y="16" />
+							</Size>
+							<cssClass>center</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+				
+						<Label name="lbl_winners">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="530" y="34" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="120" y="16" />
+							</Size>
+							<cssClass>center</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+				
+						<Label name="lbl_jackpot">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="680" y="34" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="130" y="16" />
+							</Size>
+							<cssClass>right</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+				
+						<Texture name="tx_k1">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="813" y="36" />
+								</Anchor>
+							</Anchors>
+							<uri>[local.assets]tx_kama</uri>
+							<Size>
+								<AbsDimension x="18" y="16" />
+							</Size>
+							<uri>[local.texture]icon_kama.png</uri>
+						</Texture>
+				
+						<Label name="lbl_fee">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="860" y="34" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="130" y="16" />
+							</Size>
+							<cssClass>right</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+				
+						<Texture name="tx_k2">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="993" y="36" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="18" y="16" />
+							</Size>
+							<uri>[local.texture]icon_kama.png</uri>
+						</Texture>				
+					</Container>
+				
+					<themeIconButton name="btn_visible">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="1040" y="29" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="32" y="32" />
+						</Size>
+	            		<checkBox>true</checkBox>
+						<bgThemeDataId>btn_eye</bgThemeDataId>
+						<smooth>true</smooth>
+					</themeIconButton>
+										
+					<Container name="ctr_guildalliance">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="[local.criteriaListLineX]" y="45" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="30" y="30" />
+						</Size>
+						<Texture name="tx_emblemBack">
+							<Size>
+								<AbsDimension x="30" y="30" />
+							</Size>
+						</Texture>
+						<Texture name="tx_emblemUp">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="6" y="6" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="18" y="18" />
+							</Size>
+						</Texture>
+					</Container>
+						
+					<Grid name="gd_criteriaTxList">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="[local.criteriaListLineX]" y="45" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="170" y="30" />
+						</Size>
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updateDareCriteriaTxLine</rendererArgs>
+						<scrollDisplay>never</scrollDisplay>
+						<slotWidth>34</slotWidth>
+						<slotHeight>30</slotHeight>
+						
+						<Container>
+							<Size>
+								<AbsDimension x="34" y="30" />
+							</Size>
+							
+							<Texture name="tx_criteria">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="2" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="30" y="30" />
+								</Size>
+							</Texture>					
+						</Container>
+					</Grid>
+				</Container>
+						
+				<Container name="ctr_details">
+					<Size>
+						<AbsDimension x="1094" y="270" />
+					</Size>
+					
+					<!-- Ligne generique du haut, duplication de ctr_dare parce qu'on n'a pas le choix -->
+					
+					<Container name="ctr_dareLine">	
+						<Size>
+							<AbsDimension x="1094" y="90" />
+						</Size>
+						
+						<Container name="ctr_bg">	
+							<Size>
+								<AbsDimension x="1094" y="89" />
+							</Size>
+							<bgColor>[colors.multigrid.line]</bgColor>	
+							<bgAlpha>0.5</bgAlpha>
+						</Container>
+						
+						<Texture name="tx_sprite">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="2" y="2" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="86" y="86" />
+							</Size>
+						</Texture>		
+						
+						<Label name="lbl_monster">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="92" y="12" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="400" y="16" />
+							</Size>
+							<hyperlinkEnabled>true</hyperlinkEnabled>
+							<useStyleSheet>true</useStyleSheet>
+							<css>[local.css]normal2.css</css>
+						</Label>
+				
+						<Label name="lbl_duration">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="300" y="34" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="200" y="16" />
+							</Size>
+							<cssClass>center</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+				
+						<Label name="lbl_winners">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="530" y="34" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="120" y="16" />
+							</Size>
+							<cssClass>center</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+				
+						<Label name="lbl_jackpot">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="680" y="34" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="130" y="16" />
+							</Size>
+							<cssClass>right</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+				
+						<Texture name="tx_k1">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="813" y="36" />
+								</Anchor>
+							</Anchors>
+							<uri>[local.assets]tx_kama</uri>
+							<Size>
+								<AbsDimension x="18" y="16" />
+							</Size>
+							<uri>[local.texture]icon_kama.png</uri>
+						</Texture>
+				
+						<Label name="lbl_fee">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="860" y="34" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="130" y="16" />
+							</Size>
+							<cssClass>right</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+				
+						<Texture name="tx_k2">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="993" y="36" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="18" y="16" />
+							</Size>
+							<uri>[local.texture]icon_kama.png</uri>
+						</Texture>				
+					</Container>
+				
+					<themeIconButton name="btn_visible">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="1040" y="29" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="32" y="32" />
+						</Size>
+	            		<checkBox>true</checkBox>
+						<bgThemeDataId>btn_eye</bgThemeDataId>
+						<smooth>true</smooth>
+					</themeIconButton>
+										
+					<Container name="ctr_guildalliance">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="[local.criteriaListLineX]" y="45" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="30" y="30" />
+						</Size>
+						<Texture name="tx_emblemBack">
+							<Size>
+								<AbsDimension x="30" y="30" />
+							</Size>
+						</Texture>
+						<Texture name="tx_emblemUp">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="6" y="6" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="18" y="18" />
+							</Size>
+						</Texture>
+					</Container>
+						
+					<Grid name="gd_criteriaTxList">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="[local.criteriaListLineX]" y="45" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="170" y="30" />
+						</Size>
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updateDareCriteriaTxLine</rendererArgs>
+						<scrollDisplay>never</scrollDisplay>
+						<slotWidth>34</slotWidth>
+						<slotHeight>30</slotHeight>
+						
+						<Container>
+							<Size>
+								<AbsDimension x="34" y="30" />
+							</Size>
+							
+							<Texture name="tx_criteria">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="2" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="30" y="30" />
+								</Size>
+							</Texture>					
+						</Container>
+					</Grid>
+					
+					<!-- Partie de détails dépliés -->
+					
+					<Container>	
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="90" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="1094" y="180" />
+						</Size>
+						<bgColor>[colors.multigrid.subline]</bgColor>	
+						<bgAlpha>0.5</bgAlpha>
+							
+						<Label name="lbl_creator">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="660" y="10" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="400" y="20" />
+							</Size>
+							<hyperlinkEnabled>true</hyperlinkEnabled>
+							<useStyleSheet>true</useStyleSheet>
+							<cssClass>right</cssClass>
+							<css>[local.css]normal2.css</css>
+						</Label>
+									
+						<Texture name="tx_private">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="1040" y="37" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="17" y="17" />
+							</Size>
+							<uri>[local.texture]icon_lock.png</uri>
+							<visible>true</visible>
+						</Texture>
+						
+						<Container name="ctr_bottomRight">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="660" y="62" />
+								</Anchor>
+							</Anchors>
+							
+							<Label name="lbl_remainingTime">
+								<Size>
+									<AbsDimension x="400" y="18" />
+								</Size>
+								<cssClass>right</cssClass>
+								<css>[local.css]normal2.css</css>
+							</Label>
+							<Label name="lbl_realDuration">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="150" y="22" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="250" y="18" />
+								</Size>
+								<cssClass>right</cssClass>
+								<css>[local.css]normal2.css</css>
+							</Label>
+							
+							<Label name="lbl_entrants">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="44" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="400" y="18" />
+								</Size>
+								<cssClass>right</cssClass>
+								<css>[local.css]normal2.css</css>
+							</Label>
+							
+							<simpleButton name="btn_subscribe" label="[ui.dare.register]" >
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="222" y="75" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="140" y="32" />
+								</Size>
+								<css>[local.css]button.css</css>
+							</simpleButton>
+							
+							<themeIconButton name="btn_web">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="368" y="75" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="32" y="32" />
+								</Size>
+								<iconUri>[local.texture]btnIcon/btnIcon_share.png</iconUri>
+							</themeIconButton>
+						</Container>
+						
+						
+						<!-- Les criteres -->
+						<Grid name="gd_listCrit">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="20" y="10" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="560" y="160" />
+							</Size>
+							<rendererName>InlineXmlGridRenderer</rendererName>
+							<rendererArgs>updateCritLine</rendererArgs>
+							<slotWidth>540</slotWidth>
+							<slotHeight>32</slotHeight>
+							
+							<Container>
+								<Size>
+									<AbsDimension x="540" y="32" />
+								</Size>		
+								
+								<Texture name="tx_iconCrit">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="4" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="24" y="24" />
+									</Size>
+								</Texture>
+								
+								<Label name="lbl_nameCrit">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="30" y="3" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="320" y="16" />
+									</Size>
+									<css>[local.css]normal2.css</css>
+								</Label>		
+								
+								<Label name="lbl_valueCrit">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="360" y="3" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="240" y="16" />
+									</Size>
+									<css>[local.css]normal2.css</css>
+								</Label>
+														
+								<Grid name="gd_slotsCrit">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="360" y="1" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="200" y="30" />
+									</Size>
+									<rendererName>SlotGridRenderer</rendererName>
+									<rendererArgs>,,,,,,[local.css]small2.css,false,,,,[local.texture]slot/emptySlot.png</rendererArgs>
+									<slotWidth>30</slotWidth>
+									<slotHeight>30</slotHeight>
+									<scrollDisplay>none</scrollDisplay>
+									<autoSelectMode>0</autoSelectMode>
+									<Hooks>
+										<onItemRollOver />
+										<onItemRollOut />
+									</Hooks>
+								</Grid>								
+													
+								<Grid name="gd_dataCrit">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="360" y="1" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="100" y="30" />
+									</Size>
+									<rendererName>InlineXmlGridRenderer</rendererName>
+									<rendererArgs>updateBreed</rendererArgs>
+									<slotWidth>30</slotWidth>
+									<slotHeight>30</slotHeight>
+						
+									<Container name="ctr_breed">
+										<Size>
+											<AbsDimension x="30" y="30" />
+										</Size>
+										
+										<Texture>
+											<Size>
+												<AbsDimension x="30" y="30" />
+											</Size>
+											<uri>[local.texture]slot/emptySlot.png</uri>
+										</Texture>
+										<Texture name="tx_breed">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="1" y="1" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="28" y="28" />
+											</Size>
+										</Texture>
+									</Container>
+									<Hooks>
+										<onSelectItem />
+									</Hooks>
+								</Grid>
+							</Container>
+						</Grid>								
+						
+						<Label name="lbl_noCriteria">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="20" y="70" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="500" y="20" />
+							</Size>
+							<text>[ui.dare.noCriteria]</text>
+							<cssClass>center</cssClass>
+							<css>[local.css]small2.css</css>
+							<visible>false</visible>
+						</Label>
+						
+					</Container>	
+				</Container>
+			</Grid>
+			
+		
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="485" />
+					</Anchor>
+				</Anchors>
+				
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="52" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="1104" y="52" />
+					</Size>
+					<scaleY>-1</scaleY>
+					<uri>[local.common]bg_dark.png</uri>
+				</Texture>
+		
+				<themeLabelCheckBox name="btn_onlyShowIfSubscribable">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="16" y="17" />
+						</Anchor>
+					</Anchors>
+					<labelWidth>650</labelWidth>
+					<text>[ui.dare.showOnlyStartable]</text>
+				</themeLabelCheckBox>
+		
+				<themeLabelCheckBox name="btn_onlyShowIfFightable">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="16" y="17" />
+						</Anchor>
+					</Anchors>
+					<labelWidth>650</labelWidth>
+					<text>[ui.dare.showOnlyFightable]</text>
+				</themeLabelCheckBox>
+							
+				<Label name="lbl_daresCount">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="740" y="15" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="350" y="20" />
+					</Size>
+					<cssClass>right</cssClass>
+					<css>[local.css]small2.css</css>
+				</Label>
+			</Container>
+		</Container>
+				
+
+	</Container>
+</Definition>
+

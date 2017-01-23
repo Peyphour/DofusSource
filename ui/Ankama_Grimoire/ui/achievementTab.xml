@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition labelDebug="false">
+
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template]button/sortButton.xml" />
+	<Import url="[config.mod.template]button/themeLabelCheckBox.xml" />
+	<Import url="[config.mod.template]button/searchInput.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	<Import url="[config.mod.template]blockDoubleBorder.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="success" value="[config.ui.skin]texture/success/" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="illusUi" value="[config.gfx.path]illusUi/achievements/" />
+
+		<Constant name="itemIconPath" value="[config.gfx.path.item.bitmap]" />
+		<Constant name="jobIconPath" value="[config.gfx.path]jobs/" />
+		<Constant name="spellIconPath" value="[config.gfx.path]spells/" />
+		<Constant name="emoteIconPath" value="[config.gfx.path]emotes/" />
+		<Constant name="achievementPath" value="[config.gfx.path]achievements/" />
+
+		<Constant name="css_uri" value="[local.css]normal.css" />
+
+		<Constant name="dungeon_icon" value="[local.assets]Quetes_tx_PictoDonjon" />
+
+		<Constant name="gauge_width_category" value="210" type="int" />
+		<Constant name="gauge_width_objective" value="398" type="int" />
+		<Constant name="gauge_width_total" value="518" type="int" />
+
+		<Constant name="lbl_name_width" value="440" type="int" />
+		<Constant name="lbl_name_width_incompatibleIdols" value="415" type="int" />
+
+		<Constant name="tx_checked" value="[local.common]btn_checkbox_selected.png" />
+		<Constant name="tx_unchecked" value="[local.common]btn_checkbox_normal.png" />
+
+		<Constant name="search_y_in_state_0" value="62" type="int" />
+		<Constant name="search_y_in_state_1" value="71" type="int" />
+
+	</Constants>
+
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="0" y="0" />
+			</Anchor>
+		</Anchors>
+
+
+		<!-- PARTIE DE GAUCHE -->
+		<block>
+			<Size>
+				<AbsDimension x="435" y="730" />
+			</Size>
+			<Content>
+
+				<!-- Liste de categories -->
+				<Grid name="gd_categories">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="420" y="720" />
+					</Size>
+					<rendererName>MultiGridRenderer</rendererName>
+					<rendererArgs>updateCategory,getCatLineType,getCatDataLength</rendererArgs>
+					<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+					<slotWidth>366</slotWidth>
+					<slotHeight>35</slotHeight>
+					<vPadding>2</vPadding>
+					<Container name="ctr_cat">
+						<Size>
+							<AbsDimension x="420" y="35" />
+						</Size>
+
+						<Button name="btn_cat">
+							<Common>
+								<radioMode>true</radioMode>
+
+								<Texture>
+									<Size>
+										<AbsDimension x="420" y="35" />
+									</Size>
+									<bgColor>[colors.grid.line]</bgColor>
+								</Texture>
+
+								<Texture name="tx_catIcon">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="9" y="7" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="22" y="22" />
+									</Size>
+								</Texture>
+
+								<Label name="lbl_catName">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="43" y="6" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="227" y="21" />
+									</Size>
+									<css>[local.css]small2.css</css>
+								</Label>
+
+							</Common>
+
+							<State type="OVER">
+								<SetProperties target="btn_cat">
+									<bgColor>[colors.grid.over]</bgColor>
+								</SetProperties>
+							</State>
+
+							<State type="SELECTED">
+								<SetProperties target="btn_cat">
+									<bgColor>[colors.grid.selected]</bgColor>
+								</SetProperties>
+							</State>
+
+							<State type="SELECTED_OVER">
+								<SetProperties target="btn_cat">
+									<bgColor>[colors.grid.selected]</bgColor>
+								</SetProperties>
+							</State>
+						</Button>
+
+						<Label name="lbl_catPercent">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="340" y="6" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="50" y="21" />
+							</Size>
+							<cssClass>right</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+					</Container>
+
+					<Container name="ctr_subCat">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="0" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="420" y="35" />
+						</Size>
+
+						<Button name="btn_cat">
+							<Common>
+								<Size>
+									<AbsDimension x="420" y="35" />
+								</Size>
+								<radioMode>true</radioMode>
+								<bgColor></bgColor>
+
+								<Label name="lbl_catName">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="73" y="4" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="223" y="21" />
+									</Size>
+
+									<css>[local.css]normal2.css</css>
+								</Label>
+
+								<Label name="lbl_catPercent">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="340" y="4" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="50" y="21" />
+									</Size>
+									<cssClass>right</cssClass>
+									<css>[local.css]normal2.css</css>
+								</Label>
+							</Common>
+
+							<State type="OVER">
+								<SetProperties target="btn_cat">
+									<bgColor>[colors.grid.over]</bgColor>
+								</SetProperties>
+							</State>
+
+							<State type="SELECTED">
+								<SetProperties target="btn_cat">
+									<bgColor>[colors.grid.selected]</bgColor>
+								</SetProperties>
+							</State>
+
+							<State type="SELECTED_OVER">
+								<SetProperties target="btn_cat">
+									<bgColor>[colors.grid.selected]</bgColor>
+								</SetProperties>
+							</State>
+						</Button>
+					</Container>
+				</Grid>
+
+			</Content>
+		</block>
+
+		<!-- PARTIE DE DROITE -->
+		<block>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="450" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="780" y="730" />
+			</Size>
+			<Content>
+
+				<!-- points -->
+				<TextureBitmap>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="20" y="0" />
+						</Anchor>
+					</Anchors>
+					<uri>[local.texture]success/success_ornament.png</uri>
+					<smooth>true</smooth>
+				</TextureBitmap>
+
+				<Label name="lbl_myPoints">
+					<Anchors>
+						<Anchor point="TOP" relativePoint="TOP">
+							<AbsDimension x="0" y="12" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="160" y="50" />
+					</Size>
+					<css>[local.css]special.css</css>
+					<cssClass>successpoints</cssClass>
+				</Label>
+
+				<!-- summaries -->
+				<Container name="ctr_summary">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="15" y="105" />
+						</Anchor>
+					</Anchors>
+
+					<!-- Progress -->
+					<Container>
+						<Texture>
+							<Size>
+								<AbsDimension x="738" y="120" />
+							</Size>
+							<uri>[local.illusUi]success_illu_0.png</uri>
+							<autoGrid>true</autoGrid>
+						</Texture>
+
+						<Label name="lbl_titleProgress">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="5" y="73" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="278" y="20" />
+							</Size>
+							<cssClass>medium</cssClass>
+							<css>[local.css]small2.css</css>
+							<text>[ui.craft.progress]</text>
+						</Label>
+
+						<Container name="ctr_globalProgress">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="1" y="98" />
+								</Anchor>
+							</Anchors>
+
+							<ProgressBar name="pb_progress">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="5" y="5" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="685" y="10" />
+								</Size>
+								<barColor>[colors.progressbar.green]</barColor>
+								<barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+								<separators>0</separators>
+							</ProgressBar>
+
+							<Label name="lbl_percent">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="670" y="-2" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="60" y="21" />
+								</Size>
+								<css>[local.css]small2.css</css>
+								<cssClass>right</cssClass>
+							</Label>
+						</Container>
+					</Container>
+
+					<Grid name="gd_summary">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="135" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="770" y="480" />
+						</Size>
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updateSummary</rendererArgs>
+						<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+						<autoSelectMode>0</autoSelectMode>
+						<slotWidth>358</slotWidth>
+						<slotHeight>105</slotHeight>
+
+						<Container name="ctr_summary">
+							<Size>
+								<AbsDimension x="300" y="105" />
+							</Size>
+
+
+							<Container name="ctr_illu">
+								<Texture name="tx_illu">
+									<Size>
+										<AbsDimension x="358" y="108" />
+									</Size>
+									<visible>true</visible>
+								</Texture>
+
+								<Texture name="tx_icon">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="5" y="85" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="18" y="18" />
+									</Size>
+									<visible>false</visible>
+								</Texture>
+								
+								<Texture>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="43" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="358" y="40" />
+									</Size>
+									<uri>[local.common]tx_gradient_vertical_dark.png</uri>
+									<visible>false</visible>
+								</Texture>
+
+								<Label name="lbl_name">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="10" y="57" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="300" y="21" />
+									</Size>
+									<cssClass>medium</cssClass>
+									<css>[local.css]small2.css</css>
+								</Label>
+							</Container>
+
+							<Container name="ctr_progress">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="80" />
+									</Anchor>
+								</Anchors>
+
+								<ProgressBar name="pb_progress">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="6" y="8" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="305" y="10" />
+									</Size>
+									<barColor>[colors.progressbar.green]</barColor>
+									<barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+									<separators>0</separators>
+								</ProgressBar>
+
+								<Label name="lbl_percent">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="280" y="2" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="72" y="21" />
+									</Size>
+									<css>[local.css]small2.css</css>
+									<cssClass>right</cssClass>
+								</Label>
+							</Container>
+						</Container>
+					</Grid>
+				</Container>
+
+
+				<!-- Achievements -->
+				<blockDoubleBorder name="ctr_achievements"
+					headerHeight="40" footerHeight="40">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="62" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<RelDimension x="1" />
+						<AbsDimension y="660" />
+					</Size>
+					<Content>
+
+
+						<Label name="lbl_noAchievement">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="280" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="750" y="25" />
+							</Size>
+							<cssClass>center</cssClass>
+							<css>[local.css]normal2.css</css>
+							<text>[ui.achievement.noAchievement]</text>
+							<visible>false</visible>
+							<multiline>true</multiline>
+							<wordWrap>true</wordWrap>
+						</Label>
+
+						<Grid name="gd_achievements">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="40" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="750" y="555" />
+							</Size>
+							<rendererName>MultiGridRenderer</rendererName>
+							<rendererArgs>updateAchievement,getAchievementLineType,getAchievementDataLength</rendererArgs>
+							<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+							<slotWidth>740</slotWidth>
+							<slotHeight>15</slotHeight>
+							<hiddenRow>5</hiddenRow>
+							<Container name="ctr_empty">
+								<Size>
+									<AbsDimension x="740" y="15" />
+								</Size>
+								<bgColor>[colors.multigrid.subline]</bgColor>	
+								<bgAlpha>0.5</bgAlpha>
+							</Container>
+
+							<Container name="ctr_achievement">
+								<Size>
+									<AbsDimension x="740" y="90" />
+								</Size>
+
+								<Container name="btn_ach">
+									<Size>
+										<AbsDimension x="740" y="90" />
+									</Size>
+									<radioMode>true</radioMode>
+
+									<Container name="ctr_bg">
+										<Size>
+											<AbsDimension x="735" y="89" />
+										</Size>
+										<bgColor>[colors.multigrid.line]</bgColor>	
+										<bgAlpha>0.5</bgAlpha>
+									</Container>
+
+									<Texture name="tx_icon">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="15" y="13" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="64" y="64" />
+										</Size>
+									</Texture>
+									<TextureBitmap>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="15" y="13" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="64" y="64" />
+										</Size>
+										<uri>[local.texture]success/border_succes.png</uri>
+										<smooth>true</smooth>
+									</TextureBitmap>
+
+									<Container name="ctr_achPoints">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="640" y="25" />
+											</Anchor>
+										</Anchors>
+
+										<TextureBitmap>
+											<Size>
+												<AbsDimension x="70" y="35" />
+											</Size>
+											<uri>[local.common]small_dark_background.png</uri>
+										</TextureBitmap>
+
+										<Label name="lbl_points">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="7" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="70" y="20" />
+											</Size>
+											<cssClass>center</cssClass>
+											<css>[local.css]normal2.css</css>
+
+										</Label>
+									</Container>
+								</Container>
+
+								<Label name="lbl_name">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="110" y="12" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="440" y="25" />
+									</Size>
+									<cssClass>whitemedium</cssClass>
+									<css>[local.css]title.css</css>
+								</Label>
+
+								<Label name="lbl_description">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="110" y="45" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="510" y="45" />
+									</Size>
+									<css>[local.css]normal2.css</css>
+									<wordWrap>true</wordWrap>
+									<multiline>true</multiline>
+									<fixedHeightForMultiline>true</fixedHeightForMultiline>
+									<verticalAlign>center</verticalAlign>
+								</Label>
+
+								<TextureBitmap name="tx_incompatibleIdols">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="505" y="8" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="25" y="25" />
+									</Size>
+									<uri>[local.texture]icon_idol.png</uri>
+									<visible>false</visible>
+								</TextureBitmap>
+							</Container>
+
+							<Container name="ctr_objectives">
+								<Size>
+									<AbsDimension x="740" y="30" />
+								</Size>
+								<bgColor>[colors.multigrid.subline]</bgColor>
+								<bgAlpha>0.5</bgAlpha>
+
+								<Container>
+									<Container name="ctr_objectiveBin">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="50" y="2" />
+											</Anchor>
+										</Anchors>
+
+										<TextureBitmap name="tx_objectiveBin">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="1" y="0" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="30" y="25" />
+											</Size>
+											<uri>[local.tx_unchecked]</uri>
+											<smooth>true</smooth>
+										</TextureBitmap>
+										<Label name="lbl_objectiveBin">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="30" y="3" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="505" y="21" />
+											</Size>
+											<css>[local.css]normal2.css</css>
+										</Label>
+									</Container>
+
+									<Container name="ctr_objectiveProgress">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="40" y="0" />
+											</Anchor>
+										</Anchors>
+										<visible>false</visible>
+
+										<ProgressBar name="tx_objectiveProgress">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="8" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="400" y="16" />
+											</Size>
+											<barColor>[colors.progressbar.green]</barColor>
+											<barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+										</ProgressBar>
+
+										<Label name="lbl_objectiveProgress">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="420" y="3" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="130" y="21" />
+											</Size>
+											<cssClass>medium</cssClass>
+											<css>[local.css]small2.css</css>
+										</Label>
+									</Container>
+								</Container>
+							</Container>
+
+							<Container name="ctr_rewards">
+								<Size>
+									<AbsDimension x="740" y="90" />
+								</Size>
+								<bgColor>[colors.multigrid.subline]</bgColor>	
+								<bgAlpha>0.5</bgAlpha>
+
+								<TextureBitmap>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="2" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<RelDimension x="1" />
+										<AbsDimension y="3" />
+									</Size>
+									<uri>[local.common]window_separator_black_horizontal.png</uri>
+								</TextureBitmap>
+
+								<Label>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="20" y="6" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="261" y="23" />
+									</Size>
+									<text>[ui.grimoire.quest.rewards]</text>
+									<cssClass>bold</cssClass>
+									<css>[local.css]normal2.css</css>
+								</Label>
+
+								<Container>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="270" y="0" />
+										</Anchor>
+									</Anchors>
+									<!-- Label gains -->
+									<Label name="lbl_rewardsXp">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="0" y="32" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="170" y="21" />
+										</Size>
+										<cssClass>right</cssClass>
+										<css>[local.css]small2.css</css>
+
+									</Label>
+
+									<TextureBitmap name="tx_rewardsXp">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="180" y="37" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="30" y="15" />
+										</Size>
+										<uri>[local.texture]xp_shadow.png</uri>
+										<smooth>true</smooth>
+									</TextureBitmap>
+
+									<Label name="lbl_rewardsKama">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="0" y="58" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="170" y="21" />
+										</Size>
+										<cssClass>right</cssClass>
+										<css>[local.css]small2.css</css>
+									</Label>
+
+									<TextureBitmap name="tx_rewardsKama">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="173" y="52" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="32" y="32" />
+										</Size>
+										<uri>[local.texture]icon_kama_shadow.png</uri>
+										<smooth>true</smooth>
+									</TextureBitmap>
+								</Container>
+
+								<Grid name="gd_rewards">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="40" y="37" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="300" y="46" />
+									</Size>
+									<rendererName>SlotGridRenderer</rendererName>
+									<rendererArgs>[local.texture]slot/slot_big_dark_background_empty.png,[local.texture]slot/over.png,,,,,[local.css]normal2.css,
+										false</rendererArgs>
+									<slotWidth>44</slotWidth>
+									<slotHeight>44</slotHeight>
+									<scrollDisplay>none</scrollDisplay>
+									<autoSelectMode>0</autoSelectMode>
+
+									<Hooks>
+										<onItemRollOver />
+										<onItemRollOut />
+										<onItemRightClick />
+									</Hooks>
+								</Grid>
+
+								<themeIconButton name="btn_accept">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="545" y="38" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="44" y="44" />
+									</Size>
+									<iconUri>[local.texture]btnIcon/btnIcon_arrowClaim.png</iconUri>
+								</themeIconButton>
+							</Container>
+						</Grid>
+
+
+
+						<themeLabelCheckBox name="btn_hideCompletedAchievements">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="15" y="602" />
+								</Anchor>
+							</Anchors>
+							<selected>false</selected>
+							<labelWidth>400</labelWidth>
+							<labelHeight>20</labelHeight>
+							<text>[ui.achievement.hideAchieved]</text>
+						</themeLabelCheckBox>
+					</Content>
+				</blockDoubleBorder>
+
+
+				<!-- Recherche -->
+				<Container name="ctn_search">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="160" y="62" />
+						</Anchor>
+					</Anchors>
+
+					<searchInput name="search" width="420">
+						<themeDataId>bg_small_border_dark</themeDataId>
+					</searchInput>
+
+					<themeIconButton name="btn_searchFilter">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="420" y="6" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="27" y="27" />
+						</Size>
+						<iconUri>[local.texture]btnIcon/btnIcon_filter.png</iconUri>
+					</themeIconButton>
+				</Container>
+			</Content>
+
+		</block>
+
+
+
+
+		<!-- Container pour la partie haute (bannière) de l'interface -->
+
+		<!-- Container pour la partie basse de l'interface -->
+
+
+		<!-- SEPARATOR -->
+		<TextureBitmap>
+			<Anchors>
+				<Anchor point="CENTER">
+					<AbsDimension x="440" y="360" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="21" y="800" />
+			</Size>
+			<themeDataId>window_separator</themeDataId>
+		</TextureBitmap>
+	</Container>
+</Definition>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="icons_uri" value="[config.content.path]gfx/icons/icons.swf|" />
+	</Constants>
+	
+	<Container>
+		<Texture name="tx_icon">
+			<Size>
+				<AbsDimension x="30" y="30"/>
+			</Size>
+		</Texture>
+	</Container>
+</Definition>

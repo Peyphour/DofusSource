@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition labelDebug="false">
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+    <Import url="[config.mod.template]block.xml" />
+    <Import url="[config.mod.template]window.xml" />
+    
+   	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       	<Constant name="illus" value="[config.content.path]gfx/illusUi/" />
+       	<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="bgLevel_uri" value="[local.texture]tx_lvl.png" />
+		<Constant name="bgPrestige_uri" value="[local.texture]tx_prestige.png" />
+   	</Constants>
+
+	<Container>
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="0" y="-40" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="900" y="570" />
+		</Size>
+		<mouseEnabled>true</mouseEnabled>
+		
+		<window title="[ui.common.spouse]">
+			<Size>
+				<AbsDimension x="900" y="570" />
+			</Size>
+			
+		 	<Content> 		
+				<block>
+					<Size>
+						<AbsDimension x="860" y="500" />
+					</Size>
+				</block>	
+			</Content>
+		</window>
+
+
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="20" y="50" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="850" y="40" />
+			</Size>
+			<uri>[local.common]tx_gradient_vertical_dark_bar.png</uri>
+			<visible>false</visible>
+		</Texture> 
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="10" y="90"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="840" y="3" />
+			</Size>
+			<uri>[local.common]window_separator_green_horizontal.png</uri>
+			<visible>false</visible>
+		</Texture>
+		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="30" y="60" />
+				</Anchor>
+			</Anchors>
+	
+			<Label name="lbl_name">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="20" y="15" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="300" y="20" />
+				</Size>
+				<cssClass>center</cssClass>
+				<css>[local.css]title.css</css>
+	  			<hyperlinkEnabled>true</hyperlinkEnabled>
+				<useStyleSheet>true</useStyleSheet>
+			</Label>
+				
+			<TextureBitmap>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="50" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="522" y="245" />
+				</Size>		
+				<themeDataId>bg_small_border_dark</themeDataId>		
+			</TextureBitmap>
+			
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="20" y="55"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="300" y="3" />
+				</Size>
+				<uri>[local.common]window_separator_green_horizontal.png</uri>
+			</Texture>
+			
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="22" y="25" />
+					</Anchor>
+				</Anchors>
+			
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="50" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="170" y="16" />
+					</Size>
+					<text>[ui.charcrea.breed][ui.common.colon]</text>
+					<css>[local.css]normal2.css</css>
+				</Label>
+				<Label name="lbl_breed">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="205" y="50" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="272" y="16" />
+					</Size>
+					<cssClass>right</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+		
+				<Label name="lbl_levelTitle">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="75" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="170" y="16" />
+					</Size>
+					<text>[ui.common.level][ui.common.colon]</text>
+					<css>[local.css]normal2.css</css>
+				</Label>
+  				<Texture name="tx_level">
+  					<Anchors>
+  						<Anchor>
+  							<AbsDimension x="427" y="73" />
+  						</Anchor>
+  					</Anchors>
+  					<Size>
+  						<AbsDimension x="62" y="27" />
+  					</Size>
+  				</Texture>		
+				<Label name="lbl_level">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="432" y="75" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="50" y="16" />
+					</Size>
+  					<cssClass>boldcenter</cssClass>
+  					<css>[local.css]small2.css</css>
+				</Label>
+		
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="100" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="170" y="16" />
+					</Size>
+					<text>[ui.common.guild][ui.common.colon]</text>
+					<css>[local.css]normal2.css</css>
+				</Label>
+				<Label name="lbl_guild">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="205" y="100" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="272" y="16" />
+					</Size>
+					<cssClass>right</cssClass>
+					<css>[local.css]normal2.css</css>
+		  			<hyperlinkEnabled>true</hyperlinkEnabled>
+					<useStyleSheet>true</useStyleSheet>
+				</Label>
+		
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="125" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="170" y="16" />
+					</Size>
+					<text>[ui.common.alignment][ui.common.colon]</text>
+					<css>[local.css]normal2.css</css>
+				</Label>
+				<Label name="lbl_alignment">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="205" y="125" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="272" y="16" />
+					</Size>
+					<cssClass>right</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+		
+		
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="175" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="170" y="16" />
+					</Size>
+					<text>[ui.sersel.state][ui.common.colon]</text>
+					<css>[local.css]normal2.css</css>
+				</Label>
+				<Label name="lbl_state">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="205" y="175" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="272" y="16" />
+					</Size>
+					<cssClass>right</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+		
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="200" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="170" y="16" />
+					</Size>
+					<text>[ui.common.localisation][ui.common.colon]</text>
+					<css>[local.css]normal2.css</css>
+				</Label>
+				<Label name="lbl_loc">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="205" y="200" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="272" y="16" />
+					</Size>
+					<cssClass>right</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+			</Container>
+			
+			<Texture name="tx_inFight">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="232" y="250" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="57" y="35" />
+				</Size>
+				<uri>[local.assets]Social_tx_fightState</uri>
+				<visible>false</visible>
+			</Texture>
+		</Container>
+		
+		<TextureBitmap>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="40" y="365" />
+				</Anchor>
+			</Anchors>
+            <Size>
+                <AbsDimension x="517" y="3" />
+            </Size>
+            <uri>[local.common]window_separator_black_horizontal.png</uri>
+        </TextureBitmap>
+			
+				
+
+		<simpleButton name="btn_group" label="[ui.party.addToParty]"   >
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="138" y="380" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="300" y="32" />
+			</Size>
+		</simpleButton>
+
+		<simpleButton name="btn_follow" label="[ui.common.follow]"   >
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="138" y="420" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="300" y="32" />
+			</Size>
+		</simpleButton>
+
+		<simpleButton name="btn_join" label="[ui.common.join]"   >
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="138" y="480" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="300" y="32" />
+			</Size>
+		</simpleButton>
+		
+        
+		
+			
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="480" y="10" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="460" y="574" />
+			</Size>		
+			<uri>[local.common]light_bg_inventory.png</uri>				
+		</Texture>
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="870" y="120" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="300" y="213" />
+			</Size>
+			<uri>[local.illus]husband_heart.png</uri>
+			<scaleX>-1</scaleX>
+			<alpha>0</alpha>
+		</Texture>
+
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="425" y="20" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="246" y="200" />
+			</Size>
+			<uri>[local.illus]tofus_bague.png</uri>
+		</Texture>		
+
+		<EntityDisplayer name="ent_spouse">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="630" y="80" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="240" y="480" />
+			</Size>
+			<direction>3</direction>
+		</EntityDisplayer>
+
+		
+	</Container>
+</Definition>
+

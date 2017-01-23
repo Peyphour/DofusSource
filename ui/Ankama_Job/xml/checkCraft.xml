@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition labelDebug="false">
+    <Import url="[config.mod.template]button/labelCheckBox.xml"/>
+    <Import url="[config.mod.template]button/simpleCheckBox.xml"/>
+    <Import url="[config.mod.template]button/sortButton.xml"/>
+    <Import url="[config.mod.template]button/iconButton.xml"/>
+    <Import url="[config.mod.template]window.xml"/>
+    <Import url="[config.mod.template]block.xml"/>
+    <Import url="[config.mod.template.button]comboBoxWithBackground.xml" />
+    <Import url="[config.mod.template]button/themeLabelCheckBox.xml" />
+
+    <Constants>
+        <Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+        <Constant name="bitmap" value="[config.ui.skin]bitmap/"/>
+        <Constant name="css" value="[config.ui.skin]css/"/>
+        <Constant name="common" value="[config.ui.skin]common/" />
+    </Constants>
+
+
+    <Container>
+        <Anchors>
+            <Anchor>
+                <AbsDimension x="0" y="0"/>
+            </Anchor>
+        </Anchors>
+        <mouseEnabled>true</mouseEnabled>
+
+        <window>
+            <Size>
+                <AbsDimension x="500" y="910"/>
+            </Size>
+            <Anchors>
+                <Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT">
+                    <AbsDimension x="400" y="0"/>
+                </Anchor>
+            </Anchors>
+            <title>[ui.craft.possibleRecipesTitle]</title>
+            <Content>
+
+                <!--   AFFICHAGE DES RECETTES    -->
+
+                <Container>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="6" y="135"/>
+                        </Anchor>
+                    </Anchors>
+
+					<TextureBitmap>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="0" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="452" y="700" />
+						</Size>
+						<themeDataId>block_background_double</themeDataId>
+						<alpha>0.5</alpha>
+					</TextureBitmap>
+					
+                    <TextureBitmap>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="0" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="452" y="700"/>
+                        </Size>
+                        <themeDataId>block_border</themeDataId>
+                    </TextureBitmap>
+
+                    <Container name="ctr_recipes" strata="TOP">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="15" y="15"/>
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="425" y="635"/>
+                        </Size>
+                    </Container>
+
+                    <Label name="lbl_totalRecipes" strata="TOP">
+                        <Anchors>
+                            <Anchor point="BOTTOM" relativePoint="BOTTOM">
+                                <AbsDimension x="5" y="-12"/>
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="425" y="20"/>
+                        </Size>
+                        <css>[local.css]normal2.css</css>
+                        <cssClass>center</cssClass>
+                    </Label>
+                </Container>
+
+                <!--   OPTIONS D AFFICHAGE ET TRI    -->
+                <block>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="6" y="6"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="452" y="125"/>
+                    </Size>
+                    <Content>
+
+                        <Label>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="15" y="15"/>
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="150" y="20"/>
+                            </Size>
+                            <css>[local.css]normal2.css</css>
+                            <text>[ui.craft.job]</text>
+                        </Label>
+
+                        <Label name="lbl_tolerance">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="15" y="39"/>
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="350" y="25"/>
+                            </Size>
+                            <css>[local.css]normal2.css</css>
+                            <text>[ui.craft.missingIngredientsTolerance]</text>
+							<Hooks>
+								<onRollOver/>
+								<onRollOut/>
+							</Hooks>
+                        </Label>
+
+                        <themeLabelCheckBox name="btn_sortByLvl">
+                            <labelWidth>400</labelWidth>
+                            <labelHeight>19</labelHeight>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="15" y="67"/>
+                                </Anchor>
+                            </Anchors>
+                            <text>[ui.common.sortBy.level.desc]</text>
+                            <selected>true</selected>
+                        </themeLabelCheckBox>
+
+                        <themeLabelCheckBox name="btn_sortByPrice">
+                            <labelWidth>400</labelWidth>
+                            <labelHeight>19</labelHeight>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="15" y="87"/>
+                                </Anchor>
+                            </Anchors>
+                            <text>[ui.common.sortBy.averageprice.desc]</text>
+                            <selected>false</selected>
+                        </themeLabelCheckBox>
+
+                        <comboBoxWithBackground name="combo_ingredientsTolerance" width="74" height="38" strata="TOP">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="360" y="35"/>
+                                </Anchor>
+                            </Anchors>
+                            <Hooks>
+                                <onSelectItem />
+                            </Hooks>
+                        </comboBoxWithBackground>
+
+                        <comboBoxWithBackground name="combo_job" width="239" height="38" strata="TOP">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="195" y="5"/>
+                                </Anchor>
+                            </Anchors>
+                            <Hooks>
+                                <onSelectItem />
+                            </Hooks>
+                        </comboBoxWithBackground>
+                    </Content>
+                    <contentStrata>TOP</contentStrata>
+                </block>
+            </Content>
+        </window>
+    </Container>
+
+</Definition>

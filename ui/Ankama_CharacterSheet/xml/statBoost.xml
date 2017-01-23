@@ -1,0 +1,1418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition usePropertiesCache="false">
+	
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+	<Import url="[config.mod.template.button]radio.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="picto_uri" value="[config.content.path]gfx/characteristics/characteristics.swf|"/>
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/"/>
+		<Constant name="texture" value="[config.ui.skin]texture/"/>
+		<Constant name="common" value="[config.ui.skin]common/"/>
+	</Constants>
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="325" y="0" />
+			</Anchor>
+		</Anchors>
+		<visible>false</visible>
+		<mouseEnabled>true</mouseEnabled>
+		<window name="ctr_window">
+			<Size>
+				<AbsDimension x="422" y="0" />
+			</Size>
+			
+			
+			
+			<Content>
+				<Container name="ctr_block">
+					<visible>false</visible>
+					<block name="block" contentStrata="MEDIUM">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="3" y="2" />
+							</Anchor>
+						</Anchors>
+						<Content>
+							<Container name="ctr_content">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="-13" y="-41" />
+									</Anchor>
+								</Anchors>
+								<Label name="lbl_statIncreases">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="59" y="140" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="21" />
+									</Size>
+									<cssClass>bold</cssClass>
+									<css>[local.css]normal2.css</css>
+									<text>[ui.stats.statIncreases]</text>
+								</Label>
+								
+								<Label name="lbl_statIncreases2">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="59" y="115" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="21" />
+									</Size>
+									<cssClass>bold</cssClass>
+									<css>[local.css]normal2.css</css>
+									<text>[ui.stats.statIncreases]</text>
+								</Label>
+								
+								<Label name="lbl_statIncreases3">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="59" y="90" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="21" />
+									</Size>
+									<cssClass>bold</cssClass>
+									<css>[local.css]normal2.css</css>
+									<text>[ui.stats.statIncreases]</text>
+								</Label>
+								
+								<Label name="lbl_statIncreases4">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="59" y="65" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="21" />
+									</Size>
+									<cssClass>bold</cssClass>
+									<css>[local.css]normal2.css</css>
+									<text>[ui.stats.statIncreases]</text>
+								</Label>
+								
+								<Label name="lbl_statIncreases_two">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="59" y="271" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="21" />
+									</Size>
+									<cssClass>bold</cssClass>
+									<css>[local.css]normal2.css</css>
+									<text>[ui.stats.statIncreases]</text>
+								</Label>
+								
+								<Label name="lbl_statIncreases2_two">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="59" y="246" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="21" />
+									</Size>
+									<cssClass>bold</cssClass>
+									<css>[local.css]normal2.css</css>
+									<text>[ui.stats.statIncreases]</text>
+								</Label>
+								
+								<Label name="lbl_statIncreases3_two">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="59" y="221" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="21" />
+									</Size>
+									<cssClass>bold</cssClass>
+									<css>[local.css]normal2.css</css>
+									<text>[ui.stats.statIncreases]</text>
+								</Label>
+								
+								<Label name="lbl_statIncreases4_two">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="59" y="196" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="21" />
+									</Size>
+									<cssClass>bold</cssClass>
+									<css>[local.css]normal2.css</css>
+									<text>[ui.stats.statIncreases]</text>
+								</Label>
+								
+								<Label name="lbl_statIncreases_2">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="59" y="250" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="21" />
+									</Size>
+									<cssClass>bold</cssClass>
+									<css>[local.css]normal2.css</css>
+									<text>[ui.stats.statIncreases]</text>
+								</Label>
+								
+								<Label name="lbl_statIncreases2_2">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="59" y="225" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="21" />
+									</Size>
+									<cssClass>bold</cssClass>
+									<css>[local.css]normal2.css</css>
+									<text>[ui.stats.statIncreases]</text>
+								</Label>
+								
+								<Label name="lbl_statIncreases3_2">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="59" y="200" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="21" />
+									</Size>
+									<cssClass>bold</cssClass>
+									<css>[local.css]normal2.css</css>
+									<text>[ui.stats.statIncreases]</text>
+								</Label>
+								
+								<Label name="lbl_statIncreases4_2">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="59" y="175" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="21" />
+									</Size>
+									<cssClass>bold</cssClass>
+									<css>[local.css]normal2.css</css>
+									<text>[ui.stats.statIncreases]</text>
+								</Label>
+								
+								<Label name="lbl_statIncreases_2_two">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="59" y="381" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="21" />
+									</Size>
+									<cssClass>bold</cssClass>
+									<css>[local.css]normal2.css</css>
+									<text>[ui.stats.statIncreases]</text>
+								</Label>
+								
+								<Label name="lbl_statIncreases2_2_two">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="59" y="356" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="21" />
+									</Size>
+									<cssClass>bold</cssClass>
+									<css>[local.css]normal2.css</css>
+									<text>[ui.stats.statIncreases]</text>
+								</Label>
+								
+								<Label name="lbl_statIncreases3_2_two">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="59" y="331" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="21" />
+									</Size>
+									<cssClass>bold</cssClass>
+									<css>[local.css]normal2.css</css>
+									<text>[ui.stats.statIncreases]</text>
+								</Label>
+								
+								<Label name="lbl_statIncreases4_2_two">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="59" y="306" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="21" />
+									</Size>
+									<cssClass>bold</cssClass>
+									<css>[local.css]normal2.css</css>
+									<text>[ui.stats.statIncreases]</text>
+								</Label>
+								
+								<Grid name="gd_statVariables">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="89" y="168" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="100" />
+									</Size>
+									<rendererName>InlineXmlGridRenderer</rendererName>
+									<rendererArgs>updateStatVariable</rendererArgs>
+									<slotWidth>290</slotWidth>
+									<slotHeight>25</slotHeight>
+									<Container>
+										<Texture name="tx_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="5" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="17" y="17" />
+											</Size>
+										</Texture>
+										<Label name="lbl_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="21" y="3" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="270" y="21" />
+											</Size>
+											<cssClass>medium</cssClass>
+											<css>[local.css]small2.css</css>
+											<Hooks>
+												<onRollOver/>
+												<onRollOut/>
+											</Hooks>
+										</Label>
+									</Container>
+								</Grid>
+								
+								<Grid name="gd_statVariables2">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="89" y="143" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="100" />
+									</Size>
+									<rendererName>InlineXmlGridRenderer</rendererName>
+									<rendererArgs>updateStatVariable</rendererArgs>
+									<slotWidth>290</slotWidth>
+									<slotHeight>25</slotHeight>
+									<Container>
+										<Texture name="tx_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="5" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="17" y="17" />
+											</Size>
+										</Texture>
+										<Label name="lbl_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="21" y="3" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="270" y="21" />
+											</Size>
+											<cssClass>medium</cssClass>
+											<css>[local.css]small2.css</css>
+											<Hooks>
+												<onRollOver/>
+												<onRollOut/>
+											</Hooks>
+										</Label>
+									</Container>
+								</Grid>
+								
+								<Grid name="gd_statVariables3">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="89" y="118" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="100" />
+									</Size>
+									<rendererName>InlineXmlGridRenderer</rendererName>
+									<rendererArgs>updateStatVariable</rendererArgs>
+									<slotWidth>290</slotWidth>
+									<slotHeight>25</slotHeight>
+									<Container>
+										<Texture name="tx_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="5" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="17" y="17" />
+											</Size>
+										</Texture>
+										<Label name="lbl_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="21" y="3" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="270" y="21" />
+											</Size>
+											<cssClass>medium</cssClass>
+											<css>[local.css]small2.css</css>
+											<Hooks>
+												<onRollOver/>
+												<onRollOut/>
+											</Hooks>
+										</Label>
+									</Container>
+								</Grid>
+								
+								<Grid name="gd_statVariables4">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="89" y="93" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="100" />
+									</Size>
+									<rendererName>InlineXmlGridRenderer</rendererName>
+									<rendererArgs>updateStatVariable</rendererArgs>
+									<slotWidth>290</slotWidth>
+									<slotHeight>25</slotHeight>
+									<Container>
+										<Texture name="tx_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="5" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="17" y="17" />
+											</Size>
+										</Texture>
+										<Label name="lbl_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="21" y="3" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="270" y="21" />
+											</Size>
+											<cssClass>medium</cssClass>
+											<css>[local.css]small2.css</css>
+											<Hooks>
+												<onRollOver/>
+												<onRollOut/>
+											</Hooks>
+										</Label>
+									</Container>
+								</Grid>
+								
+								<Grid name="gd_statVariables_two">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="89" y="299" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="100" />
+									</Size>
+									<rendererName>InlineXmlGridRenderer</rendererName>
+									<rendererArgs>updateStatVariable</rendererArgs>
+									<slotWidth>290</slotWidth>
+									<slotHeight>25</slotHeight>
+									<Container>
+										<Texture name="tx_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="5" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="17" y="17" />
+											</Size>
+										</Texture>
+										<Label name="lbl_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="21" y="3" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="270" y="21" />
+											</Size>
+											<cssClass>medium</cssClass>
+											<css>[local.css]small2.css</css>
+											<Hooks>
+												<onRollOver/>
+												<onRollOut/>
+											</Hooks>
+										</Label>
+									</Container>
+								</Grid>
+								
+								<Grid name="gd_statVariables2_two">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="89" y="274" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="100" />
+									</Size>
+									<rendererName>InlineXmlGridRenderer</rendererName>
+									<rendererArgs>updateStatVariable</rendererArgs>
+									<slotWidth>290</slotWidth>
+									<slotHeight>25</slotHeight>
+									<Container>
+										<Texture name="tx_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="5" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="17" y="17" />
+											</Size>
+										</Texture>
+										<Label name="lbl_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="21" y="3" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="270" y="21" />
+											</Size>
+											<cssClass>medium</cssClass>
+											<css>[local.css]small2.css</css>
+											<Hooks>
+												<onRollOver/>
+												<onRollOut/>
+											</Hooks>
+										</Label>
+									</Container>
+								</Grid>
+								
+								<Grid name="gd_statVariables3_two">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="89" y="249" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="100" />
+									</Size>
+									<rendererName>InlineXmlGridRenderer</rendererName>
+									<rendererArgs>updateStatVariable</rendererArgs>
+									<slotWidth>290</slotWidth>
+									<slotHeight>25</slotHeight>
+									<Container>
+										<Texture name="tx_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="5" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="17" y="17" />
+											</Size>
+										</Texture>
+										<Label name="lbl_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="21" y="3" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="270" y="21" />
+											</Size>
+											<cssClass>medium</cssClass>
+											<css>[local.css]small2.css</css>
+											<Hooks>
+												<onRollOver/>
+												<onRollOut/>
+											</Hooks>
+										</Label>
+									</Container>
+								</Grid>
+								
+								<Grid name="gd_statVariables4_two">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="89" y="224" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="100" />
+									</Size>
+									<rendererName>InlineXmlGridRenderer</rendererName>
+									<rendererArgs>updateStatVariable</rendererArgs>
+									<slotWidth>290</slotWidth>
+									<slotHeight>25</slotHeight>
+									<Container>
+										<Texture name="tx_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="5" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="17" y="17" />
+											</Size>
+										</Texture>
+										<Label name="lbl_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="21" y="3" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="270" y="21" />
+											</Size>
+											<cssClass>medium</cssClass>
+											<css>[local.css]small2.css</css>
+											<Hooks>
+												<onRollOver/>
+												<onRollOut/>
+											</Hooks>
+										</Label>
+									</Container>
+								</Grid>
+								
+								<Grid name="gd_statVariables_2">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="89" y="278" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="100" />
+									</Size>
+									<rendererName>InlineXmlGridRenderer</rendererName>
+									<rendererArgs>updateStatVariable</rendererArgs>
+									<slotWidth>290</slotWidth>
+									<slotHeight>25</slotHeight>
+									<Container>
+										<Texture name="tx_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="5" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="17" y="17" />
+											</Size>
+										</Texture>
+										<Label name="lbl_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="21" y="3" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="270" y="21" />
+											</Size>
+											<cssClass>medium</cssClass>
+											<css>[local.css]small2.css</css>
+											<Hooks>
+												<onRollOver/>
+												<onRollOut/>
+											</Hooks>
+										</Label>
+									</Container>
+								</Grid>
+								
+								<Grid name="gd_statVariables2_2">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="89" y="253" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="100" />
+									</Size>
+									<rendererName>InlineXmlGridRenderer</rendererName>
+									<rendererArgs>updateStatVariable</rendererArgs>
+									<slotWidth>290</slotWidth>
+									<slotHeight>25</slotHeight>
+									<Container>
+										<Texture name="tx_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="5" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="17" y="17" />
+											</Size>
+										</Texture>
+										<Label name="lbl_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="21" y="3" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="270" y="21" />
+											</Size>
+											<cssClass>medium</cssClass>
+											<css>[local.css]small2.css</css>
+											<Hooks>
+												<onRollOver/>
+												<onRollOut/>
+											</Hooks>
+										</Label>
+									</Container>
+								</Grid>
+								
+								<Grid name="gd_statVariables3_2">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="89" y="228" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="100" />
+									</Size>
+									<rendererName>InlineXmlGridRenderer</rendererName>
+									<rendererArgs>updateStatVariable</rendererArgs>
+									<slotWidth>290</slotWidth>
+									<slotHeight>25</slotHeight>
+									<Container>
+										<Texture name="tx_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="5" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="17" y="17" />
+											</Size>
+										</Texture>
+										<Label name="lbl_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="21" y="3" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="270" y="21" />
+											</Size>
+											<cssClass>medium</cssClass>
+											<css>[local.css]small2.css</css>
+											<Hooks>
+												<onRollOver/>
+												<onRollOut/>
+											</Hooks>
+										</Label>
+									</Container>
+								</Grid>
+								
+								<Grid name="gd_statVariables4_2">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="89" y="203" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="100" />
+									</Size>
+									<rendererName>InlineXmlGridRenderer</rendererName>
+									<rendererArgs>updateStatVariable</rendererArgs>
+									<slotWidth>290</slotWidth>
+									<slotHeight>25</slotHeight>
+									<Container>
+										<Texture name="tx_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="5" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="17" y="17" />
+											</Size>
+										</Texture>
+										<Label name="lbl_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="21" y="3" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="270" y="21" />
+											</Size>
+											<cssClass>medium</cssClass>
+											<css>[local.css]small2.css</css>
+											<Hooks>
+												<onRollOver/>
+												<onRollOut/>
+											</Hooks>
+										</Label>
+									</Container>
+								</Grid>
+								
+								<Grid name="gd_statVariables_2_two">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="89" y="409" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="100" />
+									</Size>
+									<rendererName>InlineXmlGridRenderer</rendererName>
+									<rendererArgs>updateStatVariable</rendererArgs>
+									<slotWidth>290</slotWidth>
+									<slotHeight>25</slotHeight>
+									<Container>
+										<Texture name="tx_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="5" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="17" y="17" />
+											</Size>
+										</Texture>
+										<Label name="lbl_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="21" y="3" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="270" y="21" />
+											</Size>
+											<cssClass>medium</cssClass>
+											<css>[local.css]small2.css</css>
+											<Hooks>
+												<onRollOver/>
+												<onRollOut/>
+											</Hooks>
+										</Label>
+									</Container>
+								</Grid>
+								
+								<Grid name="gd_statVariables2_2_two">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="89" y="384" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="100" />
+									</Size>
+									<rendererName>InlineXmlGridRenderer</rendererName>
+									<rendererArgs>updateStatVariable</rendererArgs>
+									<slotWidth>290</slotWidth>
+									<slotHeight>25</slotHeight>
+									<Container>
+										<Texture name="tx_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="5" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="17" y="17" />
+											</Size>
+										</Texture>
+										<Label name="lbl_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="21" y="3" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="270" y="21" />
+											</Size>
+											<cssClass>medium</cssClass>
+											<css>[local.css]small2.css</css>
+											<Hooks>
+												<onRollOver/>
+												<onRollOut/>
+											</Hooks>
+										</Label>
+									</Container>
+								</Grid>
+								
+								<Grid name="gd_statVariables3_2_two">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="89" y="359" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="100" />
+									</Size>
+									<rendererName>InlineXmlGridRenderer</rendererName>
+									<rendererArgs>updateStatVariable</rendererArgs>
+									<slotWidth>290</slotWidth>
+									<slotHeight>25</slotHeight>
+									<Container>
+										<Texture name="tx_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="5" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="17" y="17" />
+											</Size>
+										</Texture>
+										<Label name="lbl_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="21" y="3" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="270" y="21" />
+											</Size>
+											<cssClass>medium</cssClass>
+											<css>[local.css]small2.css</css>
+											<Hooks>
+												<onRollOver/>
+												<onRollOut/>
+											</Hooks>
+										</Label>
+									</Container>
+								</Grid>
+								
+								<Grid name="gd_statVariables4_2_two">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="89" y="334" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="290" y="100" />
+									</Size>
+									<rendererName>InlineXmlGridRenderer</rendererName>
+									<rendererArgs>updateStatVariable</rendererArgs>
+									<slotWidth>290</slotWidth>
+									<slotHeight>25</slotHeight>
+									<Container>
+										<Texture name="tx_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="5" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="17" y="17" />
+											</Size>
+										</Texture>
+										<Label name="lbl_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="21" y="3" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="270" y="21" />
+											</Size>
+											<cssClass>medium</cssClass>
+											<css>[local.css]small2.css</css>
+											<Hooks>
+												<onRollOver/>
+												<onRollOut/>
+											</Hooks>
+										</Label>
+									</Container>
+								</Grid>
+								
+								<Label name="lbl_statSpells">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="59" y="200" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="300" y="21" />
+									</Size>
+									<multiline>true</multiline>
+									<cssClass>bold</cssClass>
+									<css>[local.css]normal2.css</css>
+									<text>[ui.stats.statSpells]</text>
+								</Label>
+								
+								<Label name="lbl_statSpells_2">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="59" y="310" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="300" y="21" />
+									</Size>
+									<multiline>true</multiline>
+									<cssClass>bold</cssClass>
+									<css>[local.css]normal2.css</css>
+									<text>[ui.stats.statSpells]</text>
+								</Label>
+								
+								<Grid name="gd_statSpells">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="59" y="235" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="300" y="100" />
+									</Size>
+									<slotWidth>44</slotWidth>
+									<slotHeight>44</slotHeight>
+									<rendererName>SlotGridRenderer</rendererName>
+									<rendererArgs>
+										[local.texture]slot/slot_dark_background_empty.png,[local.texture]slot/over.png,[local.texture]slot/selected.png,[local.texture]slot/acceptDrop.png,[local.texture]slot/refuseDrop.png,,[local.css]normal2.css,false,,,isSpellActive
+									</rendererArgs>
+									<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+									<autoSelectMode>0</autoSelectMode>
+									<Hooks>
+										<onItemRollOver/>
+										<onItemRollOut/>
+									</Hooks>
+								</Grid>
+								
+								<Grid name="gd_statSpells_2">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="59" y="345" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="300" y="100" />
+									</Size>
+									<slotWidth>44</slotWidth>
+									<slotHeight>44</slotHeight>
+									<rendererName>SlotGridRenderer</rendererName>
+									<rendererArgs>
+										[local.texture]slot/slot_dark_background_empty.png,[local.texture]slot/over.png,[local.texture]slot/selected.png,[local.texture]slot/acceptDrop.png,[local.texture]slot/refuseDrop.png,,[local.css]normal2.css,false,,,isSpellActive
+									</rendererArgs>
+									<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+									<autoSelectMode>0</autoSelectMode>
+									<Hooks>
+										<onItemRollOver/>
+										<onItemRollOut/>
+									</Hooks>
+								</Grid>
+								
+								<Label name="lbl_availablePoints">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="19" y="451" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="368" y="20" />
+									</Size>
+									<cssClass>center</cssClass>
+									<css>[local.css]normal2.css</css>
+								</Label>
+								
+								<Container name="ctr_capitalChoice">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="5" y="345" />
+										</Anchor>
+									</Anchors>
+									
+									<Label>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="14" y="0" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="370" y="50" />
+										</Size>
+										<cssClass>center</cssClass>
+										<css>[local.css]normal2.css</css>
+										<wordWrap>true</wordWrap>
+										<multiline>true</multiline>
+										<fixedHeightForMultiline>true</fixedHeightForMultiline>
+										<verticalAlign>center</verticalAlign>
+										<text>[ui.stats.capitalChoice]</text>
+									</Label>
+									
+									<Container name="ctr_radioStat">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="16" y="64" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="375" y="26" />
+										</Size>
+										<handCursor>true</handCursor>
+										<bgColor>[colors.radio.over]</bgColor>
+									</Container>
+									
+									<radio name="btn_radioStat">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="30" y="67" />
+											</Anchor>
+										</Anchors>
+										<radioGroup>capitalChoiceGroup</radioGroup>
+									</radio>
+									
+									<Label>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="52" y="64" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="243" y="20" />
+										</Size>
+										<css>[local.css]normal2.css</css>
+										<text>[ui.charaSheet.boostPoints][ui.common.colon]</text>
+									</Label>
+									
+									<Label name="lbl_capitalStat">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="301" y="64" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="70" y="20" />
+										</Size>
+										<cssClass>whiteboldright</cssClass>
+										<css>[local.css]normal2.css</css>
+									</Label>
+									
+									
+									
+									<Container name="ctr_radioScroll">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="16" y="93" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="375" y="26" />
+										</Size>
+										<handCursor>true</handCursor>
+										<bgColor>[colors.radio.over]</bgColor>
+									</Container>
+									
+									<radio name="btn_radioScroll">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="30" y="96" />
+											</Anchor>
+										</Anchors>
+										<radioGroup>capitalChoiceGroup</radioGroup>
+									</radio>
+									
+									<Label>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="52" y="93" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="243" y="20" />
+										</Size>
+										<css>[local.css]normal2.css</css>
+										<text>[ui.charaSheet.boostAdditionnalPoints][ui.common.colon]</text>
+									</Label>
+									
+									<Label name="lbl_capitalScroll">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="301" y="93" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="70" y="20" />
+										</Size>
+										<cssClass>whiteboldright</cssClass>
+										<css>[local.css]normal2.css</css>
+									</Label>
+								</Container>
+								
+								
+								
+								
+								
+								<Container>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="490" />
+										</Anchor>
+									</Anchors>
+									
+									<themeIconButton name="btn_less">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="121" y="-3" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="26" y="26" />
+										</Size>
+										<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_minus.png</iconUri>
+										<Hooks>
+											<onRelease />
+										</Hooks>
+									</themeIconButton>
+									
+									<themeIconButton name="btn_more">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="265" y="-3" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="26" y="26" />
+										</Size>
+										<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_plus.png</iconUri>
+										<Hooks>
+											<onRelease />
+										</Hooks>
+									</themeIconButton>
+									
+									
+									<TextureBitmap>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="150" y="-10" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="113" y="40" />
+										</Size>
+										<themeDataId>bg_small_border_dark</themeDataId>
+									</TextureBitmap>
+									
+									<Input name="inp_pointsValue">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="161" y="-3" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="88" y="40" />
+										</Size>
+										<cssClass>right</cssClass>
+										<css>[local.css]normal2.css</css>
+										<maxChars>3</maxChars>
+									</Input>
+									
+									<Label name="lbl_currentFloor">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="7" y="36" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="370" y="20" />
+										</Size>
+										<cssClass>center</cssClass>
+										<css>[local.css]normal2.css</css>
+									</Label>
+									
+									<Texture name="tx_floor_info">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="0" y="38" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="20" y="20" />
+										</Size>
+										<autoGrid>true</autoGrid>
+										<Hooks>
+											<onRollOver/>
+											<onRollOut/>
+										</Hooks>
+									</Texture>
+									
+									<Label name="lbl_statName">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="80" y="80" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="170" y="21" />
+										</Size>
+										<css>[local.css]normal2.css</css>
+									</Label>
+									
+									<Label name="lbl_statBase">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="255" y="80" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="70" y="21" />
+										</Size>
+										<cssClass>whiteboldright</cssClass>
+										<css>[local.css]normal2.css</css>
+									</Label>
+									
+									<Label name="lbl_statBaseAdd">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="330" y="80" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="65" y="21" />
+										</Size>
+										<cssClass>green</cssClass>
+										<css>[local.css]normal2.css</css>
+									</Label>
+									
+									<Label>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="80" y="110" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="170" y="21" />
+										</Size>
+										<cssClass>statbonus</cssClass>
+										<css>[local.css]special.css</css>
+										<text>+ [ui.common.equipement]</text>
+									</Label>
+									
+									<Texture>
+										<Anchors>
+											<Anchor relativeTo="$LAST" relativePoint="BOTTOMLEFT">
+												<AbsDimension x="2" y="15" />
+											</Anchor>
+										</Anchors>
+										<uri>[local.common]window_line_white_separator.png</uri>
+									</Texture>
+									
+									<Label name="lbl_statBonus">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="255" y="110" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="70" y="21" />
+										</Size>
+										<cssClass>whiteboldright</cssClass>
+										<css>[local.css]normal2.css</css>
+										<Hooks>
+											<onRollOver/>
+											<onRollOut/>
+										</Hooks>
+									</Label>
+									
+									<Label>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="80" y="155" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="170" y="21" />
+										</Size>
+										<css>[local.css]normal2.css</css>
+										<text>[ui.common.total]</text>
+									</Label>
+									
+									<Label name="lbl_statTotal">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="255" y="155" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="70" y="21" />
+										</Size>
+										<cssClass>greenright</cssClass>
+										<css>[local.css]normal2.css</css>
+									</Label>
+									
+								</Container>
+								
+								
+								
+								<Texture>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="28" y="680" />
+										</Anchor>
+									</Anchors>
+									<uri>[config.ui.skin]common/corner_decoration.png</uri>
+								</Texture>
+								<Texture>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="393" y="680" />
+										</Anchor>
+									</Anchors>
+									<uri>[config.ui.skin]common/corner_decoration.png</uri>
+									<scaleX>-1</scaleX>
+								</Texture>
+								<simpleButton label="[ui.common.validation]" name="btn_valid">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="137" y="692" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="140" y="35" />
+									</Size>
+									<cssClass>darkboldcenter</cssClass>
+									<css>[local.css]normal2.css</css>
+								</simpleButton>
+							</Container>
+						</Content>
+					</block>
+				</Container>
+			</Content>
+		</window>
+	</Container>
+</Definition>
+
+

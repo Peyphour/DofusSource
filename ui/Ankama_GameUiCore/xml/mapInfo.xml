@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition fullscreen="true">
+	<Import url="[config.mod.template.button]iconButton.xml" />
+    <Import url="[config.mod.template]button/themeIconButton.xml" />
+    <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+        <Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+	<Container name="infoContainer">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="15" y="15" />
+			</Anchor>
+		</Anchors>
+		
+		<Label name="lbl_info">
+			<fixedWidth>false</fixedWidth>
+			<cssClass>coord</cssClass>
+			<css>[local.css]special.css</css>
+			<useDefaultFont>true</useDefaultFont>
+		</Label>
+		
+		<iconButton name="btn_availableDares">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="2" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="28" y="28" />
+			</Size>
+			<visible>false</visible>
+			<uri>[local.assets]btn_dare</uri>
+		</iconButton>
+		
+		<Label name="lbl_coordAndLevel">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="27" />
+				</Anchor>
+			</Anchors>
+			<fixedWidth>false</fixedWidth>
+			<cssClass>coord</cssClass>
+			<css>[local.css]special.css</css>
+			<useDefaultFont>true</useDefaultFont>
+		</Label>
+		
+		<Texture name="tx_warning">
+			<Anchors>
+				<Anchor relativeTo="lbl_coordAndLevel" relativePoint="RIGHT" point="LEFT">
+					<AbsDimension x="-7" y="8" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="25" y="25" />
+			</Size>
+			<visible>false</visible>
+			<uri>[local.assets]tx_warningAttack</uri>
+		</Texture>
+		
+		<!-- embleme d'alliance controllant la zone de la map -->
+		<Texture name="tx_allianceEmblemBack">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="61"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="40" y="40" />
+			</Size>
+		</Texture>
+		
+		<Texture name="tx_allianceEmblemUp">
+			<Size>
+				<AbsDimension x="24" y="24" />
+			</Size>
+		</Texture>
+		
+		<Label name="lbl_alliance">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="63" />
+				</Anchor>
+			</Anchors>
+			<hyperlinkEnabled>true</hyperlinkEnabled>
+			<fixedWidth>false</fixedWidth>
+			<useStyleSheet>true</useStyleSheet>
+			<cssClass>coord</cssClass>
+			<css>[local.css]special.css</css>
+			<useDefaultFont>true</useDefaultFont>
+		</Label>
+	</Container>
+	
+	<!-- Bouton de récompenses d'achievements -->
+	<Container name="ctr_rewardsAndGifts">
+		<Anchors>
+               <Anchor relativePoint="BOTTOM" point="CENTER">
+               	<AbsDimension x="0" y="-160" />
+			</Anchor>
+		</Anchors>
+
+		<TextureBitmap name="tx_background">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="54" y="-5"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="7" y="62" />
+			</Size>
+			<themeDataId>hud_window_background</themeDataId>
+		</TextureBitmap>
+		
+        <Texture name="txBtnRewardsAndGifts">
+        	<Anchors>
+				<Anchor relativeTo="btn_rewardsAndGifts" relativePoint="TOPLEFT">
+					<AbsDimension x="-4" y="-4" />
+				</Anchor>
+				<Anchor relativeTo="btn_rewardsAndGifts" relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="4" y="4" />
+				</Anchor>
+			</Anchors>
+            <uri>[local.texture]btnIcon/bg_BtnChest.png</uri>
+        </Texture>
+		<themeIconButton name="btn_rewardsAndGifts">
+			<Size>
+				<AbsDimension x="52" y="52" />
+			</Size>
+            <iconUri>[local.texture]btnIcon/btnIcon_chest.png</iconUri>
+		</themeIconButton>
+		
+		
+		<TextureBitmap name="tx_separator">
+			<Anchors>
+				<Anchor relativeTo="tx_background" relativePoint="TOPRIGHT">
+					<AbsDimension x="-7" y="0" />
+				</Anchor>
+				<Anchor relativeTo="tx_background" relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<themeDataId>separator_green_column</themeDataId>
+			<dragController>true</dragController>
+			<dragTarget>ctr_rewardsAndGifts</dragTarget>
+			<useDragMagnetism>true</useDragMagnetism>
+			<dragBoundsContainer>ctr_rewardsAndGifts</dragBoundsContainer>
+		</TextureBitmap>
+		
+		<!--<TextureBitmap>
+			<Anchors>
+				<Anchor relativeTo="tx_background" relativePoint="TOPRIGHT">
+					<AbsDimension x="-7" y="0" />
+				</Anchor>
+				<Anchor relativeTo="tx_background" relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<uri>[config.ui.skin]texture/hud/background_hud_shadow.png</uri>
+		</TextureBitmap>-->
+		
+	</Container>
+</Definition>

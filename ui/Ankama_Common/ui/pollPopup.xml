@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition modal="true">
+   	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		
+		<Constant name="uriCheck" value="[local.assets]tx_light_checkbox" />
+		<Constant name="uriRadio" value="[local.assets]tx_radioButton" />
+		
+		<Constant name="labelHeight" value="20" type="int" />
+		<Constant name="labelPosX" value="16" type="int" />
+		<Constant name="textureSize" value="12" type="int" />
+   	</Constants>
+
+   	<Import url="[config.mod.template.button]simpleButton.xml" />
+   	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template]button/labelCheckBox.xml" />
+	<Import url="[config.mod.template]windowWithoutTitleBar.xml"/>
+
+	<Container name="mainCtr">
+		
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER" />
+		</Anchors>
+		
+ 		<windowWithoutTitleBar name="popup">
+			<Size>
+				<RelDimension x="700" y="400"/>
+			</Size>
+			
+			<content>
+				<!-- simpleButton btnOk-->
+
+				<simpleButton name="btn_ok">
+					<Anchors>
+						<Anchor relativePoint="BOTTOM" point="BOTTOM">
+							<AbsDimension x="0" y="-20" />
+						</Anchor>
+					</Anchors>			
+					<Size>
+						<AbsDimension x="130" y="30" />
+					</Size>
+					<label>[ui.common.validation]</label>
+				</simpleButton>
+		
+				<!-- Label lblDescription-->
+		
+				<TextArea name="lbl_description">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="25" y="70" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="660" y="240" />
+					</Size>
+					<wordWrap>true</wordWrap>
+					<multiline>true</multiline>
+					<cssClass>p</cssClass>
+					<css>[local.css]normal.css</css>
+				</TextArea>
+		
+				<Container name="ctr_answers">
+					<Anchors>
+						<Anchor relativePoint="BOTTOMLEFT" point="TOPLEFT" relativeTo="lbl_description">
+							<AbsDimension x="15" y="35" />
+						</Anchor>
+					</Anchors>
+				</Container>
+			</content>
+		</windowWithoutTitleBar>
+
+		
+				
+	</Container>
+</Definition>

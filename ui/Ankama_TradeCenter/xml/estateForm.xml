@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	
+   	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />       
+       
+		<Constant name="illus" value="[config.content.path]gfx/illusUi/" />
+		<Constant name="houses" value="[config.content.path]gfx/houses/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+   	</Constants>
+
+	<window name="crafterFormCtr" title="[ui.common.informations]">	
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER" />
+		</Anchors>
+		<Size>
+			<AbsDimension x="629" y="412" />
+		</Size>
+		<Content>
+			<block bgAlpha="0.6">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="4" y="5" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="583" y="195" />
+				</Size>
+			</block>
+
+			<block bgAlpha="0.6">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="4" y="205" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="289" y="130" />
+				</Size>
+			</block>
+			
+			<block bgAlpha="0.6">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="297" y="205" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="287" y="130" />
+				</Size>
+			</block>
+			
+			<Texture name="tx_illusBg">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="15" y="15"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="146" y="146" />
+				</Size>
+				<uri>[local.texture]slot/slot_big_dark_background_full.png</uri>
+			</Texture>
+			
+			<Texture name="tx_houseIcon">
+				<Anchors>
+					<Anchor relativePoint="BOTTOMLEFT" point="BOTTOMLEFT" relativeTo="tx_illusBg" >
+						<AbsDimension x="2" y="-2" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="142" y="231" />
+				</Size>
+			</Texture>
+			
+			<!-- Label lbl_name-->
+
+			<Label name="lbl_name">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="176" y="15" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="470" y="25" />
+				</Size>
+				<cssClass>bold</cssClass>
+				<css>[local.css]estate.css</css>
+			</Label>
+
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="186" y="55"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="140" y="3" />
+				</Size>
+				<uri>[local.common]window_separator_black_horizontal.png</uri>
+			</Texture>
+
+			<!-- Label lbl_price-->
+
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="190" y="77"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="10" y="9" />
+				</Size>
+				<uri>[local.common]icon_pin.png</uri>
+			</Texture>
+			
+			<Label name="lbl_price">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="206" y="70" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="0" y="25" />
+				</Size>
+				<fixedWidth>false</fixedWidth>
+				<cssClass>normal</cssClass>
+				<css>[local.css]estate.css</css>
+			</Label>
+
+			<!-- Label lbl_priceContent-->
+
+			<Label name="lbl_priceContent">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="68" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="170" y="25" />
+				</Size>
+				<cssClass>bold</cssClass>
+				<css>[local.css]estate.css</css>
+			</Label>
+			
+			<Texture name="tx_kamas">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="71" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="18" y="16" />
+				</Size>
+				<uri>[local.texture]icon_kama.png</uri>
+			</Texture>
+			
+
+			<!-- Label lbl_nbRoomMount-->
+			
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="190" y="99"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="10" y="9" />
+				</Size>
+				<uri>[local.common]icon_pin.png</uri>
+			</Texture>
+			
+			<Label name="lbl_nbRoomMount">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="206" y="93" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="355" y="20" />
+				</Size>
+				<cssClass>normal</cssClass>
+				<css>[local.css]estate.css</css>
+			</Label>
+
+
+			<!-- Label lbl_nbChestMachine-->
+
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="190" y="121"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="10" y="9" />
+				</Size>
+				<uri>[local.common]icon_pin.png</uri>
+			</Texture>
+			
+			<Label name="lbl_nbChestMachine">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="206" y="115" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="355" y="20" />
+				</Size>
+				<cssClass>normal</cssClass>
+				<css>[local.css]estate.css</css>
+			</Label>
+
+
+			<!-- Label lbl_skill-->
+
+			<Label name="lbl_skill">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="14" y="165" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="470" y="20" />
+				</Size>
+				<cssClass>normal</cssClass>
+				<css>[local.css]estate.css</css>
+			</Label>
+			
+			<!-- Label lbl_loc-->
+
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="14" y="215" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="253" y="22" />
+				</Size>
+				<text>[ui.common.localisation]</text>
+				<cssClass>bold</cssClass>
+				<css>[local.css]estate.css</css>
+			</Label>
+			
+			<!-- Label lbl_locArea-->
+
+			<Label name="lbl_locArea">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="14" y="245" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="253" y="44" />
+				</Size>
+				<wordWrap>true</wordWrap>
+				<multiline>true</multiline>
+				<fixedHeightForMultiline>true</fixedHeightForMultiline>
+				<cssClass>normal</cssClass>
+				<css>[local.css]estate.css</css>
+			</Label>
+
+			<!-- simpleButton btn_loc -->
+
+			<themeIconButton name="btn_loc">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="14" y="289" />
+					</Anchor>
+				</Anchors>
+				<iconAnchors>				
+					<Anchor relativePoint="CENTER">
+						<AbsDimension x="-10" y="-10"/>
+					</Anchor>
+					<Anchor relativePoint="CENTER">
+						<AbsDimension x="10" y="10"/>
+					</Anchor>
+				</iconAnchors>
+				<Size>
+					<AbsDimension x="40" y="30" />
+				</Size>
+				<iconThemeDataId>icon_location</iconThemeDataId>
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</themeIconButton>
+			
+			<!-- Label lbl_owner-->
+
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="309" y="215" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="180" y="20" />
+				</Size>
+				<text>[ui.common.ownerWord]</text>
+				<cssClass>bold</cssClass>
+				<css>[local.css]estate.css</css>
+			</Label>
+
+			<!-- Label lbl_ownerContent-->
+
+			<Label name="lbl_ownerContent">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="309" y="245" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="253" y="20" />
+				</Size>
+				<cssClass>normal</cssClass>
+				<css>[local.css]estate.css</css>
+			</Label>
+
+			<!-- simpleButton btn_mp -->
+			
+			<themeIconButton name="btn_mp">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="309" y="275" />
+					</Anchor>
+				</Anchors>
+				<iconAnchors>				
+					<Anchor relativePoint="CENTER">
+						<AbsDimension x="-10" y="-10"/>
+					</Anchor>
+					<Anchor relativePoint="CENTER">
+						<AbsDimension x="10" y="10"/>
+					</Anchor>
+				</iconAnchors>
+				<Size>
+					<AbsDimension x="40" y="30" />
+				</Size>
+				<iconThemeDataId>icon_mail</iconThemeDataId>
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</themeIconButton>
+		</Content>
+	</window>
+</Definition>
+

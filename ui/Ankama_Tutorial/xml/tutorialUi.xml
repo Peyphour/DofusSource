@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	 <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		 <Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />	
+		 
+		 <Constant name="itemIconPath" value="[config.gfx.path]items/bitmap/" />
+		 <Constant name="jobIconPath" value="[config.gfx.path]jobs/" />
+		 <Constant name="spellIconPath" value="[config.gfx.path]spells/" />
+		 <Constant name="emoteIconPath" value="[config.gfx.path]emotes/" />
+         <Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+         <Constant name="illus" value="[config.ui.skin]illus/"/>
+         <Constant name="texture" value="[config.ui.skin]texture/"/>
+         <Constant name="common" value="[config.ui.skin]common/"/>
+		 
+		<Constant name="emptySlot_uri" value="[local.bitmap]emptySlot.png" />
+		
+		<Constant name="height_background" value="380" type="int" />
+		<Constant name="y_reward" value="120" type="int" />		
+		<Constant name="y_progress" value="175" type="int" />		
+	 </Constants>
+
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+    <Import url="[config.mod.template]windowWithoutTitleBar.xml" />
+	
+	<Container name="ctr_joinTutorial">
+		<Anchors>
+			<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+				<AbsDimension x="-10" y="60" />
+			</Anchor>
+		</Anchors>
+		
+		<iconButton name="btn_joinTutorial">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="64" y="64" />
+			</Size>
+			<uri>[local.assets]tutorial_btn_joinTutorial</uri>
+			<Hooks>
+				<onRelease />
+				<onRollOver />
+				<onRollOut />
+			</Hooks>
+		</iconButton>
+	</Container>
+
+	<windowWithoutTitleBar name="ctr_quest">
+		<visible>false</visible>
+        <Size>
+            <AbsDimension x="400" y="500" />
+        </Size>
+        <Content>
+
+            <Texture name="tx_stepImage">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="22" y="17" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="310" y="220" />
+                </Size>
+            </Texture>
+
+            <ProgressBar name="pb_progressBar">
+                <Anchors>
+                    <Anchor relativeTo="tx_stepImage" relativePoint="BOTTOM" point="TOP">
+                        <AbsDimension x="0" y="10" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="310" y="15" />
+                </Size>
+                <barColor>[colors.progressbar.green]</barColor>
+                <barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+                <separators>14</separators>
+            </ProgressBar>
+
+            <Label name="lbl_stepName">
+                <Anchors>
+                    <Anchor relativeTo="pb_progressBar" relativePoint="BOTTOMLEFT" point="TOPLEFT">
+                        <AbsDimension x="0" y="8" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="231" y="30" />
+                </Size>
+                <cssClass>green</cssClass>
+                <css>[local.css]normal2.css</css>
+            </Label>
+
+            <Slot name="slot_reward1">
+                <Anchors>
+                    <Anchor relativeTo="pb_progressBar" relativePoint="BOTTOMLEFT" point="TOPLEFT">
+                        <AbsDimension x="280" y="5" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="35" y="35" />
+                </Size>
+                <emptyTexture>[local.texture]slot/emptySlot.png</emptyTexture>
+                <allowDrag>false</allowDrag>
+            </Slot>
+
+            <TextureBitmap name="tx_expRewardIcon">
+                <Anchors>
+                    <Anchor relativeTo="pb_progressBar" relativePoint="BOTTOMLEFT" point="TOPLEFT">
+                        <AbsDimension x="290" y="14" />
+                    </Anchor>
+                </Anchors>
+                <smooth>true</smooth>
+                <uri>[local.texture]xp_shadow.png</uri>
+            </TextureBitmap>
+
+            <Label name="lbl_expRewardValue">
+                <Anchors>
+                    <Anchor relativeTo="tx_expRewardIcon" relativePoint="TOPLEFT" point="TOPRIGHT">
+                        <AbsDimension x="-5" y="-5" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="44" y="20" />
+                </Size>
+                <cssClass>right</cssClass>
+                <css>[local.css]normal2.css</css>
+            </Label>
+
+            <TextureBitmap name="tx_greySeparator1">
+                <Anchors>
+                    <Anchor relativeTo="lbl_stepName" relativePoint="BOTTOMLEFT" point="TOPLEFT">
+                        <AbsDimension x="30" y="10" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="250" y="2" />
+                </Size>
+                <uri>[local.common]window_separator_grey_horizontal.png</uri>
+            </TextureBitmap>
+
+            <Label name="texta_description">
+                <Anchors>
+                    <Anchor relativeTo="lbl_stepName" relativePoint="BOTTOMLEFT" point="TOPLEFT">
+                        <AbsDimension x="-10" y="20" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="330" y="10" />
+                </Size>
+                <cssClass>left</cssClass>
+                <css>[local.css]normal2.css</css>
+                <multiline>true</multiline>
+                <wordWrap>true</wordWrap>
+                <useStyleSheet>true</useStyleSheet>
+                <hyperlinkEnabled>true</hyperlinkEnabled>
+            </Label>
+
+            <Container name="ctr_reward">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="-5" y="200" />
+                    </Anchor>
+                </Anchors>
+
+            </Container>
+
+        </Content>
+	</windowWithoutTitleBar>
+</Definition>

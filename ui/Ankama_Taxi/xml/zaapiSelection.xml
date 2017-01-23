@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+	
+	<!-- Import d'un template pour creer un bouton orange contenant du texte -->
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<!-- Import d'un template pour creer un bouton simple à partir d'une texture -->
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<!-- Import d'un template pour creer un bouton d'onglet horizontal -->
+	<Import url="[config.mod.template]button/horizontalTab.xml" />
+	<Import url="[config.mod.template]button/labelCheckBox.xml" />
+	<Import url="[config.mod.template]button/greyButton.xml" />
+	<Import url="[config.mod.template]button/themeHorizontalTab.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	<Import url="[config.mod.template]button/searchInput.xml" />
+	<Import url="[config.mod.template]button/themeLabelCheckBox.xml" />
+	
+	<!-- Enregistrement des chemins vers les assets d'interface et les css pour les textes
+		-->
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/"/>
+		<Constant name="texture" value="[config.ui.skin]texture/"/>
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/"/>
+		<Constant name="illus" value="[config.ui.skin]illus/"/>
+	</Constants>
+	
+	<Container>
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER">
+				<AbsDimension x="0" y="-60" />
+			</Anchor>
+		</Anchors>
+		<!-- Conteneur principal de l'interface, placé au centre de l'ecran -->
+		<window>
+			<Size>
+				<AbsDimension x="700" y="710" />
+			</Size>
+			<Content>
+				
+				<!-- Texture d'arrière-plan de la grille des zaaps -->
+				<block>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="5" y="37" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="655" y="552" />
+					</Size>
+					<Content>
+						
+						<!-- Texture indiquant si le zaap actuel est celui de respawn -->
+						<Texture name="tx_currentRespawn">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="10" y="13" />
+								</Anchor>
+							</Anchors>
+							<uri>[local.texture]zaap/icon_Ankh_selected.png</uri>
+						</Texture>
+						
+						
+						<!-- Button de sauvegarde de zaap -->
+						<simpleButton label="[ui.common.save]" name="btn_save" width="170" height="27">
+							<Anchors>
+								<Anchor relativeTo="tx_currentRespawn" relativePoint="TOPRIGHT" point="TOPLEFT">
+									<AbsDimension x="20" y="-5" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="150" y="35" />
+							</Size>
+							<visible>false</visible>
+							<cssClass>darkboldcenter</cssClass>
+							<css>[local.css]normal2.css</css>
+						</simpleButton>
+						
+						<searchInput nam="inp_search" width="300" btnCloseName="btn_resetSearch">
+							<Anchors>
+								<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+									<AbsDimension x="-5" y="5" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="287" y="22" />
+							</Size>
+							<themeDataId>bg_small_border_dark</themeDataId>
+						</searchInput>
+						
+						<!-- Buttons en-tête de la grille, cliquable pour le tri par colonne -->
+						
+						<Container>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="50" />
+								</Anchor>
+							</Anchors>
+							<Texture>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="650" y="40" />
+								</Size>
+								<uri>[local.common]bg_dark.png</uri>
+							</Texture>
+							<Button name="btn_tabSpawn">
+								<Common>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="10" y="0" />
+										</Anchor>
+									</Anchors>
+									<Texture name="btn_tabSpawn_tx">
+										<Size>
+											<AbsDimension x="37" y="23" />
+										</Size>
+										<uri>[local.assets]tx_invisible</uri>
+									</Texture>
+									<Hooks>
+										<onRelease />
+									</Hooks>
+								</Common>
+							</Button>
+							<Button name="btn_tabDest">
+								<Common>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="50" y="1" />
+										</Anchor>
+									</Anchors>
+									<Texture name="btn_tabDest_tx">
+										<Size>
+											<AbsDimension x="379" y="23" />
+										</Size>
+										<uri>[local.assets]tx_invisible</uri>
+									</Texture>
+									<Label name="lbl_tabDest">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="5" y="7" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="350" y="20" />
+										</Size>
+										<text>[ui.zaap.destination][ui.common.colon][ui.common.area] ([ui.common.subarea])</text>
+										<css>[local.css]small2.css</css>
+									</Label>
+									<Hooks>
+										<onRelease />
+									</Hooks>
+								</Common>
+							</Button>
+							<Button name="btn_tabCoord">
+								<Common>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="400" y="1" />
+										</Anchor>
+									</Anchors>
+									<Texture>
+										<Size>
+											<AbsDimension x="89" y="23" />
+										</Size>
+										<uri>[local.assets]tx_invisible</uri>
+									</Texture>
+									<Label>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="2" y="7" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="83" y="20" />
+										</Size>
+										<text>[ui.common.coordinatesSmall]</text>
+										<cssClass>center</cssClass>
+										<css>[local.css]small2.css</css>
+									</Label>
+									<Hooks>
+										<onRelease />
+									</Hooks>
+								</Common>
+							</Button>
+							<Button name="btn_tabCost">
+								<Common>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="525" y="1" />
+										</Anchor>
+									</Anchors>
+									<Texture>
+										<Size>
+											<AbsDimension x="81" y="23" />
+										</Size>
+										<uri>[local.assets]tx_invisible</uri>
+									</Texture>
+									<Label>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="1" y="7" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="76" y="20" />
+										</Size>
+										<text>[ui.common.cost]</text>
+										<cssClass>center</cssClass>
+										<css>[local.css]small2.css</css>
+									</Label>
+									<Hooks>
+										<onRelease />
+									</Hooks>
+								</Common>
+							</Button>
+						</Container>
+						
+						<!-- Grid affichant la liste des zaaps -->
+						<Grid name="gd_zaap">
+							<Anchors>
+								<Anchor>
+									<!--<AbsDimension x="25" y="130" />-->
+									<AbsDimension x="0" y="90" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="643" y="410" />
+							</Size>
+							<rendererName>InlineXmlGridRenderer</rendererName>
+							<rendererArgs>updateZaapLine,[colors.grid.line]</rendererArgs>
+							<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+							<slotWidth>632</slotWidth>
+							<slotHeight>45</slotHeight>
+							
+							<!-- Container décrivant une ligne de la grille -->
+							<Container>
+								<Size>
+									<AbsDimension x="632" y="45" />
+								</Size>
+								
+								<Button name="btn_zaap">
+									
+									<Common>
+										<Texture name="tx_btnZaap">
+											<Size>
+												<AbsDimension x="632" y="45" />
+											</Size>
+											<bgColor>0</bgColor>
+											<bgAlpha>0</bgAlpha>
+										</Texture>
+										
+										<!-- Label contenant le nom du zaap -->
+										<Label name="lbl_zaapName">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="57" y="11" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="337" y="20" />
+											</Size>
+											<css>[local.css]normal2.css</css>
+										</Label>
+										
+									</Common>
+									
+									<State type="OVER">
+										<SetProperties target="btn_zaap">
+											<bgColor>[colors.grid.over]</bgColor>
+											<bgAlpha>0.1</bgAlpha>
+										</SetProperties>
+									</State>
+									
+									<State type="SELECTED">
+										<SetProperties target="btn_zaap">
+											<bgColor>[colors.grid.selected]</bgColor>
+											<bgAlpha>0.45</bgAlpha>
+										</SetProperties>
+									</State>
+									
+									<State type="SELECTED_OVER">
+										<SetProperties target="btn_zaap">
+											<bgColor>[colors.grid.selected]</bgColor>
+											<bgAlpha>0.45</bgAlpha>
+										</SetProperties>
+									</State>
+								</Button>
+								
+								<!-- Texture indiquant si ce zaap est un favoris ou non -->
+								<Button name="btn_favoritZap">
+									<Common>
+										<radioMode>false</radioMode>
+										<Texture>
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="0" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="50" y="45" />
+											</Size>
+											<bgColor>0</bgColor>
+											<bgAlpha>0</bgAlpha>
+										</Texture>
+										
+										<Texture name="tx_favoritZap">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="15" y="14" />
+												</Anchor>
+											</Anchors>
+										</Texture>
+										
+									</Common>
+									
+									<State type="OVER">
+										<SetProperties target="btn_zaap">
+											<bgColor>[colors.grid.over]</bgColor>
+											<bgAlpha>0.1</bgAlpha>
+										</SetProperties>
+									</State>
+									
+								</Button>
+								
+								<!-- Label contenant les coordonnées du zaap -->
+								<Button name="btn_zaapCoord">
+									<Common>
+										<Texture>
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="420" y="0" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="89" y="45" />
+											</Size>
+										</Texture>
+										<radioMode>false</radioMode>
+										<Label name="lbl_zaapCoord">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="398" y="8" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="87" y="20" />
+											</Size>
+											<cssClass>greencenter</cssClass>
+											<css>[local.css]normal2.css</css>
+										</Label>
+									</Common>
+									<State type="OVER">
+										<SetProperties target="btn_zaap">
+											<bgColor>[colors.grid.over]</bgColor>
+											<bgAlpha>0.1</bgAlpha>
+										</SetProperties>
+									</State>
+								</Button>
+								
+								<!-- Label contenant le prix du zaap -->
+								<Label name="lbl_zaapCost">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="523" y="8" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="68" y="20" />
+									</Size>
+									<cssClass>right</cssClass>
+									<css>[local.css]normal2.css</css>
+								</Label>
+								<TextureBitmap name="tx_zaapCost">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="600" y="12" />
+										</Anchor>
+									</Anchors>
+									<uri>[local.texture]icon_kama.png</uri>
+								</TextureBitmap>
+							</Container>
+						</Grid>
+						
+						<Texture>
+							<Anchors>
+								<Anchor relativeTo="gd_zaap" point="TOPLEFT" relativePoint="BOTTOMLEFT">
+									<AbsDimension x="0" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="650" y="42" />
+							</Size>
+							<uri>[local.common]bg_dark.png</uri>
+						</Texture>
+						
+						<themeLabelCheckBox name="btn_showUnknowZaap">
+							<Anchors>
+								<Anchor relativeTo="gd_zaap" point="TOPLEFT" relativePoint="BOTTOMLEFT">
+									<AbsDimension x="15" y="10" />
+								</Anchor>
+							</Anchors>
+							<labelWidth>457</labelWidth>
+							<text>[ui.zaap.showUnknowZaap]</text>
+							<selected>false</selected>
+						</themeLabelCheckBox>
+						
+						<!-- Texture de décoration pour le nombre de kamas du personnage -->
+						<Texture name="tx_availableKamas">
+							<Anchors>
+								<Anchor relativeTo="gd_zaap" point="TOPRIGHT" relativePoint="BOTTOMRIGHT">
+									<AbsDimension x="-10" y="12" />
+								</Anchor>
+							</Anchors>
+							<uri>[local.texture]icon_kama.png</uri>
+						</Texture>
+						
+						<!-- Label contenant le nombre de kamas du personnage -->
+						<Label name="lbl_availableKamasNb">
+							<Anchors>
+								<Anchor relativeTo="gd_zaap" point="TOPRIGHT" relativePoint="BOTTOMRIGHT">
+									<AbsDimension x="-35" y="9" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="150" y="20" />
+							</Size>
+							<css>[local.css]normal2.css</css>
+							<cssClass>right</cssClass>
+							<Hooks>
+								<onRollOver/>
+								<onRollOut/>
+							</Hooks>
+						</Label>
+						
+						<!--  Texte d'erreur si liste vide -->
+						<Label name="lbl_noDestination">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="65" y="295" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="375" y="21" />
+							</Size>
+							<css>[local.css]normal.css</css>
+							<cssClass>center</cssClass>
+							<text>[ui.zaap.noDestination]</text>
+						</Label>
+					</Content>
+				</block>
+				
+				<Texture>
+					<Anchors>
+						<Anchor relativePoint="BOTTOMLEFT" point="BOTTOMLEFT">
+							<AbsDimension x="0" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="663" />
+					</Size>
+					<uri>[local.common]small_dark_background.png</uri>
+				</Texture>
+				
+				<Texture>
+					<Anchors>
+						<Anchor relativePoint="BOTTOMLEFT" point="BOTTOMLEFT">
+							<AbsDimension x="-3" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension y="60" />
+					</Size>
+					<uri>[local.common]/corner_decoration.png</uri>
+				</Texture>
+				<Texture>
+					<Anchors>
+						<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+							<AbsDimension x="91" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension y="60" />
+					</Size>
+					<uri>[local.common]/corner_decoration.png</uri>
+					<scaleX>-1</scaleX>
+				</Texture>
+				
+				<!-- Button de validation du choix de zaap -->
+				<simpleButton label="[ui.common.teleport]" name="btn_validate"   >
+					<Anchors>
+						<Anchor relativePoint="BOTTOM" point="BOTTOM">
+							<AbsDimension x="0" y="-10" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="200" y="35" />
+					</Size>
+					<cssClass>darkboldcenter</cssClass>
+					<css>[local.css]normal2.css</css>
+				</simpleButton>
+				
+				
+				<!-- Onglets des atelier, hdv et divers -->
+				
+				<themeHorizontalTab name="btn_tab1">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="20" y="3" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="180" y="40" />
+					</Size>
+				</themeHorizontalTab>
+				<themeHorizontalTab name="btn_tab2">
+					<Anchors>
+						<Anchor relativeTo="btn_tab1" point="TOPLEFT" relativePoint="TOPRIGHT">
+							<AbsDimension x="-2" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="180" y="40" />
+					</Size>
+				</themeHorizontalTab>
+				<themeHorizontalTab name="btn_tab3">
+					<Anchors>
+						<Anchor relativeTo="btn_tab2" point="TOPLEFT" relativePoint="TOPRIGHT">
+							<AbsDimension x="-2" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="180" y="40" />
+					</Size>
+				</themeHorizontalTab>
+			</Content>
+		</window>
+		
+		<Texture name="tx_fav">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="30" y="16" />
+				</Anchor>
+			</Anchors>
+			<uri>[local.texture]zaap/icon_star_normal.png</uri>
+		</Texture>
+		
+	</Container>
+</Definition>
+

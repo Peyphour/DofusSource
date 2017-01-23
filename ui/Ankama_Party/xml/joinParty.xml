@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+	<Import url="[config.mod.template]button/simpleButtonNoAnchor.xml"/>
+	<Import url="[config.mod.template.button]iconButton.xml"/>
+	<Import url="[config.mod.template]window.xml"/>
+	<Import url="[config.mod.template.button]simpleButton.xml"/>
+	<Import url="[config.mod.template]block.xml"/>
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+		<Constant name="css" value="[config.ui.skin]css/"/>
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/"/>
+		<Constant name="texture" value="[config.ui.skin]texture/"/>
+		<Constant name="common" value="[config.ui.skin]common/"/>
+	</Constants>
+
+	<Window>
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="10" y="-20"/>
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="1180" y="470"/>
+		</Size>
+
+		<title>[ui.common.invitationGroupe]</title>
+		<titleLabelName>lbl_fromName</titleLabelName>
+		<mouseEnabled>true</mouseEnabled>
+		<closeButtonName>btnClose</closeButtonName>
+
+		<Content>
+
+			<block>
+				<Anchors>
+					<Anchor relativePoint="TOP" point="TOP">
+						<AbsDimension y="5"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="1140" y="345"/>
+				</Size>
+
+				<Content>
+
+					<!-- Label lbl_dungeon-->
+					<Label name="lbl_dungeon">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="20" y="15"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="1000" y="27"/>
+						</Size>
+						<cssClass>left</cssClass>
+						<css>[local.css]normal2.css</css>
+					</Label>
+
+
+					<Grid name="grid_members">
+						<Size>
+							<AbsDimension x="1120" y="230"/>
+						</Size>
+
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="5" y="40"/>
+							</Anchor>
+						</Anchors>
+
+						<autoSelectMode>0</autoSelectMode>
+						<scrollDisplay>none</scrollDisplay>
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updateEntry</rendererArgs>
+						<slotWidth>140</slotWidth>
+						<slotHeight>210</slotHeight>
+
+						<Container name="ctr_player">
+
+							<Size>
+								<AbsDimension x="140" y="210"/>
+							</Size>
+
+							<TextureBitmap name="tx_slotPlayer">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="10" y="55"/>
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="120" y="170"/>
+								</Size>
+								<themeDataId>light_slot</themeDataId>
+							</TextureBitmap>
+
+							<TextureBitmap name="tx_slotPlayerLine">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="10" y="55"/>
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="120" y="170"/>
+								</Size>
+								<themeDataId>selection_green</themeDataId>
+							</TextureBitmap>
+
+							<EntityDisplayer name="ed_Player">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="-40" y="10"/>
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="215" y="210"/>
+								</Size>
+							</EntityDisplayer>
+
+							<Label name="lbl_name">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="230"/>
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="135" y="40"/>
+								</Size>
+								<hyperlinkEnabled>true</hyperlinkEnabled>
+								<useStyleSheet>true</useStyleSheet>
+								<wordWrap>false</wordWrap>
+								<cssClass>center</cssClass>
+								<css>[local.css]normal2.css</css>
+							</Label>
+
+							<Label name="lbl_breed">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="250"/>
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="135" y="20"/>
+								</Size>
+								<css>[local.css]normal2.css</css>
+								<cssClass>center</cssClass>
+							</Label>
+
+							<Label name="lbl_level">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="270"/>
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="135" y="20"/>
+								</Size>
+								<css>[local.css]normal2.css</css>
+								<cssClass>center</cssClass>
+							</Label>
+
+							<Texture name="tx_leaderCrown" strata="TOP">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="45" y="194"/>
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="53" y="40"/>
+								</Size>
+								<autoGrid>false</autoGrid>
+								<uri>[local.texture]groupIcon/icon_bigcrown.png</uri>
+							</Texture>
+						</Container>
+						<Hooks>
+							<onItemRollOver/>
+							<onItemRollOut/>
+						</Hooks>
+					</Grid>
+
+
+				</Content>
+			</block>
+
+			<!-- Bouton "valider" -->
+			<simpleButton label="[ui.common.accept]" name="btnValidate">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="110" y="357"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="150" y="32"/>
+				</Size>
+			</simpleButton>
+
+			<!-- Bouton "annuler" -->
+			<simpleButton label="[ui.common.refuse]" name="btnCancel">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="270" y="357"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="150" y="32"/>
+				</Size>
+			</simpleButton>
+
+			<!-- Bouton "ignorer" -->
+			<simpleButton label="[ui.social.blackListTemporarly]" name="btnIgnore">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="600" y="357"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="300" y="32"/>
+				</Size>
+			</simpleButton>
+			<!-- fin liste boutons -->
+
+			<!--Corner decoration LEFT-->
+
+			<Texture>
+				<Anchors>
+					<Anchor relativePoint="BOTTOMLEFT" point="BOTTOMLEFT"/>
+				</Anchors>
+				<uri>[local.common]corner_decoration.png</uri>
+			</Texture>
+
+			<!--Corner decoration RIGHT-->
+
+			<Texture>
+				<Anchors>
+					<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMLEFT"/>
+				</Anchors>
+				<uri>[local.common]corner_decoration.png</uri>
+				<scaleX>-1</scaleX>
+			</Texture>
+
+		</Content>
+	</Window>
+</Definition>

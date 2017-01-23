@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template]window.xml"/>
+	<Import url="[config.mod.template]block.xml"/>
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       <Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+	</Constants>
+
+	<window>
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER" />
+		</Anchors>
+		<Size>
+			<AbsDimension x="522" y="315" />
+		</Size>
+		<title>[ui.mimicry.associate]</title>
+		<dark>true</dark>
+		<Content>
+			
+			<!-- Ingrédients -->
+			
+			<Container>
+				<Anchors>
+					<Anchor relativePoint="TOP" point="TOP">
+						<AbsDimension x="0" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<RelDimension x="1" y="1"/>
+				</Size>
+			
+				<block>
+					<Anchors>
+						<Anchor relativePoint="TOP" point="TOP"/>
+					</Anchors>
+					<Size>
+						<RelDimension x="0.98"/>
+						<AbsDimension y="180"/>
+					</Size>
+				</block>
+				
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension y="16"/>
+						</Anchor>
+					</Anchors>
+
+					<Size>
+						<AbsDimension y="180"/>
+						<RelDimension x="1"/>
+					</Size>
+
+					<!--Slot Mimibiote-->
+
+					<Container name="ctr_slot1">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="22" y="3" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="92" y="92" />
+						</Size>
+						<bgColor>0xffff00</bgColor>
+						<bgAlpha>0</bgAlpha>
+					</Container>	
+					<Slot name="slot_ingredient_1">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="42" y="58" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="52" y="52" />
+						</Size>
+						<emptyTexture>[local.assets]tx_slot</emptyTexture>
+						<css>[local.css]normal.css</css>
+						<selectedTexture>[local.texture]slot/selected.png</selectedTexture>
+						<highlightTexture>[local.texture]slot/over.png</highlightTexture>
+						<acceptDragTexture>[local.texture]slot/acceptDrop.png</acceptDragTexture>
+						<refuseDragTexture>[local.texture]slot/refuseDrop.png</refuseDragTexture>
+					</Slot>
+					<Texture>
+						<Anchors>
+							<Anchor relativeTo="slot_ingredient_1" relativePoint="TOP" point="BOTTOM">
+								<AbsDimension y="0"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="45" y="45"/>
+						</Size>
+						<uri>[local.texture]Icon_mimibiote1.png</uri>
+					</Texture>
+
+					<Texture>
+						<Anchors>
+							<Anchor relativeTo="slot_ingredient_1" relativePoint="RIGHT" point="LEFT">
+								<AbsDimension x="10"/>
+							</Anchor>
+						</Anchors>
+						<uri>[local.texture]icon_plus_grey.png</uri>
+					</Texture>
+
+					<!--Slot Equipement-->
+
+					<Container name="ctr_slot2">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="137" y="3" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="92" y="92" />
+						</Size>
+						<bgColor>0xffff00</bgColor>
+						<bgAlpha>0</bgAlpha>
+					</Container>
+					<Slot name="slot_ingredient_2">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="157" y="58" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="52" y="52" />
+						</Size>
+						<css>[local.css]normal2.css</css>
+						<emptyTexture>[local.texture]slot/slot_dark_background_empty.png</emptyTexture>
+						<selectedTexture>[local.texture]slot/selected.png</selectedTexture>
+						<highlightTexture>[local.texture]slot/over.png</highlightTexture>
+						<acceptDragTexture>[local.texture]slot/acceptDrop.png</acceptDragTexture>
+						<refuseDragTexture>[local.texture]slot/refuseDrop.png</refuseDragTexture>
+					</Slot>
+					<Texture>
+						<Anchors>
+							<Anchor relativeTo="slot_ingredient_2" relativePoint="TOP" point="BOTTOM">
+								<AbsDimension y="0"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="45" y="45"/>
+						</Size>
+						<uri>[local.texture]Icon_mimibiote2.png</uri>
+					</Texture>
+
+					<Texture>
+						<Anchors>
+							<Anchor relativeTo="slot_ingredient_2" relativePoint="RIGHT" point="LEFT">
+								<AbsDimension x="10"/>
+							</Anchor>
+						</Anchors>
+						<uri>[local.texture]icon_plus_grey.png</uri>
+					</Texture>
+
+					<!--Slot apparence-->
+
+					<Container name="ctr_slot3">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="252" y="3" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="92" y="92" />
+						</Size>
+						<bgColor>0xffff00</bgColor>
+						<bgAlpha>0</bgAlpha>
+					</Container>
+					<Slot name="slot_ingredient_3">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="272" y="58" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="52" y="52" />
+						</Size>
+						<css>[local.css]normal2.css</css>
+						<emptyTexture>[local.texture]slot/slot_dark_background_empty.png</emptyTexture>
+						<selectedTexture>[local.texture]slot/selected.png</selectedTexture>
+						<highlightTexture>[local.texture]slot/over.png</highlightTexture>
+						<acceptDragTexture>[local.texture]slot/acceptDrop.png</acceptDragTexture>
+						<refuseDragTexture>[local.texture]slot/refuseDrop.png</refuseDragTexture>
+					</Slot>
+					<Texture>
+						<Anchors>
+							<Anchor relativeTo="slot_ingredient_3" relativePoint="TOP" point="BOTTOM">
+								<AbsDimension y="0"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="45" y="45"/>
+						</Size>
+						<uri>[local.texture]Icon_mimibiote3.png</uri>
+					</Texture>
+
+					<!-- 2 moins pour faire un égal :D -->
+					<Texture>
+						<Anchors>
+							<Anchor relativeTo="slot_ingredient_3" relativePoint="RIGHT" point="LEFT">
+								<AbsDimension x="10" y="-5"/>
+							</Anchor>
+						</Anchors>
+						<uri>[local.texture]icon_minus_grey.png</uri>
+					</Texture>
+					<Texture>
+						<Anchors>
+							<Anchor relativeTo="slot_ingredient_3" relativePoint="RIGHT" point="LEFT">
+								<AbsDimension x="10" y="4"/>
+							</Anchor>
+						</Anchors>
+						<uri>[local.texture]icon_minus_grey.png</uri>
+					</Texture>
+
+					<!--Slot resultat-->
+
+					<Container name="ctr_slot4">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="368" y="3" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="92" y="92" />
+						</Size>
+						<bgColor>0xffff00</bgColor>
+						<bgAlpha>0</bgAlpha>
+					</Container>
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="377" y="46" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="75" y="75"/>
+						</Size>
+						<uri>[local.texture]slot/shiny_slot.png</uri>
+					</Texture>
+					<Slot name="slot_item_preview">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="388" y="58" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="52" y="52" />
+						</Size>
+						<allowDrag>false</allowDrag>
+						<css>[local.css]normal2.css</css>
+					</Slot>
+					<Texture>
+						<Anchors>
+							<Anchor relativeTo="slot_item_preview" relativePoint="TOP" point="BOTTOM">
+								<AbsDimension y="0"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="45" y="45"/>
+						</Size>
+						<uri>[local.texture]Icon_mimibiote4.png</uri>
+					</Texture>
+				</Container>
+			</Container>
+		
+	
+			<!-- Information label -->
+			
+			<Label name="lbl_previewItem">
+				<Anchors>
+					<Anchor relativePoint="TOP" point="TOP">
+						<AbsDimension x="0" y="140" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="440" y="20" />
+				</Size>
+				<cssClass>redcenter</cssClass>
+				<css>[local.css]small2.css</css>
+				<multiline>true</multiline>
+				<wordWrap>true</wordWrap>
+			</Label>
+	
+			<Texture name="tx_backgroundItem">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="20" y="173" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="482" y="340" />
+				</Size>
+				<autoGrid>true</autoGrid>
+				<visible>false</visible>
+				<uri>[local.assets]storage_tx_bgTitle</uri>
+			</Texture>
+
+			<!--Corner decoration LEFT-->
+
+			<Texture>
+				<Anchors>
+					<Anchor relativePoint="BOTTOMLEFT" point="BOTTOMLEFT"/>
+				</Anchors>
+				<uri>[local.common]corner_decoration.png</uri>
+			</Texture>
+
+			<!--Corner decoration RIGHT-->
+
+			<Texture>
+				<Anchors>
+					<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMLEFT"/>
+				</Anchors>
+				<uri>[local.common]corner_decoration.png</uri>
+				<scaleX>-1</scaleX>
+			</Texture>
+			
+			<simpleButton name="btn_ok">
+				<Anchors>
+					<Anchor relativePoint="BOTTOM" point="BOTTOM">
+						<AbsDimension y="-10"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="220" y="35" />
+				</Size>
+				<label>[ui.common.merge]</label>
+			</simpleButton>
+			
+		</Content>
+	</window>
+</Definition>

@@ -1,0 +1,324 @@
+<Definition>
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER">
+				<AbsDimension x="0" y="-20" />
+			</Anchor>
+		</Anchors>
+		<mouseEnabled>true</mouseEnabled>
+		<Container name="uiCtr">
+			<Texture name="tx_bg">
+				<autoGrid>true</autoGrid>
+				<uri>[local.assets]tx_generalBackgroundWithTitle</uri>
+				<Size>
+					<AbsDimension x="1160" y="880" />
+				</Size>
+			</Texture>
+			<Texture name="tx_bg1">
+				<autoGrid>true</autoGrid>
+				<uri>[local.assets]tx_blockBackground</uri>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="25" y="65" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="778" y="792" />
+				</Size>
+			</Texture>
+			<Label name="lbl_title">
+				<css>[local.css]title.css</css>
+				<text>[ui.module.marketplace]</text>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="27" y="16" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="503" y="34" />
+				</Size>
+			</Label>
+			<iconButton name="btn_close">
+				<uri>[local.assets]btn_cornerCross</uri>
+				<Size>
+					<AbsDimension x="58" y="36" />
+				</Size>
+				<Anchors>
+					<Anchor relativeTo="tx_bg" relativePoint="TOPRIGHT" point="TOPRIGHT" />
+				</Anchors>
+			</iconButton>
+			<Grid name="gdModules">
+				<autoSelectMode>0</autoSelectMode>
+				<rendererArgs>moduleItem, [colors.grid.line], [colors.grid.bg]
+				</rendererArgs>
+				<rendererName>XmlUiGridRenderer</rendererName>
+				<scrollDisplay>auto</scrollDisplay>
+				<slotHeight>46</slotHeight>
+				<slotWidth>722</slotWidth>
+				<verticalScrollbarCss>[local.css]scrollBar.css
+				</verticalScrollbarCss>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="41" y="160" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="742" y="682" />
+				</Size>
+			</Grid>
+			<Label name="lbl_infos">
+		      <css>[local.css]normal.css</css>
+		      <cssClass>center</cssClass>
+		      <Anchors>
+		        <Anchor>
+		          <AbsDimension x="41" y="480"/>
+		        </Anchor>
+		      </Anchors>
+		      <Size>
+		        <AbsDimension x="742" y="25"/>
+		      </Size>
+		      <text>[ui.module.marketplace.infos]</text>
+		    </Label>
+			<Texture name="tx_inputUrl">
+				<autoGrid>true</autoGrid>
+				<uri>[local.assets]login_tx_inputBg</uri>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="40" y="82" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="710" y="34" />
+				</Size>
+			</Texture>
+			<iconButton name="btn_fetch">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="756" y="84" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="30" y="30" />
+				</Size>
+				<uri>[local.assets]btn_acceptReward</uri>
+			</iconButton>
+			<Texture>
+				<autoGrid>true</autoGrid>
+				<uri>[local.assets]tx_blockBackground</uri>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="812" y="65" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="324" y="792" />
+				</Size>
+			</Texture>
+			<Container name="moduleInfoCtr">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="826" y="131" />
+					</Anchor>
+				</Anchors>
+				<Label name="lbl_moduleName">
+					<css>[local.css]normal.css</css>
+					<cssClass>bold</cssClass>
+					<Size>
+						<AbsDimension x="290" y="21" />
+					</Size>
+				</Label>
+				<Label name="lbl_moduleAuthor">
+					<css>[local.css]normal.css</css>
+					<cssClass>p4</cssClass>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="30" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="290" y="20" />
+					</Size>
+				</Label>
+				<Label name="lbl_moduleVersion">
+					<css>[local.css]normal.css</css>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="60" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="290" y="20" />
+					</Size>
+				</Label>
+				<Label name="lbl_moduleDofusVersion">
+					<css>[local.css]normal.css</css>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="90" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="290" y="20" />
+					</Size>
+				</Label>
+				<Label name="lbl_moduleCategory">
+					<css>[local.css]normal.css</css>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="120" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="290" y="20" />
+					</Size>
+				</Label>
+				<Label name="lbl_moduleDescription">
+					<css>[local.css]normal.css</css>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="150" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="290" y="20" />
+					</Size>
+					<multiline>true</multiline>
+					<wordWrap>true</wordWrap>
+				</Label>
+			</Container>
+		</Container>
+
+		<Container name="searchCtr">
+			<visible>false</visible>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="40" y="124" />
+				</Anchor>
+			</Anchors>
+			<Texture>
+				<autoGrid>true</autoGrid>
+				<uri>[local.assets]tx_inputBackgroundDark</uri>
+				<Size>
+					<AbsDimension x="460" y="25" />
+				</Size>
+			</Texture>
+			<Input name="input_search">
+				<css>[local.css]normal.css</css>
+				<Size>
+					<AbsDimension x="460" y="20" />
+				</Size>
+			</Input>
+			<Texture name="tx_search">
+				<uri>[local.assets]btn_recherche</uri>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="464" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="25" y="25" />
+				</Size>
+			</Texture>
+		</Container>
+
+		<ComboBox name="cbx_categories">
+			<buttonTexture>[local.assets]btn_combobox</buttonTexture>
+			<listTexture>[local.assets]tx_combobox</listTexture>
+			<rendererArgs>[local.css]normal.css,,,[colors.grid.over],[colors.grid.selected]
+			</rendererArgs>
+			<scrollBarCss>[local.css]scrollBar.css</scrollBarCss>
+			<visible>false</visible>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="546" y="124" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="240" y="25" />
+			</Size>
+		</ComboBox>
+
+		<InputComboBox name="icb_url">
+			<css>[local.css]normal.css</css>
+			<cssClass>dark</cssClass>
+			<buttonTexture>[local.assets]btn_noBorderCombobox</buttonTexture>
+			<listTexture>[local.assets]tx_combobox</listTexture>
+			<rendererArgs>updateUrlLine, 0xFFFFFF, 0xFFFFFF</rendererArgs>
+			<rendererName>InlineXmlGridRenderer</rendererName>
+			<scrollBarCss>[local.css]scrollBar.css</scrollBarCss>
+			<slotHeight>25</slotHeight>
+			<slotWidth>670</slotWidth>
+			<Anchors>
+				<Anchor relativeTo="tx_inputUrl">
+					<AbsDimension x="5" y="4" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="696" y="25" />
+			</Size>
+			<Container>
+				<Button name="btn_url">
+					<Common>
+						<Texture>
+							<Size>
+								<AbsDimension x="670" y="25" />
+							</Size>
+							<bgColor>0</bgColor>
+							<bgAlpha>0</bgAlpha>
+						</Texture>
+
+						<Label name="lbl_url">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="8" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="606" y="20" />
+							</Size>
+							<cssClass>dark</cssClass>
+							<css>[local.css]normal.css</css>
+						</Label>
+					</Common>
+
+					<State type="OVER">
+						<SetProperties target="btn_url">
+							<bgColor>[colors.grid.over]</bgColor>
+						</SetProperties>
+					</State>
+
+					<State type="SELECTED">
+						<SetProperties target="btn_url">
+							<bgColor>[colors.grid.selected]</bgColor>
+						</SetProperties>
+					</State>
+
+					<State type="SELECTED_OVER">
+						<SetProperties target="btn_url">
+							<bgColor>[colors.grid.selected]</bgColor>
+						</SetProperties>
+					</State>
+				</Button>
+
+				<iconButton name="btn_removeUrl">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="644" y="2" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="20" y="20" />
+					</Size>
+					<uri>[local.assets]btn_cross_square</uri>
+				</iconButton>
+			</Container>
+		</InputComboBox>
+	</Container>
+</Definition>

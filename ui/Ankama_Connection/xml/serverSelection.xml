@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition labelDebug="false">
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/themeIconButton.xml" />
+    <Import url="[config.mod.template]window.xml" />
+    <Import url="[config.mod.template]button/comboBoxWithBackground.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+        <Constant name="status_0" value="[ui.server.state.unknown]" />
+        <Constant name="status_1" value="[ui.server.state.offline]" />
+        <Constant name="status_2" value="[ui.server.state.starting]" />
+        <Constant name="status_3" value="[ui.server.state.online]" />
+        <Constant name="status_4" value="[ui.server.state.nojoin]" />
+        <Constant name="status_5" value="[ui.server.state.saving]" />
+        <Constant name="status_6" value="[ui.server.state.stoping]" />
+        <Constant name="status_7" value="[ui.server.state.full]" />
+        <Constant name="statusIcon_0" value="[local.texture]icon_state_grey.png" />
+        <Constant name="statusIcon_1" value="[local.texture]icon_state_red.png" />
+        <Constant name="statusIcon_2" value="[local.texture]icon_state_yellow.png" />
+        <Constant name="statusIcon_3" value="[local.texture]icon_state_green.png" />
+        <Constant name="statusIcon_4" value="[local.texture]icon_state_red.png" />
+        <Constant name="statusIcon_5" value="[local.texture]icon_state_yellow.png" />
+        <Constant name="statusIcon_6" value="[local.texture]icon_state_red.png" />
+        <Constant name="statusIcon_7" value="[local.texture]icon_state_blue.png" />
+        <Constant name="illus_uri" value="[config.content.path]gfx/illus/illu_Server/normal/" />
+        <Constant name="characterSlotEmpty_uri" value="[local.texture]onboarding/icon_ServerPopulation_Normal.PNG" />
+        <Constant name="characterSlotFull_uri" value="[local.texture]onboarding/icon_ServerPopulation_Selected.PNG" />
+		<Constant name="ctr_chars_x" value="55" type="int" />
+		<Constant name="ctr_chars_y" value="325" type="int" />
+    </Constants>
+	
+	<Container>
+		<Anchors>
+			<Anchor point="TOP" relativePoint="TOP" >
+				<AbsDimension x="0" y="260" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="1152" y="568" />
+		</Size>
+
+		
+		<window>
+			<Size>
+				<AbsDimension x="1152" y="550" />
+			</Size>
+			<title>[ui.sersel.choseServer]</title>
+			<noCloseButton>true</noCloseButton>
+			<cssClass>whiteboldcenter</cssClass>
+			<dark>true</dark>
+		</window>
+
+		
+		<Grid name="gd_listServer">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="65" y="75" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1024" y="424" />
+			</Size>
+            <rendererName>InlineXmlGridRenderer</rendererName>
+            <rendererArgs>updateServerLine</rendererArgs>
+            <slotWidth>200</slotWidth>
+            <slotHeight>385</slotHeight>
+            
+            <Button name="btn_server">
+                <Common>
+                    <Size>
+                        <AbsDimension x="200" y="385" />
+                    </Size>
+                    <radioMode>true</radioMode>
+
+                    <Texture>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="0" y="1" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="203" y="390" />
+                        </Size>
+                        <uri>[local.texture]onboarding/bg_SlotServer_Empty.PNG</uri>
+                    </Texture>
+
+                    <Container name="ctr_server">
+
+                        <Texture name="tx_illu">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="2" y="3" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+	                            <AbsDimension x="196" y="379" />
+                            </Size>
+                        </Texture>
+                        
+                        <TextureBitmap>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="200" y="385" />
+                            </Size>
+							<themeDataId>fg_server_slot</themeDataId>
+                        </TextureBitmap>
+
+                        <Texture name="tx_waitingIllu">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="200" y="385" />
+                            </Size>
+                            <uri>[local.texture]onboarding/filter_ServerIllu_waiting.png</uri>
+                            <visible>false</visible>
+                        </Texture>
+
+
+                        <Label name="lbl_name">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="6" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="200" y="16" />
+                            </Size>
+                            <cssClass>extrawhiteboldcenter</cssClass>
+                            <css>[local.css]normal2.css</css>
+							<forceUppercase>true</forceUppercase>
+                        </Label>
+
+                        <Texture name="tx_type">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="168" y="2" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="32" y="32" />
+                            </Size>
+                        </Texture>
+
+
+                        <!-- Slots de personnages disponibles sur ce serveur -->
+						<Container name="ctr_nbCharacters">
+                            <Size>
+                                <AbsDimension x="85" y="22" />
+                            </Size>
+                            
+                            <Texture name="tx_nbChar0">
+                                <Size>
+                                    <AbsDimension x="16" y="22" />
+                                </Size>
+                                <uri>[local.texture]onboarding/icon_ServerPopulation_Normal.PNG</uri>
+                                <visible>false</visible>
+                            </Texture>
+                            <Texture name="tx_nbChar1">
+                                <Size>
+                                    <AbsDimension x="16" y="22" />
+                                </Size>
+                                <uri>[local.texture]onboarding/icon_ServerPopulation_Normal.PNG</uri>
+                                <visible>false</visible>
+                            </Texture>
+                            <Texture name="tx_nbChar2">
+                                <Size>
+                                    <AbsDimension x="16" y="22" />
+                                </Size>
+                                <uri>[local.texture]onboarding/icon_ServerPopulation_Normal.PNG</uri>
+                                <visible>false</visible>
+                            </Texture>
+                            <Texture name="tx_nbChar3">
+                                <Size>
+                                    <AbsDimension x="16" y="22" />
+                                </Size>
+                                <uri>[local.texture]onboarding/icon_ServerPopulation_Normal.PNG</uri>
+                                <visible>false</visible>
+                            </Texture>
+                            <Texture name="tx_nbChar4">
+                                <Size>
+                                    <AbsDimension x="16" y="22" />
+                                </Size>
+                                <uri>[local.texture]onboarding/icon_ServerPopulation_Normal.PNG</uri>
+                                <visible>false</visible>
+                            </Texture>
+						</Container>
+							
+
+                        <Label name="lbl_nbCharacters">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="325" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="200" y="16" />
+                            </Size>
+                            <cssClass>center</cssClass>
+                            <css>[local.css]normal2.css</css>
+                        </Label>
+
+                        <Texture name="tx_status">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="10" y="363" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="12" y="12" />
+                            </Size>
+                        </Texture>
+
+                        <Label name="lbl_status">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="27" y="358" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="170" y="15" />
+                            </Size>
+                            <css>[local.css]small2.css</css>
+                        </Label>
+
+
+                        <TextureBitmap name="tx_selected">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="200" y="385" />
+                            </Size>
+							<themeDataId>green_square_line</themeDataId>
+                            <visible>false</visible>
+                            <smooth>true</smooth>
+                        </TextureBitmap>
+
+                    </Container>
+
+                </Common>
+                <State type="OVER">
+                    <SetProperties target="tx_selected">
+                        <visible>true</visible>
+                    </SetProperties>
+                </State>
+                <State type="SELECTED">
+                    <SetProperties target="tx_selected">
+                        <visible>true</visible>
+                    </SetProperties>
+                </State>
+                <State type="SELECTED_OVER">
+                    <SetProperties target="tx_selected">
+                        <visible>true</visible>
+                    </SetProperties>
+                </State>
+            </Button>
+
+		</Grid>
+		
+
+		<themeIconButton name="btn_arrowLeft">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="22" y="245" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="35" y="53" />
+			</Size>
+			<bgScaleX>-1</bgScaleX>
+			<bgThemeDataId>btn_big_arrow</bgThemeDataId>
+			<smooth>true</smooth>
+		</themeIconButton>
+		<themeIconButton name="btn_arrowRight">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="1090" y="245" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="35" y="53" />
+			</Size>
+			<bgThemeDataId>btn_big_arrow</bgThemeDataId>
+			<smooth>true</smooth>
+		</themeIconButton>
+
+
+                        
+		<simpleButton label="[ui.common.select]" name="btn_validate">
+			<Anchors>
+				<Anchor point="BOTTOM" relativePoint="BOTTOM" >
+					<AbsDimension x="0" y="2" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="272" y="84" />
+			</Size>
+			<bgThemeDataId>button_largeBorder</bgThemeDataId>
+			<smooth>true</smooth>
+			<cssClass>darkcenter</cssClass>
+			<css>[local.css]title.css</css>
+			<forceUppercase>true</forceUppercase>
+		</simpleButton>
+		
+
+		<Container>		
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="800" y="528" />
+				</Anchor>
+			</Anchors>
+			
+	        <TextureBitmap>
+	            <Anchors>
+	                <Anchor>
+						<AbsDimension x="0" y="0" />
+	                </Anchor>
+	            </Anchors>
+	            <Size>
+	                <AbsDimension x="222" y="38" />
+	            </Size>
+				<themeDataId>bg_simple_button</themeDataId>
+	            <smooth>true</smooth>
+	        </TextureBitmap>
+	        
+			<simpleButton label="[ui.charsel.createCharacter]" name="btn_create">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="21" y="0" />
+					</Anchor>
+				</Anchors>
+	            <Size>
+	                <AbsDimension x="180" y="32" />
+	            </Size>
+			</simpleButton>	
+		</Container>
+
+		<comboBoxWithBackground name="cb_servers" width="230">
+			<Anchors>
+				<Anchor point="TOP" relativePoint="TOP" >
+					<AbsDimension x="445" y="7" />
+				</Anchor>
+			</Anchors>
+			<backgroundTexture>bg_small_border_dark</backgroundTexture>
+			<visible>false</visible>	
+		</comboBoxWithBackground>
+
+
+		
+	</Container>
+	
+	<Shortcuts>
+		<validUi />
+	</Shortcuts>
+</Definition>

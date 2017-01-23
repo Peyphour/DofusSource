@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+	   <Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+	
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="-121" y="-35" />
+			</Anchor>
+		</Anchors>
+		
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="122" y="61" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1096" y="70" />
+			</Size>
+			<uri>[local.assets]tx_titleBackground</uri>
+			<autoGrid>true</autoGrid>
+		</Texture>
+		
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="170" y="73" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="538" y="37" />
+			</Size>
+			<text>[ui.krosmaster.krosmaster]</text>
+			<css>[local.css]title.css</css>
+		</Label>
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="934" y="73" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="228" y="38" />
+			</Size>
+			<uri>[local.assets]tx_krosmaster_decoration</uri>
+			<autoGrid>false</autoGrid>
+		</Texture>
+		
+
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="139" y="144" />
+				</Anchor>
+			</Anchors>
+			
+			<Texture>
+				<Size>
+					<AbsDimension x="1062" y="610" />
+				</Size>
+				<uri>[local.assets]tx_blockBackground</uri>
+				<autoGrid>true</autoGrid>
+			</Texture>
+			
+			<Label name="lbl_collection">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="15" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="1000" y="20" />
+				</Size>
+				<css>[local.css]normal.css</css>
+			</Label>
+			
+	
+			<Grid name="gd_collection">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="20" y="50" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="1015" y="555" />
+				</Size>
+				<slotWidth>160</slotWidth>
+				<slotHeight>175</slotHeight>
+				<rendererName>InlineXmlGridRenderer</rendererName>
+	            <rendererArgs>updateLine</rendererArgs>
+	            <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+	           
+	            <Container>
+					<Size>
+					    <AbsDimension x="160" y="175" />
+					</Size>
+					<buttonMode>true</buttonMode>
+					<useHandCursor>true</useHandCursor>
+					<Texture name="tx_figureBg">
+				    	<Size>
+					    	<AbsDimension x="160" y="175" />
+				    	</Size>
+						<uri>[local.assets]tx_darkBg</uri>
+						<autoGrid>true</autoGrid>
+					</Texture>
+					<Texture name="tx_figure">
+						<Anchors>
+							<Anchor>
+							    <AbsDimension x="5" y="0" />
+							</Anchor>
+						</Anchors>
+				    	<Size>
+							<AbsDimension x="150" y="150" />
+				    	</Size>
+					</Texture>
+					<Label name="lbl_name">
+						<Anchors>
+							<Anchor>
+							    <AbsDimension x="0" y="145" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="160" y="20" />
+						</Size>
+						<cssClass>center</cssClass>
+						<css>[local.css]normal.css</css>
+					</Label>
+					<Label name="lbl_number">
+						<Anchors>
+							<Anchor>
+							    <AbsDimension x="6" y="2" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="120" y="20" />
+						</Size>
+						<css>[local.css]normal.css</css>
+					</Label>
+					<mouseEnabled>true</mouseEnabled>
+	            </Container>
+			</Grid>
+							
+			
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="20" y="620" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="1000" y="20" />
+				</Size>
+				<text>[ui.krosmaster.sendFigureToDofus]</text>
+				<css>[local.css]normal.css</css>
+			</Label>
+		</Container>
+	</Container>
+</Definition>

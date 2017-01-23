@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/themeHorizontalTab.xml" />
+	<Import url="[config.mod.template]button/sortButton.xml" />
+	<Import url="[config.mod.template]button/labelCheckBox.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template.button]comboBoxWithBackground.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+	</Constants>
+
+	<window title="[ui.common.teamSearch]">
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="0" y="-20" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="1000" y="685" />
+		</Size>
+
+		<Content>
+
+			<block>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="35" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension y="580" />
+					<RelDimension x="1" />
+				</Size>
+
+				<Content> 
+					<!-- CONTENEUR POUR LA LISTE DES DONJONS -->		
+					<Container name="ctr_donjons">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="15" y="0" />
+							</Anchor>
+						</Anchors>
+
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="7" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="450" y="20" />
+							</Size>
+							<css>[local.css]normal2.css</css>
+							<text>[ui.teamSearch.availableDonjons]</text>
+						</Label>
+
+						<!-- Recherche d'un donjon -->
+
+						<TextureBitmap>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="35" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="270" y="37" />
+							</Size>
+							<themeDataId>bg_small_border_dark</themeDataId>
+						</TextureBitmap>
+
+						<Input name="inp_searchDonjon">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="6" y="41" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="257" y="22" />
+							</Size>
+							<css>[local.css]normal2.css</css>
+							<maxChars>30</maxChars>
+						</Input>
+
+
+						<!-- Grille des donjons -->
+
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="10" y="79" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="220" y="20" />
+							</Size>
+							<text>[ui.common.name]</text>
+							<css>[local.css]normal2.css</css>
+						</Label>
+
+						<sortButton name="btn_tabName">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="76" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="230" y="28" />
+							</Size>
+						</sortButton>
+
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="240" y="79" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="150" y="20" />
+							</Size>
+							<text>[ui.common.level]</text>
+							<css>[local.css]normal2.css</css>
+							<cssClass>right</cssClass>
+						</Label>
+
+						<sortButton name="btn_tabLevel">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="240" y="76" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="170" y="28" />
+							</Size>
+						</sortButton>
+
+						<Grid name="gd_donjons">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="4" y="107" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="457" y="420" />
+							</Size>
+							<rendererName>InlineXmlGridRenderer</rendererName>
+							<rendererArgs>updateDonjonLine,[colors.grid.line]</rendererArgs>
+							<slotWidth>430</slotWidth>
+							<slotHeight>35</slotHeight>
+							<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+
+							<!-- Container décrivant une ligne de la grille -->
+							<Container>
+								<Size>
+									<AbsDimension x="430" y="35" />
+								</Size>
+
+								<Button name="btn_donjon">
+									<Common>
+										<Size>
+											<AbsDimension x="430" y="35" />
+										</Size>
+										<radioMode>true</radioMode>
+										<linkedTo>btn_add</linkedTo>
+
+										<Texture>
+											<Size>
+												<AbsDimension x="430" y="35" />
+											</Size>
+											<bgColor>0</bgColor>
+											<bgAlpha>0</bgAlpha>
+										</Texture>
+
+										<Label name="lbl_name">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="5" y="4" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="310" y="20" />
+											</Size>
+											<css>[local.css]normal2.css</css>
+										</Label>
+
+										<Label name="lbl_level">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="315" y="4" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="66" y="20" />
+											</Size>
+											<css>[local.css]normal2.css</css>
+											<cssClass>right</cssClass>
+										</Label>
+									</Common>
+
+									<State type="OVER">
+										<SetProperties target="btn_donjon">
+											<bgColor>[colors.grid.over]</bgColor>
+										</SetProperties>
+									</State>
+
+									<State type="SELECTED">
+										<SetProperties target="btn_donjon">
+											<bgColor>[colors.grid.selected]</bgColor>
+										</SetProperties>
+									</State>
+
+									<State type="SELECTED_OVER">
+										<SetProperties target="btn_donjon">
+											<bgColor>[colors.grid.selected]</bgColor>
+										</SetProperties>
+									</State>
+								</Button>
+
+								<iconButton name="btn_add">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="398" y="4" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="25" y="25" />
+									</Size>
+									<uri>[local.assets]btn_plus_square</uri>
+								</iconButton>
+							</Container>
+						</Grid>
+
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="76" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="470" y="479" />
+							</Size>
+							<uri>[local.assets]tx_commonGridScrollbar</uri>
+							<autoGrid>true</autoGrid>
+						</Texture>
+
+
+						<!-- Combobox de sélection de la tranche de niveau des donjons -->
+
+						<comboBoxWithBackground name="cbx_level" width="170" height="38">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="290" y="34" />
+								</Anchor>
+							</Anchors>
+						</comboBoxWithBackground>
+
+					</Container>
+
+
+					<!-- CONTENEUR POUR L'ONGLET INSCRIPTION -->
+
+
+
+					<Container name="ctr_register">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="505" y="0" />
+							</Anchor>
+						</Anchors>
+
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="38" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="450" y="20" />
+							</Size>
+							<css>[local.css]normal2.css</css>
+							<text>[ui.teamSearch.selectedDonjons]</text>
+						</Label>
+
+						<Grid name="gd_chosenDonjons">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="4" y="107" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="459" y="385" />
+							</Size>
+							<rendererName>InlineXmlGridRenderer</rendererName>
+							<rendererArgs>updateChosenDonjonLine,[colors.grid.line]</rendererArgs>
+							<slotWidth>400</slotWidth>
+							<slotHeight>35</slotHeight>
+
+							<!-- Container décrivant une ligne de la grille -->
+							<Container>
+								<Size>
+									<AbsDimension x="400" y="35" />
+								</Size>
+
+								<Button name="btn_donjon">
+									<Common>
+										<Size>
+											<AbsDimension x="400" y="35" />
+										</Size>
+										<radioMode>true</radioMode>
+										<linkedTo>btn_remove</linkedTo>
+
+										<Texture name="tx_bg">
+											<Size>
+												<AbsDimension x="400" y="35" />
+											</Size>
+											<bgColor>[colors.grid.title]</bgColor>
+											<bgAlpha>0</bgAlpha>
+										</Texture>
+
+										<Label name="lbl_name">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="5" y="4" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="290" y="20" />
+											</Size>
+											<css>[local.css]normal2.css</css>
+										</Label>
+
+										<Label name="lbl_level">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="287" y="4" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="60" y="20" />
+											</Size>
+											<css>[local.css]normal2.css</css>
+											<cssClass>right</cssClass>
+										</Label>
+									</Common>
+								</Button>
+
+								<iconButton name="btn_remove">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="365" y="4" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="25" y="25" />
+									</Size>
+									<uri>[local.assets]btn_minus_square</uri>
+									<visible>false</visible>
+								</iconButton>
+							</Container>
+						</Grid>
+
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="76" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="440" y="442" />
+							</Size>
+							<uri>[local.assets]tx_commonGridScrollbar</uri>
+							<autoGrid>false</autoGrid>
+						</Texture>
+
+
+						<simpleButton label="[ui.teamSearch.registration]"
+							name="btn_subscribe">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="520" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="440" y="35" />
+							</Size>
+						</simpleButton>
+					</Container>
+
+
+
+
+
+
+
+
+
+					<!-- CONTENEUR POUR L'ONGLET RECHERCHE -->
+
+
+					<Container name="ctr_search">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="505" y="0" />
+							</Anchor>
+						</Anchors>
+
+
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="7" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="450" y="20" />
+							</Size>
+							<css>[local.css]normal2.css</css>
+							<text>[ui.teamSearch.availableCharacters]</text>
+						</Label>
+
+						<!-- Grille des personnages dispo pour ce donjon -->
+
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="15" y="79" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="120" y="20" />
+							</Size>
+							<text>[ui.common.name]</text>
+							<css>[local.css]normal2.css</css>
+						</Label>
+
+						<sortButton name="btn_tabSearchName">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="76" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="220" y="28" />
+							</Size>
+						</sortButton>
+
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="200" y="79" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="120" y="20" />
+							</Size>
+							<text>[ui.charcrea.breed]</text>
+							<css>[local.css]normal2.css</css>
+							<cssClass>right</cssClass>
+						</Label>
+
+						<sortButton name="btn_tabSearchBreed">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="220" y="76" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="125" y="28" />
+							</Size>
+						</sortButton>
+
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="272" y="79" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="120" y="20" />
+							</Size>
+							<text>[ui.common.level]</text>
+							<css>[local.css]normal2.css</css>
+							<cssClass>right</cssClass>
+						</Label>
+
+						<sortButton name="btn_tabSearchLevel">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="345" y="76" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="60" y="28" />
+							</Size>
+						</sortButton>
+
+						<Grid name="gd_fightersSearch">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="2" y="107" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="425" y="385" />
+							</Size>
+							<rendererName>InlineXmlGridRenderer</rendererName>
+							<rendererArgs>updateFighterLine,[colors.grid.line]</rendererArgs>
+							<slotWidth>402</slotWidth>
+							<slotHeight>35</slotHeight>
+							<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+
+							<!-- Container décrivant une ligne de la grille -->
+							<Container>
+								<Size>
+									<AbsDimension x="402" y="35" />
+								</Size>
+
+								<Button name="btn_fighter">
+									<Common>
+										<Size>
+											<AbsDimension x="402" y="35" />
+										</Size>
+										<radioMode>true</radioMode>
+
+										<Texture>
+											<Size>
+												<AbsDimension x="402" y="35" />
+											</Size>
+											<bgColor>0</bgColor>
+											<bgAlpha>0</bgAlpha>
+										</Texture>
+
+										<Label name="lbl_breed">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="190" y="4" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="125" y="20" />
+											</Size>
+											<css>[local.css]normal2.css</css>
+											<cssClass>right</cssClass>
+										</Label>
+
+										<Label name="lbl_level">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="325" y="4" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="60" y="20" />
+											</Size>
+											<css>[local.css]normal2.css</css>
+											<cssClass>right</cssClass>
+										</Label>
+									</Common>
+
+									<State type="OVER">
+										<SetProperties target="btn_fighter">
+											<bgColor>[colors.grid.over]</bgColor>
+										</SetProperties>
+									</State>
+
+									<State type="SELECTED">
+										<SetProperties target="btn_fighter">
+											<bgColor>[colors.grid.selected]</bgColor>
+										</SetProperties>
+									</State>
+
+									<State type="SELECTED_OVER">
+										<SetProperties target="btn_fighter">
+											<bgColor>[colors.grid.selected]</bgColor>
+										</SetProperties>
+									</State>
+								</Button>
+
+
+								<Label name="lbl_name">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="5" y="4" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="190" y="20" />
+									</Size>
+									<css>[local.css]normal2.css</css>
+									<hyperlinkEnabled>true</hyperlinkEnabled>
+									<useStyleSheet>true</useStyleSheet>
+								</Label>
+							</Container>
+						</Grid>
+
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="76" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="440" y="442" />
+							</Size>
+							<uri>[local.assets]tx_commonGridScrollbar</uri>
+							<autoGrid>false</autoGrid>
+						</Texture>
+
+						<simpleButton label="[ui.party.addToParty]" name="btn_invite">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="520" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="440" y="35" />
+							</Size>
+						</simpleButton>
+
+
+						<!-- Combobox de sélection de la classe des persos -->
+
+						<comboBoxWithBackground name="cbx_levelFighters" width="170" height="38">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="260" y="34" />
+								</Anchor>
+							</Anchors>
+						</comboBoxWithBackground>
+
+						<!-- Combobox de sélection du niveau des persos -->
+
+						<comboBoxWithBackground name="cbx_breedFighters" width="240" height="38">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="34" />
+								</Anchor>
+							</Anchors>
+						</comboBoxWithBackground>
+					</Container>
+
+				</Content>
+
+			</block>
+
+			<!-- ONGLET INSCRIPTION ET RECHERCHE -->
+
+			<themeHorizontalTab name="btn_register">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="20" y="2" />
+					</Anchor>
+				</Anchors>
+				<text>[ui.teamSearch.registration]</text>
+			</themeHorizontalTab>
+			<themeHorizontalTab name="btn_search">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="200" y="2" />
+					</Anchor>
+				</Anchors>
+				<text>[ui.search.search]</text>
+			</themeHorizontalTab>
+
+		</Content>
+
+	</window>
+
+
+	<!-- CHECKBOX D'OPTIONS -->
+
+	<!--labelCheckBox name="btn_showOfflineFriends"> <Anchors> <Anchor> <AbsDimension 
+		x="18" y="598" /> </Anchor> </Anchors> <labelWidth>800</labelWidth> <labelHeight>19</labelHeight> 
+		<labelPosX>16</labelPosX> <text>[ui.social.showOfflinePerson]</text> <selected>false</selected> 
+		</labelCheckBox -->
+
+	<!--labelCheckBox name="btn_warnWhenFriendIsOnline"> <Anchors> <Anchor> 
+		<AbsDimension x="18" y="619" /> </Anchor> </Anchors> <labelWidth>800</labelWidth> 
+		<labelHeight>19</labelHeight> <labelPosX>16</labelPosX> <text>[ui.social.warnWhenFriendsComeOnline]</text> 
+		<selected>false</selected> </labelCheckBox -->
+
+
+</Definition>
+

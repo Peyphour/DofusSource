@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+	   <Constant name="css" value="[config.ui.skin]css/" />
+	   <Constant name="jobIconPath" value="[config.gfx.path]jobs/" />
+	</Constants>
+	
+	<Import url="[config.mod.template.button]checkBox.xml" />
+	<Import url="[config.mod.template.button]labelCheckBox.xml" />
+	<Import url="[config.mod.template.button]iconButton.xml" />
+    <Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template]button/greyButton.xml" />
+	
+	<Container name="jobOptionsCtr">	
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER" />
+		</Anchors>
+		
+		
+		<Texture>
+			<Size>
+				<AbsDimension x="441" y="294" />
+			</Size>
+			<uri>[local.assets]tx_generalBackgroundWithTitle</uri>
+			<autoGrid>true</autoGrid>
+		</Texture>
+
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="76" y="284" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="303" y="46" />
+			</Size>
+			<uri>[local.assets]tx_buttonBackground</uri>
+			<autoGrid>true</autoGrid>
+		</Texture>
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="25" y="71" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="391" y="111" />
+			</Size>
+			<uri>[local.assets]tx_blockBackground</uri>
+			<autoGrid>true</autoGrid>
+		</Texture>
+
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="25" y="182" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="391" y="44" />
+			</Size>
+			<uri>[local.assets]tx_blockBackground</uri>
+			<autoGrid>true</autoGrid>
+		</Texture>
+
+
+
+
+		<!-- Label lbl_title-->
+
+		<Label name="lbl_title">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="23" y="15" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="394" y="35" />
+			</Size>
+			<text>[ui.craft.jobOptions]</text>
+			<css>[local.css]title.css</css>
+		</Label>
+
+		<!-- Label lbl_options-->
+
+		<Label name="lbl_options">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="40" y="78" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="358" y="21" />
+			</Size>
+			<text>[ui.craft.referencingOptions]</text>
+			<css>[local.css]titleSmall.css</css>
+		</Label>
+		
+		
+				
+		<!-- labelCheckBox chk_notFree-->
+
+		<labelCheckBox name="chk_notFree">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="42" y="108" />
+				</Anchor>
+			</Anchors>
+			<labelWidth>244</labelWidth>
+			<labelHeight>20</labelHeight>
+			<uri>[local.assets]tx_light_checkbox</uri>
+			<text>[ui.craft.notFree]</text>
+			<css>[local.css]normal.css</css>
+			<Hooks>
+				<onRelease />
+			</Hooks>
+		</labelCheckBox>
+		
+				
+		<!-- labelCheckBox chk_freeOnFail-->
+
+		<labelCheckBox name="chk_freeOnFail">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="53" y="126" />
+				</Anchor>
+			</Anchors>
+			<labelWidth>244</labelWidth>
+			<labelHeight>20</labelHeight>
+			<uri>[local.assets]tx_light_checkbox</uri>
+			<text>[ui.craft.freeIfFailed]</text>
+			<css>[local.css]normal.css</css>
+		</labelCheckBox>
+		
+				
+		<!-- labelCheckBox chk_resourcesRequired-->
+
+		<labelCheckBox name="chk_resourcesRequired">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="42" y="144" />
+				</Anchor>
+			</Anchors>
+			<labelWidth>244</labelWidth>
+			<labelHeight>20</labelHeight>
+			<uri>[local.assets]tx_light_checkbox</uri>
+			<text>[ui.craft.ressourcesNeeded]</text>
+			<css>[local.css]normal.css</css>
+		</labelCheckBox>
+		
+		
+				        
+		<iconButton name="btn_close">
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" />
+			</Anchors>
+			<Size>
+				<AbsDimension x="57" y="36" />
+			</Size>
+			<uri>[local.assets]btn_cornerCross</uri>
+        </iconButton>
+		
+		
+		<!-- Button btn_activate -->
+
+		<greyButton label="-" name="btn_activate" width="386" height="35">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="29" y="235" />
+				</Anchor>
+			</Anchors>
+			<css>[local.css]button.css</css>
+        </greyButton>
+        
+				
+		<!-- Button btn_save -->
+
+		<simpleButton label="[ui.common.save]" name="btn_save"   >
+			<Size>
+				<AbsDimension x="194" y="35" />
+			</Size>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="130" y="289" />
+				</Anchor>
+			</Anchors>
+			<css>[local.css]button.css</css>
+			<Hooks>
+				<onRelease />
+			</Hooks>
+		</simpleButton>
+        
+				
+
+		<!-- Label lbl_nbMiniSlots-->
+
+		<Label name="lbl_nbMiniSlots">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="40" y="192" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="294" y="18" />
+			</Size>
+			<text>[ui.craft.minItemInCraft]</text>
+			<css>[local.css]normal.css</css>
+		</Label>
+				
+		<!-- ComboBox combo_nbSlot-->
+
+		<ComboBox name="combo_nbSlot">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="339" y="193" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="64" y="25" />
+			</Size>
+			<buttonTexture>[local.assets]btn_combobox</buttonTexture>
+			<listTexture>[local.assets]tx_combobox</listTexture>
+			<rendererArgs>[local.css]normal.css,,,[colors.grid.over],[colors.grid.selected]</rendererArgs>
+			<scrollBarCss>[local.css]scrollBar.css</scrollBarCss>
+			<Hooks>
+				<onSelectItem />
+			</Hooks>
+		</ComboBox>
+		
+		
+	</Container>
+</Definition>

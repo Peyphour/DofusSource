@@ -1,0 +1,118 @@
+<Definition>
+  <Import url="[config.mod.template]button/iconButton.xml"/>
+  <Import url="[config.mod.template]window.xml"/>
+  <Constants>
+    <Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+    <Constant name="bitmap" value="[config.ui.skin]bitmap/"/>
+    <Constant name="css" value="[config.ui.skin]css/"/>
+  </Constants>
+  <window name="ctr_main" title="[ui.common.socialNetworkShare]" dark="true">
+    <Anchors>
+      <Anchor point="CENTER" relativePoint="CENTER">
+        <AbsDimension x="0" y="-60"/>
+      </Anchor>
+    </Anchors>
+	<Size>
+		<AbsDimension x="600" y="256"/>
+    </Size>
+    <mouseEnabled>true</mouseEnabled>
+	<Content>
+		<Container name="ctr_btns">
+		  <Anchors>
+			<Anchor>
+			  <AbsDimension x="251" y="-33"/>
+			</Anchor>
+		  </Anchors>
+		  <Size>
+			<AbsDimension x="133" y="43"/>
+		  </Size>
+		  <iconButton name="btn_fb">
+			<Size>
+			  <AbsDimension x="48" y="48"/>
+			</Size>
+			<uri>[local.assets]btn_facebook</uri>
+			<Anchors>
+			  <Anchor>
+				<AbsDimension x="-224" y="80"/>
+			  </Anchor>
+			</Anchors>
+		  </iconButton>
+		  <iconButton name="btn_twitter">
+			<Size>
+			  <AbsDimension x="48" y="48"/>
+			</Size>
+			<uri>[local.assets]btn_twitter</uri>
+			<Anchors>
+			  <Anchor relativeTo="btn_fb" relativePoint="RIGHT" point="LEFT">
+				<AbsDimension x="8" y="0"/>
+			  </Anchor>
+			</Anchors>
+		  </iconButton>
+		</Container>
+		<TextureBitmap>
+		  <themeDataId>bg_small_border_light</themeDataId>
+		  <Anchors>
+			<Anchor>
+			  <AbsDimension x="10" y="131"/>
+			</Anchor>
+		  </Anchors>
+		  <Size>
+			<AbsDimension x="546" y="39"/>
+		  </Size>
+		  <smooth>true</smooth>
+		</TextureBitmap>
+		<Label name="lbl_url">
+		  <css>[local.css]normal2.css</css>
+		  <cssClass>p</cssClass>
+		  <selectable>true</selectable>
+		  <Anchors>
+			<Anchor>
+			  <AbsDimension x="18" y="139"/>
+			</Anchor>
+		  </Anchors>
+		  <Size>
+			<AbsDimension x="508" y="30"/>
+		  </Size>
+		</Label>
+		<Label>
+		  <css>[local.css]normal2.css</css>
+		  <cssClass>p</cssClass>
+		  <selectable>true</selectable>
+		  <text>[ui.social.share.popup.copyLink]</text>
+		  <Anchors>
+			<Anchor>
+			  <AbsDimension x="14" y="111"/>
+			</Anchor>
+		  </Anchors>
+		  <Size>
+			<AbsDimension x="530" y="32"/>
+		  </Size>
+		</Label>
+		<Label>
+		  <css>[local.css]normal2.css</css>
+		  <cssClass>p</cssClass>
+		  <selectable>true</selectable>
+		  <text>[ui.social.share.popup.serviceBtns]</text>
+		  <Anchors>
+			<Anchor>
+			  <AbsDimension x="14" y="15"/>
+			</Anchor>
+		  </Anchors>
+		  <Size>
+			<AbsDimension x="530" y="32"/>
+		  </Size>
+		</Label>
+		<iconButton name="btn_goTo">
+		  <Size>
+			<AbsDimension x="23" y="23"/>
+		  </Size>
+		  <uri>[local.assets]tx_darkArrow</uri>
+		  <Anchors>
+			<Anchor relativeTo="lbl_url" relativePoint="RIGHT" point="LEFT">
+			  <AbsDimension x="0" y="-3"/>
+			</Anchor>
+		  </Anchors>
+		</iconButton>
+	</Content>
+  </window>
+</Definition>

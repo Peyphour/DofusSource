@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition modal="true">
+	<Import url="[config.mod.template]button/greyButton.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+	
+	<Container name="bg_queue_wait">
+		<Size>
+			<RelDimension x="1" y="1" />
+		</Size>
+		<bgColor>[colors.ui.modalbg]</bgColor>
+		<alpha>0.2</alpha>
+	</Container>
+		
+	<Container name="queue_wait">
+		<Size>
+			<AbsDimension x="568" y="280" />
+		</Size>
+		
+		
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER" />
+		</Anchors>
+		
+		<!-- Texture tx_background-->
+		
+		<Texture name="tx_background">
+			<Size>
+				<AbsDimension x="568" y="280" />
+			</Size>
+			<autoGrid>true</autoGrid>
+			<uri>[local.assets]tx_generalBackground</uri>
+		</Texture>
+
+		<!-- Texture tx_greyZone-->
+
+		<Texture name="tx_greyZone">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="14" y="40" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="542" y="55" />
+			</Size>
+			<uri>[local.assets]fileattente_tx_bandeaugris</uri>
+		</Texture>
+
+		<!-- Label lbl_text1-->
+
+		<Label name="lbl_text1">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="18" y="67" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="534" y="28" />
+			</Size>
+			<text>[ui.queue.wait]</text>
+			<css>[local.css]titleSmall.css</css>
+		</Label>
+
+		<!-- Label lbl_text2-->
+
+		<Label name="lbl_text2">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="18" y="120" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="534" y="100" />
+			</Size>
+			<wordWrap>true</wordWrap>
+			<css>[local.css]normal.css</css>
+			<cssClass>center</cssClass>
+			<verticalAlign>center</verticalAlign>
+		</Label>
+
+		<!-- Button btn_back-->
+		
+		<greyButton label="[ui.queue.back]" name="btn_back" width="308" height="27">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="130" y="216" />
+				</Anchor>
+			</Anchors>
+			<css>[local.css]button.css</css>
+		</greyButton>
+		
+	</Container>
+</Definition>

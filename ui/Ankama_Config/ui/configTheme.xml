@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	<Import url="mod://Ankama_Config/ui/template/configCheckbox.xml" />
+	<Import url="[config.mod.template]button/themeSimpleCheckBox.xml" />
+	<Import url="[config.mod.template]button/themeIconButton.xml" />
+	<Import url="[config.mod.template]button/greyButton.xml" />
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]block.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+
+	<Container name="configUiCtr">
+
+		<!-- Label title -->
+
+
+
+		<block headerHeight="33">
+			<Anchors>
+				<Anchor relativeTo="lbl_title">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="300" y="483" />
+			</Size>
+
+			<Content>
+				<Label name="lbl_title">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="5" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="300" y="24" />
+					</Size>
+					<text>[ui.option.changeUiSkin]</text>
+					<cssClass>whiteboldcenter</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+				<!-- Grid grid_theme -->
+
+				<Grid name="grid_theme">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="33" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="290" y="390" />
+					</Size>
+					<rendererName>InlineXmlGridRenderer</rendererName>
+					<rendererArgs>updateThemeLine,[colors.grid.line],[colors.grid.bg]
+					</rendererArgs>
+					<verticalScrollbarCss>[local.css]scrollBar.css
+					</verticalScrollbarCss>
+					<slotWidth>290</slotWidth>
+					<slotHeight>39</slotHeight>
+					<Hooks>
+						<onSelectItem />
+					</Hooks>
+
+					<Container>
+						<Size>
+							<AbsDimension x="290" y="39" />
+						</Size>
+						<Button name="btn_theme">
+							<Common>
+								<Size>
+									<AbsDimension x="290" y="39" />
+								</Size>
+								<radioMode>true</radioMode>
+
+								<Texture>
+									<Size>
+										<AbsDimension x="290" y="39" />
+									</Size>
+									<bgColor>0</bgColor>
+									<bgAlpha>0</bgAlpha>
+								</Texture>
+
+								<!-- Label lbl_name -->
+
+								<Label name="lbl_name">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="32" y="7" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="234" y="20" />
+									</Size>
+									<css>[local.css]normal2.css</css>
+								</Label>
+							</Common>
+
+							<State type="OVER">
+								<SetProperties target="btn_theme">
+									<bgColor>[colors.grid.over]</bgColor>
+								</SetProperties>
+							</State>
+
+							<State type="SELECTED">
+								<SetProperties target="btn_theme">
+									<bgColor>[colors.grid.selected]</bgColor>
+								</SetProperties>
+							</State>
+
+							<State type="SELECTED_OVER">
+								<SetProperties target="btn_theme">
+									<bgColor>[colors.grid.selected]</bgColor>
+								</SetProperties>
+							</State>
+						</Button>
+						
+						<TextureBitmap name="tx_official">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="6" y="8" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="25" y="20" />
+							</Size>
+						</TextureBitmap>
+
+						<Texture name="tx_selected">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="240" y="4" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="32" y="32" />
+							</Size>
+							<uri>[local.texture]icon_true.png</uri>
+						</Texture>
+					</Container>
+				</Grid>
+
+				<TextureBitmap>
+					<Anchors>
+						<Anchor relativePoint="BOTTOMLEFT" point="BOTTOMLEFT">
+							<AbsDimension x="0" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="290" y="50" />
+					</Size>
+					<themeDataId>list_menu_background</themeDataId>
+					<scaleY>-1</scaleY>
+				</TextureBitmap>
+
+				<simpleButton name="btn_installTheme">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="25" y="433" />
+						</Anchor>
+					</Anchors>
+
+					<Size>
+						<AbsDimension x="240" y="30" />
+					</Size>
+					<label>[ui.theme.Install]</label>
+				</simpleButton>
+			</Content>
+		</block>
+		<block>
+			<Anchors>
+				<Anchor relativeTo="lbl_title">
+					<AbsDimension x="300" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="510" y="483" />
+			</Size>
+			<Content>
+
+				<!-- Label lbl_noPreview -->
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="30" y="142" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="440" y="20" />
+					</Size>
+					<css>[local.css]normal2.css</css>
+					<cssClass>center</cssClass>
+					<text>[ui.option.noPreview]</text>
+				</Label>
+
+
+				<Texture name="tx_preview">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="30" y="10" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="440" y="295" />
+					</Size>
+				</Texture>
+
+				<!-- Label name -->
+				<Label name="lbl_name">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="30" y="310" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="440" y="25" />
+					</Size>
+					<cssClass>whitebold</cssClass>
+					<css>[local.css]small2.css</css>
+				</Label>
+				
+				<Label name="lbl_themeVersion">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="350" y="310" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="120" y="20" />
+					</Size>
+					<css>[local.css]normal2.css</css>
+					<cssClass>condensedboldright</cssClass>
+				</Label>
+
+				<Label name="lbl_author">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="30" y="335" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="440" y="25" />
+					</Size>
+					<cssClass>dark</cssClass>
+					<css>[local.css]small2.css</css>
+				</Label>
+
+				<Label name="lbl_versionCompatibility">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="30" y="438" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="440" y="20" />
+					</Size>
+					<cssClass>p</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+
+				<TextArea name="lbl_description">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="30" y="360" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="440" y="80" />
+					</Size>
+					<scrollCss>[local.css]scrollBar.css</scrollCss>
+					<hideScroll>true</hideScroll>
+					<verticalAlign>left</verticalAlign>
+					<cssClass>left</cssClass>
+					<css>[local.css]small2.css</css>
+				</TextArea>
+
+				<simpleButton name="btn_applyTheme">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="278" y="433" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="150" y="32" />
+					</Size>
+					<label>[ui.option.themeApply]</label>
+				</simpleButton>
+
+				<themeIconButton name="btn_deleteTheme">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="440" y="433" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="32" y="32" />
+					</Size>
+					<iconUri>[local.texture]btnIcon/btnIcon_trash.png</iconUri>
+					<iconAnchors>
+						<Anchor relativePoint="TOPLEFT">
+							<AbsDimension x="3" y="2" />
+						</Anchor>
+						<Anchor relativePoint="BOTTOMRIGHT">
+							<AbsDimension x="-2" y="-2" />
+						</Anchor>
+					</iconAnchors>
+				</themeIconButton>
+
+			</Content>
+		</block>
+
+
+
+
+	</Container>
+</Definition>
+

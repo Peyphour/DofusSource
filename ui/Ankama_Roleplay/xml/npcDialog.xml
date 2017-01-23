@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition usePropertiesCache="false" debug="false">
+	<Constants>
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="css_text" value="[local.css]normal2.css" />
+	</Constants>
+
+	<Container name="mainNpcCtr">
+		<Size>
+			<AbsDimension x="1010" y="100" />
+		</Size>
+		<visible>false</visible>
+		
+		<Texture name="tx_highlight_top">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1014" y="74" />
+			</Size>
+			<uri>[local.texture]npcDialog/window_speech_highlight.png</uri>
+		</Texture>
+		
+		<Texture name="tx_highlight_bottom">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1014" y="74" />
+			</Size>
+			<uri>[local.texture]npcDialog/window_speech_highlight.png</uri>
+			<scaleY>-1</scaleY>
+		</Texture>
+		
+		<Texture name="tx_background">
+			<visible>false</visible>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1010" y="835" />
+			</Size>
+			<uri>[local.texture]npcDialog/window_speech_background.png</uri>
+			<mouseEnabled>true</mouseEnabled>
+			<cacheAsBitmap>true</cacheAsBitmap>
+		</Texture>
+		
+		<Texture name="tx_mask">
+			<visible>false</visible>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1086" y="859" />
+			</Size>
+			<uri>[local.texture]npcDialog/window_speech__mask.png</uri>
+			<cacheAsBitmap>true</cacheAsBitmap>
+		</Texture>
+		
+		<Texture name="tx_deco">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="20" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="890" y="45" />
+			</Size>
+			<uri>[local.texture]npcDialog/title_speech_decoration.png</uri>
+		</Texture>
+		
+		<!-- Label lbl_title-->
+
+		<Label name="lbl_title">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="300" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="450" y="35" />
+			</Size>
+			<cssClass>gray</cssClass>
+			<css>[local.css]title.css</css>
+		</Label>
+
+		<!-- Texture tx_npc-->
+		
+		<EntityDisplayer name="entityDisplayer_npc">
+			<visible>false</visible>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+		</EntityDisplayer>
+
+		<Texture name="btn_close">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="970" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="16" y="17" />
+			</Size>
+			<uri>[local.texture]npcDialog/icon_close_speech.png</uri>
+			<Hooks>
+				<onRelease/>
+			</Hooks>
+			<mouseEnabled>true</mouseEnabled>
+			<buttonMode>true</buttonMode>
+		</Texture>
+		
+		<ScrollContainer name="ctr_content">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="300" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="655" />
+			</Size>
+			<scrollbarCss>[local.css]scrollBar.css</scrollbarCss>
+
+			<Label name="lbl_hidden">
+				<Size>
+					<AbsDimension x="630" />
+				</Size>
+				<fixedHeight>false</fixedHeight>
+				<css>[local.css_text]</css>
+				<wordWrap>true</wordWrap>
+				<multiline>true</multiline>
+				<visible>false</visible>
+  				<hyperlinkEnabled>true</hyperlinkEnabled>
+				<useStyleSheet>true</useStyleSheet>
+			</Label>
+			<Label name="lbl_message">
+				<Size>
+					<AbsDimension x="630" />
+				</Size>
+				<fixedHeight>false</fixedHeight>
+				<cssClass>left</cssClass>
+				<css>[local.css_text]</css>
+				<wordWrap>true</wordWrap>
+				<multiline>true</multiline>
+  				<hyperlinkEnabled>true</hyperlinkEnabled>
+				<useStyleSheet>true</useStyleSheet>
+			</Label>
+			
+	
+			<Container name="repliesContainer">
+				<Anchors>
+					<Anchor relativeTo="lbl_message" relativePoint="BOTTOMLEFT">
+						<AbsDimension x="20" y="15" />
+					</Anchor>
+				</Anchors>
+				
+				
+				<Texture name="tx_over0">
+					<Anchors><Anchor><AbsDimension x="0" y="7" /></Anchor></Anchors>
+					<Size><AbsDimension x="7" y="10" /></Size>
+				</Texture>
+				<Texture name="tx_over1">
+					<Anchors><Anchor><AbsDimension x="0" y="7" /></Anchor></Anchors>
+					<Size><AbsDimension x="7" y="10" /></Size>
+				</Texture>
+				<Texture name="tx_over2">
+					<Anchors><Anchor><AbsDimension x="0" y="7" /></Anchor></Anchors>
+					<Size><AbsDimension x="7" y="10" /></Size>
+				</Texture>
+				<Texture name="tx_over3">
+					<Anchors><Anchor><AbsDimension x="0" y="7" /></Anchor></Anchors>
+					<Size><AbsDimension x="7" y="10" /></Size>
+				</Texture>
+				<Texture name="tx_over4">
+					<Anchors><Anchor><AbsDimension x="0" y="7" /></Anchor></Anchors>
+					<Size><AbsDimension x="7" y="10" /></Size>
+				</Texture>
+				
+				<!-- Button btn_rep0-->
+	
+				<Button name="btn_rep0">
+					<Common>
+						<visible>false</visible>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="7" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="8" y="10" />
+							</Size>
+							<uri>[local.texture]icon_arrow_pin.png</uri>
+						</Texture>
+						<Label name="lbl_rep0">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="12" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="598" />
+							</Size>
+							<fixedWidth>false</fixedWidth>
+							<cssClass>npcdialoganswer</cssClass>
+							<css>[local.css_text]</css>
+							<wordWrap>true</wordWrap>
+							<multiline>true</multiline>
+						</Label>
+					</Common>
+					<State type="NORMAL">
+						<SetProperties target="lbl_rep0">
+							<cssClass>npcdialoganswer</cssClass>
+						</SetProperties>
+					</State>
+					<State type="OVER">
+						<SetProperties target="lbl_rep0">
+							<cssClass>npcdialoganswerover</cssClass>
+						</SetProperties>
+					</State>
+				</Button>
+	
+				<!-- Button btn_rep1-->
+	
+				<Button name="btn_rep1">
+					<Common>
+						<visible>false</visible>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="7" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="8" y="10" />
+							</Size>
+							<uri>[local.texture]icon_arrow_pin.png</uri>
+						</Texture>
+						<Label name="lbl_rep1">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="12" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="598" />
+							</Size>
+							<fixedHeight>false</fixedHeight>
+							<cssClass>npcdialoganswer</cssClass>
+							<css>[local.css_text]</css>
+							<wordWrap>true</wordWrap>
+							<multiline>true</multiline>
+						</Label>
+					</Common>
+					<State type="NORMAL">
+						<SetProperties target="lbl_rep1">
+							<cssClass>npcdialoganswer</cssClass>
+						</SetProperties>
+					</State>
+					<State type="OVER">
+						<SetProperties target="lbl_rep1">
+							<cssClass>npcdialoganswerover</cssClass>
+						</SetProperties>
+					</State>
+				</Button>
+	
+				<!-- Button btn_rep2-->
+	
+				<Button name="btn_rep2">
+					<Common>
+						<visible>false</visible>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="7" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="8" y="10" />
+							</Size>
+							<uri>[local.texture]icon_arrow_pin.png</uri>
+						</Texture>
+						<Label name="lbl_rep2">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="12" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="598" />
+							</Size>
+							<fixedHeight>false</fixedHeight>
+							<cssClass>npcdialoganswer</cssClass>
+							<css>[local.css_text]</css>
+							<wordWrap>true</wordWrap>
+							<multiline>true</multiline>
+						</Label>
+					</Common>
+					<State type="NORMAL">
+						<SetProperties target="lbl_rep2">
+							<cssClass>npcdialoganswer</cssClass>
+						</SetProperties>
+					</State>
+					<State type="OVER">
+						<SetProperties target="lbl_rep2">
+							<cssClass>npcdialoganswerover</cssClass>
+						</SetProperties>
+					</State>
+				</Button>
+	
+				<!-- Button btn_rep3-->
+	
+				<Button name="btn_rep3">
+					<Common>
+						<visible>false</visible>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="7" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="8" y="10" />
+							</Size>
+							<uri>[local.texture]icon_arrow_pin.png</uri>
+						</Texture>
+						<Label name="lbl_rep3">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="12" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="598" />
+							</Size>
+							<fixedHeight>false</fixedHeight>
+							<cssClass>npcdialoganswer</cssClass>
+							<css>[local.css_text]</css>
+							<wordWrap>true</wordWrap>
+							<multiline>true</multiline>
+						</Label>
+					</Common>
+					<State type="NORMAL">
+						<SetProperties target="lbl_rep3">
+							<cssClass>npcdialoganswer</cssClass>
+						</SetProperties>
+					</State>
+					<State type="OVER">
+						<SetProperties target="lbl_rep3">
+							<cssClass>npcdialoganswerover</cssClass>
+						</SetProperties>
+					</State>
+				</Button>
+	
+				<!-- Button btn_rep4-->
+	
+				<Button name="btn_rep4">
+					<Common>
+						<visible>false</visible>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="7" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="8" y="10" />
+							</Size>
+							<uri>[local.texture]icon_arrow_pin.png</uri>
+						</Texture>
+						<Label name="lbl_rep4">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="12" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="598" />
+							</Size>
+							<fixedHeight>false</fixedHeight>
+							<cssClass>npcdialoganswer</cssClass>
+							<css>[local.css_text]</css>
+							<wordWrap>true</wordWrap>
+							<multiline>true</multiline>
+						</Label>
+					</Common>
+					<State type="NORMAL">
+						<SetProperties target="lbl_rep4">
+							<cssClass>npcdialoganswer</cssClass>
+						</SetProperties>
+					</State>
+					<State type="OVER">
+						<SetProperties target="lbl_rep4">
+							<cssClass>npcdialoganswerover</cssClass>
+						</SetProperties>
+					</State>
+				</Button>
+	
+			</Container>
+		</ScrollContainer>
+	</Container>
+</Definition>
+

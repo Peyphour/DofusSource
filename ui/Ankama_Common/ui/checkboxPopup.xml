@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition modal="true">
+   	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+   	</Constants>
+
+    	<Import url="[config.mod.template.button]simpleButton.xml" />
+    	<Import url="[config.mod.template.button]iconButton.xml" />
+        <Import url="[config.mod.template]button/labelCheckBox.xml" />
+        <Import url="[config.mod.template]windowWithoutTitleBar.xml" />
+
+	<Container name="mainCtr">
+	
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER" />
+		</Anchors>
+		
+ 		<windowWithoutTitleBar name="popup">
+			<Size>
+				<AbsDimension x="550" y="300"/>
+			</Size>
+			<Anchors>
+				<Anchor point="CENTER" relativePoint="CENTER" />
+			</Anchors>
+			<Content>
+			
+				<!-- Label lblDescription-->
+				<TextArea name="lbl_description">
+					<Anchors>
+						<Anchor>
+							<RelDimension x="0.05" y="0.2" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<RelDimension x="0.9" y="0.9" />
+					</Size>
+					<wordWrap>true</wordWrap>
+					<multiline>true</multiline>
+					<cssClass>p</cssClass>
+					<css>[local.css]normal2.css</css>
+				</TextArea>
+
+				<!-- simpleButton btnOk-->
+		
+				<simpleButton name="btn_ok">
+					<Anchors>
+						<Anchor relativePoint="BOTTOM" point="BOTTOM">
+							<AbsDimension x="-75" y="-20" />
+						</Anchor>
+					</Anchors>			
+					<Size>
+						<AbsDimension x="130" y="30" />
+					</Size>
+					<label>[ui.common.yes]</label>
+				</simpleButton>
+		
+				<!-- simpleButton btnNo-->
+		
+				<simpleButton name="btn_undo">
+					<Anchors>
+						<Anchor relativePoint="BOTTOM" point="BOTTOM">
+							<AbsDimension x="75" y="-20" />
+						</Anchor>
+					</Anchors>			
+					<Size>
+						<AbsDimension x="130" y="30" />
+					</Size>
+					<label>[ui.common.no]</label>
+				</simpleButton>
+		
+
+		
+		
+				<labelCheckBox name="btn_checkbox">
+					<Anchors>
+						<Anchor relativePoint="BOTTOM" point="BOTTOM">
+							<AbsDimension x="0" y="-56" />
+						</Anchor>
+					</Anchors>
+					<labelWidth>470</labelWidth>
+					<labelHeight>19</labelHeight>
+					<labelPosX>16</labelPosX>
+					<cssClass>p</cssClass>
+					<selected>false</selected>
+				</labelCheckBox>
+				
+			</Content>
+		</windowWithoutTitleBar>
+		
+		
+	</Container>
+</Definition>

@@ -1,0 +1,6 @@
+<Shortcuts>
+	<category name="general">
+    	<shortcut name="toggleConsole" textfieldEnabled="true" admin="true">[ui.shortcuts.toggleConsole]</shortcut>
+    	<shortcut name="historySearch" textfieldEnabled="true" admin="true">[ui.shortcuts.historySearch]</shortcut>
+    </category>
+</Shortcuts>

@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+    <Import url="mod://Ankama_Config/ui/template/configCheckbox.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template.button]simpleCheckBox.xml" />
+	<Import url="[config.mod.template]button/labelCheckBox.xml" />
+	<Import url="[config.mod.template]button/themeLabelCheckBox.xml" />
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+	<Import url="[config.mod.template.button]iconCheckBox.xml" />
+
+  	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       <Constant name="css" value="[config.ui.skin]css/" />
+   	</Constants>
+
+	<Container name="configAudioCtr">
+
+
+
+		<!-- Texture tx_bgForeground-->
+
+		<TextureBitmap name="tx_bgForeground">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="780" y="400" />
+			</Size>
+			<themeDataId>bg_small_border_light</themeDataId>
+		</TextureBitmap>	
+	
+		<!-- Container useless mais un peu qd mm, sert à placer les checkbox -->
+
+		<Container name="lbl_useless1">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="20" y="10" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="20" y="10" />
+			</Size>
+		</Container>
+		
+		<!--<configCheckbox name="btn_activateSounds" text="[ui.option.mute]" visible="false"/>-->
+
+		<iconCheckBox name="btn_globalMute">
+			<Anchors>
+				<Anchor relativeTo="btn_moreGlobal" relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="26" y="-26" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="26" y="26" />
+			</Size>
+			<iconUri>[config.ui.skin]texture/icon_mute</iconUri>
+			<Hooks>
+				<onRollOver />
+				<onRollOut />
+				<onRelease/>
+			</Hooks>
+		</iconCheckBox>
+
+				
+		<Container name="soundOptionCtr">
+
+            <!--
+    Son Global
+-->
+
+            <Label name="lbl_global">
+                <Anchors>
+                    <Anchor relativeTo="lbl_useless1">
+                        <AbsDimension x="0" y="25" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="250" y="20" />
+                </Size>
+                <text>[ui.option.globalVolume]</text>
+                <css>[local.css]normal2.css</css>
+				<cssClass>right</cssClass>
+            </Label>
+
+
+            <!-- pb global-->
+			<ProgressBar name="pb_global">
+				<Anchors>
+					<Anchor relativeTo="lbl_global" relativePoint="RIGHT">
+						<AbsDimension x="50" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="256" y="12" />
+				</Size>
+				<barColor>[colors.progressbar.green]</barColor>
+				<barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+				<separators>4</separators>
+				<value>0.75</value>
+				<clickable>true</clickable>
+				<snapToSeparators>true</snapToSeparators>
+			</ProgressBar>
+
+
+			<themeIconButton name="btn_lessGlobal">
+				<Anchors>
+					<Anchor relativeTo="pb_global" relativePoint="BOTTOMLEFT">
+						<AbsDimension x="-35" y="-20" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="26" y="26" />
+				</Size>
+				<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_minus.png</iconUri>
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</themeIconButton>
+
+			<themeIconButton name="btn_moreGlobal">
+				<Anchors>
+					<Anchor relativeTo="pb_global" relativePoint="BOTTOMRIGHT">
+						<AbsDimension x="15" y="-20" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="26" y="26" />
+				</Size>
+				<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_plus.png</iconUri>
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</themeIconButton>
+
+			<!--
+				MUSIQUE
+			-->
+			
+					
+			<!-- Label lbl_music -->
+
+			<Label name="lbl_music">
+				<Anchors>
+					<Anchor relativeTo="lbl_global">
+						<AbsDimension x="0" y="50" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="250" y="20" />
+				</Size>
+				<text>[ui.option.musics]</text>
+				<css>[local.css]normal2.css</css>
+				<cssClass>right</cssClass>
+			</Label>
+
+
+			<ProgressBar name="pb_music">
+				<Anchors>
+					<Anchor relativeTo="lbl_music" relativePoint="RIGHT">
+						<AbsDimension x="50" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="256" y="12" />
+				</Size>
+				<barColor>[colors.progressbar.green]</barColor>
+				<barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+				<separators>4</separators>
+				<value>0.75</value>
+				<clickable>true</clickable>
+				<snapToSeparators>true</snapToSeparators>
+			</ProgressBar>
+
+
+			<themeIconButton name="btn_lessMusic">
+				<Anchors>
+					<Anchor relativeTo="pb_music" relativePoint="BOTTOMLEFT">
+						<AbsDimension x="-35" y="-20" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="26" y="26" />
+				</Size>
+				<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_minus.png</iconUri>
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</themeIconButton>
+
+			<themeIconButton name="btn_moreMusic">
+				<Anchors>
+					<Anchor relativeTo="pb_music" relativePoint="BOTTOMRIGHT">
+						<AbsDimension x="15" y="-20" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="26" y="26" />
+				</Size>
+				<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_plus.png</iconUri>
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</themeIconButton>
+
+			<!-- checkBox btn_musicMute-->
+
+			<iconCheckBox name="btn_musicMute">
+				<Anchors>
+					<Anchor relativeTo="btn_moreMusic" relativePoint="BOTTOMRIGHT">
+						<AbsDimension x="26" y="-26" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="26" y="26" />
+				</Size>
+				<iconUri>[config.ui.skin]texture/icon_mute</iconUri>
+				<Hooks>
+					<onRollOver />
+					<onRollOut />
+					<onRelease/>
+				</Hooks>
+			</iconCheckBox>
+	
+	
+			<!--
+				SONS
+			-->
+			
+	
+			<!-- Label lbl_sound -->
+			<Label name="lbl_sound">
+				<Anchors>
+					<Anchor relativeTo="lbl_music">
+						<AbsDimension x="0" y="50" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="250" y="20" />
+				</Size>
+				<text>[ui.option.sounds]</text>
+				<css>[local.css]normal2.css</css>
+				<cssClass>right</cssClass>
+			</Label>
+
+			<!-- pb sound -->
+			<ProgressBar name="pb_sound">
+				<Anchors>
+					<Anchor relativeTo="lbl_sound" relativePoint="RIGHT">
+						<AbsDimension x="50" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="256" y="12" />
+				</Size>
+				<barColor>[colors.progressbar.green]</barColor>
+				<barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+				<separators>4</separators>
+				<value>0.75</value>
+				<clickable>true</clickable>
+				<snapToSeparators>true</snapToSeparators>
+			</ProgressBar>
+
+
+			<themeIconButton name="btn_lessSound">
+				<Anchors>
+					<Anchor relativeTo="pb_sound" relativePoint="BOTTOMLEFT">
+						<AbsDimension x="-35" y="-20" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="26" y="26" />
+				</Size>
+				<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_minus.png</iconUri>
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</themeIconButton>
+
+			<themeIconButton name="btn_moreSound">
+				<Anchors>
+					<Anchor relativeTo="pb_sound" relativePoint="BOTTOMRIGHT">
+						<AbsDimension x="15" y="-20" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="26" y="26" />
+				</Size>
+				<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_plus.png</iconUri>
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</themeIconButton>
+
+	
+			<!-- checkBox btn_soundMute-->
+
+			<iconCheckBox name="btn_soundMute">
+				<Anchors>
+					<Anchor relativeTo="btn_moreSound" relativePoint="BOTTOMRIGHT">
+						<AbsDimension x="26" y="-26" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="26" y="26" />
+				</Size>
+				<iconUri>[config.ui.skin]texture/icon_mute</iconUri>
+				<Hooks>
+					<onRollOver />
+					<onRollOut />
+					<onRelease/>
+				</Hooks>
+			</iconCheckBox>
+			
+			
+			
+			<!--
+			  SONS D'AMBIANCE 
+			-->
+			
+			
+					
+			<!-- Label lbl_ambientSound -->
+			<Label name="lbl_ambientSound">
+				<Anchors>
+					<Anchor relativeTo="lbl_sound">
+						<AbsDimension x="0" y="50" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="250" y="20" />
+				</Size>
+				<text>[ui.option.environment]</text>
+				<css>[local.css]normal2.css</css>
+				<cssClass>right</cssClass>
+			</Label>
+
+			<!-- pb ambient sound -->
+			<ProgressBar name="pb_ambientSound">
+				<Anchors>
+					<Anchor relativeTo="lbl_ambientSound" relativePoint="RIGHT">
+						<AbsDimension x="50" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="256" y="12" />
+				</Size>
+				<barColor>[colors.progressbar.green]</barColor>
+				<barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+				<separators>4</separators>
+				<value>0.75</value>
+				<clickable>true</clickable>
+				<snapToSeparators>true</snapToSeparators>
+			</ProgressBar>
+
+
+			<themeIconButton name="btn_lessAmbientSound">
+				<Anchors>
+					<Anchor relativeTo="pb_ambientSound" relativePoint="BOTTOMLEFT">
+						<AbsDimension x="-35" y="-20" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="26" y="26" />
+				</Size>
+				<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_minus.png</iconUri>
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</themeIconButton>
+
+			<themeIconButton name="btn_moreAmbientSound">
+				<Anchors>
+					<Anchor relativeTo="pb_ambientSound" relativePoint="BOTTOMRIGHT">
+						<AbsDimension x="15" y="-20" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="26" y="26" />
+				</Size>
+				<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_plus.png</iconUri>
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</themeIconButton>
+
+			<!-- checkBox btn_ambientSoundMute-->
+
+			<iconCheckBox name="btn_ambientSoundMute">
+				<Anchors>
+					<Anchor relativeTo="btn_moreAmbientSound" relativePoint="BOTTOMRIGHT">
+						<AbsDimension x="26" y="-26" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="26" y="26" />
+				</Size>
+				<iconUri>[config.ui.skin]texture/icon_mute</iconUri>
+				<Hooks>
+					<onRollOver />
+					<onRollOut />
+					<onRelease/>
+				</Hooks>
+			</iconCheckBox>
+			<!--<simpleCheckBox name="btn_soundMute">-->
+				<!--<Anchors>-->
+					<!--<Anchor relativeTo="lbl_sound">-->
+						<!--<AbsDimension x="680" y="-2" />-->
+					<!--</Anchor>-->
+				<!--</Anchors>-->
+				<!--<uri>[local.assets]Sound_btn_pictoFx</uri>-->
+				<!--<Size>-->
+					<!--<AbsDimension x="25" y="25" />-->
+				<!--</Size>-->
+				<!--<Hooks>-->
+					<!--<onRollOver />-->
+					<!--<onRollOut />-->
+				<!--</Hooks>-->
+			<!--</simpleCheckBox>-->
+			
+			
+			<!-- Container useless mais un peu qd mm, sert à placer les checkbox -->
+	
+			<Container name="lbl_useless">
+				<Anchors>
+					<Anchor relativeTo="lbl_sound">
+						<AbsDimension x="0" y="100" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="20" y="10" />
+				</Size>
+			</Container>
+
+			<themeLabelCheckBox name="btn_playSoundForGuildMessage">
+				<Anchors>
+					<Anchor relativeTo="lbl_useless">
+						<AbsDimension x="0" y="-5"/>
+					</Anchor>
+				</Anchors>
+				<labelWidth>600</labelWidth>
+				<text>[ui.option.guildMessageSound]</text>
+			</themeLabelCheckBox>
+
+			<themeLabelCheckBox name="btn_playSoundAtTurnStart">
+				<Anchors>
+					<Anchor relativeTo="btn_playSoundForGuildMessage" relativePoint="BOTTOMLEFT">
+						<AbsDimension y="5"/>
+					</Anchor>
+				</Anchors>
+				<labelWidth>600</labelWidth>
+				<text>[ui.option.startTurnSound]</text>
+			</themeLabelCheckBox>
+
+			<themeLabelCheckBox name="btn_infiniteLoopMusics">
+				<Anchors>
+					<Anchor relativeTo="btn_playSoundAtTurnStart" relativePoint="BOTTOMLEFT">
+						<AbsDimension y="5"/>
+					</Anchor>
+				</Anchors>
+				<labelWidth>600</labelWidth>
+				<text>[ui.option.infiniteLoopMusics]</text>
+			</themeLabelCheckBox>
+			
+			
+			<TextArea name="lbl_updater">
+				<Anchors>
+					<Anchor relativeTo="btn_infiniteLoopMusics">
+						<AbsDimension x="0" y="50" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="730" y="90" />
+				</Size>
+				<css>[local.css]normal2.css</css>
+				<scrollCss>[local.css]scrollBar.css</scrollCss>
+				<hideScroll>true</hideScroll>
+			</TextArea>
+		</Container>
+	</Container>
+</Definition>

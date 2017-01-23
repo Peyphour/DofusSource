@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition labelDebug="false">
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]button/horizontalTabGreenLine.xml" />
+	<Import url="mod://Ankama_Social/xml/template/socialTab.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+
+	<window name="mainCtr" title="[ui.common.quests]" iconUri="[local.texture]windowIcon/icon__0026_Quetes.png">
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="0" y="-50" />
+			</Anchor>
+		</Anchors>
+		<mouseEnabled>true</mouseEnabled>
+		<Size>
+			<AbsDimension x="1275" y="860" />
+		</Size>
+
+		<Content>
+			<Texture>
+				<Size>
+					<RelDimension x="1" />
+					<AbsDimension y="60" />
+				</Size>
+				<uri>[local.common]bg_green_line.png</uri>
+			</Texture> 
+
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="350" y="18" />
+					</Anchor>
+				</Anchors>
+
+				<horizontalTabGreenLine name="btn_tabSuccess">
+				</horizontalTabGreenLine>
+
+				<horizontalTabGreenLine name="btn_tabQuests">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="181" y="0" />
+						</Anchor>
+					</Anchors>
+				</horizontalTabGreenLine>
+
+				<horizontalTabGreenLine name="btn_tabAlmanax">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="362" y="0" />
+						</Anchor>
+					</Anchors>
+				</horizontalTabGreenLine>
+			</Container>
+
+			<Container name="uiCtr">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="3" y="61" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="1125" y="646" />
+				</Size>
+			</Container>
+
+		</Content>
+		<OverFrameContent>
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="7" y="37" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<RelDimension x="1" />
+					<AbsDimension y="44" />
+				</Size>
+				<uri>[local.common]bar_horizontal.png</uri>
+			</Texture>
+
+		</OverFrameContent>
+	</window>
+</Definition>

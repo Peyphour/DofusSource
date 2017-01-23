@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition giveFocus="false" transmitFocus="false">
+	
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="spells_uri" value="[config.content.path]gfx/spells/all.swf|sort_" />
+        <Constant name="texture" value="[config.ui.skin]texture/" />
+        <Constant name="common" value="[config.ui.skin]common/" />
+	</Constants>
+	
+	
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+				<AbsDimension x="0" y="0" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="150" y="93" />
+		</Size>
+
+
+        <TextureBitmap name="tx_background">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="-65" y="0" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="70" y="65" />
+            </Size>
+            <themeDataId>bg_floating_window_horizontal</themeDataId>
+        </TextureBitmap>
+
+        <Texture name="tx_button_minimize_bgLeft">
+            <Anchors>
+                <Anchor relativeTo="btn_minimArrow">
+                    <AbsDimension x="20" y="2" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="61" y="22" />
+            </Size>
+            <uri>[local.texture]hud/left_floating_menu.png</uri>
+            <autoGrid>true</autoGrid>
+            <rotation>90</rotation>
+            <dragController>true</dragController>
+            <dragTarget>mainCtr</dragTarget>
+            <dragBoundsContainer>mainCtr</dragBoundsContainer>
+            <useDragMagnetism>true</useDragMagnetism>
+        </Texture>
+
+        <TextureBitmap>
+            <Anchors>
+                <Anchor relativeTo="btn_minimArrow">
+                    <AbsDimension x="-1" y="20" />
+                </Anchor>
+            </Anchors>
+            <uri>[local.texture]hud/icon_green_area.png</uri>
+            <smooth>true</smooth>
+        </TextureBitmap>
+
+
+        <Button name="btn_minimArrow">
+            <Anchors>
+                <AbsDimension x="0" y="0" />
+            </Anchors>
+            <Common>
+                <Anchors>
+                    <Anchor relativeTo="ctr_hook"/>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="66" y="17" />
+                </Size>
+                <radioGroup>minMaxRadio</radioGroup>
+                <radioMode>true</radioMode>
+
+                <Texture name="tx_button_minimize">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="1" y="4" />
+                        </Anchor>
+                    </Anchors>
+                    <uri>[local.texture]hud/icon_minus_floating_menu.png</uri>
+                    <autoGrid>true</autoGrid>
+                </Texture>
+
+                <Hooks>
+                    <onRelease />
+                </Hooks>
+            </Common>
+        </Button>
+
+		<Container name="ctr_ui">
+			<Anchors>
+				<Anchor/>
+			</Anchors>
+		
+			<Texture name="tx_slot">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="-52" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="44" y="44" />
+				</Size>
+			</Texture>
+			
+		</Container>
+	</Container>
+</Definition>

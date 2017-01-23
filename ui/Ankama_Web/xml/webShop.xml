@@ -1,0 +1,1511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+
+    <Import url="[config.mod.template]button/simpleButton.xml" />
+    <Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+    <Import url="[config.mod.template]button/greyButton.xml" />
+    <Import url="[config.mod.template]window.xml" />
+    <Import url="[config.mod.template]block.xml"/>
+	<Import url="[config.mod.template]blockDoubleBorder.xml"/>
+	<Import url="[config.mod.template.button]searchInput.xml" />
+    
+    <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+		<Constant name="texture" value="[config.ui.skin]texture/"/>
+        <Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="ogr_uri" value="[config.ui.skin]texture/icon_ogrine.png" />
+		<Constant name="ogr_uri_big" value="[config.ui.skin]texture/icon_ogrine_big.png" />
+		<Constant name="kro_uri" value="[config.ui.skin]texture/icon_kroz.png" />
+		<Constant name="kro_uri_big" value="[config.ui.skin]texture/icon_kroz_big.png" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="slot" value="[config.ui.skin]texture/slot/" />
+		<Constant name="tx_ogr_size_front" value="{x:125,y:158,width:20,height:17}" />
+		<Constant name="tx_ogr_size" value="{x:125,y:161,width:20,height:17}" />
+		<Constant name="tx_kro_size_front" value="{x:125,y:155,width:20,height:22}" />
+		<Constant name="tx_kro_size" value="{x:125,y:158,width:20,height:22}" />
+		<Constant name="entity_x" value="520" />
+		<Constant name="entity_center" value="605" />
+		<Constant name="popup_y" value="150" />
+		<Constant name="popup_y_pack" value="150" />
+		<Constant name="popup_level_x" value="4" />
+		<Constant name="popup_level_y" value="26" />
+	</Constants>
+    
+	<Container>
+		<!--                   Interface                     --> 
+        
+        <Container>
+			<!-- Container pour la partie basse de l'interface -->
+	
+			<Container name="ctr_shop">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="3" y="5" />
+					</Anchor>
+				</Anchors>
+							
+				
+				<!-- PARTIE DE GAUCHE -->
+	
+				<!-- Argent -->
+				
+				<Container name="ctr_money">
+					<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="1" />
+							</Anchor>
+					</Anchors>
+
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="4" y="5" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="290" y="49" />
+						</Size>
+						<uri>[config.ui.skin]texture/tx_shop_rectangle.png</uri>
+					</Texture>
+
+					<Texture name="tx_money">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="250" y="7" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="40" y="40" />
+						</Size>
+						<uri>[local.ogr_uri_big]</uri>
+					</Texture>
+
+					<Label name="lbl_money">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="60" y="17" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="190" y="21" />
+						</Size>
+						<cssClass>whiteboldright</cssClass>
+						<css>[local.css]normal2.css</css>
+						<Hooks>
+							<onRollOver/>
+							<onRollOut/>
+						</Hooks>
+					</Label>
+
+					<themeIconButton name="btn_buyOgrins">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="5" y="7" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="46" y="46" />
+						</Size>
+						<iconAnchors>
+							<Anchor relativePoint="TOPLEFT">
+								<AbsDimension x="8" y="8"/>
+							</Anchor>
+							<Anchor relativePoint="BOTTOMRIGHT">
+								<AbsDimension x="-8" y="-8"/>
+							</Anchor>
+						</iconAnchors>
+						<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_plus.png</iconUri>
+					</themeIconButton>
+
+					<TextureBitmap name="tx_border_btn_buy">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="2" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="55" y="57" />
+						</Size>
+						<themeDataId>block_border_dark</themeDataId>
+					</TextureBitmap>
+
+					<TextureBitmap>
+						<Size>
+							<AbsDimension x="300" y="60" />
+						</Size>
+						<themeDataId>block_border_dark</themeDataId>
+					</TextureBitmap>
+				</Container>
+				
+				<!-- Liste de categories -->
+				
+				<block dark="true">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="64" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="300" y="654" />
+					</Size>
+					
+					<Content>
+						<Grid name="gd_categories">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="300" y="643" />
+							</Size>
+							<rendererName>MultiGridRenderer</rendererName>
+							<rendererArgs>updateCategory,getCatLineType,getCatDataLength</rendererArgs>
+							<!--verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss-->
+							<slotWidth>300</slotWidth>
+							<slotHeight>34</slotHeight>
+							<vPadding>1</vPadding>
+							
+							<Container name="ctr_cat">
+								<Size>
+									<AbsDimension x="290" y="34" />
+								</Size>
+						
+								<Button name="btn_cat">
+									<Common>
+										<radioMode>true</radioMode>
+						
+										<Texture>
+											<Size>
+												<AbsDimension x="290" y="34" />
+											</Size>
+										<bgColor>[colors.grid.line]</bgColor>
+										</Texture>
+					
+										<Label name="lbl_catName">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="15" y="4" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="270" y="21" />
+											</Size>
+											<css>[local.css]normal2.css</css>
+										</Label>								
+									</Common>
+		
+									<State type="OVER">
+										<SetProperties target="btn_cat">
+											<bgColor>[colors.grid.over]</bgColor>
+										</SetProperties>
+									</State>	
+									<State type="SELECTED">
+										<SetProperties target="btn_cat">
+											<bgColor>[colors.grid.selected]</bgColor>
+										</SetProperties>
+									</State>	
+									<State type="SELECTED_OVER">
+										<SetProperties target="btn_cat">
+											<bgColor>[colors.grid.selected]</bgColor>
+										</SetProperties>
+									</State>
+								</Button>			
+							</Container>
+							
+							<Container name="ctr_subCat">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="290" y="34" />
+								</Size>
+								
+						
+								<Button name="btn_cat">
+									<Common>
+										<Size>
+											<AbsDimension x="290" y="34" />
+										</Size>
+										<radioMode>true</radioMode>
+										<bgColor></bgColor>
+						
+										<Label name="lbl_catName">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="43" y="4" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="227" y="21" />
+											</Size>
+											<css>[local.css]normal2.css</css>
+										</Label>
+										
+									</Common>
+		
+									<State type="OVER">
+										<SetProperties target="btn_cat">
+											<bgColor>[colors.grid.over]</bgColor>
+										</SetProperties>
+									</State>
+			
+									<State type="SELECTED">
+										<SetProperties target="btn_cat">
+											<bgColor>[colors.grid.selected]</bgColor>
+										</SetProperties>
+									</State>
+			
+									<State type="SELECTED_OVER">
+										<SetProperties target="btn_cat">
+											<bgColor>[colors.grid.selected]</bgColor>
+										</SetProperties>
+									</State>
+								</Button>				
+							</Container>
+							
+							<Container name="ctr_subSubCat">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="60" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="235" y="34" />
+								</Size>
+								
+						
+								<Button name="btn_cat">
+									<Common>
+										<Size>
+											<AbsDimension x="235" y="34" />
+										</Size>
+										<radioMode>true</radioMode>
+										<bgColor></bgColor>
+						
+										<Texture>
+											<Size>
+												<AbsDimension x="35" y="34" />
+											</Size>
+											<uri>[local.assets]tx_subcategory</uri>
+										</Texture>
+						
+										<Label name="lbl_catName">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="43" y="4" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="197" y="21" />
+											</Size>
+											<css>[local.css]normal2.css</css>
+										</Label>
+										
+									</Common>
+		
+									<State type="OVER">
+										<SetProperties target="btn_cat">
+											<bgColor>[colors.grid.over]</bgColor>
+										</SetProperties>
+									</State>
+			
+									<State type="SELECTED">
+										<SetProperties target="btn_cat">
+											<bgColor>[colors.grid.selected]</bgColor>
+										</SetProperties>
+									</State>
+			
+									<State type="SELECTED_OVER">
+										<SetProperties target="btn_cat">
+											<bgColor>[colors.grid.selected]</bgColor>
+										</SetProperties>
+									</State>
+								</Button>				
+							</Container>
+						</Grid>
+					</Content>
+				</block>
+				
+				
+				
+				
+				<!-- PARTIE DE DROITE -->
+				
+				<blockDoubleBorder dark="true">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="305" y="1" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="877" y="717" />
+					</Size>
+					
+					<Content>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="860" y="40" />
+							</Size>
+							<uri>[local.common]bg_dark.png</uri>
+						</Texture>
+						
+						<!-- Recherche -->
+						
+						<searchInput width="344" btnCloseName="btn_resetSearch">
+							<Anchors> 
+								<Anchor>
+									<AbsDimension x="515" y="-1" />
+								</Anchor>
+							</Anchors>
+						</searchInput>
+						
+						<!--  Partie centrale -->
+						
+						<Container>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="5" y="40" />
+								</Anchor>
+							</Anchors>
+							
+							<Label name="lbl_noResult">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="280" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="850" y="25" />
+								</Size>
+								<cssClass>center</cssClass>
+								<css>[local.css]normal2.css</css>
+								<text>[ui.search.noResult]</text>
+								<visible>false</visible>
+							</Label>		
+							
+							
+							<!-- Conteneur pour l'écran d'accueil -->
+							
+							<block name="ctr_frontDisplay">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="-1" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="851" y="240" />
+								</Size>
+								<Content>
+									<Container>
+										<Texture name="tx_carousel">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="0" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="410" y="229" />
+											</Size>
+										</Texture>
+										
+										<Container name="ctr_carousel">
+											<Size>
+												<AbsDimension x="720" y="259" />
+											</Size>
+											<bgColor>0xffff00</bgColor>
+											<bgAlpha>0</bgAlpha>    
+											<handCursor>true</handCursor>
+										</Container>
+									
+										<Label name="lbl_carouselTitle">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="421" y="10" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="354" y="50" />
+											</Size>
+											<cssClass>purewhitemedium</cssClass>
+											<css>[local.css]title.css</css>
+											<multiline>true</multiline>
+											<wordWrap>true</wordWrap>
+											<fixedHeightForMultiline>true</fixedHeightForMultiline>
+										</Label>
+										<Label name="lbl_carouselDesc">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="421" y="74" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="314" y="165" />
+											</Size>
+											<cssClass>left</cssClass>
+											<css>[local.css]normal2.css</css>
+											<fixedHeightForMultiline>true</fixedHeightForMultiline>
+											<multiline>true</multiline>
+											<wordWrap>true</wordWrap>
+										</Label>
+										
+										<Button name="btn_carouselBuy">
+											<Common>
+												<TextureBitmap name="tx_btn">
+													<visible>false</visible>
+													<Anchors>
+														<Anchor>
+															<AbsDimension x="421" y="181" />
+														</Anchor>
+													</Anchors>
+													<Size>
+														<AbsDimension x="130" y="32" />
+													</Size>
+													<themeDataId>button_normal</themeDataId>
+												</TextureBitmap>
+											</Common>
+											<State type="OVER">
+												<SetProperties target="tx_btn">
+													<themeDataId>button_over</themeDataId>
+												</SetProperties>
+											</State>		
+											<State type="PRESSED">
+												<SetProperties target="tx_btn">
+													<themeDataId>button_pressed</themeDataId>
+												</SetProperties>
+											</State>
+											<State type="DISABLED">
+												<SetProperties target="tx_btn">
+													<themeDataId>button_disabled</themeDataId>
+												</SetProperties>
+											</State>
+										</Button>
+										
+										<Label name="lbl_carouselPrice">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="426" y="185" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="75" y="21" />
+											</Size>
+											<cssClass>darkboldright</cssClass>
+											<css>[local.css]normal2.css</css>
+										</Label>	
+										<Texture name="tx_carouselCurrency">
+											<visible>false</visible>
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="506" y="188" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="20" y="17" />
+											</Size>
+											<uri>[local.ogr_uri]</uri>
+										</Texture>
+										<Label name="lbl_carouselCurrency">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="506" y="185" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="40" y="29" />
+											</Size>
+											<cssClass>darkbold</cssClass>
+											<css>[local.css]normal2.css</css>
+											<visible>false</visible>
+										</Label>
+
+
+									</Container>
+									
+									<Texture name="tx_carouselLeft">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="10" y="93" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="41" y="54" />
+										</Size>
+										<uri>[local.common]bg_dark_radius_slot.png</uri>
+										<alpha>0</alpha>
+									</Texture>																		
+									<themeIconButton name="btn_carouselPrevPage" bgThemeDataId="btn_arrow_pagination" smooth="true">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="20" y="106" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="20" y="29" />
+										</Size>
+										<bgScaleX>-1</bgScaleX>
+										<visible>false</visible>
+									</themeIconButton>
+						
+									<Texture name="tx_carouselRight">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="792" y="93" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="41" y="54" />
+										</Size>
+										<uri>[local.common]bg_dark_radius_slot.png</uri>
+										<alpha>0</alpha>
+									</Texture>		
+									<themeIconButton name="btn_carouselNextPage" bgThemeDataId="btn_arrow_pagination" smooth="true">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="804" y="106" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="20" y="29" />
+										</Size>
+										<visible>false</visible>
+									</themeIconButton>
+									
+									<Grid name="gd_frontDisplayArticles">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="-6" y="240" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="856" y="407" />
+										</Size>
+										<rendererName>InlineXmlGridRenderer</rendererName>
+										<rendererArgs>updateArticle</rendererArgs>
+										<slotWidth>210</slotWidth>
+										<slotHeight>201</slotHeight>
+										<scrollDisplay>never</scrollDisplay>
+										<Hooks>
+											<onItemRollOver />
+											<onItemRollOut />
+										</Hooks>
+										
+										<Container name="ctr_article">
+											<Size>
+												<AbsDimension x="210" y="201" />
+											</Size>
+												
+											<Button name="btn_article">		
+												<Common>
+													<radioMode>true</radioMode>
+													<block>
+														<Size>
+															<AbsDimension x="210" y="201" />
+														</Size>
+														<Content>
+															<Texture name="tx_slot">
+																<Anchors>
+																	<Anchor>
+																		<AbsDimension x="55" y="45" />
+																	</Anchor>
+																</Anchors>
+																<Size>
+																	<AbsDimension x="99" y="99" />
+																</Size>
+																<uri>[config.ui.skin]texture/tx_shop_square.png</uri>
+															</Texture>
+															
+															<Texture name="tx_picto">
+																<Anchors>
+																	<Anchor>
+																		<AbsDimension x="57" y="47" />
+																	</Anchor>
+																</Anchors>
+																<Size>
+																	<AbsDimension x="95" y="95" />
+																</Size>
+																<useCache>false</useCache>
+															</Texture>	
+															
+															<Label name="lbl_name">
+																<Anchors>
+																	<Anchor>
+																		<AbsDimension x="5" y="6" />
+																	</Anchor>
+																</Anchors>
+																<Size>
+																	<AbsDimension x="198" y="45" />
+																</Size>
+																<fixedHeightForMultiline>true</fixedHeightForMultiline>
+																<multiline>true</multiline>
+																<wordWrap>true</wordWrap>
+																<cssClass>center</cssClass>
+																<verticalAlign>center</verticalAlign>
+																<css>[local.css]normal2.css</css>
+															</Label>
+														</Content>
+													</block>
+												</Common>
+												<State type="OVER">
+													<SetProperties target="tx_bg">
+														<luminosity>1.5</luminosity>
+													</SetProperties>
+												</State>
+												<State type="SELECTED_OVER">
+													<SetProperties target="tx_bg">
+														<luminosity>1.5</luminosity>
+													</SetProperties>
+												</State>
+											</Button>
+					
+											
+											<!-- bouton acheter -->
+											
+											<Button name="btn_buy">
+												<Common>
+													<TextureBitmap name="tx_btn">
+														<Anchors>
+															<Anchor>
+																<AbsDimension x="46" y="150" />
+															</Anchor>
+														</Anchors>
+														<Size>
+															<AbsDimension x="115" y="32" />
+														</Size>
+														<themeDataId>button_normal</themeDataId>
+													</TextureBitmap>
+												</Common>
+												<State type="OVER">
+													<SetProperties target="tx_btn">
+														<themeDataId>button_over</themeDataId>
+													</SetProperties>
+												</State>		
+												<State type="PRESSED">
+													<SetProperties target="tx_btn">
+														<themeDataId>button_pressed</themeDataId>
+													</SetProperties>
+												</State>
+												<State type="DISABLED">
+													<SetProperties target="tx_btn">
+														<themeDataId>button_disabled</themeDataId>
+													</SetProperties>
+												</State>
+											</Button>
+											
+											<Texture name="tx_currency">
+												<Anchors>
+													<Anchor>
+														<AbsDimension x="125" y="158" />
+													</Anchor>
+												</Anchors>
+												<Size>
+													<AbsDimension x="20" y="17" />
+												</Size>
+												<uri>[local.ogr_uri]</uri>
+											</Texture>
+											<Label name="lbl_currency">
+												<Anchors>
+													<Anchor>
+														<AbsDimension x="120" y="154" />
+													</Anchor>
+												</Anchors>
+												<Size>
+													<AbsDimension x="40" y="26" />
+												</Size>
+												<cssClass>darkbold</cssClass>
+												<css>[local.css]normal2.css</css>
+												<visible>false</visible>
+											</Label>
+											<Label name="lbl_price">
+												<Anchors>
+													<Anchor>
+														<AbsDimension x="49" y="154" />
+													</Anchor>
+												</Anchors>
+												<Size>
+													<AbsDimension x="70" y="20" />
+												</Size>
+												<cssClass>darkboldright</cssClass>
+												<css>[local.css]normal2.css</css>
+											</Label>
+											
+											<!-- banner -->
+											
+											<Texture name="tx_banner">
+												<Anchors>
+													<Anchor>
+														<AbsDimension x="0" y="106" />
+													</Anchor>
+												</Anchors>
+												<Size>
+													<AbsDimension x="103" y="40" />
+												</Size>
+												<uri>[local.assets]tx_bannerShopItem</uri>
+												<autoGrid>true</autoGrid>
+												<visible>false</visible>
+											</Texture>															
+											<Label name="lbl_banner">
+												<Anchors>
+													<Anchor>
+														<AbsDimension x="3" y="111" />
+													</Anchor>
+												</Anchors>
+												<Size>
+													<AbsDimension x="82" y="25" />
+												</Size>
+												<cssClass>lightcenter</cssClass>
+												<css>[local.css]normal2.css</css>
+												<text></text>
+											</Label>
+											
+										</Container>
+									</Grid>
+								</Content>
+							</block>
+							
+							
+							<!-- Conteneur pour une page d'articles normale -->
+							
+							<Container name="ctr_articlesDisplay">
+																	
+								<Grid name="gd_articles">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="-2" y="2" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="857" y="613" />
+									</Size>
+									<rendererName>InlineXmlGridRenderer</rendererName>
+									<rendererArgs>updateArticle</rendererArgs>
+									<slotWidth>210</slotWidth>
+									<slotHeight>201</slotHeight>
+									<scrollDisplay>never</scrollDisplay>
+									<Hooks>
+										<onItemRollOver />
+										<onItemRollOut />
+									</Hooks>
+									
+									<Container name="ctr_article">
+										<Size>
+											<AbsDimension x="210" y="201" />
+										</Size>
+											
+										<Button name="btn_article">		
+											<Common>
+												<radioMode>true</radioMode>
+												<block>
+													<Size>
+														<AbsDimension x="210" y="201" />
+													</Size>
+													<Content>
+														<Texture name="tx_slot">
+															<Anchors>
+																<Anchor>
+																	<AbsDimension x="55" y="48" />
+																</Anchor>
+															</Anchors>
+															<Size>
+																<AbsDimension x="99" y="99" />
+															</Size>
+															<uri>[config.ui.skin]texture/tx_shop_square.png</uri>
+														</Texture>
+														
+														<Texture name="tx_picto">
+															<Anchors>
+																<Anchor>
+																	<AbsDimension x="57" y="50" />
+																</Anchor>
+															</Anchors>
+															<Size>
+																<AbsDimension x="95" y="95" />
+															</Size>
+															<useCache>false</useCache>
+														</Texture>
+														
+														<Label name="lbl_name">
+															<Anchors>
+																<Anchor>
+																	<AbsDimension x="10" y="6" />
+																</Anchor>
+															</Anchors>
+															<Size>
+																<AbsDimension x="192" y="45" />
+															</Size>
+															<fixedHeightForMultiline>true</fixedHeightForMultiline>
+															<fixedHeight>true</fixedHeight>
+															<multiline>true</multiline>
+															<wordWrap>true</wordWrap>
+															<cssClass>center</cssClass>
+															<verticalAlign>center</verticalAlign>
+															<css>[local.css]normal2.css</css>
+														</Label>
+															
+													</Content>
+												</block>
+											</Common>
+											<State type="OVER">
+												<SetProperties target="tx_bg">
+													<luminosity>1.5</luminosity>
+												</SetProperties>
+											</State>
+											<State type="SELECTED_OVER">
+												<SetProperties target="tx_bg">
+													<luminosity>1.5</luminosity>
+												</SetProperties>
+											</State>
+										</Button>
+										
+										<!-- bouton acheter -->
+										
+										<Button name="btn_buy">
+											<Common>
+												<TextureBitmap name="tx_btn">
+													<Anchors>
+														<Anchor>
+															<AbsDimension x="46" y="153" />
+														</Anchor>
+													</Anchors>
+													<Size>
+														<AbsDimension x="115" y="32" />
+													</Size>
+													<themeDataId>button_normal</themeDataId>
+												</TextureBitmap>
+											</Common>
+											<State type="OVER">
+												<SetProperties target="tx_btn">
+													<themeDataId>button_over</themeDataId>
+												</SetProperties>
+											</State>		
+											<State type="PRESSED">
+												<SetProperties target="tx_btn">
+													<themeDataId>button_pressed</themeDataId>
+												</SetProperties>
+											</State>
+											<State type="DISABLED">
+												<SetProperties target="tx_btn">
+													<themeDataId>button_disabled</themeDataId>
+												</SetProperties>
+											</State>
+										</Button>
+										
+										<Texture name="tx_currency">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="125" y="161" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="20" y="17" />
+											</Size>
+											<uri>[local.ogr_uri]</uri>
+										</Texture>
+										<Label name="lbl_currency">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="120" y="157" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="40" y="26" />
+											</Size>
+											<cssClass>darkbold</cssClass>
+											<css>[local.css]normal2.css</css>
+											<visible>false</visible>
+										</Label>
+										<Label name="lbl_price">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="49" y="157" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="70" y="20" />
+											</Size>
+											<cssClass>darkboldright</cssClass>
+											<css>[local.css]normal2.css</css>
+										</Label>
+										
+										<!-- banner -->
+										
+										<Texture name="tx_banner">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="109" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="103" y="40" />
+											</Size>
+											<uri>[local.assets]tx_bannerShopItem</uri>
+											<autoGrid>true</autoGrid>
+											<visible>false</visible>
+										</Texture>															
+										<Label name="lbl_banner">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="3" y="114" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="82" y="25" />
+											</Size>
+											<cssClass>lightcenter</cssClass>
+											<css>[local.css]normal2.css</css>
+											<text></text>
+										</Label>
+										
+									</Container>
+								</Grid>
+								
+								<Texture>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="-3" y="652" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="860" y="40" />
+									</Size>
+									<uri>[local.common]bg_dark.png</uri>
+									<scaleY>-1</scaleY>
+								</Texture>
+								
+								<Container>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="360" y="618" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="130" y="27" />
+									</Size>
+									
+									<themeIconButton name="btn_prevPage" bgThemeDataId="btn_arrow_pagination" smooth="true">
+										<Size>
+											<AbsDimension x="20" y="29" />
+										</Size>
+										<bgScaleX>-1</bgScaleX>
+									</themeIconButton>
+									
+									<themeIconButton name="btn_nextPage" bgThemeDataId="btn_arrow_pagination" smooth="true">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="110" y="0" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="20" y="29" />
+										</Size>
+									</themeIconButton>
+									
+									<Label name="lbl_page">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="25" y="3" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="80" y="20" />
+										</Size>
+										<cssClass>center</cssClass>
+										<css>[local.css]normal2.css</css>
+									</Label>
+								</Container>
+								
+								
+							</Container>
+							
+							<!-- Cache pour la liste des articles le temps que les données se chargent -->
+							<Container name="ctr_articlesLoader">
+								<visible>false</visible>
+								<mouseEnabled>false</mouseEnabled>
+								<Container>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="0" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="852" y="665"/>
+									</Size>
+									<bgColor>[colors.ui.shadow.dark]</bgColor>
+									<bgAlpha>0.60</bgAlpha>
+								</Container>
+								<Texture>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="395" y="295" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="80" y="80" />
+									</Size>
+									<uri>[local.assets]tx_wait</uri>
+								</Texture>
+							</Container>
+						</Container>
+					</Content>
+				</blockDoubleBorder>
+			</Container>
+		</Container>
+		
+		<!-- Cache pour l'interface le temps du chargement du shop -->
+		<Container name="ctr_shopLoader">
+            <mouseEnabled>true</mouseEnabled>
+            <visible>true</visible>
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="0" />
+					</Anchor>
+				</Anchors>
+                <Size>
+                    <AbsDimension x="1195" y="730"/>
+                </Size>
+				<bgColor>[colors.ui.shadow.dark]</bgColor>
+				<bgAlpha>0.60</bgAlpha>
+			</Container>
+            <Texture>
+                <uri>[local.assets]tx_wait</uri>
+                <Anchors>
+                    <Anchor relativePoint="CENTER">
+                        <AbsDimension x="-20" y="-40"/>
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="80" y="80"/>
+                </Size>
+            </Texture>
+        </Container>
+		
+		
+		<!-- Popup pour un article précis -->
+		
+		<Container name="ctr_popupArticle">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="240" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="750" y="470" />
+			</Size>
+			
+			<visible>false</visible>
+			<mouseEnabled>true</mouseEnabled>
+			
+			<window name="ctr_popupWindow" titleLabelName="lbl_title_popup">
+				<Size>
+					<AbsDimension x="750" y="490" />
+				</Size>
+				
+				<closeButtonName>btn_popupClose</closeButtonName>
+				
+				<Content>
+					<!-- Détails de l'objet -->
+					<Container name="ctr_popupItemWrapper">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="10" y="10" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="462" y="315" />
+						</Size>
+					</Container>
+					
+					<!-- Contenu d'un pack -->
+					<Container name="ctr_popupItemPack">
+						<Size>
+							<AbsDimension x="480" y="168" />
+						</Size>
+						
+						<block>
+							<Anchors>
+								<Anchor relativePoint="TOPLEFT" point="TOPLEFT">
+									<AbsDimension x="10" y="30"/>
+								</Anchor>
+							</Anchors>
+							
+							<Size>
+								<AbsDimension x="470" y="117" />
+								
+							</Size>
+				
+							<Content>
+								<Label name="lbl_popupPackLevel">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="-4" y="-29" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="80" y="25" />
+									</Size>
+									<css>[local.css]normal2.css</css>
+									<cssClass>left</cssClass>
+								</Label>
+								
+								<TextArea name="lbl_popupPackDescription">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="5" y="3" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="456" y="104" />
+									</Size>
+									<css>[local.css]normal2.css</css>
+									<cssClass>left</cssClass>
+									<scrollCss>[local.css]scrollBar.css</scrollCss>
+									<scrollBarY>-3</scrollBarY>
+									<hideScroll>true</hideScroll>
+									<resetScroll>true</resetScroll>
+								</TextArea>
+							</Content>	
+						</block>
+						<Container name="ctr_popupPackSetDetails">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="12" y="148" />
+								</Anchor>
+							</Anchors>
+							<handCursor>true</handCursor>
+							
+							<Label>
+								<Size>
+									<AbsDimension x="461" y="21" />
+								</Size>
+								<css>[local.css]normal2.css</css>
+								<text><u>[ui.shop.showSetDetails]</u></text>
+							</Label>
+						</Container>
+					</Container>	
+						
+					<!-- Panoplie d'objet -->
+					<Container name="ctr_popupSetItems">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="173" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="500" y="150" />
+						</Size>
+										
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="10" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="150" y="150" />
+							</Size>
+							<uri>[local.texture]slot/slot_big_dark_background_empty.png</uri>
+							<autoGrid>true</autoGrid>
+						</Texture>
+						
+						<Texture name="tx_popupPackImage">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="11" y="1" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="148" y="148" />
+							</Size>
+							<cacheAsBitmap>true</cacheAsBitmap>
+							<bgColor>0xffffff</bgColor>
+							<bgAlpha>0</bgAlpha>
+							<handCursor>true</handCursor>
+						</Texture>
+		 			
+		 				<block>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="160" y="0" />
+								</Anchor>
+							</Anchors>
+
+							<Size>
+		 						<AbsDimension x="320" y="150" />
+		 					</Size>
+
+		 					<Content>
+		 						<Label>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="5" y="5" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="315" y="20" />
+									</Size>
+									<css>[local.css]normal2.css</css>
+									<text>[ui.shop.contains][ui.common.colon]</text> 
+								</Label>
+								 				
+				 				<Grid name="gd_setItems">
+				 					<Anchors>
+				 						<Anchor>
+				 							<AbsDimension x="10" y="35" />
+				 						</Anchor>
+				 					</Anchors>
+				 					<Size>
+				 						<AbsDimension x="300" y="100" />
+				 					</Size>
+									<Hooks>
+										<onItemRollOver />
+										<onItemRollOut />
+										<onItemRightClick />
+									</Hooks>
+				 					<rendererName>SlotGridRenderer</rendererName>
+				 					<rendererArgs>[local.texture]slot/slot_dark_background_empty.png,[local.texture]slot/over.png,,,,,[local.css]normal2.css, false</rendererArgs>
+				 					<slotWidth>44</slotWidth>
+				 					<slotHeight>44</slotHeight>
+				 					<scrollDisplay>none</scrollDisplay>
+				 					<autoSelectMode>0</autoSelectMode>
+				 				</Grid>
+		 					</Content>
+		 				</block>
+					</Container>
+						
+				
+					<!-- Block prix/acheter -->
+					<Container name="ctr_popupPrice">
+						<Anchors>
+							<Anchor relativePoint="BOTTOM" point="BOTTOM">
+								<AbsDimension y ="-5" />
+							</Anchor>
+						</Anchors>
+						
+						<Size>
+		        			<AbsDimension x="700" y="50"/>
+		        		</Size>
+		        		
+						<Container>
+							<Anchors>
+								<Anchor relativePoint="RIGHT" point="RIGHT">
+									<AbsDimension x="-43" y="0" />
+								</Anchor>
+							</Anchors>
+							<Button name="btn_popupBuy">
+								<Common>
+									<TextureBitmap name="tx_btn_popup">
+										<Size>
+											<AbsDimension x="115" y="32" />
+										</Size>
+										<themeDataId>button_normal</themeDataId>
+									</TextureBitmap>
+								</Common>
+								<State type="OVER">
+									<SetProperties target="tx_btn_popup">
+										<themeDataId>button_over</themeDataId>
+									</SetProperties>
+								</State>		
+								<State type="PRESSED">
+									<SetProperties target="tx_btn_popup">
+										<themeDataId>button_pressed</themeDataId>
+									</SetProperties>
+								</State>
+								<State type="DISABLED">
+									<SetProperties target="tx_btn_popup">
+										<themeDataId>button_disabled</themeDataId>
+									</SetProperties>
+								</State>
+							</Button>
+						</Container>
+						
+	        			<Container name="ctr_popupOldPrice">
+	        				<Anchors>
+								<Anchor relativeTo="lbl_popupPrice" relativePoint="TOPLEFT" point="TOPRIGHT">
+									<AbsDimension x="80" y="1" />
+								</Anchor>
+							</Anchors>
+	        				
+	        				<Size>
+	        					<AbsDimension x="185" y="26"/>
+	        				</Size>
+	        				
+							<Label name="lbl_popupOldPrice">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="100" y="20" />
+								</Size>
+								<cssClass>right</cssClass>
+								<css>[local.css]normal2.css</css>
+								<alpha>0.5</alpha>
+							</Label>
+							
+							<!-- Comme le style css barré ne fonctionne pas, on va faire une ligne à la main -->
+							 <Container name="ctr_crossprice">
+		                        <Anchors>
+		                            <Anchor relativePoint="RIGHT" point="RIGHT" relativeTo="lbl_popupOldPrice">
+		                                <AbsDimension x="0" y="2" />
+		                            </Anchor>
+		                        </Anchors>
+		                        <Size>
+		                            <AbsDimension x="75" y="2" />
+		                        </Size>
+					 			<bgColor>[colors.area.all]</bgColor>
+					 			<bgAlpha>0.5</bgAlpha>
+					 			<visible>true</visible>
+		                    </Container>
+						</Container>
+						
+						<Label name="lbl_popupPrice">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="542" y="14" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="70" y="20" />
+							</Size>
+							<cssClass>darkboldright</cssClass>
+							<css>[local.css]normal2.css</css>
+						</Label>
+						<Texture name="tx_popupCurrency">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="617" y="17" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="20" y="17" />
+							</Size>
+							<uri>[local.ogr_uri]</uri>
+						</Texture>
+                        <Label name="lbl_popupCurrency">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="617" y="14" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="40" y="17" />
+                            </Size>
+                            <cssClass>darkbold</cssClass>
+                            <css>[local.css]normal2.css</css>
+                            <visible>false</visible>
+                        </Label>
+					</Container>			
+				</Content>
+				
+				<OverFrameContent>
+					
+					<Container name="entityCtr">
+						<EntityDisplayer name="ed_popupChar">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="520" y="30" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="176" y="290" />
+							</Size>
+							<clearSubEntities>false</clearSubEntities>
+							<useFade>false</useFade>
+						</EntityDisplayer>
+					</Container>
+					
+					<Texture name="tx_bg_btn_popupReplay">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="588" y="275" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="30" y="39" />
+						</Size>
+						<uri>[local.common]bg_dark_radius_slot.png</uri>
+					</Texture>
+					
+					<themeIconButton name="btn_popupReplay">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="593" y="280" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="20" y="29" />
+						</Size>
+						<bgThemeDataId>btn_arrow_pagination</bgThemeDataId>
+						<smooth>true</smooth>
+			        </themeIconButton>
+			        
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="509" y="270" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="40" y="37" />
+						</Size>
+						<uri>[local.common]bg_dark_radius_slot.png</uri>
+					</Texture>
+					
+			    	<themeIconButton name="btn_popupRightArrow">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="514" y="275" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="30" y="27" />
+						</Size>
+						<bgScaleX>-1</bgScaleX>
+						<bgThemeDataId>btn_arrow_turn</bgThemeDataId>
+						<smooth>true</smooth>
+					</themeIconButton>
+			        
+			        <Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="658" y="270" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="40" y="37" />
+						</Size>
+						<uri>[local.common]bg_dark_radius_slot.png</uri>
+					</Texture>
+					
+			        <themeIconButton name="btn_popupLeftArrow">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="663" y="275" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="30" y="27" />
+						</Size>
+						
+						<bgThemeDataId>btn_arrow_turn</bgThemeDataId>
+						<smooth>true</smooth>
+					</themeIconButton>
+			  
+				</OverFrameContent>
+			
+			</window>
+		</Container>
+	</Container>
+</Definition>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition modal="true">
+	<Import url="[config.mod.template]button/greyButton.xml" />
+	<Import url="[config.mod.template]windowWithoutTitleBar.xml"/>
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+
+	<windowWithoutTitleBar title="[ui.queue.wait]" noCloseButton="true" name="popup">
+		<Size>
+			<AbsDimension x="550" y="200" />
+		</Size>
+		
+		
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER" />
+		</Anchors>
+		
+		<Content>	
+			<!-- Label lbl_text2-->
+	
+			<Label name="lbl_text2">
+				<Anchors>
+					<Anchor relativePoint="TOP" point="TOP">
+						<AbsDimension x="0" y="40" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="550" y="50" />
+				</Size>
+				<wordWrap>true</wordWrap>
+				<css>[local.css]normal2.css</css>
+				<cssClass>center</cssClass>
+				<verticalAlign>center</verticalAlign>
+			</Label>
+	
+			<!-- Button btn_back-->
+			
+			<simpleButton name="btn_back">
+				<Anchors>
+					<Anchor relativePoint="BOTTOM" point="BOTTOM">
+						<AbsDimension x="0" y="-20" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="308" y="27" />
+				</Size>
+				<label>[ui.queue.back]</label>
+				<cssClass>small</cssClass>
+				<css>[local.css]button.css</css>
+			</simpleButton>
+			
+		</Content>
+		
+	</windowWithoutTitleBar>
+		
+</Definition>

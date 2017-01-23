@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition labelDebug="false">
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+
+		<Constant name="months_path" value="[config.gfx.path]almanax/months/" />
+		<Constant name="astro_path" value="[config.gfx.path]almanax/astros/" />
+		<Constant name="merydes_path" value="[config.gfx.path]almanax/merydes/" />
+		<Constant name="item_path" value="[config.gfx.path.item.vector]/" />
+	</Constants>
+
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template]button/themeLabelCheckBox.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	<Import url="[config.mod.template]window.xml" />
+
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="0" y="0" />
+			</Anchor>
+		</Anchors>
+
+		<!-- PARTIE DE GAUCHE -->
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="2" y="0" />
+				</Anchor>
+			</Anchors>
+
+			<block dark="true">
+				<Size>
+					<AbsDimension x="315" y="670" />
+				</Size>
+				<Content>
+					<Container>
+						<Size>
+							<AbsDimension x="300" y="165" />
+						</Size>
+
+
+						<TextureBitmap>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="5" y="38" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="298" y="80" />
+							</Size>
+							<themeDataId>slot_background_dark_empty</themeDataId>
+						</TextureBitmap>
+
+
+						<Label name="lbl_month">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="5" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="314" y="35" />
+							</Size>
+							<css>[local.css]title.css</css>
+							<cssClass>whitecenter</cssClass>
+						</Label>
+
+						<!-- to remove <Texture name="tx_day"> <Anchors> <Anchor> <AbsDimension 
+							x="16" y="40" /> </Anchor> </Anchors> <Size> <AbsDimension x="264" y="75" 
+							/> </Size> <uri>[local.assets]tx_calendarCrapyNumbers</uri> </Texture> -->
+
+						<Label name="lbl_day">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="35" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="314" y="75" />
+							</Size>
+							<css>[local.css]special.css</css>
+							<cssClass>robotoboldcenter72</cssClass>
+							<text>29</text>
+						</Label>
+
+						<Label name="lbl_year">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="120" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="314" y="35" />
+							</Size>
+							<css>[local.css]title.css</css>
+							<cssClass>whitecenter</cssClass>
+						</Label>
+
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="160" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension y="3" />
+								<RelDimension x="1" />
+							</Size>
+							<uri>[local.common]window_separator_green_horizontal.png</uri>
+						</Texture>
+					</Container>
+					<!-- <Texture> <Size> <AbsDimension x="285" y="622" /> </Size> <uri>[local.assets]tx_blockBackground</uri> 
+						<autoGrid>true</autoGrid> </Texture> -->
+
+
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="168" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="300" y="165" />
+						</Size>
+
+						<TextureBitmap>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="5" y="10" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="146" y="146" />
+							</Size>
+							<themeDataId>slot_background_dark_empty</themeDataId>
+						</TextureBitmap>
+
+						<Texture name="tx_astro">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="8" y="13" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="140" y="140" />
+							</Size>
+							<uri>[local.assets]</uri>
+							<autoGrid>true</autoGrid>
+							<roundCornerRadius>14</roundCornerRadius>
+						</Texture>
+
+						<TextureBitmap>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="156" y="10" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="146" y="146" />
+							</Size>
+							<themeDataId>slot_background_dark_empty</themeDataId>
+						</TextureBitmap>
+
+						<Texture name="tx_monthGod">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="159" y="13" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="140" y="140" />
+							</Size>
+							<uri>[local.assets]</uri>
+							<autoGrid>true</autoGrid>
+							<roundCornerRadius>14</roundCornerRadius>
+						</Texture>
+
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="172" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension y="3" />
+								<RelDimension x="1" />
+							</Size>
+							<uri>[local.common]window_separator_green_horizontal.png</uri>
+						</Texture>
+					</Container>
+
+
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="350" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="285" y="285" />
+						</Size>
+
+						<Container name="ctr_nameDayIllu">
+							<TextureBitmap>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="5" y="6" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="298" y="298" />
+								</Size>
+								<themeDataId>slot_background_dark_empty</themeDataId>
+							</TextureBitmap>
+
+							<Texture name="tx_nameDayIllu">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="8" y="9" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="292" y="292" />
+								</Size>
+								<uri>[local.assets]</uri>
+								<autoGrid>true</autoGrid>
+								<roundCornerRadius>14</roundCornerRadius>
+							</Texture>
+						</Container>
+
+						<Label name="lbl_nameday">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="2" y="8" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="281" y="22" />
+							</Size>
+							<cssClass>center</cssClass>
+							<css>[local.css]normal2.css</css>
+						</Label>
+					</Container>
+				</Content>
+			</block>
+
+			<Container>
+
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="670" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="316" y="50" />
+				</Size>
+
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<RelDimension x="0" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="87" y="55" />
+					</Size>
+					<uri>[local.common]corner_decoration.png</uri>
+				</Texture>
+
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<RelDimension x="1" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="87" y="55" />
+					</Size>
+					<scaleX>-1</scaleX>
+					<uri>[local.common]corner_decoration.png</uri>
+				</Texture>
+
+				<simpleButton label="[ui.almanax.calendar]" name="btn_site">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="71" y="12" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="160" y="34" />
+					</Size>
+				</simpleButton>
+			</Container>
+		</Container>
+
+
+		<!-- PARTIE DE DROITE -->
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="335" y="0" />
+				</Anchor>
+			</Anchors>
+
+			<!-- meryde -->
+
+			<block withBottomBlockSparator="true">
+				<Size>
+					<AbsDimension x="895" y="245" />
+				</Size>
+				<Content>
+					<Label name="lbl_titlemeryde">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="15" y="10" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="588" y="22" />
+						</Size>
+						<cssClass>whitebold</cssClass>
+						<css>[local.css]title.css</css>
+					</Label>
+
+					<TextArea name="lbl_meryde">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="15" y="39" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="702" y="140" />
+						</Size>
+						<cssClass>medium</cssClass>
+						<css>[local.css]normal2.css</css>
+						<scrollCss>[local.css]scrollBar.css</scrollCss>
+						<hideScroll>true</hideScroll>
+						<useCustomFormat>true</useCustomFormat>
+					</TextArea>
+
+
+					<Label name="lbl_dayObjective">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="15" y="178" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="710" y="22" />
+						</Size>
+						<cssClass>medium</cssClass>
+						<css>[local.css]normal2.css</css>
+					</Label>
+
+					<themeLabelCheckBox name="btn_hideDailyNotif">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="15" y="199" />
+							</Anchor>
+						</Anchors>
+						<labelWidth>690</labelWidth>
+						<labelHeight>22</labelHeight>
+						<cssClass>medium</cssClass>
+						<text>[ui.almanax.showDailyNotification]</text>
+					</themeLabelCheckBox>
+
+
+					<TextureBitmap name="tx_bgMeryde">
+						<Anchors>
+							<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+								<AbsDimension x="-15" y="15" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="147" y="147" />
+						</Size>
+						<themeDataId>slot_background_dark_empty</themeDataId>
+					</TextureBitmap>
+
+
+					<EntityDisplayer name="ed_meryde">
+						<Anchors>
+							<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+								<AbsDimension x="-15" y="15" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="147" y="147" />
+						</Size>
+						<direction>3</direction>
+					</EntityDisplayer>
+				</Content>
+
+			</block>
+
+			<!-- BONUS DU JOUR -->
+			<block withBottomBlockSparator="true">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="248" />
+					</Anchor>
+				</Anchors>
+
+				<Size>
+					<AbsDimension x="895" y="188" />
+				</Size>
+
+				<Content>
+
+					<TextureBitmap>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="15" y="15" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="147" y="147" />
+						</Size>
+						<themeDataId>slot_background_dark_empty</themeDataId>
+					</TextureBitmap>
+
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="15" y="15" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="147" y="147" />
+						</Size>
+						<uri>[local.assets]tx_calendarBonus</uri>
+						<autoGrid>true</autoGrid>
+					</Texture>
+
+					<Label name="lbl_titleBonus">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="177" y="10" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="603" y="28" />
+						</Size>
+						<cssClass>whitebold</cssClass>
+						<css>[local.css]title.css</css>
+						<cssClass>white</cssClass>
+					</Label>
+
+					<TextArea name="lbl_bonus">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="177" y="39" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="708" y="100" />
+						</Size>
+						<cssClass>medium</cssClass>
+						<css>[local.css]normal2.css</css>
+						<scrollCss>[local.css]scrollBar.css</scrollCss>
+						<hideScroll>true</hideScroll>
+						<useCustomFormat>true</useCustomFormat>
+					</TextArea>
+				</Content>
+
+			</block>
+
+			<!-- QUETE DU DOFUS -->
+			<block>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="440" />
+					</Anchor>
+				</Anchors>
+
+				<Size>
+					<AbsDimension x="895" y="285" />
+				</Size>
+
+				<Content>
+
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="15" y="10" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="525" y="22" />
+						</Size>
+						<cssClass>whitebold</cssClass>
+						<css>[local.css]title.css</css>
+						<text>[ui.almanax.dolmanaxQuest]</text>
+					</Label>
+
+					<TextArea name="lbl_quest">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="15" y="39" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="708" y="125" />
+						</Size>
+						<cssClass>medium</cssClass>
+						<css>[local.css]normal2.css</css>
+						<scrollCss>[local.css]scrollBar.css</scrollCss>
+						<hideScroll>true</hideScroll>
+					</TextArea>
+
+					<simpleButton label="[ui.almanax.localizeSanctuary]"
+						name="btn_locTemple">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="240" y="145" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="260" y="34" />
+						</Size>
+					</simpleButton>
+
+					<TextureBitmap>
+						<Anchors>
+							<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+								<AbsDimension x="-15" y="15" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="147" y="147" />
+						</Size>
+						<themeDataId>slot_background_dark_empty</themeDataId>
+					</TextureBitmap>
+
+					<Texture name="tx_dolmanax">
+						<Anchors>
+							<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+								<AbsDimension x="-15" y="15" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="147" y="147" />
+						</Size>
+					</Texture>
+
+					<Label name="lbl_questProgress">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="15" y="202" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="340" y="22" />
+						</Size>
+						<css>[local.css]normal2.css</css>
+						<cssClass>left</cssClass>
+					</Label>
+
+					<ProgressBar name="tx_progressBar">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="15" y="233" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="851" y="13" />
+						</Size>
+						<barColor>[colors.progressbar.green]</barColor>
+						<barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+						<separators>7</separators>
+					</ProgressBar>
+
+				</Content>
+			</block>
+		</Container>
+
+		<!-- SEPARATOR -->
+		<TextureBitmap>
+			<Anchors>
+				<Anchor point="CENTER">
+					<AbsDimension x="325" y="360" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="21" y="800" />
+			</Size>
+			<themeDataId>window_separator</themeDataId>
+		</TextureBitmap>
+	</Container>
+</Definition>

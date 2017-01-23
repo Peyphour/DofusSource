@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition fullscreen="true">
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+        <Constant name="texture" value="[config.ui.skin]texture/" />
+        <Constant name="challengeIconOffset" value="12"/>
+        <Constant name="ctrChallengeHeightModifier" value="45"/>
+        <Constant name="ctrChallengeHeight" value="12"/>
+	</Constants>
+
+	<Container name="mainCtr" strata="TOP">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="0" y="230" />
+			</Anchor>
+		</Anchors>
+		<mouseEnabled>true</mouseEnabled>
+
+		<Container name="ctr_challenges">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="11" />
+				</Anchor>
+			</Anchors>
+
+            <TextureBitmap name="tx_background_grid">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="-2" y="0" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="69" y="66" />
+                </Size>
+                <themeDataId>floating_window_background</themeDataId>
+            </TextureBitmap>
+		</Container>
+
+        <Texture name="tx_button_minimize_bgLeft">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="-2" y="0" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="67" y="20" />
+            </Size>
+            <uri>[local.texture]hud/left_floating_menu.png</uri>
+            <dragController>true</dragController>
+            <dragTarget>ctr_challenges</dragTarget>
+            <dragBoundsContainer>ctr_challenges</dragBoundsContainer>
+            <useDragMagnetism>true</useDragMagnetism>
+            <dragTarget>mainCtr</dragTarget>
+        </Texture>
+
+        <Button name="btn_minimize">
+            <Common>
+                <Size>
+                    <AbsDimension x="66" y="17" />
+                </Size>
+                <Texture name="tx_button_minimize">
+		            <Anchors>
+		                <Anchor>
+		                    <AbsDimension x="5" y="0" />
+		                </Anchor>
+		            </Anchors>
+		            <uri>[local.texture]hud/icon_minus_floating_menu.png</uri>
+		        </Texture>
+
+                <TextureBitmap>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="25" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <uri>[local.texture]hud/icon_challenge.png</uri>
+                    <smooth>true</smooth>
+                </TextureBitmap>
+
+                <Hooks>
+                    <onRelease />
+                </Hooks>
+            </Common>
+        </Button>
+	</Container>
+</Definition>

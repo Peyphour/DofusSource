@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition labelDebug="false">
+	
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template.button]labelCheckBox.xml" />
+	<Import url="[config.mod.template]button/sortButton.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+	   	<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="illus" value="[config.content.path]gfx/illusUi/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />	
+		<Constant name="texture" value="[config.ui.skin]texture/" />	
+		<Constant name="common" value="[config.ui.skin]common/" />	
+		<Constant name="item_path" value="[config.gfx.path.item.vector]/" />
+	</Constants>
+	
+	<window name="mainCtr"> 
+		<Anchors>
+			<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT">
+				<AbsDimension x="0" y="-165" />
+			</Anchor>
+		</Anchors>
+		<Size>
+            <AbsDimension x="922" y="766" />
+        </Size>
+		<title>[ui.recycle.recycleAction]</title>
+		
+		<Content>
+			<mouseEnabled>true</mouseEnabled>
+			
+			<Label name="lbl_distribution">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="10" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="870" y="20" />
+				</Size>
+				<css>[local.css]normal2.css</css>
+				<cssClass>center</cssClass>
+			</Label>
+	        
+	        <block>
+				<Anchors>
+					<Anchor>
+						<AbsDimension y="40" />
+					</Anchor>
+				</Anchors>
+				
+				<Size>
+					<AbsDimension x="879" y="547" />
+				</Size>
+				
+				<Content>
+					<TextureBitmap>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="0" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension y="40" />
+							<RelDimension x="1"/>
+						</Size>
+						<uri>[local.common]bg_dark.png</uri>
+					</TextureBitmap>
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="54" y="7" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="220" y="16" />
+						</Size>
+						<text>[ui.crush.itemsToCrush]</text>
+						<cssClass>bold</cssClass>
+						<css>[local.css]normal2.css</css>
+					</Label>				
+					<Label name="lbl_quantityObject">
+						<Anchors> 
+							<Anchor>
+								<AbsDimension x="274" y="7" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="75" y="16" />
+						</Size>
+						<cssClass>boldright</cssClass>
+						<css>[local.css]normal2.css</css>
+					</Label>
+					<sortButton name="btn_tabItem">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="54" y="4" />
+							</Anchor>
+						</Anchors>				
+						<Size>
+							<AbsDimension x="295" y="24" />
+						</Size>  
+					</sortButton>	
+					
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="419" y="7" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="100" y="16" />
+						</Size>
+						<text>[ui.fightend.bonus]</text>
+						<cssClass>boldcenter</cssClass>
+						<css>[local.css]normal2.css</css>
+					</Label>
+					<sortButton name="btn_tabBonus">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="419" y="4" />
+							</Anchor>
+						</Anchors>				
+						<Size>
+							<AbsDimension x="100" y="24" />
+						</Size>
+					</sortButton>	
+					
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="540" y="7" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="150" y="16" />
+						</Size>
+						<text>[ui.common.character]</text>
+						<cssClass>boldcenter</cssClass>
+						<css>[local.css]normal2.css</css>
+					</Label>
+					<sortButton name="btn_tabMyNuggets">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="540" y="4" />
+							</Anchor>
+						</Anchors>				
+						<Size>
+							<AbsDimension x="150" y="24" />
+						</Size>
+					</sortButton>	
+					
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="690" y="7" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="150" y="16" />
+						</Size>
+						<text>[ui.common.alliance]</text>
+						<cssClass>boldcenter</cssClass>
+						<css>[local.css]normal2.css</css>
+					</Label>
+					<sortButton name="btn_tabAllianceNuggets">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="690" y="4" />
+							</Anchor>
+						</Anchors>				
+						<Size>
+							<AbsDimension x="150" y="24" />
+						</Size>
+					</sortButton>	
+		
+					<Grid name="gd_items">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="1" y="41" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="867" y="460" />
+						</Size>
+						<autoSelectMode>0</autoSelectMode>
+						<slotWidth>857</slotWidth>
+						<slotHeight>46</slotHeight>
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updateItemLine,[colors.grid.line]</rendererArgs>
+						<scrollDisplay>always</scrollDisplay>
+						<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+		
+						<Container name="ctr_item">
+							<Size>
+								<AbsDimension x="857" y="46" />
+							</Size>
+		
+							<Texture>
+								<Size>
+									<AbsDimension x="365" y="46" />
+								</Size>
+								<bgColor>0</bgColor>
+								<bgAlpha>0</bgAlpha>
+							</Texture>
+		
+							<Texture name="tx_backgroundItem">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="6" y="1" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="44" y="44" />
+								</Size>
+								<uri>[local.assets]tx_slot</uri>
+								<autoGrid>true</autoGrid>
+							</Texture>		
+			
+							<Slot name="slot_item">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="6" y="1" /> 
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="44" y="44" />
+								</Size>
+								<css>[local.css]normal2.css</css>
+								<forcedBackGroundIconUri>[config.ui.skin]texture/slot/slot_dark_background_empty.png</forcedBackGroundIconUri>
+							</Slot>	
+		
+							<Label name="lbl_itemName">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="55" y="10" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="295" y="20" />
+								</Size>
+								<css>[local.css]normal2.css</css>
+								<useStyleSheet>true</useStyleSheet>
+							</Label>
+								
+							<Texture name="tx_arrow">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="375" y="10" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="15" y="25" />
+								</Size>
+								<uri>[local.texture]icon_arrow_right.png</uri>
+								<visible>false</visible>
+							</Texture>	
+							
+							<Label name="lbl_areaBonus">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="420" y="10" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="100" y="20" />
+								</Size>
+								<cssClass>center</cssClass>
+								<css>[local.css]normal2.css</css>
+							</Label>		
+							<Label name="lbl_myNuggets">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="540" y="10" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="150" y="20" />
+								</Size>
+								<cssClass>center</cssClass>
+								<css>[local.css]normal2.css</css>
+							</Label>		
+							<Label name="lbl_allianceNuggets">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="690" y="10" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="150" y="20" />
+								</Size>
+								<cssClass>center</cssClass>
+								<css>[local.css]normal2.css</css>
+							</Label>		
+						</Container>
+								
+						<Hooks>
+							<onSelectItem />
+							<onItemRollOver />
+							<onItemRollOut />
+							<onRelease />
+						</Hooks>
+					</Grid>
+		
+														
+					<Label name="lbl_explanation">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="15" y="230" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="840" y="60" />
+						</Size>
+						<cssClass>center</cssClass>
+						<css>[local.css]normal2.css</css>
+						<text>[ui.recycle.help]</text>
+						<multiline>true</multiline>
+						<wordWrap>true</wordWrap>
+					</Label>
+						
+					<Container>
+						<Anchors> 
+							<Anchor>
+								<AbsDimension y="501" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<RelDimension x="1" />
+						</Size>
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="40" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension y="40" />
+								<RelDimension x="1" />
+							</Size>
+							<scaleY>-1</scaleY>
+							<uri>[local.common]bg_dark.png</uri>
+						</Texture>
+						
+						<Label name="lbl_objectsPrice">
+							<Anchors> 
+								<Anchor>
+									<AbsDimension x="15" y="7" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="150" y="20" />
+							</Size>
+							<cssClass>boldright</cssClass>
+							<css>[local.css]normal2.css</css>
+						</Label>
+						<Texture name="tx_kama1">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="170" y="10" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="18" y="16" />
+							</Size>
+							<uri>[local.texture]icon_kama.png</uri>
+						</Texture>
+							
+						<Label name="lbl_minePrice">
+							<Anchors> 
+								<Anchor>
+									<AbsDimension x="470" y="7" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="150" y="20" />
+							</Size>
+							<cssClass>boldright</cssClass>
+							<css>[local.css]normal2.css</css>
+						</Label>
+						<Texture name="tx_kama2">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="625" y="10" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="18" y="16" />
+							</Size>
+							<uri>[local.texture]icon_kama.png</uri>
+						</Texture>
+						
+						<Label name="lbl_alliancePrice">
+							<Anchors> 
+								<Anchor>
+									<AbsDimension x="630" y="7" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="150" y="20" />
+							</Size>
+							<cssClass>boldright</cssClass>
+							<css>[local.css]normal2.css</css>
+						</Label>
+						<Texture name="tx_kama3">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="785" y="10" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="18" y="16" />
+							</Size>
+							<uri>[local.texture]icon_kama.png</uri>
+						</Texture>
+					</Container>
+				</Content>
+			</block>
+			<block>
+				<Anchors> 
+					<Anchor>
+						<AbsDimension x="0" y="590" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="879" y="60" />
+				</Size>
+				<Content>
+					<Texture name="tx_nugget">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="7" y="1" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="45" y="45" />
+						</Size>
+					</Texture>
+					
+					<Label>
+						<Anchors> 
+							<Anchor>
+								<AbsDimension x="54" y="12" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="400" y="20" />
+						</Size>
+						<cssClass>bold</cssClass>
+						<css>[local.css]normal2.css</css>
+						<text>[ui.common.total][ui.common.colon]</text>
+					</Label>
+					
+					<Label name="lbl_myTotal">
+						<Anchors> 
+							<Anchor>
+								<AbsDimension x="540" y="12" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="150" y="20" />
+						</Size>
+						<cssClass>boldcenter</cssClass>
+						<css>[local.css]normal2.css</css>
+					</Label>
+					
+					<Label name="lbl_allianceTotal">
+						<Anchors> 
+							<Anchor>
+								<AbsDimension x="690" y="12" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="150" y="20" />
+						</Size>
+						<cssClass>boldcenter</cssClass>
+						<css>[local.css]normal2.css</css>
+					</Label>
+				</Content>
+			</block>
+			
+			<TextureBitmap>
+				<Anchors>
+					<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT">
+					</Anchor>
+				</Anchors>
+				<uri>[local.common]corner_decoration.png</uri>
+			</TextureBitmap>
+			
+			<TextureBitmap>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="880" y="643"/>
+					</Anchor>
+				</Anchors>
+				<scaleX>-1</scaleX>
+				<uri>[local.common]corner_decoration.png</uri>
+			</TextureBitmap>
+			
+			<simpleButton label="[ui.recycle.recycle]" name="btn_recycle"   >
+				<Anchors>
+					<Anchor point="BOTTOM" relativePoint="BOTTOM">
+						<AbsDimension x="0" y="-7" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="200" y="30" />
+				</Size>
+				<css>[local.css]button.css</css>
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</simpleButton>
+		</Content>
+	</window>
+	
+</Definition>

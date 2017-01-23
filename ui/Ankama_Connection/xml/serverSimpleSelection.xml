@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/greyButton.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="illu" value="[config.content.path]gfx/illusUi/" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+	
+	<Container name="serverCtr">
+		<Anchors>
+			<Anchor point="TOP" relativePoint="TOP" >
+				<AbsDimension x="0" y="58" />
+			</Anchor>
+		</Anchors>
+		
+		<!-- Texture tx_bgBtn-->
+
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="172" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1142" y="750" />
+			</Size>
+			<uri>[local.assets]tx_serverchoice_bottomBg</uri>
+		</Texture>
+				
+		
+		<!-- Label lbl_title-->
+
+		<Label name="lbl_title">
+			<Anchors>
+				<Anchor point="TOP" relativePoint="TOP" >
+					<AbsDimension x="0" y="153" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="700" y="30" />
+			</Size>
+			<text>[ui.sersel.choseServer]</text>
+			<css>[local.css]title.css</css>
+			<cssClass>center</cssClass>
+		</Label>
+
+
+		<!-- Button btn_autochoice -->		
+
+		<simpleButton label="[ui.sersel.autoChoice]" name="btn_autochoice">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="319" y="679" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="300" y="57" />
+			</Size>
+			<multiline>true</multiline>
+		</simpleButton>
+
+		<!-- Button btn_mychoice -->		
+
+		<greyButton label="[ui.sersel.manualChoice]" name="btn_mychoice" width="241" height="35">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="879" y="680" />
+				</Anchor>
+			</Anchors>
+			<css>[local.css]button.css</css>
+			<cssClass>small</cssClass>
+		</greyButton>
+		
+	</Container>
+</Definition>

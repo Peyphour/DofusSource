@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="texture" value="[config.ui.skin]texture/"/>
+		<Constant name="common" value="[config.ui.skin]common/"/>
+		<Constant name="picto_uri" value="[config.content.path]gfx/characteristics/characteristics.swf|tx_" />
+	</Constants>
+	
+	<Container name="mainCtr">
+		<Size>
+			<AbsDimension x="640" y="110"/>
+		</Size>
+
+		<TextureBitmap name="tx_background">
+			<Anchors>
+				<Anchor relativePoint="TOPLEFT" point="TOPLEFT">
+					<AbsDimension x="0" y="4"/>
+				</Anchor>
+				<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+					<AbsDimension x="0" y="0"/>
+				</Anchor>
+			</Anchors>
+			<themeDataId>hud_window_background</themeDataId>
+			<mouseEnabled>true</mouseEnabled>
+		</TextureBitmap>
+
+		<Texture>
+			<Anchors>
+				<Anchor relativePoint="TOPLEFT" point="TOPLEFT">
+					<AbsDimension x="-9" y="2"/>
+				</Anchor>
+				<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+					<AbsDimension x="0" y="0"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="617" y="101" />
+			</Size>
+			<uri>[local.texture]hud/background_spectator_gauge.png</uri>
+		</Texture>
+
+
+		<Container>
+			<Anchors>
+				<Anchor relativePoint="BOTTOMLEFT" point="BOTTOMLEFT">
+					<AbsDimension x="10" y="4"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="75" y="110"/>
+			</Size>
+			<EntityDisplayer name="entityDisplayer">
+				<Anchors>
+					<Anchor relativePoint="TOP" point="TOP"/>
+				</Anchors>
+				<Size>
+					<AbsDimension x="75" y="110"/>
+				</Size>
+				<!--<useCache>true</useCache>-->
+				<useFade>false</useFade>
+			</EntityDisplayer>
+		</Container>
+
+		<Container>
+
+			<!--Attackers-->
+
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="160" y="10"/>
+					</Anchor>
+				</Anchors>
+				<Label name="lbl_attackersName">
+					<Anchors>
+						<Anchor>
+							<AbsDimension y="0"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="218" y="20"/>
+					</Size>
+					<cssClass>left</cssClass>
+					<css>[local.css]small2.css</css>
+				</Label>
+				<Label name="lbl_attackersLife">
+					<Anchors>
+						<Anchor>
+							<AbsDimension y="22"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="218" y="20"/>
+					</Size>
+					<cssClass>left</cssClass>
+					<css>[local.css]small2.css</css>
+				</Label>
+			</Container>
+
+			<!--Defenders-->
+
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="350" y="10"/>
+					</Anchor>
+				</Anchors>
+				<Label name="lbl_defendersName">
+					<Anchors>
+						<Anchor>
+							<AbsDimension y="0"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="218" y="20"/>
+					</Size>
+					<cssClass>right</cssClass>
+					<css>[local.css]small2.css</css>
+				</Label>
+
+				<Label name="lbl_defendersLife">
+					<Anchors>
+						<Anchor>
+							<AbsDimension y="22"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="218" y="20"/>
+					</Size>
+					<cssClass>right</cssClass>
+					<css>[local.css]small2.css</css>
+				</Label>
+			</Container>
+
+			<!--Fighter double health bar-->
+
+			<ProgressBar name="pb_attackers">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="111" y="63" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="516" y="13" />
+				</Size>
+				<barColor>[colors.progressbar.lifePoints]</barColor>
+				<separators>1</separators>
+				<value>1.0</value>
+			</ProgressBar>
+			<ProgressBar name="pb_defenders">
+				<Anchors>
+					<Anchor relativeTo="pb_attackers" relativePoint="BOTTOMRIGHT" point="TOPLEFT"/>
+				</Anchors>
+				<Size>
+					<AbsDimension x="520" y="13" />
+				</Size>
+				<barColor>[colors.progressbar.blue]</barColor>
+				<separators>1</separators>
+				<rotation>180</rotation>
+				<bgAlpha>0</bgAlpha>
+			</ProgressBar>
+
+			<!--Timer-->
+
+			<Label name="lbl_time">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="115" y="82" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="500" y="24" />
+				</Size>
+				<cssClass>center</cssClass>
+				<css>[local.css]small2.css</css>
+			</Label>
+		</Container>
+		
+		<themeIconButton name="btn_spectaTactic">
+			<Anchors>
+				<Anchor relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="-128" y="-27"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="28" y="20" />
+			</Size>
+			<smooth>true</smooth>
+			<bgThemeDataId>btn_transparent</bgThemeDataId>
+			<iconAnchors>
+				<Anchor relativePoint="TOPLEFT">
+					<AbsDimension x="4" y="0"/>
+				</Anchor>
+				<Anchor relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="-4" y="0"/>
+				</Anchor>
+			</iconAnchors>
+			<iconUri>[config.ui.skin]texture/hud/icon_hud_tactical_mode_grey.png</iconUri>
+			<selectedIconUri>[config.ui.skin]texture/hud/icon_hud_tactical_mode.png</selectedIconUri>
+		</themeIconButton>
+
+		<themeIconButton name="btn_spectaCreature">
+			<Anchors>
+				<Anchor relativeTo="btn_spectaTactic" relativePoint="TOPRIGHT">
+					<AbsDimension x="1" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="28" y="20" />
+			</Size>
+			<smooth>true</smooth>
+			<bgThemeDataId>btn_transparent</bgThemeDataId>
+			<iconAnchors>
+				<Anchor relativePoint="TOPLEFT">
+					<AbsDimension x="4" y="0"/>
+				</Anchor>
+				<Anchor relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="-4" y="0"/>
+				</Anchor>
+			</iconAnchors>
+			<iconUri>[config.ui.skin]texture/hud/icon_hud_creature_mode_grey.png</iconUri>
+			<selectedIconUri>[config.ui.skin]texture/hud/icon_hud_creature_mode.png</selectedIconUri>
+		</themeIconButton>
+
+		<themeIconButton name="btn_spectaPointCell">
+			<Anchors>
+				<Anchor relativeTo="btn_spectaCreature" relativePoint="TOPRIGHT">
+					<AbsDimension x="1" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="28" y="20" />
+			</Size>
+			<smooth>true</smooth>
+			<bgThemeDataId>btn_transparent</bgThemeDataId>
+			<iconAnchors>
+				<Anchor relativePoint="TOPLEFT">
+					<AbsDimension x="4" y="0"/>
+				</Anchor>
+				<Anchor relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="-4" y="0"/>
+				</Anchor>
+			</iconAnchors>
+			<iconUri>[config.ui.skin]texture/hud/icon_hud_ping_grey.png</iconUri>
+			<selectedIconUri>[config.ui.skin]texture/hud/icon_hud_ping.png</selectedIconUri>
+		</themeIconButton>
+
+		<themeIconButton name="btn_spectaLeave">
+			<Anchors>
+				<Anchor relativeTo="btn_spectaPointCell" relativePoint="TOPRIGHT">
+					<AbsDimension x="1" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="28" y="20" />
+			</Size>
+			<smooth>true</smooth>
+			<bgThemeDataId>btn_transparent</bgThemeDataId>
+			<iconAnchors>
+				<Anchor relativePoint="TOPLEFT">
+					<AbsDimension x="4" y="0"/>
+				</Anchor>
+				<Anchor relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="-4" y="0"/>
+				</Anchor>
+			</iconAnchors>
+			<iconUri>[config.ui.skin]texture/hud/icon_hud_red_close.png</iconUri>
+		</themeIconButton>
+	</Container>
+</Definition>
+

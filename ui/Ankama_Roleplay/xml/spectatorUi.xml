@@ -1,0 +1,898 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+    <Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]button/sortButton.xml" />
+    <Import url="[config.mod.template]window.xml" />
+    <Import url="[config.mod.template]block.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="common" value="[config.ui.skin]common/" />
+        <Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="heads" value="[config.content.path]gfx/heads/SmallHead_" />
+		<Constant name="fighterType_uri" value="[config.ui.skin]texture/spectator/spectator_tx_Picto" />
+        <Constant name="doubleArrow_uri" value="[config.ui.skin]texture/spectator/spectator_tx_DoubleArrow" />
+		<Constant name="bgLevel_uri" value="[local.texture]tx_lvl.png" />
+		<Constant name="bgPrestige_uri" value="[local.texture]tx_prestige.png" />
+	</Constants>
+
+	<Container name="mainCtr">
+
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="0" y="-75" />
+			</Anchor>
+		</Anchors>
+		<mouseEnabled>true</mouseEnabled>
+
+        <window name="spectatorWindow">
+            <Size>
+                <AbsDimension x="827" y="880" />
+            </Size>
+            <title>[ui.spectator.fightList]</title>
+            <noSeparator>true</noSeparator>
+            <Content>
+
+                <block>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="-4" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="785" y="330" />
+                    </Size>
+                    <dark>true</dark>
+                    <Content>
+                <!-- En tete de la grille des combats -->
+                        <Container>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="15" />
+                                </Anchor>
+                            </Anchors>
+                            <Texture>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="-15" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="778" y="40" />
+                                </Size>
+                                <uri>[local.common]bg_dark.png</uri>
+                            </Texture>
+                            <Label>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="145" y="-7" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="273" y="20" />
+                                </Size>
+                                <css>[local.css]small2.css</css>
+                                <text>[ui.common.numberOfPlayers]</text>
+                            </Label>
+                            <sortButton name="btn_orderNumberPlayers">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="-6" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="430" y="26" />
+                                </Size>
+                            </sortButton>
+
+                            <Label>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="465" y="-7" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="150" y="20" />
+                                </Size>
+                                <cssClass>medium</cssClass>
+                                <css>[local.css]small2.css</css>
+                                <text>[ui.common.averageLevel]</text>
+                            </Label>
+                            <sortButton name="btn_orderLevel">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="445" y="-6" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="90" y="26" />
+                                </Size>
+
+                            </sortButton>
+
+                            <Label>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="618" y="-7" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="100" y="20" />
+                                </Size>
+                                <css>[local.css]small2.css</css>
+                                <text>[ui.fightend.duration]</text>
+                            </Label>
+                            <sortButton name="btn_orderDuration">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="540" y="-6" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="120" y="26" />
+                                </Size>
+                            </sortButton>
+
+                            <!-- pas de texte pour l'instant pour la colonne VIP, à voir si on veut en rajouter un des qu'on aura une bonne formulation -->
+                            <Label>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="680" y="-8" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="68" y="20" />
+                                </Size>
+                                <cssClass>medium</cssClass>
+                                <css>[local.css]small2.css</css>
+                            </Label>
+                            <sortButton name="btn_orderVip">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="680" y="-8" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="50" y="26" />
+                                </Size>
+                            </sortButton>
+                        </Container>
+                        <Texture>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="40" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="775" y="275" />
+                            </Size>
+                            <uri>[local.common]bg_light.png</uri>
+                        </Texture>
+                        <Grid name="gd_fights">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="40" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="775" y="275" />
+                            </Size>
+                            <rendererName>InlineXmlGridRenderer</rendererName>
+                            <rendererArgs>updateFightLine,[colors.grid.line]</rendererArgs>
+                            <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+                            <slotWidth>775</slotWidth>
+                            <slotHeight>45</slotHeight>
+
+                            <Container name="ctr_itemFight">
+                                <Size>
+                                    <AbsDimension x="775" y="45" />
+                                </Size>
+
+                                <Button name="btn_itemFight">
+                                    <Common>
+                                        <Size>
+                                            <AbsDimension x="775" y="45" />
+                                        </Size>
+                                        <radioMode>true</radioMode>
+
+                                        <Container>
+                                            <Size>
+                                                <AbsDimension x="738" y="30" />
+                                            </Size>
+                                            <bgColor>0x000000</bgColor>
+                                            <bgAlpha>0</bgAlpha>
+                                        </Container>
+                                        
+                                        <Container>
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="5" y="12" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Label name="lbl_nbWaveTeamOne">
+                                                <Anchors>
+                                                    <Anchor>
+                                                        <AbsDimension x="40" y="-2" />
+                                                    </Anchor>
+                                                </Anchors>
+                                                <Size>
+                                                    <AbsDimension x="25" y="20" />
+                                                </Size>
+                                                <css>[local.css]small2.css</css>
+                                                <cssClass>mediumcenter</cssClass>
+                                            </Label>
+
+                                            <Texture name="tx_waveTeamOne">
+                                                <Anchors>
+                                                    <Anchor>
+                                                        <AbsDimension x="5" y="-7" />
+                                                    </Anchor>
+                                                </Anchors>
+                                                <uri>[local.texture]spectator/monster_wave_icon.png</uri>
+                                            </Texture>
+
+
+                                            <Label name="lbl_nbPLayerTeamOne">
+                                                <Anchors>
+                                                    <Anchor>
+                                                        <AbsDimension x="105" y="-2" />
+                                                    </Anchor>
+                                                </Anchors>
+                                                <Size>
+                                                    <AbsDimension x="25" y="20" />
+                                                </Size>
+                                                <css>[local.css]small2.css</css>
+                                                <cssClass>mediumcenter</cssClass>
+                                            </Label>
+
+                                            <Texture name="tx_alignTeamOne">
+                                                <Anchors>
+                                                    <Anchor>
+                                                        <AbsDimension x="70" y="-6" />
+                                                    </Anchor>
+                                                </Anchors>
+                                            </Texture>
+
+                                            <Label name="lbl_nbPLayerTeamTwo">
+                                                <Anchors>
+                                                    <Anchor>
+                                                        <AbsDimension x="287" y="-2" />
+                                                    </Anchor>
+                                                </Anchors>
+                                                <Size>
+                                                    <AbsDimension x="25" y="20" />
+                                                </Size>
+                                                <cssClass>mediumcenter</cssClass>
+                                                <css>[local.css]small2.css</css>
+                                            </Label>
+
+                                            <Texture name="tx_alignTeamTwo">
+                                                <Anchors>
+                                                    <Anchor>
+                                                        <AbsDimension x="322" y="-6" />
+                                                    </Anchor>
+                                                </Anchors>
+                                            </Texture>
+
+                                            <Label name="lbl_nbWaveTeamTwo">
+                                                <Anchors>
+                                                    <Anchor>
+                                                        <AbsDimension x="370" y="-2" />
+                                                    </Anchor>
+                                                </Anchors>
+                                                <Size>
+                                                    <AbsDimension x="25" y="20" />
+                                                </Size>
+                                                <cssClass>mediumcenter</cssClass>
+                                                <css>[local.css]small2.css</css>
+                                            </Label>
+
+                                            <Texture name="tx_waveTeamTwo">
+                                                <Anchors>
+                                                    <Anchor>
+                                                        <AbsDimension x="398" y="-7" />
+                                                    </Anchor>
+                                                </Anchors>
+                                                <uri>[local.texture]spectator/monster_wave_icon.png</uri>
+                                            </Texture>
+                                        </Container>
+                                        <Label name="lbl_averageLevel">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="450" y="10" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="80" y="20" />
+                                            </Size>
+                                            <cssClass>mediumcenter</cssClass>
+                                            <css>[local.css]small2.css</css>
+                                        </Label>
+
+                                        <Label name="lbl_timeStartFight">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="540" y="10" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="120" y="20" />
+                                            </Size>
+                                            <cssClass>right</cssClass>
+                                            <css>[local.css]small2.css</css>
+                                        </Label>
+
+                                    </Common>
+
+                                    <State type="OVER">
+                                        <SetProperties target="btn_itemFight">
+                                            <bgColor>[colors.grid.over]</bgColor>
+                                        </SetProperties>
+                                    </State>
+
+                                    <State type="SELECTED">
+                                        <SetProperties target="btn_itemFight">
+                                            <bgColor>[colors.grid.selected]</bgColor>
+                                        </SetProperties>
+                                    </State>
+
+                                </Button>
+
+                                <Texture name="tx_twoArrows">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="150" y="12" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="126" y="20" />
+                                    </Size>
+                                    <uri>[local.texture]spectator/spectator_tx_DoubleArrow1.png</uri>
+                                    <autoGrid>false</autoGrid>
+                                </Texture>
+
+                                <Texture name="tx_iknowyou">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="690" y="7" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <uri>[local.assets]tx_iknowyou</uri>
+                                </Texture>
+
+                                <Texture name="tx_spectatorLocked">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="740" y="8" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="25" y="25" />
+                                    </Size>
+                                    <uri>[local.texture]icon_eye_selected.png</uri>
+                                </Texture>
+                            </Container>
+                        </Grid>
+                    </Content>
+                </block>
+
+
+                <!-- PARTIE BASSE -->
+
+
+                <Container>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="-4" y="328" />
+                        </Anchor>
+                    </Anchors>
+
+                    <!-- Equipe gauche -->
+
+                    <block>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="0" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="390" y="440" />
+                        </Size>
+                        <dark>true</dark>
+                        <Content>
+
+                            <Texture>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="40" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="380" y="30" />
+                                </Size>
+                                <uri>[local.common]bg_dark.png</uri>
+                            </Texture>
+
+                            <TextureBitmap>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="10" y="4" />
+                                    </Anchor>
+                                </Anchors>
+                                <smooth>true</smooth>
+                                <uri>[local.texture]spectator/spectator_tx_PictoSword.png</uri>
+                            </TextureBitmap>
+
+                            <Label name="lbl_attackersName">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="50" y="9" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="250" y="20" />
+                                </Size>
+                                <css>[local.css]normal2.css</css>
+                                <text>[ui.common.attackers]</text>
+                            </Label>
+
+                            <Label name="lbl_levelLeft">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="125" y="9" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="188" y="20" />
+                                </Size>
+                                <css>[local.css]normal2.css</css>
+                            </Label>
+                            <Label>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="70" y="44" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="140" y="20" />
+                                </Size>
+                                <css>[local.css]small2.css</css>
+                                <text>[ui.common.name]</text>
+                            </Label>
+                            <Label>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="320" y="44" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="50" y="20" />
+                                </Size>
+                                <cssClass>center</cssClass>
+                                <css>[local.css]small2.css</css>
+                                <text>[ui.common.short.level]</text>
+                            </Label>
+
+                            <Texture>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="71" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="380" y="280" />
+                                </Size>
+                                <uri>[local.common]bg_light.png</uri>
+                            </Texture>
+                            <Grid name="gd_leftTeam">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="71" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="380" y="280" />
+                                </Size>
+                                <rendererName>InlineXmlGridRenderer</rendererName>
+                                <rendererArgs>updateFighterLine,[colors.grid.line]</rendererArgs>
+                                <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+                                <slotWidth>380</slotWidth>
+                                <slotHeight>35</slotHeight>
+                                <Container name="fighterCtr">
+                                    <Size>
+                                        <AbsDimension x="339" y="35" />
+                                    </Size>
+
+                                    <Label name="lbl_playerName">
+                                        <Anchors>
+                                            <Anchor>
+                                                <AbsDimension x="70" y="6" />
+                                            </Anchor>
+                                        </Anchors>
+                                        <Size>
+                                            <AbsDimension x="200" y="20" />
+                                        </Size>
+                                        <css>[local.css]small2.css</css>
+                                        <cssClass>medium</cssClass>
+                                        <hyperlinkEnabled>true</hyperlinkEnabled>
+                                        <useStyleSheet>true</useStyleSheet>
+                                    </Label>
+
+                                    <Texture name="tx_head">
+                                        <Anchors>
+                                            <Anchor>
+                                                <AbsDimension x="7" y="4" />
+                                            </Anchor>
+                                        </Anchors>
+                                        <Size>
+                                            <AbsDimension x="30" y="30" />
+                                        </Size>
+                                    </Texture>
+
+					  				<Texture name="tx_playerLevel">
+					  					<Anchors>
+					  						<Anchor>
+					  							<AbsDimension x="315" y="3" />
+					  						</Anchor>
+					  					</Anchors>
+					  					<Size>
+					  						<AbsDimension x="62" y="27" />
+					  					</Size>
+					  				</Texture>		
+                                    <Label name="lbl_playerLevel">
+                                        <Anchors>
+                                            <Anchor>
+                                                <AbsDimension x="320" y="5" />
+                                            </Anchor>
+                                        </Anchors>
+                                        <Size>
+                                            <AbsDimension x="50" y="16" />
+                                        </Size>
+  										<cssClass>boldcenter</cssClass>
+                                        <css>[local.css]small2.css</css>
+                                    </Label>
+                                </Container>
+                            </Grid>
+
+                            <Container name="ctr_iconsLeft">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="8" y="351" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="70" y="25" />
+                                </Size>
+                            </Container>
+
+                            <Label name="lbl_wavesLeft">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="90" y="352" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="245" y="20" />
+                                </Size>
+                                <cssClass>right</cssClass>
+                                <css>[local.css]small2.css</css>
+                            </Label>
+                            <Container>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="370" />
+                                    </Anchor>
+                                </Anchors>
+                                <Texture>
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="0" y="0" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="87" y="65" />
+                                    </Size>
+                                    <uri>[local.common]/corner_decoration.png</uri>
+                                </Texture>
+                                <Texture>
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="380" y="0" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="87" y="65" />
+                                    </Size>
+                                    <uri>[local.common]/corner_decoration.png</uri>
+                                    <scaleX>-1</scaleX>
+                                </Texture>
+                            </Container>
+
+                            <simpleButton label="[ui.common.join]" name="btn_fightLeft">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="145" y="390" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="100" y="30" />
+                                </Size>
+                            </simpleButton>
+                        </Content>
+                    </block>
+
+
+
+                    <!-- Equipe droite -->
+
+                    <Container>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="395" y="0" />
+                            </Anchor>
+                        </Anchors>
+
+                        <block>
+                            <Size>
+                                <AbsDimension x="390" y="440" />
+                            </Size>
+                            <dark>true</dark>
+                            <Content>
+                                <TextureBitmap>
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="10" y="4" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <smooth>true</smooth>
+                                    <uri>[local.texture]spectator/spectator_tx_PictoShield.png</uri>
+                                </TextureBitmap>
+
+                                <Label name="lbl_defendersName">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="50" y="9" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="250" y="20" />
+                                    </Size>
+                                    <css>[local.css]normal2.css</css>
+                                    <text>[ui.common.attackers]</text>
+                                </Label>
+
+                                <Texture>
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="0" y="40" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="380" y="30" />
+                                    </Size>
+                                    <uri>[local.common]bg_dark.png</uri>
+                                </Texture>
+
+                                <Label name="lbl_levelRight">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="125" y="9" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="188" y="20" />
+                                    </Size>
+                                    <css>[local.css]normal2.css</css>
+                                </Label>
+
+                                <Label>
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="70" y="44" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="140" y="20" />
+                                    </Size>
+                                    <css>[local.css]small2.css</css>
+                                    <cssClass>medium</cssClass>
+                                    <text>[ui.common.name]</text>
+                                </Label>
+                                <Label>
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="320" y="44" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="50" y="20" />
+                                    </Size>
+                                    <cssClass>mediumcenter</cssClass>
+                                    <css>[local.css]small2.css</css>
+                                    <text>[ui.common.short.level]</text>
+                                </Label>
+                                <Texture>
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="0" y="71" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="380" y="280" />
+                                    </Size>
+                                    <uri>[local.common]bg_light.png</uri>
+                                </Texture>
+                                <Grid name="gd_rightTeam">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="0" y="71" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="380" y="280" />
+                                    </Size>
+                                    <rendererName>InlineXmlGridRenderer</rendererName>
+                                    <rendererArgs>updateFighterLine,[colors.grid.line]</rendererArgs>
+                                    <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+                                    <slotWidth>380</slotWidth>
+                                    <slotHeight>35</slotHeight>
+                                    <Container name="fighterCtr">
+                                        <Size>
+                                            <AbsDimension x="339" y="35" />
+                                        </Size>
+
+                                        <Label name="lbl_playerName">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="70" y="6" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="200" y="20" />
+                                            </Size>
+                                            <css>[local.css]small2.css</css>
+                                            <cssClass>medium</cssClass>
+                                            <hyperlinkEnabled>true</hyperlinkEnabled>
+                                            <useStyleSheet>true</useStyleSheet>
+                                        </Label>
+
+                                        <Texture name="tx_head">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="7" y="4" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="30" y="30" />
+                                            </Size>
+                                        </Texture>
+
+						  				<Texture name="tx_playerLevel">
+						  					<Anchors>
+						  						<Anchor>
+						  							<AbsDimension x="315" y="3" />
+						  						</Anchor>
+						  					</Anchors>
+						  					<Size>
+						  						<AbsDimension x="62" y="27" />
+						  					</Size>
+						  				</Texture>		
+	                                    <Label name="lbl_playerLevel">
+	                                        <Anchors>
+	                                            <Anchor>
+	                                                <AbsDimension x="320" y="5" />
+	                                            </Anchor>
+	                                        </Anchors>
+	                                        <Size>
+	                                            <AbsDimension x="50" y="16" />
+	                                        </Size>
+	  										<cssClass>boldcenter</cssClass>
+	                                        <css>[local.css]small2.css</css>
+	                                    </Label>
+                                    </Container>
+                                </Grid>
+
+                                <Label name="lbl_wavesRight">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="90" y="352" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="245" y="20" />
+                                    </Size>
+                                    <cssClass>right</cssClass>
+                                    <css>[local.css]small2.css</css>
+                                </Label>
+
+                                <Container name="ctr_iconsRight">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="8" y="351" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="70" y="25" />
+                                    </Size>
+                                </Container>
+
+                                <Container>
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="0" y="370" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Texture>
+                                        <Anchors>
+                                            <Anchor>
+                                                <AbsDimension x="0" y="0" />
+                                            </Anchor>
+                                        </Anchors>
+                                        <Size>
+                                            <AbsDimension x="87" y="65" />
+                                        </Size>
+                                        <uri>[local.common]/corner_decoration.png</uri>
+                                    </Texture>
+                                    <Texture>
+                                        <Anchors>
+                                            <Anchor>
+                                                <AbsDimension x="380" y="0" />
+                                            </Anchor>
+                                        </Anchors>
+                                        <Size>
+                                            <AbsDimension x="87" y="65" />
+                                        </Size>
+                                        <uri>[local.common]/corner_decoration.png</uri>
+                                        <scaleX>-1</scaleX>
+                                    </Texture>
+                                </Container>
+
+                                <simpleButton label="[ui.common.join]" name="btn_fightRight">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="145" y="390" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="100" y="30" />
+                                    </Size>
+                                </simpleButton>
+                            </Content>
+                        </block>
+                    </Container>
+                </Container>
+
+                <Texture>
+                    <Anchors>
+                        <Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT" >
+                            <AbsDimension x="-4" y="5" />
+                        </Anchor>
+                    </Anchors>
+                    <uri>[local.common]/corner_decoration.png</uri>
+                </Texture>
+                <Texture>
+                    <Anchors>
+                        <Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT" >
+                            <AbsDimension x="90" y="5" />
+                        </Anchor>
+                    </Anchors>
+                    <uri>[local.common]/corner_decoration.png</uri>
+                    <scaleX>-1</scaleX>
+                </Texture>
+                <simpleButton label="[ui.common.tospectate]" name="btn_spectate"   >
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativePoint="BOTTOM" >
+                            <AbsDimension x="-3" y="-4" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="100" y="30" />
+                    </Size>
+                </simpleButton>
+            </Content>
+        </window>
+    </Container>
+</Definition>

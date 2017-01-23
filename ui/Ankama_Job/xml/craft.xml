@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition labelDebug="false">
+
+    <Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+    
+    <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />	
+		<Constant name="slot" value="[config.ui.skin]texture/slot/" />
+		<Constant name="emptySlot" value="[config.ui.skin]texture/slot/slot_dark_background_empty.png" />
+	</Constants>
+	
+	
+	<Container>
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="0" y="40" />
+			</Anchor>
+		</Anchors>
+		<mouseEnabled>true</mouseEnabled>
+		
+		<!-- FENETRE DES RECETTES -->
+		
+		<Container strata="TOP">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="-15" y="0" />
+				</Anchor>
+			</Anchors>
+			
+			<window title="[ui.common.recipes]" noCloseButton="true" titleLabelName="lbl_title_recipes">
+				<mouseEnabled>true</mouseEnabled>
+				<Size>
+					<AbsDimension x="480" y="742" />
+				</Size>
+				<Content>
+					<Container name="ctr_recipes">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="7" y="10" />
+							</Anchor>
+						</Anchors>
+					</Container>
+				</Content>
+			</window>
+		</Container>
+	
+		<!-- RESULTAT -->
+		
+		<Container name="ctr_itemResult">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="465" y="470" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="441" y="270" />
+			</Size>
+			
+			<TextureBitmap>
+				<Size>
+					<AbsDimension x="441" y="230" />
+				</Size>
+				<themeDataId>window_background_dark</themeDataId>
+				<smooth>true</smooth>
+			</TextureBitmap>
+			
+			<TextureBitmap>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="-20" y="-20" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="481" y="270" />
+				</Size>
+				<themeDataId>popup_border_frame</themeDataId>
+				<smooth>true</smooth>
+			</TextureBitmap>
+			
+			<block>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="10" y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="421" y="210" />
+				</Size>
+				<Content>
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="50" y="0" />
+							</Anchor>
+						</Anchors>
+						<uri>[config.ui.skin]texture/tx_make_map_nebula.png</uri>
+					</Texture>
+					
+					<Label>
+						<Anchors>
+							<Anchor point="CENTER" relativePoint="CENTER">
+								<AbsDimension x="0" y="-77" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="230" y="20" />
+						</Size>
+						<cssClass>center</cssClass>
+						<css>[local.css]normal2.css</css>
+						<text>[ui.common.obtained]</text>
+					</Label>
+					
+					<Texture>
+						<Anchors>
+							<Anchor point="CENTER" relativePoint="CENTER">
+								<AbsDimension x="0" y="-15" />
+							</Anchor>
+						</Anchors>
+						<Size><AbsDimension x="82" y="82" /></Size>
+						<uri>[local.slot]slot_dark_background_full.png</uri>
+					</Texture>
+					
+					<Slot name="slot_item_result">
+						<visible>false</visible>
+						<Anchors>
+							<Anchor point="CENTER" relativePoint="CENTER">
+								<AbsDimension x="0" y="-15" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="82" y="82" />
+						</Size>
+						<allowDrag>false</allowDrag>
+						<emptyTexture>[local.slot]slot_dark_background_empty.png</emptyTexture>
+						<css>[local.css]normal2.css</css>
+					</Slot>
+					
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="2" y="142" />
+							</Anchor>
+						</Anchors>
+						<uri>[config.ui.skin]common/corner_decoration.png</uri>
+					</Texture>
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="412" y="142" />
+							</Anchor>
+						</Anchors>
+						<uri>[config.ui.skin]common/corner_decoration.png</uri>
+						<scaleX>-1</scaleX>
+					</Texture>
+					
+					<Label name="lbl_item_result">
+						<Anchors>
+							<Anchor point="CENTER" relativePoint="CENTER">
+								<AbsDimension x="0" y="75" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="350" y="20" />
+						</Size>
+						<cssClass>center</cssClass>
+						<css>[local.css]normal2.css</css>
+					</Label>
+				</Content>
+			</block>
+		</Container>
+	
+		<!-- FENETRE CENTRALE -->
+		
+		<window dark="true">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="445" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="485" y="500" />
+			</Size>
+			<mouseEnabled>true</mouseEnabled>
+			
+			<Content>
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="3" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="443" y="379" />
+					</Size>
+					<uri>[config.ui.skin]illus/tx_parchment_make_map_solo.png</uri>
+				</Texture>
+				
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="-27" y="110" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="371" y="199" />
+					</Size>
+					<uri>[config.ui.skin]illus/decoration_slot_parchment.png</uri>
+				</Texture>
+				
+				<EntityDisplayer name="ed_player">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="8" y="10" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="70" y="116" />
+					</Size>
+					<mouseEnabled>true</mouseEnabled>
+					<handCursor>true</handCursor>
+					<maskRect>0,0,70,100</maskRect>
+				</EntityDisplayer>
+							
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="55" />
+						</Anchor>
+					</Anchors>
+					
+					<Label name="lbl_name">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="95" y="-20" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="320" y="20" />
+						</Size>
+						<cssClass>mediumboldparchment</cssClass>
+						<css>[local.css]small2.css</css>
+						<text>Test</text>
+					</Label>
+					
+					<Label name="lbl_job">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="95" y="0" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="320" y="20" />
+						</Size>
+						<cssClass>mediumparchment</cssClass>
+						<css>[local.css]small2.css</css>
+					</Label>
+					
+					<!--Label name="lbl_level">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="325" y="0" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="90" y="20" />
+						</Size>
+						<cssClass>mediumparchmentright</cssClass>
+						<css>[local.css]small2.css</css>
+					</Label-->
+					
+					<ProgressBar name="pb_progressBar">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="95" y="25" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="320" y="12" />
+						</Size>
+						<barColor>[colors.progressbar.green]</barColor>
+						<bgAlpha>0.3</bgAlpha>
+						<barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+					</ProgressBar>
+				</Container>
+
+				<!-- INGREDIENTS -->	
+					
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="70" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="500" y="294" />
+					</Size>
+					
+					<Container name="ingredientsCtr">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="28" y="35" />
+							</Anchor>
+						</Anchors>
+								
+						<Texture>
+							<Size><AbsDimension x="44" y="44" /></Size>
+							<uri>[local.slot]slot_dark_background_full.png</uri>
+						</Texture>
+						<Slot name="slot_ingredient_1">
+							<Size><AbsDimension x="44" y="44" /></Size>
+							<emptyTexture>[local.slot]slot_dark_background_empty.png</emptyTexture>
+							<css>[local.css]normal2.css</css>
+							<highlightTexture>[local.slot]over.png</highlightTexture>
+							<selectedTexture>[local.slot]selected.png</selectedTexture>
+							<acceptDragTexture>[local.slot]acceptDrop.png</acceptDragTexture>
+							<refuseDragTexture>[local.slot]refuseDrop.png</refuseDragTexture>
+						</Slot>
+						
+						<Texture>
+							<Anchors>
+								<Anchor relativeTo="slot_ingredient_2" />
+							</Anchors>
+							<Size><AbsDimension x="44" y="44" /></Size>
+							<uri>[local.slot]slot_dark_background_full.png</uri>
+						</Texture>
+						<Slot name="slot_ingredient_2">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="49" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="44" y="44" />
+							</Size>
+							<emptyTexture>[local.slot]slot_dark_background_empty.png</emptyTexture>
+							<css>[local.css]normal2.css</css>
+							<highlightTexture>[local.slot]over.png</highlightTexture>
+							<selectedTexture>[local.slot]selected.png</selectedTexture>
+							<acceptDragTexture>[local.slot]acceptDrop.png</acceptDragTexture>
+							<refuseDragTexture>[local.slot]refuseDrop.png</refuseDragTexture>
+						</Slot>
+						
+						<Texture>
+							<Anchors>
+								<Anchor relativeTo="slot_ingredient_3" />
+							</Anchors>
+							<Size><AbsDimension x="44" y="44" /></Size>
+							<uri>[local.slot]slot_dark_background_full.png</uri>
+						</Texture>
+						<Slot name="slot_ingredient_3">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="98" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="44" y="44" />
+							</Size>
+							<emptyTexture>[local.slot]slot_dark_background_empty.png</emptyTexture>
+							<css>[local.css]normal2.css</css>
+							<highlightTexture>[local.slot]over.png</highlightTexture>
+							<selectedTexture>[local.slot]selected.png</selectedTexture>
+							<acceptDragTexture>[local.slot]acceptDrop.png</acceptDragTexture>
+							<refuseDragTexture>[local.slot]refuseDrop.png</refuseDragTexture>
+						</Slot>
+						
+						<Texture>
+							<Anchors>
+								<Anchor relativeTo="slot_ingredient_4" />
+							</Anchors>
+							<Size><AbsDimension x="44" y="44" /></Size>
+							<uri>[local.slot]slot_dark_background_full.png</uri>
+						</Texture>
+						<Slot name="slot_ingredient_4">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="147" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="44" y="44" />
+							</Size>
+							<emptyTexture>[local.slot]slot_dark_background_empty.png</emptyTexture>
+							<css>[local.css]normal2.css</css>
+							<highlightTexture>[local.slot]over.png</highlightTexture>
+							<selectedTexture>[local.slot]selected.png</selectedTexture>
+							<acceptDragTexture>[local.slot]acceptDrop.png</acceptDragTexture>
+							<refuseDragTexture>[local.slot]refuseDrop.png</refuseDragTexture>
+						</Slot>
+						
+						<Texture>
+							<Anchors>
+								<Anchor relativeTo="slot_ingredient_5" />
+							</Anchors>
+							<Size><AbsDimension x="44" y="44" /></Size>
+							<uri>[local.slot]slot_dark_background_full.png</uri>
+						</Texture>
+						<Slot name="slot_ingredient_5">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="196" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="44" y="44" />
+							</Size>
+							<emptyTexture>[local.slot]slot_dark_background_empty.png</emptyTexture>
+							<css>[local.css]normal2.css</css>
+							<highlightTexture>[local.slot]over.png</highlightTexture>
+							<selectedTexture>[local.slot]selected.png</selectedTexture>
+							<acceptDragTexture>[local.slot]acceptDrop.png</acceptDragTexture>
+							<refuseDragTexture>[local.slot]refuseDrop.png</refuseDragTexture>
+						</Slot>
+						
+						<Texture>
+							<Anchors>
+								<Anchor relativeTo="slot_ingredient_6" />
+							</Anchors>
+							<Size><AbsDimension x="44" y="44" /></Size>
+							<uri>[local.slot]slot_dark_background_full.png</uri>
+						</Texture>
+						<Slot name="slot_ingredient_6">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="245" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="44" y="44" />
+							</Size>
+							<emptyTexture>[local.slot]slot_dark_background_empty.png</emptyTexture>
+							<css>[local.css]normal2.css</css>
+							<highlightTexture>[local.slot]over.png</highlightTexture>
+							<selectedTexture>[local.slot]selected.png</selectedTexture>
+							<acceptDragTexture>[local.slot]acceptDrop.png</acceptDragTexture>
+							<refuseDragTexture>[local.slot]refuseDrop.png</refuseDragTexture>
+						</Slot>
+						
+						<Texture>
+							<Anchors>
+								<Anchor relativeTo="slot_ingredient_7" />
+							</Anchors>
+							<Size><AbsDimension x="44" y="44" /></Size>
+							<uri>[local.slot]slot_dark_background_full.png</uri>
+						</Texture>
+						<Slot name="slot_ingredient_7">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="294" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="44" y="44" />
+							</Size>
+							<emptyTexture>[local.slot]slot_dark_background_empty.png</emptyTexture>
+							<css>[local.css]normal2.css</css>
+							<highlightTexture>[local.slot]over.png</highlightTexture>
+							<selectedTexture>[local.slot]selected.png</selectedTexture>
+							<acceptDragTexture>[local.slot]acceptDrop.png</acceptDragTexture>
+							<refuseDragTexture>[local.slot]refuseDrop.png</refuseDragTexture>
+						</Slot>
+						
+						<Texture>
+							<Anchors>
+								<Anchor relativeTo="slot_ingredient_8" />
+							</Anchors>
+							<Size><AbsDimension x="44" y="44" /></Size>
+							<uri>[local.slot]slot_dark_background_full.png</uri>
+						</Texture>
+						<Slot name="slot_ingredient_8">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="343" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="44" y="44" />
+							</Size>
+							<emptyTexture>[local.slot]slot_dark_background_empty.png</emptyTexture>
+							<css>[local.css]normal2.css</css>
+							<highlightTexture>[local.slot]over.png</highlightTexture>
+							<selectedTexture>[local.slot]selected.png</selectedTexture>
+							<acceptDragTexture>[local.slot]acceptDrop.png</acceptDragTexture>
+							<refuseDragTexture>[local.slot]refuseDrop.png</refuseDragTexture>
+						</Slot>
+					</Container>
+						
+					<!-- Rune de signature -->
+					
+					<Container name="ctr_signature">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="25" y="135" />
+							</Anchor>
+						</Anchors>
+					
+						<Label>
+							<Size>
+								<AbsDimension x="154" y="20" />
+							</Size>
+							<text>[ui.craft.craftSignature]</text>
+							<cssClass>mediumparchmentcenter</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+						
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="55" y="25" />
+								</Anchor>
+							</Anchors>
+							<Size><AbsDimension x="44" y="44" /></Size>
+							<uri>[local.slot]slot_dark_background_full.png</uri>
+						</Texture>
+						<Slot name="slot_signature">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="55" y="25" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="44" y="44" />
+							</Size>
+							<emptyTexture>[local.slot]tx_slot_signature.png</emptyTexture>
+							<css>[local.css]normal2.css</css>
+							<highlightTexture>[local.slot]over.png</highlightTexture>
+							<selectedTexture>[local.slot]selected.png</selectedTexture>
+							<acceptDragTexture>[local.slot]acceptDrop.png</acceptDragTexture>
+							<refuseDragTexture>[local.slot]refuseDrop.png</refuseDragTexture>
+						</Slot>
+					</Container>
+					
+					
+	
+					<!-- PREVISU DU RESULTAT ET QUANTITE -->		
+					
+					<Label name="lbl_item">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="23" y="105" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="400" y="16" />
+						</Size>
+						<cssClass>mediumparchmentcenter</cssClass>
+						<css>[local.css]small2.css</css>
+					</Label>
+											
+					<Texture name="tx_quantity_selected">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="146" y="128" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="160" y="151" />
+						</Size>
+						<uri>[config.ui.skin]texture/tx_validated0_solo.png</uri>
+						<autoGrid>true</autoGrid>
+					</Texture>
+					
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="185" y="138" />
+							</Anchor>
+						</Anchors>
+						
+						<Texture>
+							<Size><AbsDimension x="82" y="82" /></Size>
+							<uri>[local.slot]slot_dark_background_full.png</uri>
+						</Texture>
+						<Slot name="slot_item_crafting">
+							<Size>
+								<AbsDimension x="82" y="82" />
+							</Size>
+							<allowDrag>false</allowDrag>
+							<emptyTexture>[local.slot]slot_dark_background_empty.png</emptyTexture>
+							<css>[local.css]normal2.css</css>
+						</Slot>
+					</Container>
+						
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="154" y="218" />
+							</Anchor>
+						</Anchors>
+						
+						<TextureBitmap name="tx_quantity_label">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="25" y="2" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="93" y="39" />
+							</Size>
+							<themeDataId>bg_small_border_dark</themeDataId>
+						</TextureBitmap>
+						
+						<Label name="lbl_quantity">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="40" y="10" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="63" y="21" />
+							</Size>
+							<cssClass>right</cssClass>
+							<css>[local.css]normal2.css</css>
+						</Label>
+						
+						<themeIconButton name="btn_quantity_up">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="117" y="9" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="26" y="26" />
+							</Size>
+							<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_plus.png</iconUri>
+						</themeIconButton>
+						
+						<themeIconButton name="btn_quantity_down">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="9" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="26" y="26" />
+							</Size>
+							<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_minus.png</iconUri>
+						</themeIconButton>
+					</Container>
+					
+				</Container>
+				
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="370" />
+						</Anchor>
+					</Anchors>
+					<uri>[config.ui.skin]common/corner_decoration.png</uri>
+				</Texture>
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="448" y="370" />
+						</Anchor>
+					</Anchors>
+					<uri>[config.ui.skin]common/corner_decoration.png</uri>
+					<scaleX>-1</scaleX>
+				</Texture>
+				
+				<!-- VALIDATION -->
+				<simpleButton name="btn_ok">
+					<Anchors>
+						<Anchor point="CENTER" relativePoint="CENTER">
+							<AbsDimension x="0" y="185" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="200" y="34" />
+					</Size>
+					<label>[ui.common.merge]</label>
+				</simpleButton>
+				
+			</Content>
+		</window>
+	</Container>
+</Definition>

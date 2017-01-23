@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition modal="true" usePropertiesCache="false">
+    <Import url="[config.mod.template.button]iconButton.xml" />
+    <Import url="[config.mod.template]windowWithoutTitleBar.xml" />
+    
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="btn.css" value="[local.css]button.css" />
+		<Constant name="btn.file" value="[local.assets]btn_orange" />
+		
+		<Constant name="txBtnBg_normal" value="button_normal" />
+		<Constant name="txBtnBg_over" value="button_over" />
+		<Constant name="txBtnBg_pressed" value="button_pressed" />
+		<Constant name="btnOkIcon.file" value="[config.ui.skin]texture/icon_true.png" />
+		<Constant name="btnCancelIcon.file" value="[config.ui.skin]texture/icon_false.png" />
+		
+	</Constants>
+	
+	<Container name="popCtr">
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER" />
+		</Anchors>
+		
+		<Size>
+			<!-- AbsDimension x="750" y="600"/-->
+			<AbsDimension x="950" y="740"/>
+		</Size>
+		
+		<Container>
+			<Size>
+				<RelDimension x="1" y="1"/>
+			</Size>
+			<Anchors>
+				<Anchor relativePoint="CENTER" point="CENTER" />
+			</Anchors>
+		
+			<shadowColor>[colors.ui.shadow]</shadowColor>
+			
+	 		<windowWithoutTitleBar name="popup">
+				<Size>
+					<RelDimension x="1" y="1"/>
+				</Size>
+			</windowWithoutTitleBar>	
+	
+	
+<!-- 			<Label name="lbl_title">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="15" y="15" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="920" y="35"/>
+				</Size>
+				<css>[local.css]title.css</css>
+				<cssClass>center</cssClass>
+			</Label> -->
+	
+			<TextArea name="lbl_content">
+				<Anchors>
+					<Anchor point="TOP" relativePoint="TOP">
+						<AbsDimension x="0" y="70" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="900" y="620"/>
+				</Size>
+				<css>[local.css]normal.css</css>
+				<scrollCss>[local.css]scrollBar.css</scrollCss>
+				<hideScroll>true</hideScroll>
+			</TextArea>
+	
+	
+	
+			<Container name="ctr_buttons">
+				<Size>
+					<AbsDimension y="27"/>
+				</Size>
+				<Anchors>
+					<Anchor point="BOTTOM" relativePoint="BOTTOM">
+						<AbsDimension x="0" y="-20" />
+					</Anchor>
+				</Anchors>
+			</Container>
+		</Container>
+	</Container>
+</Definition>

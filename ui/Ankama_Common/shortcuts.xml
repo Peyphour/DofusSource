@@ -1,0 +1,149 @@
+<Shortcuts>
+	
+	<!--
+	* @params
+	*   textfieldEnabled : si on peut utiliser le raccourcis dans un champs texte (je crois)
+	*   permanent : si on veut ne pas pouvoir l'editer (default false)
+	*   visible : visible dans les raccourcis (default true)
+	*   required : une touche doit obligatoirement etre assignee pour ce raccourci (default false)
+	 -->
+
+    <category name="general" description="[ui.common.general]">
+        <shortcut name="closeUi" textfieldEnabled="true">[ui.shortcuts.closeUi]</shortcut>
+        <shortcut name="validUi" textfieldEnabled="true" required="true">[ui.shortcuts.validUi]</shortcut>
+        <shortcut name="toggleFullscreen" textfieldEnabled="false">[ui.shortcuts.toggleFullscreen]</shortcut>
+        <shortcut name="muteSound" textfieldEnabled="true">[ui.shortcuts.muteSound]</shortcut>
+        <shortcut name="upArrow" textfieldEnabled="true" tooltipContent="[ui.shortcuts.upArrow.tooltip]">[ui.shortcuts.upArrow]</shortcut>
+        <shortcut name="downArrow" textfieldEnabled="true" tooltipContent="[ui.shortcuts.downArrow.tooltip]">[ui.shortcuts.downArrow]</shortcut>
+        <shortcut name="rightArrow" textfieldEnabled="true" tooltipContent="[ui.shortcuts.rightArrow.tooltip]">[ui.shortcuts.rightArrow]</shortcut>
+        <shortcut name="leftArrow" textfieldEnabled="true" tooltipContent="[ui.shortcuts.leftArrow.tooltip]">[ui.shortcuts.leftArrow]</shortcut>
+		<shortcut name="captureScreen" textfieldEnabled="false">[ui.gameuicore.screenshot.captureScreen]</shortcut>
+		<shortcut name="captureScreenWithoutUI" textfieldEnabled="false">[ui.gameuicore.screenshot.captureScreenWithoutUI]</shortcut>
+    </category>
+
+    <category name="menu" description="[ui.shortcuts.menus]">
+        <shortcut name="openCharacterSheet" textfieldEnabled="false">[ui.shortcuts.openCharacterSheet]</shortcut>
+        <shortcut name="openBookSpell" textfieldEnabled="false">[ui.shortcuts.openBookSpell]</shortcut>
+        <shortcut name="openInventory" textfieldEnabled="false">[ui.shortcuts.openInventory]</shortcut>
+        <shortcut name="openBookQuest" textfieldEnabled="false">[ui.shortcuts.openBookQuest]</shortcut>
+        <shortcut name="openWorldMap" textfieldEnabled="false">[ui.shortcuts.openWorldMap]</shortcut>
+        <shortcut name="openSocialFriends" textfieldEnabled="false">[ui.shortcuts.openSocialFriends]</shortcut>
+        <shortcut name="openSocialGuild" textfieldEnabled="false">[ui.shortcuts.openSocialGuild]</shortcut>
+        <shortcut name="openSocialAlliance" textfieldEnabled="false">[ui.shortcuts.openSocialAlliance]</shortcut>
+        <shortcut name="openSocialSpouse" textfieldEnabled="false">[ui.shortcuts.openSocialSpouse]</shortcut>
+        <shortcut name="openTeamSearch" textfieldEnabled="false">[ui.shortcuts.openTeamSearch]</shortcut>
+        <shortcut name="openPvpArena" textfieldEnabled="false">[ui.shortcut.openPvpArena]</shortcut>
+        <shortcut name="openWebBrowser" textfieldEnabled="false">[ui.shortcuts.openWebBrowser]</shortcut>
+        <shortcut name="openBookJob" textfieldEnabled="false">[ui.shortcuts.openBookJob]</shortcut>
+        <shortcut name="openMount" textfieldEnabled="false">[ui.shortcuts.openMount]</shortcut>
+        <shortcut name="openMountStorage" textfieldEnabled="false">[ui.shortcuts.openMountStorage]</shortcut>
+        <shortcut name="toggleRide" textfieldEnabled="false">[ui.shortcuts.toggleRide]</shortcut>
+        <shortcut name="openSell" textfieldEnabled="false">[ui.shortcut.openSell]</shortcut>
+        <shortcut name="openAlmanax" textfieldEnabled="false">[ui.shortcuts.openAlmanax]</shortcut>
+        <shortcut name="openAchievement" textfieldEnabled="false">[ui.shortcuts.openAchievement]</shortcut>
+        <shortcut name="openTitle" textfieldEnabled="false">[ui.shortcuts.openTitle]</shortcut>
+        <shortcut name="openBestiary" textfieldEnabled="false">[ui.shortcuts.openBestiary]</shortcut>
+		<shortcut name="openIdols" textfieldEnabled="false">[ui.shortcuts.openIdols]</shortcut>
+        <shortcut name="openBookAlignment" textfieldEnabled="false">[ui.shortcuts.openBookAlignment]</shortcut>
+        <shortcut name="openHavenbag" textfieldEnabled="false">[ui.shortcuts.openHavenbag]</shortcut>
+        <shortcut name="openDare" textfieldEnabled="false">[ui.shortcuts.openDare]</shortcut>
+    </category>
+    
+	<category name="tooltip" description="[ui.common.tooltip]">
+		<shortcut name="shiftCloseUi" textfieldEnabled="false">[ui.shortcuts.shiftCloseUi]</shortcut>
+        <shortcut name="compareItems" textfieldEnabled="false" holdKeys="true" permanent="true" visible="false">[ui.shortcuts.compareItems]</shortcut>
+        <shortcut name="showTheoreticalEffects" textfieldEnabled="false" holdKeys="true" permanent="true" visible="true">[ui.shortcuts.showTheoreticalEffects]</shortcut>
+	</category>
+
+    <category name="chat" description="[ui.shortcuts.chat]">
+        <shortcut name="focusChat" textfieldEnabled="false" required="true">[ui.shortcuts.focusChat]</shortcut>
+        <shortcut name="extendChat" textfieldEnabled="true">[ui.shortcuts.extendChat]</shortcut>
+        <shortcut name="extendChat2" textfieldEnabled="true">[ui.shortcuts.extendChat2]</shortcut>
+        <shortcut name="shrinkChat" textfieldEnabled="true">[ui.shortcuts.shrinkChat]</shortcut>
+        <shortcut name="shiftUp" textfieldEnabled="true">[ui.shortcuts.shiftUp]</shortcut>
+        <shortcut name="shiftDown" textfieldEnabled="true">[ui.shortcuts.shiftDown]</shortcut>
+        <shortcut name="altValid" textfieldEnabled="true">[ui.shortcuts.altValid]</shortcut>
+        <shortcut name="shiftValid" textfieldEnabled="true">[ui.shortcuts.shiftValid]</shortcut>
+        <shortcut name="ctrlValid" textfieldEnabled="true" permanent="true">[ui.shortcuts.ctrlValid]</shortcut>
+        <!-- (ctrlValid) Empecher le saut de ligne dans le chat => on laisse en permanent ??-->
+        <shortcut name="autoComplete" textfieldEnabled="true">[ui.shortcuts.autoComplete]</shortcut>
+        <shortcut name="switchTextSize" textfieldEnabled="false">[ui.shortcuts.switchTextSize]</shortcut>
+        <shortcut name="toggleEmotes" textfieldEnabled="false">[ui.shortcuts.toggleEmotes]</shortcut>
+        <shortcut name="toggleAttitudes" textfieldEnabled="false">[ui.shortcuts.toggleAttitudes]</shortcut>
+        <shortcut name="nextChatTab" textfieldEnabled="false">[ui.shortcuts.nextChatTab]</shortcut>
+        <shortcut name="previousChatTab" textfieldEnabled="false">[ui.shortcuts.previousChatTab]</shortcut>
+        <shortcut name="chatTab0" textfieldEnabled="false">[ui.shortcuts.chatTab0]</shortcut>
+        <shortcut name="chatTab1" textfieldEnabled="false">[ui.shortcuts.chatTab1]</shortcut>
+        <shortcut name="chatTab2" textfieldEnabled="false">[ui.shortcuts.chatTab2]</shortcut>
+        <shortcut name="chatTab3" textfieldEnabled="false">[ui.shortcuts.chatTab3]</shortcut>
+        <shortcut name="toggleChannelGlobal" textfieldEnabled="false">[ui.shortcuts.toggleChannelGlobal]</shortcut>
+        <shortcut name="toggleChannelParty" textfieldEnabled="false">[ui.shortcuts.toggleChannelParty]</shortcut>
+        <shortcut name="toggleChannelArena" textfieldEnabled="false">[ui.shortcuts.toggleChannelArena]</shortcut>
+        <shortcut name="toggleChannelTeam" textfieldEnabled="false">[ui.shortcuts.toggleChannelTeam]</shortcut>
+        <shortcut name="toggleChannelFight" textfieldEnabled="false">[ui.shortcuts.toggleChannelFight]</shortcut>
+        <shortcut name="toggleChannelGuild" textfieldEnabled="false">[ui.shortcuts.toggleChannelGuild]</shortcut>
+        <shortcut name="toggleChannelAlliance" textfieldEnabled="false">[ui.shortcuts.toggleChannelAlliance]</shortcut>
+        <shortcut name="toggleChannelSales" textfieldEnabled="false">[ui.shortcuts.toggleChannelSales]</shortcut>
+        <shortcut name="toggleChannelSeek" textfieldEnabled="false">[ui.shortcuts.toggleChannelSeek]</shortcut>
+    </category>
+
+    <category name="option" description="[ui.common.options]">
+        <!-- Liste des menus d'option -->
+        <shortcut name="optionMenu1" textfieldEnabled="false">[ui.shortcuts.optionMenu1]</shortcut>
+        <shortcut name="showGrid" textfieldEnabled="false">[ui.shortcuts.showGrid]</shortcut>
+        <shortcut name="transparancyMode" textfieldEnabled="false" tooltipContent="[ui.shortcuts.transparancyMode.tooltip]">[ui.shortcuts.transparancyMode]</shortcut>
+        <shortcut name="foldAll" textfieldEnabled="false">[ui.shortcuts.foldAll]</shortcut>
+        <shortcut name="showCoord" textfieldEnabled="false">[ui.shortcuts.showCoord]</shortcut>
+        <shortcut name="toggleDematerialization" textfieldEnabled="false" tooltipContent="[ui.shortcuts.toggleDematerialization.tooltip]">[ui.shortcuts.toggleDematerialization]</shortcut>
+        <shortcut name="cellSelectionOnly" textfieldEnabled="false">[ui.shortcuts.cellSelectionOnly]</shortcut>
+        <shortcut name="showAllNames" textfieldEnabled="false">[ui.shortcuts.displayNames]</shortcut>
+        <shortcut name="showEntitiesTooltips" textfieldEnabled="false" holdKeys="true" tooltipContent="[ui.shortcuts.entitiesTooltips.tooltip]">[ui.option.entitiesTooltips]</shortcut>
+		<shortcut name="highlightInteractiveElements" textfieldEnabled="false" holdKeys="true">[ui.option.highlightInteractiveElements]</shortcut>
+    </category>
+
+    <category name="fight" description="[ui.common.fight]">
+        <shortcut name="cac" textfieldEnabled="false">[ui.shortcuts.cac]</shortcut>
+        <shortcut name="skipTurn" textfieldEnabled="false">[ui.shortcuts.skipTurn]</shortcut>
+        <shortcut name="showCell" textfieldEnabled="false">[ui.shortcuts.showCell]</shortcut>
+		<shortcut name="showMountsInFight" textfieldEnabled="false">[ui.option.showMountsInFight]</shortcut>
+		<shortcut name="showTacticMode" textfieldEnabled="false">[ui.shortcuts.showTacticMode]</shortcut>
+    </category>
+
+    <category name="quickSlot" description="[ui.shortcuts.bannerGrid]">
+        <shortcut name="s1" textfieldEnabled="false">[ui.shortcuts.s1]</shortcut>
+        <shortcut name="s2" textfieldEnabled="false">[ui.shortcuts.s2]</shortcut>
+        <shortcut name="s3" textfieldEnabled="false">[ui.shortcuts.s3]</shortcut>
+        <shortcut name="s4" textfieldEnabled="false">[ui.shortcuts.s4]</shortcut>
+        <shortcut name="s5" textfieldEnabled="false">[ui.shortcuts.s5]</shortcut>
+        <shortcut name="s6" textfieldEnabled="false">[ui.shortcuts.s6]</shortcut>
+        <shortcut name="s7" textfieldEnabled="false">[ui.shortcuts.s7]</shortcut>
+        <shortcut name="s8" textfieldEnabled="false">[ui.shortcuts.s8]</shortcut>
+        <shortcut name="s9" textfieldEnabled="false">[ui.shortcuts.s9]</shortcut>
+        <shortcut name="s10" textfieldEnabled="false">[ui.shortcuts.s10]</shortcut>
+        <shortcut name="s11" ctrl="true" textfieldEnabled="false">[ui.shortcuts.s11]</shortcut>
+        <shortcut name="s12" ctrl="true" textfieldEnabled="false">[ui.shortcuts.s12]</shortcut>
+        <shortcut name="s13" ctrl="true" textfieldEnabled="false">[ui.shortcuts.s13]</shortcut>
+        <shortcut name="s14" ctrl="true" textfieldEnabled="false">[ui.shortcuts.s14]</shortcut>
+        <shortcut name="s15" ctrl="true" textfieldEnabled="false">[ui.shortcuts.s15]</shortcut>
+        <shortcut name="s16" ctrl="true" textfieldEnabled="false">[ui.shortcuts.s16]</shortcut>
+        <shortcut name="s17" ctrl="true" textfieldEnabled="false">[ui.shortcuts.s17]</shortcut>
+        <shortcut name="s18" ctrl="true" textfieldEnabled="false">[ui.shortcuts.s18]</shortcut>
+        <shortcut name="s19" ctrl="true" textfieldEnabled="false">[ui.shortcuts.s19]</shortcut>
+        <shortcut name="s20" ctrl="true" textfieldEnabled="false">[ui.shortcuts.s20]</shortcut>
+        <shortcut name="bannerSpellsTab" textfieldEnabled="false">[ui.shortcuts.bannerSpellsTab]</shortcut>
+        <shortcut name="bannerItemsTab" textfieldEnabled="false">[ui.shortcuts.bannerItemsTab]</shortcut>
+        <shortcut name="bannerNextTab" textfieldEnabled="false">[ui.shortcuts.bannerNextTab]</shortcut>
+        <shortcut name="bannerPreviousTab" textfieldEnabled="false">[ui.shortcuts.bannerPreviousTab]</shortcut>
+        <shortcut name="pageItemDown" textfieldEnabled="false">[ui.shortcuts.pageItemDown]</shortcut>
+        <shortcut name="pageItemUp" textfieldEnabled="false">[ui.shortcuts.pageItemUp]</shortcut>
+        <shortcut name="pageItem1" textfieldEnabled="false">[ui.shortcuts.pageItem1]</shortcut>
+        <shortcut name="pageItem2" textfieldEnabled="false">[ui.shortcuts.pageItem2]</shortcut>
+        <shortcut name="pageItem3" textfieldEnabled="false">[ui.shortcuts.pageItem3]</shortcut>
+        <shortcut name="pageItem4" textfieldEnabled="false">[ui.shortcuts.pageItem4]</shortcut>
+        <shortcut name="pageItem5" textfieldEnabled="false">[ui.shortcuts.pageItem5]</shortcut>
+    </category>
+    
+    <category name="misc" description="[ui.common.misc]">
+        <shortcut name="flagCurrentMap" ctrl="true" textfieldEnabled="false">[ui.shortcuts.flagCurrentMap]</shortcut>
+    </category>
+</Shortcuts>

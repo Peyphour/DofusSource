@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/themeIconButton.xml" />
+	<Import url="[config.mod.template]button/labelCheckBox.xml" />
+    <Import url="[config.mod.template]window.xml" />
+    <Import url="[config.mod.template]block.xml" />
+	
+   	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="bgLevel_uri" value="[local.texture]tx_lvl.png" />
+		<Constant name="bgPrestige_uri" value="[local.texture]tx_prestige.png" />
+   	</Constants>
+
+	<Container>	
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER" />
+		</Anchors>
+		<mouseEnabled>true</mouseEnabled>		
+		<shadowColor>[colors.ui.shadow]</shadowColor>
+
+		<window>
+			<Size>
+				<AbsDimension x="600" y="623" />
+			</Size>
+		</window>	
+
+		<block>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="20" y="46" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="560" y="552" />
+			</Size>
+		</block>	
+		
+		<Texture name="tx_emblemBack">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="40" y="65" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="118" y="118" />
+			</Size>
+		</Texture>
+		<Texture name="tx_emblemUp">
+			<Anchors>
+				<Anchor relativeTo="tx_emblemBack" relativePoint="CENTER">
+					<AbsDimension x="-35" y="-35" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="70" y="70" />
+			</Size>
+		</Texture>
+		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="180" y="75" />
+				</Anchor>
+			</Anchors>
+
+			<Label>
+				<Size>
+					<AbsDimension x="220" y="16" />
+				</Size>
+				<css>[local.css]normal2.css</css>
+				<text>[ui.common.level][ui.common.colon]</text>
+			</Label>
+	
+			<Label name="lbl_level">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="220" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="160" y="16" />
+				</Size>
+				<cssClass>right</cssClass>
+				<css>[local.css]normal2.css</css>
+			</Label>
+	
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="25" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="220" y="16" />
+				</Size>
+				<css>[local.css]normal2.css</css>
+				<text>[ui.guild.right.leader][ui.common.colon]</text>
+			</Label>
+	
+			<Label name="lbl_leader">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="220" y="25" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="160" y="16" />
+				</Size>
+				<hyperlinkEnabled>true</hyperlinkEnabled>
+				<useStyleSheet>true</useStyleSheet>
+				<cssClass>right</cssClass>
+				<css>[local.css]normal2.css</css>
+			</Label>
+	
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="50" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="220" y="16" />
+				</Size>
+				<css>[local.css]normal2.css</css>
+				<text>[ui.social.guildMembers][ui.common.colon]</text>
+			</Label>
+	
+			<Label name="lbl_members">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="220" y="50" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="160" y="16" />
+				</Size>
+				<cssClass>right</cssClass>
+				<css>[local.css]normal2.css</css>
+			</Label>
+	
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="75" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="220" y="16" />
+				</Size>
+				<css>[local.css]normal2.css</css>
+				<text>[ui.common.creationDate][ui.common.colon]</text>
+			</Label>
+	
+			<Label name="lbl_creationDate">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="200" y="75" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="180" y="16" />
+				</Size>
+				<cssClass>right</cssClass>
+				<css>[local.css]normal2.css</css>
+			</Label>
+		</Container>
+
+		<Label name="lbl_taxcollectors">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="40" y="198" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="520" y="16" />
+			</Size>
+			<css>[local.css]small2.css</css>
+		</Label>
+		
+		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="25" y="230" />
+				</Anchor>
+			</Anchors>
+			
+			<Texture>
+				<Size>
+					<AbsDimension x="550" y="36" />
+				</Size>
+				<uri>[local.common]bg_dark.png</uri>
+			</Texture>
+			
+			<Container>	
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="30" y="5" />
+					</Anchor>
+				</Anchors>
+				<Label>
+					<Size>
+						<AbsDimension x="200" y="16" />
+					</Size>
+					<text>[ui.common.name]</text>
+					<css>[local.css]small2.css</css>
+				</Label>	
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="320" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="100" y="16" />
+					</Size>
+					<text>[ui.common.level]</text>
+					<cssClass>right</cssClass>
+					<css>[local.css]small2.css</css>
+				</Label>
+			</Container>
+				
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="36" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="550" y="280" />
+				</Size>
+				<uri>[local.common]bg_light.png</uri>
+			</Texture>
+			
+			<Grid name="gd_members">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="36" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="550" y="280" />
+				</Size>
+				<rendererName>InlineXmlGridRenderer</rendererName>
+				<rendererArgs>updateMemberLine,[colors.grid.line]</rendererArgs>
+				<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+				<slotWidth>540</slotWidth>
+				<slotHeight>40</slotHeight>
+				
+				<Container>
+					<Size>
+						<AbsDimension x="540" y="40" />
+					</Size>
+					
+					<Label name="lbl_memberName">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="30" y="8" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="300" y="16" />
+						</Size>
+						<hyperlinkEnabled>true</hyperlinkEnabled>
+						<useStyleSheet>true</useStyleSheet>
+						<css>[local.css]small2.css</css>
+					</Label>
+			
+	  				<Texture name="tx_memberLvl">
+	  					<Anchors>
+	  						<Anchor>
+	  							<AbsDimension x="395" y="6" />
+	  						</Anchor>
+	  					</Anchors>
+	  					<Size>
+	  						<AbsDimension x="62" y="27" />
+	  					</Size>
+	  				</Texture>		
+					<Label name="lbl_memberLvl">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="400" y="8" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="50" y="16" />
+						</Size>
+  						<cssClass>boldcenter</cssClass>
+						<css>[local.css]small2.css</css>
+					</Label>					
+				</Container>
+			</Grid>
+		</Container>
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="25" y="590" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="550" y="44" />
+			</Size>
+			<scaleY>-1</scaleY>
+			<uri>[local.common]bg_dark.png</uri>
+		</Texture>
+		
+		<Label name="lbl_alliance">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="40" y="560" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="490" y="16" />
+			</Size>
+			<hyperlinkEnabled>true</hyperlinkEnabled>
+			<useStyleSheet>true</useStyleSheet>
+            <css>[local.css]normal2.css</css>
+		</Label>
+		
+		<!--simpleButton label="[ui.common.buy]" name="btn_inviteInAlliance">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="448" y="554" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="120" y="32" />
+			</Size>
+			<visible>false</visible>
+		</simpleButton-->
+		
+		<themeIconButton name="btn_inviteInAlliance">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="510" y="554" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="58" y="32" />
+			</Size>
+			<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_invite_alliance.png</iconUri>
+		</themeIconButton>
+		
+	</Container>
+</Definition>
+

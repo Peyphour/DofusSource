@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		
+		<Constant name="height_tx_generalBg" value="610" type="int" />
+		<Constant name="height_tx_gridBg" value="456" type="int" />
+		<Constant name="height_grid" value="400" type="int" />
+		
+		<Constant name="height_line" value="100" type="int" />
+	</Constants>
+
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor relativePoint="BOTTOM" point="BOTTOM" >
+				<AbsDimension x="0" y="-240" />
+			</Anchor>
+		</Anchors>
+
+		<Texture name="tx_generalBg">
+			<Size>
+				<AbsDimension x="664" y="[local.height_tx_generalBg]" />
+			</Size>
+			<uri>[local.assets]tx_generalBackgroundWithTitle</uri>
+			<autoGrid>true</autoGrid>
+			<mouseEnabled>true</mouseEnabled>
+		</Texture>
+
+		<!-- iconButton btn_close-->
+
+		<iconButton name="btn_close">
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" />
+			</Anchors>
+			<Size>
+				<AbsDimension x="57" y="36" />
+			</Size>
+			<uri>[local.assets]btn_cornerCross</uri>
+        </iconButton>
+        
+
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="22" y="15" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="425" y="35" />
+			</Size>
+			<text>[ui.achievement.rewardsWaiting]</text>
+			<css>[local.css]title.css</css>
+		</Label>
+
+		<Container name="ctr_grid">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="25" y="60" />
+				</Anchor>
+			</Anchors>
+			
+			<Texture name="tx_gridBg">
+				<Size>
+					<AbsDimension x="614" y="[local.height_tx_gridBg]" />
+				</Size>
+				<uri>[local.assets]tx_blockBackground</uri>
+				<autoGrid>true</autoGrid>
+			</Texture>
+			
+					
+			<!-- Grid grid_bonus-->
+			
+			<Grid name="gd_achievements">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="2" y="28" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="600" y="[local.height_grid]" />
+				</Size>
+				<slotWidth>575</slotWidth>
+				<slotHeight>[local.height_line]</slotHeight>
+				<rendererName>InlineXmlGridRenderer</rendererName>
+				<rendererArgs>updateAchievementLine,[colors.grid.line]</rendererArgs>
+				<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+	
+				<Container name="ctr_achievement">
+					<Size>
+						<AbsDimension x="575" y="[local.height_line]" />
+					</Size>
+					
+					<Label name="lbl_title">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="10" y="8" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="390" y="20" />
+						</Size>
+						<css>[local.css]normal.css</css>
+					</Label>
+					
+					<Label name="lbl_category">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="400" y="8" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="165" y="20" />
+						</Size>
+						<cssClass>right</cssClass>
+						<css>[local.css]normal.css</css>
+					</Label>
+	
+					<!-- Label gains-->
+					<Label name="lbl_rewardsXp">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="330" y="41" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="150" y="21" />
+						</Size>
+						<css>[local.css]normal.css</css>
+						<cssClass>right</cssClass>
+					</Label>
+					
+					<Texture name="tx_rewardsXp">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="490" y="43" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="25" y="23" />
+						</Size>
+						<uri>[local.assets]tx_XP</uri>
+					</Texture>
+					
+					<Label name="lbl_rewardsKama">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="330" y="64" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="150" y="21" />
+						</Size>
+						<css>[local.css]normal.css</css>
+						<cssClass>right</cssClass>
+					</Label>
+					
+					<Texture name="tx_rewardsKama">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="490" y="66" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="25" y="25" />
+						</Size>
+						<uri>[local.assets]tx_kama</uri>
+					</Texture>
+					
+					<Grid name="gd_rewards">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="25" y="43" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="300" y="46" />
+						</Size>
+						<rendererName>SlotGridRenderer</rendererName>
+						<rendererArgs>[local.bitmap]emptySlot.png,[local.bitmap]over.png,,,,,[local.css]normal.css, false</rendererArgs>
+						<slotWidth>44</slotWidth>
+						<slotHeight>44</slotHeight>
+						<scrollDisplay>none</scrollDisplay>
+						<autoSelectMode>0</autoSelectMode>
+						<Hooks>
+							<onItemRollOver />
+							<onItemRollOut />
+							<onItemRightClick />
+						</Hooks>
+					</Grid>
+					
+					<iconButton name="btn_acceptOne">
+			        	<Anchors> 
+			                <Anchor>
+			                    <AbsDimension x="525" y="45" />
+			                </Anchor>
+			            </Anchors>
+			            <Size>
+			            	<AbsDimension x="44" y="44" />
+			            </Size>
+			        	<uri>[local.assets]btn_acceptReward</uri>
+			        </iconButton>
+				</Container>
+			</Grid>
+	
+			<Texture name="tx_gridFg">
+				<Size>
+					<AbsDimension x="614" y="[local.height_tx_gridBg]" />
+				</Size>
+				<uri>[local.assets]tx_commonGridScrollbar</uri>
+			</Texture>
+		</Container>
+					
+		<Label name="lbl_remains">
+			<Anchors>
+				<Anchor relativeTo="ctr_grid" relativePoint="BOTTOMLEFT" >
+					<AbsDimension x="0" y="5" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="490" y="21" />
+			</Size>
+			<css>[local.css]normal.css</css>
+		</Label>
+		
+		<simpleButton label="[ui.common.acceptAll]" name="btn_acceptAll"   >
+			<Anchors>
+				<Anchor point="BOTTOM" relativePoint="BOTTOM" >
+					<AbsDimension x="0" y="-20" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="300" y="35" />
+			</Size>
+		</simpleButton>
+
+		
+	</Container>
+</Definition>

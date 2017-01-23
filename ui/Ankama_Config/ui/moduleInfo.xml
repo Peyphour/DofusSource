@@ -1,0 +1,159 @@
+<Definition modal="true">
+	<Import url="[config.mod.template]button/labelCheckBox.xml" />
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER" />
+		</Anchors>
+		<Texture name="tx_bg">
+			<autoGrid>true</autoGrid>
+			<uri>[local.assets]tx_darkBg</uri>
+			<Anchors><Anchor><AbsDimension x="0" y="0"/></Anchor></Anchors>
+			<Size>
+				<AbsDimension x="900" y="640" />
+			</Size>
+		</Texture>
+		<iconButton name="btn_close">
+			<uri>[local.assets]tips_close</uri>
+			<Anchors>
+				<Anchor relativeTo="tx_bg" relativePoint="TOPRIGHT" point="TOPRIGHT">
+					<AbsDimension x="0" y="24" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="25" y="25" />
+			</Size>
+		</iconButton>
+		<Container name="moduleInfoCtr">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="16" y="80" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="317" y="381" />
+			</Size>
+			<Label name="lbl_moduleName">
+				<css>[local.css]normal2.css</css>
+				<cssClass>bold</cssClass>
+				<Size>
+					<AbsDimension x="310" y="21" />
+				</Size>
+			</Label>
+			<Label name="lbl_moduleAuthor">
+				<css>[local.css]normal2.css</css>
+				<cssClass>p4</cssClass>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="30" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="310" y="20" />
+				</Size>
+			</Label>
+			<Label name="lbl_moduleVersion">
+				<css>[local.css]normal2.css</css>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="60" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="310" y="20" />
+				</Size>
+			</Label>
+			<Label name="lbl_moduleDofusVersion">
+				<css>[local.css]normal2.css</css>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="90" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="310" y="20" />
+				</Size>
+			</Label>
+			<Label name="lbl_moduleDescription">
+				<css>[local.css]normal2.css</css>
+				<multiline>true</multiline>
+				<wordWrap>true</wordWrap>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="120" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="310" y="20" />
+				</Size>
+			</Label>
+		</Container>
+		<simpleButton name="btn_accept">
+			<Anchors>
+				<Anchor relativeTo="tx_bg" relativePoint="BOTTOMLEFT" point="BOTTOMLEFT">
+					<AbsDimension x="200" y="-18" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="154" y="30" />
+			</Size>
+			<label>[ui.common.accept]</label>
+		</simpleButton>
+		<simpleButton name="btn_refuse">
+			<Anchors>
+				<Anchor relativeTo="tx_bg" relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+					<AbsDimension x="-200" y="-18" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="154" y="30" />
+			</Size>
+			<label>[ui.common.refuse]</label>
+		</simpleButton>
+		<labelCheckBox name="btn_activateModule">
+			<labelWidth>800</labelWidth>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="31" y="558" />
+				</Anchor>
+			</Anchors>
+			<text>[ui.module.marketplace.activateafterinstall]</text>
+			<Size>
+				<AbsDimension x="15" y="15" />
+			</Size>
+			<labelHeight>20</labelHeight>
+		</labelCheckBox>
+		<Label name="lbl_title">
+			<css>[local.css]title.css</css>
+			<cssClass>darkcenterbig</cssClass>
+			<text>[ui.module.marketplace.confirmation]</text>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="94" y="25" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="700" y="26" />
+			</Size>
+		</Label>
+		<TextArea name="ta_details">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="346" y="78" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="540" y="468" />
+			</Size>
+			<scrollCss>[local.css]scrollBar.css</scrollCss>
+			<css>[local.css]normal2.css</css>
+			<html>true</html>
+		</TextArea>
+	</Container>
+</Definition>

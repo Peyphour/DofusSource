@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition usePropertiesCache="false" labelDebug="false">
+
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	
+   	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />	
+       	<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+   	</Constants>
+
+
+	<Container name="ctr_main">
+		
+		<Size>
+            <AbsDimension x="920" y="874" />
+        </Size>
+		<Anchors>
+			<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT">
+				<AbsDimension x="0" y="0" />
+			</Anchor>
+		</Anchors>
+		<mouseEnabled>true</mouseEnabled>
+		
+		
+		<window name="ctr_window">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="920" y="450" />
+			</Size>
+	        <title>[ui.common.exchangeTitle]</title>
+            <forceIconBackground>false</forceIconBackground>
+		</window>
+		
+		<EntityDisplayer name="ed_leftPlayer">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="25" y="-15" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="80" y="160" />
+			</Size>
+			<direction>1</direction>    
+		</EntityDisplayer>
+		
+		<EntityDisplayer name="ed_rightPlayer">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="795" y="-15" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="80" y="160" />
+			</Size>
+			<direction>3</direction>
+		</EntityDisplayer>
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="20" y="50" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="880" y="40" />
+			</Size>
+			<uri>[local.common]tx_gradient_vertical_dark.png</uri>
+		</Texture> 
+
+		<Label name="lbl_leftPlayerName">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="100" y="50" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="340" y="20" />
+			</Size>
+			<css>[local.css]title.css</css>
+		</Label>
+
+		<Label name="lbl_rightPlayerName">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="460" y="50" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="340" y="20" />
+			</Size>
+			<cssClass>right</cssClass>
+			<css>[local.css]title.css</css>
+		</Label>
+		
+		<block>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="20" y="90" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="440" y="282" />
+			</Size>
+		</block>
+		<block>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="460" y="90" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="440" y="282" />
+			</Size>
+		</block>
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="20" y="90"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="440" y="3" />
+			</Size>
+			<uri>[local.common]window_separator_green_horizontal.png</uri>
+		</Texture>
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="460" y="90"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="440" y="3" />
+			</Size>
+			<uri>[local.common]window_separator_green_horizontal.png</uri>
+		</Texture>
+		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="28" y="100" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="880" y="285" />
+			</Size>
+			
+	
+			<!-- Bloc kamas de gauche -->	
+			
+			<Container>
+ 			
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="23" y="23" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="35" y="30" />
+					</Size>
+					<uri>[local.assets]kamastack</uri>
+				</Texture>
+					
+				<TextureBitmap>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="47" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="176" y="43" />
+					</Size>
+					<themeDataId>bg_small_border_dark</themeDataId>
+					<alpha>0.4</alpha>
+				</TextureBitmap>
+	
+				<Label name="lbl_kamaLeft">
+					<Anchors> 
+						<Anchor>
+							<AbsDimension x="57" y="10" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="130" y="16" />
+					</Size>
+					<cssClass>whiteboldright</cssClass>
+					<css>[local.css]normal2.css</css>
+					<text>0</text>
+				</Label>
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="192" y="14" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="18" y="16" />
+					</Size>
+					<uri>[local.texture]icon_kama.png</uri>
+				</Texture>
+			</Container>
+			
+			
+			<!-- Bloc kamas de droite -->
+			
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="442" y="0" />
+					</Anchor>
+				</Anchors>
+ 			
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="23" y="23" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="35" y="30" />
+					</Size>
+					<uri>[local.assets]kamastack</uri>
+				</Texture>
+					
+				<TextureBitmap>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="47" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="176" y="43" />
+					</Size>
+					<themeDataId>bg_small_border_dark</themeDataId>
+				</TextureBitmap>
+		
+				<Input name="input_kamaRight">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="57" y="10" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="130" y="16" />
+					</Size>
+					<cssClass>whiteboldright</cssClass>
+					<css>[local.css]normal2.css</css>
+					<text>0</text>
+				</Input>				
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="192" y="14" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="18" y="16" />
+					</Size>
+					<uri>[local.texture]icon_kama.png</uri>
+				</Texture>
+			</Container>
+			
+			<!-- La barre de poids (gauche) -->
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="232" y="14" />
+					</Anchor>
+				</Anchors>
+	
+				<Texture>
+					<Size>
+						<AbsDimension x="15" y="15" />
+					</Size>
+					<uri>[local.texture]icon_weight.png</uri>
+				</Texture>   
+	 			
+				 <Texture name="tx_podsBar_left">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="25" y="6" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="142" y="6" />
+					</Size>
+					<uri>[local.assets]tx_progressBarWeight</uri>
+				</Texture>
+			</Container>
+			
+			
+			<!-- La barre de poids (droite) -->
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="674" y="14" />
+					</Anchor>
+				</Anchors>
+	
+				<Texture>
+					<Size>
+						<AbsDimension x="15" y="15" />
+					</Size>
+					<uri>[local.texture]icon_weight.png</uri>
+				</Texture>   
+	 			
+				 <Texture name="tx_podsBar_right">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="25" y="6" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="120" y="6" />
+					</Size>
+					<uri>[local.assets]tx_progressBarWeight</uri>
+				</Texture>
+			</Container>
+	
+	
+	        <!-- Uniquement utilisé dans l'interface de bank -->
+			<themeIconButton name="btn_moveAll">
+	            <Anchors>
+	                <Anchor>
+	                    <AbsDimension x="834" y="12" />
+	                </Anchor>
+	            </Anchors>
+				<Size>
+					<AbsDimension x="22" y="21" />
+				</Size>
+				<iconUri>[local.texture]btnIcon/btnIcon_arrowClaim.png</iconUri>
+			</themeIconButton>
+			
+			
+			
+			<!-- La grille de gauche -->
+	
+			<Grid name="gd_left">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="7" y="50" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="408" y="168" />
+				</Size>
+				<autoSelectMode>0</autoSelectMode>
+				<slotWidth>56</slotWidth>
+				<slotHeight>56</slotHeight>
+				<scrollbarOffset>6</scrollbarOffset>
+				<scrollDisplay>always</scrollDisplay>
+				<rendererName>SlotGridRenderer</rendererName>
+				<rendererArgs>,[local.texture]slot/over.png,,[local.texture]slot/acceptDrop.png,[local.texture]slot/refuseDrop.png,,[local.css]normal2.css,,,,,[local.texture]slot/inventoryEmptySlot.png</rendererArgs>
+				<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+			</Grid>
+			<TextureBitmap>
+				<Anchors> 
+					<Anchor>
+						<AbsDimension x="5" y="48" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="396" y="172" />
+				</Size>
+				<themeDataId>grid_border_grey</themeDataId>
+			</TextureBitmap>
+			
+			<!-- La grille de droite -->
+				
+			<Grid name="gd_right">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="449" y="50" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="408" y="168" />
+				</Size>
+				<autoSelectMode>0</autoSelectMode>
+				<slotWidth>56</slotWidth>
+				<slotHeight>56</slotHeight>
+				<scrollbarOffset>6</scrollbarOffset>
+				<scrollDisplay>always</scrollDisplay>
+				<rendererName>SlotGridRenderer</rendererName>
+				<rendererArgs>,[local.texture]slot/over.png,,[local.texture]slot/acceptDrop.png,[local.texture]slot/refuseDrop.png,,[local.css]normal2.css,,,,,[local.texture]slot/inventoryEmptySlot.png</rendererArgs>
+				<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+			</Grid>
+			<TextureBitmap>
+				<Anchors> 
+					<Anchor>
+						<AbsDimension x="447" y="48" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="396" y="172" />
+				</Size>
+				<themeDataId>grid_border_grey</themeDataId>
+			</TextureBitmap>
+			
+			
+			
+			<Container>
+			    <Anchors>
+					<Anchor>
+						<AbsDimension x="7" y="232" />
+					</Anchor>
+				</Anchors>
+				
+				<Label name="lbl_estimated_left">
+					<Size>
+						<AbsDimension x="185" y="16" />
+					</Size>
+					<cssClass>left</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>			
+				<Label name="lbl_estimated_value_left">
+		            <Anchors>
+						<Anchor>
+							<AbsDimension x="222" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="172" y="16" />
+					</Size>
+					<cssClass>right</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+				
+				<!-- warning valeur estimee gauche -->
+				<Texture name="tx_estimated_value_warning_left">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="381" y="1" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="20" y="20" />
+					</Size>
+					<visible>false</visible>
+					<uri>[local.texture]attention_icon_normal.png</uri>
+				</Texture>
+			</Container>
+			
+			<Container>
+			    <Anchors>
+					<Anchor>
+						<AbsDimension x="449" y="232" />
+					</Anchor>
+				</Anchors>
+				
+				<Label name="lbl_estimated_right">
+				    <Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="185" y="20" />
+					</Size>
+					<cssClass>left</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+				<Label name="lbl_estimated_value_right">
+		            <Anchors>
+						<Anchor>
+							<AbsDimension x="222" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="172" y="20" />
+					</Size>
+					<cssClass>right</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+				
+				<!-- warning valeur estimee droite -->
+				<Texture name="tx_estimated_value_warning_right">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="381" y="1" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="20" y="20" />
+					</Size>
+					<visible>false</visible>
+					<uri>[local.texture]attention_icon_normal.png</uri>
+				</Texture>
+			</Container>
+							
+				
+			<TextureBitmap name="tx_validatedLeftTop">
+				<Size>
+					<AbsDimension x="226" y="45" />
+				</Size>
+				<themeDataId>block_border_validated</themeDataId>
+				<smooth>true</smooth>
+				<visible>false</visible>
+			</TextureBitmap>
+			<TextureBitmap name="tx_validatedLeftBottom">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="42" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="424" y="184" />
+				</Size>
+				<themeDataId>block_border_validated</themeDataId>
+				<smooth>true</smooth>
+				<visible>false</visible>
+			</TextureBitmap>
+			<TextureBitmap name="tx_validatedRightTop">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="442" y="0" />
+					</Anchor>
+				</Anchors>
+	        	<Size>
+					<AbsDimension x="226" y="45" />
+				</Size>
+				<themeDataId>block_border_validated</themeDataId>
+				<smooth>true</smooth>
+				<visible>false</visible>
+			</TextureBitmap>
+			<TextureBitmap name="tx_validatedRightBottom">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="442" y="42" />
+					</Anchor>
+				</Anchors>
+	        		<Size>
+					<AbsDimension x="424" y="184" />
+				</Size>
+				<themeDataId>block_border_validated</themeDataId>
+				<smooth>true</smooth>
+				<visible>false</visible>
+			</TextureBitmap>
+			
+			<TextureBitmap name="tx_warningLeftTop">
+				<Size>
+					<AbsDimension x="226" y="45" />
+				</Size>
+				<themeDataId>block_border_warning</themeDataId>
+				<smooth>true</smooth>
+				<visible>false</visible>
+			</TextureBitmap>
+			<TextureBitmap name="tx_warningLeftPods">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="224" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="200" y="45" />
+				</Size>
+				<themeDataId>block_border_warning</themeDataId>
+				<smooth>true</smooth>
+				<visible>false</visible>
+			</TextureBitmap>
+			<TextureBitmap name="tx_warningLeftBottom">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="42" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="424" y="184" />
+				</Size>
+				<themeDataId>block_border_warning</themeDataId>
+				<smooth>true</smooth>
+				<visible>false</visible>
+			</TextureBitmap>
+			
+			
+			
+		</Container>
+		
+		<Container name="ctr_itemBlock">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="395" y="510" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="510" y="358" />
+			</Size>
+		
+			<Texture>
+				<Size>
+					<AbsDimension x="510" y="358" />
+				</Size>
+				<uri>[local.assets]tx_generalBackgroundWithTitle</uri>
+				<autoGrid>true</autoGrid>
+			</Texture>
+		
+		
+			<Container name="ctr_item">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="23" y="22" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="462" y="315" />
+				</Size>
+			</Container>
+
+		</Container>
+		
+        <Texture>
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="22" y="367" />
+                </Anchor>
+            </Anchors>
+			<Size>
+				<AbsDimension x="87" y="55" />
+			</Size>
+            <uri>[local.common]corner_decoration.png</uri>
+        </Texture>
+        <Texture>
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="896" y="367" />
+                </Anchor>
+            </Anchors>
+			<Size>
+				<AbsDimension x="87" y="55" />
+			</Size>
+            <uri>[local.common]corner_decoration.png</uri>
+            <scaleX>-1</scaleX>
+        </Texture>
+		
+        <Container>
+			<Anchors>
+				<Anchor point="BOTTOM" relativePoint="BOTTOM" relativeTo="ctr_window">
+					<AbsDimension x="0" y="-36" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="450" y="32" />
+			</Size>
+	
+			<simpleButton label="[ui.common.validation]" name="btn_validate"   >
+				<Size>
+					<AbsDimension x="220" y="32" />
+				</Size>
+			</simpleButton>
+	
+			<simpleButton label="[ui.common.cancel]" name="btn_cancel"   >
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="230" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="220" y="32" />
+				</Size>
+			</simpleButton>
+		</Container>	
+		
+	</Container>
+</Definition>

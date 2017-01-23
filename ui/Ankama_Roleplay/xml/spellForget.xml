@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+	
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+    <Import url="[config.mod.template]button/iconButton.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+	
+	<Container name="mainCtr">	
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER" />
+		</Anchors>
+
+		<!-- Texture tx_background-->
+
+		<Texture name="tx_background">
+			<Size>
+				<AbsDimension x="566" y="500" />
+			</Size>
+			<autoGrid>true</autoGrid>
+			<uri>[local.assets]tx_generalBackgroundWithTitle</uri>
+			<mouseEnabled>true</mouseEnabled>
+		</Texture>
+
+		<!-- Label lbl_title-->
+
+		<Label name="lbl_title">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="29" y="15" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="492" y="35" />
+			</Size>
+			<text>[ui.spellForget.title]</text>
+			<css>[local.css]title.css</css>
+		</Label>
+		
+
+		<!-- Button btn_close-->
+
+		
+		<iconButton name="btn_close">
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" />
+			</Anchors>
+			<Size>
+				<AbsDimension x="57" y="36" />
+			</Size>
+			<uri>[local.assets]btn_cornerCross</uri>
+        </iconButton>
+
+		<!-- Texture tx_bg-->
+
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="34" y="80" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="503" y="389" />
+			</Size>
+			<uri>[local.assets]tx_blockBackground</uri>
+			<autoGrid>true</autoGrid>
+		</Texture>
+		
+		
+		<Label name="lbl_tabName">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="94" y="81" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="286" y="20" />
+			</Size>
+			<text>[ui.common.name]</text>
+			<css>[local.css]normal.css</css>
+		</Label>
+		
+		
+		<Label name="lbl_tabLevel">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="395" y="81" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="109" y="20" />
+			</Size>
+			<text>[ui.common.level]</text>
+			<css>[local.css]normal.css</css>
+			<cssClass>center</cssClass>
+		</Label>
+
+
+		<!-- Grid gd_spellToForget-->
+
+		<Grid name="gd_spellToForget">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="34" y="109" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="496" y="336" />
+			</Size>
+			<rendererName>InlineXmlGridRenderer</rendererName>
+			<rendererArgs>updateSpellLine,[colors.grid.line]</rendererArgs>
+			<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+			<slotWidth>470</slotWidth>
+			<slotHeight>42</slotHeight>
+			<Hooks>
+				<onSelectItem />
+			</Hooks>
+			
+			<Container name="spellItemCtr">
+		
+				<Button name="btn_spell">
+					<Common>
+						<Size>
+							<AbsDimension x="470" y="42" />
+						</Size>
+						<radioMode>true</radioMode>
+		
+						<Label name="lbl_spellName">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="60" y="7" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="290" y="21" />
+							</Size>
+							<css>[local.css]normal.css</css>
+						</Label>
+		
+						<Label name="lbl_spellLvl">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="391" y="7" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="49" y="21" />
+							</Size>
+							<css>[local.css]normal.css</css>
+							<cssClass>center</cssClass>
+						</Label>
+					</Common>
+					<State type="OVER">
+						<SetProperties target="btn_spell">
+							<bgColor>[colors.grid.over]</bgColor>
+						</SetProperties>
+					</State>
+					<State type="DISABLED">
+					</State>
+					<State type="SELECTED">
+						<SetProperties target="btn_spell">
+							<bgColor>[colors.grid.selected]</bgColor>
+						</SetProperties>
+					</State>
+					<State type="SELECTED_OVER">
+						<SetProperties target="btn_spell">
+							<bgColor>[colors.grid.selected]</bgColor>
+						</SetProperties>
+					</State>
+				</Button>
+		
+				<Slot name="slot_icon">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="5" y="1" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+				</Slot>				
+			</Container>
+		</Grid>
+
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="31" y="78" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="510" y="395" />
+			</Size>
+			<uri>[local.assets]SpellForget_tx_TraitColone</uri>
+		</Texture>
+
+
+
+
+		        
+		<Texture>
+			<Anchors>
+				<Anchor relativeTo="tx_background" relativePoint="BOTTOM" point="BOTTOM">
+					<AbsDimension x="0" y="38" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="376" y="47" />
+			</Size>
+			<uri>[local.assets]tx_buttonBackground</uri>
+			<autoGrid>true</autoGrid>
+		</Texture>
+
+
+		<!-- Button btn_validate-->
+		
+		<simpleButton label="[ui.common.validation]" name="btn_validate"   >
+			<Size>
+				<AbsDimension x="236" y="35" />
+			</Size>
+			<Anchors>
+				<Anchor relativeTo="tx_background" relativePoint="BOTTOM" point="BOTTOM">
+					<AbsDimension x="0" y="30" />
+				</Anchor>
+			</Anchors>
+			<css>[local.css]button.css</css>
+			<Hooks>
+				<onRelease />
+			</Hooks>
+		</simpleButton>
+
+	</Container>
+</Definition>
+

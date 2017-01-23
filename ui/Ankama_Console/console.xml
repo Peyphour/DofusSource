@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition usePropertiesCache="false">
+	
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+	
+	<Container name="mainContainer">
+		
+		<Size>
+			<RelDimension x="0.8" y="0.2" />
+		</Size>
+		
+		<Anchors>
+			<Anchor relativePoint="TOP" point="TOP" />
+		</Anchors>
+		
+		<resizeController>true</resizeController>
+		<bgColor>[colors.grid.bg]</bgColor>
+		
+		<Container>
+			
+			<Anchors>
+				<Anchor relativePoint="TOPLEFT">
+					<AbsDimension x="5" y="5" />
+				</Anchor>
+				<Anchor relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="-5" y="-5" />
+				</Anchor>
+			</Anchors>
+			
+			<!-- Container récupérant le clic pour déplacer l'interface -->
+			<Container name="topBar">
+				<Size>
+					<RelDimension x="1" />
+					<AbsDimension y="25" />
+				</Size>
+				<bgColor>[colors.grid.title]</bgColor>
+				<dragController>true</dragController>
+				<dragTarget>mainContainer</dragTarget>
+			</Container>
+			
+			<!-- Groupe de boutton -->
+			
+			<iconButton name="btnClose">
+				<Anchors>
+					<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+						<AbsDimension x="-5" y="5"/>
+					</Anchor>
+				</Anchors>
+				<uri>mod://Ankama_Console/assets.swf|btn_close</uri>
+			</iconButton>
+			
+			<iconButton name="btnExtend">
+				<Anchors>
+					<Anchor relativePoint="TOPLEFT" point="TOPRIGHT" relativeTo="btnClose">
+						<AbsDimension x="-3" />
+					</Anchor>
+				</Anchors>
+				<uri>mod://Ankama_Console/assets.swf|btn_extend</uri>
+			</iconButton>
+			
+			<iconButton name="btnReduce">
+				<Anchors>
+					<Anchor relativePoint="TOPLEFT" point="TOPRIGHT" relativeTo="btnExtend">
+						<AbsDimension x="-3" />
+					</Anchor>
+				</Anchors>
+				<uri>mod://Ankama_Console/assets.swf|btn_reduce</uri>
+			</iconButton>
+			
+			<iconButton name="btnClear">
+				<Anchors>
+					<Anchor relativePoint="TOPLEFT" point="TOPRIGHT" relativeTo="btnReduce">
+						<AbsDimension x="-3" />
+					</Anchor>
+				</Anchors>
+				<uri>mod://Ankama_Console/assets.swf|btn_bean</uri>
+			</iconButton>
+			
+			<iconButton name="btnBlock">
+				<Anchors>
+					<Anchor relativePoint="TOPLEFT" point="TOPRIGHT" relativeTo="btnClear">
+						<AbsDimension x="-3" />
+					</Anchor>
+				</Anchors>
+				<uri>mod://Ankama_Console/assets.swf|btn_block</uri>
+			</iconButton>
+			
+			<iconButton name="btnMenu">
+				<Size>
+					<AbsDimension x="20" y="20" />
+				</Size>
+				<uri>mod://Ankama_Console/assets.swf|btn_menu</uri>
+			</iconButton>
+			
+			<Label name="lblInfo">
+				<Size>
+					<RelDimension x=".7"/>
+					<AbsDimension y="20"/>
+				</Size>
+				<Anchors>
+					<Anchor relativePoint="TOPRIGHT" relativeTo="btnMenu">
+					</Anchor>
+				</Anchors>
+				<text></text>
+				<css>[local.css]console.css</css>
+			</Label>
+			
+			<!-- Texte de la console elle meme -->
+			<TextArea name="taConsole">
+				<Anchors>
+					<Anchor relativePoint="BOTTOMLEFT" relativeTo="topBar" />
+					<Anchor relativePoint="BOTTOMRIGHT">
+						<AbsDimension y="-25" />
+					</Anchor>
+				</Anchors>
+				<scrollCss>[local.css]scrollBar.css</scrollCss>
+				<css>[local.css]console.css</css>
+				<selectable>true</selectable>
+				<html>true</html>
+			</TextArea>
+			
+			 <!-- Input pour les commandes -->
+			<Input name="tiCmd">
+				<Anchors>
+					<Anchor relativePoint="BOTTOMLEFT" relativeTo="taConsole">
+					</Anchor>
+					<Anchor relativePoint="BOTTOMRIGHT"/>
+				</Anchors>
+				<css>[local.css]consoleInput.css</css>
+				<bgCornerRadius>6</bgCornerRadius>
+				<bgColor>[colors.grid.over]</bgColor>
+				<focusEventHandlerPriority>false</focusEventHandlerPriority>
+				<useHandCursor>true</useHandCursor>
+			</Input>
+			
+			
+		</Container>
+	</Container>
+</Definition>

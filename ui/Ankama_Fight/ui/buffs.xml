@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition usePropertiesCache="false">
+
+	<Import url="[config.mod.template]button/iconButton.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="spells" value="[config.gfx.path]spells/" />
+        <Constant name="texture" value="[config.ui.skin]texture/" />
+        <Constant name="common" value="[config.ui.skin]common/" />
+		
+		<Constant name="spell_offset_horizontal" value="6" type="int" />
+		
+		<Constant name="spell_size" value="38" type="int" />
+		<Constant name="css_uri" value="[local.css]normal.css" />
+        <Constant name="backgroundWidthModifier" value="-35"/>
+        <Constant name="backgroundOffset" value="0"/>
+	</Constants>
+	
+	
+	<Container name="anchorCtr">
+	</Container>
+
+	<ScrollContainer name="expandedCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="0" y="0" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="0" y="0" />
+		</Size>
+		<scrollbarCss>[local.css]scrollBar.css</scrollbarCss>
+		<useHorizontalScroll>false</useHorizontalScroll>
+	</ScrollContainer>
+	
+	<Container name="buffsCtr">
+		<mouseEnabled>true</mouseEnabled>
+		<!-- Texture tx_background-->
+
+		<TextureBitmap name="tx_background">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="-9" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="17" y="60" />
+			</Size>
+            <themeDataId>bg_floating_window_horizontal</themeDataId>
+		</TextureBitmap>
+
+		<!-- Container buffListCtr -->
+		
+		<Container name="buffListCtr">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="15" y="1" />
+				</Anchor>
+			</Anchors>
+		</Container>
+		
+		<!-- iconButton btn_decoRight-->
+		<!--<iconButton name="btn_decoRight">-->
+			<!--<Anchors>-->
+				<!--<Anchor>-->
+					<!--<AbsDimension x="1" y="0" />-->
+				<!--</Anchor>-->
+			<!--</Anchors>-->
+			<!--<Size>-->
+				<!--<AbsDimension x="17" y="50" />-->
+			<!--</Size>-->
+			<!--<checkBox>true</checkBox>-->
+			<!--<uri>[local.assets]Effets_tx_PointExclamation</uri>-->
+			<!--&lt;!&ndash; <uri>[local.assets]Effets_btn_PlusMoins</uri> &ndash;&gt;-->
+        	<!--<Hooks>-->
+        		<!--<onRelease />-->
+        		<!--<onRollOver />-->
+        		<!--<onRollOut />-->
+        	<!--</Hooks>-->
+		<!--</iconButton>-->
+
+
+        <Button name="btn_decoRight">
+            <Anchors>
+                <AbsDimension x="0" y="0" />
+            </Anchors>
+            <Common>
+                <Size>
+                    <AbsDimension x="66" y="17" />
+                </Size>
+                <radioGroup>minMaxRadio</radioGroup>
+                <radioMode>true</radioMode>
+
+                <Texture name="tx_button_minimize_bgRight">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="22" y="-17" />
+                        </Anchor>
+                    </Anchors>
+                    <uri>[local.texture]hud/right_floating_menu.png</uri>
+                    <autoGrid>true</autoGrid>
+                    <rotation>90</rotation>
+                </Texture>
+
+
+                <Hooks>
+                    <onRelease />
+                </Hooks>
+            </Common>
+        </Button>
+
+        <Texture name="tx_button_minimize_bgLeft">
+            <Anchors>
+                <Anchor relativeTo="btn_decoRight">
+                    <AbsDimension x="20" y="15" />
+                </Anchor>
+            </Anchors>
+            <uri>[local.texture]hud/left_floating_menu.png</uri>
+            <autoGrid>true</autoGrid>
+            <rotation>90</rotation>
+        </Texture>
+
+        <Texture name="tx_button_minimize">
+            <Anchors>
+                <Anchor relativeTo="btn_decoRight">
+                    <AbsDimension x="1" y="-8" />
+                </Anchor>
+            </Anchors>
+            <uri>[local.texture]hud/icon_minus_floating_menu.png</uri>
+            <autoGrid>true</autoGrid>
+        </Texture>
+
+
+		<!-- Button btn_rightArrow->
+
+		<Button name="btn_rightArrow">
+			<Common>
+				<Anchors>
+					<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+						<AbsDimension x="-23" y="-37" />
+					</Anchor>
+				</Anchors>
+
+				<Texture name="btn_rightArrow_tx">
+					<Size>
+						<AbsDimension x="10" y="18" />
+					</Size>
+					<uri>[local.assets]TimeLine_btn_PetiteFleche_droite</uri>
+				</Texture>
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</Common>
+			<State type="OVER">
+				<SetProperties target="btn_rightArrow_tx">
+					<gotoAndStop>over</gotoAndStop>
+				</SetProperties>
+			</State>
+			<State type="PRESSED">
+				<SetProperties target="btn_rightArrow_tx">
+					<gotoAndStop>pressed</gotoAndStop>
+				</SetProperties>
+			</State>
+		</Button-->
+
+		<!-- Button btn_leftArrow->
+
+		<Button name="btn_leftArrow">
+			<Common>
+				<Anchors>
+					<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+						<AbsDimension x="-107" y="-37" />
+					</Anchor>
+				</Anchors>
+
+				<Texture name="btn_leftArrow_tx">
+					<Size>
+						<AbsDimension x="10" y="18" />
+					</Size>
+					<uri>[local.assets]TimeLine_btn_PetiteFleche_gauche</uri>
+				</Texture>
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</Common>
+			<State type="OVER">
+				<SetProperties target="btn_leftArrow_tx">
+					<gotoAndStop>over</gotoAndStop>
+				</SetProperties>
+			</State>
+			<State type="PRESSED">
+				<SetProperties target="btn_leftArrow_tx">
+					<gotoAndStop>pressed</gotoAndStop>
+				</SetProperties>
+			</State>
+		</Button-->
+		
+	</Container>
+</Definition>

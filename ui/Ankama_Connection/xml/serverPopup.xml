@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition modal="true">
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template.button]iconButton.xml" />
+    <Import url="[config.mod.template]window.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+	
+	<Container>
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="0" y="-30" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="480" y="509" />
+		</Size>
+		
+		<window dark="true">
+			<Size>
+				<AbsDimension x="480" y="509" />
+			</Size>
+			<title>[ui.sersel.suggestedServer]</title>			
+		</window>
+		
+		<Container>
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="27" y="420" />
+                </Anchor>
+            </Anchors>
+	            
+	        <Texture>
+	            <Anchors>
+	                <Anchor>
+	                    <AbsDimension x="0" y="0" />
+	                </Anchor>
+	            </Anchors>
+				<Size>
+					<AbsDimension x="87" y="55" />
+				</Size>
+	            <uri>[local.common]corner_decoration.png</uri>
+	        </Texture>
+	        <Texture>
+	            <Anchors>
+	                <Anchor>
+	                    <AbsDimension x="421" y="0" />
+	                </Anchor>
+	            </Anchors>
+				<Size>
+					<AbsDimension x="87" y="55" />
+				</Size>
+	            <uri>[local.common]corner_decoration.png</uri>
+	            <scaleX>-1</scaleX>
+	        </Texture>
+	
+			<simpleButton name="btn_ok">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="78" y="12" />
+					</Anchor>
+				</Anchors>			
+				<Size>
+					<AbsDimension x="130" y="32" />
+				</Size>
+				<label>[ui.common.ok]</label>
+			</simpleButton>
+	
+			<simpleButton name="btn_undo">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="218" y="12" />
+					</Anchor>
+				</Anchors>			
+				<Size>
+					<AbsDimension x="130" y="32" />
+				</Size>
+				<label>[ui.common.cancel]</label>
+			</simpleButton>
+		</Container>
+
+		<Container name="ctr_content">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="25" y="55" />
+				</Anchor>
+			</Anchors>		
+		</Container>
+		
+	</Container>
+</Definition>

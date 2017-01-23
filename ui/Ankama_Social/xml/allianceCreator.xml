@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+   <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />	
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+       
+       <Constant name="picto_uri" value="[config.content.path]gfx/emblems/" />       
+   </Constants>
+
+    <Import url="[config.mod.template.button]simpleButton.xml" />
+    <Import url="[config.mod.template.button]iconButton.xml" />
+    <Import url="[config.mod.template]button/themeHorizontalTab.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	<Import url="[config.mod.template.button]comboBoxWithBackground.xml" />
+
+	<window name="windowCtr" title="[ui.alliance.creation]">
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="0" y="-40" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="864" y="693" />
+		</Size>
+
+		<Content>
+			<block>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="5" y="38" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="400" y="577" />
+				</Size>
+			</block>
+			<block bgAlpha="0.5">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="413" y="38" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="400" y="517" />
+				</Size>
+			</block>
+			<themeHorizontalTab name="btn_background">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="20" y="5" />
+					</Anchor>
+				</Anchors>
+				<text>[ui.social.emblemBack]</text>
+			</themeHorizontalTab>
+			<themeHorizontalTab name="btn_icon">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="194" y="5" />
+					</Anchor>
+				</Anchors>
+				<text>[ui.social.emblemUp]</text>
+			</themeHorizontalTab>
+			
+			<Container name="allianceNameCtr">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="438" y="395" />
+					</Anchor>
+				</Anchors>
+					
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="7" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="320" y="22" />
+					</Size>
+					<text>[ui.alliance.name][ui.common.colon]</text>
+					<cssClass>mediumleft</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+				
+				<themeIconButton name="tx_nameRules">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="322" y="4" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="26" y="26" />
+					</Size>
+					<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_question.png</iconUri>
+				</themeIconButton>
+				
+				<TextureBitmap>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="-6" y="28" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="361" y="42" />
+					</Size>
+					<themeDataId>bg_small_border_dark</themeDataId>
+				</TextureBitmap>
+				
+				<Input name="inp_alliancename">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="13" y="38" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="350" y="40" />
+					</Size>
+					<css>[local.css]normal2.css</css>
+				</Input>
+				
+				<!-- tag d'alliance -->
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="77" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="320" y="22" />
+					</Size>
+					<text>[ui.alliance.tagInfo][ui.common.colon]</text>
+					<cssClass>mediumleft</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+				
+				<themeIconButton name="tx_tagRules">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="322" y="74" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="26" y="26" />
+					</Size>
+					<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_question.png</iconUri>
+				</themeIconButton>
+				
+				<TextureBitmap>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="-6" y="98" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="361" y="42" />
+					</Size>
+					<themeDataId>bg_small_border_dark</themeDataId>
+				</TextureBitmap>
+				
+				<Input name="inp_alliancetag">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="13" y="108" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="350" y="40" />
+					</Size>
+					<css>[local.css]normal2.css</css>
+				</Input>
+			</Container>
+			
+			<Container name="emblemCreatorCtr">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="0" />
+					</Anchor>
+				</Anchors>
+				
+				<!-- Grid gd_emblem-->
+				
+				<Grid name="gd_emblemBack">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="30" y="65" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="350" y="275" />
+					</Size>
+					<slotWidth>52</slotWidth>
+					<slotHeight>52</slotHeight>
+					
+					<scrollDisplay>always</scrollDisplay>
+					<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+					<scrollbarOffset>6</scrollbarOffset>
+					
+					<rendererName>SlotGridRenderer</rendererName>
+					<rendererArgs>[local.texture]slot/slot_dark_background_empty.png,[local.texture]slot/over.png,[local.texture]slot/selected.png,,,,,false</rendererArgs>
+				</Grid>
+				
+				<Grid name="gd_emblemFront">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="30" y="120" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="350" y="220" />
+					</Size>
+					<slotWidth>52</slotWidth>
+					<slotHeight>52</slotHeight>
+					
+					<scrollDisplay>always</scrollDisplay>
+					<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+					<scrollbarOffset>6</scrollbarOffset>
+					
+					<rendererName>SlotGridRenderer</rendererName>
+					<rendererArgs>,[local.texture]slot/over.png,[local.texture]slot/selected.png,,,,,false,,,,[local.texture]slot/slot_grey_background_empty.png</rendererArgs>
+				</Grid>
+
+				<comboBoxWithBackground name="cbb_emblemCategory" width="360" height="38" autoSelectMode="0">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="26" y="67" />
+						</Anchor>
+					</Anchors>
+				</comboBoxWithBackground>
+				
+				<!-- Container cp_colorPk-->
+				
+				<ColorPicker name="cp_colorPk">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="32" y="360" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="348" y="227" />
+					</Size>
+					<sliderTexture>[local.bitmap]cursorSlider.png</sliderTexture>
+					<gradientTexture>[local.bitmap]cursorGradient.png</gradientTexture>
+				</ColorPicker>
+				
+				<Container name="ctr_hexaColor">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="388" y="450" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="160" y="40" />
+					</Size>
+					
+					<!--shadowColor>[colors.ui.shadow]</shadowColor-->
+					
+					<TextureBitmap>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="-10" y="-21" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="184" y="89"/>
+						</Size>		
+						<themeDataId>popup_background</themeDataId>
+					</TextureBitmap>
+					
+					<TextureBitmap>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="-10" y="-21" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="184" y="89"/>
+						</Size>
+						<themeDataId>popup_border_frame</themeDataId>
+					</TextureBitmap>
+					
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="5" y="6" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="30" y="22" />
+						</Size>
+						<cssClass>darkright</cssClass>
+						<css>[local.css]normal2.css</css>
+						<text>0x</text>
+					</Label>
+					
+					<TextureBitmap>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="32" y="0" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="87" y="35" />
+						</Size>
+						<themeDataId>bg_small_border_dark</themeDataId>
+					</TextureBitmap>
+					
+					<Input name="inp_hexaValue">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="41" y="6" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="80" y="22" />
+						</Size>
+						<css>[local.css]normal2.css</css>
+						<maxChars>6</maxChars>
+						<restrict>0-9a-zA-Z</restrict>
+					</Input>
+					
+					<themeIconButton name="btn_hexaOk">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="120" y="6" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="26" y="26" />
+						</Size>
+						<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_check.png</iconUri>
+						<Hooks>
+							<onRelease />
+						</Hooks>
+					</themeIconButton>
+					
+				</Container>
+			</Container>
+			
+			<!-- Button btn_valid-->
+
+			<simpleButton label="[ui.common.validation]" name="btn_create">
+				<Size>
+					<AbsDimension x="145" y="35" />
+				</Size>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="542" y="567" />
+					</Anchor>
+				</Anchors>
+                <cssClass>darkboldcenter</cssClass>
+                <css>[local.css]normal2.css</css>
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</simpleButton>
+
+			<!-- Texture tx_emblem-->
+
+			<Texture name="tx_emblem">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="456" y="65" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="315" y="314" />
+				</Size>
+				<uri>[local.assets]CreationGuilde_tx_emblem</uri>
+				<autoGrid>false</autoGrid>
+			</Texture>
+
+			<!-- Texture tx_icon-->
+
+			<Texture name="tx_icon">
+				<Anchors>
+					<Anchor relativeTo="tx_emblem" point="CENTER" relativePoint="CENTER" />
+				</Anchors>
+				<Size>
+					<AbsDimension x="186" y="186" />
+				</Size>
+				<uri>[local.assets]CreationGuilde_tx_emblem</uri>
+				<autoGrid>false</autoGrid>
+			</Texture>
+			
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="413" y="557" />
+					</Anchor>
+				</Anchors>
+				<uri>[config.ui.skin]common/corner_decoration.png</uri>
+			</Texture>
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="813" y="557" />
+					</Anchor>
+				</Anchors>
+				<uri>[config.ui.skin]common/corner_decoration.png</uri>
+				<scaleX>-1</scaleX>
+			</Texture>
+		</Content>
+	</window>
+</Definition>
+

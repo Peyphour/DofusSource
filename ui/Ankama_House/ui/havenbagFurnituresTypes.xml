@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition fullscreen="true">
+	<Constants>
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="categoryIconWidth" value="50" type="int" />
+	</Constants>
+	<Container name="mainCtr">
+
+		<visible>false</visible>
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="164" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="95" y="243" />
+			</Size>
+			<uri>[local.common]window_border_havenbag.png</uri>
+		</Texture>
+		
+		<Grid name="gd_categories">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="5" y="190" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="64" y="192" />
+			</Size>
+			<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+			<slotWidth>64</slotWidth>
+			<slotHeight>64</slotHeight>
+			<rendererName>InlineXmlGridRenderer</rendererName>
+			<rendererArgs>updateCategory</rendererArgs>
+			<Hooks>
+				<onSelectItem/>
+				<onItemRollOver/>
+				<onItemRollOut/>
+			</Hooks>
+			
+			<Container>
+				<Texture>
+					<Size>
+						<AbsDimension x="64" y="64" />
+					</Size>
+					<uri>[local.texture]slot/emptySlot.png</uri>
+				</Texture>
+				<Texture name="tx_category">
+					<scaleX>-1</scaleX>
+				</Texture>
+				<Button name="btn_slot">
+					<Common>
+						<radioGroup>categoryGroup</radioGroup>
+						<radioMode>true</radioMode>
+						<Texture>
+							<Size>
+								<AbsDimension x="64" y="64" />
+							</Size>
+							<bgColor>0</bgColor>
+							<bgAlpha>0</bgAlpha>
+						</Texture>
+						<TextureBitmap name="tx_slot">
+							<Size>
+								<AbsDimension x="64" y="64" />
+							</Size>
+						</TextureBitmap>
+					</Common>
+					<State type="OVER">
+						<SetProperties target="tx_slot">
+							<themeDataId>over_green</themeDataId>
+						</SetProperties>
+					</State>
+					<State type="SELECTED">
+						<SetProperties target="tx_slot">
+							<themeDataId>selection_green</themeDataId>
+						</SetProperties>
+					</State>
+				</Button>
+			</Container>
+		</Grid>
+	</Container>
+</Definition>

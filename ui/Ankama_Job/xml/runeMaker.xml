@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+
+    <Import url="[config.mod.template.button]iconButton.xml"/>
+    <Import url="[config.mod.template.button]simpleButton.xml"/>
+    <Import url="[config.mod.template.button]themeIconButton.xml"/>
+    <Import url="[config.mod.template.button]labelCheckBox.xml"/>
+    <Import url="[config.mod.template.button]sortButton.xml"/>
+    <Import url="[config.mod.template.button]comboBoxWithBackground.xml" />
+    <Import url="[config.mod.template]window.xml"/>
+
+    <Constants>
+        <Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+        <Constant name="css" value="[config.ui.skin]css/"/>
+        <Constant name="common" value="[config.ui.skin]common/" />
+        <Constant name="texture" value="[config.ui.skin]texture/" />
+
+        <Constant name="bg_width_state0" value="445" type="int"/>
+        <Constant name="bg_width_state1" value="838" type="int"/>
+    </Constants>
+    
+	<window name="runeMakerWindow">
+		<Size>
+			<AbsDimension x="445" y="753"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativePoint="TOPLEFT">
+				<AbsDimension x="25" y="100"/>
+			</Anchor>
+		</Anchors>
+		
+		<title>[ui.crush.crusher]</title>
+		<OverFrameContent>
+			<Container name="ctr_focus">
+				<comboBoxWithBackground name="cb_effectFocus" width="340">
+					<Anchors>
+						<Anchor >
+							<AbsDimension x="12" y="10"/>
+						</Anchor>
+					</Anchors>
+				</comboBoxWithBackground>
+				
+				<themeIconButton name="btn_info">
+					<Anchors>
+						<Anchor relativeTo="cb_effectFocus" relativePoint="RIGHT" point="LEFT">
+							<AbsDimension x="8" y="0"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="30" y="30" />
+					</Size>
+					<bgScaleX>0</bgScaleX>
+					<iconUri>[config.ui.skin]texture/help_icon_normal.png</iconUri>
+				</themeIconButton>
+			</Container>
+		</OverFrameContent>
+		
+		<Content>
+			<Label name="lbl_subTitle">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="25" y="25"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="390" y="20"/>
+				</Size>
+				<css>[local.css]normal2.css</css>
+			</Label>
+
+			<Container name="ctr_content">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="20" y="60"/>
+					</Anchor>
+				</Anchors>
+
+				<TextureBitmap>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="-5" y="-5" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="376" y="535"/>
+					</Size>
+					<themeDataId>block_border</themeDataId>
+				</TextureBitmap>
+
+				<Label name="lbl_info">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="10" y="5"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="330" y="20"/>
+					</Size>
+					<cssClass>center</cssClass>
+					<css>[local.css]normal2.css</css>
+					<text>[ui.crush.dropItem]</text>
+				</Label>
+
+				<Grid name="gd_items">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="31"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="365" y="490"/>
+					</Size>
+					<autoSelectMode>0</autoSelectMode>
+					<slotWidth>355</slotWidth>
+					<slotHeight>49</slotHeight>
+					<rendererName>InlineXmlGridRenderer</rendererName>
+					<rendererArgs>updateItemLine,[colors.grid.line]</rendererArgs>
+					<scrollDisplay>always</scrollDisplay>
+					<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+
+					<Button name="btn_item">
+						<Common>
+							<Size>
+								<AbsDimension x="355" y="49"/>
+							</Size>
+							<mouseEnabled>true</mouseEnabled>
+							<mouseChildren>true</mouseChildren>
+
+							<Texture>
+								<Size>
+									<AbsDimension x="355" y="49"/>
+								</Size>
+								<bgColor>0</bgColor>
+								<bgAlpha>0</bgAlpha>
+							</Texture>
+
+							<Texture name="tx_backgroundItem">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="6" y="3"/>
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="44" y="44"/>
+								</Size>
+								<uri>[local.assets]tx_slot</uri>
+								<autoGrid>true</autoGrid>
+							</Texture>
+
+							<Slot name="slot_item">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="6" y="3"/>
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="44" y="44"/>
+								</Size>
+								<css>[local.css]normal2.css</css>
+							</Slot>
+
+							<Label name="lbl_itemName">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="55" y="12"/>
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="295" y="20"/>
+								</Size>
+								<css>[local.css]normal2.css</css>
+								<useStyleSheet>true</useStyleSheet>
+							</Label>
+						</Common>
+
+						<State type="OVER">
+							<SetProperties target="btn_item">
+								<bgColor>[colors.grid.over]</bgColor>
+							</SetProperties>
+						</State>
+
+						<State type="SELECTED">
+							<SetProperties target="btn_item">
+								<bgColor>[colors.grid.selected]</bgColor>
+							</SetProperties>
+						</State>
+
+						<State type="SELECTED_OVER">
+							<SetProperties target="btn_item">
+								<bgColor>[colors.grid.selected]</bgColor>
+							</SetProperties>
+						</State>
+					</Button>
+					<Hooks>
+						<onSelectItem/>
+						<onItemRollOver/>
+						<onItemRollOut/>
+						<onRelease/>
+					</Hooks>
+				</Grid>
+
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="2" y="1" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="362" y="30" />
+					</Size>
+					<uri>[local.common]bg_dark.png</uri>
+				</Texture>
+
+			</Container>
+
+			<Container name="ctr_result">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="20" y="60"/>
+					</Anchor>
+				</Anchors>
+
+				<TextureBitmap>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="-5" y="-5" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="772" y="535"/>
+					</Size>
+					<themeDataId>block_border</themeDataId>
+				</TextureBitmap>
+
+				<sortButton name="btn_tabCrushedItem">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="56" y="4"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="240" y="24"/>
+					</Size>
+				</sortButton>
+				<sortButton name="btn_tabBonus">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="296" y="4"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="160" y="24"/>
+					</Size>
+				</sortButton>
+				<sortButton name="btn_tabRunes">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="466" y="4"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="303" y="24"/>
+					</Size>
+				</sortButton>
+
+				<Label strata="TOP">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="54" y="3"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="230" y="20"/>
+					</Size>
+					<text>[ui.crush.crushedItem]</text>
+					<css>[local.css]normal2.css</css>
+				</Label>
+				<Label strata="TOP">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="303" y="3"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="146" y="20"/>
+					</Size>
+					<text>[ui.crush.coefficient]</text>
+					<cssClass>center</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+				<Label strata="TOP">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="460" y="3"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="303" y="20"/>
+					</Size>
+					<text>[ui.crush.obtainedRunes]</text>
+					<cssClass>center</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+
+				<Grid name="gd_results">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="1" y="32"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="760" y="490"/>
+					</Size>
+					<autoSelectMode>0</autoSelectMode>
+					<slotWidth>750</slotWidth>
+					<slotHeight>49</slotHeight>
+					<rendererName>InlineXmlGridRenderer</rendererName>
+					<rendererArgs>updateResultLine,[colors.grid.line]</rendererArgs>
+					<scrollDisplay>always</scrollDisplay>
+					<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+
+					<Container>
+						<Size>
+							<AbsDimension x="750" y="49"/>
+						</Size>
+						<mouseEnabled>true</mouseEnabled>
+						<mouseChildren>true</mouseChildren>
+
+						<Texture>
+							<Size>
+								<AbsDimension x="750" y="49"/>
+							</Size>
+							<bgColor>0</bgColor>
+							<bgAlpha>0</bgAlpha>
+						</Texture>
+
+						<Texture name="tx_backgroundItem">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="6" y="3"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="44" y="44"/>
+							</Size>
+							<uri>[local.assets]tx_slot</uri>
+							<autoGrid>true</autoGrid>
+						</Texture>
+
+						<Slot name="slot_item">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="6" y="3"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="44" y="44"/>
+							</Size>
+							<css>[local.css]normal2.css</css>
+						</Slot>
+
+						<Label name="lbl_itemName">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="55" y="12"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="250" y="20"/>
+							</Size>
+							<css>[local.css]normal2.css</css>
+							<useStyleSheet>true</useStyleSheet>
+						</Label>
+
+						<Label name="lbl_percent">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="305" y="12"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="140" y="20"/>
+							</Size>
+							<cssClass>center</cssClass>
+							<css>[local.css]normal2.css</css>
+							<useStyleSheet>true</useStyleSheet>
+						</Label>
+
+						<Grid name="gd_runes">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="460" y="5"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="254" y="39"/> // 6 * 39 + 20
+							</Size>
+							<rendererName>SlotGridRenderer</rendererName>
+							<rendererArgs>,[local.texture]slot/over.png,[local.texture]slot/selected.png,[local.texture]slot/acceptDrop.png,[local.texture]slot/refuseDrop.png,,[local.css]normal.css,false</rendererArgs>
+							<scrollDisplay>none</scrollDisplay>
+							<vertical>false</vertical>
+							<slotWidth>39</slotWidth>
+							<slotHeight>39</slotHeight>
+							<autoSelectMode>0</autoSelectMode>
+						</Grid>
+
+						<themeIconButton name="btn_seeMore">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="720" y="13"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="26" y="26" />
+							</Size>
+							<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_plus.png</iconUri>
+						</themeIconButton>
+					</Container>
+				</Grid>
+
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="3" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="757" y="30" />
+					</Size>
+					<uri>[local.common]bg_dark.png</uri>
+				</Texture>
+
+				<Label name="lbl_itemsPrice">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="380" y="550"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="460" y="20"/>
+					</Size>
+					<css>[local.css]normal2.css</css>
+				</Label>
+
+				<Label name="lbl_runesPrice">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="380" y="580"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="460" y="20"/>
+					</Size>
+					<css>[local.css]normal2.css</css>
+				</Label>
+
+			</Container>
+
+
+			<Label name="lbl_quantityObject">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="35" y="600"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="320" y="20"/>
+				</Size>
+				<css>[local.css]normal2.css</css>
+			</Label>
+
+			<Container name="ctr_runes">
+				<Anchors>
+					<Anchor point="CENTER" relativePoint="CENTER">
+						<AbsDimension x="200" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="430" y="320"/>
+				</Size>
+				<!-- background -->
+				<TextureBitmap>
+					<Size>
+						<RelDimension x="1" y="1"/>
+					</Size>
+					<themeDataId>popup_background</themeDataId>
+				</TextureBitmap>
+
+				<TextureBitmap name="popup_border_frame">
+					<Size>
+						<RelDimension x="1" y="1"/>
+					</Size>
+					<themeDataId>popup_border_frame</themeDataId>
+				</TextureBitmap>
+
+				<Label name="lbl_runes">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="22" y="20"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="373" y="25"/>
+					</Size>
+					<css>[local.css]title.css</css>
+					<cssClass>center</cssClass>
+					<verticalAlign>center</verticalAlign>
+				</Label>
+
+				<Grid name="gd_runes">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="40" y="63"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="352" y="220"/>
+					</Size>
+					<autoSelectMode>0</autoSelectMode>
+					<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+					<slotWidth>44</slotWidth>
+					<slotHeight>44</slotHeight>
+					<rendererName>SlotGridRenderer</rendererName>
+					<rendererArgs>[local.texture]slot/emptySlot.png,[local.texture]slot/over.png,[local.texture]slot/selected.png,[local.texture]slot/acceptDrop.png,[local.texture]slot/refuseDrop.png,,[local.css]normal.css,false</rendererArgs>
+				</Grid>
+
+
+
+				<TextureBitmap>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" relativePoint="TOPRIGHT" relativeTo="popup_border_frame">
+							<AbsDimension x="-65" y="66" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="46" y="47" />
+					</Size>
+					<themeDataId>popup_close_background</themeDataId>
+				</TextureBitmap>
+
+				<themeIconButton name="btn_closeRunes">
+					<Anchors>
+						<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+							<AbsDimension x="-22" y="22" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="30" y="25" />
+					</Size>
+					<bgThemeDataId>button_close</bgThemeDataId>
+				</themeIconButton>
+			</Container>
+
+			<simpleButton label="[ui.crush.crushAll]" name="btn_crush">
+				<Anchors>
+					<Anchor relativePoint="BOTTOMLEFT" point="BOTTOMLEFT">
+						<AbsDimension x="80" y="-15"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="240" y="30"/>
+				</Size>
+				<css>[local.css]button.css</css>
+				<Hooks>
+					<onRelease/>
+				</Hooks>
+			</simpleButton>
+		</Content>
+	</window>
+</Definition>

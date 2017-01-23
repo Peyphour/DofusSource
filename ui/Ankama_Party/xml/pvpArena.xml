@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+	   	<Constant name="css" value="[config.ui.skin]css/" />
+	   	<Constant name="common" value="[config.ui.skin]common/" />
+	   	<Constant name="texture" value="[config.ui.skin]texture/" />
+	   	<Constant name="stateAssets" value="[config.ui.skin]texture/icon_state_" />
+	</Constants>
+	
+	<window>
+		<title>[ui.common.koliseum]</title>
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="600" y="600" />
+		</Size>
+		<Content>
+
+			<block dark="true">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<RelDimension x="1" />
+					<AbsDimension y="120" />
+				</Size>
+				
+				<Content>
+					<Label name="lbl_step">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="15" y="5" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="500" y="23" />
+						</Size>
+						<css>[local.css]normal2.css</css>
+						<cssClass>whitebold</cssClass>
+					</Label>		
+					
+					<TextArea name="lbl_whatToDo">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="15" y="40" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="530" y="70" />
+						</Size>
+						<css>[local.css]normal2.css</css>
+						<scrollCss>[local.css]scrollBar.css</scrollCss>
+						<hideScroll>true</hideScroll>
+						<verticalAlign>center</verticalAlign>
+					</TextArea>
+				</Content>
+				
+			</block>
+			
+			<block dark="true">
+				<Anchors>
+					<Anchor>
+						<AbsDimension y="120" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<RelDimension x="1" />
+					<AbsDimension y="180" />
+				</Size>
+				
+				<Content>
+				
+					<TextureBitmap>
+						<Size>
+							<AbsDimension x="551" y="35" />
+							<!-- <RelDimension x="1" /> -->
+						</Size>
+						<uri>[local.common]list_menu_background.png</uri>
+						<smooth>true</smooth>
+						<scaleY>-1</scaleY>
+					</TextureBitmap>
+				
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="15" y="5" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="350" y="20" />
+						</Size>
+						<text>[ui.common.team]</text>
+						<css>[local.css]normal2.css</css>
+						<cssClass>whitebold</cssClass>
+					</Label>
+					
+					<Grid name="gd_myTeam">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="3" y="32" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="552" y="123" />
+						</Size>
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updateFighterLine,[colors.grid.line]</rendererArgs>
+						<scrollDisplay>never</scrollDisplay>
+						<slotWidth>550</slotWidth>
+						<slotHeight>41</slotHeight>
+						
+						<!-- Container décrivant une ligne de la grille -->
+						<Container>
+							<Size>
+								<AbsDimension x="550" y="41" />
+							</Size>
+									
+							<TextureBitmap name="tx_leader">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="15" y="7" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="25" y="21" />
+								</Size>
+								<uri>[local.texture]groupIcon\icon_crown.png</uri> 
+								<smooth>true</smooth>
+							</TextureBitmap>
+			
+							<!-- Label contenant le nom du combattant -->
+							<Label name="lbl_fighterName">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="45" y="7" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="390" y="20" />
+								</Size>
+								<css>[local.css]normal2.css</css>
+								<hyperlinkEnabled>true</hyperlinkEnabled>
+								<useStyleSheet>true</useStyleSheet>
+							</Label>
+									
+							<Texture name="tx_fighterState">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="450" y="15" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="15" y="15" />
+								</Size>
+							</Texture>
+						</Container>
+					</Grid>		
+				</Content>
+				
+			</block>
+			
+			<block dark="true">
+				<Anchors>
+					<Anchor>
+						<AbsDimension y="301" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<RelDimension x="1" />
+					<AbsDimension y="150" />
+				</Size>
+				
+				<Content>
+				
+					<TextureBitmap>
+						<Size>
+							<AbsDimension x="551" y="35" />
+							<!-- <RelDimension x="1" /> -->
+						</Size>
+						<uri>[local.common]list_menu_background.png</uri>
+						<smooth>true</smooth>
+						<scaleY>-1</scaleY>
+					</TextureBitmap>
+				
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="15" y="5" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="290" y="20" />
+						</Size>
+						<text>[ui.common.myInformations]</text>
+						<css>[local.css]normal2.css</css>
+						<cssClass>whitebold</cssClass>
+					</Label>
+			
+					<Container name="ctr_groupTitle">
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="312" y="5" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="110" y="20" />
+							</Size>
+							<text>[ui.idol.soloTab]</text>
+							<cssClass>center</cssClass>
+							<css>[local.css]normal2.css</css>
+						</Label>
+						
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="427" y="5" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="110" y="20" />
+							</Size>
+							<text>[ui.common.party]</text>
+							<cssClass>center</cssClass>
+							<css>[local.css]normal2.css</css>
+						</Label>
+					</Container>
+					
+					
+					<Grid name="gd_rankInfos">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="3" y="38" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="552" y="90" />
+						</Size>
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updateRankLine,[colors.grid.line]</rendererArgs>
+						<scrollDisplay>never</scrollDisplay>
+						<slotWidth>550</slotWidth>
+						<slotHeight>30</slotHeight>
+						
+						<!-- Container décrivant une ligne de la grille -->
+						<Container name="ctr_rankInfo">
+							<Size>
+								<AbsDimension x="550" y="30" />
+							</Size>
+				 			<bgColor>0xffff00</bgColor>
+				 			<bgAlpha>0</bgAlpha>   
+									
+							<Label name="lbl_title">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="15" y="3" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="290" y="20" />
+								</Size>
+								<css>[local.css]normal2.css</css>
+							</Label>
+									
+							<Label name="lbl_solo">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="310" y="3" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="110" y="20" />
+								</Size>
+								<cssClass>center</cssClass>
+								<css>[local.css]normal2.css</css>
+							</Label>
+									
+							<Label name="lbl_group">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="425" y="3" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="110" y="20" />
+								</Size>
+								<cssClass>center</cssClass>
+								<css>[local.css]normal2.css</css>
+							</Label>
+							
+						</Container>
+					</Grid>
+				
+				</Content>
+			</block>
+			
+			
+			
+					
+			<!-- Bouton "Inscription" -->
+			<simpleButton label="[ui.common.accept]" name="btn_validate">
+				<Anchors>
+					<Anchor point="BOTTOM" relativePoint="BOTTOM">
+						<AbsDimension x="-130" y="-20" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="250" y="32" />
+				</Size>
+			</simpleButton>
+			
+			<simpleButton label="[ui.party.arenaQuit]" name="btn_quitArena">
+				<Anchors>
+					<Anchor point="BOTTOM" relativePoint="BOTTOM">
+						<AbsDimension x="130" y="-20" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="250" y="32" />
+				</Size>
+			</simpleButton>
+		</Content>
+	</window>
+
+</Definition>

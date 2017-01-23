@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+	<Constants>
+		<Constant name="flag_uri" value="[config.content.path]gfx/flags/" />
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+	
+	<Container name="serverItemCtr">
+
+		<Button name="btn_server">
+			<Common>
+				<Size>
+					<AbsDimension x="443" y="33" />
+				</Size>
+				<radioMode>true</radioMode>
+				
+				<!-- Texture tx_background->
+
+				<Texture name="tx_background">
+					<Size>
+						<AbsDimension x="443" y="33" />
+					</Size>
+					<uri>[local.assets]serveur_line_tx_background</uri>
+					<autoGrid>true</autoGrid>
+				</Texture-->
+
+				<!-- Texture tx_drapeau-->
+
+				<Texture name="tx_drapeau">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="7" y="4" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="33" y="24" />
+					</Size>
+				</Texture>
+
+				<!-- Label lbl_infoName-->
+
+				<Label name="lbl_infoName">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="57" y="4" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="157" y="20" />
+					</Size>
+					<css>[local.css]normal.css</css>
+				</Label>
+
+				<!-- Texture lbl_infoType-->
+
+				<Texture name="tx_infoType">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="209" y="1" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="55" y="30" />
+					</Size>
+				</Texture>
+
+				<!-- Label lbl_infoPopulation-->
+
+				<Label name="lbl_infoPopulation">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="270" y="4" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="121" y="20" />
+					</Size>
+					<css>[local.css]normal.css</css>
+				</Label>
+			</Common>
+			<State type="OVER">
+				<SetProperties target="btn_server">
+					<bgColor>[colors.grid.over]</bgColor>
+				</SetProperties>
+			</State>
+			<State type="DISABLED">
+			</State>
+			<State type="SELECTED">
+				<SetProperties target="btn_server">
+					<bgColor>[colors.grid.selected]</bgColor>
+				</SetProperties>
+			</State>
+			<State type="SELECTED_OVER">
+				<SetProperties target="btn_server">
+					<bgColor>[colors.grid.selected]</bgColor>
+				</SetProperties>
+			</State>
+		</Button>
+
+		<!-- Texture lbl_infoState-->
+
+		<Texture name="tx_infoState">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="391" y="1" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="50" y="30" />
+			</Size>
+		</Texture>
+		
+	</Container>
+</Definition>
+

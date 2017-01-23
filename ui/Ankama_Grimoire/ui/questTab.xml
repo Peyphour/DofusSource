@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition labelDebug="false">
+
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template]button/sortButton.xml" />
+	<Import url="[config.mod.template]button/themeLabelCheckBox.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	<Import url="[config.mod.template]windowWithoutTitleBar.xml" />
+	<Import url="[config.mod.template]button/searchInput.xml" />
+	<Import url="[config.mod.template]button/themeIconButton.xml" />
+	<Import url="[config.mod.template]button/comboBoxWithBackground.xml" />
+
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+
+		<Constant name="itemIconPath" value="[config.gfx.path.item.bitmap]" />
+		<Constant name="jobIconPath" value="[config.gfx.path]jobs/" />
+		<Constant name="spellIconPath" value="[config.gfx.path]spells/" />
+		<Constant name="emoteIconPath" value="[config.gfx.path]emotes/" />
+
+		<Constant name="css_uri" value="[local.css]normal.css" />
+
+		<Constant name="complete_uri" value="[local.texture]Quetes_tx_PetitPictoOK.png" />
+		<Constant name="active_uri" value="[local.texture]Quetes_tx_PictoSablier.png" />
+		<Constant name="repeat_uri" value="[local.texture]Quetes_tx_PictoRepeat.png" />
+
+		<Constant name="flechebas_uri" value="[config.ui.skin]texture/icon_minus_grey.png" />
+		<Constant name="flecheright_uri" value="[config.ui.skin]texture/icon_plus_grey.png" />
+
+		<Constant name="dungeon_icon" value="[local.texture]Quetes_tx_PictoDonjon.png" />
+		<Constant name="party_icon" value="[local.texture]Quetes_tx_PictoGroupe.png" />
+
+		<Constant name="checked" value="[local.common]checked.png" />
+		<Constant name="not_checked" value="[local.common]unchecked.png" />
+
+		<Constant name="reward_slot_with_xp_x" value="220" type="int" />
+		<Constant name="reward_slot_without_xp_x" value="50" type="int" />
+		
+		<Constant name="lbl_questName_width" value="366" type="int" />
+	</Constants>
+
+	<Container>
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="0" y="0" />
+			</Anchor>
+		</Anchors>
+
+		<!-- Container pour la partie basse de l'interface -->
+
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1067" y="656" />
+			</Size>
+
+			<!-- PARTIE DE GAUCHE -->
+
+			<block headerHeight="40" footerHeight="70">
+				<Size>
+					<AbsDimension x="435" y="725" />
+				</Size>
+				<Content>
+
+					<!-- Recherche -->
+
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="6" y="6" />
+							</Anchor>
+						</Anchors>
+
+						<searchInput name="search" btnCloseName="btn_resetSearch"
+							width="395">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="-5" y="-8" />
+								</Anchor>
+							</Anchors>
+
+						</searchInput>
+
+						<themeIconButton name="btn_searchFilter">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="392" y="1" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="22" y="21" />
+							</Size>
+							<iconUri>[local.texture]btnIcon/btnIcon_filter.png</iconUri>
+							<checkBox>true</checkBox>
+							<Hooks>
+								<onRollOver/>
+								<onRollOut/>
+							</Hooks>
+						</themeIconButton>
+
+					</Container>
+
+
+					<Label name="lbl_nbQuests">
+						<Anchors>
+							<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT">
+								<AbsDimension x="-10" y="-40" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="400" y="22" />
+						</Size>
+						<cssClass>darkright</cssClass>
+						<css>[local.css]normal2.css</css>
+					</Label>
+
+					<sortButton name="btn_tabComplete">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="40" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="50" y="24" />
+						</Size>
+					</sortButton>
+
+					<sortButton name="btn_tabName">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="51" y="40" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="400" y="24" />
+						</Size>
+					</sortButton>
+
+
+					<Label name="lbl_noQuest">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="10" y="270" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="430" y="80" />
+						</Size>
+						<cssClass>center</cssClass>
+						<css>[local.css]normal.css</css>
+						<text>[ui.grimoire.quest.noQuest]</text>
+						<visible>false</visible>
+						<multiline>true</multiline>
+						<wordWrap>true</wordWrap>
+					</Label>
+
+					<!-- quest list -->
+					<Grid name="gd_quests">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="40" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="425" y="600" />
+						</Size>
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updateItem</rendererArgs>
+						<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+						<autoSelectMode>0</autoSelectMode>
+						<slotWidth>425</slotWidth>
+						<slotHeight>40</slotHeight>
+						<useLeftRightToSelect>false</useLeftRightToSelect>
+						<vPadding>2</vPadding>
+						
+						<Container name="questCtr">
+							<Size>
+								<AbsDimension x="425" y="41" />
+							</Size>
+
+							<Button name="btn_quest">
+								<Common>
+									<Size>
+										<AbsDimension x="425" y="41" />
+									</Size>
+<!--  									<radioMode>true</radioMode>
+									<radioGroup>questList</radioGroup> -->
+									<!-- <bgColor>[colors.grid.selected]</bgColor>
+									<bgAlpha>0</bgAlpha> -->
+
+									<Texture name="tx_cat_bg">
+										<Size>
+											<AbsDimension x="425" y="40" />
+										</Size>
+										<bgColor>[colors.grid.line]</bgColor>
+									</Texture>
+
+									<Texture name="tx_cat_open">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="375" y="3" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="32" y="32" />
+										</Size>
+									</Texture>
+
+									<Texture name="tx_questComplete">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="23" y="12" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="15" y="15" />
+										</Size>
+									</Texture>
+
+									<Texture name="tx_questIcon">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="42" y="3" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="32" y="32" />
+										</Size>
+										<Hooks>
+											<onRollOver />
+											<onRollOut />
+										</Hooks>
+									</Texture>
+
+									<Label name="lbl_questName">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="25" y="8" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="[local.lbl_questName_width]" y="21" />
+										</Size>
+									</Label>
+
+								</Common>
+								
+ 								<State type="OVER">
+									<SetProperties target="btn_quest">
+										<bgColor>[colors.grid.over]</bgColor>
+									</SetProperties>
+								</State>
+
+								<State type="SELECTED">
+									<SetProperties target="btn_quest">
+										<bgColor>[colors.grid.selected]</bgColor>
+									</SetProperties>
+								</State>
+
+								<State type="SELECTED_OVER">
+									<SetProperties target="btn_quest">
+										<bgColor>[colors.grid.selected]</bgColor>
+									</SetProperties>
+								</State> 
+							</Button>
+						</Container>
+					</Grid>
+
+					<themeLabelCheckBox name="btn_showCompletedQuests">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="18" y="682" />
+							</Anchor>
+						</Anchors>
+						<selected>false</selected>
+						<labelWidth>367</labelWidth>
+						<labelHeight>20</labelHeight>
+						<text>[ui.grimoire.displayFinishedQuests]</text>
+						<cssClass>dark</cssClass>
+						<css>[local.css]normal2.css</css>
+						<Hooks>
+							<onRelease />
+						</Hooks>
+					</themeLabelCheckBox>
+
+				</Content>
+
+			</block>
+
+
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="445" y="0" />
+					</Anchor>
+				</Anchors>
+
+				<Texture>
+					<uri>[local.texture]tx_parchment.jpg</uri>
+					<autoGrid>true</autoGrid>
+				</Texture>
+
+				<TextureBitmap name="tx_bg_step">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="580" y="10" />
+						</Anchor>
+					</Anchors>
+					<uri>[local.texture]tx_deco_combobox_parchment.png</uri>
+					<smooth>true</smooth>
+					<visible>false</visible>
+				</TextureBitmap>
+
+				<!-- PRESENTATION -->
+				<Container>
+					<Label name="lbl_stepName">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="50" y="30" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="360" y="22" />
+						</Size>
+						<cssClass>goodybookletterleft</cssClass>
+						<css>[local.css]parchment.css</css>
+					</Label>
+
+
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="35" y="62" />
+							</Anchor>
+						</Anchors>
+						<uri>[local.common]title_bar_parchment.png</uri>
+						<autoGrid>true</autoGrid>
+					</Texture>
+
+					<Texture name="tx_dialog">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="650" y="85" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="67" y="65" />
+						</Size>
+						<uri>[local.texture]icon_bubble_info.png</uri>
+						<visible>false</visible>
+					</Texture>
+
+					<TextArea name="txa_description">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="70" y="85" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="550" y="140" />
+						</Size>
+						<cssClass>left</cssClass>
+						<css>[local.css]parchment.css</css>
+						<useStyleSheet>true</useStyleSheet>
+						<hyperlinkEnabled>true</hyperlinkEnabled>
+						<scrollCss>[local.css]scrollBar.css</scrollCss>
+						<hideScroll>true</hideScroll>
+					</TextArea>
+
+				</Container>
+
+				<!-- OBJECTIVES -->
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="230" />
+						</Anchor>
+					</Anchors>
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="50" y="10" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="493" y="23" />
+						</Size>
+						<text>[ui.grimoire.quest.objectives]</text>
+						<cssClass>goodybookletterleft</cssClass>
+						<css>[local.css]parchment.css</css>
+					</Label>
+
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="35" y="40" />
+							</Anchor>
+						</Anchors>
+						<uri>[local.common]title_bar_parchment.png</uri>
+						<autoGrid>true</autoGrid>
+					</Texture>
+
+					<Label name="lbl_objectives">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="100" y="150" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="600" y="50" />
+						</Size>
+						<multiline>true</multiline>
+						<wordWrap>true</wordWrap>
+						<cssClass>smallleftmedium</cssClass>
+						<css>[local.css]parchment.css</css>
+					</Label>
+
+					<TextureBitmap>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="45" y="60" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="695" y="245" />
+						</Size>
+						<themeDataId>box_text_parchment</themeDataId>
+					</TextureBitmap>
+
+
+					<Grid name="gd_objectives">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="30" y="80" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="700" y="205" />
+						</Size>
+
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updateObjectivesItem,[colors.grid.line]</rendererArgs>
+
+						<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+						<slotWidth>485</slotWidth>
+						<slotHeight>29</slotHeight>
+
+						<Container name="questObjCtr">
+							<Size>
+								<AbsDimension x="485" y="29" />
+							</Size>
+
+							<themeIconButton name="btn_loc">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="20" y="-3" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="32" y="32" />
+								</Size>
+								<bgThemeDataId>btn_pin</bgThemeDataId>
+								<visible>false</visible>
+								<smooth>true</smooth>
+							</themeIconButton>
+
+							<TextureBitmap name="tx_achieve">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="50" y="-2" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="32" y="32" />
+								</Size>
+								<uri>[local.common]checked.png</uri>
+								<smooth>true</smooth>
+							</TextureBitmap>
+
+							<Label name="lbl_objective">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="80" y="2" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="590" y="26" />
+								</Size>
+								<cssClass>p</cssClass>
+								<css>[local.css]parchment.css</css>
+								<hyperlinkEnabled>true</hyperlinkEnabled>
+								<useStyleSheet>true</useStyleSheet>
+							</Label>
+
+							<Texture name="tx_infos">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="670" y="2" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="24" y="24" />
+								</Size>
+								<uri>[local.texture]icon_small_bubble_info.png</uri>
+								<visible>false</visible>
+							</Texture>
+						</Container>
+					</Grid>
+
+
+				</Container>
+
+				<!-- REWARDS -->
+				<Container>
+
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="550" />
+						</Anchor>
+					</Anchors>
+					<Label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="50" y="0" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="461" y="23" />
+						</Size>
+						<text>[ui.grimoire.quest.rewards]</text>
+						<cssClass>goodybookletterleft</cssClass>
+						<css>[local.css]parchment.css</css>
+					</Label>
+
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="35" y="30" />
+							</Anchor>
+						</Anchors>
+						<uri>[local.common]title_bar_parchment.png</uri>
+						<autoGrid>true</autoGrid>
+					</Texture>
+
+					<!-- Kama & Xp -->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="5" />
+							</Anchor>
+						</Anchors>
+
+						<Label name="lbl_rewardsXp">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="60" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="150" y="21" />
+							</Size>
+							<cssClass>rightbold</cssClass>
+							<css>[local.css]parchment.css</css>
+						</Label>
+						<Texture name="tx_rewardsXp">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="160" y="65" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="32" y="15" />
+							</Size>
+							<uri>[local.texture]xp_shadow.png</uri>
+							<visible>false</visible>
+						</Texture>
+
+						<Label name="lbl_rewardsKama">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="90" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="150" y="21" />
+							</Size>
+							<cssClass>rightbold</cssClass>
+							<css>[local.css]parchment.css</css>
+						</Label>
+						<Texture name="tx_rewardsKama">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="160" y="85" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="32" y="32" />
+							</Size>
+							<uri>[local.texture]icon_kama_shadow.png</uri>
+							<visible>false</visible>
+						</Texture>
+					</Container>
+
+					<!-- Rewards Slots -->
+					<Container name="ctn_slots">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="65" />
+							</Anchor>
+						</Anchors>
+
+						<Slot name="tx_reward_1">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="56" y="56" />
+							</Size>
+							<forcedBackGroundIconUri>[local.texture]slot/slot_dark_background_full.png</forcedBackGroundIconUri>
+							<visible>false</visible>
+						</Slot>
+
+						<Slot name="tx_reward_2">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="60" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="56" y="56" />
+							</Size>
+							<forcedBackGroundIconUri>[local.texture]slot/slot_dark_background_full.png</forcedBackGroundIconUri>
+							<visible>false</visible>
+						</Slot>
+
+						<Slot name="tx_reward_3">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="120" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="56" y="56" />
+							</Size>
+							<forcedBackGroundIconUri>[local.texture]slot/slot_dark_background_full.png</forcedBackGroundIconUri>
+							<visible>false</visible>
+						</Slot>
+
+						<Slot name="tx_reward_4">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="180" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="56" y="56" />
+							</Size>
+							<forcedBackGroundIconUri>[local.texture]slot/slot_dark_background_full.png</forcedBackGroundIconUri>
+							<visible>false</visible>
+						</Slot>
+
+						<Slot name="tx_reward_5">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="240" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="56" y="56" />
+							</Size>
+							<forcedBackGroundIconUri>[local.texture]slot/slot_dark_background_full.png</forcedBackGroundIconUri>
+							<visible>false</visible>
+						</Slot>
+
+						<Slot name="tx_reward_6">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="300" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="56" y="56" />
+							</Size>
+							<forcedBackGroundIconUri>[local.texture]slot/slot_dark_background_full.png</forcedBackGroundIconUri>
+							<visible>false</visible>
+						</Slot>
+
+						<Slot name="tx_reward_7">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="360" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="56" y="56" />
+							</Size>
+							<forcedBackGroundIconUri>[local.texture]slot/slot_dark_background_full.png</forcedBackGroundIconUri>
+							<visible>false</visible>
+						</Slot>
+
+						<Slot name="tx_reward_8">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="420" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="56" y="56" />
+							</Size>
+							<forcedBackGroundIconUri>[local.texture]slot/slot_dark_background_full.png</forcedBackGroundIconUri>
+							<visible>false</visible>
+						</Slot>
+					</Container>
+				</Container>
+
+				<comboBoxWithBackground name="cbx_steps"
+					width="150" height="39">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="610" y="32" />
+						</Anchor>
+					</Anchors>
+					<backgroundTexture>bg_small_border_dark</backgroundTexture>
+					<visible>false</visible>
+				</comboBoxWithBackground>
+			</Container>
+		</Container>
+
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="428" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="19" y="745" />
+			</Size>
+			<uri>[local.common]window_separator_vertical.png</uri>
+			<autoGrid>true</autoGrid>
+		</Texture>
+
+		<windowWithoutTitleBar name="ctr_itemBlock">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="280" y="220" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="510" y="358" />
+			</Size>
+			<Content>
+				<Container name="ctr_item">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="462" y="315" />
+					</Size>
+				</Container>
+			</Content>
+		</windowWithoutTitleBar>
+
+	</Container>
+</Definition>

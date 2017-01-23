@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+
+    <Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template.button]iconButton.xml" />
+    
+    <Constants> 
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />	
+	</Constants>
+	
+	<!-- FENETRE DES RECETTES -->
+	<Container name="subRecipesCtr" strata="TOP">
+		<mouseEnabled>true</mouseEnabled>
+		<Anchors>
+			<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT">
+				<AbsDimension x="0" y="-155" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="455" y="672" />
+		</Size>
+	</Container>
+	
+	<!-- FENETRE DES BOUTONS -->
+	<Container name="buttonsCtr">
+		<Anchors>
+			<Anchor relativeTo="subRecipesCtr" point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT">
+				<AbsDimension x="-10" y="0" />
+			</Anchor>
+		</Anchors>
+		
+		<Size>
+			<AbsDimension x="529" y="84" />
+		</Size>
+
+		<Texture>
+			<Size>
+				<AbsDimension x="529" y="84" />
+			</Size>
+			<uri>[local.assets]tx_generalBackground</uri>
+			<autoGrid>true</autoGrid>
+		</Texture>
+
+		<simpleButton name="btn_ok">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="20" y="20" />
+				</Anchor>
+			</Anchors>
+			<uri>[local.assets]btn_orange</uri>
+			
+			<Size>
+				<AbsDimension x="236" y="44" />
+			</Size>
+			<label>[ui.common.merge]</label>
+			<css>[local.css]button.css</css>
+		</simpleButton>
+
+		<simpleButton name="btn_stop">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="271" y="20" />
+				</Anchor>
+			</Anchors>
+			<uri>[local.assets]btn_orange</uri>
+			
+			<Size>
+				<AbsDimension x="236" y="44" />
+			</Size>
+			<label>[ui.common.stop]</label>
+			<css>[local.css]button.css</css>
+		</simpleButton>
+	</Container>
+		
+	
+	<!-- FENETRE DES OBJETS CREES -->
+	<Container name="objectCtr">
+		<Anchors>
+			<Anchor point="BOTTOM" relativePoint="TOP" relativeTo="buttonsCtr">
+				<AbsDimension x="0" y="0" />
+			</Anchor>
+		</Anchors>
+
+		<Size>
+			<AbsDimension x="529" y="358" />
+		</Size>
+		<Texture>
+			<Size>
+				<AbsDimension x="529" y="358" />
+			</Size>
+			<uri>[local.assets]tx_generalBackgroundWithTitle</uri>
+			<autoGrid>true</autoGrid>
+		</Texture>
+
+
+		<Container name="ctr_item">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="32" y="22" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="462" y="315" />
+			</Size>
+		</Container>
+	</Container>
+	
+
+	<!-- FENETRE DES INGREDIENTS ET QUANTITE -->	
+	<Container name="ingredientsQuantitiesCtr" strata="TOP">
+		<mouseEnabled>true</mouseEnabled>
+	
+		<Anchors>
+			<Anchor point="BOTTOM" relativePoint="TOP" relativeTo="objectCtr">
+				<AbsDimension x="0" y="-10" />
+			</Anchor>
+		</Anchors>
+
+		<Size>
+            <AbsDimension x="529" y="414" />
+        </Size>
+
+		<Texture>
+			<Size>
+				<AbsDimension x="529" y="414" />
+			</Size>
+			<uri>[local.assets]tx_generalBackground</uri>
+			<autoGrid>true</autoGrid>
+		</Texture>
+		
+		<!-- ingr�dients -->
+		<Container name="ingredientsCtr">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="18" y="18" />
+				</Anchor>
+			</Anchors>
+		
+			<Texture name="tx_ingredients_content">
+				<Size>
+					<AbsDimension x="493" y="230" />
+				</Size>
+				<uri>[local.assets]tx_blockBackground</uri>
+				<autoGrid>true</autoGrid>
+			</Texture>
+			
+			<Texture name="tx_ingredients_selected">
+				<Size>
+					<AbsDimension x="493" y="230" />
+				</Size>
+				<uri>[local.assets]craft_tx_OrangeLine</uri>
+				<autoGrid>true</autoGrid>
+			</Texture>
+			
+
+			<!-- Ingredients (l'autre) -->
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="8" y="9" />
+					</Anchor>
+				</Anchors>
+				
+				<Texture>
+					<Size>
+						<AbsDimension x="476" y="110" />
+					</Size>
+					<autoGrid>true</autoGrid>
+					<uri>[local.assets]tx_commonGridLine</uri>
+				</Texture>
+				
+				<Label name="lbl_otherPlayerInfos">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="46" y="6" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="342" y="20" />
+					</Size>
+					<css>[local.css]normal.css</css>
+					<cssClass>right</cssClass>
+  					<hyperlinkEnabled>true</hyperlinkEnabled>
+					<useStyleSheet>true</useStyleSheet>
+				</Label>
+				
+				
+				<Label name="lbl_otherPlayerJob">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="46" y="30" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="342" y="20" />
+					</Size>
+					<css>[local.css]normal.css</css>
+					<cssClass>right</cssClass>
+				</Label>
+
+				<Slot name="slot_signature_other">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="10" y="57" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<emptyTexture>[local.assets]craft_tx_slotSignature</emptyTexture>
+					<css>[local.css]normal.css</css>
+					<highlightTexture>[local.bitmap]over.png</highlightTexture>
+					<selectedTexture>[local.bitmap]selected.png</selectedTexture>
+					<acceptDragTexture>[local.bitmap]acceptDrop.png</acceptDragTexture>
+					<refuseDragTexture>[local.bitmap]refuseDrop.png</refuseDragTexture>
+				</Slot>
+
+				<Slot name="slot_ingredient_1_other">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="55" y="57" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<emptyTexture>[local.assets]tx_slot</emptyTexture>
+					<css>[local.css]normal.css</css>
+					<highlightTexture>[local.bitmap]over.png</highlightTexture>
+					<selectedTexture>[local.bitmap]selected.png</selectedTexture>
+					<acceptDragTexture>[local.bitmap]acceptDrop.png</acceptDragTexture>
+					<refuseDragTexture>[local.bitmap]refuseDrop.png</refuseDragTexture>
+				</Slot>
+
+				<Slot name="slot_ingredient_2_other">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="98" y="57" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<emptyTexture>[local.assets]tx_slot</emptyTexture>
+					<css>[local.css]normal.css</css>
+					<highlightTexture>[local.bitmap]over.png</highlightTexture>
+					<selectedTexture>[local.bitmap]selected.png</selectedTexture>
+					<acceptDragTexture>[local.bitmap]acceptDrop.png</acceptDragTexture>
+					<refuseDragTexture>[local.bitmap]refuseDrop.png</refuseDragTexture>
+				</Slot>
+
+				<Slot name="slot_ingredient_3_other">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="141" y="57" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<emptyTexture>[local.assets]tx_slot</emptyTexture>
+					<css>[local.css]normal.css</css>
+					<highlightTexture>[local.bitmap]over.png</highlightTexture>
+					<selectedTexture>[local.bitmap]selected.png</selectedTexture>
+					<acceptDragTexture>[local.bitmap]acceptDrop.png</acceptDragTexture>
+					<refuseDragTexture>[local.bitmap]refuseDrop.png</refuseDragTexture>
+				</Slot>
+
+				<Slot name="slot_ingredient_4_other">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="184" y="57" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<emptyTexture>[local.assets]tx_slot</emptyTexture>
+					<css>[local.css]normal.css</css>
+					<highlightTexture>[local.bitmap]over.png</highlightTexture>
+					<selectedTexture>[local.bitmap]selected.png</selectedTexture>
+					<acceptDragTexture>[local.bitmap]acceptDrop.png</acceptDragTexture>
+					<refuseDragTexture>[local.bitmap]refuseDrop.png</refuseDragTexture>
+				</Slot>
+
+				<Slot name="slot_ingredient_5_other">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="227" y="57" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<emptyTexture>[local.assets]tx_slot</emptyTexture>
+					<css>[local.css]normal.css</css>
+					<highlightTexture>[local.bitmap]over.png</highlightTexture>
+					<selectedTexture>[local.bitmap]selected.png</selectedTexture>
+					<acceptDragTexture>[local.bitmap]acceptDrop.png</acceptDragTexture>
+					<refuseDragTexture>[local.bitmap]refuseDrop.png</refuseDragTexture>
+				</Slot>
+
+				<Slot name="slot_ingredient_6_other">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="270" y="57" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<emptyTexture>[local.assets]tx_slot</emptyTexture>
+					<css>[local.css]normal.css</css>
+					<highlightTexture>[local.bitmap]over.png</highlightTexture>
+					<selectedTexture>[local.bitmap]selected.png</selectedTexture>
+					<acceptDragTexture>[local.bitmap]acceptDrop.png</acceptDragTexture>
+					<refuseDragTexture>[local.bitmap]refuseDrop.png</refuseDragTexture>
+				</Slot>
+
+				<Slot name="slot_ingredient_7_other">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="313" y="57" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<emptyTexture>[local.assets]tx_slot</emptyTexture>
+					<css>[local.css]normal.css</css>
+					<highlightTexture>[local.bitmap]over.png</highlightTexture>
+					<selectedTexture>[local.bitmap]selected.png</selectedTexture>
+					<acceptDragTexture>[local.bitmap]acceptDrop.png</acceptDragTexture>
+					<refuseDragTexture>[local.bitmap]refuseDrop.png</refuseDragTexture>
+				</Slot>
+
+				<Slot name="slot_ingredient_8_other">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="356" y="57" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<emptyTexture>[local.assets]tx_slot</emptyTexture>
+					<css>[local.css]normal.css</css>
+					<highlightTexture>[local.bitmap]over.png</highlightTexture>
+					<selectedTexture>[local.bitmap]selected.png</selectedTexture>
+					<acceptDragTexture>[local.bitmap]acceptDrop.png</acceptDragTexture>
+					<refuseDragTexture>[local.bitmap]refuseDrop.png</refuseDragTexture>
+				</Slot>
+
+				<EntityDisplayer name="ed_otherPlayer">
+					<Anchors>
+						<Anchor> 
+							<AbsDimension x="395" y="7" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="80" y="100" />
+					</Size>
+					<mouseEnabled>true</mouseEnabled>
+					<handCursor>true</handCursor>
+				</EntityDisplayer>
+			</Container>
+						
+			<!-- Ingredients (moi) -->
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="8" y="115" />
+					</Anchor>
+				</Anchors>
+				
+				<Texture name="tx_ingredients_slots">
+					<Size>
+						<AbsDimension x="476" y="105" />
+					</Size>
+					<autoGrid>true</autoGrid>
+					<uri>[local.assets]tx_commonGridLine</uri>
+				</Texture>
+				
+				<Label name="lbl_playerInfos">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="82" y="13" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="295" y="20" />
+					</Size>
+					<css>[local.css]normal.css</css>
+  					<hyperlinkEnabled>true</hyperlinkEnabled>
+					<useStyleSheet>true</useStyleSheet>
+				</Label>
+				
+				<Slot name="slot_ingredient_1">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="79" y="46" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<emptyTexture>[local.assets]tx_slot</emptyTexture>
+					<css>[local.css]normal.css</css>
+					<highlightTexture>[local.bitmap]over.png</highlightTexture>
+					<selectedTexture>[local.bitmap]selected.png</selectedTexture>
+					<acceptDragTexture>[local.bitmap]acceptDrop.png</acceptDragTexture>
+					<refuseDragTexture>[local.bitmap]refuseDrop.png</refuseDragTexture>
+				</Slot>
+		
+				<Slot name="slot_ingredient_2">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="122" y="46" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<emptyTexture>[local.assets]tx_slot</emptyTexture>
+					<css>[local.css]normal.css</css>
+					<highlightTexture>[local.bitmap]over.png</highlightTexture>
+					<selectedTexture>[local.bitmap]selected.png</selectedTexture>
+					<acceptDragTexture>[local.bitmap]acceptDrop.png</acceptDragTexture>
+					<refuseDragTexture>[local.bitmap]refuseDrop.png</refuseDragTexture>
+				</Slot>
+				
+				<Slot name="slot_ingredient_3">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="165" y="46" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<emptyTexture>[local.assets]tx_slot</emptyTexture>
+					<css>[local.css]normal.css</css>
+					<highlightTexture>[local.bitmap]over.png</highlightTexture>
+					<selectedTexture>[local.bitmap]selected.png</selectedTexture>
+					<acceptDragTexture>[local.bitmap]acceptDrop.png</acceptDragTexture>
+					<refuseDragTexture>[local.bitmap]refuseDrop.png</refuseDragTexture>
+				</Slot>
+				
+				<Slot name="slot_ingredient_4">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="208" y="46" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<emptyTexture>[local.assets]tx_slot</emptyTexture>
+					<css>[local.css]normal.css</css>
+					<highlightTexture>[local.bitmap]over.png</highlightTexture>
+					<selectedTexture>[local.bitmap]selected.png</selectedTexture>
+					<acceptDragTexture>[local.bitmap]acceptDrop.png</acceptDragTexture>
+					<refuseDragTexture>[local.bitmap]refuseDrop.png</refuseDragTexture>
+				</Slot>
+		
+				<Slot name="slot_ingredient_5">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="251" y="46" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<emptyTexture>[local.assets]tx_slot</emptyTexture>
+					<css>[local.css]normal.css</css>
+					<highlightTexture>[local.bitmap]over.png</highlightTexture>
+					<selectedTexture>[local.bitmap]selected.png</selectedTexture>
+					<acceptDragTexture>[local.bitmap]acceptDrop.png</acceptDragTexture>
+					<refuseDragTexture>[local.bitmap]refuseDrop.png</refuseDragTexture>
+				</Slot>
+				
+				<Slot name="slot_ingredient_6">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="294" y="46" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<emptyTexture>[local.assets]tx_slot</emptyTexture>
+					<css>[local.css]normal.css</css>
+					<highlightTexture>[local.bitmap]over.png</highlightTexture>
+					<selectedTexture>[local.bitmap]selected.png</selectedTexture>
+					<acceptDragTexture>[local.bitmap]acceptDrop.png</acceptDragTexture>
+					<refuseDragTexture>[local.bitmap]refuseDrop.png</refuseDragTexture>
+				</Slot>
+		
+				<Slot name="slot_ingredient_7">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="337" y="46" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<emptyTexture>[local.assets]tx_slot</emptyTexture>
+					<css>[local.css]normal.css</css>
+					<highlightTexture>[local.bitmap]over.png</highlightTexture>
+					<selectedTexture>[local.bitmap]selected.png</selectedTexture>
+					<acceptDragTexture>[local.bitmap]acceptDrop.png</acceptDragTexture>
+					<refuseDragTexture>[local.bitmap]refuseDrop.png</refuseDragTexture>
+				</Slot>
+		
+				<Slot name="slot_ingredient_8">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="380" y="46" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<emptyTexture>[local.assets]tx_slot</emptyTexture>
+					<css>[local.css]normal.css</css>
+					<highlightTexture>[local.bitmap]over.png</highlightTexture>
+					<selectedTexture>[local.bitmap]selected.png</selectedTexture>
+					<acceptDragTexture>[local.bitmap]acceptDrop.png</acceptDragTexture>
+					<refuseDragTexture>[local.bitmap]refuseDrop.png</refuseDragTexture>
+				</Slot>
+		
+				<Slot name="slot_signature">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="425" y="46" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<emptyTexture>[local.assets]craft_tx_slotSignature</emptyTexture>
+					<css>[local.css]normal.css</css>
+					<highlightTexture>[local.bitmap]over.png</highlightTexture>
+					<selectedTexture>[local.bitmap]selected.png</selectedTexture>
+					<acceptDragTexture>[local.bitmap]acceptDrop.png</acceptDragTexture>
+					<refuseDragTexture>[local.bitmap]refuseDrop.png</refuseDragTexture>
+				</Slot>
+				
+				<EntityDisplayer name="ed_player">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="2" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="80" y="100" />
+					</Size>
+				</EntityDisplayer>
+			</Container>
+		</Container>
+		
+		<!-- quantit� -->
+		<Container name="quantityCtr">
+			<Anchors>
+				<Anchor> <!-- relativeTo="ingredientsCtr" point="TOPLEFT" relativePoint="BOTTOMLEFT">-->
+					<AbsDimension x="18" y="245" />
+				</Anchor>
+			</Anchors>
+			
+			<Texture>
+				<Size>
+					<AbsDimension x="493" y="116" />
+				</Size>
+				<uri>[local.assets]tx_blockBackground</uri>
+				<autoGrid>true</autoGrid>
+			</Texture>
+	
+			<Texture name="tx_quantity_selected">
+				<Size>
+					<AbsDimension x="493" y="116" />
+				</Size>
+				<uri>[local.assets]craft_tx_OrangeLine</uri>
+				<autoGrid>true</autoGrid>
+			</Texture>
+			
+			<!--Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="15" y="1" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="360" y="20" />
+				</Size>
+				<text>[ui.common.quantity][ui.common.colon]</text>
+				<css>[local.css]titleSmall.css</css>
+			</Label-->
+			
+			<Slot name="slot_item_crafting">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="15" y="17" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="44" y="44" />
+				</Size>
+				<allowDrag>false</allowDrag>
+				<emptyTexture>[local.assets]tx_slot</emptyTexture>
+				<css>[local.css]normal.css</css>
+			</Slot>
+			
+			<Label name="lbl_item_crafting">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="65" y="26" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="310" y="24" />
+				</Size>
+				<css>[local.css]normal.css</css>
+			</Label>
+	
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="380" y="26" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="20" y="24" />
+				</Size>
+				<text>X</text>
+				<css>[local.css]normal.css</css>
+				<cssClass>right</cssClass>
+			</Label>
+			
+			<Container name="quantityBoxCtr">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="408" y="26" />
+					</Anchor>
+				</Anchors>
+				
+				<Texture name="tx_quantity_label">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="2" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="60" y="21" />
+					</Size>
+					<autoGrid>true</autoGrid>
+					<uri>[local.assets]tx_inputBackground</uri>
+				</Texture>
+		
+				<Label name="lbl_quantity">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="2" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="52" y="21" />
+					</Size>
+					<cssClass>right</cssClass>
+					<css>[local.css]normal.css</css>
+				</Label>
+		
+		
+				<iconButton name="btn_quantity_up">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="65" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="15" y="13" />
+					</Size>
+					<uri>[local.assets]sb_flechehaut</uri>
+				</iconButton>
+		
+				<iconButton name="btn_quantity_down">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="65" y="15" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="15" y="13" />
+					</Size>
+					<uri>[local.assets]sb_flechebas</uri>
+				</iconButton>
+			</Container>
+			
+			<Label name="lbl_item_crafting_progress">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="15" y="73" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="431" y="20" />
+				</Size>
+				<css>[local.css]normal.css</css>
+			</Label>
+			
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="15" y="100" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="150" y="22" />
+				</Size>
+	            <css>[local.css]normal.css</css>
+	            <text>[ui.common.payment]</text>
+			</Label>
+		
+			<Texture name="tx_bgPayment">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="180" y="100" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="124" y="25" />
+				</Size>
+				<uri>[local.assets]tx_inputBackground</uri>
+				<autoGrid>true</autoGrid>
+			</Texture>
+		
+			<Label name="lbl_payment">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="182" y="100" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="110" y="20" />
+				</Size>
+				<text>0</text>
+				<cssClass>right</cssClass>
+				<css>[local.css]normal.css</css>
+				<restrict>0-9</restrict>
+			</Label>
+		</Container>
+		
+		<!-- TEXTURE BOUTON FERMER -->
+		        
+		<iconButton name="btn_close">
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT"/>
+			</Anchors>
+			<Size>
+				<AbsDimension x="57" y="36" />
+			</Size>
+			<uri>[local.assets]btn_cornerCross</uri>
+        </iconButton>
+	</Container>
+	
+	<!-- FLECHE BAS -->
+	
+	<Container name="arrowDownCtr">
+		<Anchors>
+			<Anchor point="TOP" relativePoint="BOTTOM" relativeTo="ingredientsQuantitiesCtr">
+				<AbsDimension x="0" y="1" />
+			</Anchor>
+		</Anchors>
+		
+		<Texture name="tx_arrow_down">
+			<uri>[local.assets]Craft_tx_BackgroundFlecheOrange</uri>
+			<autoGrid>true</autoGrid>
+		</Texture>
+	
+		<Texture name="tx_arrow_down_enable">
+			<uri>[local.assets]Craft_tx_FlecheOrange</uri>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="6" y="3" />
+				</Anchor>
+			</Anchors>
+			<autoGrid>true</autoGrid>
+		</Texture>
+	</Container>
+</Definition>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+    <Import url="[config.mod.template.button]iconButton.xml"/>
+
+    <Constants>
+
+        <Constant name="assets"
+                  value="[config.ui.skin]assets.swf|"/>
+        <Constant name="css"
+                  value="[config.ui.skin]css/"/>
+        <Constant name="gauge_width_category"
+                  value="210"
+                  type="int"/>
+    </Constants>
+
+    <Container name="mainCtr">
+        <br/>
+        <SwfApplication name="game">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="0"
+                                  y="0"/>
+                </Anchor>
+            </Anchors>
+
+            <Size>
+                <AbsDimension x="1910"
+                              y="1522"/>
+            </Size>
+        </SwfApplication>
+
+
+        <Texture name="tx_bg">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="1075"
+                                  y="0"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="150"
+                              y="32"/>
+            </Size>
+            <autoGrid>true</autoGrid>
+            <uri>[local.assets]tx_menuBackground</uri>
+        </Texture>
+
+        <iconButton name="closeButton">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="1145"
+                                  y="5"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="20"
+                              y="20"/>
+            </Size>
+            <uri>[local.assets]btn_cross_square</uri>
+        </iconButton>
+
+        <iconButton name="minusButton">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="1120"
+                                  y="5"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="20"
+                              y="20"/>
+            </Size>
+            <uri>[local.assets]btn_minus_square</uri>
+        </iconButton>
+
+        <iconButton name="plusButton">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="1120"
+                                  y="5"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="20"
+                              y="20"/>
+            </Size>
+            <uri>[local.assets]btn_plus_square</uri>
+        </iconButton>
+
+        <Texture name="tx_progress_bkg">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="534"
+                                  y="506"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="212"
+                              y="12"/>
+            </Size>
+            <uri>[local.assets]tx_progressBarBackground</uri>
+
+        </Texture>
+
+        <Texture name="tx_progress">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="535"
+                                  y="507"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="[local.gauge_width_category]"
+                              y="10"/>
+            </Size>
+            <uri>[local.assets]tx_progressBar</uri>
+
+        </Texture>
+
+    </Container>
+</Definition>

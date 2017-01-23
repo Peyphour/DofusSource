@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+	<Container name="mainCtr">
+		<Texture name="card" />
+	</Container>
+</Definition>
+

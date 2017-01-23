@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/greyButton.xml" />
+
+   <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="bases_uri" value="[config.content.path]gfx/bases/" />
+		<Constant name="illus" value="[config.content.path]gfx/illusUi/" />
+   </Constants>
+
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor point="TOP" relativePoint="TOP" >
+				<AbsDimension x="0" y="217" />
+			</Anchor>
+		</Anchors>
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="-5" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1142" y="526" />
+			</Size>
+			<uri>[local.assets]SelectionTuto_tx_background</uri>
+		</Texture>
+		
+		
+		
+		<Label>
+			<Anchors>
+				<Anchor point="TOP" relativePoint="TOP" >
+					<AbsDimension x="0" y="-5" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="700" y="30" />
+			</Size>
+			<text>[ui.tutorial.tutorialSelection]</text>
+			<css>[local.css]title.css</css>
+			<cssClass>center</cssClass>
+		</Label>
+		
+		<Label name="lbl_name">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="440" y="58" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="258" y="23" />
+			</Size>
+			<cssClass>center</cssClass>
+			<css>[local.css]titleSmall.css</css>
+		</Label>
+		
+		
+		<!-- PARTIE GAUCHE - NOTIFICATIONS -->
+		
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="20" y="105" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="328" y="30" />
+			</Size>
+			<text>[ui.tutorial.notificationTitle]</text>
+			<cssClass>center</cssClass>
+			<css>[local.css]title.css</css>
+		</Label>
+		
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="43" y="150" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="192" y="20" />
+			</Size>
+			<text>[ui.common.description]</text>
+			<css>[local.css]titleSmall.css</css>
+		</Label>
+				
+		<TextArea>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="33" y="180" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="304" y="270" />
+			</Size>
+			<text>[ui.tutorial.notificationDescription]</text>
+			<css>[local.css]normal.css</css>
+			<scrollCss>[local.css]scrollBar.css</scrollCss>
+			<hideScroll>true</hideScroll>
+		</TextArea>
+
+		<simpleButton name="btn_selectTutorial1">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="34" y="449" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="304" y="44" />
+			</Size>
+			<label>[ui.tutorial.selectNotificationMode]</label>
+			<css>[local.css]button.css</css>
+		</simpleButton>
+		
+		
+		<Texture name="tx_mask1">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="21" y="70" />
+				</Anchor>
+			</Anchors>
+			<mouseEnabled>true</mouseEnabled>
+			<uri>[local.assets]SelectionTuto_tx_gris1</uri>
+		</Texture>
+		
+		
+		<!-- PARTIE DROITE - TUTORIAL -->
+		
+		
+
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="792" y="105" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="328" y="30" />
+			</Size>
+			<text>[ui.tutorial.tutorialTitle]</text>
+			<cssClass>center</cssClass>
+			<css>[local.css]title.css</css>
+		</Label>
+
+
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="813" y="143" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="192" y="20" />
+			</Size>
+			<text>[ui.common.description]</text>
+			<css>[local.css]titleSmall.css</css>
+		</Label>
+
+		<TextArea>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="801" y="170" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="310" y="135" />
+			</Size>
+			<text>[ui.tutorial.tutorialDescription]</text>
+			<css>[local.css]normal.css</css>
+			<scrollCss>[local.css]scrollBar.css</scrollCss>
+			<hideScroll>true</hideScroll>
+		</TextArea>
+		
+		
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="813" y="305" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="192" y="20" />
+			</Size>
+			<text>[ui.grimoire.quest.rewards]</text>
+			<css>[local.css]titleSmall.css</css>
+		</Label>
+		
+		<!-- Faux bouton de gain d'xp avec tuto -->
+		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="1024" y="350" />
+				</Anchor>
+			</Anchors>
+			
+			<Texture>
+				<Size>
+					<AbsDimension x="70" y="70" />
+				</Size>
+				<uri>[local.assets]tutorial_tx_backgroundExp</uri>
+			</Texture>
+			
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension y="10" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="70" />
+				</Size>
+				<text>60</text>
+				<cssClass>center</cssClass>
+				<css>[local.css]normal.css</css>
+			</Label>
+			
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension y="35" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="70" />
+				</Size>
+				<cssClass>center</cssClass>
+				<css>[local.css]normal.css</css>
+				<text>[ui.common.xp]</text>
+			</Label>
+		</Container>
+		
+		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="810" y="338" />
+				</Anchor>
+			</Anchors>
+			
+			<Slot name="slot4">
+				<Anchors><Anchor><AbsDimension x="6" y="50" /></Anchor></Anchors>
+				<Size><AbsDimension x="44" y="44" /></Size>
+			</Slot>
+			<Slot name="slot0">
+				<Anchors><Anchor><AbsDimension x="6" y="0" /></Anchor></Anchors>
+				<Size><AbsDimension x="44" y="44" /></Size>
+			</Slot>
+			<Slot name="slot5">
+				<Anchors><Anchor><AbsDimension x="56" y="50" /></Anchor></Anchors>
+				<Size><AbsDimension x="44" y="44" /></Size>
+			</Slot>
+			<Slot name="slot1">
+				<Anchors><Anchor><AbsDimension x="56" y="0" /></Anchor></Anchors>
+				<Size><AbsDimension x="44" y="44" /></Size>
+			</Slot>
+			<Slot name="slot6">
+				<Anchors><Anchor><AbsDimension x="106" y="50" /></Anchor></Anchors>
+				<Size><AbsDimension x="44" y="44" /></Size>
+			</Slot>
+			<Slot name="slot2">
+				<Anchors><Anchor><AbsDimension x="106" y="0" /></Anchor></Anchors>
+				<Size><AbsDimension x="44" y="44" /></Size>
+			</Slot>
+			<Slot name="slot7">
+				<Anchors><Anchor><AbsDimension x="156" y="50" /></Anchor></Anchors>
+				<Size><AbsDimension x="44" y="44" /></Size>
+			</Slot>
+			<Slot name="slot3">
+				<Anchors><Anchor><AbsDimension x="156" y="0" /></Anchor></Anchors>
+				<Size><AbsDimension x="44" y="44" /></Size>
+			</Slot>
+		</Container>
+
+		<simpleButton name="btn_selectTutorial2">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="806" y="449" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="304" y="44" />
+			</Size>
+			<label>[ui.tutorial.selectTutorial]</label>
+			<css>[local.css]button.css</css>
+		</simpleButton>
+		
+
+		<Texture name="tx_mask2">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="791" y="68" />
+				</Anchor>
+			</Anchors>
+			<mouseEnabled>true</mouseEnabled>
+			<uri>[local.assets]SelectionTuto_tx_gris2</uri>
+		</Texture>
+		
+
+				
+		<!-- Button btn_cancel -->
+
+		<greyButton label="[ui.common.cancel]" name="btn_cancel" width="241" height="35">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="22" y="525" />
+				</Anchor>
+			</Anchors>
+			<css>[local.css]button.css</css>
+			<cssClass>small</cssClass>
+			<Hooks>
+				<onRelease />
+			</Hooks>
+		</greyButton>
+		
+		
+		
+		
+		
+		
+		<Texture name="tx_glow">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="791" y="68" />
+				</Anchor>
+			</Anchors>
+			<uri>[local.assets]SelectionTuto_tx_halo</uri>
+		</Texture>
+		
+		<!-- Texture tx_socle-->
+
+		<Texture name="tx_base">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="320" y="316" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="524" y="574" />
+			</Size>
+			<uri>[local.illus]socle_crea_perso.swf|CreaPerso_tx_socle</uri>
+		</Texture>
+
+		<!-- Texture tx_sprite-->
+
+		<EntityDisplayer name="edChara">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="568" y="450" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1" y="1" />
+			</Size>
+			<autoSize>false</autoSize>
+		</EntityDisplayer>
+		
+	</Container>
+</Definition>

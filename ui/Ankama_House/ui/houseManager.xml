@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+
+   	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       	<Constant name="css" value="[config.ui.skin]css/" />
+       	<Constant name="icons" value="[config.ui.skin]texture/btnIcon/" />
+   	</Constants>
+
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="6" y="70" />
+			</Anchor>
+		</Anchors>
+		<mouseEnabled>true</mouseEnabled>
+
+		<!-- Bouton Maison -->
+		<themeIconButton name="btnHouse">					
+					<Size>
+						<AbsDimension x="70" y="40" />
+					</Size>
+					<label></label>
+					<css>[local.css]button.css</css>
+		</themeIconButton>
+		
+
+		<!-- Texture maison normal -->
+		<Texture name="txHouse">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="10" y="8" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="20" y="20" />
+			</Size>
+			<uri>[local.icons]btnIcon_house.png</uri>
+		</Texture>
+		
+		<!-- Texture maison en vente -->
+		<Texture name="txHouseSell">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="40" y="8" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="17" y="21" />
+			</Size>
+			<uri>[local.icons]btnIcon_purse.png</uri>
+		</Texture>
+		
+		<!-- Texture maison verrouillée -->
+		<Texture name="txHouseLock">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="40" y="8" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="17" y="21" />
+			</Size>
+			<uri>[local.icons]btnIcon_lock.png</uri>
+		</Texture>
+	</Container>
+</Definition>

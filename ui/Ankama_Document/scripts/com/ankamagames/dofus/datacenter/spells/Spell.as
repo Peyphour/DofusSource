@@ -1,0 +1,117 @@
+package com.ankamagames.dofus.datacenter.spells
+{
+   public class Spell
+   {
+       
+      
+      public function Spell()
+      {
+         super();
+      }
+      
+      public function get id() : int
+      {
+         return new int();
+      }
+      
+      public function get nameId() : uint
+      {
+         return new uint();
+      }
+      
+      public function get descriptionId() : uint
+      {
+         return new uint();
+      }
+      
+      public function get typeId() : uint
+      {
+         return new uint();
+      }
+      
+      public function get order() : uint
+      {
+         return new uint();
+      }
+      
+      public function get scriptParams() : String
+      {
+         return new String();
+      }
+      
+      public function get scriptParamsCritical() : String
+      {
+         return new String();
+      }
+      
+      public function get scriptId() : int
+      {
+         return new int();
+      }
+      
+      public function get scriptIdCritical() : int
+      {
+         return new int();
+      }
+      
+      public function get iconId() : uint
+      {
+         return new uint();
+      }
+      
+      public function get spellLevels() : Vector.<uint>
+      {
+         return new Vector.<uint>();
+      }
+      
+      public function get variants() : Vector.<int>
+      {
+         return new Vector.<int>();
+      }
+      
+      public function get useParamCache() : Boolean
+      {
+         return new Boolean();
+      }
+      
+      public function get verbose_cast() : Boolean
+      {
+         return new Boolean();
+      }
+      
+      public function get obtentionLevel() : uint
+      {
+         return new uint();
+      }
+      
+      public function get useSpellLevelScaling() : Boolean
+      {
+         return new Boolean();
+      }
+      
+      public function get name() : String
+      {
+         return null;
+      }
+      
+      public function get description() : String
+      {
+         return null;
+      }
+      
+      public function get obtentionPrestige() : uint
+      {
+         return 0;
+      }
+      
+      public function get obtentionBaseLevel() : uint
+      {
+         return 0;
+      }
+      
+      public function get type() : SpellType
+      {
+         return null;
+      }
+   }
+}

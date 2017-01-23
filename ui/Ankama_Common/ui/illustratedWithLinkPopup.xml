@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition labelDebug="false">
+	<Import url="[config.mod.template.button]themeIconTextButton.xml" />
+	<Import url="[config.mod.template]windowWithoutTitleBar.xml" />
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	
+   <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="illus" value="[config.content.path]gfx/illusUi/" />
+   </Constants>
+
+	<Container name="mainCtr">
+		
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER" />
+		</Anchors>
+		<mouseEnabled>true</mouseEnabled>		
+		
+ 		<windowWithoutTitleBar name="popup">
+			<Size>
+				<AbsDimension x="669" y="570"/>
+			</Size>
+			<Anchors>
+				<Anchor point="CENTER" relativePoint="CENTER" />
+			</Anchors>
+			<bgColor>0</bgColor>
+			<Content>
+			
+				<Texture name="tx_illu">
+					<Size>
+						<AbsDimension x="629" y="352" />
+					</Size>
+				</Texture>
+				
+				<Label name="lbl_title">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="365" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="629" y="20" />
+					</Size>
+					<cssClass>center</cssClass>
+					<css>[local.css]title.css</css>
+				</Label>
+				
+				<Label name="lbl_content">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="390" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="629" y="80" />
+					</Size>
+					<multiline>true</multiline>
+					<wordWrap>true</wordWrap>
+					<verticalAlign>center</verticalAlign>
+					<cssClass>center</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+				
+				<themeIconTextButton name="btn_link">
+					<Anchors>
+						<Anchor point="BOTTOM" relativePoint="BOTTOM">
+							<AbsDimension x="0" y="-17" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="170" y="32" />
+					</Size>
+					<label>[ui.common.moreInfos]</label>
+					<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_external_link.png</iconUri>
+				</themeIconTextButton>
+						
+			</Content>
+		</windowWithoutTitleBar>
+
+	</Container>
+</Definition>

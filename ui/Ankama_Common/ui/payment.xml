@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />	
+	</Constants>
+	
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	
+	<Container>
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER" />
+		</Anchors>
+		<mouseEnabled>true</mouseEnabled>
+
+
+		<!-- Texture tx_background-->
+
+		<Texture name="tx_background">
+			<Size>
+				<AbsDimension x="484" y="230" />
+			</Size>
+			<autoGrid>true</autoGrid>
+			<uri>[local.assets]tx_generalBackgroundWithTitle</uri>
+		</Texture>
+
+		<!-- Texture tx_buttonBackground -->
+
+		<Texture>
+			<Anchors>
+				<Anchor relativeTo="tx_background" relativePoint="BOTTOM" point="BOTTOM">
+					<AbsDimension x="0" y="38" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="373" y="47" />
+			</Size>
+			<uri>[local.assets]tx_buttonBackground</uri>
+			<autoGrid>true</autoGrid>
+		</Texture>
+
+
+
+		<!-- Label lbl_title-->
+
+		<Label name="lbl_title">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="34" y="15" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="412" y="35" />
+			</Size>
+            <css>[local.css]title.css</css>
+            <text>[ui.common.payment]</text>
+		</Label>
+		
+		<Texture name="tx_blockBg">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="21" y="61" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="442" y="150" />
+			</Size>
+			<uri>[local.assets]tx_blockBackground</uri>
+			<autoGrid>true</autoGrid>
+		</Texture>
+			
+		<Container>
+			<!-- Grid gd_items -->
+		
+			<Grid name="gd_items">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="36" y="75" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="231" y="44" />
+				</Size>
+				<slotWidth>44</slotWidth>
+				<slotHeight>44</slotHeight>
+				<rendererName>SlotGridRenderer</rendererName>
+				<rendererArgs>[local.texture]slot/emptySlot.png,[local.texture]slot/over.png,[local.texture]slot/selected.png,[local.texture]slot/acceptDrop.png,[local.texture]slot/refuseDrop.png,,[local.css]normal2.css</rendererArgs>
+				<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+				<Hooks>
+					<onSelectItem />
+					<onItemRollOver />
+					<onItemRollOut />
+					<onItemRightClick />
+				</Hooks>
+			</Grid>
+		
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="327" y="72" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="121" y="20" />
+				</Size>
+				<text>[ui.common.kamas]</text>
+				<css>[local.css]normal.css</css>
+			</Label>
+		
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="326" y="96" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="120" y="25" />
+				</Size>
+				<uri>[local.assets]tx_inputBackground</uri>
+				<autoGrid>true</autoGrid>
+			</Texture>
+		
+			<Label name="lbl_kamas">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="326" y="96" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="114" y="22" />
+				</Size>
+				<text>0</text>
+				<css>[local.css]normal.css</css>
+				<cssClass>right</cssClass>
+				<restrict>0-9</restrict>
+			</Label>
+			
+			<iconButton name="sb_topArrow">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="286" y="71" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="19" y="13" />
+				</Size>
+				<uri>[local.assets]sb_flechehaut</uri>
+				<width>19</width>
+				<height>13</height>
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</iconButton>
+		
+			<iconButton name="sb_bottomArrow">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="286" y="111" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="19" y="13" />
+				</Size>
+				<uri>[local.assets]sb_flechebas</uri>
+				<width>19</width>
+				<height>13</height>
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</iconButton>
+		
+			<Label name="lbl_itemsTab">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="272" y="85" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="46" y="20" />
+				</Size>
+				<text>1/1</text>
+				<css>[local.css]normal.css</css>
+				<cssClass>center</cssClass>
+			</Label>
+		</Container>
+		
+		
+		
+
+		<Container name="ctr_bonus">
+	
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="34" y="133" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="369" y="20" />
+				</Size>
+				<text>[ui.craft.additionalPayment]</text>
+				<css>[local.css]normal.css</css>
+			</Label>
+			
+			<!-- Grid gd_itemsBonus -->
+	
+			<Grid name="gd_itemsBonus">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="36" y="156" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="231" y="44" />
+				</Size>
+				<slotWidth>44</slotWidth>
+				<slotHeight>44</slotHeight>
+				<rendererName>SlotGridRenderer</rendererName>
+				<rendererArgs>[local.texture]slot/emptySlot.png,[local.texture]slot/over.png,[local.texture]slot/selected.png,[local.texture]slot/acceptDrop.png,[local.texture]slot/refuseDrop.png,,[local.css]normal2.css</rendererArgs>
+				<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+				<Hooks>
+					<onSelectItem />
+					<onItemRollOver />
+					<onItemRollOut />
+					<onItemRightClick />
+				</Hooks>
+			</Grid>
+	
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="327" y="153" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="121" y="20" />
+				</Size>
+				<text>[ui.common.kamas]</text>
+				<css>[local.css]normal.css</css>
+			</Label>
+	
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="326" y="174" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="120" y="25" />
+				</Size>
+				<uri>[local.assets]tx_inputBackground</uri>
+				<autoGrid>true</autoGrid>
+			</Texture>
+	
+			<Label name="lbl_kamasBonus">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="326" y="174" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="114" y="22" />
+				</Size>
+				<text>0</text>
+				<css>[local.css]normal.css</css>
+				<cssClass>right</cssClass>
+				<restrict>0-9</restrict>
+			</Label>
+	
+			<iconButton name="sb_topArrowBonus">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="286" y="153" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="19" y="13" />
+				</Size>
+				<uri>[local.assets]sb_flechehaut</uri>
+				<width>19</width>
+				<height>13</height>
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</iconButton>
+	
+			<iconButton name="sb_bottomArrowBonus">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="286" y="193" /> 71 85 111
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="19" y="13" />
+				</Size>
+				<uri>[local.assets]sb_flechebas</uri>
+				<width>19</width>
+				<height>13</height>
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</iconButton>
+	
+			<Label name="lbl_itemsTabBonus">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="272" y="167" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="46" y="20" />
+				</Size>
+				<text>1/1</text>
+				<css>[local.css]normal.css</css>
+				<cssClass>center</cssClass>
+			</Label>
+
+		</Container>
+		
+		<!-- Button btn_valid-->
+
+		<simpleButton label="[ui.common.validation]" name="btn_valid"   >
+			<Size>
+				<AbsDimension x="199" y="35" />
+			</Size>
+			<Anchors>
+				<Anchor relativeTo="tx_background" relativePoint="BOTTOM" point="BOTTOM">
+					<AbsDimension x="0" y="30" />
+				</Anchor>
+			</Anchors>
+			<css>[local.css]button.css</css>
+			<Hooks>
+				<onRelease />
+			</Hooks>
+		</simpleButton>		
+
+
+		<!-- iconButton btn_close-->
+
+		<iconButton name="btn_close">
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" />
+			</Anchors>
+			<Size>
+				<AbsDimension x="57" y="36" />
+			</Size>
+			<uri>[local.assets]btn_cornerCross</uri>
+		</iconButton>
+
+		
+	</Container>
+</Definition>

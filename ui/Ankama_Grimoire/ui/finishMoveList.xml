@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template]window.xml" />
+
+	<Constants>
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="illuPath" value="[config.content.path]gfx/illusUi/finishMoves/#.jpg" />
+	</Constants>
+	
+	<window name="mainCtr" title="[ui.grimoire.finishMoves]">
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="0" y="-40" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="820" y="770" />
+		</Size>
+		<movable>true</movable>
+		<mouseEnabled>true</mouseEnabled>
+		
+		<Content>	
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="3" y="5"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="778" y="692" />
+				</Size>
+				
+				<!-- background -->
+				<Texture>
+					<uri>[local.texture]spell/background_fatal_window.png</uri>
+				</Texture>
+				
+				<Label name="lbl_info">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="85" y="24"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="610"/>
+					</Size>
+					<text>[ui.grimoire.finishMove.title]</text>
+					<cssClass>italiccenter</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+				
+				<Texture name="tx_help">
+					<Anchors> 
+						<Anchor>
+							<AbsDimension x="0" y="24" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="22" y="22" />
+					</Size>
+					<Hooks>
+						<onRollOver />
+						<onRollOut />
+					</Hooks>
+				</Texture>
+				
+				<!-- grille des coups fatals -->
+				<Grid name="gd_finishMoves">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="42" y="62" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="699" y="152" />
+					</Size>
+					<rendererName>InlineXmlGridRenderer</rendererName>
+					<rendererArgs>updateFinishMoveLine</rendererArgs>
+					<slotWidth>233</slotWidth>
+					<slotHeight>38</slotHeight>
+					<Hooks>
+						<onSelectItem />
+					</Hooks>
+		
+					<Container>
+						<Button name="btn_finishMove">
+							<Common>
+								<Size>
+									<AbsDimension x="233" y="38" />
+								</Size>
+								<Hooks>
+									<onRollOver/>
+									<onRollOut/>
+								</Hooks>
+								
+								<Texture name="tx_bgFinishMove">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="0" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="233" y="38" />
+									</Size>
+									<uri>[local.texture]spell/btnsmall__fatal_normal.png</uri>
+								</Texture>
+								
+								<Texture name="tx_checkFinishMove">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="8" y="8" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="22" y="22" />
+									</Size>
+									<uri>[local.texture]slot/validationSlot.png</uri>
+								</Texture>
+								
+								<Label name="lbl_finishMoveName">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="35" y="7" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="195" y="16" />
+									</Size>
+									<css>[local.css]small2.css</css>
+								</Label>
+							</Common>
+							
+							<State type="OVER">
+								<SetProperties target="tx_bgFinishMove">
+									<uri>[local.texture]spell/btnsmall_fatal_over.png</uri>
+								</SetProperties>
+							</State>
+							
+							<State type="PRESSED">
+								<SetProperties target="tx_bgFinishMove">
+									<uri>[local.texture]spell/btnsmall_fatal_pressed.png</uri>
+								</SetProperties>
+							</State>
+		
+							<State type="SELECTED">
+								<SetProperties target="tx_bgFinishMove">
+									<uri>[local.texture]spell/btnsmall_fatal_selected.png</uri>
+								</SetProperties>
+							</State>
+		
+							<State type="SELECTED_OVER">
+								<SetProperties target="tx_bgFinishMove">
+									<uri>[local.texture]spell/btnsmall_fatal_selected_over.png</uri>
+								</SetProperties>
+							</State>
+						</Button>
+					</Container>
+				</Grid>
+				
+				<!-- illu du coup fatal -->
+				<Texture name="tx_illu">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="58" y="234" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="668" y="400" />
+					</Size>
+					<uri>[config.content.path]gfx/illusUi/finishMoves/1.jpg</uri>
+				</Texture>
+				
+				<simpleButton name="btn_validate">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="260" y="647" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="120" y="30" />
+					</Size>
+					<label>[ui.common.validation]</label>
+					<cssClass>darkboldcenter</cssClass>
+					<css>[local.css]normal2.css</css>
+				</simpleButton>
+				
+				<simpleButton name="btn_cancel">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="400" y="647" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="120" y="30" />
+					</Size>
+					<label>[ui.common.cancel]</label>
+					<cssClass>darkboldcenter</cssClass>
+					<css>[local.css]normal2.css</css>
+				</simpleButton>
+				
+			</Container>
+		</Content>
+	</window>
+</Definition>

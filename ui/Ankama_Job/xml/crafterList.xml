@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition debug="false" labelDebug="false">
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]button/sortButton.xml" />
+	<Import url="[config.mod.template]button/comboBoxWithBackground.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]blockDoubleBorder.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+
+		<Constant name="heads" value="[config.content.path]gfx/heads/SmallHead_" />
+
+		<Constant name="dead_uri" value="[local.assets]Social_tx_deadState" />
+		<Constant name="offline_uri" value="[local.assets]Social_tx_offlineState" />
+		<Constant name="fight_uri" value="[local.assets]Social_tx_fightState" />
+        <Constant name="icons_uri" value="[local.texture]icon_state_" />
+		<Constant name="alignment_uri" value="[config.content.path]gfx/alignments/wings.swf|tx_alignment" />
+	</Constants>
+
+	<window title="[ui.craft.craftersList]" dark="true">
+
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="0" y="-80" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="960" y="730" />
+		</Size>
+		<Content>
+
+			<Label name="lbl_job">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="20" y="5" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="300" y="17" />
+				</Size>
+				<cssClass>whitebigbold</cssClass>
+				<css>[local.css]title.css</css>
+			</Label>
+			<comboBoxWithBackground name="combo_job"
+				width="290" height="40">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+						<AbsDimension x="-40" y="5" />
+					</Anchor>
+				</Anchors>
+			</comboBoxWithBackground>
+			<blockDoubleBorder headerHeight="40" footerHeight="40">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="50" />
+					</Anchor>
+
+				</Anchors>
+				<Size>
+					<AbsDimension x="920" y="610" />
+				</Size>
+				<Content>
+					<!-- TOP MENU -->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="0" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<RelDimension x="1" y="1" />
+						</Size>
+
+						<Container>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="8" />
+								</Anchor>
+							</Anchors>
+
+							<sortButton name="btn_tabAli">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="25" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="25" y="24" />
+								</Size>
+							</sortButton>
+
+							<sortButton name="btn_tabBreed">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="50" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="35" y="24" />
+								</Size>
+							</sortButton>
+
+							<Label>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="95" y="1" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="200" y="24" />
+								</Size>
+								<text>[ui.common.name]</text>
+								<cssClass>boldleft</cssClass>
+								<css>[local.css]small2.css</css>
+							</Label>
+							<sortButton name="btn_tabName">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="90" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="205" y="24" />
+								</Size>
+							</sortButton>
+
+							<Label>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="295" y="1" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="160" y="17" />
+								</Size>
+								<text>[ui.common.jobs]</text>
+								<cssClass>boldcenter</cssClass>
+								<css>[local.css]small2.css</css>
+							</Label>
+							<sortButton name="btn_tabJob">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="295" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="160" y="24" />
+								</Size>
+							</sortButton>
+
+							<Label>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="455" y="1" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="50" y="17" />
+								</Size>
+								<text>[ui.common.short.level]</text>
+								<cssClass>boldcenter</cssClass>
+								<css>[local.css]small2.css</css>
+							</Label>
+							<sortButton name="btn_tabLevel">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="455" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="50" y="24" />
+								</Size>
+							</sortButton>
+
+							<Label>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="505" y="1" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="230" y="17" />
+								</Size>
+								<text>[ui.common.coordinatesSmall]</text>
+								<cssClass>boldcenter</cssClass>
+								<css>[local.css]small2.css</css>
+							</Label>
+							<sortButton name="btn_tabCoord">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="505" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="230" y="24" />
+								</Size>
+							</sortButton>
+
+							<Texture>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="761" y="-1" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="25" y="25" />
+								</Size>
+								<uri>[local.texture]icon_recipe_min_level.png</uri>
+							</Texture>
+							<sortButton name="btn_tabMinLevel">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="741" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="58" y="24" />
+								</Size>
+							</sortButton>
+
+							<Texture>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="812" y="-3" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="32" y="32" />
+								</Size>
+								<uri>[local.texture]Icon_kamas2.png</uri>
+							</Texture>
+							<sortButton name="btn_tabCost">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="802" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="40" y="24" />
+								</Size>
+							</sortButton>
+						</Container>
+					</Container>
+
+					<!-- Grid -->
+					<Grid name="gd_crafters">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="40" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="900" y="504" />
+						</Size>
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updateCrafterLine,[colors.grid.line]</rendererArgs>
+						<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+						<slotWidth>890</slotWidth>
+						<slotHeight>36</slotHeight>
+
+						<Container name="crafterItemCtr">
+							<Size>
+								<AbsDimension x="638" y="36" />
+							</Size>
+
+							<Texture name="tx_status">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="12" y="9" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="18" y="18" />
+								</Size>
+								<uri>[local.icons_uri]|available</uri>
+								<visible>false</visible>
+							</Texture>
+
+							<Texture name="tx_alignment">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="32" y="3" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="30" y="30" />
+								</Size>
+							</Texture>
+
+							<Texture name="tx_head">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="45" y="3" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="30" y="30" />
+								</Size>
+							</Texture>
+
+							<Label name="lbl_name">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="95" y="6" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="200" y="20" />
+								</Size>
+								<css>[local.css]small2.css</css>
+								<hyperlinkEnabled>true</hyperlinkEnabled>
+								<useStyleSheet>true</useStyleSheet>
+							</Label>
+							
+
+							<Label name="lbl_job">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="295" y="6" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="160" y="20" />
+								</Size>
+								<cssClass>center</cssClass>
+								<css>[local.css]small2.css</css>
+							</Label>
+
+							<Label name="lbl_level">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="455" y="6" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="50" y="20" />
+								</Size>
+								<cssClass>center</cssClass>
+								<css>[local.css]small2.css</css>
+							</Label>
+
+							<Label name="lbl_loc">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="505" y="6" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="230" y="20" />
+								</Size>
+								<cssClass>center</cssClass>
+								<css>[local.css]small2.css</css>
+							</Label>
+
+							<Texture name="tx_loc">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="505" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="230" y="35" />
+								</Size>
+								<uri>[local.assets]tx_invisible</uri>
+							</Texture>
+
+							<Label name="lbl_lvlMin">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="745" y="6" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="50" y="20" />
+								</Size>
+								<cssClass>center</cssClass>
+								<css>[local.css]small2.css</css>
+							</Label>
+
+							<Texture name="tx_notFree">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="810" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="36" y="36" />
+								</Size>
+								<uri>[local.texture]Icon_kamas2.png</uri>
+							</Texture>
+
+							<themeIconButton name="btn_more">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="853" y="7" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="24" y="22" />
+								</Size>
+
+								<iconAnchors>
+									<Anchor relativePoint="TOPLEFT">
+										<AbsDimension x="3" y="3" />
+									</Anchor>
+									<Anchor relativePoint="BOTTOMRIGHT">
+										<AbsDimension x="-3" y="-3" />
+									</Anchor>
+								</iconAnchors>
+								<smooth>true</smooth>
+								
+								<iconThemeDataId>icon_mail</iconThemeDataId>
+								<Hooks>
+									<onRelease />
+								</Hooks>
+							</themeIconButton>
+
+						</Container>
+					</Grid>
+
+					<!-- BOTTOM -->
+
+					<Label name="lbl_nbCrafter">
+						<Anchors>
+							<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT">
+								<AbsDimension x="-20" y="-12" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="259" y="19" />
+						</Size>
+						<cssClass>mediumright</cssClass>
+						<css>[local.css]small2.css</css>
+					</Label>
+
+				</Content>
+			</blockDoubleBorder>
+
+		</Content>
+
+	</window>
+</Definition>

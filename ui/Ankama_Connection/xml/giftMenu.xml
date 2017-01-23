@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition modal="true">
+    <Constants>
+        <Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+        <Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+        <Constant name="illus" value="[config.content.path]gfx/illusUi/" />
+        <Constant name="common" value="[config.ui.skin]common/"/>
+        <Constant name="texture" value="[config.ui.skin]texture/"/>
+        <Constant name="bitmap" value="[config.ui.skin]bitmap/"/>
+        <Constant name="illus" value="[config.ui.skin]illus/"/>
+    </Constants>
+
+    <Import url="[config.mod.template.button]simpleButton.xml" />
+    <Import url="[config.mod.template.button]iconButton.xml" />
+    <Import url="[config.mod.template]window.xml" />
+    <Import url="[config.mod.template]block.xml" />
+    <Import url="[config.mod.template.button]themeIconButton.xml" />
+
+    <Container name="mainCtr">
+
+        <window>
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="120" y="266" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="1050" y="710" />
+            </Size>
+            <title>[ui.gift.giftReceived]</title>
+            <noCloseButton>true</noCloseButton>
+            <dark>true</dark>
+            <Content>
+
+                <block name="ctr_gift">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="5" y="5" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="561" y="583" />
+                </Size>
+                    <Content>
+                        <Grid name="gd_gifts">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="550" y="570" />
+                            </Size>
+                            <slotWidth>550</slotWidth>
+                            <slotHeight>80</slotHeight>
+                            <rendererName>InlineXmlGridRenderer</rendererName>
+                            <rendererArgs>updateGiftLine,[colors.grid.line]</rendererArgs>
+                            <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+
+                            <Container name="ctr_gift">
+                                <Size>
+                                    <AbsDimension x="550" y="80" />
+                                </Size>
+
+                                <Label name="lbl_giftName">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="10" y="0" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="464" y="5" />
+                                    </Size>
+                                    <css>[local.css]normal2.css</css>
+                                </Label>
+
+                                <Grid name="gd_items_slot">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="25" y="30" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="300" y="46" />
+                                    </Size>
+                                    <rendererName>SlotGridRenderer</rendererName>
+                                    <rendererArgs>[local.texture]slot/slot_dark_background_empty.png,[local.texture]slot/over.png,,,,,[local.css]normal2.css, false</rendererArgs>
+                                    <slotWidth>44</slotWidth>
+                                    <slotHeight>44</slotHeight>
+                                    <autoSelectMode>0</autoSelectMode>
+                                    <Hooks>
+                                        <onItemRollOver />
+                                        <onRollOut />
+                                    </Hooks>
+                                </Grid>
+
+                                <themeIconButton name="btn_acceptOne">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="485" y="20" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="44" y="44" />
+                                    </Size>
+                                    <iconUri>[local.texture]btnIcon/btnIcon_arrowClaim.png</iconUri>
+                                </themeIconButton>
+                            </Container>
+                        </Grid>
+                    </Content>
+                </block>
+
+                <block>
+                    <Anchors>
+                        <Anchor relativeTo="ctr_gift" point="TOPLEFT" relativePoint="TOPRIGHT">
+                            <AbsDimension x="0" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="440" y="583" />
+                    </Size>
+                    <Content>
+
+                        <Label>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="10" y="10" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="423" y="20" />
+                            </Size>
+                            <text>[ui.gift.whosGift]</text>
+                            <css>[local.css]normal2.css</css>
+                        </Label>
+
+                        <!-- Grid gd_character_select-->
+
+                        <Grid name="gd_character_select">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="1" y="77" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="430" y="468" />
+                            </Size>
+                            <slotWidth>430</slotWidth>
+                            <slotHeight>78</slotHeight>
+                            <rendererName>XmlUiGridRenderer</rendererName>
+                            <rendererArgs>Ankama_Connection::giftCharacterSelectionItem,[colors.grid.line]</rendererArgs>
+                            <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+                        </Grid>
+                        <Texture>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="40" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="430" y="39" />
+                            </Size>
+                            <uri>[local.common]bg_dark.png</uri>
+                        </Texture>
+
+                        <Label>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="88" y="47" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="215" y="20" />
+                            </Size>
+                            <text>[ui.common.name]</text>
+                            <css>[local.css]normal2.css</css>
+                        </Label>
+
+                        <Label>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="308" y="47" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="81" y="20" />
+                            </Size>
+                            <text>[ui.common.level]</text>
+                            <css>[local.css]normal2.css</css>
+                            <cssClass>center</cssClass>
+                        </Label>
+                    </Content>
+                </block>
+
+                <Texture>
+                    <Anchors>
+                        <Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT">
+                            <AbsDimension x="0" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension y="60" />
+                    </Size>
+                    <uri>[local.common]/corner_decoration.png</uri>
+                </Texture>
+
+                <Texture>
+                    <Anchors>
+                        <Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT">
+                            <AbsDimension x="90" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension y="60" />
+                    </Size>
+                    <scaleX>-1</scaleX>
+                    <uri>[local.common]/corner_decoration.png</uri>
+                </Texture>
+
+
+
+
+                <simpleButton name="btn_assignAllgifts">
+                    <Anchors>
+                        <Anchor relativePoint="BOTTOM" point="BOTTOM">
+                            <AbsDimension x="-150" y="-11" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="269" y="35" />
+                    </Size>
+                    <label>[ui.connection.assignAll]</label>
+                </simpleButton>
+
+                <!-- simpleButton btn_not_now-->
+
+                <simpleButton name="btn_not_now">
+                    <Anchors>
+                        <Anchor relativePoint="BOTTOM" point="BOTTOM">
+                            <AbsDimension x="150" y="-11" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="269" y="35" />
+                    </Size>
+                    <label>[ui.connection.skipStep]</label>
+                </simpleButton>
+            </Content>
+        </window>
+
+
+
+        <!-- Texture tx_giftPicture-->
+
+        <!--Texture name="tx_giftPicture">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="0" y="0" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="78" y="99" />
+            </Size>
+            <uri>[local.illus]cadeau_tx_cadeau.png</uri>
+        </Texture-->
+
+
+
+        <Texture>
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="112" y="0" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="999" y="423" />
+            </Size>
+            <uri>[local.illus]cadeau_tx_deco.png</uri>
+            <autoGrid>false</autoGrid>
+        </Texture>
+    </Container>
+</Definition>
+

@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+    <Import url="mod://Ankama_Config/ui/template/configCheckbox.xml"/>
+    <Import url="[config.mod.template]button/labelCheckBox.xml"/>
+    <Import url="[config.mod.template]button/iconButton.xml"/>
+    <Import url="[config.mod.template]button/simpleButton.xml"/>
+    <Import url="[config.mod.template]button/themeLabelCheckBox.xml"/>
+    <Import url="[config.mod.template.button]comboBoxWithBackground.xml"/>
+
+    <Constants>
+        <Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+        <Constant name="css" value="[config.ui.skin]css/"/>
+        <Constant name="common" value="[config.ui.skin]common/"/>
+		<Constant name="alertIcon" value="[config.ui.skin]texture/alert/btnIcon_"/>
+    </Constants>
+
+    <Container>
+
+        <Label name="lbl_title1">
+            <Anchors>
+                <Anchor relativePoint="BOTTOMLEFT" relativeTo="tx_bgForeground2">
+                    <AbsDimension x="0" y="15"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="750" y="25"/>
+            </Size>
+            <text>[ui.common.general]</text>
+            <cssClass>whitebold</cssClass>
+            <css>[local.css]normal2.css</css>
+        </Label>
+
+        <TextureBitmap name="tx_bgForeground1">
+            <Anchors>
+                <Anchor relativeTo="lbl_title1">
+                    <AbsDimension x="0" y="30"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="780" y="197"/>
+            </Size>
+            <themeDataId>bg_small_border_light</themeDataId>
+        </TextureBitmap>
+
+
+        <Label name="lbl_title2">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="0" y="0"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="750" y="25"/>
+            </Size>
+            <text>[ui.alert.events]</text>
+            <cssClass>whitebold</cssClass>
+            <css>[local.css]normal2.css</css>
+        </Label>
+
+        <TextureBitmap name="tx_bgForeground2">
+            <Anchors>
+                <Anchor relativeTo="lbl_title2">
+                    <AbsDimension x="0" y="30"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="780" y="400"/>
+            </Size>
+            <themeDataId>bg_small_border_light</themeDataId>
+        </TextureBitmap>
+
+
+        <Label name="lbl_notifMode">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground1">
+                    <AbsDimension x="20" y="17"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="480" y="20"/>
+            </Size>
+            <text>[ui.alert.activationMode]</text>
+            <css>[local.css]normal2.css</css>
+        </Label>
+
+
+        <Label name="lbl_maxNumber">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground1">
+                    <AbsDimension x="20" y="73"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="480" y="20"/>
+            </Size>
+            <text>[ui.alert.windowsMax]</text>
+            <css>[local.css]normal2.css</css>
+        </Label>
+
+        <Label name="lbl_displayDuration">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground1">
+                    <AbsDimension x="20" y="100"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="480" y="20"/>
+            </Size>
+            <text>[ui.alert.timeBeforeWindowsDisappearance]</text>
+            <css>[local.css]normal2.css</css>
+        </Label>
+
+        <Label name="lbl_notifPosition">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground1">
+                    <AbsDimension x="20" y="127"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="360" y="20"/>
+            </Size>
+            <text>[ui.alert.windowsPosition]</text>
+            <css>[local.css]normal2.css</css>
+        </Label>
+
+        <!-- Container useless mais un peu qd mm, sert ? placer les checkbox -->
+
+        <Container>
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground1">
+                    <AbsDimension x="20" y="145"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="20" y="10"/>
+            </Size>
+        </Container>
+
+
+        <themeLabelCheckBox name="btn_alphaWindows">
+            <labelWidth>560</labelWidth>
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground1" relativePoint="BOTTOMLEFT">
+                    <AbsDimension x="15" y="-35"/>
+                </Anchor>
+            </Anchors>
+            <text>[ui.alert.seethroughWindows]</text>
+        </themeLabelCheckBox>
+
+
+        <comboBoxWithBackground name="cb_notifPosition" width="340" height="38">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground1">
+                    <AbsDimension x="410" y="127"/>
+                </Anchor>
+            </Anchors>
+            <Hooks>
+                <onSelectItem/>
+            </Hooks>
+        </comboBoxWithBackground>
+
+        <comboBoxWithBackground name="cb_displayDuration" width="210" height="38">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground1">
+                    <AbsDimension x="540" y="95"/>
+                </Anchor>
+            </Anchors>
+            <Hooks>
+                <onSelectItem/>
+            </Hooks>
+        </comboBoxWithBackground>
+
+        <comboBoxWithBackground name="cb_maxNumber" width="210" height="38">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground1">
+                    <AbsDimension x="540" y="65"/>
+                </Anchor>
+            </Anchors>
+            <Hooks>
+                <onSelectItem/>
+            </Hooks>
+        </comboBoxWithBackground>
+
+        <comboBoxWithBackground name="cb_notifMode" width="650" height="38">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground1">
+                    <AbsDimension x="100" y="35"/>
+                </Anchor>
+            </Anchors>
+            <Hooks>
+                <onSelectItem/>
+            </Hooks>
+        </comboBoxWithBackground>
+
+
+        <Grid name="gd_notifications">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground2">
+                    <AbsDimension x="20" y="25"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="740" y="350"/>
+            </Size>
+            <slotWidth>740</slotWidth>
+            <slotHeight>35</slotHeight>
+            <rendererName>InlineXmlGridRenderer</rendererName>
+            <rendererArgs>updateNotificationLine,[colors.grid.line],[colors.grid.bg]</rendererArgs>
+
+            <Container>
+                <Size>
+                    <AbsDimension x="720" y="35"/>
+                </Size>
+
+                <themeLabelCheckBox name="btn_activate">
+                    <labelWidth>560</labelWidth>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="5" y="4"/>
+                        </Anchor>
+                    </Anchors>
+					<Hooks>
+						<onMouseUp/>
+					</Hooks>
+                </themeLabelCheckBox>
+
+                <Container name="checkBoxesCtr">
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="615" y="5"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="25" y="25"/>
+						</Size>
+						<buttonMode>true</buttonMode>
+						<Texture name="btn_sound">
+							<uri>[config.ui.skin]texture/alert/btnIcon_audio_normal.png</uri>
+							<Hooks>
+								<onRollOver/>
+								<onRollOut/>
+								<onMouseUp/>
+							</Hooks>
+						</Texture>
+					</Container>
+					
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="660" y="5"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="25" y="25"/>
+						</Size>
+						<buttonMode>true</buttonMode>
+						<Texture name="btn_notify">
+							<uri>[config.ui.skin]texture/alert/btnIcon_page_normal.png</uri>
+							<Hooks>
+								<onRollOver/>
+								<onRollOut/>
+								<onMouseUp/>
+							</Hooks>
+						</Texture>
+					</Container>
+
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="705" y="5"/>
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="25" y="25"/>
+						</Size>
+						<buttonMode>true</buttonMode>
+						<Texture name="btn_multi">
+							<uri>[config.ui.skin]texture/alert/btnIcon_multi_normal.png</uri>
+							<Hooks>
+								<onRollOver/>
+								<onRollOut/>
+								<onMouseUp/>
+							</Hooks>
+						</Texture>
+					</Container>
+                </Container>
+
+            </Container>
+        </Grid>
+
+    </Container>
+</Definition>
+

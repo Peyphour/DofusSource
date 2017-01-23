@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition fullscreen="true" giveFocus="false" transmitFocus="false">
+    <Import url="[config.mod.template]button/iconButton.xml" />
+    <Import url="[config.mod.template.button]themeIconButton.xml" />
+    <Constants>
+        <Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+        <Constant name="texture" value="[config.ui.skin]texture/" />
+    </Constants>
+    <Container name="mainCtr">
+        <Anchors>
+            <Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+                <AbsDimension x="39" />
+            </Anchor>
+        </Anchors>
+        
+        <Container name="menuCtr">
+            <Anchors>
+                <Anchor relativePoint="TOPRIGHT" point="TOPRIGHT" />
+            </Anchors>
+            <Size>
+                <AbsDimension x="200" y="32" />
+            </Size>
+            <mouseEnabled>true</mouseEnabled>
+            <!-- Texture tx_bg-->
+            <Container name="ctr_bg">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="60" y="0" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="105" y="32" />
+                </Size>
+                <bgColor>[colors.gamemenu.background]</bgColor>
+                <alpha>[colors.gamemenu.background.alpha]</alpha>
+                <isMagnetic>true</isMagnetic>
+            </Container>
+            <!-- simpleButton btn_abo -->
+            <themeIconButton name="btn_abo">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="70" y="2" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="25" y="25" />
+                </Size>
+                <iconUri>[local.texture]btnIcon/btnIcon_star.png</iconUri>
+            </themeIconButton>
+            <!-- simpleButton btn_mp -->
+            <themeIconButton name="btn_mp">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="30" y="2" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="65" y="25" />
+                </Size>
+                <iconAnchors>
+                    <Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+                        <AbsDimension x="-3" y="1" />
+                    </Anchor>
+                    <Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+                        <AbsDimension x="-30" y="-1" />
+                    </Anchor>
+                </iconAnchors>
+                <iconThemeDataId>icon_mail</iconThemeDataId>
+                <visible>false</visible>
+            </themeIconButton>
+            <themeIconButton name="btn_mpGrey">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="30" y="2" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="65" y="25" />
+                </Size>
+                <bgThemeDataId>button_grey</bgThemeDataId>
+                <iconAnchors>
+                    <Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+                        <AbsDimension x="-3" y="1" />
+                    </Anchor>
+                    <Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+                        <AbsDimension x="-30" y="-1" />
+                    </Anchor>
+                </iconAnchors>
+                <iconThemeDataId>icon_mail</iconThemeDataId>
+                <visible>false</visible>
+            </themeIconButton>
+            <Label name="lbl_msgNumber">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="33" y="4" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="30" />
+                </Size>
+                <cssClass>darkboldcenter</cssClass>
+                <css>[local.css]small2.css</css>
+                <visible>false</visible>
+            </Label>
+            <!-- simpleButton btn_options -->
+            <themeIconButton name="btn_options">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="100" y="2" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="25" y="25" />
+                </Size>
+                <iconUri>[local.texture]btnIcon/btnIcon_gear.png</iconUri>
+            </themeIconButton>
+            <!-- simpleButton btn_menu -->
+            <themeIconButton name="btn_menu">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="130" y="2" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="25" y="25" />
+                </Size>
+                <iconUri>[local.texture]btnIcon/btnIcon_cross.png</iconUri>
+            </themeIconButton>
+        </Container>
+    </Container>
+    <Container name="ctr_newMail">
+        <Anchors>
+            <Anchor>
+                <AbsDimension x="980" y="40" />
+            </Anchor>
+        </Anchors>
+        <Button name="btn_newMail">
+            <Common>
+                <Container name="backgroundCtr" strata="LOW">
+                    <Size>
+                        <AbsDimension x="250" y="75" />
+                    </Size>
+                    <shadowColor>[colors.ui.shadow]</shadowColor>
+                    <bgCornerRadius>10</bgCornerRadius>
+                    <bgColor>[colors.tooltip.bg]</bgColor>
+                    <bgAlpha>[colors.tooltip.bg.alpha]</bgAlpha>
+                </Container>
+                <Label name="lbl_newMail">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="15" y="15" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="210" y="55" />
+                    </Size>
+                    <css>[local.css]normal2.css</css>
+                    <cssClass>center</cssClass>
+                    <text>[ui.ankabox.newMail]</text>
+                    <multiline>true</multiline>
+                    <wordWrap>true</wordWrap>
+                </Label>
+            </Common>
+        </Button>
+        <themeIconButton name="btn_close">
+            <Size>
+                <AbsDimension x="26" y="26" />
+            </Size>
+            <Anchors>
+                <Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+                    <AbsDimension x="-5" y="5" />
+                </Anchor>
+            </Anchors>
+            <iconUri>[local.texture]btnIcon/btnIcon_cross.png</iconUri>
+            <Hooks>
+                <onRelease />
+            </Hooks>
+        </themeIconButton>
+    </Container>
+    <Container name="ctr_lagometer">
+        <Anchors>
+            <Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+                <AbsDimension x="-50" y="50" />
+            </Anchor>
+        </Anchors>
+        <Texture name="tx_lagometer">
+            <Size>
+                <AbsDimension x="30" y="30" />
+            </Size>
+            <uri>[local.assets]tx_wait</uri>
+        </Texture>
+        <mouseEnabled>false</mouseEnabled>
+        <mouseChild>false</mouseChild>
+    </Container>
+</Definition>

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+    <Import url="[config.mod.template]button/horizontalTab.xml" />
+	<Import url="[config.mod.template]button/sortButton.xml" />
+    <Import url="[config.mod.template]button/iconButton.xml" />
+    <Import url="[config.mod.template]button/themeHorizontalTab.xml" />
+    <Import url="[config.mod.template]window.xml" />
+    <Import url="[config.mod.template]block.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="icons_uri" value="[config.content.path]gfx/icons/assets.swf|" />
+        <Constant name="common" value="[config.ui.skin]common/" />
+        <Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+	
+	<window name="topTaxCollectorsWindow">
+		<Anchors>
+			<Anchor relativePoint="BOTTOM" point="BOTTOM" >
+				<AbsDimension x="0" y="-300" />
+			</Anchor>
+		</Anchors>
+        <Size>
+            <AbsDimension x="1000" y="586" />
+        </Size>
+        <Content>
+            <block>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="0" y="30" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="950" y="480" />
+                </Size>
+                <dark>true</dark>
+                <Content>
+                    <!-- colonnes -->
+                    <Texture>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="0" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="940" y="40" />
+                        </Size>
+                        <uri>[local.common]bg_dark.png</uri>
+                    </Texture>
+                    <sortButton name="btn_sortGuild">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="50" y="10" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="290" y="24" />
+                        </Size>
+                    </sortButton>
+                    <Label name="lbl_sortGuild">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="50" y="10" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="200" y="24"/>
+                        </Size>
+                        <cssClass>medium</cssClass>
+                        <css>[local.css]small2.css</css>
+                        <text>[ui.common.guild]</text>
+                    </Label>
+
+                    <sortButton name="btn_sortEstimatedValue">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="350" y="10" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="160" y="24" />
+                        </Size>
+                    </sortButton>
+                    <Label name="lbl_sortEstimatedValue">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="350" y="10" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="150" y="24"/>
+                        </Size>
+                        <cssClass>medium</cssClass>
+                        <css>[local.css]small2.css</css>
+                        <text>[ui.exchange.estimatedValue]</text>
+                    </Label>
+
+                    <sortButton name="btn_sortSubArea">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="520" y="10" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="310" y="24" />
+                        </Size>
+                    </sortButton>
+                    <Label name="lbl_sortSubArea">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="520" y="10" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="310" y="24"/>
+                        </Size>
+                        <cssClass>medium</cssClass>
+                        <css>[local.css]small2.css</css>
+                        <text>[ui.map.subarea]</text>
+                    </Label>
+
+                    <sortButton name="btn_sortCoordinates">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="850" y="10" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="90" y="24" />
+                        </Size>
+                    </sortButton>
+                    <Label name="lbl_sortCoordinates">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="850" y="10" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="70" y="24"/>
+                        </Size>
+                        <cssClass>medium</cssClass>
+                        <css>[local.css]small2.css</css>
+                        <text>[ui.common.coordinatesSmall]</text>
+                    </Label>
+                    <Texture>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="0" y="40" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="950" y="440" />
+                        </Size>
+                        <uri>[local.common]bg_light.png</uri>
+                    </Texture>
+                    <Grid name="gd_taxCollectors">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="0" y="40" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="940" y="430" />
+                        </Size>
+                        <rendererName>InlineXmlGridRenderer</rendererName>
+                        <rendererArgs>updateItemLine,[colors.grid.line]</rendererArgs>
+                        <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+                        <slotWidth>940</slotWidth>
+                        <slotHeight>40</slotHeight>
+
+                        <Container>
+                            <Size>
+                                <AbsDimension x="926" y="35" />
+                            </Size>
+                            <Label name="lbl_taxCollectorGuild">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="50" y="9" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="300" y="26" />
+                                </Size>
+                                <hyperlinkEnabled>true</hyperlinkEnabled>
+                                <useStyleSheet>true</useStyleSheet>
+                                <cssClass>mediumleft</cssClass>
+                                <css>[local.css]small2.css</css>
+                            </Label>
+                            <Label name="lbl_taxCollectorEstimatedValue">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="330" y="9" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="100" y="30" />
+                                </Size>
+                                <hyperlinkEnabled>true</hyperlinkEnabled>
+                                <useStyleSheet>true</useStyleSheet>
+                                <cssClass>mediumright</cssClass>
+                                <css>[local.css]small2.css</css>
+                            </Label>
+                            <Texture name="tx_estimatedValue">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="437" y="12" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="15" y="15" />
+                                </Size>
+                                <uri>[local.texture]icon_kama.png</uri>
+                            </Texture>
+                            <Label name="lbl_taxCollectorSubArea">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="520" y="9" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="324" y="30" />
+                                </Size>
+                                <hyperlinkEnabled>true</hyperlinkEnabled>
+                                <useStyleSheet>true</useStyleSheet>
+                                <cssClass>mediumleft</cssClass>
+                                <css>[local.css]small2.css</css>
+                            </Label>
+                            <Label name="lbl_taxCollectorCoordinates">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="850" y="9" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="80" y="30" />
+                                </Size>
+                                <hyperlinkEnabled>true</hyperlinkEnabled>
+                                <useStyleSheet>true</useStyleSheet>
+                                <cssClass>mediumleft</cssClass>
+                                <css>[local.css]small2.css</css>
+                            </Label>
+                        </Container>
+                    </Grid>
+                </Content>
+            </block>
+            <Container>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="-5" y="-50" />
+                    </Anchor>
+                </Anchors>
+                <themeHorizontalTab name="btn_dungeonTaxCollectors">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="25" y="56" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="80" y="30" />
+                    </Size>
+                    <text>[ui.common.dungeon]</text>
+                </themeHorizontalTab>
+                <themeHorizontalTab name="btn_taxCollectors">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="100" y="56" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="105" y="30" />
+                    </Size>
+                    <text>[ui.common.classic]</text>
+                </themeHorizontalTab>
+            </Container>
+        </Content>
+	</window>
+</Definition>

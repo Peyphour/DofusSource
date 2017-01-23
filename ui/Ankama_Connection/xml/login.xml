@@ -1,0 +1,1071 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition useCache="false" debug="false" labelDebug="false">
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/themeLabelCheckBox.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]button/themeIconButton.xml" />
+	<Import url="[config.mod.template]button/greyButton.xml" />
+    <Import url="[config.mod.template]button/themeHorizontalTab.xml" />
+    <Import url="[config.mod.template]button/comboBoxWithBackground.xml" />
+    <Import url="[config.mod.template]block.xml" />
+    <Import url="[config.mod.template]window.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="illus" value="[config.content.path]gfx/illusUi/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+
+		<Constant name="gifts_uri" value="[config.content.path]gfx/subscriberGifts/" />
+        <Constant name="ogr_uri" value="[config.ui.skin]texture/icon_ogrine.png" />
+	</Constants>
+
+	<Container>
+		<Size>
+			<RelDimension x="1" y="1" />
+		</Size>
+		
+		
+		<!--                 CADEAUX D'ABONNEMENT  + Boutons avantages et parrainage               -->
+
+		<Container name="ctr_gifts">
+			<Anchors>
+				<Anchor point="BOTTOM" relativePoint="BOTTOM">
+					<AbsDimension x="0" y="60" />
+				</Anchor>
+			</Anchors>
+            <visible>false</visible>
+
+            <Grid name="gd_shop">
+                <Size>
+                    <AbsDimension x="616" y="175" />
+                </Size>
+                <rendererName>InlineXmlGridRenderer</rendererName>
+                <rendererArgs>updateShopGift</rendererArgs>
+                <slotWidth>154</slotWidth>
+                <slotHeight>175</slotHeight>
+
+                <Container name="ctr_article">
+                    <Size>
+                        <AbsDimension x="154" y="175" />
+                    </Size>
+                    
+                    <Texture name="tx_bgArticle">
+                        <Anchors>
+                        	<Anchor>
+                        		<AbsDimension x="0" y="0" />
+							</Anchor>
+                        </Anchors>
+                        <Size>
+                        	<AbsDimension x="154" y="175" />
+                        	</Size>
+                        <uri>[local.common]block_border_price.png</uri>
+                    </Texture>
+                    <Texture name="tx_article">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="22" y="22" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="110" y="110" />
+                        </Size>
+                    </Texture>
+                    
+                    <Texture name="tx_banner">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="24" y="95" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="103" y="37" />
+                        </Size>
+                        <uri>[local.assets]tx_bannerShopItem</uri>
+                        <autoGrid>true</autoGrid>
+                        <visible>true</visible>
+                    </Texture>
+                    <Texture name="tx_money">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="89" y="99" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="28" y="24" />
+                        </Size>
+                        <visible>false</visible>
+                        <uri>[local.ogr_uri]</uri>
+                    </Texture>
+                    <Label name="lbl_banner">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="25" y="100" />         <!-- tx_banner.x +7, tx_banner.y+5/-->
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="82" y="25" />
+                        </Size>
+                        <cssClass>extrawhiteboldcenter</cssClass>
+                        <css>[local.css]normal2.css</css>
+                        <text></text>
+                    </Label>
+                    
+                    <Label name="lbl_price">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="32" y="140" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="78" y="25" />
+                        </Size>
+                        <cssClass>boldcenterogrine</cssClass>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+                    <Texture>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="100" y="145" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="20" y="17" />
+                        </Size>
+                        <uri>[local.ogr_uri]</uri>
+                    </Texture>
+                    <Container name="ctr_crossprice">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="45" y="152" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="75" y="2" />
+                        </Size>
+			 			<bgColor>0x999999</bgColor>
+			 			<bgAlpha>1</bgAlpha>
+			 			<visible>false</visible>
+                    </Container>
+                </Container>
+                <Hooks>
+                    <onSelectItem />
+                </Hooks>
+            </Grid>
+					
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="93" y="175" />
+					</Anchor>			
+				</Anchors>
+				
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="21" y="19" />
+						</Anchor>
+					</Anchors>
+					<Size>
+					    <AbsDimension x="389" y="92" />
+					</Size>
+		 			<bgColor>[colors.ui.bg.window]</bgColor>
+		 			<bgAlpha>0.9</bgAlpha>
+				</Container>			
+				<TextureBitmap>
+					<Size>
+					    <AbsDimension x="430" y="133" />
+					</Size>
+					<themeDataId>popup_border_frame</themeDataId>
+					<smooth>true</smooth>
+				</TextureBitmap>
+						
+	            <simpleButton label="[ui.connection.loggedInMembers]" name="btn_members">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="40" y="30" />
+						</Anchor>
+					</Anchors>
+					<Size>
+					    <AbsDimension x="160" y="32" />
+					</Size>
+				</simpleButton>
+	
+				<simpleButton label="[ui.connection.sponsoring]" name="btn_lowa">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="230" y="30" />
+						</Anchor>
+					</Anchors>
+					<Size>
+					    <AbsDimension x="160" y="32" />
+					</Size>
+				</simpleButton>
+			</Container>
+
+		</Container>
+
+		
+		<!-- Partie centrale -->
+		
+		<Container>
+			<Anchors>
+				<Anchor point="TOP" relativePoint="TOP">
+                    <AbsDimension x="0" y="0" />
+                </Anchor>
+			</Anchors>
+			<Size>
+			    <AbsDimension x="480" y="440" />
+			</Size>			
+			
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="0" />
+					</Anchor>			
+				</Anchors>
+				<Size>
+				    <AbsDimension x="480" y="440" />
+				</Size>
+				
+				<!-- Container d'options -->
+				<Container name="ctr_options">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="12" y="520" />
+						</Anchor>			
+					</Anchors>
+						
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="21" y="19" />
+							</Anchor>			
+						</Anchors>
+						<Size>
+						    <AbsDimension x="415" y="192" />
+						</Size>
+			 			<bgColor>[colors.ui.bg.window]</bgColor>
+			 			<bgAlpha>0.9</bgAlpha>
+					</Container>	
+				
+					<TextureBitmap>
+						<Size>
+						    <AbsDimension x="456" y="233" />
+						</Size>
+						<themeDataId>popup_border_frame</themeDataId>
+						<smooth>true</smooth>
+					</TextureBitmap>
+										
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="60" y="80" />
+							</Anchor>
+						</Anchors>
+							
+						<themeLabelCheckBox name="btn_rememberLogin">
+							<labelWidth>290</labelWidth>
+							<text>[ui.login.rememberMe]</text>
+						</themeLabelCheckBox>
+		
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="40" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="155" y="15" />
+							</Size>
+							<cssClass>medium</cssClass>
+							<css>[local.css]small2.css</css>
+							<text>[ui.connection.connectionTo]</text>
+						</Label>
+		
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="75" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="155" y="15" />
+							</Size>
+							<cssClass>medium</cssClass>
+							<css>[local.css]small2.css</css>
+							<text>[ui.connection.port][ui.common.colon]</text>
+						</Label>
+		
+						<comboBoxWithBackground name="cb_socket" width="200" height="39">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="150" y="65" />
+								</Anchor>
+							</Anchors>
+						</comboBoxWithBackground>	
+		
+						<comboBoxWithBackground name="cb_connectionType" width="200" height="39">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="150" y="30" />
+								</Anchor>
+							</Anchors>
+						</comboBoxWithBackground>
+					</Container>
+				</Container>
+				
+				<!-- Fond principal -->
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="130" />
+						</Anchor>			
+					</Anchors>
+						
+					<TextureBitmap>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="21" y="19" />
+							</Anchor>			
+						</Anchors>
+						<Size>
+						    <AbsDimension x="439" y="399" />
+						</Size>
+						<themeDataId>window_background</themeDataId>
+					</TextureBitmap>	
+					
+					<block>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="26" y="148" />
+							</Anchor>			
+						</Anchors>
+						<Size>
+						    <AbsDimension x="427" y="263" />
+						</Size>
+						
+						<Content>
+							<Texture>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="3" y="205" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="415" y="61" />
+								</Size>
+								<uri>[local.common]tx_gradient_vertical_dark.png</uri>
+							</Texture>
+						</Content>
+					</block>    
+					
+					<!-- Bloc de titre -->
+					<block>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="26" y="25" />
+							</Anchor>			
+						</Anchors>
+						<Size>
+						    <AbsDimension x="427" y="130" />
+						</Size>
+					</block>   
+					
+					<Container name="ctr_welcome">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="31" y="107"/>
+							</Anchor>
+						</Anchors>
+						<visible>false</visible>
+							
+						<TextureBitmap>
+				            <Anchors>
+				                <Anchor>
+				                    <AbsDimension x="0" y="1"/>
+				                </Anchor>
+				            </Anchors>
+				            <Size>
+				                <AbsDimension x="417" y="3" />
+				            </Size>
+				            <uri>[local.common]window_separator_black_horizontal.png</uri>
+				        </TextureBitmap>
+				        
+						<Texture>
+							<Size>
+								<AbsDimension x="417" y="40" />
+							</Size>
+							<uri>[local.common]tx_gradient_vertical_dark_bar.png</uri>
+						</Texture> 
+									
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="5" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="417" y="30" />
+							</Size>
+							<forceUppercase>true</forceUppercase>
+							<cssClass>whitebigboldcenter</cssClass>
+							<css>[local.css]title.css</css>
+							<text>[ui.login.welcome]</text>
+						</Label>
+							
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="43"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="427" y="3" />
+							</Size>
+							<uri>[local.common]window_separator_green_horizontal.png</uri>
+						</Texture>
+					</Container>
+				
+					<TextureBitmap>
+						<Size>
+						    <AbsDimension x="480" y="440" />
+						</Size>
+						<themeDataId>popup_border_frame</themeDataId>
+						<smooth>true</smooth>
+					</TextureBitmap>
+				</Container>
+				
+				<!-- Logo DOFUS -->
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="85" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="310" y="310" />
+					</Size>
+					<uri>[local.illus]logo_dofus.swf|tx_logo_FR</uri>
+				</Texture>				
+				
+			</Container>
+
+
+			<!--                   ONGLETS                   -->
+
+			<Container name="ctr_tabs">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="50" y="244" />
+					</Anchor>
+				</Anchors>
+                <visible>false</visible>
+
+				<themeHorizontalTab name="btn_registeredTab">
+					<Size>
+					    <AbsDimension x="140" y="40" />
+					</Size>
+					<text>[ui.common.connection]</text>
+				</themeHorizontalTab>
+
+				<themeHorizontalTab name="btn_guestTab">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="140" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+					    <AbsDimension x="140" y="40" />
+					</Size>
+					<text>[ui.guest.guestMode]</text>
+				</themeHorizontalTab>
+			</Container>
+
+
+			<Container name="ctr_links">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="56" y="430" />
+                    </Anchor>
+                </Anchors>
+                <visible>false</visible>
+	            
+				<Button name="btn_passForgotten">
+					<Common>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="0" />
+							</Anchor>
+						</Anchors>
+						<Label name="lbl_passForgotten">
+							<Size>
+								<AbsDimension x="208" y="16" />
+							</Size>
+							<text>[ui.login.forgottenPassword]</text>
+							<cssClass>medium</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+						<Hooks>
+							<onRelease />
+						</Hooks>
+					</Common>
+					<State type="OVER">
+						<SetProperties target="lbl_passForgotten">
+							<cssClass>green</cssClass>
+						</SetProperties>
+					</State>
+				</Button>
+
+				<Button name="btn_createAccount">
+					<Common>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="208" y="0" />
+							</Anchor>
+						</Anchors>
+						<Label name="lbl_createAccount">
+							<Size>
+								<AbsDimension x="160" y="16" />
+							</Size>
+							<text>[ui.login.createAccount]</text>
+							<cssClass>mediumright</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+						<Hooks>
+							<onRelease />
+						</Hooks>
+					</Common>
+					<State type="OVER">
+						<SetProperties target="lbl_createAccount">
+							<cssClass>greenright</cssClass>
+						</SetProperties>
+					</State>
+				</Button>
+			</Container>
+
+			<!--                   CONTENEUR POUR LES TEXTES CENTRAUX             -->
+
+			<Container name="ctr_center">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="50" y="296" />
+                    </Anchor>
+                </Anchors>
+                <visible>false</visible>
+
+	            <Container name="ctr_capsLockMsg" strata="LOW">
+	                <Anchors>
+	                    <Anchor>
+	                        <AbsDimension x="370" y="60" />
+	                    </Anchor>
+	                </Anchors>
+					<Size>
+						<AbsDimension x="325" y="30" />
+					</Size>
+		 			<bgColor>[colors.tooltip.bg]</bgColor>
+		 			<bgAlpha>[colors.tooltip.bg.alpha]</bgAlpha>
+	            </Container>
+	            <Label name="lbl_capsLock">
+	                <Anchors>
+	                    <Anchor>
+	                        <AbsDimension x="376" y="63" />
+	                    </Anchor>
+	                </Anchors>
+	                <autoResize>false</autoResize>
+	                <fixedWidth>true</fixedWidth>
+	                <text>[ui.login.capsLockWarning]</text>
+	                <!--cssClass>dark</cssClass-->
+	                <css>[local.css]small2.css</css>
+	            </Label>
+				
+				<TextureBitmap>
+		            <Anchors>
+		                <Anchor>
+		                    <AbsDimension x="0" y="165"/>
+		                </Anchor>
+		            </Anchors>
+		            <Size>
+		                <AbsDimension x="380" y="2" />
+		            </Size>
+		            <uri>[local.common]window_separator_black_horizontal.png</uri>
+		        </TextureBitmap>
+		        
+				<!-- Lien pour l'ouverture des options -->
+	
+				<Button name="btn_options">
+					<Common>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="50" y="177" />
+							</Anchor>
+						</Anchors>
+						<Label name="lbl_options">
+							<Size>
+								<AbsDimension x="280" y="21" />
+							</Size>
+							<text>[ui.option.advancedOptions]</text>
+							<cssClass>center</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+						<Hooks>
+							<onRelease />
+						</Hooks>
+					</Common>
+					<State type="OVER">
+						<SetProperties target="lbl_options">
+							<cssClass>greencenter</cssClass>
+						</SetProperties>
+					</State>
+					<State type="DISABLED">
+						<SetProperties target="lbl_options">
+							<cssClass>disabledcenter</cssClass>
+						</SetProperties>
+					</State>
+				</Button>
+		        
+
+				<!--  Jouer  -->	
+	
+				<simpleButton label="[ui.common.play]" name="btn_play">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="54" y="209" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="272" y="84" />
+					</Size>
+					<bgThemeDataId>button_largeBorder</bgThemeDataId>
+					<smooth>true</smooth>
+					<cssClass>darkcenter</cssClass>
+					<css>[local.css]title.css</css>
+					<forceUppercase>true</forceUppercase>
+				</simpleButton>
+				
+				
+	            
+				<StateContainer name="ctr_inputs">
+					<Common>	                    
+	                    <!-- Mot de passe -->
+	                    <Container name="ctr_pass">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="63" />
+								</Anchor>
+							</Anchors>
+							
+							<TextureBitmap name="tx_inputPass">
+								<Size>
+									<AbsDimension x="380" y="70" />
+								</Size>
+								<themeDataId>bg_small_border_dark</themeDataId>
+								<smooth>true</smooth>
+								<linkedTo>input_pass</linkedTo>
+								<mouseEnabled>true</mouseEnabled>
+							</TextureBitmap>
+							
+							<Texture name="tx_inputPassIcon">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="15" y="24" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="22" y="22" />
+								</Size>
+								<uri>[local.texture]icon_key.png</uri>
+								<linkedTo>input_pass</linkedTo>
+								<mouseEnabled>true</mouseEnabled>
+							</Texture>
+						
+							<Label name="lbl_pass">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="45" y="23" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="310" y="15" />
+								</Size>
+								<cssClass>disabled</cssClass>
+								<css>[local.css]small2.css</css>
+							</Label>
+							<Input name="input_pass">
+								<Anchors> 
+									<Anchor>
+										<AbsDimension x="45" y="23" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="310" y="15" />
+								</Size>
+								<css>[local.css]small2.css</css>
+								<password>true</password>
+							</Input>
+						</Container>
+	                    
+						
+	                    <!-- Login -->
+	                    <Container name="ctr_login">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="0" />
+								</Anchor>
+							</Anchors>
+							
+							<TextureBitmap name="tx_inputLogin">
+								<Size>
+									<AbsDimension x="380" y="70" />
+								</Size>
+								<themeDataId>bg_small_border_dark</themeDataId>
+								<smooth>true</smooth>
+							</TextureBitmap>
+							
+							<Texture name="tx_inputLoginIcon">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="15" y="24" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="22" y="22" />
+								</Size>
+								<uri>[local.texture]icon_man.png</uri>
+							</Texture>
+		
+							<InputComboBox name="cbx_login">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="45" y="8" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="328" y="52" />
+								</Size>
+					            <css>[local.css]normal2.css</css>
+		
+					            <buttonTexture>arrow_small_bottom</buttonTexture>
+					            <listTexture>[local.common]bg_listbox.png</listTexture>
+								<rendererName>InlineXmlGridRenderer</rendererName>
+								<rendererArgs>updateLoginLine,[local.css]combobox.css,,,,[colors.combobox.over],[colors.combobox.selected]</rendererArgs>
+					            <scrollBarCss>[local.css]scrollBar.css</scrollBarCss>
+		
+								<slotWidth>314</slotWidth>
+								<slotHeight>25</slotHeight>
+		
+								<Container>
+									<Button name="btn_login">
+										<Common>
+											<Texture>
+												<Size>
+												<AbsDimension x="314" y="25" />
+												</Size>
+												<bgColor>0</bgColor>
+												<bgAlpha>0</bgAlpha>
+												<mouseEnabled>true</mouseEnabled>
+											</Texture>
+		
+											<Label name="lbl_loginName">
+												<Anchors>
+													<Anchor>
+														<AbsDimension x="8" y="0" />
+													</Anchor>
+												</Anchors>
+												<Size>
+													<AbsDimension x="250" y="20" />
+												</Size>
+												<cssClass>medium</cssClass>
+												<css>[local.css]small2.css</css>
+											</Label>
+										</Common>
+		
+										<State type="OVER">
+											<SetProperties target="btn_login">
+												<bgColor>[colors.combobox.over]</bgColor>
+											</SetProperties>
+										</State>
+		
+										<State type="SELECTED">
+											<SetProperties target="btn_login">
+												<bgColor>[colors.combobox.selected]</bgColor>
+											</SetProperties>
+										</State>
+		
+										<State type="SELECTED_OVER">
+											<SetProperties target="btn_login">
+												<bgColor>[colors.combobox.selected]</bgColor>
+											</SetProperties>
+										</State>
+									</Button>
+									
+									<themeIconButton name="btn_removeLogin">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="290" y="3" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="19" y="19" />
+										</Size>
+										<bgThemeDataId>btn_cross_in_grey_circle</bgThemeDataId>
+										<smooth>true</smooth>
+									</themeIconButton>
+		
+								</Container>
+							</InputComboBox>
+							
+							<Label name="lbl_login">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="45" y="25" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="300" y="15" />
+								</Size>
+								<cssClass>medium</cssClass>
+								<css>[local.css]small2.css</css>
+							</Label>
+						</Container>
+						
+						<!-- Bouton permettant de passer de l'identification Ankama à celui vers les services tiers  -->
+						<iconButton name="btn_oauth">
+			               <Anchors>
+			                   <Anchor>
+			                       <AbsDimension x="370" y="-5"/>
+			                   </Anchor>
+			               </Anchors>
+			               <Size>
+			                   <AbsDimension x="32" y="32"/>
+			               </Size>
+			               <visible>false</visible>
+			               <uri>[local.assets]btn_social_sign_in</uri>
+			            </iconButton>
+					</Common>
+	
+					<State type="DISABLED">
+						<SetProperties target="tx_inputLogin">
+							<alpha>0.1</alpha>
+						</SetProperties>
+						<SetProperties target="tx_inputLoginIcon">
+							<alpha>0.2</alpha>
+						</SetProperties>
+						<SetProperties target="tx_inputPass">
+							<alpha>0.1</alpha>
+						</SetProperties>
+						<SetProperties target="tx_inputPassIcon">
+							<alpha>0.2</alpha>
+						</SetProperties>
+					</State>
+					<State type="NORMAL">
+						<SetProperties target="tx_inputLogin">
+							<alpha>1</alpha>
+						</SetProperties>
+						<SetProperties target="tx_inputLoginIcon">
+							<alpha>1</alpha>
+						</SetProperties>
+						<SetProperties target="tx_inputPass">
+							<alpha>1</alpha>
+						</SetProperties>
+						<SetProperties target="tx_inputPassIcon">
+							<alpha>1</alpha>
+						</SetProperties>
+					</State>
+				</StateContainer>
+			</Container>
+
+
+
+			<!--                   CONTENEUR POUR LE MODE GUEST                   -->
+
+			<Container name="ctr_guestMode">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="50" y="290" />
+                    </Anchor>
+                </Anchors>
+                <visible>false</visible>
+
+				<Texture>
+					<Size>
+						<AbsDimension x="110" y="172" />
+					</Size>
+	                <uri>[local.texture]onboarding/tx_login_guest.png</uri>
+				</Texture>
+
+				<Label name="lbl_guestModeInfo">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="120" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="250" y="163" />
+					</Size>
+					<cssClass>whitecenter</cssClass>
+					<css>[local.css]normal2.css</css>
+					<wordWrap>true</wordWrap>
+					<multiline>true</multiline>
+					<html>true</html>
+					<verticalAlign>center</verticalAlign>
+				</Label>
+			</Container>
+
+
+
+
+
+            <!-- Container avec les boutons de connexions via services tiers -->
+            
+            <Container name="ctr_oauthServices">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="32" y="330"/>
+                    </Anchor>
+                </Anchors>
+                <visible>false</visible>
+
+                <Label>
+                    <Size>
+                        <AbsDimension x="415" y="16"/>
+                    </Size>
+                    <cssClass>center</cssClass>
+                    <css>[local.css]normal2.css</css>
+                    <text>[ui.connection.connectWith]</text>
+                </Label>
+                <iconButton name="btn_login_ankama">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="107" y="35"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="200" y="40"/>
+                    </Size>
+                    <uri>[local.assets]btn_ankama</uri>
+                </iconButton>
+                <Label>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="0" y="85"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="415" y="16"/>
+                    </Size>
+                    <cssClass>center</cssClass>
+                    <css>[local.css]normal2.css</css>
+                    <text>[ui.common.or]</text>
+                </Label>
+                
+                <Container>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="137" y="115"/>
+                        </Anchor>
+                    </Anchors>
+	                    
+	                <iconButton name="btn_login_facebook">
+	                    <Size>
+	                        <AbsDimension x="40" y="40"/>
+	                    </Size>
+	                    <uri>[local.assets]btn_facebook</uri>
+	                </iconButton>
+	                <iconButton name="btn_login_twitter">
+	                    <Anchors>
+	                        <Anchor>
+	                            <AbsDimension x="50" y="0"/>
+	                        </Anchor>
+	                    </Anchors>
+	                    <Size>
+	                        <AbsDimension x="40" y="40"/>
+	                    </Size>
+	                    <uri>[local.assets]btn_twitter</uri>
+	                </iconButton>
+	                <iconButton name="btn_login_google">
+	                    <Anchors>
+	                        <Anchor>
+	                            <AbsDimension x="100" y="0"/>
+	                        </Anchor>
+	                    </Anchors>
+	                    <Size>
+	                        <AbsDimension x="40" y="40"/>
+	                    </Size>
+	                    <uri>[local.assets]btn_google</uri>
+	                </iconButton>
+                </Container>
+            </Container>
+		</Container>
+		
+        <!-- Container avec le bouton de connexion steam -->
+        
+        <Container name="ctr_steam">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="435" y="330"/>
+                </Anchor>
+            </Anchors>
+            <visible>false</visible>
+
+            <Label>
+                <Size>
+                    <AbsDimension x="415" y="16"/>
+                </Size>
+                <cssClass>center</cssClass>
+                <css>[local.css]normal2.css</css>
+                <text>[ui.connection.connectWith]</text>
+            </Label>
+            
+            <iconButton name="btn_login_steam">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="123" y="35"/>
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="169" y="45"/>
+                </Size>
+                <uri>[local.assets]btn_steam</uri>
+            </iconButton>
+        </Container>
+
+		<!-- Fenêtre web permettant l'authentification via des services tiers tel que Facebook, Twitter, etc. -->
+		<Container name="ctr_webLogin">
+			<Anchors>
+				<Anchor relativePoint="CENTER" point="CENTER" >
+					<AbsDimension x="0" y="140" />
+				</Anchor>
+			</Anchors>
+			<visible>false</visible>
+
+			<!-- The WebBrowser component wb_webLogin will be initialized at runtime if needed only	 -->
+
+			<Texture name="tx_webLoginFrame">
+				<Size>
+					<AbsDimension x="1200" y="680" />
+				</Size>
+				<autoGrid>true</autoGrid>
+				<uri>[local.assets]tx_backgroundBorder</uri>
+			</Texture>
+			<iconButton name="btn_webLoginClose">
+		      <uri>[local.assets]btn_cornerCross</uri>
+		      <Anchors>
+		        <Anchor relativeTo="tx_webLoginFrame" relativePoint="TOPRIGHT" point="TOPRIGHT"/>
+		      </Anchors>
+		      <Size>
+		        <AbsDimension x="58" y="36"/>
+		      </Size>
+		    </iconButton>
+		</Container>
+
+
+	</Container>
+
+	<Shortcuts>
+		<validUi />
+	</Shortcuts>
+</Definition>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition modal="true">
+   <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       <Constant name="css" value="[config.ui.skin]css/" />
+   </Constants>
+
+    <Import url="[config.mod.template.button]simpleButton.xml" />
+    <Import url="[config.mod.template.button]iconButton.xml" />
+    <Import url="[config.mod.template]window.xml" />
+    <Import url="[config.mod.template]block.xml" />
+
+	<Container name="mainCtr">
+		
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER" >
+				<AbsDimension y="-75" />
+			</Anchor>
+		</Anchors>
+		<mouseEnabled>true</mouseEnabled>
+		
+		<window>
+			<Size>
+	            <AbsDimension x="1100" y="740" />
+	        </Size>
+            <title>[ui.common.options]</title>
+		</window>
+
+		<block>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="19" y="44" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="200" y="670" />
+			</Size>
+		</block>
+
+		<Grid name="gd_optionCategories">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="33" y="82" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="174" y="600" />
+			</Size>
+			<slotWidth>170</slotWidth>
+			<slotHeight>25</slotHeight>
+			<rendererName>LabelGridRenderer</rendererName>
+			<rendererArgs>[local.css]normal2.css,[colors.grid.line],,[colors.grid.over],[colors.grid.selected]</rendererArgs>
+			<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+		</Grid>
+		
+
+		<block>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="220" y="44" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="860" y="670" />
+			</Size>
+		</block>
+
+
+		<Label name="lbl_subTitle">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="249" y="70" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="800" y="25" />
+			</Size>
+			<css>[local.css]title.css</css>
+		</Label>
+
+		<Label name="lbl_subDescription">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="249" y="105" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="800" y="76" />
+			</Size>
+			<wordWrap>true</wordWrap>
+			<multiline>true</multiline>
+			<css>[local.css]normal2.css</css>
+		</Label>
+
+
+		<simpleButton name="btn_default">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="760" y="665" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="140" y="30" />
+			</Size>
+			<label>[ui.common.default]</label>
+			<uri>[local.assets]btn_orange</uri>
+		</simpleButton>
+
+
+		<simpleButton name="btn_close2">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="915" y="665" />
+				</Anchor>
+			</Anchors>					
+			<Size>
+				<AbsDimension x="140" y="30" />
+			</Size>
+			<label>[ui.common.close]</label>
+			<uri>[local.assets]btn_orange</uri>	
+		</simpleButton>
+
+		
+		<ScrollContainer name="ctr_subUi">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="245" y="165" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="810" y="485" />
+			</Size>
+			<scrollbarCss>[local.css]scrollBar.css</scrollbarCss>
+		</ScrollContainer>
+	</Container>
+</Definition>

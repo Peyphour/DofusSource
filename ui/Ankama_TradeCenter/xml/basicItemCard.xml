@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition labelDebug="false">
+ 
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+    <Import url="[config.mod.template]block.xml" />
+    
+    <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+        <Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+        <Constant name="common" value="[config.ui.skin]common/" />
+        <Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+    
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="33" y="110" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="450" y="250" />
+		</Size>
+		<mouseEnabled>true</mouseEnabled>
+
+        <TextureBitmap>
+            <Size>
+                <AbsDimension x="450" y="250" />
+            </Size>
+            <themeDataId>window_background_dark</themeDataId>
+            <smooth>true</smooth>
+        </TextureBitmap>
+
+        <TextureBitmap>
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="-20" y="-20" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="490" y="290" />
+            </Size>
+            <themeDataId>popup_border_frame</themeDataId>
+            <smooth>true</smooth>
+        </TextureBitmap>
+
+
+        <Container name="ctr_item">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="0" y="0" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="440" y="85" />
+            </Size>
+            
+            <Texture>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="0" y="0" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="440" y="85" />
+                </Size>
+                <uri>[local.common]bg_dark.png</uri>
+            </Texture>
+            <Texture>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="10" y="10" />
+                    </Anchor>
+                </Anchors>
+                <uri>[local.texture]slot/slot_dark_background_full.png</uri>
+            </Texture>
+            <Texture name="tx_item">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="10" y="10" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="64" y="64" />
+                </Size>
+                <cacheAsBitmap>true</cacheAsBitmap>
+            </Texture>
+
+            <Label name="lbl_item_name">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="77" y="13" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="358" y="25" />
+                </Size>
+                <cssClass>whitebold</cssClass>
+                <css>[local.css]title.css</css>
+            </Label>
+
+            <Label name="lbl_item_level">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="77" y="43" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="80" y="25" />
+                </Size>
+                <cssClass>whitebold</cssClass>
+                <css>[local.css]title.css</css>
+            </Label>
+        </Container>
+
+
+
+
+        <!-- Texture tx_BackgroundGrid -->
+        <Container>
+            <Anchors>
+                <Anchor relativeTo="ctr_item" point="TOPLEFT" relativePoint="BOTTOMLEFT">
+                    <AbsDimension x="10" y="10" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="410" y="95" />
+            </Size>
+            <Texture>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="0" y="0" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="420" y="95" />
+                </Size>
+                <uri>[local.common]bg_light.png</uri>
+            </Texture>
+
+
+
+
+            <!-- Label lbl_quantity-->
+
+            <Label>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="10" y="10" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="210" y="20" />
+                </Size>
+                <css>[local.css]normal2.css</css>
+                <text>[ui.common.quantity][ui.common.colon]</text>
+            </Label>
+
+            <Container name="ctr_inputQty">
+                <TextureBitmap name="tx_inputQuantity">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="215" y="5" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="200" y="35" />
+                    </Size>
+                    <themeDataId>bg_small_border_dark</themeDataId>
+                </TextureBitmap>
+
+                <Input name="input_quantity">
+                    <maxChars>9</maxChars>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="220" y="10" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="175" y="22" />
+                    </Size>
+                    <css>[local.css]normal2.css</css>
+                    <cssClass>right</cssClass>
+                    <numberAutoFormat>true</numberAutoFormat>
+                </Input>
+            </Container>
+
+
+            <!-- Label -->
+
+            <Label>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="10" y="37" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="242" y="20" />
+                </Size>
+                <css>[local.css]normal2.css</css>
+                <text>[ui.common.unitPrice][ui.common.colon]</text>
+            </Label>
+
+            <Container name="ctr_inputPrice">
+
+                <TextureBitmap>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="215" y="32" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="200" y="35" />
+                    </Size>
+                    <themeDataId>bg_small_border_dark</themeDataId>
+                </TextureBitmap>
+
+                <Input name="input_price">
+                    <maxChars>10</maxChars>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="220" y="37" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="175" y="22" />
+                    </Size>
+                    <css>[local.css]normal2.css</css>
+                    <cssClass>right</cssClass>
+                    <numberAutoFormat>true</numberAutoFormat>
+                </Input>
+            </Container>
+
+
+            <!-- Label input_price-->
+
+            <Label name="lbl_price">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="220" y="37" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="175" y="22" />
+                </Size>
+                <css>[local.css]normal2.css</css>
+                <cssClass>right</cssClass>
+            </Label>
+
+
+
+            <!-- Label -->
+
+            <Label>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="10" y="65" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="242" y="20" />
+                </Size>
+                <css>[local.css]normal2.css</css>
+                <text>[ui.common.totalPrice][ui.common.colon]</text>
+            </Label>
+
+            <!-- Label lbl_totalPrice-->
+
+            <Label name="lbl_totalPrice">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="220" y="66" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="175" y="22" />
+                </Size>
+                <cssClass>boldright</cssClass>
+                <css>[local.css]normal2.css</css>
+            </Label>
+        </Container>
+
+        <Texture name="tx_kama">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="409" y="167" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="15" y="13" />
+            </Size>
+            <uri>[local.texture]icon_kama.png</uri>
+        </Texture>
+
+
+        <!-- simpleButton btn_center -->
+
+        <simpleButton label="[ui.common.buy]" name="btn_valid">
+            <Anchors>
+                <Anchor point="BOTTOM" relativePoint="BOTTOM">
+                    <AbsDimension x="0" y="-10" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="180" y="32" />
+            </Size>
+        </simpleButton>
+
+        <!-- simpleButton btn_left -->
+
+        <simpleButton label="[ui.common.remove]" name="btn_remove">
+            <Anchors>
+                <Anchor point="BOTTOM" relativePoint="BOTTOM">
+                    <AbsDimension x="-100" y="-10" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="180" y="32" />
+            </Size>
+        </simpleButton>
+
+        <!-- simpleButton btn_right -->
+
+        <simpleButton label="[ui.common.modify]" name="btn_modify">
+            <Anchors>
+                <Anchor point="BOTTOM" relativePoint="BOTTOM">
+                    <AbsDimension x="100" y="-10" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="180" y="32" />
+            </Size>
+        </simpleButton>
+	</Container>
+</Definition>
+		
+	

@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+    <Import url="mod://Ankama_Config/ui/template/configCheckbox.xml" />
+    <Import url="[config.mod.template]button/iconButton.xml" />
+    <Import url="[config.mod.template]button/labelCheckBox.xml" />
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+    <Import url="[config.mod.template.button]themeLabelCheckBox.xml"/>
+
+    <Constants>
+        <Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+    </Constants>
+
+    <Container name="configUiCtr">
+
+
+        <Label name="lbl_title1">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="0" y="0" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="750" y="20" />
+            </Size>
+            <text>[ui.option.worldOption]</text>
+			<cssClass>whitebold</cssClass>
+			<css>[local.css]normal2.css</css>
+        </Label>
+
+        <TextureBitmap name="tx_bgForeground1">
+            <Anchors>
+                <Anchor relativeTo="lbl_title1">
+                    <AbsDimension x="0" y="30" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="780" y="180" />
+            </Size>
+			<themeDataId>bg_small_border_light</themeDataId>
+        </TextureBitmap>
+
+
+        <Label name="lbl_title2">
+            <Anchors>
+                <Anchor relativePoint="BOTTOMLEFT" relativeTo="tx_bgForeground1">
+                    <AbsDimension x="0" y="20" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="750" y="20" />
+            </Size>
+            <text>[ui.option.fightOptions]</text>
+			<cssClass>whitebold</cssClass>
+			<css>[local.css]normal2.css</css>
+        </Label>
+
+        <TextureBitmap name="tx_bgForeground2">
+            <Anchors>
+                <Anchor relativeTo="lbl_title2">
+                    <AbsDimension x="0" y="30" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="780" y="550" />
+            </Size>
+			<themeDataId>bg_small_border_light</themeDataId>
+        </TextureBitmap>
+
+
+        <Label name="lbl_title3">
+            <Anchors>
+                <Anchor relativePoint="BOTTOMLEFT" relativeTo="tx_bgForeground2">
+                    <AbsDimension x="0" y="20" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="750" y="20" />
+            </Size>
+            <text>[ui.option.social]</text>
+			<cssClass>whitebold</cssClass>
+			<css>[local.css]normal2.css</css>
+        </Label>
+
+        <TextureBitmap name="tx_bgForeground3">
+            <Anchors>
+                <Anchor relativeTo="lbl_title3">
+                    <AbsDimension x="0" y="30" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="780" y="240" />
+            </Size>
+			<themeDataId>bg_small_border_light</themeDataId>
+        </TextureBitmap>        
+
+
+        <Label name="lbl_title4">
+            <Anchors>
+                <Anchor relativePoint="BOTTOMLEFT" relativeTo="tx_bgForeground3">
+                    <AbsDimension x="0" y="20" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="750" y="20" />
+            </Size>
+            <text>[ui.option.miscellaneousOption]</text>
+			<cssClass>whitebold</cssClass>
+			<css>[local.css]normal2.css</css>
+        </Label>
+
+        <TextureBitmap name="tx_bgForeground4">
+            <Anchors>
+                <Anchor relativeTo="lbl_title4">
+                    <AbsDimension x="0" y="30" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="780" y="130" />
+            </Size>
+			<themeDataId>bg_small_border_light</themeDataId>
+        </TextureBitmap>
+
+
+
+        <!-- PARTIE 1 OPTIONS DU MONDE -->
+
+
+        <!-- Container useless mais un peu qd mm, sert ? placer les checkbox -->
+
+        <Container>
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground1">
+                    <AbsDimension x="20" y="0" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="20" y="10" />
+            </Size>
+        </Container>
+
+        <themeLabelCheckBox name="btn_alwaysShowGrid">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground1">
+                    <AbsDimension y="25" x="15"/>
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.option.displayGrid]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_transparentOverlayMode">
+            <Anchors>
+                <Anchor relativeTo="btn_alwaysShowGrid" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.option.transparentOverlayMode]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_showMapCoordinates">
+            <Anchors>
+                <Anchor relativeTo="btn_transparentOverlayMode" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.option.mapInfo]</text>
+        </themeLabelCheckBox>
+
+        <!--themeLabelCheckBox name="btn_showInsideAutoZoom">
+            <Anchors>
+                <Anchor relativeTo="btn_showMapCoordinates" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.option.insideAutoZoom]</text>
+        </themeLabelCheckBox-->
+
+        <themeLabelCheckBox name="btn_zoomOnMouseWheel" selected="true">
+            <Anchors>
+                <Anchor relativeTo="btn_showMapCoordinates" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.option.zoomOnMouseWheel]</text>
+        </themeLabelCheckBox>
+        
+         <themeLabelCheckBox name="btn_blackBorder" selected="true">
+            <Anchors>
+                <Anchor relativeTo="btn_zoomOnMouseWheel" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.config.blackborder]</text>
+        </themeLabelCheckBox>
+
+
+        <!-- PARTIE 2 OPTIONS DE COMBAT -->
+
+
+
+        <!-- Container useless mais un peu qd mm, sert ? placer les checkbox -->
+
+        <Container>
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground2">
+                    <AbsDimension x="20" y="0" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="20" y="10" />
+            </Size>
+        </Container>
+
+        <themeLabelCheckBox name="btn_showUSedPaPm">
+            <labelWidth>710</labelWidth>
+            <Anchors>
+                <Anchor relativeTo="lbl_title2" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="25" x="15"/>
+                </Anchor>
+            </Anchors>
+            <text>[ui.option.showUsedPaPm]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_orderFighters">
+            <Anchors>
+                <Anchor relativeTo="btn_showUSedPaPm" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.option.orderFighters]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_showMountsInFight">
+            <Anchors>
+                <Anchor relativeTo="btn_orderFighters" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.option.showMountsInFight]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_cellSelectionOnly">
+            <Anchors>
+                <Anchor relativeTo="btn_showMountsInFight" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.option.fightTargetMode]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_showMovementDistance">
+            <Anchors>
+                <Anchor relativeTo="btn_cellSelectionOnly" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.option.showMovementDistance]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_spectatorAutoShowCurrentFighterInfo">
+            <Anchors>
+                <Anchor relativeTo="btn_showMovementDistance" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.option.spectatorAutoShowCurrentFighterInfo]</text>
+        </themeLabelCheckBox>
+		
+        <Label name="lblRollOver">
+            <Anchors>
+                <Anchor relativeTo="btn_spectatorAutoShowCurrentFighterInfo" relativePoint="BOTTOMLEFT">
+                    <AbsDimension x="0" y="35" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="750" y="35" />
+            </Size>
+            <text>[ui.option.title.rollover]</text>
+            <css>[local.css]normal2.css</css>
+        </Label>
+
+        <themeLabelCheckBox name="btn_showDamagesPreview">
+            <labelWidth>710</labelWidth>
+            <Anchors>
+                <Anchor relativeTo="lblRollOver" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5"/>
+                </Anchor>
+            </Anchors>
+            <text>[ui.option.showDamagesPreview]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_showAlignmentWings">
+            <Anchors>
+                <Anchor relativeTo="btn_showDamagesPreview" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.option.showAlignmentWings]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_showPermanentTargetsTooltips">
+            <Anchors>
+                <Anchor relativeTo="btn_showAlignmentWings" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.option.showPermanentTargetsTooltips]</text>
+        </themeLabelCheckBox>
+		
+        <Label name="lblChat">
+            <Anchors>
+                <Anchor relativeTo="btn_showPermanentTargetsTooltips" relativePoint="BOTTOMLEFT">
+                    <AbsDimension x="0" y="30" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="750" y="35" />
+            </Size>
+            <text>[ui.option.title.chatAndTimeline]</text>
+            <css>[local.css]normal2.css</css>
+        </Label>
+
+        <themeLabelCheckBox name="btn_showLogPvDetails">
+            <labelWidth>710</labelWidth>
+            <Anchors>
+                <Anchor relativeTo="lblChat" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5"/>
+                </Anchor>
+            </Anchors>
+            <text>[ui.option.showLogPvDetails]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_hideDeadFighters">
+            <Anchors>
+                <Anchor relativeTo="btn_showLogPvDetails" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.option.hideDeadFighters]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_hideSummonedFighters">
+            <Anchors>
+                <Anchor relativeTo="btn_hideDeadFighters" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.option.hideSummonedFighters]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_remindTurn">
+            <Anchors>
+                <Anchor relativeTo="btn_hideSummonedFighters" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.option.remindTurn]</text>
+        </themeLabelCheckBox>
+		
+        <!-- PARTIE 3 OPTIONS DE NOTIFICATION SOCIALES (CHAT) -->
+
+        <Container name="lbl_useless3">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground3">
+                    <AbsDimension x="15" y="0" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="10" y="10" />
+            </Size>
+        </Container>
+
+
+        <themeLabelCheckBox name="btn_warnWhenFriendIsOnline">
+            <labelWidth>710</labelWidth>
+            <Anchors>
+                <Anchor relativeTo="lbl_useless3" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="15"/>
+                </Anchor>
+            </Anchors>
+            <text>[ui.social.warnWhenFriendsComeOnline]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_warnWhenFriendOrGuildMemberLvlUp">
+            <Anchors>
+                <Anchor relativeTo="btn_warnWhenFriendIsOnline" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.social.warnWhenFriendOrGuildMemberLvlUp]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_warnWhenFriendOrGuildAchieves">
+            <Anchors>
+                <Anchor relativeTo="btn_warnWhenFriendOrGuildMemberLvlUp" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.social.warnWhenFriendOrGuildMemberAchieves]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_warnOnHardcoreDeath">
+            <Anchors>
+                <Anchor relativeTo="btn_warnWhenFriendOrGuildAchieves" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.social.warnOnHardcoreDeath]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_warnOnGuildItemAgression">
+            <Anchors>
+                <Anchor relativeTo="btn_warnOnHardcoreDeath" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.social.warnOnGuildItemAgression]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_disableGuildMotd">
+            <Anchors>
+                <Anchor relativeTo="btn_warnOnGuildItemAgression" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.social.disableGuildMotd]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_disableAllianceMotd">
+            <Anchors>
+                <Anchor relativeTo="btn_disableGuildMotd" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>710</labelWidth>
+            <text>[ui.social.disableAllianceMotd]</text>
+        </themeLabelCheckBox>
+		
+        <!-- PARTIE 4 OPTIONS DIVERSES -->
+
+        <Container name="lbl_useless4">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground4">
+                    <AbsDimension x="15" y="0" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="20" y="10" />
+            </Size>
+        </Container>
+
+        <themeLabelCheckBox name="btn_enableForceWalk">
+            <labelWidth>710</labelWidth>
+            <Anchors>
+                <Anchor relativeTo="lbl_useless4" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="10"/>
+                </Anchor>
+            </Anchors>
+            <text>[ui.option.enableforceWalk]</text>
+        </themeLabelCheckBox>
+
+		<!-- CAPTURES D'ECRAN -->
+		<Label name="lbl_screenshotPath">
+			<Anchors>
+				<Anchor relativeTo="lbl_useless4">
+					<AbsDimension x="120" y="55" />
+				</Anchor>
+			</Anchors>
+				<Size>
+				<AbsDimension x="500" y="20" />
+			</Size>
+			<css>[local.css]normal2.css</css>
+			<cssClass>center</cssClass>
+		</Label>
+		<simpleButton name="btn_changeDirectory">
+			<Anchors>
+				<Anchor relativeTo="lbl_screenshotPath">
+					<AbsDimension x="0" y="30" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="500" y="30" />
+			</Size>
+			<label>[ui.gameuicore.screenshot.changeDirectory]</label>
+		</simpleButton>
+		
+    </Container>
+</Definition>
+

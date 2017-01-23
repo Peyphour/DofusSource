@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	
+   <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       <Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />	
+   </Constants>
+
+	<Container name="prismCtr">
+		<Anchors>
+			<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+				<AbsDimension x="0" y="-150" />
+			</Anchor>
+		</Anchors>
+		<mouseEnabled>true</mouseEnabled>
+
+		<Container name="prismDefenseCtr">
+
+			<!-- Texture tx_bg-->
+
+			<Texture name="tx_bg">
+				<Size>
+					<AbsDimension x="375" y="542" />
+				</Size>
+				<autoGrid>true</autoGrid>
+				<uri>[local.assets]tx_generalBackgroundWithTitle</uri>
+			</Texture>
+
+			<!-- Label lbl_title-->
+
+			<Label name="lbl_title">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="27" y="15" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="318" y="35" />
+				</Size>
+				<text>[ui.common.conquest]</text>
+				<css>[local.css]title.css</css>
+			</Label>
+
+			<!-- Label lbl_loc-->
+
+			<Label name="lbl_loc">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="27" y="53" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="320" y="19" />
+				</Size>
+				<css>[local.css]normal.css</css>
+			</Label>
+
+
+			<!-- Texture tx_bgTime-->
+
+			<Texture name="tx_bgTime">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="21" y="81" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="333" y="42" />
+				</Size>
+				<autoGrid>true</autoGrid>
+				<uri>[local.assets]tx_blockBackground</uri>
+			</Texture>
+
+
+			<!-- Texture tx_progressBarBg-->
+
+			<Texture name="tx_progressBarBg">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="30" y="94" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="312" y="16" />
+				</Size>
+				<autoGrid>true</autoGrid>
+				<uri>[local.assets]tx_progressBarBackground</uri>
+			</Texture>
+
+			<!-- Texture tx_progressBar-->
+
+			<Texture name="tx_progressBar">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="31" y="94" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="310" y="15" />
+				</Size>
+				<autoGrid>true</autoGrid>
+				<uri>[local.assets]tx_progressBar</uri>
+			</Texture>
+
+
+
+
+			<!-- Texture tx_bgTabDefense-->
+
+			<Texture name="tx_bgTabDefense">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="21" y="134" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="160" y="28" />
+				</Size>
+				<autoGrid>true</autoGrid>
+				<uri>[local.assets]tx_onglet</uri>
+			</Texture>
+
+			<!-- Texture tx_bgDefense-->
+
+			<Texture name="tx_bgDefense">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="21" y="157" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="334" y="57" />
+				</Size>
+				<autoGrid>true</autoGrid>
+				<uri>[local.assets]tx_blockBackground_squaredCorner</uri>
+			</Texture>
+
+			<!-- Label lbl_defense-->
+
+			<Label name="lbl_defense">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="34" y="135" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="137" y="18" />
+				</Size>
+				<text>[ui.common.defenders]</text>
+				<css>[local.css]normal.css</css>
+			</Label>
+
+			<!-- Label lbl_nbBadGuys-->
+
+			<Label name="lbl_nbBadGuys">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="190" y="135" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="157" y="19" />
+				</Size>
+				<cssClass>right</cssClass>
+				<css>[local.css]normal.css</css>
+				<text>0 [ui.common.attackers]</text>
+			</Label>
+
+			<!-- Texture tx_badGuys-->
+
+			<Texture name="tx_badGuys">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="218" y="134" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="129" y="19" />
+				</Size>
+				<uri>[local.assets]tx_invisible</uri>
+			</Texture>
+
+
+			<!-- Grid gd_defense-->
+
+			<Grid name="gd_defense">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="31" y="164" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="313" y="43" />
+				</Size>
+				<autoSelectMode>0</autoSelectMode>
+				<rendererName>EntityGridRenderer</rendererName>
+				<rendererArgs>[local.bitmap]emptySlot.png</rendererArgs>
+				<slotWidth>43</slotWidth>
+				<slotHeight>43</slotHeight>
+				<scrollDisplay>none</scrollDisplay>
+				<Hooks>
+					<onSelectItem />
+					<onItemRollOver />
+					<onItemRollOut />
+					<onRelease />
+				</Hooks>
+			</Grid>		
+
+
+
+
+
+			<!-- Texture tx_bgReserve-->
+
+			<Texture name="tx_bgReserve">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="21" y="225" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="334" y="260" />
+				</Size>
+				<autoGrid>true</autoGrid>
+				<uri>[local.assets]tx_blockBackground_squaredCorner</uri>
+			</Texture>
+
+			<!-- Label lbl_reserve-->
+
+			<Label name="lbl_reserve">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="33" y="232" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="171" y="18" />
+				</Size>
+				<text>[ui.common.reservists]</text>
+				<css>[local.css]normal.css</css>
+			</Label>
+
+			<!-- Grid gd_reserve-->
+
+			<Grid name="gd_reserve">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="31" y="256" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="313" y="223" />
+				</Size>
+				<autoSelectMode>0</autoSelectMode>
+				<rendererName>EntityGridRenderer</rendererName>
+				<rendererArgs>[local.bitmap]emptySlot.png</rendererArgs>
+				<slotWidth>43</slotWidth>
+				<slotHeight>43</slotHeight>
+				<scrollDisplay>none</scrollDisplay>
+				<Hooks>
+					<onSelectItem />
+					<onItemRollOver />
+					<onItemRollOut />
+					<onRelease />
+				</Hooks>
+			</Grid>
+
+
+
+
+			<!-- simpleButton btn_join-->
+
+			<simpleButton name="btn_join" label="[ui.common.join]"   >
+			<Size>
+				<AbsDimension x="331" y="31" />
+			</Size>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="23" y="494" />
+					</Anchor>
+				</Anchors>
+				<css>[local.css]button.css</css>
+				<Hooks>
+					<onRelease />
+				</Hooks>
+			</simpleButton>
+
+			<!-- iconButton btn_littleClose-->
+
+			<iconButton name="btn_littleClose">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" />
+				</Anchors>
+				<Size>
+					<AbsDimension x="57" y="36" />
+				</Size>
+				<uri>[local.assets]btn_cornerCross</uri>
+			</iconButton>
+		</Container>
+
+
+		<!-- iconButton btn_prism-->
+
+		<iconButton name="btn_prism">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="330" y="552" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="40" y="40" />
+			</Size>
+			<uri>[local.assets]prisme_btn_attaque</uri>
+			<Hooks>
+				<onRelease />
+				<onRollOver />
+				<onRollOut />
+			</Hooks>
+		</iconButton>
+	</Container>
+</Definition>

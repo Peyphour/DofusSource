@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="texture" value="[config.ui.skin]texture/"/>
+		<Constant name="common" value="[config.ui.skin]common/"/>
+		<Constant name="css" value="[config.ui.skin]css/" />
+
+		<Constant name="illus" value="[config.gfx.path]companions/" />
+	</Constants>
+
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template]button/themeHorizontalTab.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	<Import url="[config.mod.template]window.xml" />
+
+
+	<window name="mainCtr" noSeparator="false" separatorAbsX="306" iconUri="[local.texture]windowIcon/icon__0010_Compagnon.png">
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="0" y="-40" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="1120" y="750" />
+		</Size>
+		<title>[ui.companion.companions]</title>
+
+		<Content>
+
+			<!-- LISTE DES COMPAGNONS A GAUCHE -->
+			<block dark="true">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="286" y="680" />
+				</Size>
+				<Content>
+					<Grid name="gd_companions">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="10" y="10" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="260" y="650" />
+						</Size>
+						<slotWidth>115</slotWidth>
+						<slotHeight>140</slotHeight>
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updateLine</rendererArgs>
+						<verticalScrollbarCss>[local.css]scrollBar.css
+						</verticalScrollbarCss>
+
+						<Container>
+							<Size>
+								<AbsDimension x="120" y="140" />
+							</Size>
+							<Button name="btn_companion">
+								<Common>
+									<Size>
+										<AbsDimension x="115" y="140" />
+									</Size>
+									<radioMode>true</radioMode>
+									<useHandCursor>true</useHandCursor>
+									<mouseEnabled>true</mouseEnabled>
+									<TextureBitmap name="tx_bg">
+										<Size>
+											<AbsDimension x="115" y="140" />
+										</Size>
+										<themeDataId>slot_background_dark_empty</themeDataId>
+									</TextureBitmap>
+
+									<Texture name="tx_look">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="3" y="3" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="109" y="135" />
+										</Size>
+										<roundCornerRadius>4</roundCornerRadius>
+									</Texture>
+
+									<TextureBitmap name="tx_selected">
+										<Size>
+											<AbsDimension x="115" y="140" />
+										</Size>
+										<themeDataId>selection_green</themeDataId>
+										<visible>false</visible>
+									</TextureBitmap>
+
+								</Common>
+							</Button>
+						</Container>
+					</Grid>
+				</Content>
+			</block>
+
+			<!-- PARTIE DE DROITE -->
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="295" y="5" />
+					</Anchor>
+				</Anchors>
+
+				<block>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="32" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="786" y="643" />
+					</Size>
+
+					<Content>
+
+						<!-- ONGLET DES CARACTERISTIQUES -->
+						<Container name="ctr_carac">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="12" />
+								</Anchor>
+							</Anchors>
+
+							<Label name="lbl_name">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="20" y="-5" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="210" y="25" />
+								</Size>
+								<cssClass>whitebold</cssClass>
+								<css>[local.css]title.css</css>
+							</Label>
+							<Label name="lbl_level">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="20" y="22" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="210" y="20" />
+								</Size>
+								<cssClass>medium</cssClass>
+								<css>[local.css]normal2.css</css>
+							</Label>
+
+							<simpleButton name="btn_equip">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="570" y="6" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="180" y="32" />
+								</Size>
+							</simpleButton>
+
+							<TextureBitmap>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="20" y="53" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="300" y="377" />
+								</Size>
+								<themeDataId>slot_background_dark_empty</themeDataId>
+							</TextureBitmap>
+
+							<Texture name="tx_illu">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="25" y="58" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="290" y="367" />
+								</Size>
+								<roundCornerRadius>4</roundCornerRadius>
+							</Texture>
+
+							<Texture name="tx_etherealGauge">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="80" y="403" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="180" y="16" />
+								</Size>
+								<uri>[local.assets]FichePerso_tx_jaugeBleu</uri>
+							</Texture>
+
+							<block dark="true">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="345" y="55" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="405" y="375" />
+								</Size>
+								<Content>
+									<Grid name="gd_carac">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="0" y="0" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<RelDimension x="1" y="1" />
+										</Size>
+
+										<rendererName>InlineXmlGridRenderer</rendererName>
+										<rendererArgs>updateCaracLine,[colors.grid.line]
+										</rendererArgs>
+										<verticalScrollbarCss>[local.css]scrollBar.css
+										</verticalScrollbarCss>
+										<slotWidth>360</slotWidth>
+										<slotHeight>32</slotHeight>
+
+										<Container name="ctr_caracLine">
+											<Size>
+												<AbsDimension x="360" y="32" />
+											</Size>
+
+											<Label name="lbl_carac">
+												<Anchors>
+													<Anchor>
+														<AbsDimension x="10" y="2" />
+													</Anchor>
+												</Anchors>
+												<Size>
+													<AbsDimension x="340" y="20" />
+												</Size>
+												<cssClass>medium</cssClass>
+												<css>[local.css]normal2.css</css>
+											</Label>
+										</Container>
+									</Grid>
+								</Content>
+							</block>
+
+							<!-- <Texture> <Anchors> <Anchor> <AbsDimension x="348" y="53" /> 
+								</Anchor> </Anchors> <Size> <AbsDimension x="398" y="377" /> </Size> <autoGrid>true</autoGrid> 
+								<uri>[local.assets]tx_commonGridScrollbar</uri> </Texture> -->
+
+
+							<TextArea name="lbl_description">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="20" y="445" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="740" y="160" />
+								</Size>
+								<cssClass>medium</cssClass>
+								<css>[local.css]normal2.css</css>
+								<scrollCss>[local.css]scrollBar.css</scrollCss>
+								<hideScroll>true</hideScroll>
+								<useCustomFormat>true</useCustomFormat>
+							</TextArea>
+
+						</Container>
+
+
+						<!-- ONGLET DES SORTS -->
+
+						<Container name="ctr_spells">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="12" />
+								</Anchor>
+							</Anchors>
+
+							<block dark="true">
+
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="15" y="5" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="270" y="605" />
+								</Size>
+
+								<Content>
+									<Grid name="gd_spell">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="0" y="0" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<RelDimension x="1" y="1" />
+										</Size>
+										<rendererName>InlineXmlGridRenderer</rendererName>
+										<rendererArgs>updateSpellLine,[colors.grid.line]
+										</rendererArgs>
+										<verticalScrollbarCss>[local.css]scrollBar.css
+										</verticalScrollbarCss>
+										<autoSelectMode>0</autoSelectMode>
+										<slotWidth>264</slotWidth>
+										<slotHeight>53</slotHeight>
+										<Hooks>
+											<onSelectItem />
+										</Hooks>
+
+										<Container>
+											<Size>
+												<AbsDimension x="244" y="53" />
+											</Size>
+											<Button name="btn_spell">
+												<Common>
+													<Size>
+														<AbsDimension x="260" y="53" />
+													</Size>
+													<radioMode>true</radioMode>
+													<linkedTo>slot_icon</linkedTo>
+
+													<Texture>
+														<Size>
+															<AbsDimension x="254" y="53" />
+														</Size>
+														<bgColor>0</bgColor>
+														<bgAlpha>0</bgAlpha>
+													</Texture>
+
+													<Slot name="slot_icon">
+														<Anchors>
+															<Anchor>
+																<AbsDimension x="8" y="6" />
+															</Anchor>
+														</Anchors>
+														<Size>
+															<AbsDimension x="44" y="44" />
+														</Size>
+														<css>[local.css]normal2.css</css>
+													</Slot>
+
+													<Label name="lbl_spellName">
+														<Anchors>
+															<Anchor>
+																<AbsDimension x="62" y="13" />
+															</Anchor>
+														</Anchors>
+														<Size>
+															<AbsDimension x="180" y="20" />
+														</Size>
+														<cssClass>medium</cssClass>
+														<css>[local.css]normal2.css</css>
+													</Label>
+												</Common>
+
+												<State type="OVER">
+													<SetProperties target="btn_spell">
+														<bgColor>[colors.grid.over]</bgColor>
+													</SetProperties>
+												</State>
+
+												<State type="SELECTED">
+													<SetProperties target="btn_spell">
+														<bgColor>[colors.grid.selected]</bgColor>
+													</SetProperties>
+												</State>
+
+												<State type="SELECTED_OVER">
+													<SetProperties target="btn_spell">
+														<bgColor>[colors.grid.selected]</bgColor>
+													</SetProperties>
+												</State>
+											</Button>
+										</Container>
+									</Grid>
+								</Content>
+
+							</block>
+
+							<block dark="true">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="302" y="90" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="453" y="520" />
+								</Size>
+
+								<Content>
+									<ScrollContainer name="ctr_spellTooltip">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="5" y="0" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="432" y="500" />
+										</Size>
+										<scrollbarCss>[local.css]scrollBar.css</scrollbarCss>
+										<useHorizontalScroll>false</useHorizontalScroll>
+									</ScrollContainer>
+								</Content>
+							</block>
+
+							<Texture name="tx_spellIcon">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="302" y="5" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="70" y="70" />
+								</Size>
+							</Texture>
+
+							<Label name="lbl_spellName">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="390" y="12" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="340" y="22" />
+								</Size>
+								<cssClass>whitebold</cssClass>
+								<css>[local.css]title.css</css>
+								<cssClass>white</cssClass>
+							</Label>
+
+							<Label name="lbl_spellInitial">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="390" y="40" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="340" y="20" />
+								</Size>
+								<cssClass>medium</cssClass>
+								<css>[local.css]normal2.css</css>
+								<text>[ui.spell.initialSpell]</text>
+							</Label>
+
+						</Container>
+
+					</Content>
+
+				</block>
+
+				<themeHorizontalTab name="btn_carac">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="20" y="0" />
+						</Anchor>
+					</Anchors>
+					<text>[ui.common.caracteristics]</text>
+				</themeHorizontalTab>
+				<themeHorizontalTab name="btn_spells">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="200" y="0" />
+						</Anchor>
+					</Anchors>
+					<text>[ui.charcrea.spells]</text>
+				</themeHorizontalTab>
+
+			</Container>
+		</Content>
+	</window>
+</Definition>

@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition usePropertiesCache="false">
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+
+		<Constant name="alignment_uri" value="[config.content.path]gfx/alignments/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+	</Constants>
+	
+	<window name="mainCtr" title="[ui.common.alignment]" dark="true">
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="7" y="-60" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="603" y="780" />
+		</Size>
+		<Content>
+			<Container name="mainCtr2">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="10" y="10" />
+					</Anchor>
+				</Anchors>
+				
+				<!-- PARTIE GAUCHE -->
+				
+				<Texture name="tx_alignmentIcon">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="8" y="7" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="199" y="198" />
+					</Size>
+				</Texture>
+				
+				<!-- Texture tx_wing-->
+
+				<Texture name="tx_wing">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="388" y="150" />
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+			
+				<!-- AFFICHAGE PERSONNAGE -->
+
+				<EntityDisplayer name="entityDisplayer">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="292" y="53" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="192" y="150" />
+					</Size>
+					<direction>2</direction>
+					<entityScale>1.5</entityScale>
+					<yOffset>50</yOffset>
+				</EntityDisplayer>
+		
+		
+				<!-- Label lbl_alignment-->
+
+				<Label name="lbl_alignment">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="225" y="7" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="313" y="23" />
+					</Size>
+					<cssClass>whitecenter</cssClass>
+					<css>[local.css]title.css</css>
+				</Label>
+
+				<!-- Label lbl_alignmentInfo-->
+
+				<Label name="lbl_alignmentInfo">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="218" y="33" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="329" y="20" />
+					</Size>
+					<cssClass>center</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+
+		
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="11" y="228" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="404" y="26" />
+					</Size>
+					<text>[ui.pvp.pvpMode]</text>
+					<cssClass>white</cssClass>
+					<css>[local.css]title.css</css>
+				</Label>
+				
+				
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="11" y="264" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="260" y="20" />
+					</Size>
+					<text>[ui.pvp.rank]</text>
+					<css>[local.css]normal2.css</css>
+				</Label>
+
+				<!-- Label lbl_alignmentGrade-->
+
+				<Label name="lbl_alignmentGrade">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="270" y="264" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="265" y="20" />
+					</Size>
+					<css>[local.css]normal2.css</css>
+					<cssClass>right</cssClass>
+				</Label>
+				
+
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="11" y="295" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="523" y="20" />
+					</Size>
+					<text>[ui.pvp.honourPoints]</text>
+					<css>[local.css]normal2.css</css>
+				</Label>
+
+				<!-- Texture tx_progressBar1-->
+
+				<ProgressBar name="tx_progressBar1">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="14" y="323" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="520" y="14" />
+					</Size>
+					<barColor>[colors.progressbar.green]</barColor>
+					<barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+					<separators>9</separators>
+				</ProgressBar>
+				
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="14" y="360" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="70" y="70" />
+					</Size>
+					<uri>[local.assets]tx_darkBg</uri>
+					<autoGrid>true</autoGrid>
+				</Texture>
+
+				<!-- Texture tx_orderIcon-->
+
+				<Texture name="tx_orderIcon">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="15" y="361" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="68" y="68" />
+					</Size>
+				</Texture>
+				
+				<!-- Label lbl_order -->
+
+				<Label name="lbl_order">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="94" y="382" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="398" y="22" />
+					</Size>
+					<cssClass>white</cssClass>
+					<css>[local.css]title.css</css>
+				</Label>
+				
+				<block>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="11" y="450" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="525" y="184" />
+					</Size>
+					<Content>
+						<Texture>
+							<Size>
+								<AbsDimension x="516" y="20" />
+							</Size>
+							<uri>[local.common]bg_dark.png</uri>
+						</Texture>
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="5" y="-2" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="512" y="20" />
+							</Size>
+							<text>[ui.pvp.allSpecializations]</text>
+							<cssClass>whitebold</cssClass>
+							<css>[local.css]normal2.css</css>
+						</Label>
+						<Grid name="gd_specializations">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="22" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="516" y="150" />
+							</Size>
+							<rendererName>InlineXmlGridRenderer</rendererName>
+							<rendererArgs>updateSpecLine,[colors.grid.line]</rendererArgs>
+							<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+							<slotWidth>516</slotWidth>
+							<slotHeight>30</slotHeight>
+
+							<Button name="specItemCtr">
+								<Common>
+									<Size>
+										<AbsDimension x="516" y="30" />
+									</Size>
+									
+									<Texture>
+										<Size>
+											<AbsDimension x="516" y="30" />
+										</Size>
+										<bgColor>0</bgColor>
+										<bgAlpha>0</bgAlpha>
+									</Texture>
+
+									<Texture name="tx_whiteArrow">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="8" y="9" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="8" y="12" />
+										</Size>
+										<uri>[config.ui.skin]texture/icon_arrow_pin.png</uri>
+									</Texture>
+
+									<Label name="lbl_name">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="23" y="5" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="447" y="20" />
+										</Size>
+										<cssClass>medium</cssClass>
+										<css>[local.css]small2.css</css>
+									</Label>
+
+									<Label name="lbl_level">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="473" y="4" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="40" y="20" />
+										</Size>
+										<css>[local.css]normal2.css</css>
+									</Label>
+								</Common>
+								
+								<State type="OVER">
+									<SetProperties target="specItemCtr">
+										<bgColor>[colors.grid.over]</bgColor>
+									</SetProperties>
+								</State>
+								
+								<State type="SELECTED">
+									<SetProperties target="specItemCtr">
+										<bgColor>[colors.grid.selected]</bgColor>
+									</SetProperties>
+								</State>
+								
+								<State type="SELECTED_OVER">
+									<SetProperties target="specItemCtr">
+										<bgColor>[colors.grid.selected]</bgColor>
+									</SetProperties>
+								</State>
+							</Button>
+						</Grid>
+					</Content>
+				</block>
+				
+				<!-- Texture tx_pvpOff-->
+
+				<Texture name="tx_pvpOff">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="224" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="551" y="433" />
+					</Size>
+					<bgCornerRadius>39</bgCornerRadius>
+					<bgColor>[colors.ui.shadow.dark]</bgColor>
+					<bgAlpha>0.3</bgAlpha>
+				</Texture>
+				
+				<!-- TEXTURE ALIGNEMENT NEUTRE -->
+				
+				<Texture name="tx_neutralAlignment">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="562" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="500" y="657" />
+					</Size>
+					<bgCornerRadius>39</bgCornerRadius>
+					<bgColor>[colors.ui.shadow.dark]</bgColor>
+					<bgAlpha>0.3</bgAlpha>
+				</Texture>
+				<!-- ACTIVER / DESACTIVER LE MODE PVP -->
+		
+				<simpleButton name="btn_pvp">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="12" y="650" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="523" y="32" />
+					</Size>
+				</simpleButton>
+				
+			</Container>
+		</Content>
+	</window>
+</Definition>
+

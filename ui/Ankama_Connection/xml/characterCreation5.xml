@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition debug="false">
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/greyButton.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />		
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />		
+		
+		<Constant name="breed_uri" value="[config.content.path]gfx/classes/" />
+		<Constant name="artwork_uri" value="[config.content.path]gfx/illusUi/illus_classe.swf|artwork_" />
+		<Constant name="illus" value="[config.content.path]gfx/illusUi/" />
+		<Constant name="heads_uri" value="[config.content.path]gfx/cosmetics/" />
+		
+		<Constant name="colors_y_up" value="336" type="int" />
+		<Constant name="colors_y_down" value="493" type="int" />
+		<Constant name="progressbar_role_width" value="308" type="int" />
+	</Constants>
+
+	<Container>
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="0" y="0" />
+			</Anchor>
+		</Anchors>
+		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1280" y="1024" />
+			</Size>
+			<bgColor>0x111111</bgColor>
+		</Container>
+		
+		<Texture name="tx_breedIllu">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="-210" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1716" y="780" />
+			</Size>
+			<autoGrid>true</autoGrid>
+		</Texture>
+		
+		<Container name="breedInfo">
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="90" y="20" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="500" y="170" />
+				</Size>
+				
+				<TextArea name="lbl_breed">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="10" y="0" />
+						</Anchor>
+					</Anchors>
+					<text>Cra</text>
+					<Size>
+						<AbsDimension x="500" y="100" />
+					</Size>
+					<css>[local.css]title.css</css>
+				</TextArea>
+				<Label name="lbl_breedShortDesc">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="10" y="65" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="1200" y="40" />
+					</Size>
+					<cssClass>p</cssClass>
+					<css>[local.css]title.css</css>
+				</Label>
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="10" y="105" />
+						</Anchor>
+					</Anchors>
+					<text>Difficulté :</text>
+					<Size>
+						<AbsDimension x="200" y="40" />
+					</Size>
+					<cssClass>bold</cssClass>
+					<css>[local.css]titleSmall.css</css>
+				</Label>
+				
+				<Texture name="tx_progressBarBg">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="124" y="110" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="220" y="18" />
+					</Size>
+					<uri>[local.assets]tx_progressBarBackground</uri>
+					<autoGrid>true</autoGrid>
+				</Texture>
+				
+				<Texture name="tx_progressBar">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="126" y="112" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="196" y="14" />
+					</Size>
+					<uri>[local.assets]tx_progressBar</uri>
+					<autoGrid>true</autoGrid>
+				</Texture>
+			</Container>
+			
+			<Container >
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="20" y="190" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="450" y="370" />
+				</Size>
+				
+				<Container name="gd_roles">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="10" y="10" />
+						</Anchor>
+					</Anchors>
+					
+					<Container name="ctr_roleItem1">
+						<Size>
+							<AbsDimension x="200" y="60" />
+						</Size>
+						<Texture name="tx_role1">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="10" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="50" y="50" />
+							</Size>
+						</Texture>
+						
+						<Label name="lbl_roleTitle1">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="70" y="5" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="400" y="100" />
+							</Size>
+							<text>Titre</text>
+							<cssClass>bold</cssClass>
+							<css>[local.css]normal.css</css>
+						</Label>
+						
+						<TextArea name="lbl_role1">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="70" y="30" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="350" y="100" />
+							</Size>
+							<cssClass>left</cssClass>
+							<css>[local.css]normal.css</css>
+						</TextArea>
+					</Container>
+					
+					<Container name="ctr_roleItem2">
+						<Size>
+							<AbsDimension x="200" y="60" />
+						</Size>
+						<Texture name="tx_role2">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="10" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="50" y="50" />
+							</Size>
+						</Texture>
+						
+						<Label name="lbl_roleTitle2">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="70" y="5" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="400" y="100" />
+							</Size>
+							<text>Titre</text>
+							<cssClass>bold</cssClass>
+							<css>[local.css]normal.css</css>
+						</Label>
+						
+						<TextArea name="lbl_role2">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="70" y="30" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="350" y="100" />
+							</Size>
+							<cssClass>left</cssClass>
+							<css>[local.css]normal.css</css>
+						</TextArea>
+					</Container>
+					
+					<Container name="ctr_roleItem3">
+						<Size>
+							<AbsDimension x="200" y="70" />
+						</Size>
+						<Texture name="tx_role3">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="10" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="50" y="50" />
+							</Size>
+						</Texture>
+						
+						<Label name="lbl_roleTitle3">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="70" y="5" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="400" y="100" />
+							</Size>
+							<text>Titre</text>
+							<cssClass>bold</cssClass>
+							<css>[local.css]normal.css</css>
+						</Label>
+						
+						<TextArea name="lbl_role3">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="70" y="30" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="350" y="100" />
+							</Size>
+							<cssClass>left</cssClass>
+							<css>[local.css]normal.css</css>
+						</TextArea>
+					</Container>
+				</Container>
+				
+				<Container name="ctr_videoPlayerSmall">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="83"/>
+						</Anchor>
+					</Anchors>
+				
+					<VideoPlayer name="videoPlayerSmall">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="0" />
+							</Anchor>
+						</Anchors>
+			             <autoPlay>true</autoPlay>
+			             <Size>
+			                 <AbsDimension x="320" y="180" />
+			             </Size>
+			         </VideoPlayer>
+			        <Texture>
+			            <uri>mod://Ankama_Connection/play.swf</uri>
+					</Texture>
+				</Container>
+				
+				<!--                                        CHOIX DU SEXE                                    -->
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="1000" y="640" />
+						</Anchor>
+					</Anchors>
+					<iconButton name="btn_sex0">
+						<Size>
+							<AbsDimension x="35" y="35" />
+						</Size>				
+						<radioGroup>genderGroup</radioGroup>
+						<radioMode>true</radioMode>
+						<uri>[local.assets]CreaPerso_btn_garcon</uri>
+					</iconButton>
+					<iconButton name="btn_sex1">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="40" y="0" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="35" y="35" />
+						</Size>				
+						<radioGroup>genderGroup</radioGroup>
+						<radioMode>true</radioMode>
+						<uri>[local.assets]CreaPerso_btn_fille</uri>
+					</iconButton>
+				
+				</Container>
+				
+				<EntityDisplayer name="edChara">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="640" y="450" />
+						</Anchor>
+					</Anchors>
+					<scale>3</scale>
+					<direction>1</direction>
+				</EntityDisplayer>
+			</Container>
+		</Container>
+		
+		<Container name="ctr_videoPlayerFull">
+			<visible>false</visible>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="10" y="30"/>
+				</Anchor>
+			</Anchors>
+		 	<Size>
+                 <AbsDimension x="1260" y="709" />
+            </Size>
+			<VideoPlayer name="videoPlayerFull">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="0" />
+					</Anchor>
+				</Anchors>
+            	<shadowColor>0x000000</shadowColor>
+	             <Size>
+	                 <AbsDimension x="1260" y="709" />
+	             </Size>
+	             <autoPlay>true</autoPlay>
+	         </VideoPlayer>
+	         
+	         <Label name="lbl_closeVideo">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="1180" y="5" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="400" y="100" />
+				</Size>
+				<text>Fermer</text>
+				<cssClass>bold</cssClass>
+				<css>[local.css]normal.css</css>
+			</Label>
+	         
+		</Container>
+		
+		<simpleButton name="btn_create">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="490" y="700" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="300" y="60" />
+			</Size>
+		</simpleButton>
+				
+		
+		<Grid name="gd_breed2">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="780" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1280" y="243" />
+			</Size>
+			<rendererName>InlineXmlGridRenderer</rendererName>
+			<rendererArgs>updateBreed2</rendererArgs>
+			<slotWidth>74</slotWidth>
+			<slotHeight>243</slotHeight>
+
+			<Container name="ctr_breed">
+				<Button name="btn_icon">
+					<Common>
+						<Texture name="tx_breed">
+							<Size>
+								<AbsDimension x="129" y="243" />
+							</Size>
+							<Anchors>
+							<Anchor>
+								<AbsDimension x="-28" />
+							</Anchor>
+						</Anchors>
+						</Texture>
+					</Common>
+				</Button>
+			</Container>
+		</Grid>*/
+		
+		<Container name="chooseBreedHint">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="860" />
+				</Anchor>
+			</Anchors>
+			<Size>
+					<AbsDimension x="1280" y="100" />
+				</Size>
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="30" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="1280" y="100" />
+				</Size>
+				<text>Choisissez une classe</text>
+				<cssClass>center</cssClass>
+				<css>[local.css]title.css</css>
+			</Label>
+			<bgColor>0x000000</bgColor>
+			<bgAlpha>0.6</bgAlpha>
+		</Container>
+	</Container>
+	
+	<Shortcuts>
+		<validUi />
+	</Shortcuts>
+</Definition>
+

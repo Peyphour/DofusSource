@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>    
+    <Constants>
+        <Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+	
+	<Container>	
+			<WebBrowser name="wb_ogrineBrowser">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="-10" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="1198" y="728" />
+				</Size>
+				<cacheId>ankamaWebPortal</cacheId>
+				<cacheLife>0</cacheLife>
+				<scrollCss>[local.css]scrollBar.css</scrollCss>
+				<scrollTopOffset>2</scrollTopOffset>
+			</WebBrowser>
+	</Container>
+</Definition>

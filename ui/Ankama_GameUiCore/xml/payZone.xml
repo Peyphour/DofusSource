@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="uri_payzone" value="[local.assets]btn_alertNonSubscriberMode" />
+		<Constant name="uri_guest" value="[local.assets]btn_alertGuestMode" />
+	</Constants>
+
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template]window.xml" />
+
+	<Container name="mainCtr" strata="TOP">
+		<!--<Anchors>-->
+		<!--<Anchor point="CENTER" relativePoint="CENTER">-->
+		<!--<AbsDimension x="0" y="0" />-->
+		<!--</Anchor>-->
+		<!--</Anchors>-->
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="46" y="78" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<RelDimension x="1" y="1" />
+		</Size>
+		<iconButton name="btn_topLeft">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="1" y="31" />
+				</Anchor>
+			</Anchors>
+			<!--<Size>-->
+			<!--<AbsDimension x="55" y="85" />-->
+			<!--</Size>-->
+			<uri>uri_payzone</uri>
+		</iconButton>
+
+		<window name="imagePopupWindow">
+			<Size>
+				<AbsDimension x="700" y="380"/>
+			</Size>
+			<Anchors>
+				<Anchor point="CENTER" relativePoint="CENTER">
+					<AbsDimension x="-50" y="-100"/>
+				</Anchor>
+			</Anchors>
+			<Content>
+
+
+				<Container name="ctr_popup">
+					<Size>
+						<RelDimension x="1" y="1" />
+					</Size>
+
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="30" y="30" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="123" y="199" />
+						</Size>
+						<uri>[local.assets]NonAbonnes_tx_GrosCadenas</uri>
+					</Texture>
+
+					<!--<Label name="lbl_title">-->
+					<!--<Anchors>-->
+					<!--<Anchor>-->
+					<!--<AbsDimension x="372" y="251" />-->
+					<!--</Anchor>-->
+					<!--</Anchors>-->
+					<!--<Size>-->
+					<!--<AbsDimension x="457" y="35" />-->
+					<!--</Size>-->
+					<!--<css>[local.css]title.css</css>-->
+					<!--<cssClass>center</cssClass>-->
+					<!--</Label>-->
+
+					<TextArea name="lbl_description">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="175" y="20" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="454" y="226" />
+						</Size>
+						<css>[local.css]normal2.css</css>
+						<html>true</html>
+					</TextArea>
+
+					<simpleButton name="btn_link" label="[ui.payzone.btn]"   >
+						<Anchors>
+							<Anchor relativeTo="ctr_popup" relativePoint="BOTTOM" point="BOTTOM">
+								<AbsDimension x="0" y="-20" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="310" y="35" />
+						</Size>
+						<cssClass>darkboldcenter</cssClass>
+						<css>[local.css]normal2.css</css>
+					</simpleButton>
+
+				</Container>
+			</Content>
+		</window>
+	</Container>
+</Definition>

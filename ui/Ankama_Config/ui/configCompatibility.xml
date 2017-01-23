@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="mod://Ankama_Config/ui/template/configCheckbox.xml" />
+	
+  	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       <Constant name="css" value="[config.ui.skin]css/" />
+       <Constant name="version" value="2" type="int"/>
+   	</Constants>
+
+	<Container name="configCacheCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="0" y="30" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="550" y="800" />
+		</Size>
+	
+		<!-- Titre pour les liens vers le support -->
+		
+		<Label name="lblTitleCurrentVersion">
+			<Size>
+				<AbsDimension x="720" y="25" />
+			</Size>
+			<cssClass>whitebold</cssClass>
+			<css>[local.css]normal2.css</css>
+		</Label>
+		
+		<!-- Fond gris 1 -->
+
+		<TextureBitmap name="tx_bgForeground1" alpha="0.5">
+			<Size>
+				<AbsDimension x="780" y="195" />
+			</Size>
+			<themeDataId>bg_small_border_light</themeDataId>
+		</TextureBitmap>	
+		
+		<Label name="lblCurrentVersionDescription">
+			<Size>
+				<AbsDimension x="740" y="175" />
+		    	</Size>
+		    	<multiline>true</multiline>
+		   	<wordWrap>true</wordWrap>
+		   	<css>[local.css]normal2.css</css>
+		</Label>
+		
+		<!-- Titre autre version dispo -->
+		
+		<Label name="lblTitleOtherVersion">
+			<Size>
+				<AbsDimension x="720" y="25" />
+			</Size>
+			<text>[ui.config.old.air]</text>
+			<cssClass>whitebold</cssClass>
+			<css>[local.css]normal2.css</css>
+		</Label>
+		
+		<!-- Fond gris 2 -->
+
+		<TextureBitmap name="tx_bgForeground2">
+			<Size>
+				<AbsDimension x="780" y="110" />
+			</Size>
+			<themeDataId>bg_small_border_light</themeDataId>
+		</TextureBitmap>	
+		
+		<!-- Texte décrivant l'autre version de Air" -->
+		
+		<Label name="lblOtherVersionDescription">
+			<Size>
+				<AbsDimension x="740" y="90" />
+			</Size>
+			<multiline>true</multiline>
+			<wordWrap>true</wordWrap>
+			<css>[local.css]normal2.css</css>
+		</Label>
+		
+		<simpleButton name="btnUseOther">
+			<Anchors>
+                		<Anchor>
+                    			<AbsDimension x="260" y="420" />
+                		</Anchor>
+            		</Anchors>
+			<Size>
+				<AbsDimension x="260" y="30" />
+			</Size>
+		</simpleButton>
+		
+	</Container>
+</Definition>
+

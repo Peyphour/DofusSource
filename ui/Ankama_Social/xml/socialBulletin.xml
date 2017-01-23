@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition labelDebug="false">
+
+    <Import url="[config.mod.template]button/simpleButton.xml" />
+    <Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]button/themeLabelCheckBox.xml" />
+    
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	   	<Constant name="illus" value="[config.ui.skin]illus/" />
+	   		   	
+		<Constant name="name_width" value="437" type="int" />
+	</Constants>
+
+	<Container name="mainCtr">
+	
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="10" y="151" />
+			</Anchor>
+		</Anchors>
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<uri>[config.ui.skin]common/corner_decoration_small.png</uri>
+		</Texture>
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="1104" y="0" />
+				</Anchor>
+			</Anchors>
+			<uri>[config.ui.skin]common/corner_decoration_small.png</uri>
+			<scaleX>-1</scaleX>
+		</Texture>
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="432" />
+				</Anchor>
+			</Anchors>
+			<uri>[local.common]corner_decoration_small.png</uri>
+			<scaleY>-1</scaleY>
+		</Texture>
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="1104" y="432" />
+				</Anchor>
+			</Anchors>
+			<uri>[local.common]corner_decoration_small.png</uri>
+			<scaleX>-1</scaleX>
+			<scaleY>-1</scaleY>
+		</Texture>
+		
+		
+		 		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="-2" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1104" y="440" />
+			</Size>
+			<uri>[local.illus]tx_bulletin.png</uri>
+		</Texture>
+				
+		<Label name="lbl_title">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="120" y="28" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="864" y="30" />
+			</Size>
+			<cssClass>whiteboldcenter</cssClass>
+			<css>[local.css]title.css</css>
+		</Label>
+		
+        <TextureBitmap>
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="220" y="65"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="664" y="3" />
+            </Size>
+            <uri>[local.common]window_separator_black_horizontal.png</uri>
+        </TextureBitmap>
+		
+		
+		<Container name="ctr_text">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="270" y="75" />
+				</Anchor>
+			</Anchors>
+ 			
+			<TextArea name="lbl_bulletin">
+				<Size>
+					<AbsDimension x="564" y="330" />
+				</Size>
+				<selectable>true</selectable>
+				<hyperlinkEnabled>true</hyperlinkEnabled>
+				<useStyleSheet>true</useStyleSheet>
+				<css>[local.css]small2.css</css>
+                <scrollCss>[local.css]scrollBar.css</scrollCss>
+                <hideScroll>true</hideScroll>
+			</TextArea>		
+		</Container>
+		
+		<Container name="ctr_edit">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="270" y="75" />
+				</Anchor>
+			</Anchors>
+	 		<visible>false</visible>
+	 		
+			<TextureBitmap>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="-15" y="-8" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="594" y="346" />
+				</Size>
+				<themeDataId>bg_small_border_light</themeDataId>
+			</TextureBitmap>
+ 			
+			<TextAreaInput name="inp_bulletin">
+				<Size>
+					<AbsDimension x="564" y="330" />
+				</Size>
+				<css>[local.css]small2.css</css>
+				<scrollCss>[local.css]scrollBar.css</scrollCss>
+				<hideScroll>true</hideScroll>
+			</TextAreaInput>    
+		</Container>	
+		
+		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="430" />
+				</Anchor>
+			</Anchors>
+				
+			<Texture>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="60" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="1104" y="60" />
+				</Size>
+				<scaleY>-1</scaleY>
+				<uri>[local.common]bg_dark.png</uri>
+			</Texture>			
+				
+			<themeLabelCheckBox name="btn_notifyMembers">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="10" y="6" />
+					</Anchor>
+				</Anchors>	
+				<labelWidth>600</labelWidth>
+				<text>[ui.motd.bulletin.notifyListeners]</text>
+				<selected>true</selected>
+			</themeLabelCheckBox>
+	
+			<Label name="lbl_lastEdit">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="10" y="28" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="600" y="16" />
+				</Size>
+				<css>[local.css]small2.css</css>				
+			</Label>
+								
+			
+			<simpleButton name="btn_edit">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="934" y="12" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="150" y="32" />
+				</Size>
+				<label>[ui.common.modify]</label>
+			</simpleButton>
+			
+			<simpleButton name="btn_exit">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="764" y="12" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="150" y="32" />
+				</Size>
+				<label>[ui.common.cancel]</label>
+			</simpleButton>
+			
+			<simpleButton name="btn_valid">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="934" y="12" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="150" y="32" />
+				</Size>
+				<label>[ui.common.validation]</label>
+			</simpleButton>
+		</Container>
+	</Container>
+</Definition>

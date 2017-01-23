@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template]window.xml"/>
+    <Import url="[config.mod.template]block.xml"/>
+	
+   	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       	<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="illus" value="[config.content.path]gfx/illusUi/" />
+   	</Constants>
+
+	<Container name="mainCtr">
+		<Size>
+            <AbsDimension x="511" y="380" />
+        </Size>
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER" >
+				<AbsDimension x="0" y="-70" />
+			</Anchor>
+		</Anchors>
+		<mouseEnabled>true</mouseEnabled>
+		
+		<window closeButtonName="btn_close" name="wd_main">
+		
+			<Size>
+                <AbsDimension x="511" y="380"/>
+            </Size>
+		
+			<Content>
+				 <block name="bl_description">
+				 
+				 	<Anchors>
+                        <Anchor relativePoint="TOP" point="TOP">
+                            <AbsDimension y="10"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x= "450" y="200"/>
+                    </Size>
+				 	
+				 	<Content>
+				 		<TextureBitmap>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="190"/>
+								<RelDimension y="1" />
+							</Size>
+							<themeDataId>bg_small_border_light</themeDataId>
+						</TextureBitmap>
+				 	
+                        <Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="10" y="-79" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="172" y="261" />
+							</Size>
+							<uri>[local.illus]enclos_tx_illuEnclos.png</uri>
+						</Texture>
+                        
+                        <!-- Paddock description -->
+						<TextArea name="lbl_info">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="190" y="8" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="259" y="176" />
+							</Size>
+							<css>[local.css]normal2.css</css>
+							<scrollCss>[local.css]scrollBar.css</scrollCss>
+							<hideScroll>true</hideScroll>
+						</TextArea>
+				 	</Content>
+				 </block>
+				 
+				 <block>
+				 
+					 <Anchors>
+	                        <Anchor relativeTo="bl_description" relativePoint="BOTTOM" point="TOP">
+	                            <AbsDimension y="0"/>
+	                        </Anchor>
+	                    </Anchors>
+	                    <Size>
+	                        <AbsDimension x="450" y="50"/>
+	                    </Size>
+					 	
+					 	<Content>
+					 	
+					 		<!-- Fond champs de saisi -->
+							<TextureBitmap name="inputBg">
+	                            <Anchors>
+	                                <Anchor relativePoint="RIGHT" point="RIGHT">
+	                                    <AbsDimension x="0" y="-2"/>
+	                                </Anchor>
+	                            </Anchors>
+	                            <Size>
+	                                <AbsDimension x="160" y="40"/>
+	                            </Size>
+	                            <themeDataId>bg_small_border_light</themeDataId>
+	                        </TextureBitmap>
+					 	
+					 		<Label>
+								<Anchors>
+									<Anchor relativeTo="inputBg" relativePoint="RIGHT" point="RIGHT" >
+										<AbsDimension x="-160" y="0"/>
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="146" y="22" />
+								</Size>
+								<text>[ui.common.price][ui.common.colon]</text>
+								<css>[local.css]normal2.css</css>
+								<cssClass>right</cssClass>
+							</Label>
+					
+							
+					
+							<!-- Champs de saisi du prix -->
+							<Input name="lbl_input">
+								 <Anchors>
+	                                <Anchor relativeTo="inputBg" point="RIGHT" relativePoint="RIGHT">
+	                                    <AbsDimension x="-38" y="2"/>
+	                                </Anchor>
+                            	</Anchors>
+								<Size>
+									<AbsDimension x="124" y="25" />
+								</Size>
+								<css>[local.css]normal2.css</css>
+								<cssClass>right</cssClass>
+								<numberAutoFormat>true</numberAutoFormat>
+							</Input>
+							
+							 <Texture>
+	                            <Anchors>
+	                                <Anchor relativeTo="inputBg" point="RIGHT" relativePoint="RIGHT">
+	                                    <AbsDimension x="-15" y="1"/>
+	                                </Anchor>
+	                            </Anchors>
+	                            <Size>
+	                                <AbsDimension x="18" y="16"/>
+	                            </Size>
+	                            <uri>[config.ui.skin]texture/icon_kama.png
+	                            </uri>
+	                        </Texture>
+						 </Content>
+					 </block>
+					
+					 <Texture>
+					   <Anchors>
+					      <Anchor relativePoint="BOTTOMLEFT" point="BOTTOMLEFT" />
+					   </Anchors>
+					   <uri>[config.ui.skin]common/corner_decoration.png</uri>
+					</Texture>
+					
+					<!--Corner decoration RIGHT-->
+					
+					<Texture>
+					   <Anchors>
+					      <Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMLEFT" />
+					   </Anchors>
+					   <uri>[config.ui.skin]common/corner_decoration.png</uri>
+					   <scaleX>-1</scaleX>
+					</Texture>
+					
+					<simpleButton label="[ui.common.validation]" name="btn_ok">
+			 			<Anchors>
+							<Anchor relativePoint="BOTTOM" point="BOTTOM">
+								<AbsDimension x="130" y="-10" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="120" y="31" />
+						</Size>
+					</simpleButton>				
+
+					<!-- Bouton Annulation de la vente -->
+
+					<simpleButton name="btn_cancelSell"   >
+						<Anchors>
+							<Anchor relativePoint="BOTTOM" point="BOTTOM">
+								<AbsDimension x="-70" y="-10" />
+							</Anchor>
+						</Anchors>
+					
+						<Size>
+							<AbsDimension x="230" y="31" />
+						</Size>
+						<visible>false</visible>
+					</simpleButton>	
+				</Content>
+			</window>
+	</Container>
+</Definition>

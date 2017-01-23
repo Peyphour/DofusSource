@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+<Import url="[config.mod.template]button/iconButton.xml" />
+    <Import url="[config.mod.template]window.xml" />
+    <Import url="[config.mod.template]block.xml" />
+    <Import url="[config.mod.template.button]themeIconButton.xml" />
+    
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="maps_uri" value="[config.gfx.path.maps]" />
+		<Constant name="icons_uri" value="[config.content.path]gfx/icons" />
+        <Constant name="common" value="[config.ui.skin]common/"/>
+        <Constant name="texture" value="[config.ui.skin]texture/"/>
+        <Constant name="bitmap" value="[config.ui.skin]bitmap/"/>
+	</Constants>
+	
+	<Container name="popCtr">
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER" />
+		</Anchors>
+		
+		<mouseEnabled>true</mouseEnabled>
+		<shadowColor>[colors.ui.shadow]</shadowColor>	
+		
+		<window>
+			<Size>
+				<RelDimension x="1" y="1"/>
+			</Size>
+			<Anchors>
+				<Anchor relativePoint="CENTER" point="CENTER" />
+			</Anchors>
+            <Size>
+                <RelDimension x="1" y="1"/>
+            </Size>
+            <dark>true</dark>
+                <Content>
+                    <Texture>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="0" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension y="33" x="510"/>
+                        </Size>
+                        <uri>[local.common]bg_dark.png</uri>
+                    </Texture>
+                    <Label name="lbl_subtitle">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="0" y="5" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension y="25" x="515"/>
+                        </Size>
+                        <cssClass>center</cssClass>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+
+                    <MapViewer name="mapViewer">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="0" y="35" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="500" y="400" />
+                        </Size>
+                        <mouseEnabled>true</mouseEnabled>
+                    </MapViewer>
+
+                    <Container>
+                        <Anchors>
+                            <Anchor relativeTo="mapViewer" point="RIGHT" relativePoint="RIGHT">
+                                <AbsDimension x="8" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="62" y="160" />
+                        </Size>
+
+                        <TextureBitmap>
+                            <Size>
+                                <AbsDimension x="60" y="150" />
+                            </Size>
+                            <themeDataId>floating_window_background</themeDataId>
+                        </TextureBitmap>
+
+                        <Container>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="18" y="-10" />
+                                </Anchor>
+                            </Anchors>
+
+                            <themeIconButton name="btn_grid">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="34" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="25" y="25" />
+                                </Size>
+                                <iconThemeDataId>icon_grid</iconThemeDataId>
+                            </themeIconButton>
+                        </Container>
+
+                        <Texture>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension y="59" />
+                                    <RelDimension x="0.22" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension y="2" />
+                                <RelDimension x="0.6" />
+                            </Size>
+                            <uri>[local.common]window_separator_black_horizontal.png</uri>
+                        </Texture>
+
+                        <Container>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="18" y="70" />
+                                </Anchor>
+                            </Anchors>
+
+                            <themeIconButton name="btn_zoomIn">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="0" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="25" y="25" />
+                                </Size>
+                                <iconThemeDataId>icon_plus_without_white_space</iconThemeDataId>
+                            </themeIconButton>
+
+                            <themeIconButton name="btn_zoomOut">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="32" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="25" y="25" />
+                                </Size>
+                                <iconThemeDataId>icon_minus_without_white_space</iconThemeDataId>
+                            </themeIconButton>
+                        </Container>
+                    </Container>
+
+            </Content>
+		</window>
+	</Container>
+</Definition>

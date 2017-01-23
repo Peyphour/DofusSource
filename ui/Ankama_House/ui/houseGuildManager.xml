@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template.button]labelCheckBox.xml" />
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template.button]themeLabelCheckBox.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	
+   	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       	<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="picto_uri" value="[config.content.path]gfx/emblems/" />   
+   	</Constants>
+
+	<Container name="mainCtr">
+		<Size>
+            <AbsDimension x="600" y="700" />
+        </Size>
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="384" y="136" />
+			</Anchor>
+		</Anchors>
+		<mouseEnabled>true</mouseEnabled>
+		
+		<window name="ctr_window">
+			
+			<Size>
+				 <AbsDimension x="600" y="700" />
+			</Size>
+			<closeButtonName>btnClose</closeButtonName>
+			
+			<Content>
+				<block name="upperBlock">
+					<Anchors>
+	                    <Anchor relativePoint="TOP" point ="TOP">
+	                        <AbsDimension y="8" />
+	                    </Anchor>
+	                </Anchors>
+	                <Size>
+	                   <RelDimension x="0.97"/>
+	                  	<AbsDimension y="206" />
+	                </Size>
+	                
+	                <Content>
+	                
+	                	<!-- Partager cette maison avec ma guilde -->
+						<themeLabelCheckBox name="cbGuildHouseEnabled">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="180" y="20" />
+								</Anchor>
+							</Anchors>
+							<labelWidth>392</labelWidth>
+							<labelHeight>20</labelHeight>
+							<uri>[local.assets]tx_light_checkbox</uri>
+							<text>[ui.common.guildHouseEnabledForThisHouse]</text>
+							<css>[local.css]normal2.css</css>
+							<cssClass>bold</cssClass>
+						</themeLabelCheckBox>
+				
+						<!-- Description partage -->
+						<TextArea name="lblGuildHouseNotice">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="195" y="60" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="330" y="120" />
+							</Size>
+							<text>[ui.common.guildHouseNotice]</text>
+							<css>[local.css]small2.css</css>
+							<cssClass>bold</cssClass>
+							<scrollCss>[local.css]scrollBar.css</scrollCss>
+							<hideScroll>true</hideScroll>
+						</TextArea>
+				
+						<!-- Logo(s) Background -->
+						<TextureBitmap name="grid_background">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="0"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<RelDimension y="1"/>
+								<AbsDimension x="170"/>
+							</Size>
+							<themeDataId>bg_small_border_light</themeDataId>
+						</TextureBitmap>
+				
+						<Container name="ctr_oneEmblem">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="24" y="40" />
+								</Anchor>
+							</Anchors>
+							<Texture name="tx_emblemBack">
+								<Size>
+									<AbsDimension x="118" y="118" />
+								</Size>
+							</Texture>
+							<Texture name="tx_emblemUp">
+								<Anchors>
+									<Anchor relativeTo="tx_emblemBack" relativePoint="CENTER">
+										<AbsDimension x="-35" y="-35" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="70" y="70" />
+								</Size>
+							</Texture>
+						</Container>
+				
+						<Container name="ctr_twoEmblems">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="10" y="15" />
+								</Anchor>
+							</Anchors>
+							<visible>false</visible>
+							<Texture name="tx_emblemBackOld">
+								<Size>
+									<AbsDimension x="118" y="118" />
+								</Size>
+							</Texture>
+							<Texture name="tx_emblemUpOld">
+								<Anchors>
+									<Anchor relativeTo="tx_emblemBackOld" relativePoint="CENTER">
+										<AbsDimension x="-35" y="-35" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="70" y="70" />
+								</Size>
+							</Texture>
+							<Texture name="tx_emblemBackNew">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="28" y="48" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="118" y="118" />
+								</Size>
+							</Texture>
+							<Texture name="tx_emblemUpNew">
+								<Anchors>
+									<Anchor relativeTo="tx_emblemBackNew" relativePoint="CENTER">
+										<AbsDimension x="-35" y="-35" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="70" y="70" />
+								</Size>
+							</Texture>
+							
+							<TextureBitmap name="btn_rightArrow">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="5" y="115" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="30" y="28" />
+								</Size>
+								<themeDataId>btn_arrow_turn_normal</themeDataId>
+								<scaleX>-1</scaleX>
+								<smooth>true</smooth>
+							</TextureBitmap>
+							
+							<!-- <Texture>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="5" y="115" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="16" y="24" />
+								</Size>
+								<uri>[local.assets]btn_flechedroite</uri>
+							</Texture> -->
+						</Container>
+	                
+	                </Content>
+				</block>
+				
+				<block name="underBlock">
+					<Anchors>
+	                    <Anchor relativeTo="upperBlock" relativePoint="BOTTOM" point ="TOP">
+	                        <AbsDimension y="5" />
+	                    </Anchor>
+	                </Anchors>
+	                <Size>
+	                   <RelDimension x="0.97"/>
+	                   <AbsDimension y="360"/> -->
+	                </Size>
+	                
+	                <Content>
+	                	<Container name="ctr_rightsList">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="8" />
+								</Anchor>
+							</Anchors>
+							
+							<!-- Menu 1 -->
+							<Label>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="10" y="5" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="552" y="19" />
+								</Size>
+								<text>[ui.common.guildHouseDisplayEmblemOnDoorTitle][ui.common.colon]</text>
+								<cssClass>bold</cssClass>
+								<css>[local.css]normal2.css</css>
+							</Label>
+
+							<!-- Menu 1 / Option 1 -->
+							<themeLabelCheckBox name="cbMemberEmblemOnDoor">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="25" y="35" />
+									</Anchor>
+								</Anchors>
+								<labelWidth>507</labelWidth>
+								<labelHeight>20</labelHeight>
+								<uri>[local.assets]tx_light_checkbox</uri>
+								<text>[ui.common.guildHouseDisplayEmblemForGuild]</text>
+								<css>[local.css]normal2.css</css>
+							</themeLabelCheckBox>
+				
+							<!-- Menu 1 / Option 2 -->
+							<themeLabelCheckBox name="cbOthersEmblemOnDoor">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="25" y="55" />
+									</Anchor>
+								</Anchors>
+								<labelWidth>507</labelWidth>
+								<labelHeight>20</labelHeight>
+								<uri>[local.assets]tx_light_checkbox</uri>
+								<text>[ui.common.guildHouseDisplayEmblemForOthers]</text>
+								<css>[local.css]normal2.css</css>
+							</themeLabelCheckBox>
+				
+							<!-- Menu 2 -->
+							<Label>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="10" y="88" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="552" y="19" />
+								</Size>
+								<text>[ui.common.guildHouseHouseAccessTitle][ui.common.colon]</text>
+								<cssClass>bold</cssClass>
+								<css>[local.css]normal2.css</css>
+							</Label>
+				
+							<!-- Menu 2 / Option 1 -->
+							<themeLabelCheckBox name="cbAccessGuildmatesHouse">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="25" y="118" />
+									</Anchor>
+								</Anchors>
+								<labelWidth>507</labelWidth>
+								<labelHeight>20</labelHeight>
+								<uri>[local.assets]tx_light_checkbox</uri>
+								<text>[ui.common.guildHouseAccessHouseAllowGuildmates]</text>
+								<css>[local.css]normal2.css</css>
+							</themeLabelCheckBox>
+				
+							<!-- Menu 2 / Option 2 -->
+							<themeLabelCheckBox name="cbAccessHouseDenyOthers">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="25" y="138" />
+									</Anchor>
+								</Anchors>
+								<labelWidth>507</labelWidth>
+								<labelHeight>20</labelHeight>
+								<uri>[local.assets]tx_light_checkbox</uri>
+								<text>[ui.common.guildHouseAccessHouseDenyOthers]</text>
+								<css>[local.css]normal2.css</css>
+							</themeLabelCheckBox>
+				
+							<!-- Menu 3 -->
+							<Label>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="10" y="170" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="552" y="19" />
+								</Size>
+								<text>[ui.common.guildHouseSafesAccessTitle][ui.common.colon]</text>
+								<cssClass>bold</cssClass>
+								<css>[local.css]normal2.css</css>
+							</Label>
+				
+							<!-- Menu 3 / Option 1 -->
+							<themeLabelCheckBox name="cbGuildmatesAccessSafes">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="25" y="200" />
+									</Anchor>
+								</Anchors>
+								<labelWidth>507</labelWidth>
+								<labelHeight>20</labelHeight>
+								<uri>[local.assets]tx_light_checkbox</uri>
+								<text>[ui.common.guildHouseRight32]</text>
+								<css>[local.css]normal2.css</css>
+							</themeLabelCheckBox>
+				
+							<!-- Menu 3 / Option 2 -->
+							<themeLabelCheckBox name="cbForbiddenSafes">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="25" y="220" />
+									</Anchor>
+								</Anchors>
+								<labelWidth>507</labelWidth>
+								<labelHeight>20</labelHeight>
+								<uri>[local.assets]tx_light_checkbox</uri>
+								<text>[ui.common.guildHouseRight64]</text>
+								<css>[local.css]normal2.css</css>
+							</themeLabelCheckBox>
+				
+							<!-- Menu 4 -->
+							<Label>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="10" y="250" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="552" y="19" />
+								</Size>
+								<text>[ui.common.guildHouseOtherTitle][ui.common.colon]</text>
+								<cssClass>bold</cssClass>
+								<css>[local.css]normal2.css</css>
+							</Label>
+				
+							<!-- Menu 4 / Option 1 -->
+							<themeLabelCheckBox name="cbAllowRespawn">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="25" y="280" />
+									</Anchor>
+								</Anchors>
+								<labelWidth>507</labelWidth>
+								<labelHeight>20</labelHeight>
+								<uri>[local.assets]tx_light_checkbox</uri>
+								<text>[ui.common.guildHouseAllowRespawn]</text>
+								<css>[local.css]normal2.css</css>
+							</themeLabelCheckBox>
+				
+							<!-- Menu 4 / Option 2 -->
+							<themeLabelCheckBox name="cbAllowTeleport">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="25" y="300" />
+									</Anchor>
+								</Anchors>
+								<labelWidth>507</labelWidth>
+								<labelHeight>20</labelHeight>
+								<uri>[local.assets]tx_light_checkbox</uri>
+								<text>[ui.common.guildHouseAllowTeleport]</text>
+								<css>[local.css]normal2.css</css>
+							</themeLabelCheckBox>
+						</Container>
+	                	
+	                	
+	                </Content>
+				</block>
+				
+				<!-- Bouton valider -->
+				<simpleButton name="btnValidate">
+					<Anchors>
+						<Anchor relativePoint="BOTTOM" point="BOTTOM">
+							<AbsDimension x="0" y="-10" />
+						</Anchor>
+		            </Anchors>
+					
+					<uri>[local.assets]btn_orange</uri>
+					
+					<Size>
+						<AbsDimension x="170" y="35" />
+					</Size>
+					<label>[ui.common.validation]</label>
+					<css>[local.css]button.css</css>
+				</simpleButton>
+				
+				<!--Corner decoration LEFT-->
+
+				<Texture>
+					<Anchors>
+						<Anchor relativePoint="BOTTOMLEFT" point="BOTTOMLEFT" />
+					</Anchors>
+					<uri>[config.ui.skin]common/corner_decoration.png</uri>
+				</Texture>
+
+				<!--Corner decoration RIGHT-->
+
+				<Texture>
+					<Anchors>
+						<Anchor relativePoint="BOTTOMRIGHT" point="BOTTOMLEFT" />
+					</Anchors>
+					<uri>[config.ui.skin]common/corner_decoration.png</uri>
+					<scaleX>-1</scaleX>
+				</Texture>			
+			</Content>		
+		</window>	
+	</Container>
+</Definition>

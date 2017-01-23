@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="picto_uri" value="[config.content.path]gfx/characteristics/characteristics.swf|tx_" />
+		<Constant name="texture" value="[config.ui.skin]texture/"/>
+	</Constants>
+	
+	<Import url="[config.mod.template.button]iconButton.xml" />
+    <Import url="[config.mod.template]button/horizontalTab.xml" />
+    <Import url="[config.mod.template]button/themeHorizontalTab.xml" />
+    <Import url="[config.mod.template.button]themeIconButton.xml" />
+    <Import url="[config.mod.template]block.xml" />
+	
+	<Container>
+		<Size>
+			<AbsDimension x="462" y="315" />
+		</Size>
+		<mouseEnabled>true</mouseEnabled>
+
+	
+		
+		<!-- Label lbl_name-->
+
+		<Label name="lbl_name">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="-4" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="368" y="25" />
+			</Size>
+			<css>[local.css]titleSmall.css</css>
+			<cssClass>light</cssClass>
+		</Label>
+		
+		<!-- Label lbl_level-->
+
+		<Label name="lbl_level">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="368" y="-4" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="80" y="25" />
+			</Size>
+			<css>[local.css]titleSmall.css</css>
+			<cssClass>lightright</cssClass>
+		</Label>
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="2" y="52" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="134" y="134" />
+			</Size>
+			<uri>[local.texture]slot/slot_big_dark_background_empty.png</uri>
+			<autoGrid>true</autoGrid>
+		</Texture>
+		
+		<!-- Texture de l'icone de l'objet -->
+		<Texture name="tx_item">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="3" y="53" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="132" y="132" />
+			</Size>
+			<cacheAsBitmap>true</cacheAsBitmap>
+		</Texture>
+		
+		
+		<!-- Label lbl_weight-->
+
+		<Label name="lbl_weight">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="5" y="190" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="95" y="20" />
+			</Size>
+			<css>[local.css]normal2.css</css>
+			<cssClass>right</cssClass>
+		</Label>
+		
+		<Texture name="tx_2hands">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="92" y="35" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="23" y="16" />
+			</Size>
+			<uri>[local.assets]tx_twoHanded</uri>
+		</Texture>
+		
+		<Texture name="tx_mimicry">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="116" y="34" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="19" y="18" />
+			</Size>
+			<uri>[local.assets]tx_mimicry</uri>
+		</Texture>
+		
+		
+		<!-- Texture tx_etherealGauge-->
+
+		<Texture name="tx_etherealGauge">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="10" y="194" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="92" y="16" />
+			</Size>
+			<uri>[local.assets]FichePerso_tx_jaugeBleu</uri>
+		</Texture>
+		
+
+					
+		<!-- iconButton btn_info-->
+		 <themeIconButton name="btn_info">
+              <Anchors>
+				<Anchor>
+					<AbsDimension x="108" y="189" />
+				</Anchor>
+			</Anchors>
+              <Size>
+                  <AbsDimension x="25" y="25" />
+              </Size>
+              <iconUri>[local.texture]btnIcon/btnIcon_magnifierSearch.png</iconUri>
+          </themeIconButton>
+		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="142" y="27" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="319" y="181" />
+			</Size>
+			
+			<!-- Block 1-->
+
+			<block>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="27" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="319" y="154" />
+				</Size>
+				
+				<Content>	
+					<!-- Grid gd_lines-->
+					<Grid name="gd_lines">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="0" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="310" y="142" />
+						</Size>
+				
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updateLine,[colors.grid.line]</rendererArgs>
+						<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+						<slotWidth>310</slotWidth>
+						<slotHeight>27</slotHeight>
+		
+						<Container name="statItemCtr">
+							<Size>
+								<AbsDimension x="294" y="27" />
+							</Size>
+		
+							<!-- Label lbl_text-->
+		
+							<Label name="lbl_text">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="5" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="285" y="22" />
+								</Size>
+								<css>[local.css]normal2.css</css>
+								<hyperlinkEnabled>true</hyperlinkEnabled>
+								<useStyleSheet>true</useStyleSheet>
+							</Label>
+		
+							<!-- Texture tx_picto-->
+		
+							<Texture name="tx_picto">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="273" y="5" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="17" y="17" />
+								</Size>
+							</Texture>
+						</Container>
+		
+					</Grid>	
+				</Content>	
+			</block>
+			
+			<themeHorizontalTab name="btn_effects">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="4" y="-5" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="100" y="38" />
+				</Size>
+				<text>[ui.effects]</text>
+			</themeHorizontalTab>		
+			<themeHorizontalTab name="btn_conditions">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="104" y="-5" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="103" y="38" />
+				</Size>
+				<text>[ui.common.conditions]</text>
+			</themeHorizontalTab>		
+			<themeHorizontalTab name="btn_caracteristics">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="207" y="-5" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="92" y="38" />
+				</Size>
+				<text>[ui.common.short.caracteristic]</text>
+			</themeHorizontalTab>
+			
+		</Container>
+		
+		
+		
+
+		<!-- Texture tx_bg2-->
+
+		<!-- <Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="220" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="462" y="96" />
+			</Size>
+			<autoGrid>true</autoGrid>
+			<uri>[local.assets]tx_blockBackground</uri>
+		</Texture> -->
+		
+		<block>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="3" y="223" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="458" y="102" />
+			</Size>
+			<Content>
+				<TextArea name="lbl_description">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="7" y="5"/>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="439" y="87" />
+					</Size>
+					<css>[local.css]normal2.css</css>
+					<cssClass>left</cssClass>
+					<scrollCss>[local.css]scrollBar.css</scrollCss>
+					<hideScroll>true</hideScroll>
+					<resetScroll>true</resetScroll>
+				</TextArea>
+			</Content>
+		</block>
+		
+	</Container>
+</Definition>

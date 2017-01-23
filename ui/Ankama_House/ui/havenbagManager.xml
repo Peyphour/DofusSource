@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition fullscreen="true">
+	<Import url="[config.mod.template]window.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />	
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+
+	<Container name="mainCtr">
+		<mouseEnabled>true</mouseEnabled>
+		
+		<window name="ctr_edit" movable="true">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="176" y="94" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="705" y="324" />
+			</Size>
+			<mouseEnabled>true</mouseEnabled>
+			
+			<Content>
+				<TextureBitmap>
+					<Size>
+						<RelDimension x="1" y="1"/>
+					</Size>
+					<themeDataId>block_background_dark</themeDataId>
+				</TextureBitmap>
+				
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="10" y="-20" />
+						</Anchor>
+					</Anchors>
+					
+					<Grid name="gd_furnitures">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="5" y="35" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="638" y="184" />
+						</Size>
+						<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+						<slotWidth>58</slotWidth>
+						<slotHeight>58</slotHeight>
+						<scrollDisplay>always</scrollDisplay>
+						<rendererName>SlotGridRenderer</rendererName>
+						<rendererArgs>[local.texture]slot/slot_dark_background_empty.png,[local.texture]slot/over.png,[local.texture]slot/selected.png,[local.texture]slot/acceptDrop.png,[local.texture]slot/refuseDrop.png,,[local.css]normal.css,true,,,,[local.texture]slot/slot_dark_background_empty.png</rendererArgs>
+					</Grid>
+				</Container>
+				
+				<Label>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="12" y="216" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="450" y="22" />
+					</Size>
+					<text>[ui.havenbag.info]</text>
+					<cssClass>italicdisabled</cssClass>
+					<css>[local.css]normal2.css</css>
+				</Label>
+		
+				<Texture name="tx_help">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="462" y="219" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="19" y="19" />
+					</Size>
+					<uri>[local.texture]help_icon_normal.png</uri>
+				</Texture>
+				
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="486" y="210" />
+						</Anchor>
+					</Anchors>
+					
+					<themeIconButton name="btn_searchFilter">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="18" y="0" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="34" y="34" />
+						</Size>
+						<iconUri>[local.texture]btnIcon/btnIcon_filter.png</iconUri>
+					</themeIconButton>
+					
+					<themeIconButton name="btn_editClear">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="57" y="0" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="34" y="34" />
+						</Size>
+						<iconUri>[local.texture]btnIcon/btnIcon_trash.png</iconUri>
+					</themeIconButton>
+
+					<themeIconButton name="btn_editReset">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="96" y="0" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="34" y="34" />
+						</Size>
+						<iconUri>[local.texture]btnIcon/btnIcon_back.png</iconUri>
+						<scaleX>-1</scaleX>
+					</themeIconButton>
+					
+					<themeIconButton name="btn_save">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="135" y="0" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="34" y="34" />
+						</Size>
+						<iconUri>[local.texture]btnIcon/btnIcon_check.png</iconUri>
+					</themeIconButton>
+				</Container>
+	        </Content>
+		</window>
+	</Container>
+</Definition>

@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+    <Import url="[config.mod.template.button]iconButton.xml"/>
+    <Import url="[config.mod.template.button]greyButton.xml"/>
+    <Import url="[config.mod.template.button]comboBoxWithBackground.xml"/>
+    <Import url="[config.mod.template.button]simpleButton.xml"/>
+    <Import url="[config.mod.template.button]themeLabelCheckBox.xml" />
+
+    <Constants>
+        <Constant name="css" value="[config.ui.skin]css/"/>
+        <Constant name="bitmap" value="[config.ui.skin]bitmap/"/>
+        <Constant name="common" value="[config.ui.skin]common/" />
+    </Constants>
+
+    <Container name="configUiCtr">
+        <!-- Label title -->
+
+        <Label name="lbl_title1">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="0" y="0"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="750" y="20"/>
+            </Size>
+            <text>[ui.option.generalOptions]</text>
+            <cssClass>whitebold</cssClass>
+            <css>[local.css]normal2.css</css>
+        </Label>
+
+        <!-- Texture tx_bgForeground1-->
+
+        <TextureBitmap name="tx_bgForeground1">
+            <Anchors>
+                <Anchor relativeTo="lbl_title1">
+                    <AbsDimension x="0" y="30"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="780" y="150"/>
+            </Size>
+            <themeDataId>bg_small_border_light</themeDataId>
+        </TextureBitmap>
+
+        <!-- PARTIE 1 option divers d'interface -->
+        
+        <themeLabelCheckBox name="btn_smallScreenFont">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground1">
+                    <AbsDimension y="20" x="20"/>
+                </Anchor>
+            </Anchors>
+            <labelWidth>600</labelWidth>
+            <text>[ui.option.smallScreenFont]</text>
+        </themeLabelCheckBox>
+        
+        <themeLabelCheckBox name="btn_bigMenuButton">
+            <Anchors>
+                <Anchor relativeTo="btn_smallScreenFont" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>600</labelWidth>
+            <text>[ui.option.interface.increaseBannerMenuBtn]</text>
+            <visible>true</visible>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_confirmItemDrop">
+            <Anchors>
+                <Anchor relativeTo="btn_bigMenuButton" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>600</labelWidth>
+            <text>[ui.option.confirmItemDrop]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_showNotifications">
+            <Anchors>
+                <Anchor relativeTo="btn_confirmItemDrop" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>600</labelWidth>
+            <text>[ui.option.allowTutorial]</text>
+        </themeLabelCheckBox>
+
+
+        <!-- Button btn_resetNotifications -->
+        <simpleButton name="btn_resetNotifications">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground1" relativePoint="BOTTOMRIGHT" point="BOTTOMRIGHT">
+                    <AbsDimension x="-20" y="-20"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="240" y="30"/>
+            </Size>
+            <label>[ui.option.resetHints]</label>
+            <Hooks>
+                <onRelease/>
+            </Hooks>
+        </simpleButton>
+
+        <simpleButton name="btn_resetUIPositions">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground1" relativePoint="BOTTOM" point="BOTTOM">
+                    <AbsDimension y="40"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="350" y="30"/>
+            </Size>
+            <label>[ui.option.resetUiPositions]</label>
+            <Hooks>
+                <onRelease/>
+            </Hooks>
+        </simpleButton>
+
+
+        <!-- Label title -->
+
+        <Label name="lbl_title2">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="0" y="250"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="750" y="20"/>
+            </Size>
+            <text>[ui.option.chatOptions]</text>
+            <cssClass>whitebold</cssClass>
+            <css>[local.css]normal2.css</css>
+        </Label>
+
+        <!-- Texture tx_bgForeground2-->
+
+        <TextureBitmap name="tx_bgForeground2">
+            <Anchors>
+                <Anchor relativeTo="lbl_title2">
+                    <AbsDimension x="0" y="30"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="780" y="450"/>
+            </Size>
+            <themeDataId>bg_small_border_light</themeDataId>
+        </TextureBitmap>
+
+
+        <!-- PARTIE 2 option DU CHAT -->
+
+
+        <!-- Label lbl_reset-->
+
+        <simpleButton name="btn_resetColors">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground2">
+                    <AbsDimension x="20" y="192"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="325" y="30"/>
+            </Size>
+            <label>[ui.option.resetDefaultColors]</label>
+            <Hooks>
+                <onRelease/>
+            </Hooks>
+        </simpleButton>
+
+
+        <!-- Container useless mais un peu qd mm, sert à placer les checkbox -->
+
+        <Container>
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground2">
+                    <AbsDimension x="20" y="252"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="20" y="5"/>
+            </Size>
+        </Container>
+
+        <themeLabelCheckBox name="btn_letLivingObjectTalk">
+            <Anchors>
+                <Anchor relativeTo="btn_resetColors" relativePoint="BOTTOMLEFT">
+                    <AbsDimension x="0" y="15" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>600</labelWidth>
+            <text>[ui.option.useSpeakingItem]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_filterInsult">
+            <Anchors>
+                <Anchor relativeTo="btn_letLivingObjectTalk" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>600</labelWidth>
+            <text>[ui.option.censorship]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_showTime">
+            <Anchors>
+                <Anchor relativeTo="btn_filterInsult" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>600</labelWidth>
+            <text>[ui.option.useChatTime]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_channelLocked">
+            <Anchors>
+                <Anchor relativeTo="btn_showTime" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>600</labelWidth>
+            <text>[ui.option.channelLocked]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_showShortcut">
+            <Anchors>
+                <Anchor relativeTo="btn_channelLocked" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>600</labelWidth>
+            <text>[ui.option.useShortcut]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_showInfoPrefix">
+            <Anchors>
+                <Anchor relativeTo="btn_showShortcut" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>600</labelWidth>
+            <text>[ui.option.useInfoPrefix]</text>
+        </themeLabelCheckBox>
+
+        <themeLabelCheckBox name="btn_smileysAutoclosed">
+            <Anchors>
+                <Anchor relativeTo="btn_showInfoPrefix" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>600</labelWidth>
+            <text>[ui.option.autoHideSmileys]</text>
+        </themeLabelCheckBox>
+
+
+		<Container>
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground2">
+                    <AbsDimension x="20" y="20"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="325" y="160"/>
+            </Size>
+			<bgColor>[colors.chat.bgColor]</bgColor>
+		</Container>
+
+        <Label name="lbl_sample">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground2">
+                    <AbsDimension x="20" y="60"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="315" y="120"/>
+            </Size>
+            <multiline>true</multiline>
+            <wordWrap>true</wordWrap>
+            <css>[local.css]chat.css</css>
+            <text>[ui.option.textSample]</text>
+        </Label>
+
+
+        <!-- ColorPicker cp_colorChoice-->
+
+        <ColorPicker name="cp_colorPk">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground2">
+                    <AbsDimension x="360" y="20"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="400" y="200"/>
+            </Size>
+            <sliderTexture>[local.bitmap]cursorSlider.png</sliderTexture>
+            <gradientTexture>[local.bitmap]cursorGradient.png</gradientTexture>
+            <Hooks>
+                <onColorChange/>
+            </Hooks>
+        </ColorPicker>
+
+
+        <!-- ComboBox cb_channel-->
+
+        <comboBoxWithBackground name="cb_channel" width="320" height="40">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground2">
+                    <AbsDimension x="20" y="19"/>
+                </Anchor>
+            </Anchors>
+            <rendererName>XmlUiGridRenderer</rendererName>
+            <rendererArgs>Ankama_Config::channelColorizedItem,,,[colors.grid.over],[colors.grid.selected]</rendererArgs>
+            <Hooks>
+                <onSelectItem/>
+            </Hooks>
+        </comboBoxWithBackground>
+        
+        
+        <!-- PARTIE 3 option des tooltips -->
+        <Label name="lbl_title3">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground2" relativePoint="BOTTOMLEFT">
+                    <AbsDimension x="0" y="30"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="750" y="20"/>
+            </Size>
+            <text>[ui.option.tooltip.title]</text>
+            <cssClass>whitebold</cssClass>
+            <css>[local.css]normal2.css</css>
+        </Label>
+
+        <TextureBitmap name="tx_bgForeground3">
+            <Anchors>
+                <Anchor relativeTo="lbl_title3">
+                    <AbsDimension x="0" y="30"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="780" y="150"/>
+            </Size>
+            <themeDataId>bg_small_border_light</themeDataId>
+        </TextureBitmap>
+        
+		<Label name="lbl_spellTooltipDelay">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground3">
+                    <AbsDimension x="20" y="20"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="510" y="20"/>
+            </Size>
+            <css>[local.css]normal2.css</css>
+            <text>[ui.option.tooltip.spellDisplayDelay]</text>
+        </Label>
+		
+		<Label name="lbl_itemTooltipDelay">
+            <Anchors>
+                <Anchor relativeTo="tx_bgForeground3">
+                    <AbsDimension x="20" y="50"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="510" y="20"/>
+            </Size>
+            <css>[local.css]normal2.css</css>
+            <text>[ui.option.tooltip.itemDisplayDelay]</text>
+        </Label>
+        
+        <comboBoxWithBackground name="cb_itemTooltipDelay" width="240" height="38">
+			<Anchors>
+                <Anchor relativeTo="lbl_itemTooltipDelay" relativePoint="TOPRIGHT">
+                    <AbsDimension x="0" y="-8"/>
+                </Anchor>
+            </Anchors>
+			<Hooks>
+				<onSelectItem />
+			</Hooks>
+		</comboBoxWithBackground>
+		
+		 <comboBoxWithBackground name="cb_spellTooltipDelay" width="240" height="38">
+			<Anchors>
+                <Anchor relativeTo="lbl_spellTooltipDelay" relativePoint="TOPRIGHT">
+                    <AbsDimension x="0" y="-8"/>
+                </Anchor>
+            </Anchors>
+			<Hooks>
+				<onSelectItem />
+			</Hooks>
+		</comboBoxWithBackground>
+		
+		<!--themeLabelCheckBox name="btn_pinnedOnClick">
+            <Anchors>
+                <Anchor relativeTo="lbl_itemTooltipDelay" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="12" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>600</labelWidth>
+            <text>[ui.option.tooltip.pinnedOnClick]</text>
+        </themeLabelCheckBox-->
+        
+       <themeLabelCheckBox name="btn_alwaysDisplayTheoreticalEffects">
+            <Anchors>
+                <Anchor relativeTo="lbl_itemTooltipDelay" relativePoint="BOTTOMLEFT">
+                    <AbsDimension y="5" />
+                </Anchor>
+            </Anchors>
+            <labelWidth>600</labelWidth>
+            <text>[ui.option.tooltip.alwaysDisplayTheoreticalEffects]</text>
+        </themeLabelCheckBox>
+
+    </Container>
+</Definition>

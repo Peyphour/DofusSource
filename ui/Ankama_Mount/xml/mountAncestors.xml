@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="slot" value="[config.ui.skin]texture/slot/" />
+	</Constants>
+
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="126" y="45" />
+			</Anchor>
+		</Anchors>
+		<mouseEnabled>true</mouseEnabled>
+		
+		<window name="ctr_window">
+			
+			<Size>
+				 <AbsDimension x="1028" y="787" />
+			</Size>
+			<closeButtonName>btn_close</closeButtonName>
+			<dark>false</dark>
+		
+			<Content>
+			
+				<!-- LISTE DE DINDES -->
+
+				<Container>
+				
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="40" y="40" />
+						</Anchor>
+					</Anchors>
+					
+					<Size>
+						 <AbsDimension x="390" y="760" />
+					</Size>
+				
+					<Texture name="d10_d9_link">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="48" y="90"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								
+								<AbsDimension x="118" y="45"/>
+							</Size>
+							<uri>[local.slot]link_tree_small.png</uri>
+					</Texture>
+			
+					<Container>
+						<Anchors>
+								<Anchor>
+									<AbsDimension x="346" y="0" />
+								</Anchor>
+							</Anchors>
+					
+						<Texture name="d10_background">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="-6"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								
+								<AbsDimension x="100" y="100"/>
+							</Size>
+							<uri>[local.slot]slot_dark_background_empty.png</uri>
+						</Texture>
+					
+						<!-- EntityDisplayer d10-->
+				
+						<EntityDisplayer name="d10">
+							<!-- <Anchors>
+								<Anchor>
+									<AbsDimension x="346" y="0" />
+								</Anchor>
+							</Anchors> -->
+							<Size>
+								<AbsDimension x="98" y="87" />
+							</Size>
+						</EntityDisplayer>
+					</Container>
+			
+					<!-- EntityDisplayer d9-->
+			
+					<Container>
+						<Anchors>
+								<Anchor>
+									<AbsDimension x="232" y="0" />
+								</Anchor>
+							</Anchors>
+					
+						<Texture name="d9_background">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="-6"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								
+								<AbsDimension x="100" y="100"/>
+							</Size>
+							<uri>[local.slot]slot_dark_background_empty.png</uri>
+						</Texture>
+					
+						<EntityDisplayer name="d9">
+							<Size>
+								<AbsDimension x="98" y="87" />
+							</Size>
+						</EntityDisplayer>
+					
+					</Container>
+					
+			
+					<Texture name="d8_d7_link">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="280" y="90"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								
+								<AbsDimension x="118" y="45"/>
+							</Size>
+							<uri>[local.slot]link_tree_small.png</uri>
+					</Texture>
+			
+			
+					<!-- EntityDisplayer d8-->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="114" y="0" />
+							</Anchor>
+						</Anchors>
+						<Texture name="d8_background">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="-6"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								
+								<AbsDimension x="100" y="100"/>
+							</Size>
+							<uri>[local.slot]slot_dark_background_empty.png</uri>
+						</Texture>
+				
+						<EntityDisplayer name="d8">
+							
+							<Size>
+								<AbsDimension x="98" y="87" />
+							</Size>
+						</EntityDisplayer>
+					
+					</Container>
+			
+					<!-- EntityDisplayer d7-->
+					<Container>
+					
+						<Texture name="d7_background">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="-6"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								
+								<AbsDimension x="100" y="100"/>
+							</Size>
+							<uri>[local.slot]slot_dark_background_empty.png</uri>
+						</Texture>
+					
+						<EntityDisplayer name="d7">
+							<Size>
+								<AbsDimension x="98" y="87" />
+							</Size>
+						</EntityDisplayer>
+					
+					</Container>
+					
+					
+					<Texture name="d14_d13_link">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="510" y="90"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								
+								<AbsDimension x="118" y="45"/>
+							</Size>
+							<uri>[local.slot]link_tree_small.png</uri>
+					</Texture>
+					
+					
+					<!-- EntityDisplayer d14-->
+					<Container>
+						<Anchors>
+								<Anchor>
+									<AbsDimension x="807" y="0" />
+								</Anchor>
+							</Anchors>
+							
+						<Texture name="d14_background">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="-6"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								
+								<AbsDimension x="100" y="100"/>
+							</Size>
+							<uri>[local.slot]slot_dark_background_empty.png</uri>
+						</Texture>	
+					
+						<EntityDisplayer name="d14">
+							
+							<Size>
+								<AbsDimension x="98" y="87" />
+							</Size>
+						</EntityDisplayer>
+					</Container>
+	
+					<!-- EntityDisplayer d13-->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="694" y="0" />
+							</Anchor>
+						</Anchors>
+							
+						<Texture name="d13_background">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="-6"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="100" y="100"/>
+							</Size>
+							<uri>[local.slot]slot_dark_background_empty.png</uri>
+						</Texture>	
+					
+						<EntityDisplayer name="d13">
+							<Size>
+								<AbsDimension x="98" y="87" />
+							</Size>
+						</EntityDisplayer>
+					</Container>
+			
+			
+					<Texture name="d12_d11_link">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="740" y="90"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								
+								<AbsDimension x="118" y="45"/>
+							</Size>
+							<uri>[local.slot]link_tree_small.png</uri>
+					</Texture>
+			
+					<!-- EntityDisplayer d12-->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="575" y="0" />
+							</Anchor>
+						</Anchors>
+							
+						<Texture name="d12_background">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="-6"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="100" y="100"/>
+							</Size>
+							<uri>[local.slot]slot_dark_background_empty.png</uri>
+						</Texture>	
+					
+						<EntityDisplayer name="d12">
+							
+							<Size>
+								<AbsDimension x="98" y="87" />
+							</Size>
+						</EntityDisplayer>
+					
+					</Container>
+			
+					<!-- EntityDisplayer d11-->
+			
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="462" y="0" />
+							</Anchor>
+						</Anchors>
+						
+						<Texture name="d11_background">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="-6"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="100" y="100"/>
+							</Size>
+							<uri>[local.slot]slot_dark_background_empty.png</uri>
+						</Texture>	
+						
+						<EntityDisplayer name="d11">
+							
+							<Size>
+								<AbsDimension x="98" y="87" />
+							</Size>
+						</EntityDisplayer>
+					
+					</Container>
+			
+					
+					
+					
+					<Texture name="d3_d4_link">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="105" y="240"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								
+								<AbsDimension x="237" y="45"/>
+							</Size>
+							<uri>[local.slot]link_tree_medium.png</uri>
+					</Texture>
+					
+					<!-- EntityDisplayer d3-->
+					<Container>
+						
+						<Anchors>
+								<Anchor>
+									<AbsDimension x="50" y="137" />
+								</Anchor>
+							</Anchors>
+					
+						<Texture name="d3_background">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="-6"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="112" y="112"/>
+							</Size>
+							<uri>[local.slot]slot_dark_background_empty.png</uri>
+						</Texture>	
+						<EntityDisplayer name="d3">
+							
+							<Size>
+								<AbsDimension x="110" y="98" />
+							</Size>
+						</EntityDisplayer>
+					</Container>
+			
+					<!-- EntityDisplayer d4-->
+			
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="281" y="137" />
+							</Anchor>
+						</Anchors>
+					
+						<Texture name="d4_background">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="-6"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="112" y="112"/>
+							</Size>
+							<uri>[local.slot]slot_dark_background_empty.png</uri>
+						</Texture>	
+					
+						<EntityDisplayer name="d4">
+							<Size>
+								<AbsDimension x="110" y="98" />
+							</Size>
+						</EntityDisplayer>
+					
+					</Container>
+			
+			
+			
+					<Texture name="d5_d6_link">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="565" y="240"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								
+								<AbsDimension x="237" y="45"/>
+							</Size>
+							<uri>[local.slot]link_tree_medium.png</uri>
+					</Texture>
+			
+					<!-- EntityDisplayer d5-->
+			
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="512" y="137" />
+							</Anchor>
+						</Anchors>
+					
+						<Texture name="d5_background">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="-6"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="112" y="112"/>
+							</Size>
+							<uri>[local.slot]slot_dark_background_empty.png</uri>
+						</Texture>	
+					
+						<EntityDisplayer name="d5">
+							
+							<Size>
+								<AbsDimension x="110" y="98" />
+							</Size>
+						</EntityDisplayer>
+					
+					</Container>
+			
+					<!-- EntityDisplayer d6-->
+					<Container>
+					
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="744" y="137" />
+							</Anchor>
+						</Anchors>
+					
+						<Texture name="d6_background">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="-6"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="112" y="112"/>
+							</Size>
+							<uri>[local.slot]slot_dark_background_empty.png</uri>
+						</Texture>	
+					
+						<EntityDisplayer name="d6">
+							
+							<Size>
+								<AbsDimension x="110" y="98" />
+							</Size>
+						</EntityDisplayer>
+					</Container>
+					
+					
+					
+					<Texture name="d1_d2_link">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="220" y="406"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								
+								<AbsDimension x="468" y="45"/>
+							</Size>
+							<uri>[local.slot]link_tree_large.png</uri>
+					</Texture>
+					
+					
+					<!-- EntityDisplayer d1-->
+					<Container>
+						<Anchors>
+								<Anchor>
+									<AbsDimension x="156" y="290" />
+								</Anchor>
+							</Anchors>
+							
+						<Texture name="d1_background">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="-6"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								
+								<AbsDimension x="125" y="125"/>
+							</Size>
+							<uri>[local.slot]slot_big_dark_background_empty.png</uri>
+						</Texture>
+					
+					
+						<EntityDisplayer name="d1">
+							
+							<Size>
+								<AbsDimension x="122" y="109" />
+							</Size>
+						</EntityDisplayer>
+					
+					</Container>
+			
+			
+			
+					<!-- EntityDisplayer d2-->
+			
+					<Container>
+						<Anchors>
+								<Anchor>
+									<AbsDimension x="617" y="290" />
+								</Anchor>
+							</Anchors>
+					
+						<Texture name="d2_background">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="-6"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								
+								<AbsDimension x="125" y="125"/>
+							</Size>
+							<uri>[local.slot]slot_big_dark_background_empty.png</uri>
+						</Texture>
+					
+						<EntityDisplayer name="d2">
+							
+							<Size>
+								<AbsDimension x="122" y="109" />
+							</Size>
+						</EntityDisplayer>
+					</Container>
+			
+			
+					<!-- EntityDisplayer d0-->
+	
+			
+					<Container>
+						<Anchors>
+								<Anchor>
+									<AbsDimension x="389" y="455" />
+								</Anchor>
+							</Anchors>
+					
+						<Texture name="d0_background">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="-6"/>
+								</Anchor>
+							</Anchors>
+							<Size>
+								
+								<AbsDimension x="125" y="125"/>
+							</Size>
+							<uri>[local.slot]slot_big_dark_background_empty.png</uri>
+						</Texture>
+					
+						<EntityDisplayer name="d0">
+							
+							<Size>
+								<AbsDimension x="122" y="108" />
+							</Size>
+						</EntityDisplayer>
+					
+					</Container>
+				
+					<!-- Label lbl_name-->
+
+					<Label name="lbl_name">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="280" y="600" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="332" y="20" />
+						</Size>
+						<cssClass>center</cssClass>
+						<css>[local.css]normal2.css</css>
+					</Label>
+			
+					<TextureBitmap name="grid_background">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="280" y="590" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							
+							<AbsDimension x="332" y="40"/>
+						</Size>
+						<themeDataId>bg_small_border_light</themeDataId>
+					</TextureBitmap>
+				
+				</Container>
+			</Content>	
+		</window>
+	</Container>
+</Definition>

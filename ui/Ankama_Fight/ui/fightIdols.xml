@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+
+    <Import url="[config.mod.template]button/iconButton.xml" />
+
+    <Constants>
+        <Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+
+        <Constant name="texture_arrow_big" value="[local.assets]buff_btn_cacherBuffs" />
+        <Constant name="texture_arrow_small" value="[local.assets]buff_btn_afficherBuffs" />
+        <Constant name="texture" value="[config.ui.skin]texture/" />
+        <Constant name="common" value="[config.ui.skin]common/" />
+
+        <Constant name="backgroundWidthmodifier" value="40"/>
+        <Constant name="txBackgroundOffset" value="13"/>
+        <Constant name="txButtonMinimizeBgLeftOffset" value="20"/>
+
+    </Constants>
+
+
+    <Container name="idolCtr">
+        <Anchors>
+            <Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+                <AbsDimension x="-230" y="0" />
+            </Anchor>
+        </Anchors>
+        <Size>
+            <AbsDimension x="100" y="93" />
+        </Size>
+
+        <Container name="ctr_hook">
+            <Anchors>
+                <Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+                    <AbsDimension x="0" y="0" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="1" y="1" />
+            </Size>
+        </Container>
+
+        <!-- Texture tx_background-->
+
+        <TextureBitmap name="tx_background">
+            <Anchors>
+                <Anchor relativeTo="ctr_hook"/>
+            </Anchors>
+            <themeDataId>bg_floating_window_horizontal</themeDataId>
+        </TextureBitmap>
+
+        <Texture name="tx_button_minimize_bgLeft">
+            <Anchors>
+                <Anchor relativeTo="ctr_hook">
+                    <AbsDimension x="20" y="2" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="62" y="22" />
+            </Size>
+            <uri>[local.texture]hud/left_floating_menu.png</uri>
+            <dragController>true</dragController>
+            <dragTarget>idolCtr</dragTarget>
+            <dragBoundsContainer>idolCtr</dragBoundsContainer>
+            <useDragMagnetism>true</useDragMagnetism>
+            <autoGrid>true</autoGrid>
+            <rotation>90</rotation>
+        </Texture>
+
+        <TextureBitmap name="tx_idolIcon">
+            <Anchors>
+                <Anchor relativeTo="ctr_hook">
+                    <AbsDimension x="0" y="20" />
+                </Anchor>
+            </Anchors>
+            <uri>[local.texture]hud/icon_green_idol.png</uri>
+            <smooth>true</smooth>
+        </TextureBitmap>
+
+        <Button name="btn_minimArrow">
+            <Anchors>
+                <AbsDimension x="0" y="0" />
+            </Anchors>
+            <Common>
+                <Anchors>
+                    <Anchor relativeTo="ctr_hook"/>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="66" y="17" />
+                </Size>
+                <radioGroup>minMaxRadio</radioGroup>
+                <radioMode>true</radioMode>
+
+                <Texture name="tx_button_minimize">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="1" y="4" />
+                        </Anchor>
+                    </Anchors>
+                    <uri>[local.texture]hud/icon_minus_floating_menu.png</uri>
+                    <autoGrid>true</autoGrid>
+                </Texture>
+
+                <Hooks>
+                    <onRelease />
+                </Hooks>
+            </Common>
+        </Button>
+
+        <Button name="btn_minimArrow_small">
+            <Anchors>
+                <AbsDimension x="0" y="0" />
+            </Anchors>
+            <Common>
+                <Anchors>
+                    <Anchor relativeTo="ctr_hook"/>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="66" y="17" />
+                </Size>
+                <radioGroup>minMaxRadio</radioGroup>
+                <radioMode>true</radioMode>
+                <Texture name="tx_button_maximize">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="1" y="4" />
+                        </Anchor>
+                    </Anchors>
+                    <uri>[local.texture]hud/icon_plus_floating_menu.png</uri>
+                    <autoGrid>true</autoGrid>
+                </Texture>
+
+                <Hooks>
+                    <onRelease />
+                </Hooks>
+            </Common>
+        </Button>
+        <!-- Container idoFrames -->
+
+        <Container name="idolFrames">
+            <Anchors>
+                <Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+                    <AbsDimension x="-10" y="0" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="52" y="432" />
+            </Size>
+
+            <!-- Texture ido_slot_1 -->
+            <Texture name="idol_slot_1">
+                <Anchors>
+                    <Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+                        <AbsDimension x="-5" y="10" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="44" y="44" />
+                </Size>
+                <handCursor>true</handCursor>
+            </Texture>
+
+            <!-- Texture ido_slot_2 -->
+            <Texture name="idol_slot_2">
+                <Anchors>
+                    <Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+                        <AbsDimension x="-55" y="10" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="44" y="44" />
+                </Size>
+                <handCursor>true</handCursor>
+            </Texture>
+
+            <!-- Texture ido_slot_3 -->
+            <Texture name="idol_slot_3">
+                <Anchors>
+                    <Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+                        <AbsDimension x="-105" y="10" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="44" y="44" />
+                </Size>
+                <handCursor>true</handCursor>
+            </Texture>
+
+            <!-- Texture ido_slot_4 -->
+            <Texture name="idol_slot_4">
+                <Anchors>
+                    <Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+                        <AbsDimension x="-155" y="10" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="44" y="44" />
+                </Size>
+                <handCursor>true</handCursor>
+            </Texture>
+
+            <!-- Texture ido_slot_5 -->
+            <Texture name="idol_slot_5">
+                <Anchors>
+                    <Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+                        <AbsDimension x="-205" y="10" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="44" y="44" />
+                </Size>
+                <handCursor>true</handCursor>
+            </Texture>
+
+            <!-- Texture ido_slot_6 -->
+            <Texture name="idol_slot_6">
+                <Anchors>
+                    <Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+                        <AbsDimension x="-255" y="10" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="44" y="44" />
+                </Size>
+                <handCursor>true</handCursor>
+            </Texture>
+
+        </Container>
+
+
+    </Container>
+
+
+</Definition>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition useCache="true" debug="false">
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+	</Constants>
+	
+	<Container name="ui_login">
+		<Size>
+			<RelDimension x="1" y="1" />
+		</Size>		
+        
+        <WebBrowser name="browser">
+           <Size>
+                <RelDimension x="1" y="1" />
+            </Size> 
+            <cacheId>thirdPartyLogin</cacheId>
+            <cacheLife>15</cacheLife>
+            <scrollCss>[local.css]scrollBar.css</scrollCss>
+            <scrollTopOffset>0</scrollTopOffset>
+            <displayScrollBar>false</displayScrollBar>
+        </WebBrowser>
+        
+		<!-- Background texture-->
+		<Texture strata="LOW" name="bg">
+			<Size>
+				<RelDimension x="1" y="1" />
+			</Size>
+			<uri>[local.assets]tx_colorBg</uri>
+			<Hooks>
+				<onRelease />
+			</Hooks>
+		</Texture>
+		
+	</Container>
+	
+	<Shortcuts>
+		<validUi />
+	</Shortcuts>
+</Definition>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition fullscreen="true">
+
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+	
+	<Constants>
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+	
+	<Container>
+		<Anchors>
+			<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+				<AbsDimension x="0" y="45" />
+			</Anchor>
+		</Anchors>
+		
+        <Container name="ctr_bg">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="40" y="0" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="40" y="32" />
+            </Size>
+            <bgColor>[colors.gamemenu.background]</bgColor>
+            <alpha>[colors.gamemenu.background.alpha]</alpha>
+            <isMagnetic>true</isMagnetic>
+        </Container>
+		
+		<themeIconButton name="btn_beta">
+			<Anchors> 
+				<Anchor>
+					<AbsDimension x="45" y="3" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="25" y="25" />
+			</Size>
+			<iconUri>[local.texture]btnIcon/btnIcon_bug.png</iconUri>
+		</themeIconButton>
+		
+		<themeIconButton name="btn_p">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="5" y="3" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="25" y="25" />
+			</Size>
+			<iconUri>[local.texture]btnIcon/btnIcon_spouse.png</iconUri>
+			<visible>false</visible>
+		</themeIconButton>
+		
+	</Container>
+</Definition>

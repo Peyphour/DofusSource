@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+
+    <Import url="[config.mod.template]button/simpleButton.xml" />
+    <Import url="mod://Ankama_Grimoire/ui/template/bookTab.xml" />
+    <Import url="[config.mod.template]button/iconButton.xml" />
+    
+    <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+    
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="-20" y="-55" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="1184" y="799" />
+		</Size>
+		<mouseEnabled>true</mouseEnabled>
+		
+		<!-- ONGLET DES QUETES -->
+
+		<bookTab name="btn_ongletQuetes">
+            <Anchors>
+                <Anchor>
+                	<AbsDimension x="0" y="104" />
+                </Anchor>
+            </Anchors>
+            <uri>[local.assets]grimmoire_btn_ongletQuetes</uri>
+		</bookTab>
+
+		<!-- ONGLET DES METIERS -->
+
+        <bookTab name="btn_ongletMetiers">
+            <Anchors>
+                <Anchor>
+					<AbsDimension x="0" y="218" />
+                </Anchor>
+            </Anchors>
+            <uri>[local.assets]grimmoire_btn_ongletMetiers</uri>
+        </bookTab>
+
+		<!-- ONGLET ALMANAX -->
+		
+		<bookTab name="btn_ongletCalendar">
+
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="0" y="275" />
+                </Anchor>
+            </Anchors>
+            <uri>[local.assets]grimmoire_btn_ongletCalendar</uri>
+        </bookTab>
+                
+		<!-- ONGLET ACHIEVEMENT -->
+		
+		<bookTab name="btn_ongletAchievement">
+            <Anchors>
+                <Anchor>
+                		<AbsDimension x="0" y="332" />
+                </Anchor>
+            </Anchors>
+            <uri>[local.assets]grimmoire_btn_ongletAchievement</uri>
+		</bookTab>
+                
+		<!-- ONGLET TITRES -->
+		
+		<bookTab name="btn_ongletTitle">
+            <Anchors>
+                <Anchor>
+                		<AbsDimension x="0" y="389" />
+                </Anchor>
+            </Anchors>
+            <uri>[local.assets]grimmoire_btn_ongletTitle</uri>
+		</bookTab>
+                
+		<!-- ONGLET BESTIAIRE -->
+		
+		<bookTab name="btn_ongletBestiary">
+            <Anchors>
+                <Anchor>
+                	<AbsDimension x="0" y="446" />
+                </Anchor>
+            </Anchors>
+            <uri>[local.assets]grimmoire_btn_ongletBestiaire</uri>
+		</bookTab>
+                
+		<!-- ONGLET COMPAGNON -->
+		
+		<bookTab name="btn_ongletCompanion">
+            <Anchors>
+                <Anchor>
+                	<AbsDimension x="0" y="503" />
+                </Anchor>
+            </Anchors>
+            <uri>[local.assets]grimmoire_btn_ongletCompanions</uri>
+		</bookTab>
+                
+		<bookTab name="btn_ongletIdols">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="560" />
+                </Anchor>
+			</Anchors>
+			<uri>[local.assets]grimmoire_btn_ongletIdols</uri>
+		</bookTab>
+		<!-- ONGLET KROSMASTER -->
+		
+		<bookTab name="btn_ongletKrosmaster">
+            <Anchors>
+                <Anchor>
+                	<AbsDimension x="0" y="617" />
+                </Anchor>
+            </Anchors>
+            <uri>[local.assets]grimmoire_btn_ongletKrosmaster</uri>
+		</bookTab>
+
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="62" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1122" y="799" />
+			</Size>
+			<autoGrid>true</autoGrid>
+			<uri>[local.assets]tx_generalBackground</uri>
+			<shadowColor>[colors.ui.shadow]</shadowColor>
+		</Texture>
+
+		<iconButton name="btn_close">
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" />
+			</Anchors>
+			<Size>
+				<AbsDimension x="57" y="36" />
+			</Size>
+			<uri>[local.assets]btn_cornerCross</uri>
+        </iconButton>        
+        
+        <Container name="uiCtr">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="75" y="10" />
+				</Anchor>
+			</Anchors>
+		</Container>
+        
+	</Container>
+</Definition>
+

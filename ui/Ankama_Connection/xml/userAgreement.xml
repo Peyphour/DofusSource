@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition modal="true">
+	
+	<Import url="[config.mod.template]button/simpleButton.xml" />	
+    <Import url="[config.mod.template]window.xml" />
+    <Import url="[config.mod.template]block.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+	
+	<Container name="mainCtr">	
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER" />
+		</Anchors>
+
+		<window>
+			<Size>
+				<AbsDimension x="920" y="789" />
+			</Size>
+			<noCloseButton>true</noCloseButton>
+			
+			<Content>
+				<block>
+					<Size>
+						<AbsDimension x="882" y="718" />
+					</Size>
+				</block>
+			</Content>
+		</window>
+
+		<TextArea name="lbl_content">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="35" y="65" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="850" y="680" />
+			</Size>
+			<css>[local.css]normal2.css</css>
+			<useStyleSheet>true</useStyleSheet>
+			<hyperlinkEnabled>true</hyperlinkEnabled>			
+			<scrollCss>[local.css]scrollBar.css</scrollCss>
+		</TextArea>
+
+		
+		<Container>		
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="228" y="767" />
+				</Anchor>
+			</Anchors>
+			
+	        <TextureBitmap>
+	            <Anchors>
+	                <Anchor>
+						<AbsDimension x="0" y="0" />
+	                </Anchor>
+	            </Anchors>
+	            <Size>
+	                <AbsDimension x="222" y="38" />
+	            </Size>
+				<themeDataId>bg_simple_button</themeDataId>
+	            <smooth>true</smooth>
+	        </TextureBitmap>
+	        
+			<simpleButton label="[ui.common.refuse]" name="btn_refuse">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="21" y="0" />
+					</Anchor>
+				</Anchors>
+	            <Size>
+	                <AbsDimension x="180" y="32" />
+	            </Size>
+			</simpleButton>	
+		</Container>
+		
+		<Container>		
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="472" y="767" />
+				</Anchor>
+			</Anchors>
+			
+	        <TextureBitmap>
+	            <Anchors>
+	                <Anchor>
+						<AbsDimension x="0" y="0" />
+	                </Anchor>
+	            </Anchors>
+	            <Size>
+	                <AbsDimension x="222" y="38" />
+	            </Size>
+				<themeDataId>bg_simple_button</themeDataId>
+	            <smooth>true</smooth>
+	        </TextureBitmap>
+	        
+			<simpleButton label="[ui.common.accept]" name="btn_accept">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="21" y="0" />
+					</Anchor>
+				</Anchors>
+	            <Size>
+	                <AbsDimension x="180" y="32" />
+	            </Size>
+			</simpleButton>	
+		</Container>
+
+	</Container>
+</Definition>
+

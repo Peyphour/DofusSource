@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+
+<Definition>
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="520" y="-5" />
+			</Anchor>
+		</Anchors>
+			
+		<Texture name="tx_background">
+			<mouseEnabled>true</mouseEnabled>
+			<Size>
+				<AbsDimension x="242" y="40" />
+			</Size>
+			<uri>[local.assets]tx_buttonBackground</uri>
+			<autoGrid>true</autoGrid>
+			<shadowColor>[colors.ui.shadow]</shadowColor>
+		</Texture>
+					  
+		<!-- iconButton btnZoom1-->
+
+		<iconButton name="btnZoom1">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="62" y="21" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="13" y="13" />
+			</Size>
+			<radioMode>true</radioMode>
+			<radioGroup>zoomGroup</radioGroup>
+			<uri>[local.assets]btn_zoom01</uri>
+			<autoGrid>false</autoGrid>
+		</iconButton>
+
+		<!-- iconButton btnZoom2-->
+
+		<iconButton name="btnZoom2">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="77" y="18" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="13" y="16" />
+			</Size>
+			<radioMode>true</radioMode>
+			<radioGroup>zoomGroup</radioGroup>
+			<uri>[local.assets]btn_zoom02</uri>
+			<autoGrid>false</autoGrid>
+		</iconButton>
+
+		<!-- iconButton btnZoom3-->
+
+		<iconButton name="btnZoom3">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="92" y="15" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="13" y="19" />
+			</Size>
+			<radioMode>true</radioMode>
+			<radioGroup>zoomGroup</radioGroup>
+			<uri>[local.assets]btn_zoom03</uri>
+			<autoGrid>false</autoGrid>
+		</iconButton>
+
+		<!-- iconButton btnZoom4-->
+
+		<iconButton name="btnZoom4">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="107" y="12" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="13" y="22" />
+			</Size>
+			<radioMode>true</radioMode>
+			<radioGroup>zoomGroup</radioGroup>
+			<uri>[local.assets]btn_zoom04</uri>
+			<autoGrid>false</autoGrid>
+		</iconButton>
+
+		<!-- iconButton btnZoom5-->
+
+		<iconButton name="btnZoom5">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="122" y="10" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="13" y="24" />
+			</Size>
+			<radioMode>true</radioMode>
+			<radioGroup>zoomGroup</radioGroup>
+			<uri>[local.assets]btn_zoom05</uri>
+			<autoGrid>false</autoGrid>
+		</iconButton>
+
+		<!-- Bouton annuler le zoom -->
+
+		<iconButton name="btnCancel">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="150" y="9" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="25" y="25" />
+			</Size>
+			<uri>[local.assets]btn_cross_square</uri>
+			<autoGrid>false</autoGrid>
+		</iconButton>
+		
+	</Container>
+</Definition>

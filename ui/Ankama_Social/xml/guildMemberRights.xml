@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition modal="true" labelDebug="false">
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/themeIconButton.xml" />
+	<Import url="[config.mod.template.button]themeLabelCheckBox.xml" />
+	<Import url="[config.mod.template.button]comboBoxWithBackground.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+    
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+
+	<Container>
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="450" y="220" />
+			</Anchor>
+		</Anchors>
+	
+		<shadowColor>[colors.ui.shadow]</shadowColor>
+		
+		<window title="[ui.option.social]" forceUppercase="false">
+			<Size>
+				<AbsDimension x="520" y="495" />
+			</Size>
+		</window>        		
+			
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="17" y="468" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="486" y="50" />
+			</Size>
+			<scaleY>-1</scaleY>
+			<uri>[local.common]bg_dark.png</uri>
+		</Texture>
+		
+		<block dark="true">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="20" y="46" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="480" y="82" />
+			</Size>
+		</block>		
+
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="33" y="53" />
+				</Anchor>
+			</Anchors>
+				
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="9" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="177" y="16" />
+				</Size>
+				<text>[ui.social.guildRank]</text>
+				<css>[local.css]normal2.css</css>
+			</Label>
+	
+			<Label name="lbl_rank">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="187" y="9" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="264" y="16" />
+				</Size>
+				<css>[local.css]normal2.css</css>
+				<cssClass>right</cssClass>
+			</Label>
+		</Container>
+
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="33" y="90" />
+				</Anchor>
+			</Anchors>
+				
+			<Label>
+				<Size>
+					<AbsDimension x="334" y="16" />
+				</Size>
+				<text>[ui.social.percentXpFull]</text>
+				<css>[local.css]normal2.css</css>
+			</Label>
+	
+			<Label name="lbl_guildXP">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="340" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="81" y="16" />
+				</Size>
+				<css>[local.css]normal2.css</css>
+				<cssClass>right</cssClass>
+			</Label>
+	
+			<themeIconButton name="btn_changeGuildXP">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="428" y="2" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="22" y="21" />
+				</Size>
+				<iconUri>[local.texture]btnIcon/btnIcon_pen.png</iconUri>
+			</themeIconButton>
+		</Container>
+		
+
+		<block dark="true">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="20" y="126" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="480" y="296" />
+			</Size>
+		</block>
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="26" y="133" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="470" y="280" />
+			</Size>
+			<uri>[local.common]bg_light.png</uri>
+		</Texture>
+		
+		<Grid name="gd_list">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="26" y="133" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="465" y="280" />
+			</Size>
+			<rendererName>InlineXmlGridRenderer</rendererName>
+			<rendererArgs>updateRightLine,[colors.grid.line]</rendererArgs>
+			<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+			<slotWidth>450</slotWidth>
+			<slotHeight>28</slotHeight>
+									
+			<Container>
+				<Size>
+					<AbsDimension x="450" y="28" />
+				</Size>
+
+				<themeLabelCheckBox name="lblcb_right">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="410" y="3" />
+						</Anchor>
+					</Anchors>
+					<radioMode>false</radioMode>
+					<labelPosX>-400</labelPosX>
+					<labelWidth>400</labelWidth>
+				</themeLabelCheckBox>									
+			</Container>
+		</Grid>
+		
+        <Texture>
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="17" y="415" />
+                </Anchor>
+            </Anchors>
+			<Size>
+				<AbsDimension x="87" y="55" />
+			</Size>
+            <uri>[local.common]corner_decoration.png</uri>
+        </Texture>
+        <Texture>
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="498" y="415" />
+                </Anchor>
+            </Anchors>
+			<Size>
+				<AbsDimension x="87" y="55" />
+			</Size>
+            <uri>[local.common]corner_decoration.png</uri>
+            <scaleX>-1</scaleX>
+        </Texture>
+
+		<simpleButton label="[ui.common.validation]" name="btn_modify" >
+			<Anchors>
+				<Anchor relativePoint="BOTTOM" point="BOTTOM">
+					<AbsDimension x="0" y="-33" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="140" y="32" />
+			</Size>
+		</simpleButton>		
+					
+		<comboBoxWithBackground name="cb_rank" width="240" height="39">
+			<Anchors> 
+				<Anchor>
+					<AbsDimension x="249" y="53" />
+				</Anchor>
+			</Anchors>
+		</comboBoxWithBackground>
+	</Container>
+</Definition>

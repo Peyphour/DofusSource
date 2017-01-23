@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition usePropertiesCache="false">
+
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template]button/themeHorizontalTab.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+
+		<Constant name="picto_uri" value="[config.gfx.path]characteristics/characteristics.swf|" />
+		<Constant name="characteristics" value="[config.ui.skin]texture/Characteristics/" />
+		<Constant name="alignment_uri" value="[config.gfx.path]alignments/" />
+		<Constant name="illus_uri" value="[config.gfx.path]classes/vignettingCharacter/" />
+		<Constant name="job_uri" value="[config.gfx.path]jobs/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture_uri" value="[config.ui.skin]texture/" />
+		<Constant name="bitmap_uri" value="[config.ui.skin]bitmap/" />
+	</Constants>
+
+	<!--<Texture name="tx_background"> -->
+	<!--<Size> -->
+	<!--<AbsDimension x="411" y="805" /> -->
+	<!--</Size> -->
+	<!--<autoGrid>true</autoGrid> -->
+	<!--<uri>[local.darkstone_common_uri]window_background.jpg</uri> -->
+	<!--</Texture> -->
+	<window name="charSheetWindow">
+		<Anchors>
+			<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT">
+				<AbsDimension x="0" y="-150" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="380" y="823" />
+		</Size>
+		<title>[ui.common.caracteristics]</title>
+		<iconUri>[local.texture_uri]windowIcon/icon__0029_Caracteristiques.png
+		</iconUri>
+		<noSeparator>true</noSeparator>
+		<movable>true</movable>
+		<Content>
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="-18" y="-45" />
+					</Anchor>
+				</Anchors>
+
+
+
+				<!-- EN TETE -->
+
+
+				<!--<Texture> -->
+				<!--<Anchors> -->
+				<!--<Anchor> -->
+				<!--<AbsDimension x="5" y="230" /> -->
+				<!--</Anchor> -->
+				<!--</Anchors> -->
+				<!--<Size> -->
+				<!--<AbsDimension x="350" y="3" /> -->
+				<!--</Size> -->
+				<!--<uri>[local.common_uri]window_separator_green_horizontal.png</uri> -->
+				<!--</Texture> -->
+
+
+
+				<!-- CONTENU RESUME -->
+
+				<Container name="ctr_regular">
+
+					<block name="charMiscBlock">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="22" y="80" />
+							</Anchor>
+						</Anchors>
+						<withBottomBlockSparator>true</withBottomBlockSparator>
+						<Size>
+							<AbsDimension x="336" y="150" />
+						</Size>
+						<bgAlpha>0.6</bgAlpha>
+						<Content>
+
+							<Container name="ctr_emblems">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="9" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="55" y="130" />
+								</Size>
+								<Texture>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" />
+										</Anchor>
+									</Anchors>
+									<uri>[local.texture_uri]/background/bg_chara_guild.png</uri>
+								</Texture>
+
+								<Container>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="13" y="9" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="32" y="32" />
+									</Size>
+
+									<Texture>
+										<Anchors>
+											<Anchor relativeTo="tx_guildEmblemBack" relativePoint="CENTER"
+												point="CENTER" />
+										</Anchors>
+										<Size>
+											<AbsDimension x="25" y="25" />
+										</Size>
+										<uri>[local.characteristics]icon_cross_characteristics.png
+										</uri>
+									</Texture>
+									<Texture name="tx_guildEmblemBack">
+										<Size>
+											<AbsDimension x="32" y="32" />
+										</Size>
+									</Texture>
+									<Texture name="tx_guildEmblemFront">
+										<Anchors>
+											<Anchor relativeTo="tx_guildEmblemBack" relativePoint="CENTER"
+												point="CENTER" />
+										</Anchors>
+										<Size>
+											<AbsDimension x="19" y="19" />
+										</Size>
+									</Texture>
+									<Container name="ctr_openGuildTab">
+										<Size>
+											<RelDimension x="1" y="1" />
+										</Size>
+										<handCursor>true</handCursor>
+										<bgColor>0xff00ff</bgColor>
+										<bgAlpha>0</bgAlpha>
+									</Container>
+								</Container>
+
+								<Container>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="13" y="65" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="32" y="32" />
+									</Size>
+
+									<Texture>
+										<Anchors>
+											<Anchor relativeTo="tx_allianceEmblemBack"
+												relativePoint="CENTER" point="CENTER" />
+										</Anchors>
+										<Size>
+											<AbsDimension x="25" y="25" />
+										</Size>
+										<uri>[local.characteristics]icon_cross_characteristics.png
+										</uri>
+									</Texture>
+									<Texture name="tx_allianceEmblemBack">
+										<Size>
+											<AbsDimension x="32" y="32" />
+										</Size>
+									</Texture>
+									<Texture name="tx_allianceEmblemFront">
+										<Anchors>
+											<Anchor relativeTo="tx_allianceEmblemBack"
+												relativePoint="CENTER" point="CENTER" />
+										</Anchors>
+										<Size>
+											<AbsDimension x="19" y="19" />
+										</Size>
+									</Texture>
+
+									<Container name="ctr_openAllianceTab">
+										<Size>
+											<RelDimension x="1" y="1" />
+										</Size>
+										<handCursor>true</handCursor>
+										<bgColor>0xff00ff</bgColor>
+										<bgAlpha>0</bgAlpha>
+									</Container>
+								</Container>
+							</Container>
+
+							<Texture>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="56" y="14" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="92" y="92" />
+								</Size>
+								<uri>[local.texture_uri]slot/slot_dark_background_full.png
+								</uri>
+							</Texture>
+
+							<Texture name="tx_basicCharPortrait">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="60" y="18" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="84" y="84" />
+								</Size>
+							</Texture>
+
+							<iconButton name="btn_pvp">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="44" y="62" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="51" y="51" />
+								</Size>
+								<visible>false</visible>
+							</iconButton>
+
+							<Container>
+
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="155" y="15" />
+									</Anchor>
+								</Anchors>
+
+								<Label name="lbl_name">
+									<Size>
+										<AbsDimension x="165" y="20" />
+									</Size>
+									<cssClass>whitebold</cssClass>
+									<css>[local.css]normal2.css</css>
+									<visible>true</visible>
+								</Label>
+
+								<TextureBitmap>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="-10" y="25" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="140" y="3" />
+									</Size>
+									<uri>[local.common]window_separator_black_horizontal.png</uri>
+								</TextureBitmap>
+
+								<Label name="lbl_lvl">
+									<Anchors>
+										<Anchor>
+											<AbsDimension y="31" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="165" y="20" />
+									</Size>
+									<cssClass>medium</cssClass>
+									<css>[local.css]small2.css</css>
+									<visible>true</visible>
+								</Label>
+
+								<TextureBitmap>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="-10" y="55" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="140" y="3" />
+									</Size>
+									<uri>[local.common]window_separator_black_horizontal.png</uri>
+								</TextureBitmap>
+
+								<TextureBitmap>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="-10" y="85" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="140" y="3" />
+									</Size>
+									<uri>[local.common]window_separator_black_horizontal.png</uri>
+								</TextureBitmap>
+
+								<Texture>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="58" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="25" y="25" />
+									</Size>
+									<uri>[local.texture_uri]icon_trophy.png</uri>
+								</Texture>
+
+								<Label name="lbl_rewardPoints">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="28" y="60" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="135" y="20" />
+									</Size>
+									<cssClass>orange</cssClass>
+									<css>[local.css]small2.css</css>
+									<visible>true</visible>
+								</Label>
+
+								<Container name="ctr_rewardPointButton">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="10" y="58" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="150" y="25" />
+									</Size>
+									<handCursor>true</handCursor>
+									<bgColor>0xff00ff</bgColor>
+									<bgAlpha>0</bgAlpha>
+								</Container>
+							</Container>
+
+							<Label name="lbl_charTitle">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="57" y="110" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="260" y="22" />
+								</Size>
+								<fixedHeightForMultiline>true</fixedHeightForMultiline>
+								<multiline>true</multiline>
+								<wordWrap>true</wordWrap>
+								<useStyleSheet>true</useStyleSheet>
+								<cssClass>greenleft</cssClass>
+								<css>[local.css]small2.css</css>
+								<verticalAlign>top</verticalAlign>
+							</Label>
+
+
+							<Container name="ctr_charTitleButton">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="60" y="105" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="260" y="35" />
+								</Size>
+								<handCursor>true</handCursor>
+								<bgColor>0xff00ff</bgColor>
+								<bgAlpha>0</bgAlpha>
+							</Container>
+						</Content>
+					</block>
+
+					<block name="charGaugeBlock">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="22" y="232" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="336" y="75" />
+						</Size>
+						<bgAlpha>0.6</bgAlpha>
+						<withBottomBlockSparator>true</withBottomBlockSparator>
+						<Content>
+
+							<Label name="lbl_xp">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="5" y="8" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="90" y="20" />
+								</Size>
+								<text>[ui.common.experiment]</text>
+								<cssClass>medium</cssClass>
+								<css>[local.css]small2.css</css>
+							</Label>
+
+							<!--xp progress bar -->
+
+							<ProgressBar name="pb_xp">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="95" y="14" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="222" y="11" />
+								</Size>
+								<barColor>[colors.progressbar.blue]</barColor>
+								<barForegroundThemeData>progress_bar_foreground</barForegroundThemeData>
+								<separators>5</separators>
+							</ProgressBar>
+
+
+							<Label name="lbl_energy">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="5" y="35" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="90" y="20" />
+								</Size>
+								<text>[ui.common.energy]</text>
+								<cssClass>medium</cssClass>
+								<css>[local.css]small2.css</css>
+							</Label>
+
+
+							<!--Progress bar energy -->
+
+							<ProgressBar name="pb_energy">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="95" y="41" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="222" y="11" />
+								</Size>
+								<barColor>[colors.progressbar.green]</barColor>
+								<barForegroundThemeData>progress_bar_foreground
+								</barForegroundThemeData>
+								<separators>5</separators>
+							</ProgressBar>
+
+						</Content>
+
+					</block>
+
+					<block name="charStatsBlock">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="22" y="308" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="336" y="140" />
+						</Size>
+						<bgAlpha>0.6</bgAlpha>
+						<withBottomBlockSparator>true</withBottomBlockSparator>
+						<Content>
+							<Container name="ctr_healhPointsSmallBlock">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="0" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="326" y="50" />
+								</Size>
+								<TextureBitmap>
+									<Size>
+										<AbsDimension x="326" y="45" />
+									</Size>
+									<themeDataId>bg_small_border_dark</themeDataId>
+								</TextureBitmap>
+								<Texture>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="15" y="12" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="22" y="22" />
+									</Size>
+									<uri>[local.texture_uri]icon_pv.png</uri>
+								</Texture>
+								<Label>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="50" y="11" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="190" y="0" />
+									</Size>
+									<text>[ui.common.lifePoints] </text>
+									<cssClass>medium</cssClass>
+									<css>[local.css]small2.css</css>
+								</Label>
+								<Label name="lbl_healthPointsValue">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="240" y="12" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="60" y="0" />
+									</Size>
+									<cssClass>whitecondensedboldright</cssClass>
+									<css>[local.css]normal2.css</css>
+								</Label>
+							</Container>
+
+							<Container name="ctr_actionPointsSmallBlock">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="40" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="326" y="40" />
+								</Size>
+								<TextureBitmap>
+									<Size>
+										<AbsDimension x="326" y="45" />
+									</Size>
+									<themeDataId>bg_small_border_dark</themeDataId>
+								</TextureBitmap>
+								<Texture>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="15" y="12" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="22" y="22" />
+									</Size>
+									<uri>[local.texture_uri]icon_pa.png</uri>
+								</Texture>
+								<Label>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="50" y="11" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="190" y="0" />
+									</Size>
+									<text>[ui.stats.actionPoints] </text>
+									<cssClass>medium</cssClass>
+									<css>[local.css]small2.css</css>
+								</Label>
+								<Label name="lbl_actionPointsValue">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="240" y="12" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="60" y="0" />
+									</Size>
+									<cssClass>whitecondensedboldright</cssClass>
+									<css>[local.css]normal2.css</css>
+								</Label>
+							</Container>
+
+
+							<Container name="ctr_movementPointsSmallBlock">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="80" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="326" y="50" />
+								</Size>
+								<TextureBitmap>
+									<Size>
+										<AbsDimension x="326" y="45" />
+									</Size>
+									<themeDataId>bg_small_border_dark</themeDataId>
+								</TextureBitmap>
+								<Texture>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="15" y="12" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="22" y="22" />
+									</Size>
+									<uri>[local.texture_uri]icon_pm.png</uri>
+								</Texture>
+								<Label>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="50" y="11" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="190" y="0" />
+									</Size>
+									<text>[ui.stats.movementPoints] </text>
+									<cssClass>medium</cssClass>
+									<css>[local.css]small2.css</css>
+								</Label>
+								<Label name="lbl_movementPointsValue">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="240" y="12" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="60" y="0" />
+									</Size>
+									<cssClass>whitecondensedboldright</cssClass>
+									<css>[local.css]normal2.css</css>
+								</Label>
+							</Container>
+						</Content>
+					</block>
+					<!-- CARACTERISTIQUES -->
+
+
+					<block name="statBlock">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="22" y="449" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="336" y="300" />
+						</Size>
+						<bgAlpha>0.6</bgAlpha>
+						<Content>
+							<Grid name="gd_carac">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="5" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="330" y="230" />
+								</Size>
+								<rendererName>InlineXmlGridRenderer</rendererName>
+								<rendererArgs>updateCaracLine</rendererArgs>
+								<slotWidth>371</slotWidth>
+								<slotHeight>35</slotHeight>
+
+								<Container name="caracItemCtr">
+									<Size>
+										<AbsDimension x="371" y="30" />
+									</Size>
+
+									<Texture name="tx_pictoCarac">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="9" y="2" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="32" y="32" />
+										</Size>
+									</Texture>
+
+									<Label name="lbl_nameCarac">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="45" y="6" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="145" y="22" />
+										</Size>
+										<cssClass>medium</cssClass>
+										<css>[local.css]small2.css</css>
+									</Label>
+
+									<Label name="lbl_valueCarac">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="190" y="6" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="73" y="22" />
+										</Size>
+										<cssClass>whitecondensedboldright</cssClass>
+										<css>[local.css]normal2.css</css>
+									</Label>
+
+									<themeIconButton name="btn_plus">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="280" y="4" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="26" y="26" />
+										</Size>
+										<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_plus.png
+										</iconUri>
+									</themeIconButton>
+
+									<TextureBitmap name="tx_gridSeparator">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="50" y="35" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="200" y="2" />
+										</Size>
+										<uri>[local.common]window_separator_black_horizontal.png
+										</uri>
+									</TextureBitmap>
+								</Container>
+							</Grid>
+
+							<Container>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="30" y="240" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="260" y="40" />
+								</Size>
+								<TextureBitmap>
+									<Size>
+										<AbsDimension x="260" y="40" />
+									</Size>
+									<themeDataId>bg_small_border_dark</themeDataId>
+								</TextureBitmap>
+								<Label name="lbl_pointsToDivide">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="20" y="8" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="150" y="0" />
+									</Size>
+									<text>[ui.charaSheet.pointsToDivide][ui.common.colon]</text>
+									<css>[local.css]small2.css</css>
+								</Label>
+								<Label name="lbl_statPoints">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="180" y="8" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="60" y="0" />
+									</Size>
+									<cssClass>whiteboldright</cssClass>
+									<css>[local.css]normal2.css</css>
+								</Label>
+								<Container name="ctr_pointsToDivide">
+									<Size>
+										<AbsDimension x="260" y="40" />
+									</Size>
+									<bgColor>#ff00ff</bgColor>
+									<bgAlpha>0</bgAlpha>
+								</Container>
+							</Container>
+						</Content>
+					</block>
+				</Container>
+
+
+
+
+				<!-- CONTENU DETAILLE -->
+
+
+				<Container name="ctr_advanced">
+					<block>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="22" y="80" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="326" y="670" />
+						</Size>
+						<Content>
+							<Texture>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="5" y="5" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="60" y="60" />
+								</Size>
+								<uri>[local.texture_uri]slot/slot_dark_background_full.png
+								</uri>
+							</Texture>
+
+							<Texture name="tx_advancedCharPortrait">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="7" y="7" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="55" y="55" />
+								</Size>
+							</Texture>
+							<Label name="lbl_advancedName">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="70" y="15" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="120" y="10" />
+								</Size>
+								<cssClass>whitebold</cssClass>
+								<css>[local.css]normal2.css</css>
+							</Label>
+							<Label name="lbl_advancedLvl">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="70" y="35" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="130" y="20" />
+								</Size>
+								<cssClass>p</cssClass>
+								<css>[local.css]small2.css</css>
+							</Label>
+
+							<Grid name="gd_caracAdvanced">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="75" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="333" y="570" />
+								</Size>
+								<rendererName>MultiGridRenderer</rendererName>
+								<rendererArgs>updateCategory,getCatLineType,getCatDataLength
+								</rendererArgs>
+								<verticalScrollbarCss>[local.css]scrollBar.css
+								</verticalScrollbarCss>
+								<slotWidth>342</slotWidth>
+								<slotHeight>25</slotHeight>
+								<Container name="ctr_cat">
+									<Size>
+										<AbsDimension x="310" y="20" />
+									</Size>
+									<Button name="btn_cat">
+										<Common>
+											<radioMode>true</radioMode>
+
+											<Texture name="tx_cat">
+												<Size>
+													<AbsDimension x="316" y="30" />
+												</Size>
+												<uri>[local.common]list_menu_background.png</uri>
+											</Texture>
+
+											<Label name="lbl_catName">
+												<Anchors>
+													<Anchor>
+														<AbsDimension x="15" y="4" />
+													</Anchor>
+												</Anchors>
+												<Size>
+													<AbsDimension x="280" y="22" />
+												</Size>
+												<css>[local.css]small2.css</css>
+											</Label>
+
+											<Texture name="tx_catplusminus">
+												<Anchors>
+													<Anchor>
+														<AbsDimension x="280" y="5" />
+													</Anchor>
+												</Anchors>
+												<Size>
+													<AbsDimension x="20" y="20" />
+												</Size>
+												<visible>true</visible>
+											</Texture>
+
+										</Common>
+									</Button>
+								</Container>
+
+								<Container name="ctr_caracAdvancedItem">
+									<Size>
+										<AbsDimension x="342" y="30" />
+									</Size>
+									<Button>
+										<Size>
+											<AbsDimension x="342" y="30" />
+										</Size>
+									</Button>
+									<Texture name="tx_picto">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="8" y="9" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="15" y="15" />
+										</Size>
+									</Texture>
+
+									<Label name="lbl_favExplanation">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="0" y="3" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="315" y="22" />
+										</Size>
+										<text>[ui.charaSheet.noFavorite]</text>
+										<css>[local.css]small2.css</css>
+										<cssClass>lightgreycenter</cssClass>
+										<visible>false</visible>
+									</Label>
+
+									<Label name="lbl_value">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="242" y="5" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="60" y="22" />
+										</Size>
+										<cssClass>condensedboldright</cssClass>
+										<css>[local.css]small2.css</css>
+									</Label>
+
+									<Label name="lbl_name">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="25" y="5" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="210" y="22" />
+										</Size>
+										<css>[local.css]small2.css</css>
+										<visible>true</visible>
+									</Label>
+								</Container>
+							</Grid>
+						</Content>
+					</block>
+				</Container>
+
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="17" y="742" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="330" y="50" />
+					</Size>
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="-5" y="0" />
+							</Anchor>
+						</Anchors>
+						<uri>[local.common]/corner_decoration.png</uri>
+					</Texture>
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="346" y="0" />
+							</Anchor>
+						</Anchors>
+						<uri>[local.common]/corner_decoration.png</uri>
+						<scaleX>-1</scaleX>
+					</Texture>
+					<simpleButton name="btn_job">
+						<label>[ui.common.jobs]</label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="20" y="15" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="140" y="30" />
+						</Size>
+						<cssClass>darkboldcenter</cssClass>
+						<css>[local.css]normal2.css</css>
+					</simpleButton>
+					<simpleButton name="btn_spellBook">
+						<label>[ui.grimoire.mySpell]</label>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="170" y="15" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="140" y="30" />
+						</Size>
+						<cssClass>darkboldcenter</cssClass>
+						<css>[local.css]normal2.css</css>
+					</simpleButton>
+
+					<Container name="ctr_spellPoints">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="290" y="2" />
+							</Anchor>
+						</Anchors>
+						<Texture>
+							<Size>
+								<AbsDimension x="40" y="40" />
+							</Size>
+							<uri>[local.common]circle_yellow.png</uri>
+						</Texture>
+						<Label name="lbl_spellPointsLeft">
+							<Anchors>
+								<Anchor relativePoint="TOP" point="TOP">
+									<AbsDimension y="8" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="40" y="40" />
+							</Size>
+
+							<cssClass>browncondensedboldcenter</cssClass>
+							<css>[local.css]normal2.css</css>
+						</Label>
+					</Container>
+
+				</Container>
+
+				<themeHorizontalTab name="btn_regular">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="35" y="45" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="120" y="40" />
+					</Size>
+					<text>[ui.stats.summary]</text>
+					<css>[local.css]normal2.css</css>
+				</themeHorizontalTab>
+				<themeHorizontalTab name="btn_advanced">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="150" y="45" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="120" y="40" />
+					</Size>
+					<text>[ui.stats.advanced]</text>
+					<css>[local.css]normal2.css</css>
+				</themeHorizontalTab>
+
+				<themeIconButton name="btn_spouse">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="322" y="45" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="33" y="33" />
+					</Size>
+					<iconUri>[local.texture_uri]btnIcon/btnIcon_spouse.png</iconUri>
+				</themeIconButton>
+			</Container>
+		</Content>
+	</window>
+</Definition>
+

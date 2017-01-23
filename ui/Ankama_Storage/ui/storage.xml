@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition usePropertiesCache="false">
+ 
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template]button/themeLabelCheckBox.xml" />
+	<Import url="[config.mod.template]specific/storageBlock.xml" />
+	<Import url="[config.mod.template]window.xml" />
+    
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />	
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+    
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="910" y="66" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="373" y="814" />
+        </Size>
+        
+		<mouseEnabled>true</mouseEnabled>
+		
+		<!-- Container qui contient tous les objets communs à toutes les interfaces d'inventaire  -->
+		<Container name="ctr_common">
+		
+			<window name="ctr_window">
+				<Size>
+		            <AbsDimension x="373" y="820" />
+		        </Size>
+	            <title>[ui.common.inventory]</title>
+            	<iconUri>[local.texture]windowIcon/icon__0027_Inventaire.png</iconUri>
+			</window>
+
+			<storageBlock>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="19" y="44" />
+					</Anchor>
+				</Anchors>
+				<selectable>true</selectable>
+			</storageBlock>
+	        
+			<themeLabelCheckBox name="btn_itemsFilter">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="25" y="797" />
+					</Anchor>
+				</Anchors>
+				<labelWidth>300</labelWidth>
+				<visible>false</visible>
+			</themeLabelCheckBox>
+	        
+        </Container>
+	</Container>
+</Definition>
+

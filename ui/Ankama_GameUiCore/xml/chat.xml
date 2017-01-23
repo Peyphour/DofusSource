@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition usePropertiesCache="false">
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/themeIconButton.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+
+		<Constant name="focus_uri" value="[local.assets]tchat_tx_focus" />
+		<Constant name="warning_uri" value="[local.assets]warning_tx_illu" />
+
+		<Constant name="tab_uri" value="[config.ui.skin]texture/CHAT/tx_chat_" />
+		<Constant name="tabIcon_uri" value="[config.ui.skin]texture/CHAT/tx_chat_" />
+
+		<Constant name="smilies_uri" value="[config.content.path]gfx/smilies/" />
+		<Constant name="icons_uri" value="[config.ui.skin]texture/icon_state_" />
+
+		<Constant name="defaultHeight" value="115" type="int" />
+	</Constants>
+
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="0" y="909" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="402" y="[local.defaultHeight]" />
+		</Size>
+		<MinimalSize>
+			<AbsDimension x="160" y="[local.defaultHeight]" />
+		</MinimalSize>
+		
+
+		<TextureBitmap name="tx_tabBackground">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="10" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="67" y="25" />
+			</Size>
+			<mouseEnabled>true</mouseEnabled>
+			<themeDataId>hud_tab_background</themeDataId>
+		</TextureBitmap>
+
+		<Container name="tx_background">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="22" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<RelDimension x="1" y="1" />
+			</Size>
+			<mouseEnabled>true</mouseEnabled>
+			<bgColor>[colors.chat.bgColor]</bgColor>
+			<isMagnetic>true</isMagnetic>
+		</Container>
+		
+		<Container name="dragBoundsRef">
+			<Anchors>
+				<Anchor relativeTo="tx_background" relativePoint="TOPLEFT">
+					<AbsDimension x="0" y="-24" />
+				</Anchor>
+				<Anchor relativeTo="tx_background" relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="0" y="-2" />
+				</Anchor>
+			</Anchors>
+			<bgColor>0</bgColor>
+			<bgAlpha>0</bgAlpha>
+		</Container>
+
+		<TextureBitmap name="tx_separator">
+			<Anchors>
+				<Anchor relativeTo="tx_background" relativePoint="TOPRIGHT">
+					<AbsDimension x="-7" y="0" />
+				</Anchor>
+				<Anchor relativeTo="tx_background" relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<themeDataId>separator_green_column</themeDataId>
+		</TextureBitmap>
+		
+		<TextureBitmap>
+			<Anchors>
+				<Anchor relativeTo="tx_separator" relativePoint="TOPLEFT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+				<Anchor relativeTo="tx_separator" relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<themeDataId>separator_green_column_shadow</themeDataId>
+		</TextureBitmap>
+		
+		<TextureBitmap>
+			<Anchors>
+				<Anchor relativeTo="tx_separator" relativePoint="TOPLEFT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+				<Anchor relativeTo="tx_separator" relativePoint="TOPRIGHT">
+					<AbsDimension x="0" y="8" />
+				</Anchor>
+			</Anchors>
+			<uri>[config.ui.skin]texture/hud/background_hud_shadow.png</uri>
+		</TextureBitmap>
+
+		<TextArea name="ta_chat">
+			<Anchors>
+				<Anchor relativeTo="tx_background" relativePoint="TOPLEFT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+				<Anchor relativeTo="tx_background" relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="-32" y="-23" />
+				</Anchor>
+			</Anchors>
+			<scrollCss>[local.css]scrollBar.css</scrollCss>
+			<scrollPos>-1</scrollPos>
+			<css>theme://css/chat.css</css>
+			<selectable>true</selectable>
+			<hyperlinkEnabled>true</hyperlinkEnabled>
+			<useEmbedFonts>false</useEmbedFonts>
+		</TextArea>
+
+		<!--themeIconButton name="btn_menu">
+			<Anchors>
+				<Anchor relativeTo="tx_background" relativePoint="BOTTOMLEFT"
+					point="BOTTOMLEFT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="25" y="25" />
+			</Size>
+			<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_gear.png</iconUri>
+		</themeIconButton-->
+		
+        <Button name="btn_menu">
+            <Common>
+				<Anchors>
+					<Anchor relativeTo="tx_background" relativePoint="BOTTOMLEFT"
+						point="BOTTOMLEFT">
+						<AbsDimension x="0" y="0" />
+					</Anchor>
+				</Anchors>
+                <TextureBitmap name="tx_btn_menu">
+                    <Size>
+                        <AbsDimension x="25" y="25" />
+                    </Size>
+					<themeDataId>button_small_normal</themeDataId>
+                </TextureBitmap>
+                <Texture name="tx_arrow_btn_menu">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="4" y="4" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="16" y="16" />
+                    </Size>
+                    <uri>[local.assets]chat_tx_star</uri>
+                </Texture>
+                <Texture>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="2" y="2" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="20" y="20" />
+                    </Size>
+                    <uri>[local.assets]chat_tx_star_shadow</uri>
+                </Texture>
+                <Hooks>
+                    <onRelease />
+                    <onRollOver />
+                    <onRollOut />
+                </Hooks>
+            </Common>
+            <State type="OVER">
+                <SetProperties target="tx_btn_menu">
+                    <themeDataId>button_small_over</themeDataId>
+                </SetProperties>
+            </State>
+            <State type="PRESSED">
+                <SetProperties target="tx_btn_menu">
+                    <themeDataId>button_small_pressed</themeDataId>
+                </SetProperties>
+            </State>
+            <State type="SELECTED">
+                <SetProperties target="tx_btn_menu">
+                    <themeDataId>button_small_selected</themeDataId>
+                </SetProperties>
+            </State>
+            <State type="SELECTED_OVER">
+                <SetProperties target="tx_btn_menu">
+                    <themeDataId>button_small_selected_over</themeDataId>
+                </SetProperties>
+            </State>
+            <State type="SELECTED_PRESSED">
+                <SetProperties target="tx_btn_menu">
+                    <themeDataId>button_small_selected_pressed</themeDataId>
+                </SetProperties>
+            </State>
+        </Button>
+
+		<TextureBitmap>
+			<Anchors>
+				<Anchor relativeTo="inp_tchatinput" relativePoint="TOPLEFT">
+					<AbsDimension x="-9" y="-5" />
+				</Anchor>
+				<Anchor relativeTo="inp_tchatinput" relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="32" y="6" />
+				</Anchor>
+			</Anchors>
+			<themeDataId>chat_input_background</themeDataId>
+		</TextureBitmap>
+
+		<!-- Input inp_tchatinput -->
+		<Input name="inp_tchatinput">
+			<Anchors>
+				<Anchor relativeTo="tx_background" relativePoint="BOTTOMLEFT">
+					<AbsDimension x="28" y="-24" />
+				</Anchor>
+				<Anchor relativeTo="tx_background" relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="-58" y="-1" />
+				</Anchor>
+			</Anchors>
+			<css>theme://css/chat.css</css>
+			<cssClass>p0</cssClass>
+			<multiline>false</multiline>
+			<neverIndent>true</neverIndent>
+		</Input>
+
+		<Texture name="tx_focus">
+			<!--Anchors>
+				<Anchor relativeTo="inp_tchatinput" relativePoint="BOTTOMLEFT"
+					point="BOTTOMLEFT">
+					<AbsDimension x="0" y="-2" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="332" y="25" />
+			</Size>
+			<uri>[local.assets]tchat_tx_focus</uri-->
+			<visible>false</visible>
+		</Texture>
+
+		<!-- Input btn_ime -->
+		<simpleButton name="btn_ime">
+			<Anchors>
+				<Anchor relativeTo="btn_status" relativePoint="LEFT" point="RIGHT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="46" y="25" />
+			</Size>
+			<css>[local.css]normal.css</css>
+			<bgThemeDataId>button_small</bgThemeDataId>
+		</simpleButton>
+
+		<Button name="btn_status">
+			<Common>
+				<Anchors>
+					<Anchor relativeTo="btn_smiley" relativePoint="LEFT" point="RIGHT">
+						<AbsDimension x="0" y="1" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="25" y="25" />
+				</Size>
+
+				<TextureBitmap name="iconTexturebtn_status">
+					<Anchors>
+						<Anchor relativePoint="TOPLEFT">
+							<AbsDimension x="4" y="4" />
+						</Anchor>
+						<Anchor relativePoint="BOTTOMRIGHT">
+							<AbsDimension x="-4" y="-4" />
+						</Anchor>					
+					</Anchors>
+					<uri>[config.ui.skin]texture/icon_state_green.png</uri>
+					<smooth>true</smooth>
+				</TextureBitmap>
+			</Common>
+		</Button>
+
+		<!-- Button btn_smiley -->
+		<themeIconButton name="btn_smiley">
+			<Anchors>
+				<Anchor relativeTo="tx_background" relativePoint="BOTTOMRIGHT"
+					point="BOTTOMRIGHT">
+					<AbsDimension x="-6" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="25" y="25" />
+			</Size>
+			<iconUri>[config.ui.skin]texture/CHAT/btn_smileyCatHappy.png</iconUri>
+			<iconAnchors>
+				<Anchor relativePoint="TOPLEFT">
+					<AbsDimension x="0" y="2" />
+				</Anchor>
+				<Anchor relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="1" y="1" />
+				</Anchor>
+			</iconAnchors>
+		</themeIconButton>
+
+		<!-- resizeRef -->
+		<Container>
+			<Anchors>
+				<Anchor relativeTo="tx_background" relativePoint="TOPLEFT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+				<Anchor relativeTo="tx_background" relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<resizeController>true</resizeController>
+			<resizeTarget>mainCtr</resizeTarget>
+		</Container>
+		
+		<Container>
+			<Anchors>
+				<Anchor relativeTo="tx_separator" relativePoint="TOPLEFT">
+					<AbsDimension y="4" />
+				</Anchor>
+				<Anchor relativeTo="tx_separator" relativePoint="BOTTOMRIGHT">
+					<AbsDimension y="-4" />
+				</Anchor>
+			</Anchors>
+			<bgColor>0xFF0000</bgColor>
+			<bgAlpha>0</bgAlpha>
+			<dragController>true</dragController>
+			<dragTarget>mainCtr</dragTarget>
+			<dragBoundsContainer>dragBoundsRef</dragBoundsContainer>
+			<useDragMagnetism>true</useDragMagnetism>
+		</Container>
+
+		<!-- Button btn_resize -->
+		<themeIconButton name="btn_plus">
+			<Anchors>
+				<Anchor relativeTo="tx_tabBackground">
+					<AbsDimension x="8" y="2" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="26" y="20" />
+			</Size>
+			<bgThemeDataId>button_thin_border</bgThemeDataId>
+			<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_plus.png</iconUri>
+			<iconAnchors>
+				<Anchor relativePoint="TOPLEFT">
+					<AbsDimension x="7" y="4" />
+				</Anchor>
+				<Anchor relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="-7" y="-4" />
+				</Anchor>
+			</iconAnchors>
+			<Hooks>
+				<onRelease />
+				<onRollOver />
+				<onRollOut />
+			</Hooks>
+		</themeIconButton>
+
+		<themeIconButton name="btn_minus">
+			<Anchors>
+				<Anchor relativeTo="btn_plus" relativePoint="TOPRIGHT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="26" y="20" />
+			</Size>
+			<bgThemeDataId>button_thin_border</bgThemeDataId>
+			<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_minus.png</iconUri>
+			<iconAnchors>
+				<Anchor relativePoint="TOPLEFT">
+					<AbsDimension x="7" y="4" />
+				</Anchor>
+				<Anchor relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="-7" y="-4" />
+				</Anchor>
+			</iconAnchors>
+			<Hooks>
+				<onRelease />
+				<onRollOver />
+				<onRollOut />
+			</Hooks>
+		</themeIconButton>
+
+		<Container name="tabs_ctr">
+			<Anchors>
+				<Anchor relativeTo="tx_background" relativePoint="BOTTOMRIGHT"
+					point="BOTTOMRIGHT">
+					<AbsDimension x="-9" y="-26" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="21" />
+			</Size>
+
+			<!-- Button btn_tab0 -->
+
+			<Button name="btn_tab0">
+				<Common>
+					<radioGroup>tabChatGroup</radioGroup>
+					<radioMode>true</radioMode>
+					<Size>
+						<AbsDimension x="23" y="23" />
+					</Size>
+					<TextureBitmap name="bgTexturebtn_tab0">
+						<Size>
+							<RelDimension x="1" y="1" />
+						</Size>
+						<themeDataId>button_grey_thin_border_normal</themeDataId>
+					</TextureBitmap>
+
+					<TextureBitmap name="iconTexturebtn_tab0">
+						<Anchors>
+							<Anchor relativePoint="TOPLEFT">
+								<AbsDimension x="0" y="0" />
+							</Anchor>
+							<Anchor relativePoint="BOTTOMRIGHT">
+								<AbsDimension x="0" y="0" />
+							</Anchor>
+						</Anchors>
+						<uri>[local.tabIcon_uri]0.png</uri>
+						<smooth>true</smooth>
+					</TextureBitmap>
+
+					<Hooks>
+						<onRelease/>
+					</Hooks>
+				</Common>
+
+				<State type="OVER">
+					<SetProperties target="bgTexturebtn_tab0">
+						<themeDataId>button_grey_thin_border_over</themeDataId>
+					</SetProperties>
+				</State>
+
+				<State type="PRESSED">
+					<SetProperties target="bgTexturebtn_tab0">
+						<themeDataId>button_grey_thin_border_pressed</themeDataId>
+					</SetProperties>
+				</State>
+
+				<State type="DISABLED">
+					<SetProperties target="bgTexturebtn_tab0">
+						<themeDataId>button_grey_thin_border_disabled</themeDataId>
+					</SetProperties>
+				</State>
+
+				<State type="SELECTED">
+					<SetProperties target="bgTexturebtn_tab0">
+						<themeDataId>button_grey_thin_border_selected</themeDataId >
+					</SetProperties>
+				</State>
+
+				<State type="SELECTED_OVER">
+					<SetProperties target="bgTexturebtn_tab0">
+						<themeDataId>button_grey_thin_border_selected_over</themeDataId>
+					</SetProperties>
+				</State>
+
+				<State type="SELECTED_PRESSED">
+					<SetProperties target="bgTexturebtn_tab0">
+						<themeDataId>$button_grey_thin_border_selected_pressed</themeDataId>
+					</SetProperties>
+				</State>
+			</Button>
+			
+			<!-- Button btn_tab1 -->
+
+			<Button name="btn_tab1">
+				<Common>
+					<radioGroup>tabChatGroup</radioGroup>
+					<radioMode>true</radioMode>
+					<Anchors>
+						<Anchor relativeTo="btn_tab0" relativePoint="BOTTOMLEFT">
+							<AbsDimension x="0" y="-1" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="23" y="23" />
+					</Size>
+					<TextureBitmap name="bgTexturebtn_tab1">
+						<Size>
+							<RelDimension x="1" y="1" />
+						</Size>
+						<themeDataId>button_grey_thin_border_normal</themeDataId>
+					</TextureBitmap>
+
+					<TextureBitmap name="iconTexturebtn_tab1">
+						<Anchors>
+							<Anchor relativePoint="TOPLEFT">
+								<AbsDimension x="0" y="0" />
+							</Anchor>
+							<Anchor relativePoint="BOTTOMRIGHT">
+								<AbsDimension x="0" y="0" />
+							</Anchor>
+						</Anchors>
+						<uri>[local.tabIcon_uri]1.png</uri>
+						<smooth>true</smooth>
+					</TextureBitmap>
+
+					<Hooks>
+						<onRelease/>
+					</Hooks>
+				</Common>
+
+				<State type="OVER">
+					<SetProperties target="bgTexturebtn_tab1">
+						<themeDataId>button_grey_thin_border_over</themeDataId>
+					</SetProperties>
+				</State>
+
+				<State type="PRESSED">
+					<SetProperties target="bgTexturebtn_tab1">
+						<themeDataId>button_grey_thin_border_pressed</themeDataId>
+					</SetProperties>
+				</State>
+
+				<State type="DISABLED">
+					<SetProperties target="bgTexturebtn_tab1">
+						<themeDataId>button_grey_thin_border_disabled</themeDataId>
+					</SetProperties>
+				</State>
+
+				<State type="SELECTED">
+					<SetProperties target="bgTexturebtn_tab1">
+						<themeDataId>button_grey_thin_border_selected</themeDataId >
+					</SetProperties>
+				</State>
+
+				<State type="SELECTED_OVER">
+					<SetProperties target="bgTexturebtn_tab1">
+						<themeDataId>button_grey_thin_border_selected_over</themeDataId>
+					</SetProperties>
+				</State>
+
+				<State type="SELECTED_PRESSED">
+					<SetProperties target="bgTexturebtn_tab1">
+						<themeDataId>$button_grey_thin_border_selected_pressed</themeDataId>
+					</SetProperties>
+				</State>
+			</Button>
+			
+			<!-- Button btn_tab2 -->
+
+			<Button name="btn_tab2">
+				<Common>
+					<radioGroup>tabChatGroup</radioGroup>
+					<radioMode>true</radioMode>
+					<Anchors>
+						<Anchor relativeTo="btn_tab1" relativePoint="BOTTOMLEFT">
+							<AbsDimension x="0" y="-1" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="23" y="23" />
+					</Size>
+					<TextureBitmap name="bgTexturebtn_tab2">
+						<Size>
+							<RelDimension x="1" y="1" />
+						</Size>
+						<themeDataId>button_grey_thin_border_normal</themeDataId>
+					</TextureBitmap>
+
+					<TextureBitmap name="iconTexturebtn_tab2">
+						<Anchors>
+							<Anchor relativePoint="TOPLEFT">
+								<AbsDimension x="0" y="0" />
+							</Anchor>
+							<Anchor relativePoint="BOTTOMRIGHT">
+								<AbsDimension x="0" y="0" />
+							</Anchor>
+						</Anchors>
+						<uri>[local.tabIcon_uri]2.png</uri>
+						<smooth>true</smooth>
+					</TextureBitmap>
+
+					<Hooks>
+						<onRelease/>
+					</Hooks>
+				</Common>
+
+				<State type="OVER">
+					<SetProperties target="bgTexturebtn_tab2">
+						<themeDataId>button_grey_thin_border_over</themeDataId>
+					</SetProperties>
+				</State>
+
+				<State type="PRESSED">
+					<SetProperties target="bgTexturebtn_tab2">
+						<themeDataId>button_grey_thin_border_pressed</themeDataId>
+					</SetProperties>
+				</State>
+
+				<State type="DISABLED">
+					<SetProperties target="bgTexturebtn_tab2">
+						<themeDataId>button_grey_thin_border_disabled</themeDataId>
+					</SetProperties>
+				</State>
+
+				<State type="SELECTED">
+					<SetProperties target="bgTexturebtn_tab2">
+						<themeDataId>button_grey_thin_border_selected</themeDataId >
+					</SetProperties>
+				</State>
+
+				<State type="SELECTED_OVER">
+					<SetProperties target="bgTexturebtn_tab2">
+						<themeDataId>button_grey_thin_border_selected_over</themeDataId>
+					</SetProperties>
+				</State>
+
+				<State type="SELECTED_PRESSED">
+					<SetProperties target="bgTexturebtn_tab2">
+						<themeDataId>$button_grey_thin_border_selected_pressed</themeDataId>
+					</SetProperties>
+				</State>
+			</Button>
+			
+			<!-- Button btn_tab3 -->
+
+			<Button name="btn_tab3">
+				<Common>
+					<radioGroup>tabChatGroup</radioGroup>
+					<radioMode>true</radioMode>
+					<Anchors>
+						<Anchor relativeTo="btn_tab2" relativePoint="BOTTOMLEFT">
+							<AbsDimension x="0" y="-1" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="23" y="23" />
+					</Size>
+					<TextureBitmap name="bgTexturebtn_tab3">
+						<Size>
+							<RelDimension x="1" y="1" />
+						</Size>
+						<themeDataId>button_grey_thin_border_normal</themeDataId>
+					</TextureBitmap>
+
+					<TextureBitmap name="iconTexturebtn_tab3">
+						<Anchors>
+							<Anchor relativePoint="TOPLEFT">
+								<AbsDimension x="0" y="0" />
+							</Anchor>
+							<Anchor relativePoint="BOTTOMRIGHT">
+								<AbsDimension x="0" y="0" />
+							</Anchor>
+						</Anchors>
+						<uri>[local.tabIcon_uri]3.png</uri>
+						<smooth>true</smooth>
+					</TextureBitmap>
+
+					<Hooks>
+						<onRelease/>
+					</Hooks>
+				</Common>
+
+				<State type="OVER">
+					<SetProperties target="bgTexturebtn_tab3">
+						<themeDataId>button_grey_thin_border_over</themeDataId>
+					</SetProperties>
+				</State>
+
+				<State type="PRESSED">
+					<SetProperties target="bgTexturebtn_tab3">
+						<themeDataId>button_grey_thin_border_pressed</themeDataId>
+					</SetProperties>
+				</State>
+
+				<State type="DISABLED">
+					<SetProperties target="bgTexturebtn_tab3">
+						<themeDataId>button_grey_thin_border_disabled</themeDataId>
+					</SetProperties>
+				</State>
+
+				<State type="SELECTED">
+					<SetProperties target="bgTexturebtn_tab3">
+						<themeDataId>button_grey_thin_border_selected</themeDataId >
+					</SetProperties>
+				</State>
+
+				<State type="SELECTED_OVER">
+					<SetProperties target="bgTexturebtn_tab3">
+						<themeDataId>button_grey_thin_border_selected_over</themeDataId>
+					</SetProperties>
+				</State>
+
+				<State type="SELECTED_PRESSED">
+					<SetProperties target="bgTexturebtn_tab3">
+						<themeDataId>$button_grey_thin_border_selected_pressed</themeDataId>
+					</SetProperties>
+				</State>
+			</Button>
+
+			<!-- Texture tx_tab0 -->
+
+			<Texture name="tx_tab0">
+				<Anchors>
+					<Anchor relativeTo="btn_tab0">
+						<AbsDimension x="0" y="0" />
+					</Anchor>
+				</Anchors>
+				<mouseEnabled>false</mouseEnabled>
+				<uri>[local.tabIcon_uri]hl_0.png</uri>
+				<visible>false</visible>
+			</Texture>
+
+			<Texture name="tx_tab1">
+				<Anchors>
+					<Anchor relativeTo="btn_tab1"> 
+						<AbsDimension x="0" y="0" />
+					</Anchor>
+				</Anchors>
+				<mouseEnabled>false</mouseEnabled>
+				<uri>[local.tabIcon_uri]hl_1.png</uri>
+				<visible>false</visible>
+			</Texture>
+
+			<Texture name="tx_tab2">
+				<Anchors>
+					<Anchor relativeTo="btn_tab2">
+						<AbsDimension x="0" y="0" />
+					</Anchor>
+				</Anchors>
+				<mouseEnabled>false</mouseEnabled>
+				<uri>[local.tabIcon_uri]hl_2.png</uri>
+				<visible>false</visible>
+			</Texture>
+
+			<Texture name="tx_tab3">
+				<Anchors>
+					<Anchor relativeTo="btn_tab3">
+						<AbsDimension x="0" y="0" />
+					</Anchor>
+				</Anchors>
+				<mouseEnabled>false</mouseEnabled>
+				<uri>[local.tabIcon_uri]hl_3.png</uri>
+				<visible>false</visible>
+			</Texture>
+		</Container>
+
+		<Container name="checks_ctr"/>
+	</Container>
+
+	<Shortcuts>
+		<validUi />
+		<upArrow />
+		<downArrow />
+		<shiftUp />
+		<shiftDown />
+		<shiftValid />
+		<altValid />
+		<ctrlValid />
+	</Shortcuts>
+</Definition>
+

@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition usePropertiesCache="false" debug="false"
+	labelDebug="false">
+
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template.button]labelCheckBox.xml" />
+	<Import url="[config.mod.template.button]comboBoxWithBackground.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	<Import url="[config.mod.template]specific/equipmentSlot.xml" />
+	<Import url="[config.mod.template]specific/storageBlock.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+
+		<Constant name="illus" value="[config.content.path]gfx/illusUi/" />
+		<Constant name="breedIllus"
+			value="[config.content.path]gfx/classes/logo_transparent_" />
+	</Constants>
+
+
+
+	<window>
+		<Anchors>
+			<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT">
+				<AbsDimension x="-10" y="-150" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="910" y="823" />
+		</Size>
+		<title>[ui.common.inventory]</title>
+		<iconUri>[local.texture]windowIcon/icon__0027_Inventaire.png</iconUri>
+		<movable>true</movable>
+		<Content>
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="-20" y="-45" />
+					</Anchor>
+				</Anchors>
+
+				<Container name="ctr_equipment">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="6" y="0" />
+						</Anchor>
+					</Anchors>
+
+					<TextureBitmap>
+						<Size>
+							<AbsDimension x="562" y="574" />
+						</Size>
+						<themeDataId>window_green_background</themeDataId>
+					</TextureBitmap>
+
+					<Texture>
+						<Size>
+							<AbsDimension x="562" y="574" />
+						</Size>
+						<uri>[local.common]light_bg_inventory.png</uri>
+					</Texture>
+
+					<Texture>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="12" y="45" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="530" y="750" />
+						</Size>
+						<uri>[local.common]inventory_background.png</uri>
+					</Texture>
+
+					<Slot name="slot_default">
+						<bgColor>[colors.ui.shadow.dark]</bgColor>
+						<bgAlpha>0</bgAlpha>
+						<Size>
+							<AbsDimension x="562" y="574" />
+						</Size>
+					</Slot>
+
+					<!-- Slots d'equipement -->
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="40" y="75" />
+							</Anchor>
+						</Anchors>
+
+						<!-- Bloc en haut à gauche -->
+						<Container>
+							<equipmentSlot name="slot_0" width="64" height="64">
+								<emptyTexture>[local.texture]slot/tx_slot_collar.png</emptyTexture>
+							</equipmentSlot>
+
+							<equipmentSlot name="slot_4" width="64" height="64">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="70" />
+									</Anchor>
+								</Anchors>
+								<emptyTexture>[local.texture]slot/tx_slot_ring.png</emptyTexture>
+							</equipmentSlot>
+
+							<equipmentSlot name="slot_2" width="64" height="64">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="140" />
+									</Anchor>
+								</Anchors>
+								<emptyTexture>[local.texture]slot/tx_slot_ring.png</emptyTexture>
+							</equipmentSlot>
+						</Container>
+
+						<!-- Bloc en haut à droite -->
+						<Container>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="420" y="0" />
+								</Anchor>
+							</Anchors>
+
+							<equipmentSlot name="slot_6" width="64" height="64">
+								<emptyTexture>[local.texture]slot/tx_slot_helmet.png</emptyTexture>
+							</equipmentSlot>
+
+							<equipmentSlot name="slot_7" width="64" height="64">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="70" />
+									</Anchor>
+								</Anchors>
+								<emptyTexture>[local.texture]slot/tx_slot_cape.png</emptyTexture>
+							</equipmentSlot>
+
+							<equipmentSlot name="slot_3" width="64" height="64">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="140" />
+									</Anchor>
+								</Anchors>
+								<emptyTexture>[local.texture]slot/tx_slot_belt.png</emptyTexture>
+							</equipmentSlot>
+
+							<equipmentSlot name="slot_5" width="64" height="64">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="0" y="210" />
+									</Anchor>
+								</Anchors>
+								<emptyTexture>[local.texture]slot/tx_slot_shoe.png</emptyTexture>
+							</equipmentSlot>
+						</Container>
+
+						<!-- Bloc en bas -->
+						<Container>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="300" />
+								</Anchor>
+							</Anchors>
+
+							<equipmentSlot name="slot_1" width="64" height="64">
+								<emptyTexture>[local.texture]slot/tx_slot_weapon.png</emptyTexture>
+							</equipmentSlot>
+
+							<equipmentSlot name="slot_15" width="64" height="64">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="70" y="0" />
+									</Anchor>
+								</Anchors>
+								<emptyTexture>[local.texture]slot/tx_slot_shield.png</emptyTexture>
+							</equipmentSlot>
+							<Texture name="tx_cross">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="86" y="16" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="32" y="32" />
+								</Size>
+								<visible>false</visible>
+								<uri>[local.texture]icon_lock.png</uri>
+							</Texture>
+
+							<equipmentSlot name="slot_30" width="44" height="44">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="220" y="22" />
+									</Anchor>
+								</Anchors>
+								<emptyTexture>[local.texture]slot/tx_slot_costume.png</emptyTexture>
+							</equipmentSlot>
+
+							<equipmentSlot name="slot_28" width="64" height="64">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="350" y="0" />
+									</Anchor>
+								</Anchors>
+								<emptyTexture>[local.texture]slot/tx_slot_companon.png</emptyTexture>
+							</equipmentSlot>
+
+							<equipmentSlot name="slot_8" width="64" height="64">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="420" y="0" />
+									</Anchor>
+								</Anchors>
+								<emptyTexture>[local.texture]slot/tx_slot_pet.png</emptyTexture>
+							</equipmentSlot>
+						</Container>
+
+						<!-- Slots de dofus/trophées et idoles -->
+						<Container>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="390" />
+								</Anchor>
+							</Anchors>
+
+							<equipmentSlot name="slot_9" width="64" height="64">
+								<emptyTexture>[local.texture]slot/tx_slot_dofus.png</emptyTexture>
+							</equipmentSlot>
+
+							<equipmentSlot name="slot_10" width="64" height="64">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="70" y="0" />
+									</Anchor>
+								</Anchors>
+								<emptyTexture>[local.texture]slot/tx_slot_dofus.png</emptyTexture>
+							</equipmentSlot>
+
+							<equipmentSlot name="slot_11" width="64" height="64">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="140" y="0" />
+									</Anchor>
+								</Anchors>
+								<emptyTexture>[local.texture]slot/tx_slot_dofus.png</emptyTexture>
+							</equipmentSlot>
+
+							<equipmentSlot name="slot_12" width="64" height="64">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="210" y="0" />
+									</Anchor>
+								</Anchors>
+								<emptyTexture>[local.texture]slot/tx_slot_dofus.png</emptyTexture>
+							</equipmentSlot>
+
+							<equipmentSlot name="slot_13" width="64" height="64">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="280" y="0" />
+									</Anchor>
+								</Anchors>
+								<emptyTexture>[local.texture]slot/tx_slot_dofus.png</emptyTexture>
+							</equipmentSlot>
+
+							<equipmentSlot name="slot_14" width="64" height="64">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="350" y="0" />
+									</Anchor>
+								</Anchors>
+								<emptyTexture>[local.texture]slot/tx_slot_dofus.png</emptyTexture>
+							</equipmentSlot>
+
+
+							<Button name="btn_idols">
+								<Common>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="420" y="0" />
+										</Anchor>
+									</Anchors>
+
+									<TextureBitmap name="tx_idolsBg">
+										<Size>
+											<AbsDimension x="64" y="64" />
+										</Size>
+										<themeDataId>button_yellow_square_normal</themeDataId>
+									</TextureBitmap>
+
+									<Texture>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="13" y="16" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="38" y="33" />
+										</Size>
+										<uri>[local.texture]icon_idol.png</uri>
+									</Texture>
+
+									<Label name="lbl_idolScore">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="-3" y="4" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="64" y="16" />
+										</Size>
+										<cssClass>darkboldcenter</cssClass>
+										<css>[local.css]normal2.css</css>
+										<verticalAlign>center</verticalAlign>
+									</Label>
+								</Common>
+
+								<State type="OVER">
+									<SetProperties target="tx_idolsBg">
+										<themeDataId>button_yellow_square_over</themeDataId>
+									</SetProperties>
+								</State>
+
+								<State type="PRESSED">
+									<SetProperties target="tx_idolsBg">
+										<themeDataId>button_yellow_square_pressed</themeDataId>
+									</SetProperties>
+								</State>
+							</Button>
+						</Container>
+
+					</Container>
+
+
+
+					<Container>
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="97" y="40" />
+							</Anchor>
+						</Anchors>
+						<Size>
+							<AbsDimension x="369" y="358" />
+						</Size>
+
+						<Texture name="tx_breedSymbol">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="5" y="0" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="358" y="358" />
+							</Size>
+						</Texture>
+
+						<Texture>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="90" y="248" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="189" y="106" />
+							</Size>
+							<uri>[local.texture]background/base_character_sprite.png</uri>
+						</Texture>
+
+
+						<EntityDisplayer name="entityDisplayer">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="90" y="70" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="189" y="260" />
+							</Size>
+							<clearSubEntities>false</clearSubEntities>
+							<useFade>false</useFade>
+						</EntityDisplayer>
+
+						<themeIconButton name="btn_rightArrow">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="57" y="300" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="30" y="27" />
+							</Size>
+							<bgScaleX>-1</bgScaleX>
+							<bgThemeDataId>btn_arrow_turn</bgThemeDataId>
+							<smooth>true</smooth>
+						</themeIconButton>
+						<themeIconButton name="btn_leftArrow">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="282" y="300" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="30" y="27" />
+							</Size>
+							<bgThemeDataId>btn_arrow_turn</bgThemeDataId>
+							<smooth>true</smooth>
+						</themeIconButton>
+					</Container>
+
+
+
+
+
+				</Container>
+
+				<block dark="false">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="23" y="555" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="520" y="237" />
+					</Size>
+				</block>
+
+
+				<TextureBitmap>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="537" y="2" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="21" y="823" />
+					</Size>
+					<themeDataId>window_separator</themeDataId>
+				</TextureBitmap>
+
+
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="17" y="40" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="532" y="757" />
+					</Size>
+					<uri>[local.common]inventory_decoration.png</uri>
+				</Texture>
+
+
+
+				<storageBlock name="ctr_storage">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="554" y="46" />
+						</Anchor>
+					</Anchors>
+				</storageBlock>
+
+
+
+				<Container name="ctr_preset">
+					<Anchors>
+						<Anchor relativeTo="ctr_storage">
+							<AbsDimension x="4" y="35" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="254" y="637" />
+					</Size>
+				</Container>
+			</Container>
+		</Content>
+	</window>
+
+</Definition>
+

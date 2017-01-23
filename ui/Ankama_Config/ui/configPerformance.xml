@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	<Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/themeIconButton.xml" />
+	<Import url="[config.mod.template.button]comboBoxWithBackground.xml" />
+	<Import url="[config.mod.template]button/themeLabelCheckBox.xml" />
+
+  	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       <Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+   	</Constants>
+
+	<Container name="configUiCtr">
+
+
+		<!-- Label title -->
+
+		<Label name="lbl_title1">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="750" y="25" />
+			</Size>
+			<text>[ui.option.presetQuality]</text>
+			<cssClass>whitebold</cssClass>
+			<css>[local.css]normal2.css</css>
+		</Label>
+		
+		<!-- Texture tx_bgForeground1-->
+
+		<TextureBitmap name="tx_bgForeground1">
+			<Anchors>
+				<Anchor relativeTo="lbl_title1">
+					<AbsDimension x="0" y="30" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="780" y="80" />
+			</Size>
+			<themeDataId>bg_small_border_light</themeDataId>
+		</TextureBitmap>
+		
+		<!-- Label title -->
+
+		<Label name="lbl_title2">
+			<Anchors>
+				<Anchor relativePoint="BOTTOMLEFT" relativeTo="tx_bgForeground1">
+					<AbsDimension x="0" y="15" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="750" y="25" />
+			</Size>
+			<text>[ui.common.general]</text>
+			<cssClass>whitebold</cssClass>
+			<css>[local.css]normal2.css</css>
+		</Label>
+		
+
+		<!-- Texture tx_bgForeground2-->
+
+		<TextureBitmap name="tx_bgForeground2">
+			<Anchors>
+				<Anchor relativeTo="lbl_title2">
+					<AbsDimension x="0" y="30" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="780" y="360" />
+			</Size>
+			<themeDataId>bg_small_border_light</themeDataId>
+		</TextureBitmap>
+		
+		<!-- Label title -->
+
+		<Label name="lbl_title3">
+			<Anchors>
+				<Anchor relativePoint="BOTTOMLEFT" relativeTo="tx_bgForeground2">
+					<AbsDimension x="0" y="15" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="750" y="25" />
+			</Size>
+			<text>[ui.common.fight]</text>
+			<cssClass>whitebold</cssClass>
+			<css>[local.css]normal2.css</css>
+		</Label>
+		
+
+		<!-- Texture tx_bgForeground3-->
+
+		<TextureBitmap name="tx_bgForeground3">
+			<Anchors>
+				<Anchor relativeTo="lbl_title3">
+					<AbsDimension x="0" y="30" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="780" y="160" />
+			</Size>
+			<themeDataId>bg_small_border_light</themeDataId>
+		</TextureBitmap>
+		
+		<!-- Label title4 -->
+
+		<Label name="lbl_title4">
+			<Anchors>
+				<Anchor relativePoint="BOTTOMLEFT" relativeTo="tx_bgForeground3">
+					<AbsDimension x="0" y="15" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="750" y="25" />
+			</Size>
+			<text>[ui.option.performance.groundCacheType]</text>
+			<cssClass>whitebold</cssClass>
+			<css>[local.css]normal2.css</css>
+		</Label>
+		
+
+		<!-- Texture tx_bgForeground4-->
+
+		<TextureBitmap name="tx_bgForeground4">
+			<Anchors>
+				<Anchor relativeTo="lbl_title4">
+					<AbsDimension x="0" y="30" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="780" y="280" />
+			</Size>
+			<themeDataId>bg_small_border_light</themeDataId>
+		</TextureBitmap>
+		
+		
+		
+		
+		
+		<!-- PARTIE 1 QUALITE PREDEFINIE -->
+		
+		
+		
+		<Container name="qualityCtr">
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground1">
+					<AbsDimension x="20" y="20" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="740" y="50" />
+			</Size>
+
+			<!--bg-->
+			<TextureBitmap>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="3" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="735" y="20"/>
+				</Size>
+				<themeDataId>block_background_dark</themeDataId>
+			</TextureBitmap>
+
+			
+			<!-- iconButton btn_left -->
+
+			<themeIconButton name="btn_left">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="8" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="12" y="20" />
+				</Size>
+				<bgThemeDataId>btn_arrow_pagination</bgThemeDataId>
+				<bgScaleX>-1</bgScaleX>
+				<smooth>true</smooth>
+			</themeIconButton>
+
+			<!-- iconButton btn_right -->
+
+			<themeIconButton name="btn_right">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="720" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="12" y="20" />
+				</Size>
+				<bgThemeDataId>btn_arrow_pagination</bgThemeDataId>
+				<smooth>true</smooth>
+			</themeIconButton>
+
+
+			<!-- iconButton btn_quality0 -->
+
+			<themeIconButton name="btn_quality0">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="20" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="175" y="20" />
+				</Size>
+				<radioMode>true</radioMode>
+				<radioGroup>qualityGroup</radioGroup>
+				<bgThemeDataId>button_radio</bgThemeDataId>
+			</themeIconButton>
+		
+					
+			<!-- iconButton btn_quality1 -->
+
+			<themeIconButton name="btn_quality1">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="195" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="175" y="20" />
+				</Size>
+				<radioMode>true</radioMode>
+				<radioGroup>qualityGroup</radioGroup>
+				<bgThemeDataId>button_radio</bgThemeDataId>
+			</themeIconButton>
+		
+					
+			<!-- iconButton btn_quality2 -->
+
+			<themeIconButton name="btn_quality2">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="370" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="175" y="20" />
+				</Size>
+				<radioMode>true</radioMode>
+				<radioGroup>qualityGroup</radioGroup>
+				<bgThemeDataId>button_radio</bgThemeDataId>
+			</themeIconButton>
+		
+					
+			<!-- iconButton btn_quality3 -->
+
+			<themeIconButton name="btn_quality3">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="545" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="175" y="20" />
+				</Size>
+				<radioMode>true</radioMode>
+				<radioGroup>qualityGroup</radioGroup>
+				<bgThemeDataId>button_radio</bgThemeDataId>
+			</themeIconButton>
+			
+					
+							
+			<!-- Label quality0 -->
+
+			<Label name="lbl_quality0">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="8" y="25" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="181" y="20" />
+				</Size>
+				<text>[ui.option.quality.low]</text>
+				<css>[local.css]normal2.css</css>
+				<cssClass>center</cssClass>
+			</Label>
+
+			<!-- Label quality1 -->
+
+			<Label name="lbl_quality1">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="189" y="25" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="181" y="20" />
+				</Size>
+				<text>[ui.option.quality.medium]</text>
+				<css>[local.css]normal2.css</css>
+				<cssClass>center</cssClass>
+			</Label>
+
+			<!-- Label quality2 -->
+
+			<Label name="lbl_quality2">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="370" y="25" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="181" y="20" />
+				</Size>
+				<text>[ui.option.quality.high]</text>
+				<css>[local.css]normal2.css</css>
+				<cssClass>center</cssClass>
+			</Label>
+
+			<!-- Label quality3 (personnalis?e) -->
+
+			<Label name="lbl_quality3">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="551" y="25" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="181" y="20" />
+				</Size>
+				<text>[ui.common.customized]</text>
+				<css>[local.css]normal2.css</css>
+				<cssClass>center</cssClass>
+			</Label>
+		
+			
+		</Container>
+					
+		
+		
+		<!-- PARTIE 2 OPTIONS GENERALES -->
+		
+		
+		<!--Container name="ctr_detailedOptions"-->
+				
+		<!-- Label lbl_flashQuality -->
+
+		<Label>
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground2">
+					<AbsDimension x="20" y="20" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="240" y="20" />
+			</Size>
+			<text>[ui.option.antiAliasing]</text>
+			<css>[local.css]normal2.css</css>
+		</Label>
+		
+		<!-- Label lbl_creatures -->
+
+		<Label>
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground2">
+					<AbsDimension x="20" y="48" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="360" y="20" />
+			</Size>
+			<text>[ui.option.creaturesMode]</text>
+			<css>[local.css]normal2.css</css>
+		</Label>
+		
+		<Label>
+			<autoResize>true</autoResize>
+			<fixedWidth>false</fixedWidth>
+			<fixedHeight>true</fixedHeight>
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground2">
+					<AbsDimension x="20" y="75" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="0" y="20" />
+			</Size>
+			<text>[ui.option.aura]</text>
+			<css>[local.css]normal2.css</css>
+		</Label>
+		
+		
+		<!-- Container useless mais un peu qd mm, sert ? placer les checkbox -->
+
+		<Container>
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground2">
+					<AbsDimension x="20" y="94" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="20" y="10" />
+			</Size>
+		</Container>
+
+		<themeLabelCheckBox name="btn_showAuraOnFront">
+			<labelWidth>600</labelWidth>
+			<Anchors>
+				<Anchor>
+					<AbsDimension y="280" x="20"/>
+				</Anchor>
+			</Anchors>
+			<text>[ui.option.alwaysShowAuraOnFront]</text>
+		</themeLabelCheckBox>
+
+		<themeLabelCheckBox name="btn_showAllMonsters">
+			<Anchors>
+				<Anchor relativeTo="btn_showAuraOnFront" relativePoint="BOTTOMLEFT">
+					<AbsDimension y="5" />
+				</Anchor>
+			</Anchors>
+			<labelWidth>600</labelWidth>
+			<text>[ui.option.viewAllMonsterInGroup]</text>
+		</themeLabelCheckBox>
+
+		<themeLabelCheckBox name="btn_allowAnimsFun">
+			<Anchors>
+				<Anchor relativeTo="btn_showAllMonsters" relativePoint="BOTTOMLEFT">
+					<AbsDimension y="5" />
+				</Anchor>
+			</Anchors>
+			<labelWidth>600</labelWidth>
+			<text>[ui.option.allowAnimsFun]</text>
+		</themeLabelCheckBox>
+
+		<themeLabelCheckBox name="btn_useLDSkin">
+			<Anchors>
+				<Anchor relativeTo="btn_allowAnimsFun" relativePoint="BOTTOMLEFT">
+					<AbsDimension y="5" />
+				</Anchor>
+			</Anchors>
+			<labelWidth>600</labelWidth>
+			<text>[ui.option.useLDSkin]</text>
+		</themeLabelCheckBox>
+
+		<themeLabelCheckBox name="btn_allowUiShadows">
+			<Anchors>
+				<Anchor relativeTo="btn_useLDSkin" relativePoint="BOTTOMLEFT">
+					<AbsDimension y="5" />
+				</Anchor>
+			</Anchors>
+			<labelWidth>600</labelWidth>
+			<text>[ui.option.allowUiShadows]</text>
+		</themeLabelCheckBox>
+
+		<themeLabelCheckBox name="btn_allowUiAnimations">
+			<Anchors>
+				<Anchor relativeTo="btn_allowUiShadows" relativePoint="BOTTOMLEFT">
+					<AbsDimension y="5" />
+				</Anchor>
+			</Anchors>
+			<labelWidth>600</labelWidth>
+			<text>[ui.option.allowUiAnimations]</text>
+		</themeLabelCheckBox>
+
+		<themeLabelCheckBox name="btn_optimizeMultiAccount">
+			<Anchors>
+				<Anchor relativeTo="btn_allowUiAnimations" relativePoint="BOTTOMLEFT">
+					<AbsDimension y="5" />
+				</Anchor>
+			</Anchors>
+			<labelWidth>600</labelWidth>
+			<text>[ui.config.optimizeMultiAccount]</text>
+		</themeLabelCheckBox>
+
+		<themeLabelCheckBox name="btn_fullScreen">
+			<Anchors>
+				<Anchor relativeTo="btn_optimizeMultiAccount" relativePoint="BOTTOMLEFT">
+					<AbsDimension y="5" />
+				</Anchor>
+			</Anchors>
+			<labelWidth>600</labelWidth>
+			<text>[ui.option.fullScreen]</text>
+		</themeLabelCheckBox>
+
+		<comboBoxWithBackground name="cb_auras" width="200" height="38">
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground2">
+					<AbsDimension x="550" y="76"/>
+				</Anchor>
+			</Anchors>
+			<Hooks>
+				<onSelectItem />
+			</Hooks>
+		</comboBoxWithBackground>
+
+		<!-- ComboBox cb_creatures-->
+
+		<comboBoxWithBackground name="cb_creatures" width="200" height="38">
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground2">
+					<AbsDimension x="550" y="48"/>
+				</Anchor>
+			</Anchors>
+			<Hooks>
+				<onSelectItem />
+			</Hooks>
+		</comboBoxWithBackground>
+
+
+		<!-- ComboBox cb_flashQuality -->
+
+		<comboBoxWithBackground name="cb_flashQuality" width="200" height="38">
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground2">
+					<AbsDimension x="550" y="20"/>
+				</Anchor>
+			</Anchors>
+			<Hooks>
+				<onSelectItem />
+			</Hooks>
+		</comboBoxWithBackground>
+
+		<!-- PARTIE 3 OPTIONS DE COMBAT -->
+		
+		
+		
+		<!-- Label lbl_showPointsOverhead -->
+
+		<Label name="lbl_showPointsOverhead">
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground3">
+					<AbsDimension x="20" y="20" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="460" y="40" />
+			</Size>
+			<multiline>true</multiline>
+			<wordWrap>true</wordWrap>
+			<text>[ui.option.pointsOverHead]</text>
+			<css>[local.css]normal2.css</css>
+		</Label>
+
+
+		<!-- Container useless mais un peu qd mm, sert ? placer les checkbox -->
+
+		<Container>
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground3">
+					<AbsDimension x="20" y="45" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="20" y="10" />
+			</Size>
+		</Container>
+
+		<themeLabelCheckBox name="btn_showTurnPicture">
+			<labelWidth>600</labelWidth>
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground3">
+					<AbsDimension y="60" x="20"/>
+				</Anchor>
+			</Anchors>
+			<text>[ui.option.turnPicture]</text>
+		</themeLabelCheckBox>
+
+		<themeLabelCheckBox name="btn_allowSpellEffects">
+			<Anchors>
+				<Anchor relativeTo="btn_showTurnPicture" relativePoint="BOTTOMLEFT">
+					<AbsDimension y="5" />
+				</Anchor>
+			</Anchors>
+			<labelWidth>600</labelWidth>
+			<text>[ui.option.allowSpellEffects]</text>
+		</themeLabelCheckBox>
+
+		<themeLabelCheckBox name="btn_allowHitAnim">
+			<Anchors>
+				<Anchor relativeTo="btn_allowSpellEffects" relativePoint="BOTTOMLEFT">
+					<AbsDimension y="5" />
+				</Anchor>
+			</Anchors>
+			<labelWidth>600</labelWidth>
+			<text>[ui.option.allowHitAnim]</text>
+		</themeLabelCheckBox>
+
+
+		<!-- ComboBox cb_pointsOverHead-->
+		<comboBoxWithBackground name="cb_pointsOverHead" width="200" height="38">
+			<Anchors>
+				<Anchor relativeTo="tx_bgForeground3">
+					<AbsDimension x="550" y="20"/>
+				</Anchor>
+			</Anchors>
+			<Hooks>
+				<onSelectItem />
+			</Hooks>
+		</comboBoxWithBackground>
+
+
+
+		
+		
+		<!-- CONTENEUR POUR LES OPTIONS DU CACHE DU SOL -->
+		
+		<Container name="worldCtr">
+			<!--Anchors>
+				<Anchor relativeTo="tx_bgForeground4">
+					<AbsDimension x="17" y="15" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="500" y="200" />
+			</Size-->
+			
+			<!-- Container useless mais un peu qd mm, sert ? placer les checkbox -->
+
+			<Container>
+				<Anchors>
+					<Anchor relativeTo="tx_bgForeground4">
+						<AbsDimension x="20" y="3" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="20" y="10" />
+				</Size>
+			</Container>
+
+			<themeLabelCheckBox name="btn_allowAnimatedGfx">
+				<labelWidth>600</labelWidth>
+				<Anchors>
+					<Anchor relativeTo="tx_bgForeground4">
+						<AbsDimension y="20" x="20"/>
+					</Anchor>
+				</Anchors>
+				<text>[ui.option.allowAnimatedGfx]</text>
+			</themeLabelCheckBox>
+
+			<themeLabelCheckBox name="btn_allowParticlesFx">
+				<Anchors>
+					<Anchor relativeTo="btn_allowAnimatedGfx" relativePoint="BOTTOMLEFT">
+						<AbsDimension y="5" />
+					</Anchor>
+				</Anchors>
+				<labelWidth>600</labelWidth>
+				<text>[ui.option.allowParticlesFx]</text>
+			</themeLabelCheckBox>
+
+			<!-- Activer le cache -->
+			<themeLabelCheckBox name="btn_groundCacheEnabled">
+				<Anchors>
+					<Anchor relativeTo="btn_allowParticlesFx" relativePoint="BOTTOMLEFT">
+						<AbsDimension y="5" />
+					</Anchor>
+				</Anchors>
+				<labelWidth>600</labelWidth>
+				<text>[ui.option.performance.enableGroundCache]</text>
+			</themeLabelCheckBox>
+
+			<themeLabelCheckBox name="btn_groundCacheQuality1">
+				<Anchors>
+					<Anchor relativeTo="btn_groundCacheEnabled" relativePoint="BOTTOMLEFT">
+						<AbsDimension y="5" x="40"/>
+					</Anchor>
+				</Anchors>
+				<labelWidth>600</labelWidth>
+				<text>[ui.option.performance.groundCacheHigh]</text>
+			</themeLabelCheckBox>
+
+			<themeLabelCheckBox name="btn_groundCacheQuality2">
+				<Anchors>
+					<Anchor relativeTo="btn_groundCacheQuality1" relativePoint="BOTTOMLEFT">
+						<AbsDimension y="5"/>
+					</Anchor>
+				</Anchors>
+				<labelWidth>600</labelWidth>
+				<text>[ui.option.performance.groundCacheMedium]</text>
+			</themeLabelCheckBox>
+
+			<themeLabelCheckBox name="btn_groundCacheQuality3">
+				<Anchors>
+					<Anchor relativeTo="btn_groundCacheQuality2" relativePoint="BOTTOMLEFT">
+						<AbsDimension y="5"/>
+					</Anchor>
+				</Anchors>
+				<labelWidth>600</labelWidth>
+				<text>[ui.option.performance.groundCacheLow]</text>
+			</themeLabelCheckBox>
+			
+			<!-- Espace disque utilisé -->
+
+			<Label name="lbl_diskUsed">
+				<Anchors>
+					<Anchor relativeTo="tx_bgForeground4" relativePoint="BOTTOM" point="BOTTOM">
+						<AbsDimension x="0" y="-60" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="500" y="20" />
+				</Size>
+				<css>[local.css]normal2.css</css>
+				<cssClass>center</cssClass>
+			</Label>
+			
+			<!-- Supprimer les maps -->
+
+			<simpleButton name="btn_clearGroundCache">
+				<Anchors>
+					<Anchor relativeTo="lbl_diskUsed">
+						<AbsDimension x="0" y="30" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="500" y="30" />
+				</Size>
+				<label>[ui.option.performance.clearGroundCache]</label>
+			</simpleButton>
+			
+			
+			
+			
+		</Container>
+		
+	</Container>
+</Definition>
+

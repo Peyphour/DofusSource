@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition labelDebug="false">
+
+    <Import url="[config.mod.template]button/simpleButton.xml" />
+    <Import url="[config.mod.template]button/iconButton.xml" />
+    <Import url="[config.mod.template]window.xml" />
+
+    <Constants>
+        <Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+    </Constants>
+
+    <Container>
+		<Anchors>
+			<Anchor point="TOP" relativePoint="TOP" >
+				<AbsDimension x="0" y="260" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="1152" y="568" />
+		</Size>
+		
+		<window>
+			<Size>
+				<AbsDimension x="1152" y="550" />
+			</Size>
+			<title>[ui.sersel.chooseMode]</title>
+			<noCloseButton>true</noCloseButton>
+			<cssClass>whiteboldcenter</cssClass>
+			<dark>true</dark>
+		</window>
+
+        <Button name="btn_epicMode">
+			<Common>	  
+	            <Anchors>
+	                <Anchor>
+	                    <AbsDimension x="186" y="75" />
+	                </Anchor>
+	            </Anchors>
+		        <radioGroup>modeGroup</radioGroup>
+		        <radioMode>true</radioMode>
+	            
+	            <Texture>
+	                <Size>
+	                    <AbsDimension x="202" y="387"/>
+	                </Size>
+	                <uri>[local.texture]onboarding/server_IlluEpic.png</uri>
+	            </Texture>
+	
+	            <Label>
+	                <Anchors>
+	                    <Anchor>
+	                        <AbsDimension x="0" y="7" />
+	                    </Anchor>
+	                </Anchors>
+	                <Size>
+	                    <AbsDimension x="202" y="16" />
+	                </Size>
+	                <text>[ui.sersel.modeName.epic]</text>
+	                <cssClass>extrawhiteboldcenter</cssClass>
+	                <css>[local.css]normal2.css</css>
+					<forceUppercase>true</forceUppercase>
+	            </Label>
+	
+	            <Label>
+	                <Anchors>
+	                    <Anchor>
+	                        <AbsDimension x="7" y="270" />
+	                    </Anchor>
+	                </Anchors>
+	                <Size>
+	                    <AbsDimension x="182" y="70" />
+	                </Size>
+	                <text>[ui.sersel.serverDescription.epic]</text>
+	                <cssClass>boldcenter</cssClass>
+	                <css>[local.css]small2.css</css>
+	                <wordWrap>true</wordWrap>
+	                <multiline>true</multiline>
+	                <verticalAlign>center</verticalAlign>
+	            </Label>
+	            
+	            <Container name="ctr_disabledE">
+		 			<bgColor>[colors.ui.shadow.dark]</bgColor>
+		 			<bgAlpha>0</bgAlpha>     
+	            </Container>
+	            
+                <TextureBitmap name="tx_selectedE">
+                    <Size>
+	                    <AbsDimension x="196" y="380"/>
+                    </Size>
+					<themeDataId>green_square_line</themeDataId>
+                    <visible>false</visible>
+                    <smooth>true</smooth>
+                </TextureBitmap>
+			</Common>
+			
+            <State type="OVER">
+                <SetProperties target="tx_selectedE">
+                    <visible>true</visible>
+                </SetProperties>
+            </State>
+            <State type="SELECTED">
+                <SetProperties target="tx_selectedE">
+                    <visible>true</visible>
+                </SetProperties>
+            </State>
+            <State type="SELECTED_OVER">
+                <SetProperties target="tx_selectedE">
+                    <visible>true</visible>
+                </SetProperties>
+            </State>
+            <State type="DISABLED">
+                <SetProperties target="ctr_disabledE">
+                    <bgAlpha>0.2</bgAlpha>
+                </SetProperties>
+            </State>
+		</Button>
+	
+        <Button name="btn_infoEpic">
+            <Common>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="186" y="425" />
+                    </Anchor>
+                </Anchors>
+                <Label name="lbl_infoEpic">
+                    <Size>
+                        <AbsDimension x="200" y="16" />
+                    </Size>
+                    <text>
+                        <u>[ui.common.informations]</u>
+                    </text>
+                    <cssClass>greencenter</cssClass>
+                    <css>[local.css]small2.css</css>
+                </Label>
+            </Common>
+            <State type="OVER">
+                <SetProperties target="lbl_infoEpic">
+                    <cssClass>center</cssClass>
+                </SetProperties>
+            </State>
+        </Button>	
+		
+		
+        <Button name="btn_classicMode">
+            <Common>
+	            <Anchors>
+	                <Anchor>
+	                    <AbsDimension x="398" y="75" />
+	                </Anchor>
+	            </Anchors>
+		        <radioGroup>modeGroup</radioGroup>
+		        <radioMode>true</radioMode>
+	            
+	            <Texture>
+	                <Size>
+	                    <AbsDimension x="356" y="389"/>
+	                </Size>
+	                <uri>[local.texture]onboarding/server_IlluClassic.png</uri>
+	            </Texture>
+	
+	            <Label>
+	                <Anchors>
+	                    <Anchor>
+	                        <AbsDimension x="0" y="7" />
+	                    </Anchor>
+	                </Anchors>
+	                <Size>
+	                    <AbsDimension x="356" y="16" />
+	                </Size>
+	                <text>[ui.common.classic]</text>
+	                <cssClass>extrawhiteboldcenter</cssClass>
+	                <css>[local.css]normal2.css</css>
+					<forceUppercase>true</forceUppercase>
+	            </Label>
+	
+	            <Label>
+	                <Anchors>
+	                    <Anchor>
+	                        <AbsDimension x="7" y="270" />
+	                    </Anchor>
+	                </Anchors>
+	                <Size>
+	                    <AbsDimension x="336" y="70" />
+	                </Size>
+	                <text>[ui.sersel.serverDescription.classic]</text>
+	                <cssClass>boldcenter</cssClass>
+	                <css>[local.css]small2.css</css>
+	                <wordWrap>true</wordWrap>
+	                <multiline>true</multiline>
+	                <verticalAlign>center</verticalAlign>
+	            </Label>
+	            
+	            <Container name="ctr_disabledC">
+		 			<bgColor>[colors.ui.shadow.dark]</bgColor>
+		 			<bgAlpha>0</bgAlpha>     
+	            </Container>
+	            
+                <TextureBitmap name="tx_selectedC">
+                    <Size>
+	                    <AbsDimension x="350" y="382"/>
+                    </Size>
+					<themeDataId>green_square_line</themeDataId>
+                    <visible>false</visible>
+                    <smooth>true</smooth>
+                </TextureBitmap> 
+			</Common>
+			
+            <State type="OVER">
+                <SetProperties target="tx_selectedC">
+                    <visible>true</visible>
+                </SetProperties>
+            </State>
+            <State type="SELECTED">
+                <SetProperties target="tx_selectedC">
+                    <visible>true</visible>
+                </SetProperties>
+            </State>
+            <State type="SELECTED_OVER">
+                <SetProperties target="tx_selectedC">
+                    <visible>true</visible>
+                </SetProperties>
+            </State>
+            <State type="DISABLED">
+                <SetProperties target="ctr_disabledC">
+                    <bgAlpha>0.2</bgAlpha>
+                </SetProperties>
+            </State>
+		</Button>
+	
+        <Button name="btn_infosClassic">
+            <Common>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="396" y="425" />
+                    </Anchor>
+                </Anchors>
+                <Label name="lbl_infoClassic">
+                    <Size>
+                        <AbsDimension x="356" y="30" />
+                    </Size>
+                    <text>
+                        <u>[ui.common.informations]</u>
+                    </text>
+                    <cssClass>greencenter</cssClass>
+                    <css>[local.css]small2.css</css>
+                </Label>
+            </Common>
+            <State type="OVER">
+                <SetProperties target="lbl_infoClassic">
+                    <cssClass>center</cssClass>
+                </SetProperties>
+            </State>
+        </Button>	
+
+		
+        <Button name="btn_heroicMode">
+
+			<Common>	  
+	            <Anchors>
+	                <Anchor>
+	                    <AbsDimension x="764" y="75" />
+	                </Anchor>
+	            </Anchors>
+		        <radioGroup>modeGroup</radioGroup>
+		        <radioMode>true</radioMode>
+				
+	            <Texture>
+	                <Size>
+	                    <AbsDimension x="202" y="387"/>
+	                </Size>
+	                <uri>[local.texture]onboarding/server_IlluHeroic.png</uri>
+	            </Texture>
+	
+	            <Label>
+	                <Anchors>
+	                    <Anchor>
+	                        <AbsDimension x="0" y="7" />
+	                    </Anchor>
+	                </Anchors>
+	                <Size>
+	                    <AbsDimension x="202" y="16" />
+	                </Size>
+                	<text>[ui.sersel.modeName.heroic]</text>
+	                <cssClass>extrawhiteboldcenter</cssClass>
+	                <css>[local.css]normal2.css</css>
+					<forceUppercase>true</forceUppercase>
+	            </Label>
+
+	            <Label>
+	                <Anchors>
+	                    <Anchor>
+	                        <AbsDimension x="7" y="270" />
+	                    </Anchor>
+	                </Anchors>
+	                <Size>
+	                    <AbsDimension x="182" y="70" />
+	                </Size>
+	                <text>[ui.sersel.serverDescription.heroic]</text>
+	                <cssClass>boldcenter</cssClass>
+	                <css>[local.css]small2.css</css>
+	                <wordWrap>true</wordWrap>
+	                <multiline>true</multiline>
+	                <verticalAlign>center</verticalAlign>
+	            </Label>
+	            
+	            <Container name="ctr_disabledH">
+		 			<bgColor>[colors.ui.shadow.dark]</bgColor>
+		 			<bgAlpha>0</bgAlpha>     
+	            </Container>
+	            
+                <TextureBitmap name="tx_selectedH">
+                    <Size>
+	                    <AbsDimension x="196" y="380"/>
+                    </Size>
+					<themeDataId>green_square_line</themeDataId>
+                    <visible>false</visible>
+                    <smooth>true</smooth>
+                </TextureBitmap>  
+			</Common>
+			
+            <State type="OVER">
+                <SetProperties target="tx_selectedH">
+                    <visible>true</visible>
+                </SetProperties>
+            </State>
+            <State type="SELECTED">
+                <SetProperties target="tx_selectedH">
+                    <visible>true</visible>
+                </SetProperties>
+            </State>
+            <State type="SELECTED_OVER">
+                <SetProperties target="tx_selectedH">
+                    <visible>true</visible>
+                </SetProperties>
+            </State>
+            <State type="DISABLED">
+                <SetProperties target="ctr_disabledH">
+                    <bgAlpha>0.2</bgAlpha>
+                </SetProperties>
+            </State>
+		</Button>
+	
+        <Button name="btn_infosHeroic">
+            <Common>
+                <Anchors>
+                    <Anchor>
+	                    <AbsDimension x="764" y="425" />
+                    </Anchor>
+                </Anchors>
+                <Label name="lbl_infosHeroic">
+                    <Size>
+                        <AbsDimension x="200" y="16" />
+                    </Size>
+                    <text>
+                        <u>[ui.common.informations]</u>
+                    </text>
+                    <cssClass>greencenter</cssClass>
+                    <css>[local.css]small2.css</css>
+                </Label>
+            </Common>
+            <State type="OVER">
+                <SetProperties target="lbl_infosHeroic">
+                    <cssClass>center</cssClass>
+                </SetProperties>
+            </State>
+        </Button>
+
+                        
+		<simpleButton label="[ui.common.select]" name="btn_validate">
+			<Anchors>
+				<Anchor point="BOTTOM" relativePoint="BOTTOM" >
+					<AbsDimension x="0" y="2" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="272" y="84" />
+			</Size>
+			<bgThemeDataId>button_largeBorder</bgThemeDataId>
+			<smooth>true</smooth>
+			<cssClass>darkcenter</cssClass>
+			<css>[local.css]title.css</css>
+			<forceUppercase>true</forceUppercase>
+		</simpleButton>
+		
+
+		<Container>		
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="800" y="528" />
+				</Anchor>
+			</Anchors>
+			
+	        <TextureBitmap>
+	            <Anchors>
+	                <Anchor>
+						<AbsDimension x="0" y="0" />
+	                </Anchor>
+	            </Anchors>
+	            <Size>
+	                <AbsDimension x="222" y="38" />
+	            </Size>
+				<themeDataId>bg_simple_button</themeDataId>
+	            <smooth>true</smooth>
+	        </TextureBitmap>
+	        
+			<simpleButton label="[ui.sersel.manualChoice]" name="btn_mychoice">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="21" y="0" />
+					</Anchor>
+				</Anchors>
+	            <Size>
+	                <AbsDimension x="180" y="32" />
+	            </Size>
+			</simpleButton>	
+		</Container>
+		
+		<Container name="ctr_cancel" >		
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="130" y="528" />
+				</Anchor>
+			</Anchors>
+			
+	        <TextureBitmap>
+	            <Anchors>
+	                <Anchor>
+						<AbsDimension x="0" y="0" />
+	                </Anchor>
+	            </Anchors>
+	            <Size>
+	                <AbsDimension x="222" y="38" />
+	            </Size>
+				<themeDataId>bg_simple_button</themeDataId>
+	            <smooth>true</smooth>
+	        </TextureBitmap>
+	        
+			<simpleButton label="[ui.common.back]" name="btn_cancel">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="21" y="0" />
+					</Anchor>
+				</Anchors>
+	            <Size>
+	                <AbsDimension x="180" y="32" />
+	            </Size>
+			</simpleButton>	
+		</Container>
+
+    </Container>
+
+    <Shortcuts>
+        <validUi />
+    </Shortcuts>
+</Definition>

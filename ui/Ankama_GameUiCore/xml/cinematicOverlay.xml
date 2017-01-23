@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition modal="false">
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+	</Constants>
+	
+	<Container name="mainCtr">
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="1032" y="846" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="249" y="50" />
+			</Size>
+			<uri>[local.assets]video_tx_btnBackground</uri>
+			<autoGrid>false</autoGrid>
+		</Texture>
+		
+		<simpleButton name="btn_skip">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="1076" y="856" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="190" y="23" />
+			</Size>
+			<label>[ui.connection.skipVideo]</label>
+			<uri>[local.assets]btn_orange</uri>
+			<css>[local.css]button.css</css>
+			<cssStyle>small</cssStyle>
+			<Hooks>
+				<onRelease />
+			</Hooks>
+		</simpleButton>
+	</Container>
+</Definition>
