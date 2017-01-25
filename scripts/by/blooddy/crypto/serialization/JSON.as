@@ -581,12 +581,1798 @@ package by.blooddy.crypto.serialization
       
       public static function decode(param1:String) : *
       {
-         /*
-          * Decompilation error
-          * Timeout (1 minute) was reached
-          * Instruction count: 593
-          */
-         throw new flash.errors.IllegalOperationError("Not decompiled due to timeout");
+         var _loc4_:* = null as ByteArray;
+         var _loc5_:* = null as ByteArray;
+         var _loc6_:uint = 0;
+         var _loc7_:uint = 0;
+         var _loc8_:uint = 0;
+         var _loc9_:uint = 0;
+         var _loc10_:uint = 0;
+         var _loc11_:uint = 0;
+         var _loc12_:Boolean = false;
+         if(param1 == null)
+         {
+            Error.throwError(TypeError,2007,"value");
+         }
+         var _loc3_:* = undefined;
+         if(param1.length > 0)
+         {
+            _loc4_ = ApplicationDomain.currentDomain.domainMemory;
+            _loc5_ = new ByteArray();
+            _loc5_.writeUTFBytes(param1);
+            _loc5_.writeByte(0);
+            if(_loc5_.length < ApplicationDomain.MIN_DOMAIN_MEMORY_LENGTH)
+            {
+               _loc5_.length = ApplicationDomain.MIN_DOMAIN_MEMORY_LENGTH;
+            }
+            ApplicationDomain.currentDomain.domainMemory = _loc5_;
+            _loc6_ = 0;
+            while(true)
+            {
+               _loc9_ = _loc6_;
+               _loc6_++;
+               _loc8_ = li8(_loc9_);
+               if(_loc8_ != uint(13) && (_loc8_ != uint(10) && (_loc8_ != uint(32) && (_loc8_ != uint(9) && (_loc8_ != uint(11) && (_loc8_ != uint(8) && _loc8_ != uint(12)))))))
+               {
+                  if(_loc8_ == uint(47))
+                  {
+                     _loc9_ = _loc6_;
+                     _loc6_++;
+                     _loc8_ = li8(_loc9_);
+                     if(_loc8_ == uint(47))
+                     {
+                        do
+                        {
+                           _loc10_ = _loc6_;
+                           _loc6_++;
+                           _loc9_ = li8(_loc10_);
+                        }
+                        while(_loc9_ != uint(10) && (_loc9_ != uint(13) && _loc9_ != uint(0)));
+                        
+                        _loc6_--;
+                        continue;
+                     }
+                     if(_loc8_ == uint(42))
+                     {
+                        _loc6_ = _loc6_ - 2;
+                        _loc8_ = _loc6_;
+                        _loc9_ = _loc6_;
+                        _loc10_ = _loc6_;
+                        _loc6_++;
+                        if(li8(_loc10_) != uint(47) || li8(_loc10_) != uint(42))
+                        {
+                           _loc6_ = _loc9_;
+                        }
+                        else
+                        {
+                           while(true)
+                           {
+                              _loc11_ = _loc6_;
+                              _loc6_++;
+                              _loc10_ = li8(_loc11_);
+                              if(_loc10_ == uint(42))
+                              {
+                                 _loc11_ = _loc6_;
+                                 _loc6_++;
+                                 if(li8(_loc11_) != uint(47))
+                                 {
+                                    _loc6_--;
+                                 }
+                              }
+                              else if(_loc10_ == uint(0))
+                              {
+                                 break;
+                              }
+                           }
+                           _loc6_ = _loc9_;
+                        }
+                        if(_loc8_ != _loc6_)
+                        {
+                           continue;
+                        }
+                     }
+                     _loc6_--;
+                     _loc8_ = uint(47);
+                     break;
+                  }
+                  break;
+               }
+            }
+            _loc7_ = _loc8_;
+            if(_loc7_ != uint(0))
+            {
+               var position:uint = _loc6_ - 1;
+               var readValue:Function = null;
+               readValue = function(param1:ByteArray, param2:uint):*
+               {
+                  var _loc3_:* = null as String;
+                  var _loc7_:uint = 0;
+                  var _loc8_:uint = 0;
+                  var _loc9_:uint = 0;
+                  var _loc10_:uint = 0;
+                  var _loc11_:* = null as String;
+                  var _loc12_:* = null as String;
+                  var _loc13_:uint = 0;
+                  var _loc14_:uint = 0;
+                  var _loc15_:uint = 0;
+                  var _loc16_:* = null as Object;
+                  var _loc17_:* = null as String;
+                  var _loc18_:* = null as Array;
+                  var _loc6_:* = undefined;
+                  while(true)
+                  {
+                     _loc8_ = param2;
+                     param2++;
+                     _loc7_ = li8(_loc8_);
+                     if(_loc7_ != uint(13) && (_loc7_ != uint(10) && (_loc7_ != uint(32) && (_loc7_ != uint(9) && (_loc7_ != uint(11) && (_loc7_ != uint(8) && _loc7_ != uint(12)))))))
+                     {
+                        if(_loc7_ == uint(47))
+                        {
+                           _loc8_ = param2;
+                           param2++;
+                           _loc7_ = li8(_loc8_);
+                           if(_loc7_ == uint(47))
+                           {
+                              do
+                              {
+                                 _loc9_ = param2;
+                                 param2++;
+                                 _loc8_ = li8(_loc9_);
+                              }
+                              while(_loc8_ != uint(10) && (_loc8_ != uint(13) && _loc8_ != uint(0)));
+                              
+                              param2--;
+                              continue;
+                           }
+                           if(_loc7_ == uint(42))
+                           {
+                              param2 = param2 - 2;
+                              _loc7_ = param2;
+                              _loc8_ = param2;
+                              _loc9_ = param2;
+                              param2++;
+                              if(li8(_loc9_) != uint(47) || li8(_loc9_) != uint(42))
+                              {
+                                 param2 = _loc8_;
+                              }
+                              else
+                              {
+                                 while(true)
+                                 {
+                                    _loc10_ = param2;
+                                    param2++;
+                                    _loc9_ = li8(_loc10_);
+                                    if(_loc9_ == uint(42))
+                                    {
+                                       _loc10_ = param2;
+                                       param2++;
+                                       if(li8(_loc10_) != uint(47))
+                                       {
+                                          param2--;
+                                       }
+                                    }
+                                    else if(_loc9_ == uint(0))
+                                    {
+                                       break;
+                                    }
+                                 }
+                                 param2 = _loc8_;
+                              }
+                              if(_loc7_ != param2)
+                              {
+                                 continue;
+                              }
+                           }
+                           param2--;
+                           _loc7_ = uint(47);
+                           break;
+                        }
+                        break;
+                     }
+                  }
+                  var _loc5_:uint = _loc7_;
+                  if(_loc5_ == uint(39) || _loc5_ == uint(34))
+                  {
+                     param2--;
+                     _loc7_ = param2;
+                     _loc9_ = param2;
+                     param2++;
+                     _loc8_ = li8(_loc9_);
+                     if(_loc8_ != uint(39) && _loc8_ != uint(34))
+                     {
+                        param2--;
+                        §§push(null);
+                     }
+                     else
+                     {
+                        _loc9_ = _loc7_ + 1;
+                        _loc11_ = "";
+                        while(true)
+                        {
+                           _loc13_ = li8(param2);
+                           if(_loc13_ >= 128)
+                           {
+                              if((_loc13_ & 248) == 240)
+                              {
+                                 param2++;
+                                 param2++;
+                                 param2++;
+                                 _loc13_ = (_loc13_ & 7) << 18 | (li8(param2) & 63) << 12 | (li8(param2) & 63) << 6 | li8(param2) & 63;
+                              }
+                              else if((_loc13_ & 240) == 224)
+                              {
+                                 param2++;
+                                 param2++;
+                                 _loc13_ = (_loc13_ & 15) << 12 | (li8(param2) & 63) << 6 | li8(param2) & 63;
+                              }
+                              else if((_loc13_ & 224) == 192)
+                              {
+                                 param2++;
+                                 _loc13_ = (_loc13_ & 31) << 6 | li8(param2) & 63;
+                              }
+                           }
+                           param2++;
+                           _loc10_ = _loc13_;
+                           if(_loc10_ != _loc8_)
+                           {
+                              if(_loc10_ == uint(92))
+                              {
+                                 param1.position = _loc9_;
+                                 _loc11_ = _loc11_ + param1.readUTFBytes(param2 - 1 - _loc9_);
+                                 _loc13_ = param2;
+                                 param2++;
+                                 _loc10_ = li8(_loc13_);
+                                 if(_loc10_ == uint(110))
+                                 {
+                                    _loc11_ = _loc11_ + "\n";
+                                 }
+                                 else if(_loc10_ == uint(114))
+                                 {
+                                    _loc11_ = _loc11_ + "\r";
+                                 }
+                                 else if(_loc10_ == uint(116))
+                                 {
+                                    _loc11_ = _loc11_ + "\t";
+                                 }
+                                 else if(_loc10_ == uint(118))
+                                 {
+                                    _loc11_ = _loc11_ + "\x0b";
+                                 }
+                                 else if(_loc10_ == uint(102))
+                                 {
+                                    _loc11_ = _loc11_ + "\f";
+                                 }
+                                 else if(_loc10_ == uint(98))
+                                 {
+                                    _loc11_ = _loc11_ + "\b";
+                                 }
+                                 else if(_loc10_ == uint(120))
+                                 {
+                                    _loc14_ = 0;
+                                    do
+                                    {
+                                       _loc15_ = param2;
+                                       param2++;
+                                       _loc13_ = li8(_loc15_);
+                                       if((_loc13_ < uint(48) || _loc13_ > uint(57)) && ((_loc13_ < uint(97) || _loc13_ > uint(102)) && (_loc13_ < uint(65) || _loc13_ > uint(70))))
+                                       {
+                                          break;
+                                       }
+                                       _loc14_++;
+                                    }
+                                    while(_loc14_ < 2);
+                                    
+                                    if(_loc14_ != 2)
+                                    {
+                                       param2 = param2 - (_loc14_ + 1);
+                                       §§push(null);
+                                    }
+                                    else
+                                    {
+                                       param1.position = param2 - 2;
+                                       §§push(param1.readUTFBytes(2));
+                                    }
+                                    _loc12_ = §§pop();
+                                    if(_loc12_ != null)
+                                    {
+                                       _loc11_ = _loc11_ + String.fromCharCode(parseInt(_loc12_,16));
+                                    }
+                                    else
+                                    {
+                                       _loc11_ = _loc11_ + "x";
+                                    }
+                                 }
+                                 else if(_loc10_ == uint(117))
+                                 {
+                                    _loc14_ = 0;
+                                    do
+                                    {
+                                       _loc15_ = param2;
+                                       param2++;
+                                       _loc13_ = li8(_loc15_);
+                                       if((_loc13_ < uint(48) || _loc13_ > uint(57)) && ((_loc13_ < uint(97) || _loc13_ > uint(102)) && (_loc13_ < uint(65) || _loc13_ > uint(70))))
+                                       {
+                                          break;
+                                       }
+                                       _loc14_++;
+                                    }
+                                    while(_loc14_ < 4);
+                                    
+                                    if(_loc14_ != 4)
+                                    {
+                                       param2 = param2 - (_loc14_ + 1);
+                                       §§push(null);
+                                    }
+                                    else
+                                    {
+                                       param1.position = param2 - 4;
+                                       §§push(param1.readUTFBytes(4));
+                                    }
+                                    _loc12_ = §§pop();
+                                    if(_loc12_ != null)
+                                    {
+                                       _loc11_ = _loc11_ + String.fromCharCode(parseInt(_loc12_,16));
+                                    }
+                                    else
+                                    {
+                                       _loc11_ = _loc11_ + "u";
+                                    }
+                                 }
+                                 else
+                                 {
+                                    if(_loc10_ >= 128)
+                                    {
+                                       param2--;
+                                       _loc13_ = li8(param2);
+                                       if(_loc13_ >= 128)
+                                       {
+                                          if((_loc13_ & 248) == 240)
+                                          {
+                                             param2++;
+                                             param2++;
+                                             param2++;
+                                             _loc13_ = (_loc13_ & 7) << 18 | (li8(param2) & 63) << 12 | (li8(param2) & 63) << 6 | li8(param2) & 63;
+                                          }
+                                          else if((_loc13_ & 240) == 224)
+                                          {
+                                             param2++;
+                                             param2++;
+                                             _loc13_ = (_loc13_ & 15) << 12 | (li8(param2) & 63) << 6 | li8(param2) & 63;
+                                          }
+                                          else if((_loc13_ & 224) == 192)
+                                          {
+                                             param2++;
+                                             _loc13_ = (_loc13_ & 31) << 6 | li8(param2) & 63;
+                                          }
+                                       }
+                                       param2++;
+                                       _loc10_ = _loc13_;
+                                    }
+                                    _loc11_ = _loc11_ + String.fromCharCode(_loc10_);
+                                 }
+                                 _loc9_ = param2;
+                              }
+                              else if(_loc10_ == uint(0) || (_loc10_ == uint(13) || _loc10_ == uint(10)))
+                              {
+                                 param2 = _loc7_;
+                                 break;
+                              }
+                              continue;
+                           }
+                           break;
+                        }
+                        if(param2 == _loc7_)
+                        {
+                           §§push(null);
+                        }
+                        else
+                        {
+                           if(_loc9_ != param2 - 1)
+                           {
+                              param1.position = _loc9_;
+                              _loc11_ = _loc11_ + param1.readUTFBytes(param2 - 1 - _loc9_);
+                           }
+                           §§push(_loc11_);
+                        }
+                     }
+                     _loc3_ = §§pop();
+                     if(_loc3_ != null)
+                     {
+                        _loc6_ = _loc3_;
+                     }
+                     else
+                     {
+                        Error.throwError(Error,0);
+                     }
+                  }
+                  else if(_loc5_ >= uint(48) && _loc5_ <= uint(57) || _loc5_ == uint(46))
+                  {
+                     param2--;
+                     _loc11_ = null;
+                     _loc7_ = param2;
+                     _loc9_ = param2;
+                     param2++;
+                     _loc8_ = li8(_loc9_);
+                     if(_loc8_ == uint(48))
+                     {
+                        _loc10_ = param2;
+                        param2++;
+                        _loc8_ = li8(_loc10_);
+                        if(_loc8_ == uint(120) || _loc8_ == uint(88))
+                        {
+                           _loc9_ = param2;
+                           do
+                           {
+                              _loc10_ = param2;
+                              param2++;
+                              _loc8_ = li8(_loc10_);
+                           }
+                           while(_loc8_ >= uint(48) && _loc8_ <= uint(57) || (_loc8_ >= uint(97) && _loc8_ <= uint(102) || _loc8_ >= uint(65) && _loc8_ <= uint(70)));
+                           
+                           if(param2 == _loc9_ + 1)
+                           {
+                              param2 = _loc7_ + 1;
+                              _loc8_ = uint(48);
+                           }
+                           else
+                           {
+                              param2--;
+                              param1.position = _loc9_;
+                              _loc11_ = parseInt(param1.readUTFBytes(param2 - _loc9_),16);
+                           }
+                        }
+                        else
+                        {
+                           param2--;
+                           _loc8_ = uint(48);
+                        }
+                     }
+                     if(_loc11_ == null)
+                     {
+                        while(_loc8_ >= uint(48) && _loc8_ <= uint(57))
+                        {
+                           _loc10_ = param2;
+                           param2++;
+                           _loc8_ = li8(_loc10_);
+                        }
+                        if(_loc8_ == uint(46))
+                        {
+                           _loc9_ = param2;
+                           do
+                           {
+                              _loc10_ = param2;
+                              param2++;
+                              _loc8_ = li8(_loc10_);
+                           }
+                           while(_loc8_ >= uint(48) && _loc8_ <= uint(57));
+                           
+                           if(param2 == _loc9_ + 1)
+                           {
+                              param2--;
+                              _loc8_ = uint(46);
+                           }
+                        }
+                        if(_loc8_ == uint(101) || _loc8_ == uint(69))
+                        {
+                           _loc10_ = param2;
+                           _loc13_ = param2;
+                           param2++;
+                           _loc8_ = li8(_loc13_);
+                           if(_loc8_ == uint(45) || _loc8_ == uint(43))
+                           {
+                              _loc13_ = param2;
+                              param2++;
+                              _loc8_ = li8(_loc13_);
+                           }
+                           _loc9_ = param2;
+                           while(_loc8_ >= uint(48) && _loc8_ <= uint(57))
+                           {
+                              _loc13_ = param2;
+                              param2++;
+                              _loc8_ = li8(_loc13_);
+                           }
+                           if(param2 == _loc9_)
+                           {
+                              param2 = _loc10_;
+                           }
+                        }
+                        param2--;
+                        if(param2 != _loc7_)
+                        {
+                           param1.position = _loc7_;
+                           _loc11_ = param1.readUTFBytes(param2 - _loc7_);
+                        }
+                     }
+                     _loc3_ = _loc11_;
+                     if(_loc3_ != null)
+                     {
+                        _loc6_ = parseFloat(_loc3_);
+                     }
+                     else
+                     {
+                        Error.throwError(Error,0);
+                     }
+                  }
+                  else if(_loc5_ == uint(45))
+                  {
+                     while(true)
+                     {
+                        _loc8_ = param2;
+                        param2++;
+                        _loc7_ = li8(_loc8_);
+                        if(_loc7_ != uint(13) && (_loc7_ != uint(10) && (_loc7_ != uint(32) && (_loc7_ != uint(9) && (_loc7_ != uint(11) && (_loc7_ != uint(8) && _loc7_ != uint(12)))))))
+                        {
+                           if(_loc7_ == uint(47))
+                           {
+                              _loc8_ = param2;
+                              param2++;
+                              _loc7_ = li8(_loc8_);
+                              if(_loc7_ == uint(47))
+                              {
+                                 do
+                                 {
+                                    _loc9_ = param2;
+                                    param2++;
+                                    _loc8_ = li8(_loc9_);
+                                 }
+                                 while(_loc8_ != uint(10) && (_loc8_ != uint(13) && _loc8_ != uint(0)));
+                                 
+                                 param2--;
+                                 continue;
+                              }
+                              if(_loc7_ == uint(42))
+                              {
+                                 param2 = param2 - 2;
+                                 _loc7_ = param2;
+                                 _loc8_ = param2;
+                                 _loc9_ = param2;
+                                 param2++;
+                                 if(li8(_loc9_) != uint(47) || li8(_loc9_) != uint(42))
+                                 {
+                                    param2 = _loc8_;
+                                 }
+                                 else
+                                 {
+                                    while(true)
+                                    {
+                                       _loc10_ = param2;
+                                       param2++;
+                                       _loc9_ = li8(_loc10_);
+                                       if(_loc9_ == uint(42))
+                                       {
+                                          _loc10_ = param2;
+                                          param2++;
+                                          if(li8(_loc10_) != uint(47))
+                                          {
+                                             param2--;
+                                          }
+                                       }
+                                       else if(_loc9_ == uint(0))
+                                       {
+                                          break;
+                                       }
+                                    }
+                                    param2 = _loc8_;
+                                 }
+                                 if(_loc7_ != param2)
+                                 {
+                                    continue;
+                                 }
+                              }
+                              param2--;
+                              _loc7_ = uint(47);
+                              break;
+                           }
+                           break;
+                        }
+                     }
+                     _loc5_ = _loc7_;
+                     if(_loc5_ >= uint(48) && _loc5_ <= uint(57) || _loc5_ == uint(46))
+                     {
+                        param2--;
+                        _loc11_ = null;
+                        _loc7_ = param2;
+                        _loc9_ = param2;
+                        param2++;
+                        _loc8_ = li8(_loc9_);
+                        if(_loc8_ == uint(48))
+                        {
+                           _loc10_ = param2;
+                           param2++;
+                           _loc8_ = li8(_loc10_);
+                           if(_loc8_ == uint(120) || _loc8_ == uint(88))
+                           {
+                              _loc9_ = param2;
+                              do
+                              {
+                                 _loc10_ = param2;
+                                 param2++;
+                                 _loc8_ = li8(_loc10_);
+                              }
+                              while(_loc8_ >= uint(48) && _loc8_ <= uint(57) || (_loc8_ >= uint(97) && _loc8_ <= uint(102) || _loc8_ >= uint(65) && _loc8_ <= uint(70)));
+                              
+                              if(param2 == _loc9_ + 1)
+                              {
+                                 param2 = _loc7_ + 1;
+                                 _loc8_ = uint(48);
+                              }
+                              else
+                              {
+                                 param2--;
+                                 param1.position = _loc9_;
+                                 _loc11_ = parseInt(param1.readUTFBytes(param2 - _loc9_),16);
+                              }
+                           }
+                           else
+                           {
+                              param2--;
+                              _loc8_ = uint(48);
+                           }
+                        }
+                        if(_loc11_ == null)
+                        {
+                           while(_loc8_ >= uint(48) && _loc8_ <= uint(57))
+                           {
+                              _loc10_ = param2;
+                              param2++;
+                              _loc8_ = li8(_loc10_);
+                           }
+                           if(_loc8_ == uint(46))
+                           {
+                              _loc9_ = param2;
+                              do
+                              {
+                                 _loc10_ = param2;
+                                 param2++;
+                                 _loc8_ = li8(_loc10_);
+                              }
+                              while(_loc8_ >= uint(48) && _loc8_ <= uint(57));
+                              
+                              if(param2 == _loc9_ + 1)
+                              {
+                                 param2--;
+                                 _loc8_ = uint(46);
+                              }
+                           }
+                           if(_loc8_ == uint(101) || _loc8_ == uint(69))
+                           {
+                              _loc10_ = param2;
+                              _loc13_ = param2;
+                              param2++;
+                              _loc8_ = li8(_loc13_);
+                              if(_loc8_ == uint(45) || _loc8_ == uint(43))
+                              {
+                                 _loc13_ = param2;
+                                 param2++;
+                                 _loc8_ = li8(_loc13_);
+                              }
+                              _loc9_ = param2;
+                              while(_loc8_ >= uint(48) && _loc8_ <= uint(57))
+                              {
+                                 _loc13_ = param2;
+                                 param2++;
+                                 _loc8_ = li8(_loc13_);
+                              }
+                              if(param2 == _loc9_)
+                              {
+                                 param2 = _loc10_;
+                              }
+                           }
+                           param2--;
+                           if(param2 != _loc7_)
+                           {
+                              param1.position = _loc7_;
+                              _loc11_ = param1.readUTFBytes(param2 - _loc7_);
+                           }
+                        }
+                        _loc3_ = _loc11_;
+                        if(_loc3_ != null)
+                        {
+                           _loc6_ = -parseFloat(_loc3_);
+                        }
+                        else
+                        {
+                           Error.throwError(Error,0);
+                        }
+                     }
+                     else if(_loc5_ == uint(110))
+                     {
+                        if(li8(param2) == 117 && li16(param2 + 1) == 27756)
+                        {
+                           param2 = param2 + 3;
+                           _loc6_ = 0;
+                        }
+                        else
+                        {
+                           Error.throwError(Error,0);
+                        }
+                     }
+                     else if(_loc5_ == uint(117))
+                     {
+                        if(li32(param2) == 1717920878 && li32(param2 + 4) == 1684369001)
+                        {
+                           param2 = param2 + 8;
+                           _loc6_ = Number.NaN;
+                        }
+                        else
+                        {
+                           Error.throwError(Error,0);
+                        }
+                     }
+                     else if(_loc5_ == uint(78))
+                     {
+                        if(li16(param2) == 20065)
+                        {
+                           param2 = param2 + 2;
+                           _loc6_ = Number.NaN;
+                        }
+                        else
+                        {
+                           Error.throwError(Error,0);
+                        }
+                     }
+                     else
+                     {
+                        Error.throwError(Error,0);
+                     }
+                  }
+                  else if(_loc5_ == uint(110))
+                  {
+                     if(li8(param2) == 117 && li16(param2 + 1) == 27756)
+                     {
+                        param2 = param2 + 3;
+                        _loc6_ = null;
+                     }
+                     else
+                     {
+                        Error.throwError(Error,0);
+                     }
+                  }
+                  else if(_loc5_ == uint(116))
+                  {
+                     if(li8(param2) == 114 && li16(param2 + 1) == 25973)
+                     {
+                        param2 = param2 + 3;
+                        _loc6_ = true;
+                     }
+                     else
+                     {
+                        Error.throwError(Error,0);
+                     }
+                  }
+                  else if(_loc5_ == uint(102))
+                  {
+                     if(li32(param2) == 1702063201)
+                     {
+                        param2 = param2 + 4;
+                        _loc6_ = false;
+                     }
+                     else
+                     {
+                        Error.throwError(Error,0);
+                     }
+                  }
+                  else if(_loc5_ == uint(117))
+                  {
+                     if(li32(param2) == 1717920878 && li32(param2 + 4) == 1684369001)
+                     {
+                        param2 = param2 + 8;
+                     }
+                     else
+                     {
+                        Error.throwError(Error,0);
+                     }
+                  }
+                  else if(_loc5_ == uint(78))
+                  {
+                     if(li16(param2) == 20065)
+                     {
+                        param2 = param2 + 2;
+                        _loc6_ = Number.NaN;
+                     }
+                     else
+                     {
+                        Error.throwError(Error,0);
+                     }
+                  }
+                  else if(_loc5_ == uint(123))
+                  {
+                     _loc16_ = new Object();
+                     _loc11_ = null;
+                     while(true)
+                     {
+                        _loc8_ = param2;
+                        param2++;
+                        _loc7_ = li8(_loc8_);
+                        if(_loc7_ != uint(13) && (_loc7_ != uint(10) && (_loc7_ != uint(32) && (_loc7_ != uint(9) && (_loc7_ != uint(11) && (_loc7_ != uint(8) && _loc7_ != uint(12)))))))
+                        {
+                           if(_loc7_ == uint(47))
+                           {
+                              _loc8_ = param2;
+                              param2++;
+                              _loc7_ = li8(_loc8_);
+                              if(_loc7_ == uint(47))
+                              {
+                                 do
+                                 {
+                                    _loc9_ = param2;
+                                    param2++;
+                                    _loc8_ = li8(_loc9_);
+                                 }
+                                 while(_loc8_ != uint(10) && (_loc8_ != uint(13) && _loc8_ != uint(0)));
+                                 
+                                 param2--;
+                                 continue;
+                              }
+                              if(_loc7_ == uint(42))
+                              {
+                                 param2 = param2 - 2;
+                                 _loc7_ = param2;
+                                 _loc8_ = param2;
+                                 _loc9_ = param2;
+                                 param2++;
+                                 if(li8(_loc9_) != uint(47) || li8(_loc9_) != uint(42))
+                                 {
+                                    param2 = _loc8_;
+                                 }
+                                 else
+                                 {
+                                    while(true)
+                                    {
+                                       _loc10_ = param2;
+                                       param2++;
+                                       _loc9_ = li8(_loc10_);
+                                       if(_loc9_ == uint(42))
+                                       {
+                                          _loc10_ = param2;
+                                          param2++;
+                                          if(li8(_loc10_) != uint(47))
+                                          {
+                                             param2--;
+                                          }
+                                       }
+                                       else if(_loc9_ == uint(0))
+                                       {
+                                          break;
+                                       }
+                                    }
+                                    param2 = _loc8_;
+                                 }
+                                 if(_loc7_ != param2)
+                                 {
+                                    continue;
+                                 }
+                              }
+                              param2--;
+                              _loc7_ = uint(47);
+                              break;
+                           }
+                           break;
+                        }
+                     }
+                     _loc5_ = _loc7_;
+                     if(_loc5_ != uint(125))
+                     {
+                        param2--;
+                        while(true)
+                        {
+                           while(true)
+                           {
+                              _loc8_ = param2;
+                              param2++;
+                              _loc7_ = li8(_loc8_);
+                              if(_loc7_ != uint(13) && (_loc7_ != uint(10) && (_loc7_ != uint(32) && (_loc7_ != uint(9) && (_loc7_ != uint(11) && (_loc7_ != uint(8) && _loc7_ != uint(12)))))))
+                              {
+                                 if(_loc7_ == uint(47))
+                                 {
+                                    _loc8_ = param2;
+                                    param2++;
+                                    _loc7_ = li8(_loc8_);
+                                    if(_loc7_ == uint(47))
+                                    {
+                                       do
+                                       {
+                                          _loc9_ = param2;
+                                          param2++;
+                                          _loc8_ = li8(_loc9_);
+                                       }
+                                       while(_loc8_ != uint(10) && (_loc8_ != uint(13) && _loc8_ != uint(0)));
+                                       
+                                       param2--;
+                                       continue;
+                                    }
+                                    if(_loc7_ == uint(42))
+                                    {
+                                       param2 = param2 - 2;
+                                       _loc7_ = param2;
+                                       _loc8_ = param2;
+                                       _loc9_ = param2;
+                                       param2++;
+                                       if(li8(_loc9_) != uint(47) || li8(_loc9_) != uint(42))
+                                       {
+                                          param2 = _loc8_;
+                                       }
+                                       else
+                                       {
+                                          while(true)
+                                          {
+                                             _loc10_ = param2;
+                                             param2++;
+                                             _loc9_ = li8(_loc10_);
+                                             if(_loc9_ == uint(42))
+                                             {
+                                                _loc10_ = param2;
+                                                param2++;
+                                                if(li8(_loc10_) != uint(47))
+                                                {
+                                                   param2--;
+                                                }
+                                             }
+                                             else if(_loc9_ == uint(0))
+                                             {
+                                                break;
+                                             }
+                                          }
+                                          param2 = _loc8_;
+                                       }
+                                       if(_loc7_ != param2)
+                                       {
+                                          continue;
+                                       }
+                                    }
+                                    param2--;
+                                    _loc7_ = uint(47);
+                                    break;
+                                 }
+                                 break;
+                              }
+                           }
+                           _loc5_ = _loc7_;
+                           if(_loc5_ == uint(39) || _loc5_ == uint(34))
+                           {
+                              param2--;
+                              _loc7_ = param2;
+                              _loc9_ = param2;
+                              param2++;
+                              _loc8_ = li8(_loc9_);
+                              if(_loc8_ != uint(39) && _loc8_ != uint(34))
+                              {
+                                 param2--;
+                                 §§push(null);
+                              }
+                              else
+                              {
+                                 _loc9_ = _loc7_ + 1;
+                                 _loc12_ = "";
+                                 while(true)
+                                 {
+                                    _loc13_ = li8(param2);
+                                    if(_loc13_ >= 128)
+                                    {
+                                       if((_loc13_ & 248) == 240)
+                                       {
+                                          param2++;
+                                          param2++;
+                                          param2++;
+                                          _loc13_ = (_loc13_ & 7) << 18 | (li8(param2) & 63) << 12 | (li8(param2) & 63) << 6 | li8(param2) & 63;
+                                       }
+                                       else if((_loc13_ & 240) == 224)
+                                       {
+                                          param2++;
+                                          param2++;
+                                          _loc13_ = (_loc13_ & 15) << 12 | (li8(param2) & 63) << 6 | li8(param2) & 63;
+                                       }
+                                       else if((_loc13_ & 224) == 192)
+                                       {
+                                          param2++;
+                                          _loc13_ = (_loc13_ & 31) << 6 | li8(param2) & 63;
+                                       }
+                                    }
+                                    param2++;
+                                    _loc10_ = _loc13_;
+                                    if(_loc10_ != _loc8_)
+                                    {
+                                       if(_loc10_ == uint(92))
+                                       {
+                                          param1.position = _loc9_;
+                                          _loc12_ = _loc12_ + param1.readUTFBytes(param2 - 1 - _loc9_);
+                                          _loc13_ = param2;
+                                          param2++;
+                                          _loc10_ = li8(_loc13_);
+                                          if(_loc10_ == uint(110))
+                                          {
+                                             _loc12_ = _loc12_ + "\n";
+                                          }
+                                          else if(_loc10_ == uint(114))
+                                          {
+                                             _loc12_ = _loc12_ + "\r";
+                                          }
+                                          else if(_loc10_ == uint(116))
+                                          {
+                                             _loc12_ = _loc12_ + "\t";
+                                          }
+                                          else if(_loc10_ == uint(118))
+                                          {
+                                             _loc12_ = _loc12_ + "\x0b";
+                                          }
+                                          else if(_loc10_ == uint(102))
+                                          {
+                                             _loc12_ = _loc12_ + "\f";
+                                          }
+                                          else if(_loc10_ == uint(98))
+                                          {
+                                             _loc12_ = _loc12_ + "\b";
+                                          }
+                                          else if(_loc10_ == uint(120))
+                                          {
+                                             _loc14_ = 0;
+                                             do
+                                             {
+                                                _loc15_ = param2;
+                                                param2++;
+                                                _loc13_ = li8(_loc15_);
+                                                if((_loc13_ < uint(48) || _loc13_ > uint(57)) && ((_loc13_ < uint(97) || _loc13_ > uint(102)) && (_loc13_ < uint(65) || _loc13_ > uint(70))))
+                                                {
+                                                   break;
+                                                }
+                                                _loc14_++;
+                                             }
+                                             while(_loc14_ < 2);
+                                             
+                                             if(_loc14_ != 2)
+                                             {
+                                                param2 = param2 - (_loc14_ + 1);
+                                                §§push(null);
+                                             }
+                                             else
+                                             {
+                                                param1.position = param2 - 2;
+                                                §§push(param1.readUTFBytes(2));
+                                             }
+                                             _loc17_ = §§pop();
+                                             if(_loc17_ != null)
+                                             {
+                                                _loc12_ = _loc12_ + String.fromCharCode(parseInt(_loc17_,16));
+                                             }
+                                             else
+                                             {
+                                                _loc12_ = _loc12_ + "x";
+                                             }
+                                          }
+                                          else if(_loc10_ == uint(117))
+                                          {
+                                             _loc14_ = 0;
+                                             do
+                                             {
+                                                _loc15_ = param2;
+                                                param2++;
+                                                _loc13_ = li8(_loc15_);
+                                                if((_loc13_ < uint(48) || _loc13_ > uint(57)) && ((_loc13_ < uint(97) || _loc13_ > uint(102)) && (_loc13_ < uint(65) || _loc13_ > uint(70))))
+                                                {
+                                                   break;
+                                                }
+                                                _loc14_++;
+                                             }
+                                             while(_loc14_ < 4);
+                                             
+                                             if(_loc14_ != 4)
+                                             {
+                                                param2 = param2 - (_loc14_ + 1);
+                                                §§push(null);
+                                             }
+                                             else
+                                             {
+                                                param1.position = param2 - 4;
+                                                §§push(param1.readUTFBytes(4));
+                                             }
+                                             _loc17_ = §§pop();
+                                             if(_loc17_ != null)
+                                             {
+                                                _loc12_ = _loc12_ + String.fromCharCode(parseInt(_loc17_,16));
+                                             }
+                                             else
+                                             {
+                                                _loc12_ = _loc12_ + "u";
+                                             }
+                                          }
+                                          else
+                                          {
+                                             if(_loc10_ >= 128)
+                                             {
+                                                param2--;
+                                                _loc13_ = li8(param2);
+                                                if(_loc13_ >= 128)
+                                                {
+                                                   if((_loc13_ & 248) == 240)
+                                                   {
+                                                      param2++;
+                                                      param2++;
+                                                      param2++;
+                                                      _loc13_ = (_loc13_ & 7) << 18 | (li8(param2) & 63) << 12 | (li8(param2) & 63) << 6 | li8(param2) & 63;
+                                                   }
+                                                   else if((_loc13_ & 240) == 224)
+                                                   {
+                                                      param2++;
+                                                      param2++;
+                                                      _loc13_ = (_loc13_ & 15) << 12 | (li8(param2) & 63) << 6 | li8(param2) & 63;
+                                                   }
+                                                   else if((_loc13_ & 224) == 192)
+                                                   {
+                                                      param2++;
+                                                      _loc13_ = (_loc13_ & 31) << 6 | li8(param2) & 63;
+                                                   }
+                                                }
+                                                param2++;
+                                                _loc10_ = _loc13_;
+                                             }
+                                             _loc12_ = _loc12_ + String.fromCharCode(_loc10_);
+                                          }
+                                          _loc9_ = param2;
+                                       }
+                                       else if(_loc10_ == uint(0) || (_loc10_ == uint(13) || _loc10_ == uint(10)))
+                                       {
+                                          param2 = _loc7_;
+                                          break;
+                                       }
+                                       continue;
+                                    }
+                                    break;
+                                 }
+                                 if(param2 == _loc7_)
+                                 {
+                                    §§push(null);
+                                 }
+                                 else
+                                 {
+                                    if(_loc9_ != param2 - 1)
+                                    {
+                                       param1.position = _loc9_;
+                                       _loc12_ = _loc12_ + param1.readUTFBytes(param2 - 1 - _loc9_);
+                                    }
+                                    §§push(_loc12_);
+                                 }
+                              }
+                              _loc3_ = §§pop();
+                              if(_loc3_ != null)
+                              {
+                                 _loc11_ = _loc3_;
+                              }
+                              else
+                              {
+                                 Error.throwError(Error,0);
+                              }
+                           }
+                           else if(_loc5_ >= uint(48) && _loc5_ <= uint(57) || _loc5_ == uint(46))
+                           {
+                              param2--;
+                              _loc12_ = null;
+                              _loc7_ = param2;
+                              _loc9_ = param2;
+                              param2++;
+                              _loc8_ = li8(_loc9_);
+                              if(_loc8_ == uint(48))
+                              {
+                                 _loc10_ = param2;
+                                 param2++;
+                                 _loc8_ = li8(_loc10_);
+                                 if(_loc8_ == uint(120) || _loc8_ == uint(88))
+                                 {
+                                    _loc9_ = param2;
+                                    do
+                                    {
+                                       _loc10_ = param2;
+                                       param2++;
+                                       _loc8_ = li8(_loc10_);
+                                    }
+                                    while(_loc8_ >= uint(48) && _loc8_ <= uint(57) || (_loc8_ >= uint(97) && _loc8_ <= uint(102) || _loc8_ >= uint(65) && _loc8_ <= uint(70)));
+                                    
+                                    if(param2 == _loc9_ + 1)
+                                    {
+                                       param2 = _loc7_ + 1;
+                                       _loc8_ = uint(48);
+                                    }
+                                    else
+                                    {
+                                       param2--;
+                                       param1.position = _loc9_;
+                                       _loc12_ = parseInt(param1.readUTFBytes(param2 - _loc9_),16);
+                                    }
+                                 }
+                                 else
+                                 {
+                                    param2--;
+                                    _loc8_ = uint(48);
+                                 }
+                              }
+                              if(_loc12_ == null)
+                              {
+                                 while(_loc8_ >= uint(48) && _loc8_ <= uint(57))
+                                 {
+                                    _loc10_ = param2;
+                                    param2++;
+                                    _loc8_ = li8(_loc10_);
+                                 }
+                                 if(_loc8_ == uint(46))
+                                 {
+                                    _loc9_ = param2;
+                                    do
+                                    {
+                                       _loc10_ = param2;
+                                       param2++;
+                                       _loc8_ = li8(_loc10_);
+                                    }
+                                    while(_loc8_ >= uint(48) && _loc8_ <= uint(57));
+                                    
+                                    if(param2 == _loc9_ + 1)
+                                    {
+                                       param2--;
+                                       _loc8_ = uint(46);
+                                    }
+                                 }
+                                 if(_loc8_ == uint(101) || _loc8_ == uint(69))
+                                 {
+                                    _loc10_ = param2;
+                                    _loc13_ = param2;
+                                    param2++;
+                                    _loc8_ = li8(_loc13_);
+                                    if(_loc8_ == uint(45) || _loc8_ == uint(43))
+                                    {
+                                       _loc13_ = param2;
+                                       param2++;
+                                       _loc8_ = li8(_loc13_);
+                                    }
+                                    _loc9_ = param2;
+                                    while(_loc8_ >= uint(48) && _loc8_ <= uint(57))
+                                    {
+                                       _loc13_ = param2;
+                                       param2++;
+                                       _loc8_ = li8(_loc13_);
+                                    }
+                                    if(param2 == _loc9_)
+                                    {
+                                       param2 = _loc10_;
+                                    }
+                                 }
+                                 param2--;
+                                 if(param2 != _loc7_)
+                                 {
+                                    param1.position = _loc7_;
+                                    _loc12_ = param1.readUTFBytes(param2 - _loc7_);
+                                 }
+                              }
+                              _loc3_ = _loc12_;
+                              if(_loc3_ != null)
+                              {
+                                 _loc11_ = parseFloat(_loc3_).toString();
+                              }
+                              else
+                              {
+                                 Error.throwError(Error,0);
+                              }
+                           }
+                           else if(_loc5_ == uint(110) && (li8(param2) == 117 && li16(param2 + 1) == 27756) || (_loc5_ == uint(116) && (li8(param2) == 114 && li16(param2 + 1) == 25973) || _loc5_ == uint(102) && li32(param2) == 1702063201))
+                           {
+                              Error.throwError(Error,0);
+                           }
+                           else
+                           {
+                              param2--;
+                              _loc7_ = param2;
+                              _loc9_ = li8(param2);
+                              if(_loc9_ >= 128)
+                              {
+                                 if((_loc9_ & 248) == 240)
+                                 {
+                                    param2++;
+                                    param2++;
+                                    param2++;
+                                    _loc9_ = (_loc9_ & 7) << 18 | (li8(param2) & 63) << 12 | (li8(param2) & 63) << 6 | li8(param2) & 63;
+                                 }
+                                 else if((_loc9_ & 240) == 224)
+                                 {
+                                    param2++;
+                                    param2++;
+                                    _loc9_ = (_loc9_ & 15) << 12 | (li8(param2) & 63) << 6 | li8(param2) & 63;
+                                 }
+                                 else if((_loc9_ & 224) == 192)
+                                 {
+                                    param2++;
+                                    _loc9_ = (_loc9_ & 31) << 6 | li8(param2) & 63;
+                                 }
+                              }
+                              param2++;
+                              _loc8_ = _loc9_;
+                              if((_loc8_ < uint(97) || _loc8_ > uint(122)) && ((_loc8_ < uint(65) || _loc8_ > uint(90)) && (_loc8_ != uint(36) && (_loc8_ != uint(95) && _loc8_ <= 127))))
+                              {
+                                 param2 = _loc7_;
+                                 §§push(null);
+                              }
+                              else
+                              {
+                                 do
+                                 {
+                                    _loc9_ = param2;
+                                    _loc10_ = li8(param2);
+                                    if(_loc10_ >= 128)
+                                    {
+                                       if((_loc10_ & 248) == 240)
+                                       {
+                                          param2++;
+                                          param2++;
+                                          param2++;
+                                          _loc10_ = (_loc10_ & 7) << 18 | (li8(param2) & 63) << 12 | (li8(param2) & 63) << 6 | li8(param2) & 63;
+                                       }
+                                       else if((_loc10_ & 240) == 224)
+                                       {
+                                          param2++;
+                                          param2++;
+                                          _loc10_ = (_loc10_ & 15) << 12 | (li8(param2) & 63) << 6 | li8(param2) & 63;
+                                       }
+                                       else if((_loc10_ & 224) == 192)
+                                       {
+                                          param2++;
+                                          _loc10_ = (_loc10_ & 31) << 6 | li8(param2) & 63;
+                                       }
+                                    }
+                                    param2++;
+                                    _loc8_ = _loc10_;
+                                 }
+                                 while(_loc8_ >= uint(97) && _loc8_ <= uint(122) || (_loc8_ >= uint(65) && _loc8_ <= uint(90) || (_loc8_ >= uint(48) && _loc8_ <= uint(57) || (_loc8_ == uint(36) || (_loc8_ == uint(95) || _loc8_ > 127)))));
+                                 
+                                 param2 = _loc9_;
+                                 param1.position = _loc7_;
+                                 §§push(param1.readUTFBytes(param2 - _loc7_));
+                              }
+                              _loc3_ = §§pop();
+                              if(_loc3_ != null)
+                              {
+                                 _loc11_ = _loc3_;
+                              }
+                              else
+                              {
+                                 Error.throwError(Error,0);
+                              }
+                           }
+                           while(true)
+                           {
+                              _loc8_ = param2;
+                              param2++;
+                              _loc7_ = li8(_loc8_);
+                              if(_loc7_ != uint(13) && (_loc7_ != uint(10) && (_loc7_ != uint(32) && (_loc7_ != uint(9) && (_loc7_ != uint(11) && (_loc7_ != uint(8) && _loc7_ != uint(12)))))))
+                              {
+                                 if(_loc7_ == uint(47))
+                                 {
+                                    _loc8_ = param2;
+                                    param2++;
+                                    _loc7_ = li8(_loc8_);
+                                    if(_loc7_ == uint(47))
+                                    {
+                                       do
+                                       {
+                                          _loc9_ = param2;
+                                          param2++;
+                                          _loc8_ = li8(_loc9_);
+                                       }
+                                       while(_loc8_ != uint(10) && (_loc8_ != uint(13) && _loc8_ != uint(0)));
+                                       
+                                       param2--;
+                                       continue;
+                                    }
+                                    if(_loc7_ == uint(42))
+                                    {
+                                       param2 = param2 - 2;
+                                       _loc7_ = param2;
+                                       _loc8_ = param2;
+                                       _loc9_ = param2;
+                                       param2++;
+                                       if(li8(_loc9_) != uint(47) || li8(_loc9_) != uint(42))
+                                       {
+                                          param2 = _loc8_;
+                                       }
+                                       else
+                                       {
+                                          while(true)
+                                          {
+                                             _loc10_ = param2;
+                                             param2++;
+                                             _loc9_ = li8(_loc10_);
+                                             if(_loc9_ == uint(42))
+                                             {
+                                                _loc10_ = param2;
+                                                param2++;
+                                                if(li8(_loc10_) != uint(47))
+                                                {
+                                                   param2--;
+                                                }
+                                             }
+                                             else if(_loc9_ == uint(0))
+                                             {
+                                                break;
+                                             }
+                                          }
+                                          param2 = _loc8_;
+                                       }
+                                       if(_loc7_ != param2)
+                                       {
+                                          continue;
+                                       }
+                                    }
+                                    param2--;
+                                    _loc7_ = uint(47);
+                                    break;
+                                 }
+                                 break;
+                              }
+                           }
+                           if(_loc7_ != uint(58))
+                           {
+                              Error.throwError(Error,0);
+                           }
+                           _loc16_[_loc11_] = readValue(param1,param2);
+                           param2 = position;
+                           while(true)
+                           {
+                              _loc8_ = param2;
+                              param2++;
+                              _loc7_ = li8(_loc8_);
+                              if(_loc7_ != uint(13) && (_loc7_ != uint(10) && (_loc7_ != uint(32) && (_loc7_ != uint(9) && (_loc7_ != uint(11) && (_loc7_ != uint(8) && _loc7_ != uint(12)))))))
+                              {
+                                 if(_loc7_ == uint(47))
+                                 {
+                                    _loc8_ = param2;
+                                    param2++;
+                                    _loc7_ = li8(_loc8_);
+                                    if(_loc7_ == uint(47))
+                                    {
+                                       do
+                                       {
+                                          _loc9_ = param2;
+                                          param2++;
+                                          _loc8_ = li8(_loc9_);
+                                       }
+                                       while(_loc8_ != uint(10) && (_loc8_ != uint(13) && _loc8_ != uint(0)));
+                                       
+                                       param2--;
+                                       continue;
+                                    }
+                                    if(_loc7_ == uint(42))
+                                    {
+                                       param2 = param2 - 2;
+                                       _loc7_ = param2;
+                                       _loc8_ = param2;
+                                       _loc9_ = param2;
+                                       param2++;
+                                       if(li8(_loc9_) != uint(47) || li8(_loc9_) != uint(42))
+                                       {
+                                          param2 = _loc8_;
+                                       }
+                                       else
+                                       {
+                                          while(true)
+                                          {
+                                             _loc10_ = param2;
+                                             param2++;
+                                             _loc9_ = li8(_loc10_);
+                                             if(_loc9_ == uint(42))
+                                             {
+                                                _loc10_ = param2;
+                                                param2++;
+                                                if(li8(_loc10_) != uint(47))
+                                                {
+                                                   param2--;
+                                                }
+                                             }
+                                             else if(_loc9_ == uint(0))
+                                             {
+                                                break;
+                                             }
+                                          }
+                                          param2 = _loc8_;
+                                       }
+                                       if(_loc7_ != param2)
+                                       {
+                                          continue;
+                                       }
+                                    }
+                                    param2--;
+                                    _loc7_ = uint(47);
+                                    break;
+                                 }
+                                 break;
+                              }
+                           }
+                           _loc5_ = _loc7_;
+                           if(_loc5_ == uint(125))
+                           {
+                              break;
+                           }
+                           if(_loc5_ != uint(44))
+                           {
+                              Error.throwError(Error,0);
+                           }
+                        }
+                     }
+                     _loc6_ = _loc16_;
+                  }
+                  else if(_loc5_ == uint(91))
+                  {
+                     _loc18_ = [];
+                     while(true)
+                     {
+                        while(true)
+                        {
+                           _loc8_ = param2;
+                           param2++;
+                           _loc7_ = li8(_loc8_);
+                           if(_loc7_ != uint(13) && (_loc7_ != uint(10) && (_loc7_ != uint(32) && (_loc7_ != uint(9) && (_loc7_ != uint(11) && (_loc7_ != uint(8) && _loc7_ != uint(12)))))))
+                           {
+                              if(_loc7_ == uint(47))
+                              {
+                                 _loc8_ = param2;
+                                 param2++;
+                                 _loc7_ = li8(_loc8_);
+                                 if(_loc7_ == uint(47))
+                                 {
+                                    do
+                                    {
+                                       _loc9_ = param2;
+                                       param2++;
+                                       _loc8_ = li8(_loc9_);
+                                    }
+                                    while(_loc8_ != uint(10) && (_loc8_ != uint(13) && _loc8_ != uint(0)));
+                                    
+                                    param2--;
+                                    continue;
+                                 }
+                                 if(_loc7_ == uint(42))
+                                 {
+                                    param2 = param2 - 2;
+                                    _loc7_ = param2;
+                                    _loc8_ = param2;
+                                    _loc9_ = param2;
+                                    param2++;
+                                    if(li8(_loc9_) != uint(47) || li8(_loc9_) != uint(42))
+                                    {
+                                       param2 = _loc8_;
+                                    }
+                                    else
+                                    {
+                                       while(true)
+                                       {
+                                          _loc10_ = param2;
+                                          param2++;
+                                          _loc9_ = li8(_loc10_);
+                                          if(_loc9_ == uint(42))
+                                          {
+                                             _loc10_ = param2;
+                                             param2++;
+                                             if(li8(_loc10_) != uint(47))
+                                             {
+                                                param2--;
+                                             }
+                                          }
+                                          else if(_loc9_ == uint(0))
+                                          {
+                                             break;
+                                          }
+                                       }
+                                       param2 = _loc8_;
+                                    }
+                                    if(_loc7_ != param2)
+                                    {
+                                       continue;
+                                    }
+                                 }
+                                 param2--;
+                                 _loc7_ = uint(47);
+                                 break;
+                              }
+                              break;
+                           }
+                        }
+                        _loc5_ = _loc7_;
+                        if(_loc5_ == uint(93))
+                        {
+                           break;
+                        }
+                        if(_loc5_ == uint(44))
+                        {
+                           _loc18_.push(undefined);
+                        }
+                        else
+                        {
+                           param2--;
+                           _loc18_.push(readValue(param1,param2));
+                           param2 = position;
+                           while(true)
+                           {
+                              _loc8_ = param2;
+                              param2++;
+                              _loc7_ = li8(_loc8_);
+                              if(_loc7_ != uint(13) && (_loc7_ != uint(10) && (_loc7_ != uint(32) && (_loc7_ != uint(9) && (_loc7_ != uint(11) && (_loc7_ != uint(8) && _loc7_ != uint(12)))))))
+                              {
+                                 if(_loc7_ == uint(47))
+                                 {
+                                    _loc8_ = param2;
+                                    param2++;
+                                    _loc7_ = li8(_loc8_);
+                                    if(_loc7_ == uint(47))
+                                    {
+                                       do
+                                       {
+                                          _loc9_ = param2;
+                                          param2++;
+                                          _loc8_ = li8(_loc9_);
+                                       }
+                                       while(_loc8_ != uint(10) && (_loc8_ != uint(13) && _loc8_ != uint(0)));
+                                       
+                                       param2--;
+                                       continue;
+                                    }
+                                    if(_loc7_ == uint(42))
+                                    {
+                                       param2 = param2 - 2;
+                                       _loc7_ = param2;
+                                       _loc8_ = param2;
+                                       _loc9_ = param2;
+                                       param2++;
+                                       if(li8(_loc9_) != uint(47) || li8(_loc9_) != uint(42))
+                                       {
+                                          param2 = _loc8_;
+                                       }
+                                       else
+                                       {
+                                          while(true)
+                                          {
+                                             _loc10_ = param2;
+                                             param2++;
+                                             _loc9_ = li8(_loc10_);
+                                             if(_loc9_ == uint(42))
+                                             {
+                                                _loc10_ = param2;
+                                                param2++;
+                                                if(li8(_loc10_) != uint(47))
+                                                {
+                                                   param2--;
+                                                }
+                                             }
+                                             else if(_loc9_ == uint(0))
+                                             {
+                                                break;
+                                             }
+                                          }
+                                          param2 = _loc8_;
+                                       }
+                                       if(_loc7_ != param2)
+                                       {
+                                          continue;
+                                       }
+                                    }
+                                    param2--;
+                                    _loc7_ = uint(47);
+                                    break;
+                                 }
+                                 break;
+                              }
+                           }
+                           _loc5_ = _loc7_;
+                           if(_loc5_ == uint(93))
+                           {
+                              break;
+                           }
+                           if(_loc5_ != uint(44))
+                           {
+                              Error.throwError(Error,0);
+                           }
+                        }
+                     }
+                     _loc6_ = _loc18_;
+                  }
+                  else
+                  {
+                     Error.throwError(Error,0);
+                  }
+                  position = param2;
+                  return _loc6_;
+               };
+               _loc12_ = false;
+               try
+               {
+                  _loc3_ = readValue(_loc5_,position);
+                  _loc6_ = position;
+                  while(true)
+                  {
+                     _loc9_ = _loc6_;
+                     _loc6_++;
+                     _loc8_ = li8(_loc9_);
+                     if(_loc8_ != uint(13) && (_loc8_ != uint(10) && (_loc8_ != uint(32) && (_loc8_ != uint(9) && (_loc8_ != uint(11) && (_loc8_ != uint(8) && _loc8_ != uint(12)))))))
+                     {
+                        if(_loc8_ == uint(47))
+                        {
+                           _loc9_ = _loc6_;
+                           _loc6_++;
+                           _loc8_ = li8(_loc9_);
+                           if(_loc8_ == uint(47))
+                           {
+                              do
+                              {
+                                 _loc10_ = _loc6_;
+                                 _loc6_++;
+                                 _loc9_ = li8(_loc10_);
+                              }
+                              while(_loc9_ != uint(10) && (_loc9_ != uint(13) && _loc9_ != uint(0)));
+                              
+                              _loc6_--;
+                              continue;
+                           }
+                           if(_loc8_ == uint(42))
+                           {
+                              _loc6_ = _loc6_ - 2;
+                              _loc8_ = _loc6_;
+                              _loc9_ = _loc6_;
+                              _loc10_ = _loc6_;
+                              _loc6_++;
+                              if(li8(_loc10_) != uint(47) || li8(_loc10_) != uint(42))
+                              {
+                                 _loc6_ = _loc9_;
+                              }
+                              else
+                              {
+                                 while(true)
+                                 {
+                                    _loc11_ = _loc6_;
+                                    _loc6_++;
+                                    _loc10_ = li8(_loc11_);
+                                    if(_loc10_ == uint(42))
+                                    {
+                                       _loc11_ = _loc6_;
+                                       _loc6_++;
+                                       if(li8(_loc11_) != uint(47))
+                                       {
+                                          _loc6_--;
+                                       }
+                                    }
+                                    else if(_loc10_ == uint(0))
+                                    {
+                                       break;
+                                    }
+                                 }
+                                 _loc6_ = _loc9_;
+                              }
+                              if(_loc8_ != _loc6_)
+                              {
+                                 continue;
+                              }
+                           }
+                           _loc6_--;
+                           _loc8_ = uint(47);
+                           break;
+                        }
+                        break;
+                     }
+                  }
+                  _loc7_ = _loc8_;
+                  if(_loc7_ == uint(0))
+                  {
+                     _loc12_ = true;
+                  }
+               }
+               catch(_loc13_:*)
+               {
+               }
+               if(!_loc12_)
+               {
+                  ApplicationDomain.currentDomain.domainMemory = _loc4_;
+                  Error.throwError(SyntaxError,1509);
+               }
+               ApplicationDomain.currentDomain.domainMemory = _loc4_;
+            }
+            else
+            {
+               ApplicationDomain.currentDomain.domainMemory = _loc4_;
+            }
+         }
+         return _loc3_;
       }
    }
 }

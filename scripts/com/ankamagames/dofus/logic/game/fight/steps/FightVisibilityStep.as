@@ -1,0 +1,37 @@
+package com.ankamagames.dofus.logic.game.fight.steps
+{
+   import com.ankamagames.dofus.logic.game.common.misc.DofusEntities;
+   import com.ankamagames.jerakine.sequencer.AbstractSequencable;
+   import flash.display.Sprite;
+   
+   public class FightVisibilityStep extends AbstractSequencable implements IFightStep
+   {
+       
+      
+      private var _fighterId:Number;
+      
+      private var _visibility:Boolean;
+      
+      public function FightVisibilityStep(param1:Number, param2:Boolean)
+      {
+         super();
+         this._fighterId = param1;
+         this._visibility = param2;
+      }
+      
+      public function get stepType() : String
+      {
+         return "visibility";
+      }
+      
+      override public function start() : void
+      {
+         var _loc1_:Sprite = DofusEntities.getEntity(this._fighterId) as Sprite;
+         if(_loc1_)
+         {
+            _loc1_.visible = this._visibility;
+         }
+         executeCallbacks();
+      }
+   }
+}
